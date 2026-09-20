@@ -1,0 +1,194 @@
+{
+  "populations": {
+    "all": {
+      "baseline_errors": 21,
+      "false_labels": 59,
+      "n": 128,
+      "oracle_any_view_correct": 127,
+      "true_labels": 69,
+      "unanimous_cases": 21,
+      "unanimous_wrong": 1,
+      "views": {
+        "complement": {
+          "correct": 68,
+          "mean_unknown_probability": 0.1640103731803635,
+          "nll": 0.8938288323443822,
+          "unknown_choices": 4
+        },
+        "complement_reverse": {
+          "correct": 56,
+          "mean_unknown_probability": 0.17236984151670126,
+          "nll": 0.9334599704161459,
+          "unknown_choices": 7
+        },
+        "identity": {
+          "correct": 107,
+          "mean_unknown_probability": 0.13089193790251322,
+          "nll": 0.5462451070082485,
+          "unknown_choices": 3
+        },
+        "reverse": {
+          "correct": 103,
+          "mean_unknown_probability": 0.13823949729530585,
+          "nll": 0.5620025885519372,
+          "unknown_choices": 6
+        },
+        "rotation1": {
+          "correct": 100,
+          "mean_unknown_probability": 0.1519969005476523,
+          "nll": 0.5832457964549453,
+          "unknown_choices": 9
+        },
+        "rotation2": {
+          "correct": 107,
+          "mean_unknown_probability": 0.14611012225743086,
+          "nll": 0.5854766313407066,
+          "unknown_choices": 4
+        }
+      }
+    },
+    "certification": {
+      "baseline_errors": 13,
+      "false_labels": 32,
+      "n": 64,
+      "oracle_any_view_correct": 63,
+      "true_labels": 32,
+      "unanimous_cases": 6,
+      "unanimous_wrong": 1,
+      "views": {
+        "complement": {
+          "correct": 33,
+          "mean_unknown_probability": 0.16050353034714537,
+          "nll": 0.8895876793546982,
+          "unknown_choices": 1
+        },
+        "complement_reverse": {
+          "correct": 23,
+          "mean_unknown_probability": 0.16786395157960843,
+          "nll": 0.9454205729871142,
+          "unknown_choices": 3
+        },
+        "identity": {
+          "correct": 51,
+          "mean_unknown_probability": 0.12375352277782924,
+          "nll": 0.6183791799249849,
+          "unknown_choices": 2
+        },
+        "reverse": {
+          "correct": 48,
+          "mean_unknown_probability": 0.1334995359764255,
+          "nll": 0.6466000320041383,
+          "unknown_choices": 4
+        },
+        "rotation1": {
+          "correct": 49,
+          "mean_unknown_probability": 0.14891648364916157,
+          "nll": 0.6774515346346816,
+          "unknown_choices": 2
+        },
+        "rotation2": {
+          "correct": 51,
+          "mean_unknown_probability": 0.14085531426910816,
+          "nll": 0.6855352411894243,
+          "unknown_choices": 1
+        }
+      }
+    },
+    "development": {
+      "baseline_errors": 1,
+      "false_labels": 12,
+      "n": 24,
+      "oracle_any_view_correct": 24,
+      "true_labels": 12,
+      "unanimous_cases": 5,
+      "unanimous_wrong": 0,
+      "views": {
+        "complement": {
+          "correct": 13,
+          "mean_unknown_probability": 0.17718021961303518,
+          "nll": 0.917792303335318,
+          "unknown_choices": 2
+        },
+        "complement_reverse": {
+          "correct": 10,
+          "mean_unknown_probability": 0.18406846203554042,
+          "nll": 0.9866256342207808,
+          "unknown_choices": 2
+        },
+        "identity": {
+          "correct": 23,
+          "mean_unknown_probability": 0.1837724701205585,
+          "nll": 0.40348771533882893,
+          "unknown_choices": 1
+        },
+        "reverse": {
+          "correct": 22,
+          "mean_unknown_probability": 0.17740840019090343,
+          "nll": 0.4011136396220089,
+          "unknown_choices": 1
+        },
+        "rotation1": {
+          "correct": 20,
+          "mean_unknown_probability": 0.1836112409188787,
+          "nll": 0.39131209748055756,
+          "unknown_choices": 2
+        },
+        "rotation2": {
+          "correct": 22,
+          "mean_unknown_probability": 0.16241037152516002,
+          "nll": 0.38681211483026634,
+          "unknown_choices": 1
+        }
+      }
+    },
+    "evaluation": {
+      "baseline_errors": 7,
+      "false_labels": 15,
+      "n": 40,
+      "oracle_any_view_correct": 40,
+      "true_labels": 25,
+      "unanimous_cases": 10,
+      "unanimous_wrong": 0,
+      "views": {
+        "complement": {
+          "correct": 22,
+          "mean_unknown_probability": 0.16171941385390975,
+          "nll": 0.8862365945333158,
+          "unknown_choices": 1
+        },
+        "complement_reverse": {
+          "correct": 23,
+          "mean_unknown_probability": 0.1725600931047461,
+          "nll": 0.8824236080198167,
+          "unknown_choices": 2
+        },
+        "identity": {
+          "correct": 33,
+          "mean_unknown_probability": 0.11058508277118058,
+          "nll": 0.5164850253431228,
+          "unknown_choices": 0
+        },
+        "reverse": {
+          "correct": 33,
+          "mean_unknown_probability": 0.12232209366815587,
+          "nll": 0.5231800483863729,
+          "unknown_choices": 1
+        },
+        "rotation1": {
+          "correct": 31,
+          "mean_unknown_probability": 0.13795696336250154,
+          "nll": 0.5476768347519998,
+          "unknown_choices": 5
+        },
+        "rotation2": {
+          "correct": 34,
+          "mean_unknown_probability": 0.1447376654781098,
+          "nll": 0.5445815654890225,
+          "unknown_choices": 2
+        }
+      }
+    }
+  },
+  "qualification": "Post-hoc descriptive analysis; no policy selected, tuned or promoted.",
+  "source_commit": "463f417c22a361b0a4076bce8a0a4627897721fc"
+}
