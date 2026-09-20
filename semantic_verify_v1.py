@@ -1,13 +1,14 @@
 """Independent process reload of completed research checkpoints, not retraining.
 Source artifacts are bounded, path-checked, and complete before inference.
 Also recovers original timeout records without relabeling missing generation.
+Fact diagnostics are on the original development cases, not a new test set.
 """
 from __future__ import annotations
 import hashlib,io,json,os,zipfile
 from pathlib import Path
 import requests
 from semantic_train_v1 import Runtime,save,filehash
-from semantic_data_v1 import dataset,prompt_task
+from semantic_data_v1 import dataset,prompt_task,TRUTH
 REPO='Jaksenc/parameter-golf';RUN=35529849663
 
 def main():
@@ -29,7 +30,6 @@ def main():
                 if Path(n).is_absolute() or '..' in Path(n).parts:raise ValueError('Unsafe archive path')
             z.extractall(dest)
         receipt.append({'artifact':item['id'],'label':label,'zip_sha256':hashlib.sha256(blob).hexdigest()})
-    # Check exact executed scripts, not just compatible-looking model settings.
     for label in ['diagnostic','direct','auxiliary']:
         for name in ['semantic_data_v1.py','semantic_train_v1.py']:
             if filehash(root/label/name)!=filehash(name):raise ValueError('Execution-source mismatch')
@@ -47,7 +47,7 @@ def main():
         if r['kind']!='diagnostic_case':continue
         differences=[abs(x-y) for mode,p in r['predictions'].items() for x,y in zip(p['logits'],new[r['id']]['predictions'][mode]['logits'])]
         comparisons.append({'id':r['id'],'max_logit_difference':max(differences)})
-    rt=Runtime();rows=[r for r in dataset() if r['split'] in ['wording','composition']];selected=[rows[i] for i in [0,35,71]]
+    rt=Runtime();allrows=dataset();rows=[r for r in allrows if r['split'] in ['wording','composition']];selected=[rows[i] for i in [0,35,71]]
     baseline=[];padding=[]
     for row in selected:
         result=rt.predict(row);baseline.append(result)
@@ -55,7 +55,7 @@ def main():
         with rt.torch.no_grad():z=rt.forward(rt.encode(task,pad=True)).tolist()
         padding.append({'arm':'baseline','id':row['id'],'maximum_logit_difference':max(abs(x-y) for x,y in zip(z,result['logits'])),'same_choice':max(range(len(z)),key=z.__getitem__)==result['choice']})
     rt.attach_lora();from safetensors.torch import load_file
-    checked=[]
+    checked=[];stage_records={}
     for label in ['direct','auxiliary']:
         d=json.loads((root/label/'training.json').read_text());reference={r['id']:r for r in d['predictions']};base={r['id']:r for r in d['baseline']}
         if filehash(root/label/'adapter.safetensors')!=d['adapter_sha256']:raise ValueError('Adapter bytes mismatch')
@@ -71,6 +71,13 @@ def main():
             padding.append({'arm':label,'id':row['id'],'maximum_logit_difference':max(abs(x-y) for x,y in zip(z,result['logits'])),'same_choice':max(range(len(z)),key=z.__getitem__)==result['choice']})
         for b in baseline:
             if max(abs(x-y) for x,y in zip(b['logits'],base[b['id']]['logits']))>2e-3 or b['choice']!=base[b['id']]['choice']:raise ValueError('Fresh base differs')
-    report={'passed':True,'source_run':RUN,'artifacts':receipt,'fresh_process_checkpoint_checks':checked,'baseline_replayed_cases':len(baseline),'padding_diagnostics':padding,'recovery_vs_original':comparisons,'qualification':'New Python process and freshly loaded base; three cases per trained arm, not full replication or retraining. Padding diagnostics do not affect any selected model or prior result.'}
+        dev=[r for r in allrows if r['split']=='development'];stage_records[label]=[]
+        for row in dev:
+            preds={mode:rt.predict(row,mode) for mode in ['fact_p','fact_q']}
+            stage_records[label].append({'id':row['id'],'predictions':preds,'gold_facts':row['facts']})
+            save(root/'post-training-facts.json',stage_records)
+        joint=sum(all(p['predictions']['fact_'+a]['choice'] is not None and TRUTH[p['predictions']['fact_'+a]['choice']]==p['gold_facts'][a] for a in ['p','q']) for p in stage_records[label])
+        print(json.dumps({'kind':'post_training_fact_diagnostic','arm':label,'joint_correct':joint,'n':len(dev),'qualification':'Original development cases only; no tuning or model selection'}),flush=True)
+    report={'passed':True,'source_run':RUN,'artifacts':receipt,'fresh_process_checkpoint_checks':checked,'baseline_replayed_cases':len(baseline),'padding_diagnostics':padding,'recovery_vs_original':comparisons,'post_training_fact_calls':72,'qualification':'New Python process and freshly loaded base; three checkpoint replay cases per trained arm, not full replication or retraining. Additional fact diagnostics reuse the 18 development cases. Padding and fact diagnostics do not alter models or prior results.'}
     save(root/'verification.json',report);print(json.dumps(report,sort_keys=True),flush=True)
 if __name__=='__main__':main()
