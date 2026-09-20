@@ -1,0 +1,68 @@
+name: Verified intervention probe v1
+on:
+  push:
+    branches: ['research/free-decision-baselines-20260920']
+    paths: ['.github/workflows/intervention-probe-v1.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  inference:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 18
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5]
+    env:
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      MKL_NUM_THREADS: '4'
+      HF_HUB_DOWNLOAD_TIMEOUT: '120'
+    steps:
+      - name: Require standard ARM BF16 before downloads
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          lscpu
+          grep -qw bf16 /proc/cpuinfo || exit 1
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Verify transform algebra and install pinned native runtime
+        run: |
+          python intervention_probe_v1.py --self-test
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'datasets==4.8.5' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6'
+      - name: Execute fixed source-group partition
+        run: python -u intervention_probe_v1.py --shard '${{ matrix.shard }}'
+      - name: Runtime receipt
+        if: always()
+        run: |
+          python -m pip freeze
+          echo 'Free public standard ARM; no Jev, paid APIs, training, artifacts, cache or deployment.'
+  audit:
+    needs: inference
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SOURCE_RUN_ID: ${{ github.run_id }}
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      OPENBLAS_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Install numerical and public data readers only
+        run: python -m pip install --no-cache-dir 'datasets==4.8.5' 'huggingface-hub==1.32.0' 'numpy==2.4.6' 'scipy==1.16.3'
+      - name: Verify completeness and report prespecified comparisons
+        run: python -u intervention_analyze_v1.py
