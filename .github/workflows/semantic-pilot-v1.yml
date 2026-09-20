@@ -1,0 +1,110 @@
+name: Same-backbone semantic pilot v1
+on:
+  push:
+    branches: ['research/free-decision-baselines-20260920']
+    paths: ['.github/workflows/semantic-pilot-v1.yml']
+permissions:
+  contents: read
+jobs:
+  diagnostic:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 18
+    outputs:
+      stage: ${{ steps.result.outputs.stage }}
+    env:
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      MKL_NUM_THREADS: '4'
+      HF_HUB_DOWNLOAD_TIMEOUT: '120'
+    steps:
+      - name: Check approved public runner
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          grep -qw bf16 /proc/cpuinfo || exit 1
+          lscpu
+          free -h
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Validate data and install pinned runtime
+        run: |
+          python semantic_data_v1.py
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6'
+      - name: Localize failures on development only
+        run: python -u semantic_train_v1.py --mode diagnostic --out pilot-diagnostic
+      - name: Export fixed diagnostic selection
+        id: result
+        run: |
+          python - <<'PY'
+          import json,os
+          x=json.load(open('pilot-diagnostic/diagnostic.json'))
+          assert x['selected_stage'] in ['fact','rule','execute']
+          with open(os.environ['GITHUB_OUTPUT'],'a') as f:f.write('stage='+x['selected_stage']+'\n')
+          print(json.dumps(x['metrics'],sort_keys=True))
+          PY
+      - name: Preserve source and dependency receipt
+        if: always()
+        run: |
+          mkdir -p pilot-diagnostic
+          cp semantic_data_v1.py semantic_train_v1.py pilot-diagnostic/
+          python -m pip freeze > pilot-diagnostic/dependencies.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: semantic-diagnostic-v1
+          path: pilot-diagnostic/
+          retention-days: 3
+          if-no-files-found: error
+  train:
+    needs: diagnostic
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 32
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        arm: [direct, auxiliary]
+    env:
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      MKL_NUM_THREADS: '4'
+      HF_HUB_DOWNLOAD_TIMEOUT: '120'
+    steps:
+      - name: Check native BF16
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          grep -qw bf16 /proc/cpuinfo || exit 1
+          lscpu
+          free -h
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Install identical runtime
+        run: |
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6'
+      - name: Train fixed final checkpoint and evaluate
+        run: python -u semantic_train_v1.py --mode '${{ matrix.arm }}' --stage '${{ needs.diagnostic.outputs.stage }}' --out 'pilot-${{ matrix.arm }}'
+      - name: Preserve source and dependency receipt
+        if: always()
+        run: |
+          mkdir -p 'pilot-${{ matrix.arm }}'
+          cp semantic_data_v1.py semantic_train_v1.py 'pilot-${{ matrix.arm }}/'
+          python -m pip freeze > 'pilot-${{ matrix.arm }}/dependencies.txt'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: semantic-${{ matrix.arm }}-v1
+          path: pilot-${{ matrix.arm }}/
+          retention-days: 3
+          if-no-files-found: error
