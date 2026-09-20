@@ -1,0 +1,57 @@
+name: Free baseline result audit
+on:
+  push:
+    branches: ['research/free-decision-baselines-20260920']
+    paths: ['.github/workflows/free-baseline-audit.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Audit actual model outputs and print compact receipts
+        env:
+          GH_READ_TOKEN: ${{ github.token }}
+        run: |
+          python3 -u - <<'PY'
+          import hashlib,json,os,time,urllib.request,urllib.error,urllib.parse
+          from audit_logs import audit
+          root='https://api.github.com/repos/Jaksenc/parameter-golf/actions/jobs/'
+          class NoRedirect(urllib.request.HTTPRedirectHandler):
+              def redirect_request(self,*args,**kwargs): return None
+          opener=urllib.request.build_opener(NoRedirect)
+          def get(path):
+              req=urllib.request.Request(root+path,headers={'Authorization':'Bearer '+os.environ['GH_READ_TOKEN'],'Accept':'application/vnd.github+json','User-Agent':'public-model-result-audit'})
+              try:
+                  with opener.open(req,timeout=60) as r:return r.read()
+              except urllib.error.HTTPError as e:
+                  if e.code not in (301,302,303,307,308):raise
+                  location=e.headers['Location']
+                  assert urllib.parse.urlparse(location).scheme=='https'
+                  with urllib.request.urlopen(urllib.request.Request(location,headers={'User-Agent':'public-model-result-audit'}),timeout=60) as r:return r.read()
+          outputs=[]
+          for job in (106094227284,106094856168):
+              for attempt in range(55):
+                  info=json.loads(get(str(job)))
+                  if info['status']=='completed':break
+                  time.sleep(10)
+              else:raise RuntimeError('Bounded wait ended before job completion')
+              assert info['conclusion']=='success',{'job':job,'conclusion':info['conclusion']}
+              text=get(str(job)+'/logs').decode('utf-8-sig')
+              result=audit(text)
+              result['job_id']=job
+              result['job_status']=info['conclusion']
+              result['job_started_at']=info['started_at']
+              result['job_completed_at']=info['completed_at']
+              print('AUDITED_RESULT '+json.dumps(result,sort_keys=True,allow_nan=False),flush=True)
+              outputs.append(result)
+          assert outputs[0]['data_hash']==outputs[1]['data_hash']
+          assert [r[1] for r in outputs[0]['prediction_index_target_selected']]==[r[1] for r in outputs[1]['prediction_index_target_selected']]
+          print('AUDIT_COMPLETE '+json.dumps({'cases_per_model':128,'models':2,'exact_input_hashes_match':True,'target_vectors_match':True,'new_inference':False,'new_model_training':False,'cache_or_artifact_uploads':False}),flush=True)
+          PY
