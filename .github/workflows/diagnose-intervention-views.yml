@@ -1,0 +1,54 @@
+name: Diagnose completed intervention views
+on:
+  push:
+    branches: ['research/free-decision-baselines-20260920']
+    paths: ['.github/workflows/diagnose-intervention-views.yml']
+permissions:
+  contents: write
+jobs:
+  describe:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Inspect existing scores only
+        run: |
+          python -u - <<'PY'
+          import base64,hashlib,json,math,os,struct,urllib.request
+          repo='Jaksenc/parameter-golf';branch='research/free-decision-baselines-20260920';rev='463f417c22a361b0a4076bce8a0a4627897721fc'
+          assert os.environ['GITHUB_REPOSITORY']==repo
+          api='https://api.github.com/repos/'+repo
+          headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'}
+          def get(path):
+              with urllib.request.urlopen(urllib.request.Request(api+path,headers=headers),timeout=60) as f:return json.load(f)
+          def put(path,value):
+              raw=json.dumps(value,sort_keys=True,indent=2,allow_nan=False).encode()
+              body=json.dumps({'message':'Preserve post-hoc intervention view diagnostic','branch':branch,'content':base64.b64encode(raw).decode()}).encode()
+              with urllib.request.urlopen(urllib.request.Request(api+path,data=body,headers=headers,method='PUT'),timeout=60) as f:return json.load(f)
+          d=json.loads(base64.b64decode(get('/contents/evidence/intervention-v1/scores.json?ref='+rev)['content']))
+          z=d['logits'];rows=d['row_metadata']
+          packed=struct.pack('<2304f',*[v for x in z for y in x for v in y])
+          assert hashlib.sha256(packed).hexdigest()=='550557a8be9d8e97364b95cbb180044749d16e0dea36bbf8cf84e05bb41fc5e7'
+          def probs(x):
+              m=max(x);p=[math.exp(v-m) for v in x];s=sum(p);return [v/s for v in p]
+          def pred(x):return max(range(3),key=lambda i:x[i])
+          views=['identity','reverse','complement','complement_reverse','rotation1','rotation2'];result={}
+          for split in ['development','certification','evaluation','all']:
+              ii=[i for i,r in enumerate(rows) if split=='all' or r['split']==split]
+              choices={i:[pred(v) for v in z[i]] for i in ii}
+              result[split]={'n':len(ii),'true_labels':sum(rows[i]['target']==0 for i in ii),'false_labels':sum(rows[i]['target']==1 for i in ii),
+                  'baseline_errors':sum(choices[i][0]!=rows[i]['target'] for i in ii),
+                  'unanimous_cases':sum(len(set(choices[i]))==1 for i in ii),
+                  'unanimous_wrong':sum(len(set(choices[i]))==1 and choices[i][0]!=rows[i]['target'] for i in ii),
+                  'oracle_any_view_correct':sum(rows[i]['target'] in choices[i] for i in ii),
+                  'views':{name:{'correct':sum(choices[i][j]==rows[i]['target'] for i in ii),'unknown_choices':sum(choices[i][j]==2 for i in ii),'mean_unknown_probability':sum(probs(z[i][j])[2] for i in ii)/len(ii),'nll':sum(-math.log(probs(z[i][j])[rows[i]['target']]) for i in ii)/len(ii)} for j,name in enumerate(views)}}
+          out={'qualification':'Post-hoc descriptive analysis; no policy selected, tuned or promoted.','source_commit':rev,'populations':result}
+          done=put('/contents/evidence/intervention-v1/view-diagnostic.json',out)
+          print(json.dumps(out,sort_keys=True),flush=True)
+          print(json.dumps({'commit':done['commit']['sha'],'path':'evidence/intervention-v1/view-diagnostic.json'}),flush=True)
+          PY
