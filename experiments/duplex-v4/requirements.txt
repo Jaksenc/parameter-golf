@@ -1,0 +1,5 @@
+transformers==5.17.0
+huggingface-hub==1.32.0
+numpy==2.4.6
+sentencepiece==0.2.2
+protobuf==6.33.6
