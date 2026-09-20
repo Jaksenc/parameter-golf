@@ -1,0 +1,33 @@
+name: Complete public probe fusion audit
+on:
+  push:
+    branches: ['research/free-decision-baselines-20260920']
+    paths: ['complete_probe_fusion.py', '.github/workflows/complete-probe-fusion.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      GH_TOKEN: ${{ github.token }}
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      OPENBLAS_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Public data readers only
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          python -m pip install --no-cache-dir 'datasets==4.8.5' 'huggingface-hub==1.32.0' 'numpy==2.4.6'
+      - name: Validate and compare saved scores without new model inference
+        run: |
+          python -m py_compile complete_probe_fusion.py
+          python -u complete_probe_fusion.py
+          echo 'No pretrained weights loaded or trained; no Jev, paid APIs, deployment, artifact uploads or cache uploads.'
