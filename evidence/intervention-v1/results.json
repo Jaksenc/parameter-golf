@@ -1,0 +1,1331 @@
+{
+  "data_hash": "6d07e2a9ce2fe2c3287d03d5b7e1ef9d46afed1272db20d622df843f88432a8e",
+  "kind": "intervention_result",
+  "model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "receipts": [
+    {
+      "completion": {
+        "calls": 126,
+        "data_hash": "6d07e2a9ce2fe2c3287d03d5b7e1ef9d46afed1272db20d622df843f88432a8e",
+        "errors": 0,
+        "kind": "complete",
+        "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+        "rss_kib": 11828764,
+        "shard": 5
+      },
+      "job": 106116481056,
+      "log_sha256": "f97e0dc8a4f0a9579f4c83e68d0237abf1c8066298369f86ced8c8b8951f9137",
+      "protocol": {
+        "calls": 768,
+        "code_sha256": "636c73b06ac19bce2f8e3a6c08f76ba41444efc9ae808e1f583e409671f233d6",
+        "comparisons": {
+          "four_call_orbit": [
+            "identity",
+            "reverse",
+            "complement",
+            "complement_reverse"
+          ],
+          "four_call_order": [
+            "identity",
+            "reverse",
+            "rotation1",
+            "rotation2"
+          ],
+          "one_call": [
+            "identity"
+          ],
+          "two_call_complement": [
+            "identity",
+            "complement"
+          ],
+          "two_call_order": [
+            "identity",
+            "reverse"
+          ]
+        },
+        "data_hash": "6d07e2a9ce2fe2c3287d03d5b7e1ef9d46afed1272db20d622df843f88432a8e",
+        "kind": "protocol",
+        "limitations": [
+          "New to this project, not guaranteed absent from pretraining",
+          "128 exact-source groups; near-duplicate passages may remain",
+          "Existing external labels; no new independent human adjudication",
+          "Both source datasets have binary gold labels; unknown is an available but non-gold outcome",
+          "NOT operator transport is certified; model interpretation and dataset labels are not proven",
+          "Whole cases partitioned, no label-dependent shard selection",
+          "No new weights, no Jev, no paid API"
+        ],
+        "model": "Qwen/Qwen3.5-4B",
+        "name": "duplex-orbit-v1",
+        "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+        "rows": 128,
+        "shard": 5,
+        "shards": 6,
+        "sources": [
+          {
+            "eligible_rows": 2976,
+            "family": "boolq",
+            "previously_exposed_groups_excluded": 16,
+            "repo": "google/boolq",
+            "revision": "35b264d03638db9f4ce671b711558bf7ff0f80d5",
+            "selected": 64,
+            "split": "validation"
+          },
+          {
+            "eligible_rows": 7982,
+            "family": "paws",
+            "previously_exposed_groups_excluded": 16,
+            "repo": "google-research-datasets/paws",
+            "revision": "161ece9501cf0a11f3e48bd356eaa82de46d6a09",
+            "selected": 64,
+            "split": "test"
+          }
+        ],
+        "split_counts": {
+          "certification": 64,
+          "development": 24,
+          "evaluation": 40
+        }
+      }
+    },
+    {
+      "completion": {
+        "calls": 126,
+        "data_hash": "6d07e2a9ce2fe2c3287d03d5b7e1ef9d46afed1272db20d622df843f88432a8e",
+        "errors": 0,
+        "kind": "complete",
+        "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+        "rss_kib": 11776016,
+        "shard": 4
+      },
+      "job": 106116481142,
+      "log_sha256": "eee4c82200c516297c772e8c55859364a357de0ef48dd7e0339b055dd5f6d87b",
+      "protocol": {
+        "calls": 768,
+        "code_sha256": "636c73b06ac19bce2f8e3a6c08f76ba41444efc9ae808e1f583e409671f233d6",
+        "comparisons": {
+          "four_call_orbit": [
+            "identity",
+            "reverse",
+            "complement",
+            "complement_reverse"
+          ],
+          "four_call_order": [
+            "identity",
+            "reverse",
+            "rotation1",
+            "rotation2"
+          ],
+          "one_call": [
+            "identity"
+          ],
+          "two_call_complement": [
+            "identity",
+            "complement"
+          ],
+          "two_call_order": [
+            "identity",
+            "reverse"
+          ]
+        },
+        "data_hash": "6d07e2a9ce2fe2c3287d03d5b7e1ef9d46afed1272db20d622df843f88432a8e",
+        "kind": "protocol",
+        "limitations": [
+          "New to this project, not guaranteed absent from pretraining",
+          "128 exact-source groups; near-duplicate passages may remain",
+          "Existing external labels; no new independent human adjudication",
+          "Both source datasets have binary gold labels; unknown is an available but non-gold outcome",
+          "NOT operator transport is certified; model interpretation and dataset labels are not proven",
+          "Whole cases partitioned, no label-dependent shard selection",
+          "No new weights, no Jev, no paid API"
+        ],
+        "model": "Qwen/Qwen3.5-4B",
+        "name": "duplex-orbit-v1",
+        "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+        "rows": 128,
+        "shard": 4,
+        "shards": 6,
+        "sources": [
+          {
+            "eligible_rows": 2976,
+            "family": "boolq",
+            "previously_exposed_groups_excluded": 16,
+            "repo": "google/boolq",
+            "revision": "35b264d03638db9f4ce671b711558bf7ff0f80d5",
+            "selected": 64,
+            "split": "validation"
+          },
+          {
+            "eligible_rows": 7982,
+            "family": "paws",
+            "previously_exposed_groups_excluded": 16,
+            "repo": "google-research-datasets/paws",
+            "revision": "161ece9501cf0a11f3e48bd356eaa82de46d6a09",
+            "selected": 64,
+            "split": "test"
+          }
+        ],
+        "split_counts": {
+          "certification": 64,
+          "development": 24,
+          "evaluation": 40
+        }
+      }
+    },
+    {
+      "completion": {
+        "calls": 132,
+        "data_hash": "6d07e2a9ce2fe2c3287d03d5b7e1ef9d46afed1272db20d622df843f88432a8e",
+        "errors": 0,
+        "kind": "complete",
+        "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+        "rss_kib": 11849988,
+        "shard": 1
+      },
+      "job": 106116481158,
+      "log_sha256": "2dcdde2c58be5a5ec964284b9581046f5130aec5310bd999b9f35bf6858831c7",
+      "protocol": {
+        "calls": 768,
+        "code_sha256": "636c73b06ac19bce2f8e3a6c08f76ba41444efc9ae808e1f583e409671f233d6",
+        "comparisons": {
+          "four_call_orbit": [
+            "identity",
+            "reverse",
+            "complement",
+            "complement_reverse"
+          ],
+          "four_call_order": [
+            "identity",
+            "reverse",
+            "rotation1",
+            "rotation2"
+          ],
+          "one_call": [
+            "identity"
+          ],
+          "two_call_complement": [
+            "identity",
+            "complement"
+          ],
+          "two_call_order": [
+            "identity",
+            "reverse"
+          ]
+        },
+        "data_hash": "6d07e2a9ce2fe2c3287d03d5b7e1ef9d46afed1272db20d622df843f88432a8e",
+        "kind": "protocol",
+        "limitations": [
+          "New to this project, not guaranteed absent from pretraining",
+          "128 exact-source groups; near-duplicate passages may remain",
+          "Existing external labels; no new independent human adjudication",
+          "Both source datasets have binary gold labels; unknown is an available but non-gold outcome",
+          "NOT operator transport is certified; model interpretation and dataset labels are not proven",
+          "Whole cases partitioned, no label-dependent shard selection",
+          "No new weights, no Jev, no paid API"
+        ],
+        "model": "Qwen/Qwen3.5-4B",
+        "name": "duplex-orbit-v1",
+        "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+        "rows": 128,
+        "shard": 1,
+        "shards": 6,
+        "sources": [
+          {
+            "eligible_rows": 2976,
+            "family": "boolq",
+            "previously_exposed_groups_excluded": 16,
+            "repo": "google/boolq",
+            "revision": "35b264d03638db9f4ce671b711558bf7ff0f80d5",
+            "selected": 64,
+            "split": "validation"
+          },
+          {
+            "eligible_rows": 7982,
+            "family": "paws",
+            "previously_exposed_groups_excluded": 16,
+            "repo": "google-research-datasets/paws",
+            "revision": "161ece9501cf0a11f3e48bd356eaa82de46d6a09",
+            "selected": 64,
+            "split": "test"
+          }
+        ],
+        "split_counts": {
+          "certification": 64,
+          "development": 24,
+          "evaluation": 40
+        }
+      }
+    },
+    {
+      "completion": {
+        "calls": 126,
+        "data_hash": "6d07e2a9ce2fe2c3287d03d5b7e1ef9d46afed1272db20d622df843f88432a8e",
+        "errors": 0,
+        "kind": "complete",
+        "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+        "rss_kib": 11874668,
+        "shard": 2
+      },
+      "job": 106116481168,
+      "log_sha256": "cc01e68d37b96b098964de60a8c26c632c6c38fdc59dfdf1402d81888bd6cf39",
+      "protocol": {
+        "calls": 768,
+        "code_sha256": "636c73b06ac19bce2f8e3a6c08f76ba41444efc9ae808e1f583e409671f233d6",
+        "comparisons": {
+          "four_call_orbit": [
+            "identity",
+            "reverse",
+            "complement",
+            "complement_reverse"
+          ],
+          "four_call_order": [
+            "identity",
+            "reverse",
+            "rotation1",
+            "rotation2"
+          ],
+          "one_call": [
+            "identity"
+          ],
+          "two_call_complement": [
+            "identity",
+            "complement"
+          ],
+          "two_call_order": [
+            "identity",
+            "reverse"
+          ]
+        },
+        "data_hash": "6d07e2a9ce2fe2c3287d03d5b7e1ef9d46afed1272db20d622df843f88432a8e",
+        "kind": "protocol",
+        "limitations": [
+          "New to this project, not guaranteed absent from pretraining",
+          "128 exact-source groups; near-duplicate passages may remain",
+          "Existing external labels; no new independent human adjudication",
+          "Both source datasets have binary gold labels; unknown is an available but non-gold outcome",
+          "NOT operator transport is certified; model interpretation and dataset labels are not proven",
+          "Whole cases partitioned, no label-dependent shard selection",
+          "No new weights, no Jev, no paid API"
+        ],
+        "model": "Qwen/Qwen3.5-4B",
+        "name": "duplex-orbit-v1",
+        "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+        "rows": 128,
+        "shard": 2,
+        "shards": 6,
+        "sources": [
+          {
+            "eligible_rows": 2976,
+            "family": "boolq",
+            "previously_exposed_groups_excluded": 16,
+            "repo": "google/boolq",
+            "revision": "35b264d03638db9f4ce671b711558bf7ff0f80d5",
+            "selected": 64,
+            "split": "validation"
+          },
+          {
+            "eligible_rows": 7982,
+            "family": "paws",
+            "previously_exposed_groups_excluded": 16,
+            "repo": "google-research-datasets/paws",
+            "revision": "161ece9501cf0a11f3e48bd356eaa82de46d6a09",
+            "selected": 64,
+            "split": "test"
+          }
+        ],
+        "split_counts": {
+          "certification": 64,
+          "development": 24,
+          "evaluation": 40
+        }
+      }
+    },
+    {
+      "completion": {
+        "calls": 132,
+        "data_hash": "6d07e2a9ce2fe2c3287d03d5b7e1ef9d46afed1272db20d622df843f88432a8e",
+        "errors": 0,
+        "kind": "complete",
+        "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+        "rss_kib": 11848684,
+        "shard": 0
+      },
+      "job": 106116481170,
+      "log_sha256": "20ef3aefa4a529dc4a6c843e2ba14b0abde0fb37d0e81256b37bb862607e7844",
+      "protocol": {
+        "calls": 768,
+        "code_sha256": "636c73b06ac19bce2f8e3a6c08f76ba41444efc9ae808e1f583e409671f233d6",
+        "comparisons": {
+          "four_call_orbit": [
+            "identity",
+            "reverse",
+            "complement",
+            "complement_reverse"
+          ],
+          "four_call_order": [
+            "identity",
+            "reverse",
+            "rotation1",
+            "rotation2"
+          ],
+          "one_call": [
+            "identity"
+          ],
+          "two_call_complement": [
+            "identity",
+            "complement"
+          ],
+          "two_call_order": [
+            "identity",
+            "reverse"
+          ]
+        },
+        "data_hash": "6d07e2a9ce2fe2c3287d03d5b7e1ef9d46afed1272db20d622df843f88432a8e",
+        "kind": "protocol",
+        "limitations": [
+          "New to this project, not guaranteed absent from pretraining",
+          "128 exact-source groups; near-duplicate passages may remain",
+          "Existing external labels; no new independent human adjudication",
+          "Both source datasets have binary gold labels; unknown is an available but non-gold outcome",
+          "NOT operator transport is certified; model interpretation and dataset labels are not proven",
+          "Whole cases partitioned, no label-dependent shard selection",
+          "No new weights, no Jev, no paid API"
+        ],
+        "model": "Qwen/Qwen3.5-4B",
+        "name": "duplex-orbit-v1",
+        "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+        "rows": 128,
+        "shard": 0,
+        "shards": 6,
+        "sources": [
+          {
+            "eligible_rows": 2976,
+            "family": "boolq",
+            "previously_exposed_groups_excluded": 16,
+            "repo": "google/boolq",
+            "revision": "35b264d03638db9f4ce671b711558bf7ff0f80d5",
+            "selected": 64,
+            "split": "validation"
+          },
+          {
+            "eligible_rows": 7982,
+            "family": "paws",
+            "previously_exposed_groups_excluded": 16,
+            "repo": "google-research-datasets/paws",
+            "revision": "161ece9501cf0a11f3e48bd356eaa82de46d6a09",
+            "selected": 64,
+            "split": "test"
+          }
+        ],
+        "split_counts": {
+          "certification": 64,
+          "development": 24,
+          "evaluation": 40
+        }
+      }
+    },
+    {
+      "completion": {
+        "calls": 126,
+        "data_hash": "6d07e2a9ce2fe2c3287d03d5b7e1ef9d46afed1272db20d622df843f88432a8e",
+        "errors": 0,
+        "kind": "complete",
+        "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+        "rss_kib": 11806224,
+        "shard": 3
+      },
+      "job": 106116481190,
+      "log_sha256": "4be4c9b5725e469cbe984c8baf29e5f030cf30c181099c34b11bc8ff5102d9ee",
+      "protocol": {
+        "calls": 768,
+        "code_sha256": "636c73b06ac19bce2f8e3a6c08f76ba41444efc9ae808e1f583e409671f233d6",
+        "comparisons": {
+          "four_call_orbit": [
+            "identity",
+            "reverse",
+            "complement",
+            "complement_reverse"
+          ],
+          "four_call_order": [
+            "identity",
+            "reverse",
+            "rotation1",
+            "rotation2"
+          ],
+          "one_call": [
+            "identity"
+          ],
+          "two_call_complement": [
+            "identity",
+            "complement"
+          ],
+          "two_call_order": [
+            "identity",
+            "reverse"
+          ]
+        },
+        "data_hash": "6d07e2a9ce2fe2c3287d03d5b7e1ef9d46afed1272db20d622df843f88432a8e",
+        "kind": "protocol",
+        "limitations": [
+          "New to this project, not guaranteed absent from pretraining",
+          "128 exact-source groups; near-duplicate passages may remain",
+          "Existing external labels; no new independent human adjudication",
+          "Both source datasets have binary gold labels; unknown is an available but non-gold outcome",
+          "NOT operator transport is certified; model interpretation and dataset labels are not proven",
+          "Whole cases partitioned, no label-dependent shard selection",
+          "No new weights, no Jev, no paid API"
+        ],
+        "model": "Qwen/Qwen3.5-4B",
+        "name": "duplex-orbit-v1",
+        "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+        "rows": 128,
+        "shard": 3,
+        "shards": 6,
+        "sources": [
+          {
+            "eligible_rows": 2976,
+            "family": "boolq",
+            "previously_exposed_groups_excluded": 16,
+            "repo": "google/boolq",
+            "revision": "35b264d03638db9f4ce671b711558bf7ff0f80d5",
+            "selected": 64,
+            "split": "validation"
+          },
+          {
+            "eligible_rows": 7982,
+            "family": "paws",
+            "previously_exposed_groups_excluded": 16,
+            "repo": "google-research-datasets/paws",
+            "revision": "161ece9501cf0a11f3e48bd356eaa82de46d6a09",
+            "selected": 64,
+            "split": "test"
+          }
+        ],
+        "split_counts": {
+          "certification": 64,
+          "development": 24,
+          "evaluation": 40
+        }
+      }
+    }
+  ],
+  "results": {
+    "certification": {
+      "harms": 0,
+      "n": 64,
+      "nll_guard_passed": true,
+      "paired_pvalue": 1.0,
+      "passed_for_diagnostic_population_only": false,
+      "production_promoted": false,
+      "repairs": 0,
+      "scope": "fixed BoolQ/PAWS derived decision diagnostic; independent-source/iid assumption not proven",
+      "unconditional_harm_rate_upper95": 0.04572970233076245
+    },
+    "evaluation_families": {
+      "boolq": {
+        "baseline": {
+          "brier": 0.22915211839088595,
+          "changes": 0,
+          "correct": 16,
+          "harms": 0,
+          "n": 20,
+          "nll": 0.41658492587070794,
+          "repairs": 0,
+          "ties": 0
+        },
+        "certified_policy": {
+          "brier": 0.22915211839088595,
+          "changes": 0,
+          "correct": 16,
+          "harms": 0,
+          "n": 20,
+          "nll": 0.41658492587070794,
+          "repairs": 0,
+          "ties": 0
+        },
+        "complement2": {
+          "brier": 0.2585275397124506,
+          "changes": 2,
+          "correct": 18,
+          "harms": 0,
+          "n": 20,
+          "nll": 0.49419680609964295,
+          "repairs": 2,
+          "ties": 0
+        },
+        "orbit4": {
+          "brier": 0.284298590837357,
+          "changes": 2,
+          "correct": 16,
+          "harms": 1,
+          "n": 20,
+          "nll": 0.5353680009387254,
+          "repairs": 1,
+          "ties": 0
+        },
+        "order2": {
+          "brier": 0.22883642901527784,
+          "changes": 1,
+          "correct": 17,
+          "harms": 0,
+          "n": 20,
+          "nll": 0.4185078668749994,
+          "repairs": 1,
+          "ties": 0
+        },
+        "order4": {
+          "brier": 0.24277198735712585,
+          "changes": 2,
+          "correct": 16,
+          "harms": 1,
+          "n": 20,
+          "nll": 0.44155760462452315,
+          "repairs": 1,
+          "ties": 0
+        }
+      },
+      "paws": {
+        "baseline": {
+          "brier": 0.30542752531772266,
+          "changes": 0,
+          "correct": 17,
+          "harms": 0,
+          "n": 20,
+          "nll": 0.6163851248155374,
+          "repairs": 0,
+          "ties": 0
+        },
+        "certified_policy": {
+          "brier": 0.30542752531772266,
+          "changes": 0,
+          "correct": 17,
+          "harms": 0,
+          "n": 20,
+          "nll": 0.6163851248155374,
+          "repairs": 0,
+          "ties": 0
+        },
+        "complement2": {
+          "brier": 0.3401870535226608,
+          "changes": 0,
+          "correct": 17,
+          "harms": 0,
+          "n": 20,
+          "nll": 0.61288048213738,
+          "repairs": 0,
+          "ties": 0
+        },
+        "orbit4": {
+          "brier": 0.29820047727167165,
+          "changes": 0,
+          "correct": 17,
+          "harms": 0,
+          "n": 20,
+          "nll": 0.5511696763575623,
+          "repairs": 0,
+          "ties": 0
+        },
+        "order2": {
+          "brier": 0.28759318615957385,
+          "changes": 0,
+          "correct": 17,
+          "harms": 0,
+          "n": 20,
+          "nll": 0.5748873793947673,
+          "repairs": 0,
+          "ties": 0
+        },
+        "order4": {
+          "brier": 0.2693151503575745,
+          "changes": 0,
+          "correct": 17,
+          "harms": 0,
+          "n": 20,
+          "nll": 0.5571623323752102,
+          "repairs": 0,
+          "ties": 0
+        }
+      }
+    },
+    "metrics": {
+      "all": {
+        "baseline": {
+          "brier": 0.2840253564851454,
+          "changes": 0,
+          "correct": 107,
+          "harms": 0,
+          "n": 128,
+          "nll": 0.5462451070082487,
+          "repairs": 0,
+          "ties": 0
+        },
+        "certified_policy": {
+          "brier": 0.2840253564851454,
+          "changes": 0,
+          "correct": 107,
+          "harms": 0,
+          "n": 128,
+          "nll": 0.5462451070082487,
+          "repairs": 0,
+          "ties": 0
+        },
+        "complement2": {
+          "brier": 0.319984397860879,
+          "changes": 9,
+          "correct": 103,
+          "harms": 6,
+          "n": 128,
+          "nll": 0.587791351115923,
+          "repairs": 2,
+          "ties": 0
+        },
+        "orbit4": {
+          "brier": 0.3169167750928997,
+          "changes": 7,
+          "correct": 107,
+          "harms": 3,
+          "n": 128,
+          "nll": 0.5823924285752279,
+          "repairs": 3,
+          "ties": 0
+        },
+        "order2": {
+          "brier": 0.2765851986323539,
+          "changes": 6,
+          "correct": 106,
+          "harms": 3,
+          "n": 128,
+          "nll": 0.5287161712378788,
+          "repairs": 2,
+          "ties": 0
+        },
+        "order4": {
+          "brier": 0.2789498452795702,
+          "changes": 7,
+          "correct": 105,
+          "harms": 4,
+          "n": 128,
+          "nll": 0.533405076562742,
+          "repairs": 2,
+          "ties": 0
+        },
+        "order4_arithmetic": {
+          "brier": 0.2845387304786833,
+          "changes": 6,
+          "correct": 105,
+          "harms": 4,
+          "n": 128,
+          "nll": 0.5463001269605023,
+          "repairs": 2,
+          "ties": 0
+        },
+        "trust_0.05_0": {
+          "brier": 0.3024626374433249,
+          "changes": 1,
+          "correct": 106,
+          "harms": 1,
+          "n": 128,
+          "nll": 0.5792122669955481,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.05_0.25": {
+          "brier": 0.301939870064403,
+          "changes": 1,
+          "correct": 106,
+          "harms": 1,
+          "n": 128,
+          "nll": 0.5787208740804656,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.05_0.75": {
+          "brier": 0.29574067703507656,
+          "changes": 0,
+          "correct": 107,
+          "harms": 0,
+          "n": 128,
+          "nll": 0.5700067897572972,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.2_0": {
+          "brier": 0.3157877597988453,
+          "changes": 2,
+          "correct": 106,
+          "harms": 1,
+          "n": 128,
+          "nll": 0.5872965376386885,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.2_0.25": {
+          "brier": 0.31525815246252176,
+          "changes": 2,
+          "correct": 106,
+          "harms": 1,
+          "n": 128,
+          "nll": 0.586797647866306,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.2_0.75": {
+          "brier": 0.305013845319078,
+          "changes": 1,
+          "correct": 107,
+          "harms": 0,
+          "n": 128,
+          "nll": 0.5723228735137645,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.5_0": {
+          "brier": 0.3176258649494578,
+          "changes": 2,
+          "correct": 106,
+          "harms": 1,
+          "n": 128,
+          "nll": 0.5839953126858088,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.5_0.25": {
+          "brier": 0.3170962576131343,
+          "changes": 2,
+          "correct": 106,
+          "harms": 1,
+          "n": 128,
+          "nll": 0.5834964229134265,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.5_0.75": {
+          "brier": 0.30751027868892644,
+          "changes": 1,
+          "correct": 107,
+          "harms": 0,
+          "n": 128,
+          "nll": 0.5697222684172074,
+          "repairs": 0,
+          "ties": 0
+        }
+      },
+      "certification": {
+        "baseline": {
+          "brier": 0.32131054985351537,
+          "changes": 0,
+          "correct": 51,
+          "harms": 0,
+          "n": 64,
+          "nll": 0.6183791799249849,
+          "repairs": 0,
+          "ties": 0
+        },
+        "certified_policy": {
+          "brier": 0.32131054985351537,
+          "changes": 0,
+          "correct": 51,
+          "harms": 0,
+          "n": 64,
+          "nll": 0.6183791799249849,
+          "repairs": 0,
+          "ties": 0
+        },
+        "complement2": {
+          "brier": 0.34587623049083477,
+          "changes": 5,
+          "correct": 47,
+          "harms": 4,
+          "n": 64,
+          "nll": 0.6257551798008063,
+          "repairs": 0,
+          "ties": 0
+        },
+        "orbit4": {
+          "brier": 0.3484491520352801,
+          "changes": 4,
+          "correct": 52,
+          "harms": 1,
+          "n": 64,
+          "nll": 0.6253669422992526,
+          "repairs": 2,
+          "ties": 0
+        },
+        "order2": {
+          "brier": 0.32069310967024234,
+          "changes": 4,
+          "correct": 50,
+          "harms": 2,
+          "n": 64,
+          "nll": 0.6073737833437982,
+          "repairs": 1,
+          "ties": 0
+        },
+        "order4": {
+          "brier": 0.33044916876124386,
+          "changes": 4,
+          "correct": 50,
+          "harms": 2,
+          "n": 64,
+          "nll": 0.6211418953719001,
+          "repairs": 1,
+          "ties": 0
+        },
+        "order4_arithmetic": {
+          "brier": 0.3329368878478647,
+          "changes": 3,
+          "correct": 50,
+          "harms": 2,
+          "n": 64,
+          "nll": 0.6280237956487248,
+          "repairs": 1,
+          "ties": 0
+        },
+        "trust_0.05_0": {
+          "brier": 0.3368972749651096,
+          "changes": 0,
+          "correct": 51,
+          "harms": 0,
+          "n": 64,
+          "nll": 0.6515726030056959,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.05_0.25": {
+          "brier": 0.33539024564970343,
+          "changes": 0,
+          "correct": 51,
+          "harms": 0,
+          "n": 64,
+          "nll": 0.6496515314836327,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.05_0.75": {
+          "brier": 0.3327489087831535,
+          "changes": 0,
+          "correct": 51,
+          "harms": 0,
+          "n": 64,
+          "nll": 0.6474252649862716,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.2_0": {
+          "brier": 0.34787441693714816,
+          "changes": 1,
+          "correct": 51,
+          "harms": 0,
+          "n": 64,
+          "nll": 0.6413282092206372,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.2_0.25": {
+          "brier": 0.34635370770693863,
+          "changes": 1,
+          "correct": 51,
+          "harms": 0,
+          "n": 64,
+          "nll": 0.639392143983974,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.2_0.75": {
+          "brier": 0.3403969547208597,
+          "changes": 1,
+          "correct": 51,
+          "harms": 0,
+          "n": 64,
+          "nll": 0.6329510444995932,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.5_0": {
+          "brier": 0.3461496104607193,
+          "changes": 1,
+          "correct": 51,
+          "harms": 0,
+          "n": 64,
+          "nll": 0.6267850128962869,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.5_0.25": {
+          "brier": 0.3446289012305098,
+          "changes": 1,
+          "correct": 51,
+          "harms": 0,
+          "n": 64,
+          "nll": 0.6248489476596237,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.5_0.75": {
+          "brier": 0.3406924235947176,
+          "changes": 1,
+          "correct": 51,
+          "harms": 0,
+          "n": 64,
+          "nll": 0.6207986788681354,
+          "repairs": 0,
+          "ties": 0
+        }
+      },
+      "development": {
+        "baseline": {
+          "brier": 0.2124907318875607,
+          "changes": 0,
+          "correct": 23,
+          "harms": 0,
+          "n": 24,
+          "nll": 0.40348771533882877,
+          "repairs": 0,
+          "ties": 0
+        },
+        "certified_policy": {
+          "brier": 0.2124907318875607,
+          "changes": 0,
+          "correct": 23,
+          "harms": 0,
+          "n": 24,
+          "nll": 0.40348771533882877,
+          "repairs": 0,
+          "ties": 0
+        },
+        "complement2": {
+          "brier": 0.2853180129198691,
+          "changes": 2,
+          "correct": 21,
+          "harms": 2,
+          "n": 24,
+          "nll": 0.5436423196185872,
+          "repairs": 0,
+          "ties": 0
+        },
+        "orbit4": {
+          "brier": 0.27560917164386095,
+          "changes": 1,
+          "correct": 22,
+          "harms": 1,
+          "n": 24,
+          "nll": 0.5329997085229689,
+          "repairs": 0,
+          "ties": 0
+        },
+        "order2": {
+          "brier": 0.18958142093953168,
+          "changes": 1,
+          "correct": 22,
+          "harms": 1,
+          "n": 24,
+          "nll": 0.37232678579375295,
+          "repairs": 0,
+          "ties": 0
+        },
+        "order4": {
+          "brier": 0.1797954433654736,
+          "changes": 1,
+          "correct": 22,
+          "harms": 1,
+          "n": 24,
+          "nll": 0.35618207317644607,
+          "repairs": 0,
+          "ties": 0
+        },
+        "order4_arithmetic": {
+          "brier": 0.19204273324044316,
+          "changes": 1,
+          "correct": 22,
+          "harms": 1,
+          "n": 24,
+          "nll": 0.38315200812299305,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.05_0": {
+          "brier": 0.23400756178788426,
+          "changes": 1,
+          "correct": 22,
+          "harms": 1,
+          "n": 24,
+          "nll": 0.45773425293005404,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.05_0.25": {
+          "brier": 0.23276445003824633,
+          "changes": 1,
+          "correct": 22,
+          "harms": 1,
+          "n": 24,
+          "nll": 0.4564754943414128,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.05_0.75": {
+          "brier": 0.2217088184841548,
+          "changes": 0,
+          "correct": 23,
+          "harms": 0,
+          "n": 24,
+          "nll": 0.43822167296449993,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.2_0": {
+          "brier": 0.24939005557210012,
+          "changes": 1,
+          "correct": 22,
+          "harms": 1,
+          "n": 24,
+          "nll": 0.4898079811489353,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.2_0.25": {
+          "brier": 0.24814694382246225,
+          "changes": 1,
+          "correct": 22,
+          "harms": 1,
+          "n": 24,
+          "nll": 0.4885492225602941,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.2_0.75": {
+          "brier": 0.2305600600534159,
+          "changes": 0,
+          "correct": 23,
+          "harms": 0,
+          "n": 24,
+          "nll": 0.4595423426472955,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.5_0": {
+          "brier": 0.25556807031396567,
+          "changes": 1,
+          "correct": 22,
+          "harms": 1,
+          "n": 24,
+          "nll": 0.5000111884124475,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.5_0.25": {
+          "brier": 0.25432495856432774,
+          "changes": 1,
+          "correct": 22,
+          "harms": 1,
+          "n": 24,
+          "nll": 0.49875242982380624,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.5_0.75": {
+          "brier": 0.23673807479528142,
+          "changes": 0,
+          "correct": 23,
+          "harms": 0,
+          "n": 24,
+          "nll": 0.46974554991080764,
+          "repairs": 0,
+          "ties": 0
+        }
+      },
+      "evaluation": {
+        "baseline": {
+          "brier": 0.26728982185430433,
+          "changes": 0,
+          "correct": 33,
+          "harms": 0,
+          "n": 40,
+          "nll": 0.5164850253431228,
+          "repairs": 0,
+          "ties": 0
+        },
+        "certified_policy": {
+          "brier": 0.26728982185430433,
+          "changes": 0,
+          "correct": 33,
+          "harms": 0,
+          "n": 40,
+          "nll": 0.5164850253431228,
+          "repairs": 0,
+          "ties": 0
+        },
+        "complement2": {
+          "brier": 0.29935729661755567,
+          "changes": 2,
+          "correct": 35,
+          "harms": 0,
+          "n": 40,
+          "nll": 0.5535386441185114,
+          "repairs": 2,
+          "ties": 0
+        },
+        "orbit4": {
+          "brier": 0.29124953405451437,
+          "changes": 2,
+          "correct": 33,
+          "harms": 1,
+          "n": 40,
+          "nll": 0.5432688386481439,
+          "repairs": 1,
+          "ties": 0
+        },
+        "order2": {
+          "brier": 0.2582148075874259,
+          "changes": 1,
+          "correct": 34,
+          "harms": 0,
+          "n": 40,
+          "nll": 0.4966976231348834,
+          "repairs": 1,
+          "ties": 0
+        },
+        "order4": {
+          "brier": 0.25604356885735025,
+          "changes": 2,
+          "correct": 33,
+          "harms": 1,
+          "n": 40,
+          "nll": 0.49935996849986675,
+          "repairs": 1,
+          "ties": 0
+        },
+        "order4_arithmetic": {
+          "brier": 0.262599277030937,
+          "changes": 2,
+          "correct": 33,
+          "harms": 1,
+          "n": 40,
+          "nll": 0.5134311283618522,
+          "repairs": 1,
+          "ties": 0
+        },
+        "trust_0.05_0": {
+          "brier": 0.28844026280173374,
+          "changes": 0,
+          "correct": 33,
+          "harms": 0,
+          "n": 40,
+          "nll": 0.5363225378186078,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.05_0.25": {
+          "brier": 0.28992452114361633,
+          "changes": 0,
+          "correct": 33,
+          "harms": 0,
+          "n": 40,
+          "nll": 0.5385790500788297,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.05_0.75": {
+          "brier": 0.2809466213687065,
+          "changes": 0,
+          "correct": 33,
+          "harms": 0,
+          "n": 40,
+          "nll": 0.5252082994666167,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.2_0": {
+          "brier": 0.30428773091360806,
+          "changes": 0,
+          "correct": 33,
+          "harms": 0,
+          "n": 40,
+          "nll": 0.5593389970014228,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.2_0.25": {
+          "brier": 0.30577198925549065,
+          "changes": 0,
+          "correct": 33,
+          "harms": 0,
+          "n": 40,
+          "nll": 0.5615955092616446,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.2_0.75": {
+          "brier": 0.29307314143562463,
+          "changes": 0,
+          "correct": 33,
+          "harms": 0,
+          "n": 40,
+          "nll": 0.5429861184563205,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.5_0": {
+          "brier": 0.3092225489127348,
+          "changes": 0,
+          "correct": 33,
+          "harms": 0,
+          "n": 40,
+          "nll": 0.565922266913061,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.5_0.25": {
+          "brier": 0.3107068072546174,
+          "changes": 0,
+          "correct": 33,
+          "harms": 0,
+          "n": 40,
+          "nll": 0.5681787791732827,
+          "repairs": 0,
+          "ties": 0
+        },
+        "trust_0.5_0.75": {
+          "brier": 0.29688216917584775,
+          "changes": 0,
+          "correct": 33,
+          "harms": 0,
+          "n": 40,
+          "nll": 0.5479860427995624,
+          "repairs": 0,
+          "ties": 0
+        }
+      }
+    },
+    "selected_on_development": "baseline",
+    "timing": {
+      "baseline": {
+        "calls": 1,
+        "p50_seconds": 4.066761357500013,
+        "p95_seconds": 6.206918788849987
+      },
+      "complement2": {
+        "calls": 2,
+        "p50_seconds": 8.147242733500207,
+        "p95_seconds": 12.416225778049949
+      },
+      "orbit4": {
+        "calls": 4,
+        "p50_seconds": 16.3492010650005,
+        "p95_seconds": 24.816379227149923
+      },
+      "order2": {
+        "calls": 2,
+        "p50_seconds": 8.132889712999997,
+        "p95_seconds": 12.388777548149937
+      },
+      "order4": {
+        "calls": 4,
+        "p50_seconds": 16.225815655500043,
+        "p95_seconds": 24.994941022849996
+      }
+    },
+    "timing_qualification": "Sum of measured sequential forward/tokenization call durations on one shard per case; excludes loading, proof checks and transport. Counts match; token lengths need not match. Not Mac or service latency."
+  },
+  "run": 35525372043,
+  "verified_calls": 768
+}
