@@ -1,0 +1,110 @@
+name: Duplex v4 JevBench public evaluation
+on:
+  push:
+    branches: ['research/duplex-v4-benchmark-20260920']
+    paths: ['.github/workflows/duplex-v4-jevbench.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  await_training:
+    if: github.repository == 'Jaksenc/parameter-golf' && github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Require completed original protocol training before any benchmark call
+        run: |
+          python -u - <<'PY'
+          import json,os,time,urllib.request
+          base='https://api.github.com/repos/Jaksenc/parameter-golf/actions/runs/35545335396'
+          def read(suffix):
+              req=urllib.request.Request(base+suffix,headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'})
+              with urllib.request.urlopen(req,timeout=40) as f:return json.load(f)
+          for i in range(55):
+              jobs=read('/jobs?per_page=100')['jobs']
+              train=[j for j in jobs if j['name']=='train']
+              if train and train[0]['status']=='completed':
+                  if train[0]['conclusion']!='success':raise RuntimeError('Training did not complete successfully; no benchmark substitute')
+                  break
+              state=read('')
+              if state['status']=='completed':raise RuntimeError('Source workflow ended without successful training')
+              if i%5==0:print(json.dumps({'check':i,'source_status':state['status'],'training_status':train[0]['status'] if train else 'not_started'}),flush=True)
+              time.sleep(20)
+          else:raise RuntimeError('Bounded wait reached; no incomplete checkpoint was scored')
+          PY
+  benchmark:
+    needs: await_training
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix: {shard: [0, 1, 2, 3, 4, 5, 6, 7]}
+    env:
+      GH_TOKEN: ${{ github.token }}
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      HF_HUB_DOWNLOAD_TIMEOUT: '120'
+    defaults:
+      run: {working-directory: experiments/duplex-v4}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with: {persist-credentials: false}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - name: Install identical model runtime
+        run: |
+          grep -qw bf16 /proc/cpuinfo
+          python -m pip install --no-cache-dir torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir -r requirements.txt
+      - name: Score the entire fixed external partition and verify full-forward adapter agreement
+        timeout-minutes: 17
+        run: python -u jevbench_v4_runtime.py --shard '${{ matrix.shard }}'
+      - name: Preserve source and runtime receipt
+        if: always()
+        run: |
+          mkdir -p 'jevbench-v4-${{ matrix.shard }}'
+          cp jevbench_v4.py jevbench_v4_runtime.py 'jevbench-v4-${{ matrix.shard }}/'
+          python -m pip freeze > 'jevbench-v4-${{ matrix.shard }}/dependencies.txt'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: v4-jevbench-${{ matrix.shard }}
+          path: |
+            experiments/duplex-v4/jevbench-v4-${{ matrix.shard }}/records.jsonl
+            experiments/duplex-v4/jevbench-v4-${{ matrix.shard }}/protocol.json
+            experiments/duplex-v4/jevbench-v4-${{ matrix.shard }}/complete.json
+            experiments/duplex-v4/jevbench-v4-${{ matrix.shard }}/failure.json
+            experiments/duplex-v4/jevbench-v4-${{ matrix.shard }}/dependencies.txt
+            experiments/duplex-v4/jevbench-v4-${{ matrix.shard }}/*.py
+          retention-days: 3
+          if-no-files-found: error
+  audit:
+    needs: benchmark
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    env:
+      GH_TOKEN: ${{ github.token }}
+    defaults:
+      run: {working-directory: experiments/duplex-v4}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with: {persist-credentials: false}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - name: Verify all score vectors and apply the pinned official scorer
+        run: |
+          python -m pip install --no-cache-dir torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir numpy==2.4.6
+          python -u jevbench_v4_runtime.py --audit '${{ github.run_id }}'
+          cp jevbench_v4.py jevbench_v4_runtime.py _jevbench_v4_applied.py jevbench-v4-audit/
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: v4-jevbench-complete
+          path: experiments/duplex-v4/jevbench-v4-audit/
+          retention-days: 3
+          if-no-files-found: error
