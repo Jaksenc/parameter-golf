@@ -73,7 +73,7 @@ def extract(rows,model,tokenizer,hashes,path,phase,shard,shards):
                 slots_ref=slots;capture.clear();call=time.perf_counter()
                 model(**encoded,use_cache=False,logits_to_keep=1)
                 if not torch.equal(capture['r']+capture['y'],capture['norm_in']):raise RuntimeError('Terminal residual reconstruction failed')
-                h=qwen_rms(capture['norm_in'],norm.weight,norm.variance_epsilon)
+                h=qwen_rms(capture['norm_in'],norm.weight,norm.eps)
                 error=float((h.float()-capture['h'].float()).abs().max());max_norm_error=max(max_norm_error,error)
                 if error>2e-5:raise RuntimeError('Cached normalization differs from native model')
                 w=head.weight[slots].float();bias=head.bias[slots].float() if head.bias is not None else None
@@ -89,7 +89,7 @@ def extract(rows,model,tokenizer,hashes,path,phase,shard,shards):
     arrays={k:torch.stack(v) for k,v in arrays.items()}
     arrays['answer_weight']=head.weight[slots_ref].detach().float()
     if head.bias is not None:arrays['answer_bias']=head.bias[slots_ref].detach().float()
-    arrays['norm_weight']=norm.weight.detach().float();arrays['norm_epsilon']=norm.variance_epsilon
+    arrays['norm_weight']=norm.weight.detach().float();arrays['norm_epsilon']=norm.eps
     norm_source=inspect.getsource(type(norm))
     write_cache(path,arrays,{'kind':'qwen3.5-4b-terminal-v4','model_revision':REVISION,'model_hashes':hashes,
         'data_hash':DATA_HASH,'module':name,'norm_source_hash':hashlib.sha256(norm_source.encode()).hexdigest(),
