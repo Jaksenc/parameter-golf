@@ -1,0 +1,39 @@
+name: Preserve JevBench public reference outcomes
+on:
+  push:
+    branches: ['research/free-decision-baselines-20260920']
+    paths: ['.github/workflows/jevbench-public-reference-receipt.yml']
+permissions:
+  contents: read
+jobs:
+  receipt:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - name: Retrieve pinned published reference; no model calls
+        run: |
+          python - <<'PY'
+          import hashlib,json,pathlib,urllib.request
+          ref='7128f5cf445ca41e4da1bdc7c84f97926250724d'
+          path='results/v1.2/jevbench-v1.2-per-task.json'
+          url='https://raw.githubusercontent.com/fstandhartinger/jevbench/'+ref+'/'+path
+          req=urllib.request.Request(url,headers={'User-Agent':'Duplex-evidence-receipt/1'})
+          with urllib.request.urlopen(req,timeout=60) as r:data=r.read(3000001)
+          assert len(data)<=3000000
+          blob=hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
+          assert blob=='f9993fc449faf54ad61729f692504faf33d0e7ba'
+          parsed=json.loads(data)
+          assert len(parsed['tasks'])==231
+          root=pathlib.Path('reference');root.mkdir()
+          (root/'published-per-task.json').write_bytes(data)
+          receipt={'source':url,'revision':ref,'git_blob':blob,'sha256':hashlib.sha256(data).hexdigest(),'bytes':len(data),'public_tasks':len(parsed['tasks']),'qualification':'Previously published third-party measurements. No system rerun, no probability fitting, no training. Compare only identical public IDs; do not infer a full-suite rank.'}
+          (root/'receipt.json').write_text(json.dumps(receipt,sort_keys=True,indent=2))
+          print(json.dumps(receipt,sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: jevbench-public-reference-receipt
+          path: reference/
+          retention-days: 3
+          if-no-files-found: error
