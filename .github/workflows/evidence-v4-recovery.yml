@@ -1,0 +1,136 @@
+name: Evidence v4 - complete interrupted experiment
+on:
+  push:
+    branches: ['research/anchor-evidence-v4-20260921']
+    paths: ['.github/workflows/evidence-v4-recovery.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  prepare:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+      missing: ${{ steps.plan.outputs.missing }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 35555340129
+          name: jev-reconstruction-corrected-complete
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 35631351186
+          pattern: evidence-fixed-shard-*
+          path: original-records
+      - id: plan
+        name: Validate all saved records and partition only missing input IDs
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          python -m py_compile recover_evidence_v4.py
+          python -u recover_evidence_v4.py prepare
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: evidence-recovery-prepared
+          path: |
+            recovery-plan/
+            original-records/
+            reconstruction-inputs/
+            evidence_v4.py
+            run_evidence_v4.py
+            recover_evidence_v4.py
+            reconstruct_v1.py
+            jevbench_public_v1.py
+            EVIDENCE_PROTOCOL.md
+            EVIDENCE_STATIC_AUDIT.md
+          retention-days: 14
+          if-no-files-found: error
+  recover:
+    needs: prepare
+    if: needs.prepare.outputs.missing != '0'
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 18
+    strategy:
+      fail-fast: false
+      max-parallel: 16
+      matrix: ${{ fromJSON(needs.prepare.outputs.matrix) }}
+    env:
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      MKL_NUM_THREADS: '4'
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      HF_HUB_DOWNLOAD_TIMEOUT: '120'
+    steps:
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: evidence-recovery-prepared
+      - name: Install the unchanged CPU inference runtime
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          grep -qw bf16 /proc/cpuinfo
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6'
+      - name: Run assigned missing cases only
+        run: python -u recover_evidence_v4.py run --shard '${{ matrix.shard }}' --out 'evidence-recovered-${{ matrix.shard }}'
+      - name: Record installed dependencies
+        if: always()
+        run: |
+          mkdir -p 'evidence-recovered-${{ matrix.shard }}'
+          python -m pip freeze > 'evidence-recovered-${{ matrix.shard }}/dependencies.txt'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: evidence-recovered-${{ matrix.shard }}
+          path: evidence-recovered-${{ matrix.shard }}/
+          retention-days: 14
+          if-no-files-found: error
+  aggregate:
+    needs: [prepare, recover]
+    if: always() && needs.prepare.result == 'success' && (needs.recover.result == 'success' || needs.recover.result == 'skipped')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: evidence-recovery-prepared
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: evidence-recovered-*
+          path: recovered-records
+      - name: Require complete unchanged population and replay every expression
+        run: python -u recover_evidence_v4.py aggregate
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: evidence-v4-recovered-complete
+          path: |
+            completed/
+            recovered-records/
+            recovery-plan/
+            original-records/
+            reconstruction-inputs/
+            evidence_v4.py
+            run_evidence_v4.py
+            recover_evidence_v4.py
+            reconstruct_v1.py
+            jevbench_public_v1.py
+            EVIDENCE_PROTOCOL.md
+            EVIDENCE_STATIC_AUDIT.md
+          retention-days: 14
+          if-no-files-found: error
