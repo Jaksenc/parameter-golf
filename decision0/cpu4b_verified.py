@@ -53,7 +53,9 @@ class RT:
   def pre_r(m,args): self.cap['r']=args[0][:,-1,:].detach().clone()
   def pre_x(m,args): self.cap['x']=args[0][:,-1,:].detach().clone()
   def post_y(m,args,y): self.cap['y']=y[:,-1,:].detach().clone()
-  def pre_n(m,args): self.cap['norm_in']=args[0][:,-1,:].detach().clone()
+  def pre_n(m,args):
+   x=args[0]
+   if x.ndim==3: self.cap['norm_in']=x[:,-1,:].detach().clone()
   self.hooks=[layer.post_attention_layernorm.register_forward_pre_hook(pre_r),self.down.register_forward_pre_hook(pre_x),self.down.register_forward_hook(post_y),self.norm.register_forward_pre_hook(pre_n)]
   self.meta={'model':MODEL,'revision':REV,'hashes':hashes,'torch':torch.__version__,'transformers':transformers.__version__,'layer':self.layer_name,'dtype':'bf16 backbone'}
  def encode(self,row):
@@ -196,7 +198,12 @@ def main():
   hh=rt.down.register_forward_hook(hook)
   try:
    for idx in (0,80,160,230):
-    r=sem_row_from_bench(bench[idx]); full=rt.cache(r)['native']; cached_z,_=ad.logits_hidden(cached['bench'][idx]); err=float((full-cached_z.detach()).abs().max()); checks.append({'arm':arm,'id':bench[idx]['id'],'max_logit_diff':err})
+    r=sem_row_from_bench(bench[idx]); enc,slots,_,_=rt.encode(r)
+    import inspect
+    args=dict(enc,use_cache=False,return_dict=True)
+    if 'logits_to_keep' in inspect.signature(rt.model.forward).parameters: args['logits_to_keep']=1
+    with torch.no_grad(): full=rt.model(**args).logits[:, -1, :][0,slots].float().detach().cpu()
+    cached_z,_=ad.logits_hidden(cached['bench'][idx]); err=float((full-cached_z.detach()).abs().max()); checks.append({'arm':arm,'id':bench[idx]['id'],'max_logit_diff':err})
   finally: hh.remove()
  dump(out/'checks.json',checks); dump(out/'results.json',{'results':results,'checks':checks,'benchmark_public_only':True,'official_score':None,'training_uses_jevbench':False,'seed':SEED,'method':'cached terminal FFN low-rank adaptation, exact full-model equivalence spot checks'}); rt.close(); emit('complete',results=results,checks=checks)
 
