@@ -2,6 +2,7 @@ name: Decision-0 verified CPU 4B study
 on:
   push:
     branches: ['decision0/verified-cpu4b-20260921']
+    paths: ['.github/workflows/decision0-cpu4b-verified.yml']
 permissions:
   contents: read
   actions: read
