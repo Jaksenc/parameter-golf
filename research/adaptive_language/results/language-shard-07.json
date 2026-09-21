@@ -1,0 +1,1719 @@
+{
+  "status": "completed",
+  "shard": 7,
+  "shards": 12,
+  "run_id": "35652499808",
+  "source_commit": "d8212eabc5e1c5c93f8757ff8b3e81a4b960124d",
+  "core": {
+    "decoded_sha256": "6b37dcfc4a451d5dba399080ba362b5b5320b03e977bf49532aab2be3cd108ca",
+    "transport_repairs": [
+      "TK+TVJrofJK8b2RR",
+      "dXZ3vX7tDJtd",
+      "KuOR3d/cy5RJK"
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/openai/grade-school-math/3101c7d5072418e28b9008a6636bde82a006892c/grade_school_math/data/test.jsonl",
+      "sha256": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14",
+      "bytes": 749738
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/boolean_expressions.json",
+      "sha256": "ea6c754ec005e2d3f2d085d349a740f593b5764f32ea4638ffed4cfc0061b12a",
+      "bytes": 17172
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/causal_judgement.json",
+      "sha256": "6e8bca44dd402008ed41c07a3d0a1d5e7b03db7001a7e002fcdf4c60985ea081",
+      "bytes": 202943
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/date_understanding.json",
+      "sha256": "0148d4ac5fca05b2f82373e5fef7208e15363b9c6079493034d77b3dab496bf5",
+      "bytes": 61760
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/disambiguation_qa.json",
+      "sha256": "cf06df9ebf911b883671cb1b35d3fbd1a1c306b19b9e9a012407e596c85fe8c6",
+      "bytes": 85255
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/dyck_languages.json",
+      "sha256": "3f9badedf15c2be1ce53d94fdf016299bb30ba231ef087ab9f51a7ed6d0bdc25",
+      "bytes": 43814
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/formal_fallacies.json",
+      "sha256": "4c1adb664821157faade1d4153685403afcc02648f3c180a608a18f17f589629",
+      "bytes": 145562
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/geometric_shapes.json",
+      "sha256": "07be68a124420caa2ebc0b2c858ad79fc55c5c8806170e496e1e17ebfb11f31c",
+      "bytes": 77242
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/hyperbaton.json",
+      "sha256": "b6d7f55c75f5d02f2987a4f3123802dfa093872089a56a334144aae8a7264fdc",
+      "bytes": 44706
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/logical_deduction_five_objects.json",
+      "sha256": "d2df31394b903b7f0e085d42a69572a092987856eac076799017d70ef266fa8f",
+      "bytes": 155477
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/logical_deduction_seven_objects.json",
+      "sha256": "2896c7e3482eea318dd37bcc370d24ec3cc91e8374c1784287b5dbd38a529e33",
+      "bytes": 198404
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/logical_deduction_three_objects.json",
+      "sha256": "e590fae72e3a6041fbd23bd8ff6b74baf44ca563f6ba40a041c55e7b867c1681",
+      "bytes": 112213
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/movie_recommendation.json",
+      "sha256": "a8b53a87ee21a865b7248e694f388a9b8f7cf6b839b11d44796a2dd3fc088983",
+      "bytes": 57684
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/multistep_arithmetic_two.json",
+      "sha256": "c9d5a6433c9b78256422a15c78463949c8bec8d85607aa28b52d7234ad4a8595",
+      "bytes": 18325
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/navigate.json",
+      "sha256": "b7944dfd3c81da5c4815bd75b00d6fa3c64140823498e78ed496f4c3d36f7f0d",
+      "bytes": 55163
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/object_counting.json",
+      "sha256": "8acef14dbbdd40d2326ef7755750b6b5fe919fef06276af1bab3f1c297f022ff",
+      "bytes": 35890
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/penguins_in_a_table.json",
+      "sha256": "bb87ee449698eee51215e025a453b1bcb2f5e6589c2063b2c79e68b8f0655228",
+      "bytes": 74516
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/reasoning_about_colored_objects.json",
+      "sha256": "0a8850cf95166020fce7a78244026ceedd7ea839302471512b4f8744e85a6a49",
+      "bytes": 98694
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/ruin_names.json",
+      "sha256": "b6f723aef2bafdd4c7bfc3c7e0329c7e8a8279391a609969c8ed76c9319f5f7f",
+      "bytes": 53178
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/salient_translation_error_detection.json",
+      "sha256": "becf3eb8dd53c821a555ecd5c1334ecd93eb25f980e63be963c518e7138de5da",
+      "bytes": 286443
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/snarks.json",
+      "sha256": "54a0661fe2de06167645a4965e6bcf963c4ba307e76262a7c750998b0e3d0d0e",
+      "bytes": 42646
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/sports_understanding.json",
+      "sha256": "63ca262858f6176864515cd8cf53cdaa40839ebecc155b726d77930855d167bf",
+      "bytes": 28617
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/temporal_sequences.json",
+      "sha256": "92a1189faaa84aacc4c405aaa13f13f48c2992eb884772eedb622505252baef5",
+      "bytes": 148176
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/tracking_shuffled_objects_five_objects.json",
+      "sha256": "2063a46a4fb484236ed4310523606543a3e1dd4a4dc34eda65d407910ece25a5",
+      "bytes": 169722
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/tracking_shuffled_objects_seven_objects.json",
+      "sha256": "b59fd05b850c37cf57cb514ae1e6975c00b1638ade2291722056b2af3c54084d",
+      "bytes": 214906
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/tracking_shuffled_objects_three_objects.json",
+      "sha256": "546cc7bf10c6a01a6a4c17ae28a4966485f21f29fd5d111f37858ec78e354f6b",
+      "bytes": 128736
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/web_of_lies.json",
+      "sha256": "3e60323f8514a107fdb4edf35f8832a9171c5a09c0eaa47823559de905e8ab8b",
+      "bytes": 52964
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/word_sorting.json",
+      "sha256": "2a6132d2c99f00d0d2eb1113ac6b4a918bd969d863c48749210d969713db8d43",
+      "bytes": 66300
+    }
+  ],
+  "selected_ids": [
+    "bbh:boolean_expressions:140",
+    "bbh:boolean_expressions:236",
+    "bbh:causal_judgement:10",
+    "bbh:causal_judgement:168",
+    "bbh:date_understanding:180",
+    "bbh:date_understanding:69",
+    "bbh:disambiguation_qa:172",
+    "bbh:disambiguation_qa:51",
+    "bbh:dyck_languages:49",
+    "bbh:dyck_languages:82",
+    "bbh:formal_fallacies:213",
+    "bbh:formal_fallacies:84",
+    "bbh:geometric_shapes:102",
+    "bbh:geometric_shapes:184",
+    "bbh:hyperbaton:15",
+    "bbh:hyperbaton:219",
+    "bbh:logical_deduction_five_objects:115",
+    "bbh:logical_deduction_five_objects:228",
+    "bbh:logical_deduction_seven_objects:231",
+    "bbh:logical_deduction_seven_objects:67",
+    "bbh:logical_deduction_three_objects:111",
+    "bbh:logical_deduction_three_objects:165",
+    "bbh:movie_recommendation:195",
+    "bbh:movie_recommendation:197",
+    "bbh:multistep_arithmetic_two:125",
+    "bbh:multistep_arithmetic_two:151",
+    "bbh:navigate:112",
+    "bbh:navigate:41",
+    "bbh:object_counting:135",
+    "bbh:object_counting:61",
+    "bbh:penguins_in_a_table:141",
+    "bbh:penguins_in_a_table:89",
+    "bbh:reasoning_about_colored_objects:120",
+    "bbh:reasoning_about_colored_objects:42",
+    "bbh:ruin_names:11",
+    "bbh:ruin_names:144",
+    "bbh:salient_translation_error_detection:5",
+    "bbh:salient_translation_error_detection:93",
+    "bbh:snarks:167",
+    "bbh:snarks:93",
+    "bbh:sports_understanding:179",
+    "bbh:sports_understanding:49",
+    "bbh:temporal_sequences:158",
+    "bbh:temporal_sequences:214",
+    "bbh:tracking_shuffled_objects_five_objects:159",
+    "bbh:tracking_shuffled_objects_five_objects:175",
+    "bbh:tracking_shuffled_objects_seven_objects:150",
+    "bbh:tracking_shuffled_objects_seven_objects:183",
+    "bbh:tracking_shuffled_objects_three_objects:215",
+    "bbh:tracking_shuffled_objects_three_objects:233",
+    "bbh:web_of_lies:190",
+    "bbh:web_of_lies:230",
+    "bbh:word_sorting:200",
+    "bbh:word_sorting:205",
+    "gsm8k:1064",
+    "gsm8k:1076",
+    "gsm8k:1123",
+    "gsm8k:1127",
+    "gsm8k:1131",
+    "gsm8k:114",
+    "gsm8k:1200",
+    "gsm8k:1205",
+    "gsm8k:1286",
+    "gsm8k:14",
+    "gsm8k:164",
+    "gsm8k:181",
+    "gsm8k:216",
+    "gsm8k:217",
+    "gsm8k:220",
+    "gsm8k:391",
+    "gsm8k:393",
+    "gsm8k:429",
+    "gsm8k:58",
+    "gsm8k:636",
+    "gsm8k:642",
+    "gsm8k:673",
+    "gsm8k:728",
+    "gsm8k:797",
+    "gsm8k:801",
+    "gsm8k:81",
+    "gsm8k:869",
+    "gsm8k:892",
+    "gsm8k:902",
+    "gsm8k:911",
+    "gsm8k:947",
+    "gsm8k:975"
+  ],
+  "cohort_sha256": "edd6e937ab32c23ed79d52a380bec145adaa09b0a7855f14d14b77e373da48b0",
+  "runtime": {
+    "model": "unsloth/Qwen3.5-4B-GGUF",
+    "model_revision": "e87f176479d0855a907a41277aca2f8ee7a09523",
+    "weights": {
+      "url": "https://huggingface.co/unsloth/Qwen3.5-4B-GGUF/resolve/e87f176479d0855a907a41277aca2f8ee7a09523/Qwen3.5-4B-Q4_K_M.gguf",
+      "sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+      "bytes": 2740937888
+    },
+    "runtime": {
+      "url": "https://github.com/ggml-org/llama.cpp/releases/download/b10964/llama-b10964-bin-ubuntu-x64.tar.gz",
+      "sha256": "9abf88aea48a55d0f80edb1ee20220b186848cca0b4e919d71518cfd7ca67443",
+      "bytes": 16825086
+    },
+    "tag": "b10964",
+    "command": [
+      "/tmp/adaptive-language-runtime/binary/llama-b10964/llama-server",
+      "-m",
+      "/tmp/adaptive-language-runtime/model.gguf",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "8787",
+      "-c",
+      "8192",
+      "-np",
+      "1",
+      "-t",
+      "4",
+      "-tb",
+      "4",
+      "-ngl",
+      "0",
+      "--jinja",
+      "--chat-template-kwargs",
+      "{\"enable_thinking\":false}",
+      "--no-webui"
+    ],
+    "server_version": "",
+    "machine": "x86_64",
+    "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "setup_seconds": 49.90662584499999,
+    "private_inputs": false,
+    "paid_inference": false,
+    "training": false
+  },
+  "worker_exit": 0,
+  "rows": [
+    {
+      "arm": "reasoning",
+      "answer": "(C)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "The pronoun \"her\" in the sentence \"The developer met with the designer because her idea can be implemented\" lacks a clear antecedent based on the provided context.\n\n1.  **Analyze the nouns**: The sentence mentions two people: \"the developer\" and \"the designer\".\n2.  **Analyze the gender**: Both \"developer\" and \"designer\" are gender-neutral job titles. The pronoun \"her\" indicates a female person, but neither the developer nor the designer is explicitly identified as female in the text.\n3.  **Evaluate ambiguity**: Without prior context establishing the gender of either the developer or the designer, it is impossible to determine whether \"her\" refers to the developer or the designer. While one might assume a default gender in specific real-world scenarios, strictly grammatically and logically within the sentence structure, the reference is unresolved.\n\nTherefore, the antecedent is ambiguous.\n\nFINAL: (C)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 194,
+            "prompt_tokens": 134,
+            "total_tokens": 328,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 134,
+            "prompt_ms": 7476.268,
+            "prompt_per_token_ms": 55.7930447761194,
+            "prompt_per_second": 17.923381023794224,
+            "predicted_n": 194,
+            "predicted_ms": 18778.262,
+            "predicted_per_token_ms": 97.29669430051813,
+            "predicted_per_second": 10.277841474360088
+          },
+          "seconds": 26.259759496,
+          "request_sha256": "9a4fcf58d591a7d26307af151b9f611f65e6fab51c5dbcb6c7ea429f3b77e7a1"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 134,
+        "completion_tokens": 194,
+        "total_tokens": 328
+      },
+      "seconds": 26.260112590000006,
+      "question_sha256": "73c290857bbf9499195a0095b831665572552e5c414f6754ca28ebc76e74bbff",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:disambiguation_qa:51",
+      "suite": "BBH",
+      "family": "disambiguation_qa",
+      "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer met with the designer because her idea can be implemented.\nOptions:\n(A) The developer's idea could be implemented\n(B) The designer's idea could be implemented\n(C) Ambiguous",
+      "reference": "(C)",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "(C)",
+      "status": "model_answer_unverified",
+      "execution": {
+        "answer": "(C)",
+        "status": "model_answer_unverified",
+        "trace": [],
+        "program_sha256": "7bf0a1414fb2d076a5641ea78c3dcca52080ef7c6f28d3122077af005e9da93b",
+        "plan": {
+          "answer": "(C)"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"answer\":\"(C)\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 8,
+            "prompt_tokens": 407,
+            "total_tokens": 415,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 407,
+            "prompt_ms": 22916.292,
+            "prompt_per_token_ms": 56.30538574938575,
+            "prompt_per_second": 17.76029036460174,
+            "predicted_n": 8,
+            "predicted_ms": 692.776,
+            "predicted_per_token_ms": 98.96799999999999,
+            "predicted_per_second": 10.104276129658071
+          },
+          "seconds": 23.639945390999998,
+          "request_sha256": "3fa88cbb6e8ccdabb1bc74ca975e150d5a156f03f741afe20ca8f46c2c22fcd4"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 407,
+        "completion_tokens": 8,
+        "total_tokens": 415
+      },
+      "seconds": 23.64007549499999,
+      "question_sha256": "73c290857bbf9499195a0095b831665572552e5c414f6754ca28ebc76e74bbff",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:disambiguation_qa:51",
+      "suite": "BBH",
+      "family": "disambiguation_qa",
+      "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer met with the designer because her idea can be implemented.\nOptions:\n(A) The developer's idea could be implemented\n(B) The designer's idea could be implemented\n(C) Ambiguous",
+      "reference": "(C)",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "(C) Ambiguous",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "(C) Ambiguous",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 5,
+            "prompt_tokens": 124,
+            "total_tokens": 129,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 124,
+            "prompt_ms": 6908.084,
+            "prompt_per_token_ms": 55.71035483870968,
+            "prompt_per_second": 17.949984395094212,
+            "predicted_n": 5,
+            "predicted_ms": 387.258,
+            "predicted_per_token_ms": 96.8145,
+            "predicted_per_second": 10.329031291800298
+          },
+          "seconds": 7.324156317999979,
+          "request_sha256": "804a36cb6a810e4e6af44c84451dd28c84cba5443a6ab3141650cf9b2f8cdd84"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 124,
+        "completion_tokens": 5,
+        "total_tokens": 129
+      },
+      "seconds": 7.3242419489999975,
+      "question_sha256": "73c290857bbf9499195a0095b831665572552e5c414f6754ca28ebc76e74bbff",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:disambiguation_qa:51",
+      "suite": "BBH",
+      "family": "disambiguation_qa",
+      "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer met with the designer because her idea can be implemented.\nOptions:\n(A) The developer's idea could be implemented\n(B) The designer's idea could be implemented\n(C) Ambiguous",
+      "reference": "(C)",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": null,
+      "status": "incomplete_or_missing_answer",
+      "execution": null,
+      "calls": [
+        {
+          "text": "Let's analyze the statements provided in the paragraph to determine the finishing order of the seven golfers: Mya, Eli, Ana, Amy, Mel, Dan, and Joe.\n\n1.  **Ana finished first.**\n    This directly states that Ana is in position 1.\n\n2.  **Eli finished third.**\n    This places Eli in position 3.\n\n3.  **Amy finished second-to-last.**\n    Since there are 7 golfers, the last position is 7. Second-to-last is position 6. So, Amy is in position 6.\n\n4.  **Mya finished fourth.**\n    This places Mya in position 4.\n\n5.  **Amy finished below Joe.**\n    Since Amy is in position 6, Joe must be in a position higher than 6 (i.e., 1, 2, 3, 4, or 5). We already know positions 1, 3, and 4 are taken by Ana, Eli, and Mya respectively. So Joe could be in 2 or 5.\n\n6.  **Amy finished below Joe.** (Reiterated for consistency).\n\n7.  **Dan finished above Mya.**\n    Mya is in position 4. \"Above\" means a better (lower number) rank. So Dan must be in position 1, 2, or 3.\n    - Position 1 is Ana.\n    - Position 3 is Eli.\n    - Therefore, Dan must be in position 2.\n\nNow let's fill in the remaining spots:\n- Position 1: Ana\n- Position 2: Dan\n- Position 3: Eli\n- Position 4: Mya\n- Position 5: ?\n- Position 6: Amy\n- Position 7: ?\n\nWe have Joe and Mel left.\nFrom statement 5: Amy (pos 6) is below Joe. This means Joe's position < 6.\nJoe can be in position 5 or 7? No, \"below\" means a higher rank number (worse finish) in common parlance? Wait, let's re-read carefully.\n\"Amy finished below Joe.\"\nIn rankings, \"first\" is the best, \"second\" is next, etc.\nIf A is below B, A has a worse rank than B.\nRank 1 (Best) > Rank 2 > ... > Rank 7 (Worst).\nIf Amy (Rank 6) is below Joe, then Joe must have a rank better than 6 (i.e., 1, 2, 3, 4, or 5).\nWe established Joe cannot be 1, 2, 3, 4.\nSo Joe must be in position 5.\nThis leaves Mel for position 7.\n\nLet's verify the full order:\n1. Ana\n2. Dan\n3. Eli\n4. Mya\n5. Joe\n6. Amy\n7. Mel\n\nCheck constraints:\n- Amy (6) below Joe (5)? Yes, 6 is worse than 5.\n- Dan (2) above Mya (4)? Yes, 2 is better than 4.\n- Eli third? Yes.\n- Ana first? Yes.\n- Amy second-to-last (6th in 7)? Yes.\n- Mya fourth? Yes.\n\nThe question asks who finished first.\nBased on the deduction, Ana finished first.\n\nComparing with options:\n(A) Mya finished first - False\n(B) Eli finished first - False\n(C) Ana finished first",
+          "reasoning_content": "",
+          "finish_reason": "length",
+          "usage": {
+            "completion_tokens": 768,
+            "prompt_tokens": 189,
+            "total_tokens": 957,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 189,
+            "prompt_ms": 10570.495,
+            "prompt_per_token_ms": 55.92854497354498,
+            "prompt_per_second": 17.879957371911154,
+            "predicted_n": 768,
+            "predicted_ms": 77529.785,
+            "predicted_per_token_ms": 101.08185788787485,
+            "predicted_per_second": 9.892972100980288
+          },
+          "seconds": 88.13037639299998,
+          "request_sha256": "0c4236c1d513037f177780166a2c9894e2c9ac0a38fd70e01dd174563e386a97"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 189,
+        "completion_tokens": 768,
+        "total_tokens": 957
+      },
+      "seconds": 88.130439661,
+      "question_sha256": "b7a3472ea11a8583b7e8d02a9eebef2a9c48534abf69ea599ffc76f25c15c22f",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:logical_deduction_seven_objects:67",
+      "suite": "BBH",
+      "family": "logical_deduction_seven_objects",
+      "question": "The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph. In a golf tournament, there were seven golfers: Mya, Eli, Ana, Amy, Mel, Dan, and Joe. Amy finished below Joe. Dan finished above Mya. Eli finished third. Ana finished first. Amy finished second-to-last. Mya finished fourth.\nOptions:\n(A) Mya finished first\n(B) Eli finished first\n(C) Ana finished first\n(D) Amy finished first\n(E) Mel finished first\n(F) Dan finished first\n(G) Joe finished first",
+      "reference": "(C)",
+      "correct": false
+    },
+    {
+      "arm": "program",
+      "answer": "(C)",
+      "status": "model_answer_unverified",
+      "execution": {
+        "answer": "(C)",
+        "status": "model_answer_unverified",
+        "trace": [],
+        "program_sha256": "7bf0a1414fb2d076a5641ea78c3dcca52080ef7c6f28d3122077af005e9da93b",
+        "plan": {
+          "answer": "(C)"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"Ana\"},{\"name\":\"b\",\"expr\":\"a\"},{\"name\":\"c\",\"expr\":\"Ana\"},{\"name\":\"d\",\"expr\":\"Ana\"},{\"name\":\"e\",\"expr\":\"Ana\"},{\"name\":\"f\",\"expr\":\"Ana\"},{\"name\":\"g\",\"expr\":\"Ana\"},{\"name\":\"h\",\"expr\":\"Ana\"},{\"name\":\"i\",\"expr\":\"Ana\"},{\"name\":\"j\",\"expr\":\"Ana\"},{\"name\":\"k\",\"expr\":\"Ana\"},{\"name\":\"l\",\"expr\":\"Ana\"},{\"name\":\"m\",\"expr\":\"Ana\"},{\"name\":\"n\",\"expr\":\"Ana\"},{\"name\":\"o\",\"expr\":\"Ana\"},{\"name\":\"p\",\"expr\":\"Ana\"},{\"name\":\"q\",\"expr\":\"Ana\"},{\"name\":\"r\",\"expr\":\"Ana\"},{\"name\":\"s\",\"expr\":\"Ana\"},{\"name\":\"t\",\"expr\":\"Ana\"},{\"name\":\"u\",\"expr\":\"Ana\"},{\"name\":\"v\",\"expr\":\"Ana\"},{\"name\":\"w\",\"expr\":\"Ana\"},{\"name\":\"x\",\"expr\":\"Ana\"},{\"name\":\"y\",\"expr\":\"Ana\"},{\"name\":\"z\",\"expr\":\"Ana\"},{\"name\":\"aa\",\"expr\":\"Ana\"},{\"name\":\"ab\",\"expr\":\"Ana\"},{\"name\":\"ac\",\"expr\":\"Ana\"},{\"name\":\"ad\",\"expr\":\"Ana\"},{\"name\":\"ae\",\"expr\":\"Ana\"},{\"name\":\"af\",\"expr\":\"Ana\"},{\"name\":\"ag\",\"expr\":\"Ana\"},{\"name\":\"ah\",\"expr\":\"Ana\"},{\"name\":\"ai\",\"expr\":\"Ana\"},{\"name\":\"aj\",\"expr\":\"Ana\"},{\"name\":\"ak\",\"expr\":\"Ana\"},{\"name\":\"al\",\"expr\":\"Ana\"},{\"name\":\"am\",\"expr\":\"Ana\"},{\"name\":\"an\",\"expr\":\"Ana\"},{\"name\":\"ao\",\"expr\":\"Ana\"},{\"name\":\"ap\",\"expr\":\"Ana\"},{\"name\":\"aq\",\"expr\":\"Ana\"},{\"name\":\"ar\",\"expr\":\"Ana\"},{\"name\":\"as\",\"expr\":\"Ana\"},{\"name\":\"at\",\"expr\":\"Ana\"},{\"name\":\"au\",\"expr\":\"Ana\"},{\"name\":\"av\",\"expr\":\"Ana\"},{\"name\":\"aw\",\"expr\":\"Ana\"},{\"name\":\"ax\",\"expr\":\"Ana\"},{\"name\":\"ay\",\"expr\":\"Ana\"},{\"name\":\"az\",\"expr\":\"Ana\"},{\"name\":\"ba\",\"expr\":\"Ana\"},{\"name\":\"bb\",\"expr\":\"Ana\"},{\"name\":\"bc\",\"expr\":\"Ana\"},{\"name\":\"bd\",\"expr\":\"Ana\"},{\"name\":\"be\",\"expr\":\"Ana\"},{\"name\":\"bf\",\"expr\":\"Ana\"},{\"name\":\"bg\",\"expr\":\"Ana\"},{\"name\":\"bh\",\"expr\":\"Ana\"},{\"name\":\"bi\",\"expr\":\"Ana\"},{\"name\":\"bj\",\"expr\":\"Ana\"},{\"name\":\"bk\",\"expr\":\"Ana\"},{\"name\":\"bl\",\"expr",
+          "reasoning_content": "",
+          "finish_reason": "length",
+          "usage": {
+            "completion_tokens": 512,
+            "prompt_tokens": 462,
+            "total_tokens": 974,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 462,
+            "prompt_ms": 26056.32,
+            "prompt_per_token_ms": 56.39896103896104,
+            "prompt_per_second": 17.730823078623533,
+            "predicted_n": 512,
+            "predicted_ms": 52526.193,
+            "predicted_per_token_ms": 102.7909843444227,
+            "predicted_per_second": 9.728479655854747
+          },
+          "seconds": 78.62310974100001,
+          "request_sha256": "f2bcaee8f42769bf7287679947ca932371fb57a03b636088789c2fc4dc1a2fa0"
+        },
+        {
+          "text": "{\"answer\":\"(C)\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 8,
+            "prompt_tokens": 1024,
+            "total_tokens": 1032,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 1024,
+            "prompt_ms": 58389.019,
+            "prompt_per_token_ms": 57.0205263671875,
+            "prompt_per_second": 17.537544174187957,
+            "predicted_n": 8,
+            "predicted_ms": 750.389,
+            "predicted_per_token_ms": 107.19842857142858,
+            "predicted_per_second": 9.32849495395055
+          },
+          "seconds": 59.175052110000024,
+          "request_sha256": "ef0aca244c0f03acf4b2aed62f46c73f0b668309ff27d38869307a1aa7edc9d2"
+        }
+      ],
+      "errors": [
+        "incomplete_generation"
+      ],
+      "usage": {
+        "prompt_tokens": 1486,
+        "completion_tokens": 520,
+        "total_tokens": 2006
+      },
+      "seconds": 137.79837919800002,
+      "question_sha256": "b7a3472ea11a8583b7e8d02a9eebef2a9c48534abf69ea599ffc76f25c15c22f",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:logical_deduction_seven_objects:67",
+      "suite": "BBH",
+      "family": "logical_deduction_seven_objects",
+      "question": "The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph. In a golf tournament, there were seven golfers: Mya, Eli, Ana, Amy, Mel, Dan, and Joe. Amy finished below Joe. Dan finished above Mya. Eli finished third. Ana finished first. Amy finished second-to-last. Mya finished fourth.\nOptions:\n(A) Mya finished first\n(B) Eli finished first\n(C) Ana finished first\n(D) Amy finished first\n(E) Mel finished first\n(F) Dan finished first\n(G) Joe finished first",
+      "reference": "(C)",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "(C)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "(C)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 3,
+            "prompt_tokens": 179,
+            "total_tokens": 182,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 179,
+            "prompt_ms": 10061.042,
+            "prompt_per_token_ms": 56.20693854748603,
+            "prompt_per_second": 17.791397749855335,
+            "predicted_n": 3,
+            "predicted_ms": 194.522,
+            "predicted_per_token_ms": 97.261,
+            "predicted_per_second": 10.28161339077328
+          },
+          "seconds": 10.307935702000009,
+          "request_sha256": "8ef675a1f27df14d86be6ff1bdf10799b5314b85632ec7c9d5511ee770658793"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 179,
+        "completion_tokens": 3,
+        "total_tokens": 182
+      },
+      "seconds": 10.308019088000037,
+      "question_sha256": "b7a3472ea11a8583b7e8d02a9eebef2a9c48534abf69ea599ffc76f25c15c22f",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:logical_deduction_seven_objects:67",
+      "suite": "BBH",
+      "family": "logical_deduction_seven_objects",
+      "question": "The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph. In a golf tournament, there were seven golfers: Mya, Eli, Ana, Amy, Mel, Dan, and Joe. Amy finished below Joe. Dan finished above Mya. Eli finished third. Ana finished first. Amy finished second-to-last. Mya finished fourth.\nOptions:\n(A) Mya finished first\n(B) Eli finished first\n(C) Ana finished first\n(D) Amy finished first\n(E) Mel finished first\n(F) Dan finished first\n(G) Joe finished first",
+      "reference": "(C)",
+      "correct": true
+    },
+    {
+      "arm": "reasoning",
+      "answer": "(E)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To determine the name of the last animal sorted alphabetically, we need to list all the animals mentioned in the text and sort them.\n\n**1. Identify all animals:**\nFrom the first table (Penguins):\n- Louis\n- Bernard\n- Vincent\n- Gwen\n- James (added later)\n\nFrom the second table (Giraffes):\n- Jody\n- Gladys\n- Marian\n- Donna\n\n**2. List the full names:**\n- Bernard\n- Donna\n- Gladys\n- Gwen\n- James\n- Jody\n- Louis\n- Marian\n- Vincent\n\n**3. Sort alphabetically:**\n1. Bernard\n2. Donna\n3. Gladys\n4. Gwen\n5. James\n6. Jody\n7. Louis\n8. Marian\n9. Vincent\n\n**4. Identify the last one:**\nThe last name in the alphabetical list is **Vincent**.\n\n**5. Check options:**\n(A) Jody\n(B) Louis\n(C) Louise (Not in the list)\n(D) Marian\n(E) Vincent\n\nThe correct option is (E).\n\nFINAL: (E)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 243,
+            "prompt_tokens": 331,
+            "total_tokens": 574,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 331,
+            "prompt_ms": 18633.806,
+            "prompt_per_token_ms": 56.29548640483384,
+            "prompt_per_second": 17.763413443286893,
+            "predicted_n": 243,
+            "predicted_ms": 24226.096,
+            "predicted_per_token_ms": 100.1078347107438,
+            "predicted_per_second": 9.989228144724597
+          },
+          "seconds": 42.888630371999966,
+          "request_sha256": "66733d8ccf00fe1ae82c2bd9afed4768ddf0c444c38f0b7bc9e8deb55ca1936d"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 331,
+        "completion_tokens": 243,
+        "total_tokens": 574
+      },
+      "seconds": 42.88875662799995,
+      "question_sha256": "10cdd26206b4dd72a44e9f67eef62fa2adee462be8d7040bbbfeca2da5c2a91f",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:penguins_in_a_table:89",
+      "suite": "BBH",
+      "family": "penguins_in_a_table",
+      "question": "Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  We now add a penguin to the table:\nJames, 12, 90, 12\nAnd here is a similar table, but listing giraffes:\nname, age, height (cm), weight (kg)\nJody, 5, 430, 620\nGladys, 10, 420, 590\nMarian, 2, 310, 410\nDonna, 9, 440, 650\nWhat is the name of the last animal sorted by alphabetic order?\nOptions:\n(A) Jody\n(B) Louis\n(C) Louise\n(D) Marian\n(E) Vincent",
+      "reference": "(E)",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "Bernard Donna Gladys Gwen James Jody Louis Marian Vincent",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "Bernard Donna Gladys Gwen James Jody Louis Marian Vincent",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "['Jody','Gladys','Marian','Donna','Louis','Bernard','Vincent','Gwen','James']",
+            "value": [
+              "Jody",
+              "Gladys",
+              "Marian",
+              "Donna",
+              "Louis",
+              "Bernard",
+              "Vincent",
+              "Gwen",
+              "James"
+            ]
+          },
+          {
+            "name": "b",
+            "expr": "sorted(a)",
+            "value": [
+              "Bernard",
+              "Donna",
+              "Gladys",
+              "Gwen",
+              "James",
+              "Jody",
+              "Louis",
+              "Marian",
+              "Vincent"
+            ]
+          }
+        ],
+        "value": [
+          "Bernard",
+          "Donna",
+          "Gladys",
+          "Gwen",
+          "James",
+          "Jody",
+          "Louis",
+          "Marian",
+          "Vincent"
+        ],
+        "program_sha256": "53a8b1558cc27e732fd2530d08596dac63c74c49a13cedd9495d7f09b9cf9f92",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "['Jody','Gladys','Marian','Donna','Louis','Bernard','Vincent','Gwen','James']"
+            },
+            {
+              "name": "b",
+              "expr": "sorted(a)"
+            }
+          ],
+          "result": "b"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"['Jody','Gladys','Marian','Donna','Louis','Bernard','Vincent','Gwen','James']\"},{\"name\":\"b\",\"expr\":\"sorted(a)\"}],\"result\":\"b\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 53,
+            "prompt_tokens": 604,
+            "total_tokens": 657,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 604,
+            "prompt_ms": 34003.541,
+            "prompt_per_token_ms": 56.297253311258274,
+            "prompt_per_second": 17.762855933151197,
+            "predicted_n": 53,
+            "predicted_ms": 5286.343,
+            "predicted_per_token_ms": 101.6604423076923,
+            "predicted_per_second": 9.836667806080689
+          },
+          "seconds": 39.328776919000006,
+          "request_sha256": "b5dfc8e01939e32700c726f69a5d75307e21b6f697c7241ede58676e90bb5f8a"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 604,
+        "completion_tokens": 53,
+        "total_tokens": 657
+      },
+      "seconds": 39.32935231900001,
+      "question_sha256": "10cdd26206b4dd72a44e9f67eef62fa2adee462be8d7040bbbfeca2da5c2a91f",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:penguins_in_a_table:89",
+      "suite": "BBH",
+      "family": "penguins_in_a_table",
+      "question": "Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  We now add a penguin to the table:\nJames, 12, 90, 12\nAnd here is a similar table, but listing giraffes:\nname, age, height (cm), weight (kg)\nJody, 5, 430, 620\nGladys, 10, 420, 590\nMarian, 2, 310, 410\nDonna, 9, 440, 650\nWhat is the name of the last animal sorted by alphabetic order?\nOptions:\n(A) Jody\n(B) Louis\n(C) Louise\n(D) Marian\n(E) Vincent",
+      "reference": "(E)",
+      "correct": false
+    },
+    {
+      "arm": "direct",
+      "answer": "(D)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "(D)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 3,
+            "prompt_tokens": 321,
+            "total_tokens": 324,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 321,
+            "prompt_ms": 18098.444,
+            "prompt_per_token_ms": 56.38144548286604,
+            "prompt_per_second": 17.736331366387077,
+            "predicted_n": 3,
+            "predicted_ms": 197.04,
+            "predicted_per_token_ms": 98.52,
+            "predicted_per_second": 10.150223304912709
+          },
+          "seconds": 18.333044794999978,
+          "request_sha256": "3ffcb108517ad485ecbcc912fa73e940891b5f6c91e0675ee2407749c528e7d8"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 321,
+        "completion_tokens": 3,
+        "total_tokens": 324
+      },
+      "seconds": 18.333118292999984,
+      "question_sha256": "10cdd26206b4dd72a44e9f67eef62fa2adee462be8d7040bbbfeca2da5c2a91f",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:penguins_in_a_table:89",
+      "suite": "BBH",
+      "family": "penguins_in_a_table",
+      "question": "Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  We now add a penguin to the table:\nJames, 12, 90, 12\nAnd here is a similar table, but listing giraffes:\nname, age, height (cm), weight (kg)\nJody, 5, 430, 620\nGladys, 10, 420, 590\nMarian, 2, 310, 410\nDonna, 9, 440, 650\nWhat is the name of the last animal sorted by alphabetic order?\nOptions:\n(A) Jody\n(B) Louis\n(C) Louise\n(D) Marian\n(E) Vincent",
+      "reference": "(E)",
+      "correct": false
+    },
+    {
+      "arm": "program",
+      "answer": "(B)",
+      "status": "model_answer_unverified",
+      "execution": {
+        "answer": "(B)",
+        "status": "model_answer_unverified",
+        "trace": [],
+        "program_sha256": "a4d322bd1bff79635afb5b03060311e6ef36b0d576270f8b37801ab928323571",
+        "plan": {
+          "answer": "(B)"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"answer\":\"(B)\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 8,
+            "prompt_tokens": 514,
+            "total_tokens": 522,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 514,
+            "prompt_ms": 28928.502,
+            "prompt_per_token_ms": 56.28113229571984,
+            "prompt_per_second": 17.767943877633208,
+            "predicted_n": 8,
+            "predicted_ms": 717.507,
+            "predicted_per_token_ms": 102.50099999999999,
+            "predicted_per_second": 9.756002380464581
+          },
+          "seconds": 29.68242202800002,
+          "request_sha256": "9af109315dacafb6971b8dd346121563940188dc1771aeffb742e4486eb035aa"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 514,
+        "completion_tokens": 8,
+        "total_tokens": 522
+      },
+      "seconds": 29.68257336199997,
+      "question_sha256": "46b8d1c0030d6345596332635dd19ab601564e059190b55bee6efa09e54360cc",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:temporal_sequences:214",
+      "suite": "BBH",
+      "family": "temporal_sequences",
+      "question": "Today, Jason went to the physics classroom. Between what times could they have gone?\nWe know that:\nJason woke up at 5am.\nLeslie saw Jason buying a bike at the bike shop from 5am to 9am.\nJames saw Jason stretching at a yoga studio from 1pm to 8pm.\nWilliam saw Jason taking photos near the Leaning Tower of Pisa from 8pm to 9pm.\nRichard saw Jason getting a coffee at the cafe from 9pm to 10pm.\nThe physics classroom was closed after 10pm.\nBetween what times could Jason have gone to the physics classroom?\nOptions:\n(A) 5am to 9am\n(B) 9am to 1pm\n(C) 1pm to 8pm\n(D) 8pm to 9pm",
+      "reference": "(B)",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "(B)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "(B)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 3,
+            "prompt_tokens": 231,
+            "total_tokens": 234,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 231,
+            "prompt_ms": 13004.112,
+            "prompt_per_token_ms": 56.29485714285714,
+            "prompt_per_second": 17.763612002111334,
+            "predicted_n": 3,
+            "predicted_ms": 195.966,
+            "predicted_per_token_ms": 97.983,
+            "predicted_per_second": 10.205852035557188
+          },
+          "seconds": 13.229178778000005,
+          "request_sha256": "0f6d5b3f2acb4ddf94ead85203c573a560e298e5fd463bda4a97be7f21009e80"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 231,
+        "completion_tokens": 3,
+        "total_tokens": 234
+      },
+      "seconds": 13.229253838999966,
+      "question_sha256": "46b8d1c0030d6345596332635dd19ab601564e059190b55bee6efa09e54360cc",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:temporal_sequences:214",
+      "suite": "BBH",
+      "family": "temporal_sequences",
+      "question": "Today, Jason went to the physics classroom. Between what times could they have gone?\nWe know that:\nJason woke up at 5am.\nLeslie saw Jason buying a bike at the bike shop from 5am to 9am.\nJames saw Jason stretching at a yoga studio from 1pm to 8pm.\nWilliam saw Jason taking photos near the Leaning Tower of Pisa from 8pm to 9pm.\nRichard saw Jason getting a coffee at the cafe from 9pm to 10pm.\nThe physics classroom was closed after 10pm.\nBetween what times could Jason have gone to the physics classroom?\nOptions:\n(A) 5am to 9am\n(B) 9am to 1pm\n(C) 1pm to 8pm\n(D) 8pm to 9pm",
+      "reference": "(B)",
+      "correct": true
+    },
+    {
+      "arm": "reasoning",
+      "answer": "(B)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To determine when Jason could have gone to the physics classroom, we must analyze the timeline of his activities and the constraints provided.\n\n1.  **Activity Timeline**:\n    *   **5am - 9am**: Leslie saw Jason buying a bike. He is occupied.\n    *   **1pm - 8pm**: James saw Jason stretching at a yoga studio. He is occupied.\n    *   **8pm - 9pm**: William saw Jason taking photos near the Leaning Tower of Pisa. He is occupied.\n    *   **9pm - 10pm**: Richard saw Jason getting a coffee. He is occupied.\n\n2.  **Constraint**: The physics classroom was closed after 10pm. This means any visit must occur between 10pm and the end of the day (or earlier, depending on opening hours, but specifically not after 10pm).\n\n3.  **Gap Analysis**:\n    *   Jason is busy from 5am to 9am.\n    *   Jason is busy from 1pm to 8pm.\n    *   Jason is busy from 8pm to 9pm.\n    *   Jason is busy from 9pm to 10pm.\n\n    The only time slot where Jason is *not* seen doing anything else is between **9am and 1pm**. During this period, there is no witness mentioned, and he is free to go to the physics classroom.\n\n4.  **Verification**:\n    *   Option (A) 5am to 9am: Confirmed busy.\n    *   Option (B) 9am to 1pm: No conflicting activity mentioned. This is the only possible window.\n    *   Option (C) 1pm to 8pm: Confirmed busy.\n    *   Option (D) 8pm to 9pm: Confirmed busy.\n\nTherefore, the only possible time is between 9am and 1pm.\n\nFINAL: (B)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 426,
+            "prompt_tokens": 241,
+            "total_tokens": 667,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 241,
+            "prompt_ms": 13482.372,
+            "prompt_per_token_ms": 55.94345228215767,
+            "prompt_per_second": 17.875192881489994,
+            "predicted_n": 426,
+            "predicted_ms": 42606.908,
+            "predicted_per_token_ms": 100.25154823529412,
+            "predicted_per_second": 9.974908294213698
+          },
+          "seconds": 56.11739581199993,
+          "request_sha256": "25b884ba921c5afe6b0e62638b26342fc0ce2262e1bcf10b57dc6bb3456dd2a0"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 241,
+        "completion_tokens": 426,
+        "total_tokens": 667
+      },
+      "seconds": 56.117543470999976,
+      "question_sha256": "46b8d1c0030d6345596332635dd19ab601564e059190b55bee6efa09e54360cc",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:temporal_sequences:214",
+      "suite": "BBH",
+      "family": "temporal_sequences",
+      "question": "Today, Jason went to the physics classroom. Between what times could they have gone?\nWe know that:\nJason woke up at 5am.\nLeslie saw Jason buying a bike at the bike shop from 5am to 9am.\nJames saw Jason stretching at a yoga studio from 1pm to 8pm.\nWilliam saw Jason taking photos near the Leaning Tower of Pisa from 8pm to 9pm.\nRichard saw Jason getting a coffee at the cafe from 9pm to 10pm.\nThe physics classroom was closed after 10pm.\nBetween what times could Jason have gone to the physics classroom?\nOptions:\n(A) 5am to 9am\n(B) 9am to 1pm\n(C) 1pm to 8pm\n(D) 8pm to 9pm",
+      "reference": "(B)",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "162",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "162",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "milkshakes_total",
+            "expr": "6*5.50",
+            "value": {
+              "numerator": 33,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "burgers_total",
+            "expr": "9*11",
+            "value": {
+              "numerator": 99,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "sodas_total",
+            "expr": "20*1.50",
+            "value": {
+              "numerator": 30,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "total_money",
+            "expr": "milkshakes_total+burgers_total+sodas_total",
+            "value": {
+              "numerator": 162,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 162,
+          "denominator": 1
+        },
+        "program_sha256": "f78ba28d2cda2b023e4c5eb2350e14ffbe189716e553fdaee9ee6b5e2d917750",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "milkshakes_total",
+              "expr": "6*5.50"
+            },
+            {
+              "name": "burgers_total",
+              "expr": "9*11"
+            },
+            {
+              "name": "sodas_total",
+              "expr": "20*1.50"
+            },
+            {
+              "name": "total_money",
+              "expr": "milkshakes_total+burgers_total+sodas_total"
+            }
+          ],
+          "result": "total_money"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"milkshakes_total\",\"expr\":\"6*5.50\"},{\"name\":\"burgers_total\",\"expr\":\"9*11\"},{\"name\":\"sodas_total\",\"expr\":\"20*1.50\"},{\"name\":\"total_money\",\"expr\":\"milkshakes_total+burgers_total+sodas_total\"}],\"result\":\"total_money\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 78,
+            "prompt_tokens": 383,
+            "total_tokens": 461,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 383,
+            "prompt_ms": 21631.646,
+            "prompt_per_token_ms": 56.479493472584856,
+            "prompt_per_second": 17.70554122418608,
+            "predicted_n": 78,
+            "predicted_ms": 7639.008,
+            "predicted_per_token_ms": 99.2078961038961,
+            "predicted_per_second": 10.079842827759835
+          },
+          "seconds": 29.309234710000055,
+          "request_sha256": "f5727adf371e9c169833b1cc9e44271efec1c0c89be5d8379f0ecf4d809940d3"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 383,
+        "completion_tokens": 78,
+        "total_tokens": 461
+      },
+      "seconds": 29.309803193999983,
+      "question_sha256": "579338962aefe167cd9157ec2ee8eddcf43e171233a525012531c91b88b901fe",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:1076",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Terry sells 6 milkshakes for $5.50 each, nine burger platters for $11 each, and 20 sodas for $1.50 each. How much money does he make in total?",
+      "reference": "162",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "(A)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "FINAL: (A)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 100,
+            "total_tokens": 106,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 100,
+            "prompt_ms": 5680.067,
+            "prompt_per_token_ms": 56.80067,
+            "prompt_per_second": 17.605426133177655,
+            "predicted_n": 6,
+            "predicted_ms": 481.018,
+            "predicted_per_token_ms": 96.2036,
+            "predicted_per_second": 10.394621407099113
+          },
+          "seconds": 6.189949185000046,
+          "request_sha256": "59dd469136c8fb381073dc40dd5d830b7e204d3caa536df0ee9bc3b872e0f6be"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 100,
+        "completion_tokens": 6,
+        "total_tokens": 106
+      },
+      "seconds": 6.190021973000057,
+      "question_sha256": "579338962aefe167cd9157ec2ee8eddcf43e171233a525012531c91b88b901fe",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:1076",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Terry sells 6 milkshakes for $5.50 each, nine burger platters for $11 each, and 20 sodas for $1.50 each. How much money does he make in total?",
+      "reference": "162",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "162",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To find the total money Terry makes, we calculate the revenue from each item type and sum them up.\n\n1.  **Milkshakes**:\n    *   Quantity: 6\n    *   Price per unit: $5.50\n    *   Calculation: $6 \\times 5.50 = 33.00$\n\n2.  **Burger Platters**:\n    *   Quantity: 9\n    *   Price per unit: $11.00\n    *   Calculation: $9 \\times 11 = 99.00$\n\n3.  **Sodas**:\n    *   Quantity: 20\n    *   Price per unit: $1.50\n    *   Calculation: $20 \\times 1.50 = 30.00$\n\n**Total Revenue**:\n$$33.00 + 99.00 + 30.00 = 162.00$$\n\nTerry makes a total of $162.\n\nFINAL: 162",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 238,
+            "prompt_tokens": 110,
+            "total_tokens": 348,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 110,
+            "prompt_ms": 6184.537,
+            "prompt_per_token_ms": 56.22306363636364,
+            "prompt_per_second": 17.78629507754582,
+            "predicted_n": 238,
+            "predicted_ms": 23156.549,
+            "predicted_per_token_ms": 97.70695780590717,
+            "predicted_per_second": 10.234685660631039
+          },
+          "seconds": 29.367398192999985,
+          "request_sha256": "98fdeee880a9b6420f77d2d13f323bae98627d9d4d9b7d8d3c6163d1fea5224f"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 110,
+        "completion_tokens": 238,
+        "total_tokens": 348
+      },
+      "seconds": 29.367509795000046,
+      "question_sha256": "579338962aefe167cd9157ec2ee8eddcf43e171233a525012531c91b88b901fe",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:1076",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Terry sells 6 milkshakes for $5.50 each, nine burger platters for $11 each, and 20 sodas for $1.50 each. How much money does he make in total?",
+      "reference": "162",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "18",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "18",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "7*1",
+            "value": {
+              "numerator": 7,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "b",
+            "expr": "a+7",
+            "value": {
+              "numerator": 14,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "c",
+            "expr": "4+b",
+            "value": {
+              "numerator": 18,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 18,
+          "denominator": 1
+        },
+        "program_sha256": "f6fc787543b04851e95838fa39fea00356fff8b673e3540089b89adae34559a3",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "7*1"
+            },
+            {
+              "name": "b",
+              "expr": "a+7"
+            },
+            {
+              "name": "c",
+              "expr": "4+b"
+            }
+          ],
+          "result": "c"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"7*1\"},{\"name\":\"b\",\"expr\":\"a+7\"},{\"name\":\"c\",\"expr\":\"4+b\"}],\"result\":\"c\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 38,
+            "prompt_tokens": 367,
+            "total_tokens": 405,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 367,
+            "prompt_ms": 20708.036,
+            "prompt_per_token_ms": 56.42516621253406,
+            "prompt_per_second": 17.72258846758814,
+            "predicted_n": 38,
+            "predicted_ms": 3680.574,
+            "predicted_per_token_ms": 99.47497297297298,
+            "predicted_per_second": 10.052779810975135
+          },
+          "seconds": 24.424833685999943,
+          "request_sha256": "88887bcda45f259dfc34330d2d6533f512c3dc20ba945e25b4ebe5bff8a476b3"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 367,
+        "completion_tokens": 38,
+        "total_tokens": 405
+      },
+      "seconds": 24.425217821000047,
+      "question_sha256": "1cadaca3f746edc6758410e1e3ed8f379adccbfae94a017ae67f8b1f68b9ca4a",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:217",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "There are 4 roses in the vase. There are 7 more dahlias than roses in the vase. How many flowers are there in the vase in total?",
+      "reference": "15",
+      "correct": false
+    },
+    {
+      "arm": "direct",
+      "answer": "(A)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "FINAL: (A)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 84,
+            "total_tokens": 90,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 84,
+            "prompt_ms": 4769.96,
+            "prompt_per_token_ms": 56.78523809523809,
+            "prompt_per_second": 17.610210567803502,
+            "predicted_n": 6,
+            "predicted_ms": 478.892,
+            "predicted_per_token_ms": 95.7784,
+            "predicted_per_second": 10.440767438169775
+          },
+          "seconds": 5.2819147730000395,
+          "request_sha256": "067c497a1fab8c9e454ae4ce72d8e7a51740a0c513dc26274b6376b02c99fcf5"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 84,
+        "completion_tokens": 6,
+        "total_tokens": 90
+      },
+      "seconds": 5.2819845940000505,
+      "question_sha256": "1cadaca3f746edc6758410e1e3ed8f379adccbfae94a017ae67f8b1f68b9ca4a",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:217",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "There are 4 roses in the vase. There are 7 more dahlias than roses in the vase. How many flowers are there in the vase in total?",
+      "reference": "15",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "15",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To find the total number of flowers in the vase, we follow these steps:\n\n1.  **Count the roses**: There are 4 roses.\n2.  **Calculate the number of dahlias**: The problem states there are 7 more dahlias than roses.\n    *   Dahlias = Roses + 7\n    *   Dahlias = 4 + 7 = 11\n3.  **Calculate the total**: Add the number of roses and dahlias together.\n    *   Total = Roses + Dahlias\n    *   Total = 4 + 11 = 15\n\nFINAL: 15",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 135,
+            "prompt_tokens": 94,
+            "total_tokens": 229,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 94,
+            "prompt_ms": 5287.402,
+            "prompt_per_token_ms": 56.24895744680851,
+            "prompt_per_second": 17.778107282177523,
+            "predicted_n": 135,
+            "predicted_ms": 12911.439,
+            "predicted_per_token_ms": 96.3540223880597,
+            "predicted_per_second": 10.378393918756847
+          },
+          "seconds": 18.225175434999983,
+          "request_sha256": "b5d1e160fc889428557a498ed4ddcf4dbaafc90f7eb9c8493f92a544aca82757"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 94,
+        "completion_tokens": 135,
+        "total_tokens": 229
+      },
+      "seconds": 18.225269982999976,
+      "question_sha256": "1cadaca3f746edc6758410e1e3ed8f379adccbfae94a017ae67f8b1f68b9ca4a",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:217",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "There are 4 roses in the vase. There are 7 more dahlias than roses in the vase. How many flowers are there in the vase in total?",
+      "reference": "15",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "(A)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "FINAL: (A)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 110,
+            "total_tokens": 116,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 110,
+            "prompt_ms": 6166.1,
+            "prompt_per_token_ms": 56.05545454545455,
+            "prompt_per_second": 17.839477141142698,
+            "predicted_n": 6,
+            "predicted_ms": 477.286,
+            "predicted_per_token_ms": 95.4572,
+            "predicted_per_second": 10.475899146423737
+          },
+          "seconds": 6.675260947999959,
+          "request_sha256": "36e7d44e8faae2a2e9e25ed7e66603716fe2bc6ca7aafda91d5bb0e371eaa405"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 110,
+        "completion_tokens": 6,
+        "total_tokens": 116
+      },
+      "seconds": 6.675337843999955,
+      "question_sha256": "5bcf7f5517b45dc3f3ac254874a4247161dc29d8df56510abd921338954cfe9b",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:81",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Charlie had 10 stickers. He bought 21 stickers from a store in the mall and got 23 stickers for his birthday. Then Charlie gave 9 of the stickers to his sister and used 28 to decorate a greeting card. How many stickers does Charlie have left?",
+      "reference": "17",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "17",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To find the number of stickers Charlie has left, we track the changes in his collection step by step:\n\n1.  **Initial amount**: Charlie starts with 10 stickers.\n2.  **Additions**:\n    *   He buys 21 stickers.\n    *   He receives 23 stickers for his birthday.\n    *   Total added: $21 + 23 = 44$.\n    *   Current total: $10 + 44 = 54$.\n3.  **Subtractions**:\n    *   He gives 9 stickers to his sister.\n    *   He uses 28 stickers for a greeting card.\n    *   Total removed: $9 + 28 = 37$.\n4.  **Final Calculation**:\n    *   Remaining stickers: $54 - 37 = 17$.\n\nAlternatively, summing all positive and negative values directly:\n$10 + 21 + 23 - 9 - 28 = 17$.\n\nCharlie has 17 stickers left.\n\nFINAL: 17",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 242,
+            "prompt_tokens": 120,
+            "total_tokens": 362,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 120,
+            "prompt_ms": 6709.914,
+            "prompt_per_token_ms": 55.915949999999995,
+            "prompt_per_second": 17.883984802189715,
+            "predicted_n": 242,
+            "predicted_ms": 23703.705,
+            "predicted_per_token_ms": 98.35562240663901,
+            "predicted_per_second": 10.167186943981964
+          },
+          "seconds": 30.441861238,
+          "request_sha256": "4d156ffe9506e039c4e8e73c604724346c23c443484ea623fc7a15f953563b78"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 120,
+        "completion_tokens": 242,
+        "total_tokens": 362
+      },
+      "seconds": 30.441968870999972,
+      "question_sha256": "5bcf7f5517b45dc3f3ac254874a4247161dc29d8df56510abd921338954cfe9b",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:81",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Charlie had 10 stickers. He bought 21 stickers from a store in the mall and got 23 stickers for his birthday. Then Charlie gave 9 of the stickers to his sister and used 28 to decorate a greeting card. How many stickers does Charlie have left?",
+      "reference": "17",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "17",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "17",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "10",
+            "value": {
+              "numerator": 10,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "b",
+            "expr": "a+21",
+            "value": {
+              "numerator": 31,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "c",
+            "expr": "b+23",
+            "value": {
+              "numerator": 54,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "d",
+            "expr": "c-9",
+            "value": {
+              "numerator": 45,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "e",
+            "expr": "d-28",
+            "value": {
+              "numerator": 17,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "f",
+            "expr": "e",
+            "value": {
+              "numerator": 17,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 17,
+          "denominator": 1
+        },
+        "program_sha256": "ba71842c9ac8aae6a42673baf531b60907af1d414d2555c5d487a5aad8379987",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "10"
+            },
+            {
+              "name": "b",
+              "expr": "a+21"
+            },
+            {
+              "name": "c",
+              "expr": "b+23"
+            },
+            {
+              "name": "d",
+              "expr": "c-9"
+            },
+            {
+              "name": "e",
+              "expr": "d-28"
+            },
+            {
+              "name": "f",
+              "expr": "e"
+            }
+          ],
+          "result": "f"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"10\"},{\"name\":\"b\",\"expr\":\"a+21\"},{\"name\":\"c\",\"expr\":\"b+23\"},{\"name\":\"d\",\"expr\":\"c-9\"},{\"name\":\"e\",\"expr\":\"d-28\"},{\"name\":\"f\",\"expr\":\"e\"}],\"result\":\"f\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 69,
+            "prompt_tokens": 393,
+            "total_tokens": 462,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 393,
+            "prompt_ms": 22103.43,
+            "prompt_per_token_ms": 56.24282442748092,
+            "prompt_per_second": 17.780045902378045,
+            "predicted_n": 69,
+            "predicted_ms": 6750.001,
+            "predicted_per_token_ms": 99.26472058823529,
+            "predicted_per_second": 10.074072581618877
+          },
+          "seconds": 28.889458551000075,
+          "request_sha256": "06a3409e787005305bf90ab2060b18c7d4cfb46b16fa8886b708b2b4d5f6fb56"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 393,
+        "completion_tokens": 69,
+        "total_tokens": 462
+      },
+      "seconds": 28.889934898999968,
+      "question_sha256": "5bcf7f5517b45dc3f3ac254874a4247161dc29d8df56510abd921338954cfe9b",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:81",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Charlie had 10 stickers. He bought 21 stickers from a store in the mall and got 23 stickers for his birthday. Then Charlie gave 9 of the stickers to his sister and used 28 to decorate a greeting card. How many stickers does Charlie have left?",
+      "reference": "17",
+      "correct": true
+    }
+  ],
+  "summary": {
+    "direct": {
+      "correct": 2,
+      "n": 7,
+      "answered": 7,
+      "seconds": 67.34197758000005,
+      "completion_tokens": 32,
+      "statuses": {
+        "model_answer_unverified": 7
+      }
+    },
+    "reasoning": {
+      "correct": 6,
+      "n": 7,
+      "answered": 6,
+      "seconds": 291.4316009989999,
+      "completion_tokens": 2246,
+      "statuses": {
+        "model_answer_unverified": 6,
+        "incomplete_or_missing_answer": 1
+      }
+    },
+    "program": {
+      "correct": 5,
+      "n": 7,
+      "answered": 7,
+      "seconds": 313.075336288,
+      "completion_tokens": 774,
+      "statuses": {
+        "model_answer_unverified": 3,
+        "computation_checked_semantics_unverified": 4
+      }
+    }
+  },
+  "wall_seconds": 726.931380391,
+  "protocol": {
+    "arms": {
+      "direct": 768,
+      "reasoning": 768,
+      "program": [
+        512,
+        256
+      ]
+    },
+    "temperature": 0,
+    "seed": 1707,
+    "native_thinking": false,
+    "memory": false,
+    "training": false,
+    "labels_solver_visible": false,
+    "selection_salt": "adaptive-language-v07-20260921\u0000",
+    "gpu": false,
+    "paid_inference": false,
+    "energy_measured": false,
+    "official_leaderboard": false,
+    "frontier_reference_evaluated": false
+  }
+}
