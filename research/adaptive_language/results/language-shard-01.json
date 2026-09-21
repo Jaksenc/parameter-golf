@@ -1,0 +1,1927 @@
+{
+  "status": "completed",
+  "shard": 1,
+  "shards": 12,
+  "run_id": "35652499808",
+  "source_commit": "d8212eabc5e1c5c93f8757ff8b3e81a4b960124d",
+  "core": {
+    "decoded_sha256": "6b37dcfc4a451d5dba399080ba362b5b5320b03e977bf49532aab2be3cd108ca",
+    "transport_repairs": [
+      "TK+TVJrofJK8b2RR",
+      "dXZ3vX7tDJtd",
+      "KuOR3d/cy5RJK"
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/openai/grade-school-math/3101c7d5072418e28b9008a6636bde82a006892c/grade_school_math/data/test.jsonl",
+      "sha256": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14",
+      "bytes": 749738
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/boolean_expressions.json",
+      "sha256": "ea6c754ec005e2d3f2d085d349a740f593b5764f32ea4638ffed4cfc0061b12a",
+      "bytes": 17172
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/causal_judgement.json",
+      "sha256": "6e8bca44dd402008ed41c07a3d0a1d5e7b03db7001a7e002fcdf4c60985ea081",
+      "bytes": 202943
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/date_understanding.json",
+      "sha256": "0148d4ac5fca05b2f82373e5fef7208e15363b9c6079493034d77b3dab496bf5",
+      "bytes": 61760
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/disambiguation_qa.json",
+      "sha256": "cf06df9ebf911b883671cb1b35d3fbd1a1c306b19b9e9a012407e596c85fe8c6",
+      "bytes": 85255
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/dyck_languages.json",
+      "sha256": "3f9badedf15c2be1ce53d94fdf016299bb30ba231ef087ab9f51a7ed6d0bdc25",
+      "bytes": 43814
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/formal_fallacies.json",
+      "sha256": "4c1adb664821157faade1d4153685403afcc02648f3c180a608a18f17f589629",
+      "bytes": 145562
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/geometric_shapes.json",
+      "sha256": "07be68a124420caa2ebc0b2c858ad79fc55c5c8806170e496e1e17ebfb11f31c",
+      "bytes": 77242
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/hyperbaton.json",
+      "sha256": "b6d7f55c75f5d02f2987a4f3123802dfa093872089a56a334144aae8a7264fdc",
+      "bytes": 44706
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/logical_deduction_five_objects.json",
+      "sha256": "d2df31394b903b7f0e085d42a69572a092987856eac076799017d70ef266fa8f",
+      "bytes": 155477
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/logical_deduction_seven_objects.json",
+      "sha256": "2896c7e3482eea318dd37bcc370d24ec3cc91e8374c1784287b5dbd38a529e33",
+      "bytes": 198404
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/logical_deduction_three_objects.json",
+      "sha256": "e590fae72e3a6041fbd23bd8ff6b74baf44ca563f6ba40a041c55e7b867c1681",
+      "bytes": 112213
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/movie_recommendation.json",
+      "sha256": "a8b53a87ee21a865b7248e694f388a9b8f7cf6b839b11d44796a2dd3fc088983",
+      "bytes": 57684
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/multistep_arithmetic_two.json",
+      "sha256": "c9d5a6433c9b78256422a15c78463949c8bec8d85607aa28b52d7234ad4a8595",
+      "bytes": 18325
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/navigate.json",
+      "sha256": "b7944dfd3c81da5c4815bd75b00d6fa3c64140823498e78ed496f4c3d36f7f0d",
+      "bytes": 55163
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/object_counting.json",
+      "sha256": "8acef14dbbdd40d2326ef7755750b6b5fe919fef06276af1bab3f1c297f022ff",
+      "bytes": 35890
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/penguins_in_a_table.json",
+      "sha256": "bb87ee449698eee51215e025a453b1bcb2f5e6589c2063b2c79e68b8f0655228",
+      "bytes": 74516
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/reasoning_about_colored_objects.json",
+      "sha256": "0a8850cf95166020fce7a78244026ceedd7ea839302471512b4f8744e85a6a49",
+      "bytes": 98694
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/ruin_names.json",
+      "sha256": "b6f723aef2bafdd4c7bfc3c7e0329c7e8a8279391a609969c8ed76c9319f5f7f",
+      "bytes": 53178
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/salient_translation_error_detection.json",
+      "sha256": "becf3eb8dd53c821a555ecd5c1334ecd93eb25f980e63be963c518e7138de5da",
+      "bytes": 286443
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/snarks.json",
+      "sha256": "54a0661fe2de06167645a4965e6bcf963c4ba307e76262a7c750998b0e3d0d0e",
+      "bytes": 42646
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/sports_understanding.json",
+      "sha256": "63ca262858f6176864515cd8cf53cdaa40839ebecc155b726d77930855d167bf",
+      "bytes": 28617
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/temporal_sequences.json",
+      "sha256": "92a1189faaa84aacc4c405aaa13f13f48c2992eb884772eedb622505252baef5",
+      "bytes": 148176
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/tracking_shuffled_objects_five_objects.json",
+      "sha256": "2063a46a4fb484236ed4310523606543a3e1dd4a4dc34eda65d407910ece25a5",
+      "bytes": 169722
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/tracking_shuffled_objects_seven_objects.json",
+      "sha256": "b59fd05b850c37cf57cb514ae1e6975c00b1638ade2291722056b2af3c54084d",
+      "bytes": 214906
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/tracking_shuffled_objects_three_objects.json",
+      "sha256": "546cc7bf10c6a01a6a4c17ae28a4966485f21f29fd5d111f37858ec78e354f6b",
+      "bytes": 128736
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/web_of_lies.json",
+      "sha256": "3e60323f8514a107fdb4edf35f8832a9171c5a09c0eaa47823559de905e8ab8b",
+      "bytes": 52964
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/word_sorting.json",
+      "sha256": "2a6132d2c99f00d0d2eb1113ac6b4a918bd969d863c48749210d969713db8d43",
+      "bytes": 66300
+    }
+  ],
+  "selected_ids": [
+    "bbh:boolean_expressions:140",
+    "bbh:boolean_expressions:236",
+    "bbh:causal_judgement:10",
+    "bbh:causal_judgement:168",
+    "bbh:date_understanding:180",
+    "bbh:date_understanding:69",
+    "bbh:disambiguation_qa:172",
+    "bbh:disambiguation_qa:51",
+    "bbh:dyck_languages:49",
+    "bbh:dyck_languages:82",
+    "bbh:formal_fallacies:213",
+    "bbh:formal_fallacies:84",
+    "bbh:geometric_shapes:102",
+    "bbh:geometric_shapes:184",
+    "bbh:hyperbaton:15",
+    "bbh:hyperbaton:219",
+    "bbh:logical_deduction_five_objects:115",
+    "bbh:logical_deduction_five_objects:228",
+    "bbh:logical_deduction_seven_objects:231",
+    "bbh:logical_deduction_seven_objects:67",
+    "bbh:logical_deduction_three_objects:111",
+    "bbh:logical_deduction_three_objects:165",
+    "bbh:movie_recommendation:195",
+    "bbh:movie_recommendation:197",
+    "bbh:multistep_arithmetic_two:125",
+    "bbh:multistep_arithmetic_two:151",
+    "bbh:navigate:112",
+    "bbh:navigate:41",
+    "bbh:object_counting:135",
+    "bbh:object_counting:61",
+    "bbh:penguins_in_a_table:141",
+    "bbh:penguins_in_a_table:89",
+    "bbh:reasoning_about_colored_objects:120",
+    "bbh:reasoning_about_colored_objects:42",
+    "bbh:ruin_names:11",
+    "bbh:ruin_names:144",
+    "bbh:salient_translation_error_detection:5",
+    "bbh:salient_translation_error_detection:93",
+    "bbh:snarks:167",
+    "bbh:snarks:93",
+    "bbh:sports_understanding:179",
+    "bbh:sports_understanding:49",
+    "bbh:temporal_sequences:158",
+    "bbh:temporal_sequences:214",
+    "bbh:tracking_shuffled_objects_five_objects:159",
+    "bbh:tracking_shuffled_objects_five_objects:175",
+    "bbh:tracking_shuffled_objects_seven_objects:150",
+    "bbh:tracking_shuffled_objects_seven_objects:183",
+    "bbh:tracking_shuffled_objects_three_objects:215",
+    "bbh:tracking_shuffled_objects_three_objects:233",
+    "bbh:web_of_lies:190",
+    "bbh:web_of_lies:230",
+    "bbh:word_sorting:200",
+    "bbh:word_sorting:205",
+    "gsm8k:1064",
+    "gsm8k:1076",
+    "gsm8k:1123",
+    "gsm8k:1127",
+    "gsm8k:1131",
+    "gsm8k:114",
+    "gsm8k:1200",
+    "gsm8k:1205",
+    "gsm8k:1286",
+    "gsm8k:14",
+    "gsm8k:164",
+    "gsm8k:181",
+    "gsm8k:216",
+    "gsm8k:217",
+    "gsm8k:220",
+    "gsm8k:391",
+    "gsm8k:393",
+    "gsm8k:429",
+    "gsm8k:58",
+    "gsm8k:636",
+    "gsm8k:642",
+    "gsm8k:673",
+    "gsm8k:728",
+    "gsm8k:797",
+    "gsm8k:801",
+    "gsm8k:81",
+    "gsm8k:869",
+    "gsm8k:892",
+    "gsm8k:902",
+    "gsm8k:911",
+    "gsm8k:947",
+    "gsm8k:975"
+  ],
+  "cohort_sha256": "edd6e937ab32c23ed79d52a380bec145adaa09b0a7855f14d14b77e373da48b0",
+  "runtime": {
+    "model": "unsloth/Qwen3.5-4B-GGUF",
+    "model_revision": "e87f176479d0855a907a41277aca2f8ee7a09523",
+    "weights": {
+      "url": "https://huggingface.co/unsloth/Qwen3.5-4B-GGUF/resolve/e87f176479d0855a907a41277aca2f8ee7a09523/Qwen3.5-4B-Q4_K_M.gguf",
+      "sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+      "bytes": 2740937888
+    },
+    "runtime": {
+      "url": "https://github.com/ggml-org/llama.cpp/releases/download/b10964/llama-b10964-bin-ubuntu-x64.tar.gz",
+      "sha256": "9abf88aea48a55d0f80edb1ee20220b186848cca0b4e919d71518cfd7ca67443",
+      "bytes": 16825086
+    },
+    "tag": "b10964",
+    "command": [
+      "/tmp/adaptive-language-runtime/binary/llama-b10964/llama-server",
+      "-m",
+      "/tmp/adaptive-language-runtime/model.gguf",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "8787",
+      "-c",
+      "8192",
+      "-np",
+      "1",
+      "-t",
+      "4",
+      "-tb",
+      "4",
+      "-ngl",
+      "0",
+      "--jinja",
+      "--chat-template-kwargs",
+      "{\"enable_thinking\":false}",
+      "--no-webui"
+    ],
+    "server_version": "",
+    "machine": "x86_64",
+    "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "setup_seconds": 33.02567760699999,
+    "private_inputs": false,
+    "paid_inference": false,
+    "training": false
+  },
+  "worker_exit": 0,
+  "rows": [
+    {
+      "arm": "reasoning",
+      "answer": "True",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "Let's break down the logical expression step by step:\n\nThe expression is: `not ( False ) or not not False`\n\n1.  **Evaluate the first part**: `not ( False )`\n    *   The negation of `False` is `True`.\n    *   Result: `True`\n\n2.  **Evaluate the second part**: `not not False`\n    *   The inner `not False` becomes `True`.\n    *   The outer `not True` becomes `False`.\n    *   Result: `False`\n\n3.  **Combine the parts with `or`**:\n    *   The expression becomes: `True or False`\n    *   In logic, `A or B` is `True` if at least one operand is `True`. Since the first operand is `True`, the result is `True`.\n\nFINAL: True",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 188,
+            "prompt_tokens": 70,
+            "total_tokens": 258,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 70,
+            "prompt_ms": 1313.116,
+            "prompt_per_token_ms": 18.7588,
+            "prompt_per_second": 53.308313964645926,
+            "predicted_n": 188,
+            "predicted_ms": 26621.654,
+            "predicted_per_token_ms": 142.36178609625668,
+            "predicted_per_second": 7.024356938903947
+          },
+          "seconds": 27.941518316,
+          "request_sha256": "874f8dc680b34feaa339667c5503449b5e84736e99edc2a98a216099c19e94db"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 70,
+        "completion_tokens": 188,
+        "total_tokens": 258
+      },
+      "seconds": 27.941760958999993,
+      "question_sha256": "8c68a74f2bed8419af071b783189821074ece57144c618ffa3043df78a1ace25",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:boolean_expressions:236",
+      "suite": "BBH",
+      "family": "boolean_expressions",
+      "question": "not ( False ) or not not False is",
+      "reference": "True",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "True",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "True",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "not False",
+            "value": true
+          },
+          {
+            "name": "b",
+            "expr": "not not False",
+            "value": false
+          },
+          {
+            "name": "c",
+            "expr": "a or b",
+            "value": true
+          }
+        ],
+        "value": true,
+        "program_sha256": "5b034be51112a4eb41721e9429a10487d40087de91e2339899a9644bf6b4a254",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "not False"
+            },
+            {
+              "name": "b",
+              "expr": "not not False"
+            },
+            {
+              "name": "c",
+              "expr": "a or b"
+            }
+          ],
+          "result": "c"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"not False\"},{\"name\":\"b\",\"expr\":\"not not False\"},{\"name\":\"c\",\"expr\":\"a or b\"}],\"result\":\"c\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 38,
+            "prompt_tokens": 343,
+            "total_tokens": 381,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 343,
+            "prompt_ms": 5205.822,
+            "prompt_per_token_ms": 15.17732361516035,
+            "prompt_per_second": 65.88776950114698,
+            "predicted_n": 38,
+            "predicted_ms": 5309.028,
+            "predicted_per_token_ms": 143.48724324324326,
+            "predicted_per_second": 6.969260663157173
+          },
+          "seconds": 10.563330499000003,
+          "request_sha256": "7542c3cb73c04f48e295ec53e9fff7a7a66b6fb1ba983ac9d190a3f69ff6cffb"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 343,
+        "completion_tokens": 38,
+        "total_tokens": 381
+      },
+      "seconds": 10.563766184000002,
+      "question_sha256": "8c68a74f2bed8419af071b783189821074ece57144c618ffa3043df78a1ace25",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:boolean_expressions:236",
+      "suite": "BBH",
+      "family": "boolean_expressions",
+      "question": "not ( False ) or not not False is",
+      "reference": "True",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "True",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "FINAL: True",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 4,
+            "prompt_tokens": 60,
+            "total_tokens": 64,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 60,
+            "prompt_ms": 1270.514,
+            "prompt_per_token_ms": 21.17523333333333,
+            "prompt_per_second": 47.22498138548651,
+            "predicted_n": 4,
+            "predicted_ms": 421.808,
+            "predicted_per_token_ms": 140.60266666666666,
+            "predicted_per_second": 7.112240640291318
+          },
+          "seconds": 1.7379626450000103,
+          "request_sha256": "54e39768301fd9e678b7b7591ee0f537df4d984cee935e4e4879760567cf4b9c"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 60,
+        "completion_tokens": 4,
+        "total_tokens": 64
+      },
+      "seconds": 1.7380344929999865,
+      "question_sha256": "8c68a74f2bed8419af071b783189821074ece57144c618ffa3043df78a1ace25",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:boolean_expressions:236",
+      "suite": "BBH",
+      "family": "boolean_expressions",
+      "question": "not ( False ) or not not False is",
+      "reference": "True",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "(E)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "(E)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 3,
+            "prompt_tokens": 136,
+            "total_tokens": 139,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 136,
+            "prompt_ms": 2249.605,
+            "prompt_per_token_ms": 16.54121323529412,
+            "prompt_per_second": 60.455057665679085,
+            "predicted_n": 3,
+            "predicted_ms": 286.893,
+            "predicted_per_token_ms": 143.4465,
+            "predicted_per_second": 6.971240148766266
+          },
+          "seconds": 2.541900469999973,
+          "request_sha256": "07bcb4771e12fba54d5c469840877df8793bea7f0df293e9d90585bd0251fcc3"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 136,
+        "completion_tokens": 3,
+        "total_tokens": 139
+      },
+      "seconds": 2.541971904999997,
+      "question_sha256": "35fc03ac2a11d7166986fe7c9b7b8541dfbaecc098145a64bf6a800fe7d45558",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:geometric_shapes:184",
+      "suite": "BBH",
+      "family": "geometric_shapes",
+      "question": "This SVG path element <path d=\"M 25.00,38.00 L 89.00,58.00\"/> draws a\nOptions:\n(A) circle\n(B) heptagon\n(C) hexagon\n(D) kite\n(E) line\n(F) octagon\n(G) pentagon\n(H) rectangle\n(I) sector\n(J) triangle",
+      "reference": "(E)",
+      "correct": true
+    },
+    {
+      "arm": "reasoning",
+      "answer": "(E)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "The SVG path element `<path d=\"M 25.00,38.00 L 89.00,58.00\"/>` consists of:\n1.  `M 25.00,38.00`: Moves the pen to the starting point (25, 38).\n2.  `L 89.00,58.00`: Draws a straight line to the point (89, 58).\n\nThere are no other commands (like `L` for more points, `A` for arcs, or `Z` to close the path). Therefore, it draws a single straight line segment.\n\nComparing this to the options:\n(A) circle - Incorrect (requires arc commands).\n(B) heptagon - Incorrect (requires 7 points).\n(C) hexagon - Incorrect (requires 6 points).\n(D) kite - Incorrect (requires 4 points).\n(E) line - Correct.\n(F) octagon - Incorrect (requires 8 points).\n(G) pentagon - Incorrect (requires 5 points).\n(H) rectangle - Incorrect (requires 4 points).\n(I) sector - Incorrect (requires arc and line).\n(J) triangle - Incorrect (requires 3 points).\n\nFINAL: (E)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 281,
+            "prompt_tokens": 146,
+            "total_tokens": 427,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 146,
+            "prompt_ms": 2285.816,
+            "prompt_per_token_ms": 15.656273972602738,
+            "prompt_per_second": 63.872157688982846,
+            "predicted_n": 281,
+            "predicted_ms": 39844.616,
+            "predicted_per_token_ms": 142.3022,
+            "predicted_per_second": 7.027298242753801
+          },
+          "seconds": 42.173986893999995,
+          "request_sha256": "cfacf6234b11d71472075df4b6ce2483c9721cdae3bad80994211456d6746d58"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 146,
+        "completion_tokens": 281,
+        "total_tokens": 427
+      },
+      "seconds": 42.17408494200001,
+      "question_sha256": "35fc03ac2a11d7166986fe7c9b7b8541dfbaecc098145a64bf6a800fe7d45558",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:geometric_shapes:184",
+      "suite": "BBH",
+      "family": "geometric_shapes",
+      "question": "This SVG path element <path d=\"M 25.00,38.00 L 89.00,58.00\"/> draws a\nOptions:\n(A) circle\n(B) heptagon\n(C) hexagon\n(D) kite\n(E) line\n(F) octagon\n(G) pentagon\n(H) rectangle\n(I) sector\n(J) triangle",
+      "reference": "(E)",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "(E)",
+      "status": "model_answer_unverified",
+      "execution": {
+        "answer": "(E)",
+        "status": "model_answer_unverified",
+        "trace": [],
+        "program_sha256": "d7061f9a291d486671168daaec5e8a5eb9d057ee554c08092bd91e11c691522a",
+        "plan": {
+          "answer": "(E)"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"answer\":\"(E)\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 8,
+            "prompt_tokens": 419,
+            "total_tokens": 427,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 419,
+            "prompt_ms": 6124.446,
+            "prompt_per_token_ms": 14.616816229116944,
+            "prompt_per_second": 68.41435127356824,
+            "predicted_n": 8,
+            "predicted_ms": 992.93,
+            "predicted_per_token_ms": 141.84714285714284,
+            "predicted_per_second": 7.049842385666663
+          },
+          "seconds": 7.1768039780000095,
+          "request_sha256": "5482f88fd3a85195bb43fd51f9181d2e707de91ecf5093bf1a867e5fd8edeade"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 419,
+        "completion_tokens": 8,
+        "total_tokens": 427
+      },
+      "seconds": 7.176933015000003,
+      "question_sha256": "35fc03ac2a11d7166986fe7c9b7b8541dfbaecc098145a64bf6a800fe7d45558",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:geometric_shapes:184",
+      "suite": "BBH",
+      "family": "geometric_shapes",
+      "question": "This SVG path element <path d=\"M 25.00,38.00 L 89.00,58.00\"/> draws a\nOptions:\n(A) circle\n(B) heptagon\n(C) hexagon\n(D) kite\n(E) line\n(F) octagon\n(G) pentagon\n(H) rectangle\n(I) sector\n(J) triangle",
+      "reference": "(E)",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "-84",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "-84",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "4+3+-9+-2",
+            "value": {
+              "numerator": -4,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "b",
+            "expr": "7*2+8-1",
+            "value": {
+              "numerator": 21,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "c",
+            "expr": "a*b",
+            "value": {
+              "numerator": -84,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": -84,
+          "denominator": 1
+        },
+        "program_sha256": "478782b3c8d5791d1b9995e16cc1f51f25d445de68727f35ad48d37b3fac28ed",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "4+3+-9+-2"
+            },
+            {
+              "name": "b",
+              "expr": "7*2+8-1"
+            },
+            {
+              "name": "c",
+              "expr": "a*b"
+            }
+          ],
+          "result": "c"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"4+3+-9+-2\"},{\"name\":\"b\",\"expr\":\"7*2+8-1\"},{\"name\":\"c\",\"expr\":\"a*b\"}],\"result\":\"c\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 46,
+            "prompt_tokens": 360,
+            "total_tokens": 406,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 360,
+            "prompt_ms": 5475.522,
+            "prompt_per_token_ms": 15.209783333333332,
+            "prompt_per_second": 65.74715616154953,
+            "predicted_n": 46,
+            "predicted_ms": 6485.529,
+            "predicted_per_token_ms": 144.12286666666668,
+            "predicted_per_second": 6.938524212905378
+          },
+          "seconds": 11.968637779000005,
+          "request_sha256": "ee54067b9240494407d0bbe8153149581b4c232fb99dd67937dca21e57ed87b0"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 360,
+        "completion_tokens": 46,
+        "total_tokens": 406
+      },
+      "seconds": 11.96915006399999,
+      "question_sha256": "f3dc5c641ed3cd8ee03ae701587889aad32b8f692cb34c8c770dbe3fc546d9f3",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:multistep_arithmetic_two:151",
+      "suite": "BBH",
+      "family": "multistep_arithmetic_two",
+      "question": "((4 + 3 + -9 + -2) * (7 * 2 + 8 - 1)) =",
+      "reference": "-84",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "(B)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "FINAL: (B)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 77,
+            "total_tokens": 83,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 77,
+            "prompt_ms": 1452.571,
+            "prompt_per_token_ms": 18.86455844155844,
+            "prompt_per_second": 53.00945702482013,
+            "predicted_n": 6,
+            "predicted_ms": 703.897,
+            "predicted_per_token_ms": 140.7794,
+            "predicted_per_second": 7.103311990248573
+          },
+          "seconds": 2.2110508259999904,
+          "request_sha256": "50fd77859c36aa9f2039387e6e7a1ef2a1e51af48356696b6f051090aa6f625d"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 77,
+        "completion_tokens": 6,
+        "total_tokens": 83
+      },
+      "seconds": 2.211122176999993,
+      "question_sha256": "f3dc5c641ed3cd8ee03ae701587889aad32b8f692cb34c8c770dbe3fc546d9f3",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:multistep_arithmetic_two:151",
+      "suite": "BBH",
+      "family": "multistep_arithmetic_two",
+      "question": "((4 + 3 + -9 + -2) * (7 * 2 + 8 - 1)) =",
+      "reference": "-84",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "-84",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To solve the expression $((4 + 3 + -9 + -2) * (7 * 2 + 8 - 1))$, we will break it down into two main parts: the terms inside the parentheses and then multiply the results.\n\n**Step 1: Evaluate the first part $(4 + 3 + -9 + -2)$**\n- Start with $4 + 3 = 7$.\n- Add $-9$: $7 + (-9) = -2$.\n- Add $-2$: $-2 + (-2) = -4$.\nSo, the first part equals $-4$.\n\n**Step 2: Evaluate the second part $(7 * 2 + 8 - 1)$**\n- Perform multiplication first: $7 * 2 = 14$.\n- Add $8$: $14 + 8 = 22$.\n- Subtract $1$: $22 - 1 = 21$.\nSo, the second part equals $21$.\n\n**Step 3: Multiply the results of the two parts**\n- The expression becomes: $(-4) * 21$.\n- Calculation: $4 * 21 = 84$.\n- Since one number is negative, the result is negative: $-84$.\n\nFINAL: -84",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 287,
+            "prompt_tokens": 87,
+            "total_tokens": 374,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 87,
+            "prompt_ms": 1494.832,
+            "prompt_per_token_ms": 17.181977011494254,
+            "prompt_per_second": 58.20052019223564,
+            "predicted_n": 287,
+            "predicted_ms": 40770.3,
+            "predicted_per_token_ms": 142.55349650349652,
+            "predicted_per_second": 7.014910363671594
+          },
+          "seconds": 42.30798683199998,
+          "request_sha256": "56f461a430e1ce2d0893a89ab26b07fb32af7b4720905ae2cb9dfa18cc2f96f6"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 87,
+        "completion_tokens": 287,
+        "total_tokens": 374
+      },
+      "seconds": 42.30808318299998,
+      "question_sha256": "f3dc5c641ed3cd8ee03ae701587889aad32b8f692cb34c8c770dbe3fc546d9f3",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:multistep_arithmetic_two:151",
+      "suite": "BBH",
+      "family": "multistep_arithmetic_two",
+      "question": "((4 + 3 + -9 + -2) * (7 * 2 + 8 - 1)) =",
+      "reference": "-84",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "(D)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "(D)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 3,
+            "prompt_tokens": 303,
+            "total_tokens": 306,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 303,
+            "prompt_ms": 4730.928,
+            "prompt_per_token_ms": 15.613623762376237,
+            "prompt_per_second": 64.04663102038332,
+            "predicted_n": 3,
+            "predicted_ms": 286.758,
+            "predicted_per_token_ms": 143.379,
+            "predicted_per_second": 6.974522070875094
+          },
+          "seconds": 5.074042931999998,
+          "request_sha256": "8b4ae2d1b053c73bfe75e568ffe99cb24f7cb16974122d784d59f64b782c2a74"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 303,
+        "completion_tokens": 3,
+        "total_tokens": 306
+      },
+      "seconds": 5.074119037999992,
+      "question_sha256": "3dc11a7a510ab821fd6515d9dbe04f9991d88933d60258fb235b9b71b9e74d19",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:salient_translation_error_detection:93",
+      "suite": "BBH",
+      "family": "salient_translation_error_detection",
+      "question": "The following translations from German to English contain a particular error. That error will be one of the following types: Named Entities: An entity (names, places, locations, etc.) is changed to a different entity. Numerical Values: Numerical values (ordinals or cardinals), dates, and/or units are changed. Modifiers or Adjectives: The modifiers and adjectives pertaining to a noun are changed. Negation or Antonyms: Introduce or remove a negation or change comparatives to their antonyms. Facts: Trivial factual errors not pertaining to the above classes are introduced in the translations. Dropped Content: A significant clause in the translation is removed. Please identify that error.  Source: Augustinus von Hippo, auch: Augustinus von Thagaste, Augustin oder Aurelius Augustinus war ein numidischer Kirchenlehrer.\nTranslation: Augustine of Hippo, also: Augustine of Thagaste, Augustine or Aurelius Augustine was a Dravidian church teacher.\nThe translation contains an error pertaining to\nOptions:\n(A) Modifiers or Adjectives\n(B) Numerical Values\n(C) Negation or Antonyms\n(D) Named Entities\n(E) Dropped Content\n(F) Facts",
+      "reference": "(A)",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "(D)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "The source text identifies Augustine as a \"numidischer Kirchenlehrer\" (a Numidian church teacher). \"Numidian\" refers to a person from Numidia, an ancient region in North Africa where Augustine was born. The translation changes this to \"Dravidian,\" which refers to a people from the Indian subcontinent. This is a clear substitution of a specific geographic/ethnic entity (Numidian) with a completely different one (Dravidian).\n\nThis falls under the category of **Named Entities**, where a specific entity (place/ethnicity) is changed to a different entity.\n\nFINAL: (D)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 127,
+            "prompt_tokens": 313,
+            "total_tokens": 440,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 313,
+            "prompt_ms": 4804.675,
+            "prompt_per_token_ms": 15.350399361022365,
+            "prompt_per_second": 65.14488492978192,
+            "predicted_n": 127,
+            "predicted_ms": 18258.065,
+            "predicted_per_token_ms": 144.90527777777777,
+            "predicted_per_second": 6.9010598877810985
+          },
+          "seconds": 23.108620218999988,
+          "request_sha256": "4bfd8005cc5118996a2cdc9a0903ddb6e59fc280a2b79659c188ab65defc1389"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 313,
+        "completion_tokens": 127,
+        "total_tokens": 440
+      },
+      "seconds": 23.108713217000002,
+      "question_sha256": "3dc11a7a510ab821fd6515d9dbe04f9991d88933d60258fb235b9b71b9e74d19",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:salient_translation_error_detection:93",
+      "suite": "BBH",
+      "family": "salient_translation_error_detection",
+      "question": "The following translations from German to English contain a particular error. That error will be one of the following types: Named Entities: An entity (names, places, locations, etc.) is changed to a different entity. Numerical Values: Numerical values (ordinals or cardinals), dates, and/or units are changed. Modifiers or Adjectives: The modifiers and adjectives pertaining to a noun are changed. Negation or Antonyms: Introduce or remove a negation or change comparatives to their antonyms. Facts: Trivial factual errors not pertaining to the above classes are introduced in the translations. Dropped Content: A significant clause in the translation is removed. Please identify that error.  Source: Augustinus von Hippo, auch: Augustinus von Thagaste, Augustin oder Aurelius Augustinus war ein numidischer Kirchenlehrer.\nTranslation: Augustine of Hippo, also: Augustine of Thagaste, Augustine or Aurelius Augustine was a Dravidian church teacher.\nThe translation contains an error pertaining to\nOptions:\n(A) Modifiers or Adjectives\n(B) Numerical Values\n(C) Negation or Antonyms\n(D) Named Entities\n(E) Dropped Content\n(F) Facts",
+      "reference": "(A)",
+      "correct": false
+    },
+    {
+      "arm": "program",
+      "answer": "(D)",
+      "status": "model_answer_unverified",
+      "execution": {
+        "answer": "(D)",
+        "status": "model_answer_unverified",
+        "trace": [],
+        "program_sha256": "c15f935f103dcbc9a6375a8dd4ec1a0759c7bf37d5ef08224685d32ec6ac2d86",
+        "plan": {
+          "answer": "(D)"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"answer\":\"(D)\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 8,
+            "prompt_tokens": 586,
+            "total_tokens": 594,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 586,
+            "prompt_ms": 9126.263,
+            "prompt_per_token_ms": 15.573827645051196,
+            "prompt_per_second": 64.21029067428803,
+            "predicted_n": 8,
+            "predicted_ms": 1020.206,
+            "predicted_per_token_ms": 145.74371428571428,
+            "predicted_per_second": 6.8613593725188835
+          },
+          "seconds": 10.20511923700002,
+          "request_sha256": "bc59ef4d5a6ca45279fa59f7c8423e0a4dc7af2062aa8b5ae7138bc2f92665f3"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 586,
+        "completion_tokens": 8,
+        "total_tokens": 594
+      },
+      "seconds": 10.205242352000027,
+      "question_sha256": "3dc11a7a510ab821fd6515d9dbe04f9991d88933d60258fb235b9b71b9e74d19",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:salient_translation_error_detection:93",
+      "suite": "BBH",
+      "family": "salient_translation_error_detection",
+      "question": "The following translations from German to English contain a particular error. That error will be one of the following types: Named Entities: An entity (names, places, locations, etc.) is changed to a different entity. Numerical Values: Numerical values (ordinals or cardinals), dates, and/or units are changed. Modifiers or Adjectives: The modifiers and adjectives pertaining to a noun are changed. Negation or Antonyms: Introduce or remove a negation or change comparatives to their antonyms. Facts: Trivial factual errors not pertaining to the above classes are introduced in the translations. Dropped Content: A significant clause in the translation is removed. Please identify that error.  Source: Augustinus von Hippo, auch: Augustinus von Thagaste, Augustin oder Aurelius Augustinus war ein numidischer Kirchenlehrer.\nTranslation: Augustine of Hippo, also: Augustine of Thagaste, Augustine or Aurelius Augustine was a Dravidian church teacher.\nThe translation contains an error pertaining to\nOptions:\n(A) Modifiers or Adjectives\n(B) Numerical Values\n(C) Negation or Antonyms\n(D) Named Entities\n(E) Dropped Content\n(F) Facts",
+      "reference": "(A)",
+      "correct": false
+    },
+    {
+      "arm": "program",
+      "answer": "(B)",
+      "status": "model_answer_unverified",
+      "execution": {
+        "answer": "(B)",
+        "status": "model_answer_unverified",
+        "trace": [],
+        "program_sha256": "a4d322bd1bff79635afb5b03060311e6ef36b0d576270f8b37801ab928323571",
+        "plan": {
+          "answer": "(B)"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"'Melissa'\"},{\"name\":\"b\",\"expr\":\"'Karl'\"},{\"name\":\"c\",\"expr\":\"'Patrick'\"},{\"name\":\"d\",\"expr\":\"a\"},{\"name\":\"e\",\"expr\":\"b\"},{\"name\":\"f\",\"expr\":\"c\"},{\"name\":\"g\",\"expr\":\"e\"},{\"name\":\"h\",\"expr\":\"f\"},{\"name\":\"i\",\"expr\":\"g\"},{\"name\":\"j\",\"expr\":\"h\"},{\"name\":\"k\",\"expr\":\"i\"},{\"name\":\"l\",\"expr\":\"j\"},{\"name\":\"m\",\"expr\":\"k\"},{\"name\":\"n\",\"expr\":\"l\"},{\"name\":\"o\",\"expr\":\"m\"},{\"name\":\"p\",\"expr\":\"n\"},{\"name\":\"q\",\"expr\":\"o\"},{\"name\":\"r\",\"expr\":\"p\"},{\"name\":\"s\",\"expr\":\"q\"},{\"name\":\"t\",\"expr\":\"r\"},{\"name\":\"u\",\"expr\":\"s\"},{\"name\":\"v\",\"expr\":\"t\"},{\"name\":\"w\",\"expr\":\"u\"},{\"name\":\"x\",\"expr\":\"v\"},{\"name\":\"y\",\"expr\":\"w\"},{\"name\":\"z\",\"expr\":\"x\"},{\"name\":\"aa\",\"expr\":\"y\"},{\"name\":\"ab\",\"expr\":\"z\"},{\"name\":\"ac\",\"expr\":\"aa\"},{\"name\":\"ad\",\"expr\":\"ab\"},{\"name\":\"ae\",\"expr\":\"ac\"},{\"name\":\"af\",\"expr\":\"ad\"},{\"name\":\"ag\",\"expr\":\"ae\"},{\"name\":\"ah\",\"expr\":\"af\"},{\"name\":\"ai\",\"expr\":\"ag\"},{\"name\":\"aj\",\"expr\":\"ah\"},{\"name\":\"ak\",\"expr\":\"ai\"},{\"name\":\"al\",\"expr\":\"aj\"},{\"name\":\"am\",\"expr\":\"ak\"},{\"name\":\"an\",\"expr\":\"al\"},{\"name\":\"ao\",\"expr\":\"am\"},{\"name\":\"ap\",\"expr\":\"an\"},{\"name\":\"aq\",\"expr\":\"ao\"},{\"name\":\"ar\",\"expr\":\"ap\"},{\"name\":\"as\",\"expr\":\"aq\"},{\"name\":\"at\",\"expr\":\"ar\"},{\"name\":\"au\",\"expr\":\"as\"},{\"name\":\"av\",\"expr\":\"at\"},{\"name\":\"aw\",\"expr\":\"au\"},{\"name\":\"ax\",\"expr\":\"av\"},{\"name\":\"ay\",\"expr\":\"aw\"},{\"name\":\"az\",\"expr\":\"ax\"},{\"name\":\"ba\",\"expr\":\"ay\"},{\"name\":\"bb\",\"expr\":\"az\"},{\"name\":\"bc\",\"expr\":\"ba\"},{\"name\":\"bd\",\"expr\":\"bb\"},{\"name\":\"be\",\"expr\":\"bc\"},{\"name\":\"bf\",\"expr\":\"bd\"},{\"name\":\"bg\",\"expr\":\"be\"},{\"name\":\"bh\",\"expr\":\"bf\"},{\"name\":\"bi\",\"expr\":\"bg\"},{\"name\":\"bj\",\"expr\":\"bh\"},{\"name\":\"bk\",\"expr",
+          "reasoning_content": "",
+          "finish_reason": "length",
+          "usage": {
+            "completion_tokens": 512,
+            "prompt_tokens": 440,
+            "total_tokens": 952,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 440,
+            "prompt_ms": 6773.761,
+            "prompt_per_token_ms": 15.394911363636364,
+            "prompt_per_second": 64.95652858138928,
+            "predicted_n": 512,
+            "predicted_ms": 75570.523,
+            "predicted_per_token_ms": 147.8875205479452,
+            "predicted_per_second": 6.761895772509077
+          },
+          "seconds": 82.35038829899997,
+          "request_sha256": "ba7d3502f1e79964c96ec8c55a1b505bc16bad75c5122e37d62de506c26cd407"
+        },
+        {
+          "text": "{\"answer\":\"(B)\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 8,
+            "prompt_tokens": 999,
+            "total_tokens": 1007,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 999,
+            "prompt_ms": 15416.848,
+            "prompt_per_token_ms": 15.43228028028028,
+            "prompt_per_second": 64.79923782085676,
+            "predicted_n": 8,
+            "predicted_ms": 1042.146,
+            "predicted_per_token_ms": 148.878,
+            "predicted_per_second": 6.716909147086876
+          },
+          "seconds": 16.5122973,
+          "request_sha256": "ffe70f1bb59e2fd365ff35f0293f5418de2f629d5ce1f7bb40b28eb8b1c7b362"
+        }
+      ],
+      "errors": [
+        "incomplete_generation"
+      ],
+      "usage": {
+        "prompt_tokens": 1439,
+        "completion_tokens": 520,
+        "total_tokens": 1959
+      },
+      "seconds": 98.86289554400003,
+      "question_sha256": "65ad20b58ae624ca284cbf76986f7f35ff7a16b2cd7c44adf0d85f876df0ba2d",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:tracking_shuffled_objects_three_objects:233",
+      "suite": "BBH",
+      "family": "tracking_shuffled_objects_three_objects",
+      "question": "Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Melissa, Bob is dancing with Karl, and Claire is dancing with Patrick.\nThroughout the song, the dancers often trade partners. First, Alice and Bob switch partners. Then, Claire and Alice switch partners. Finally, Alice and Bob switch partners. At the end of the dance, Bob is dancing with\nOptions:\n(A) Melissa\n(B) Karl\n(C) Patrick",
+      "reference": "(C)",
+      "correct": false
+    },
+    {
+      "arm": "direct",
+      "answer": "(C)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "Let's track the partners step by step:\n\n**Initial State:**\n- Alice is with Melissa.\n- Bob is with Karl.\n- Claire is with Patrick.\n\n**Step 1: Alice and Bob switch partners.**\n- Alice takes Bob's partner (Karl).\n- Bob takes Alice's partner (Melissa).\n- Claire remains with Patrick.\n*Current Pairs:* (Alice, Karl), (Bob, Melissa), (Claire, Patrick).\n\n**Step 2: Claire and Alice switch partners.**\n- Claire takes Alice's partner (Karl).\n- Alice takes Claire's partner (Patrick).\n- Bob remains with Melissa.\n*Current Pairs:* (Alice, Patrick), (Bob, Melissa), (Claire, Karl).\n\n**Step 3: Alice and Bob switch partners.**\n- Alice takes Bob's partner (Melissa).\n- Bob takes Alice's partner (Patrick).\n- Claire remains with Karl.\n*Current Pairs:* (Alice, Melissa), (Bob, Patrick), (Claire, Karl).\n\nAt the end of the dance, Bob is dancing with Patrick.\n\nFINAL: (C)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 243,
+            "prompt_tokens": 157,
+            "total_tokens": 400,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 157,
+            "prompt_ms": 2657.702,
+            "prompt_per_token_ms": 16.928038216560513,
+            "prompt_per_second": 59.07359064334526,
+            "predicted_n": 243,
+            "predicted_ms": 35026.64,
+            "predicted_per_token_ms": 144.73818181818183,
+            "predicted_per_second": 6.9090269577670025
+          },
+          "seconds": 37.761618806,
+          "request_sha256": "5f59427da7db26c5d4179eb5e92bd1faf6af2e34f96abba12758d1cbe3f3a24b"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 157,
+        "completion_tokens": 243,
+        "total_tokens": 400
+      },
+      "seconds": 37.761709585000006,
+      "question_sha256": "65ad20b58ae624ca284cbf76986f7f35ff7a16b2cd7c44adf0d85f876df0ba2d",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:tracking_shuffled_objects_three_objects:233",
+      "suite": "BBH",
+      "family": "tracking_shuffled_objects_three_objects",
+      "question": "Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Melissa, Bob is dancing with Karl, and Claire is dancing with Patrick.\nThroughout the song, the dancers often trade partners. First, Alice and Bob switch partners. Then, Claire and Alice switch partners. Finally, Alice and Bob switch partners. At the end of the dance, Bob is dancing with\nOptions:\n(A) Melissa\n(B) Karl\n(C) Patrick",
+      "reference": "(C)",
+      "correct": true
+    },
+    {
+      "arm": "reasoning",
+      "answer": "(C)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "Let's track the partners step by step:\n\n**Initial State:**\n- Alice is with Melissa.\n- Bob is with Karl.\n- Claire is with Patrick.\n\n**Step 1: Alice and Bob switch partners.**\n- Alice takes Bob's partner (Karl).\n- Bob takes Alice's partner (Melissa).\n- Claire remains with Patrick.\n*Current pairs: (Alice, Karl), (Bob, Melissa), (Claire, Patrick).*\n\n**Step 2: Claire and Alice switch partners.**\n- Claire takes Alice's partner (Karl).\n- Alice takes Claire's partner (Patrick).\n- Bob remains with Melissa.\n*Current pairs: (Alice, Patrick), (Bob, Melissa), (Claire, Karl).*\n\n**Step 3: Alice and Bob switch partners.**\n- Alice takes Bob's partner (Melissa).\n- Bob takes Alice's partner (Patrick).\n- Claire remains with Karl.\n*Current pairs: (Alice, Melissa), (Bob, Patrick), (Claire, Karl).*\n\nAt the end of the dance, Bob is dancing with Patrick.\n\nFINAL: (C)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 240,
+            "prompt_tokens": 167,
+            "total_tokens": 407,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 167,
+            "prompt_ms": 2632.454,
+            "prompt_per_token_ms": 15.76319760479042,
+            "prompt_per_second": 63.43890529521123,
+            "predicted_n": 240,
+            "predicted_ms": 34547.449,
+            "predicted_per_token_ms": 144.5499958158996,
+            "predicted_per_second": 6.918021646113437
+          },
+          "seconds": 37.22596088,
+          "request_sha256": "1f1866bfdce21e2017795b007c14209161acae4a06ed910b5c91d0df3ba1003a"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 167,
+        "completion_tokens": 240,
+        "total_tokens": 407
+      },
+      "seconds": 37.226053277000005,
+      "question_sha256": "65ad20b58ae624ca284cbf76986f7f35ff7a16b2cd7c44adf0d85f876df0ba2d",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:tracking_shuffled_objects_three_objects:233",
+      "suite": "BBH",
+      "family": "tracking_shuffled_objects_three_objects",
+      "question": "Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Melissa, Bob is dancing with Karl, and Claire is dancing with Patrick.\nThroughout the song, the dancers often trade partners. First, Alice and Bob switch partners. Then, Claire and Alice switch partners. Finally, Alice and Bob switch partners. At the end of the dance, Bob is dancing with\nOptions:\n(A) Melissa\n(B) Karl\n(C) Patrick",
+      "reference": "(C)",
+      "correct": true
+    },
+    {
+      "arm": "reasoning",
+      "answer": "4",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To find the number of miles the last dog needs to walk, we use the definition of the average.\n\n1.  **Identify the given values:**\n    *   Number of dogs ($n$) = 4\n    *   Average miles per dog = 3\n    *   Miles for Dog 1 = 1\n    *   Miles for Dog 2 = 4\n    *   Miles for Dog 3 = 3\n    *   Miles for Dog 4 = $x$ (unknown)\n\n2.  **Set up the equation for the average:**\n    The average is the sum of all individual values divided by the count.\n    $$ \\text{Average} = \\frac{\\text{Sum of miles}}{\\text{Number of dogs}} $$\n    $$ 3 = \\frac{1 + 4 + 3 + x}{4} $$\n\n3.  **Solve for $x$:**\n    Multiply both sides by 4:\n    $$ 3 \\times 4 = 1 + 4 + 3 + x $$\n    $$ 12 = 8 + x $$\n    Subtract 8 from both sides:\n    $$ x = 12 - 8 $$\n    $$ x = 4 $$\n\nThe last dog needs to walk 4 miles.\n\nFINAL: 4",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 286,
+            "prompt_tokens": 128,
+            "total_tokens": 414,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 128,
+            "prompt_ms": 2207.481,
+            "prompt_per_token_ms": 17.2459453125,
+            "prompt_per_second": 57.9846440354413,
+            "predicted_n": 286,
+            "predicted_ms": 40744.184,
+            "predicted_per_token_ms": 142.96204912280703,
+            "predicted_per_second": 6.994863365038799
+          },
+          "seconds": 42.997779528000024,
+          "request_sha256": "93ef9a040cb3f57e44cda07491561c3896314c845f1f4b896c271b52ff534755"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 128,
+        "completion_tokens": 286,
+        "total_tokens": 414
+      },
+      "seconds": 42.99787020400004,
+      "question_sha256": "a0b9c4b917b45afdc30ff1d4ada14379c79e62cbd84b9e70426c0b673671ba69",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:1205",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Bernie has 4 dogs. They each need a certain amount of exercise per day. The first needs to walk 1 mile. The second needs to walk 4 miles. The third needs to walk 3 miles. On average, they need to walk 3 miles per day. How many miles does the last dog need?",
+      "reference": "4",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "8/3",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "8/3",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "(1+4+3)/3",
+            "value": {
+              "numerator": 8,
+              "denominator": 3
+            }
+          },
+          {
+            "name": "b",
+            "expr": "a*4",
+            "value": {
+              "numerator": 32,
+              "denominator": 3
+            }
+          },
+          {
+            "name": "c",
+            "expr": "b-(1+4+3)",
+            "value": {
+              "numerator": 8,
+              "denominator": 3
+            }
+          }
+        ],
+        "value": {
+          "numerator": 8,
+          "denominator": 3
+        },
+        "program_sha256": "5a5d11553ce0218bc23d571cb81f85b99a10d734e0a772c40c6820a1a33d42e5",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "(1+4+3)/3"
+            },
+            {
+              "name": "b",
+              "expr": "a*4"
+            },
+            {
+              "name": "c",
+              "expr": "b-(1+4+3)"
+            }
+          ],
+          "result": "c"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"(1+4+3)/3\"},{\"name\":\"b\",\"expr\":\"a*4\"},{\"name\":\"c\",\"expr\":\"b-(1+4+3)\"}],\"result\":\"c\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 49,
+            "prompt_tokens": 401,
+            "total_tokens": 450,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 401,
+            "prompt_ms": 6458.232,
+            "prompt_per_token_ms": 16.105316708229427,
+            "prompt_per_second": 62.0912968131216,
+            "predicted_n": 49,
+            "predicted_ms": 6929.404,
+            "predicted_per_token_ms": 144.36258333333333,
+            "predicted_per_second": 6.927002668627778
+          },
+          "seconds": 13.446948476999978,
+          "request_sha256": "4ae7c3cf2a9cae95b3f9b65935682db79648027d6dac5872455d738a003fce54"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 401,
+        "completion_tokens": 49,
+        "total_tokens": 450
+      },
+      "seconds": 13.44730150600003,
+      "question_sha256": "a0b9c4b917b45afdc30ff1d4ada14379c79e62cbd84b9e70426c0b673671ba69",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:1205",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Bernie has 4 dogs. They each need a certain amount of exercise per day. The first needs to walk 1 mile. The second needs to walk 4 miles. The third needs to walk 3 miles. On average, they need to walk 3 miles per day. How many miles does the last dog need?",
+      "reference": "4",
+      "correct": false
+    },
+    {
+      "arm": "direct",
+      "answer": "(D)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "Let $x$ be the number of miles the last dog needs to walk.\nThe average number of miles walked per dog is given by the sum of the miles walked by all dogs divided by the number of dogs.\n\nThe miles walked by the four dogs are:\n1. 1 mile\n2. 4 miles\n3. 3 miles\n4. $x$ miles\n\nThe total miles walked is $1 + 4 + 3 + x = 8 + x$.\nThe number of dogs is 4.\nThe average is 3 miles.\n\nSo, we set up the equation:\n$$ \\frac{8 + x}{4} = 3 $$\n\nMultiply both sides by 4:\n$$ 8 + x = 12 $$\n\nSubtract 8 from both sides:\n$$ x = 4 $$\n\nThe last dog needs to walk 4 miles.\n\nFINAL: (D)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 195,
+            "prompt_tokens": 118,
+            "total_tokens": 313,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 118,
+            "prompt_ms": 2151.401,
+            "prompt_per_token_ms": 18.23221186440678,
+            "prompt_per_second": 54.847980455526425,
+            "predicted_n": 195,
+            "predicted_ms": 27452.958,
+            "predicted_per_token_ms": 141.51009278350514,
+            "predicted_per_second": 7.06663376675111
+          },
+          "seconds": 29.65103375000001,
+          "request_sha256": "eff2facc647200ba678bf2befca2e052a068c0895b117de26ec4ca22152bec74"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 118,
+        "completion_tokens": 195,
+        "total_tokens": 313
+      },
+      "seconds": 29.65111692800008,
+      "question_sha256": "a0b9c4b917b45afdc30ff1d4ada14379c79e62cbd84b9e70426c0b673671ba69",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:1205",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Bernie has 4 dogs. They each need a certain amount of exercise per day. The first needs to walk 1 mile. The second needs to walk 4 miles. The third needs to walk 3 miles. On average, they need to walk 3 miles per day. How many miles does the last dog need?",
+      "reference": "4",
+      "correct": false
+    },
+    {
+      "arm": "direct",
+      "answer": "(A)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "FINAL: (A)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 96,
+            "total_tokens": 102,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 96,
+            "prompt_ms": 1687.69,
+            "prompt_per_token_ms": 17.58010416666667,
+            "prompt_per_second": 56.88248434250366,
+            "predicted_n": 6,
+            "predicted_ms": 695.492,
+            "predicted_per_token_ms": 139.0984,
+            "predicted_per_second": 7.189155303008517
+          },
+          "seconds": 2.4285338670000556,
+          "request_sha256": "ea36c7042e980d41397c6bb3c5ac44a6273398e9a2658021d82ab63e2869a8d9"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 96,
+        "completion_tokens": 6,
+        "total_tokens": 102
+      },
+      "seconds": 2.4286044909999873,
+      "question_sha256": "11b1eb56214a9c6339b981bbe4cfc2171db3a1d7a16a02c4d31adab7c41e4525",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:636",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Julie operates the cash register exactly twice as fast as her less-experienced colleague Jewel. Daily, Jewel processes 50 customers. What is the total weekly production for the two if they work all days of the week?",
+      "reference": "1050",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "1050",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To find the total weekly production, we break down the problem into steps:\n\n1.  **Calculate Jewel's daily production**:\n    The problem states Jewel processes 50 customers daily.\n    Daily production (Jewel) = 50.\n\n2.  **Calculate Julie's daily production**:\n    Julie operates the register twice as fast as Jewel.\n    Daily production (Julie) = $50 \\times 2 = 100$.\n\n3.  **Calculate the combined daily production**:\n    Total daily production = Daily production (Jewel) + Daily production (Julie)\n    Total daily production = $50 + 100 = 150$ customers.\n\n4.  **Calculate the weekly production**:\n    There are 7 days in a week. Both work all days.\n    Total weekly production = Total daily production $\\times$ 7\n    Total weekly production = $150 \\times 7 = 1050$.\n\nThe total weekly production for the two is 1050 customers.\n\nFINAL: 1050",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 235,
+            "prompt_tokens": 106,
+            "total_tokens": 341,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 106,
+            "prompt_ms": 1688.593,
+            "prompt_per_token_ms": 15.930122641509435,
+            "prompt_per_second": 62.77415576163113,
+            "predicted_n": 235,
+            "predicted_ms": 33347.828,
+            "predicted_per_token_ms": 142.51208547008548,
+            "predicted_per_second": 7.016948750005548
+          },
+          "seconds": 35.079622678999954,
+          "request_sha256": "56e07865ec3575e4c1b0b2f36c62b75d87a3aa7f8e9ca43bd67d112611974e5f"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 106,
+        "completion_tokens": 235,
+        "total_tokens": 341
+      },
+      "seconds": 35.079715900999986,
+      "question_sha256": "11b1eb56214a9c6339b981bbe4cfc2171db3a1d7a16a02c4d31adab7c41e4525",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:636",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Julie operates the cash register exactly twice as fast as her less-experienced colleague Jewel. Daily, Jewel processes 50 customers. What is the total weekly production for the two if they work all days of the week?",
+      "reference": "1050",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "1400",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "1400",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "50",
+            "value": {
+              "numerator": 50,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "b",
+            "expr": "a*2",
+            "value": {
+              "numerator": 100,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "c",
+            "expr": "7",
+            "value": {
+              "numerator": 7,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "d",
+            "expr": "b*c",
+            "value": {
+              "numerator": 700,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "e",
+            "expr": "d*2",
+            "value": {
+              "numerator": 1400,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 1400,
+          "denominator": 1
+        },
+        "program_sha256": "f629ff04e579b7ae6926d572d8b3b1ec31eb231b4a1441c626da91f10a69dc0a",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "50"
+            },
+            {
+              "name": "b",
+              "expr": "a*2"
+            },
+            {
+              "name": "c",
+              "expr": "7"
+            },
+            {
+              "name": "d",
+              "expr": "b*c"
+            },
+            {
+              "name": "e",
+              "expr": "d*2"
+            }
+          ],
+          "result": "e"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"50\"},{\"name\":\"b\",\"expr\":\"a*2\"},{\"name\":\"c\",\"expr\":\"7\"},{\"name\":\"d\",\"expr\":\"b*c\"},{\"name\":\"e\",\"expr\":\"d*2\"}],\"result\":\"e\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 55,
+            "prompt_tokens": 379,
+            "total_tokens": 434,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 379,
+            "prompt_ms": 5853.79,
+            "prompt_per_token_ms": 15.445356200527705,
+            "prompt_per_second": 64.74437928248196,
+            "predicted_n": 55,
+            "predicted_ms": 7730.489,
+            "predicted_per_token_ms": 143.1572037037037,
+            "predicted_per_second": 6.98532783631152
+          },
+          "seconds": 13.643561610000006,
+          "request_sha256": "82fa3291d0c9e982763058603b549313758f39b5ff75e3cbcdabb0458e3e935e"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 379,
+        "completion_tokens": 55,
+        "total_tokens": 434
+      },
+      "seconds": 13.644009471999993,
+      "question_sha256": "11b1eb56214a9c6339b981bbe4cfc2171db3a1d7a16a02c4d31adab7c41e4525",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:636",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Julie operates the cash register exactly twice as fast as her less-experienced colleague Jewel. Daily, Jewel processes 50 customers. What is the total weekly production for the two if they work all days of the week?",
+      "reference": "1050",
+      "correct": false
+    },
+    {
+      "arm": "program",
+      "answer": "20",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "20",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "total",
+            "expr": "60",
+            "value": {
+              "numerator": 60,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "robert",
+            "expr": "30",
+            "value": {
+              "numerator": 30,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "richard",
+            "expr": "robert-10",
+            "value": {
+              "numerator": 20,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "jerry",
+            "expr": "total-robert-richard",
+            "value": {
+              "numerator": 10,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "diff",
+            "expr": "robert-jerry",
+            "value": {
+              "numerator": 20,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 20,
+          "denominator": 1
+        },
+        "program_sha256": "9f1f7722e1d9fbaf74c062e012600d27acf946a2158f9446ffb1b42de76d0a38",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "total",
+              "expr": "60"
+            },
+            {
+              "name": "robert",
+              "expr": "30"
+            },
+            {
+              "name": "richard",
+              "expr": "robert-10"
+            },
+            {
+              "name": "jerry",
+              "expr": "total-robert-richard"
+            },
+            {
+              "name": "diff",
+              "expr": "robert-jerry"
+            }
+          ],
+          "result": "diff"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"60\"},{\"name\":\"b\",\"expr\":\"30\"},{\"name\":\"c\",\"expr\":\"a-b\"},{\"name\":\"d\",\"expr\":\"b+10\"},{\"name\":\"e\",\"expr\":\"c-d\"},{\"name\":\"f\",\"expr\":\"a-e\"},{\"name\":\"g\",\"expr\":\"f-b\"},{\"name\":\"h\",\"expr\":\"g-b\"},{\"name\":\"i\",\"expr\":\"b+h\"},{\"name\":\"j\",\"expr\":\"i-b\"},{\"name\":\"k\",\"expr\":\"b+h\"},{\"name\":\"l\",\"expr\":\"k-b\"},{\"name\":\"m\",\"expr\":\"b+h\"},{\"name\":\"n\",\"expr\":\"m-b\"},{\"name\":\"o\",\"expr\":\"b+h\"},{\"name\":\"p\",\"expr\":\"o-b\"},{\"name\":\"q\",\"expr\":\"b+h\"},{\"name\":\"r\",\"expr\":\"q-b\"},{\"name\":\"s\",\"expr\":\"b+h\"},{\"name\":\"t\",\"expr\":\"s-b\"},{\"name\":\"u\",\"expr\":\"b+h\"},{\"name\":\"v\",\"expr\":\"u-b\"},{\"name\":\"w\",\"expr\":\"b+h\"},{\"name\":\"x\",\"expr\":\"w-b\"},{\"name\":\"y\",\"expr\":\"b+h\"},{\"name\":\"z\",\"expr\":\"z-b\"}],\"result\":\"z\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 245,
+            "prompt_tokens": 379,
+            "total_tokens": 624,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 379,
+            "prompt_ms": 5807.876,
+            "prompt_per_token_ms": 15.324211081794196,
+            "prompt_per_second": 65.25621414782272,
+            "predicted_n": 245,
+            "predicted_ms": 35052.4,
+            "predicted_per_token_ms": 143.65737704918033,
+            "predicted_per_second": 6.961006949595463
+          },
+          "seconds": 40.86657286399998,
+          "request_sha256": "180254dba25d52a875827b583e0694f1361517f90b92e0122eb0bcd3b721650f"
+        },
+        {
+          "text": "{\"steps\":[{\"name\":\"total\",\"expr\":\"60\"},{\"name\":\"robert\",\"expr\":\"30\"},{\"name\":\"richard\",\"expr\":\"robert-10\"},{\"name\":\"jerry\",\"expr\":\"total-robert-richard\"},{\"name\":\"diff\",\"expr\":\"robert-jerry\"}],\"result\":\"diff\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 65,
+            "prompt_tokens": 675,
+            "total_tokens": 740,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 675,
+            "prompt_ms": 11112.173,
+            "prompt_per_token_ms": 16.46247851851852,
+            "prompt_per_second": 60.74419467731468,
+            "predicted_n": 65,
+            "predicted_ms": 9246.499,
+            "predicted_per_token_ms": 144.476546875,
+            "predicted_per_second": 6.921538627755218
+          },
+          "seconds": 20.364148589000024,
+          "request_sha256": "cc08bc3aeb7c7917eb5608744fcbce2433b3c9e7cbae50b4ea9d667e2f739b15"
+        }
+      ],
+      "errors": [
+        "unknown_variable:z"
+      ],
+      "usage": {
+        "prompt_tokens": 1054,
+        "completion_tokens": 310,
+        "total_tokens": 1364
+      },
+      "seconds": 61.231698445000006,
+      "question_sha256": "f5597fe55e0b562ef61ce17d8869b88da497a238d80b82bb4fda67f26df79917",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:975",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Richard, Jerry, and Robert are going to share 60 cherries. If Robert has 30 cherries, and has 10 more than Richard, how many more cherries does Robert have than Jerry?",
+      "reference": "20",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "(A)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "FINAL: (A)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 96,
+            "total_tokens": 102,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 96,
+            "prompt_ms": 1552.979,
+            "prompt_per_token_ms": 16.176864583333334,
+            "prompt_per_second": 61.81667620746964,
+            "predicted_n": 6,
+            "predicted_ms": 700.445,
+            "predicted_per_token_ms": 140.089,
+            "predicted_per_second": 7.138319211358493
+          },
+          "seconds": 2.3370376530000385,
+          "request_sha256": "f20b9a445ab65dd62deb4225976fda45c93e57c0c0b63882aa50b2b02dd5d3b3"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 96,
+        "completion_tokens": 6,
+        "total_tokens": 102
+      },
+      "seconds": 2.3371069579999357,
+      "question_sha256": "f5597fe55e0b562ef61ce17d8869b88da497a238d80b82bb4fda67f26df79917",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:975",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Richard, Jerry, and Robert are going to share 60 cherries. If Robert has 30 cherries, and has 10 more than Richard, how many more cherries does Robert have than Jerry?",
+      "reference": "20",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "20",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "Here is the step-by-step reasoning:\n\n1.  **Identify the total number of cherries:**\n    Total = 60.\n\n2.  **Identify Robert's share:**\n    Robert has 30 cherries.\n\n3.  **Calculate Richard's share:**\n    The problem states Robert has 10 more cherries than Richard.\n    $Robert = Richard + 10$\n    $30 = Richard + 10$\n    $Richard = 30 - 10 = 20$ cherries.\n\n4.  **Calculate Jerry's share:**\n    The cherries are shared among the three of them.\n    $Total = Richard + Jerry + Robert$\n    $60 = 20 + Jerry + 30$\n    $60 = 50 + Jerry$\n    $Jerry = 60 - 50 = 10$ cherries.\n\n5.  **Calculate the difference between Robert and Jerry:**\n    Difference = Robert - Jerry\n    Difference = $30 - 10 = 20$.\n\nRobert has 20 more cherries than Jerry.\n\nFINAL: 20",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 257,
+            "prompt_tokens": 106,
+            "total_tokens": 363,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 106,
+            "prompt_ms": 1634.556,
+            "prompt_per_token_ms": 15.42033962264151,
+            "prompt_per_second": 64.84941476462109,
+            "predicted_n": 257,
+            "predicted_ms": 36510.37,
+            "predicted_per_token_ms": 142.6186328125,
+            "predicted_per_second": 7.011706537074261
+          },
+          "seconds": 38.18792119,
+          "request_sha256": "64237519b619dab7fc579b41cda5b6bd8e45c644de1b74baad58807992a019ae"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 106,
+        "completion_tokens": 257,
+        "total_tokens": 363
+      },
+      "seconds": 38.18800739100004,
+      "question_sha256": "f5597fe55e0b562ef61ce17d8869b88da497a238d80b82bb4fda67f26df79917",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:975",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Richard, Jerry, and Robert are going to share 60 cherries. If Robert has 30 cherries, and has 10 more than Richard, how many more cherries does Robert have than Jerry?",
+      "reference": "20",
+      "correct": true
+    }
+  ],
+  "summary": {
+    "direct": {
+      "correct": 3,
+      "n": 8,
+      "answered": 8,
+      "seconds": 83.74378557499998,
+      "completion_tokens": 466,
+      "statuses": {
+        "model_answer_unverified": 8
+      }
+    },
+    "reasoning": {
+      "correct": 7,
+      "n": 8,
+      "answered": 8,
+      "seconds": 289.0242890740001,
+      "completion_tokens": 1901,
+      "statuses": {
+        "model_answer_unverified": 8
+      }
+    },
+    "program": {
+      "correct": 4,
+      "n": 8,
+      "answered": 8,
+      "seconds": 227.10099658200008,
+      "completion_tokens": 1034,
+      "statuses": {
+        "computation_checked_semantics_unverified": 5,
+        "model_answer_unverified": 3
+      }
+    }
+  },
+  "wall_seconds": 638.932526787,
+  "protocol": {
+    "arms": {
+      "direct": 768,
+      "reasoning": 768,
+      "program": [
+        512,
+        256
+      ]
+    },
+    "temperature": 0,
+    "seed": 1707,
+    "native_thinking": false,
+    "memory": false,
+    "training": false,
+    "labels_solver_visible": false,
+    "selection_salt": "adaptive-language-v07-20260921\u0000",
+    "gpu": false,
+    "paid_inference": false,
+    "energy_measured": false,
+    "official_leaderboard": false,
+    "frontier_reference_evaluated": false
+  }
+}
