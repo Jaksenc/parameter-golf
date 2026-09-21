@@ -1,0 +1,50 @@
+name: Decision-0 across-depth 4B preflight
+on:
+  push:
+    branches: ['decision0/verified-cpu4b-20260921']
+    paths: ['.github/workflows/decision0-depth-preflight-v1.yml']
+permissions:
+  contents: read
+concurrency:
+  group: decision0-depth-preflight-v1
+  cancel-in-progress: false
+jobs:
+  preflight:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      MKL_NUM_THREADS: '4'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          ref: 4a6490b5247e447d9e3dc3ccab8d9892422f7a7a
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Compile isolated preflight source
+        run: python -m py_compile decision0/depth_preflight_v1.py
+      - name: Install matching CPU runtime
+        run: |
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6' 'numpy==2.4.6' 'safetensors==0.8.0'
+      - name: One real forward backward update and restoration check
+        timeout-minutes: 16
+        run: python -u decision0/depth_preflight_v1.py --out depth-result
+      - name: Preserve source and environment
+        if: always()
+        run: |
+          mkdir -p depth-result
+          cp decision0/depth_preflight_v1.py depth-result/
+          python -m pip freeze > depth-result/dependencies.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: decision0-depth-preflight-result
+          path: depth-result/
+          retention-days: 1
+          if-no-files-found: error
