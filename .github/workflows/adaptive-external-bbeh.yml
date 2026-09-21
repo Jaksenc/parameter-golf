@@ -34,7 +34,7 @@ jobs:
       - name: Run fixed-protocol pilot and publish only public benchmark receipts
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: python -u research/adaptive_external/bbeh_run.py --shard ${{ matrix.shard }} --shards 6 --per-task 2
+        run: python -u research/adaptive_external/bbeh_entry.py --shard ${{ matrix.shard }} --shards 6 --per-task 2
       - name: Cost and scope boundary
         if: always()
         run: echo 'Standard public CPU runners only. No Actions artifacts or caches. No paid inference. No model training. Main and other research branches unchanged.'
