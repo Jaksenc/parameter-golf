@@ -1,0 +1,1340 @@
+{
+  "status": "completed",
+  "shard": 1,
+  "run_id": "35654549907",
+  "source_commit": "6be5913ffa87f8a4ff0cfd302c9f19cae6870fdd",
+  "prompt_sha256": "d70e42e1309ab259d89191004e35cf10268e95de83b49559bb287eca3664f600",
+  "core": {
+    "decoded_sha256": "6b37dcfc4a451d5dba399080ba362b5b5320b03e977bf49532aab2be3cd108ca",
+    "transport_repairs": [
+      "TK+TVJrofJK8b2RR",
+      "dXZ3vX7tDJtd",
+      "KuOR3d/cy5RJK"
+    ]
+  },
+  "excluded_primary_ids": [
+    14,
+    58,
+    81,
+    114,
+    164,
+    181,
+    216,
+    217,
+    220,
+    391,
+    393,
+    429,
+    636,
+    642,
+    673,
+    728,
+    797,
+    801,
+    869,
+    892,
+    902,
+    911,
+    947,
+    975,
+    1064,
+    1076,
+    1123,
+    1127,
+    1131,
+    1200,
+    1205,
+    1286
+  ],
+  "selected_ids": [
+    "gsm8k:424",
+    "gsm8k:936",
+    "gsm8k:354",
+    "gsm8k:634",
+    "gsm8k:770",
+    "gsm8k:1074",
+    "gsm8k:933",
+    "gsm8k:1055",
+    "gsm8k:91",
+    "gsm8k:644",
+    "gsm8k:331",
+    "gsm8k:753",
+    "gsm8k:818",
+    "gsm8k:1043",
+    "gsm8k:829",
+    "gsm8k:327"
+  ],
+  "data_sha256": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14",
+  "runtime": {
+    "model": "unsloth/Qwen3.5-4B-GGUF",
+    "model_revision": "e87f176479d0855a907a41277aca2f8ee7a09523",
+    "weights": {
+      "url": "https://huggingface.co/unsloth/Qwen3.5-4B-GGUF/resolve/e87f176479d0855a907a41277aca2f8ee7a09523/Qwen3.5-4B-Q4_K_M.gguf",
+      "sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+      "bytes": 2740937888
+    },
+    "runtime": {
+      "url": "https://github.com/ggml-org/llama.cpp/releases/download/b10964/llama-b10964-bin-ubuntu-x64.tar.gz",
+      "sha256": "9abf88aea48a55d0f80edb1ee20220b186848cca0b4e919d71518cfd7ca67443",
+      "bytes": 16825086
+    },
+    "tag": "b10964",
+    "command": [
+      "/tmp/adaptive-language-runtime/binary/llama-b10964/llama-server",
+      "-m",
+      "/tmp/adaptive-language-runtime/model.gguf",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "8787",
+      "-c",
+      "8192",
+      "-np",
+      "1",
+      "-t",
+      "4",
+      "-tb",
+      "4",
+      "-ngl",
+      "0",
+      "--jinja",
+      "--chat-template-kwargs",
+      "{\"enable_thinking\":false}",
+      "--no-webui"
+    ],
+    "server_version": "",
+    "machine": "x86_64",
+    "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "setup_seconds": 34.560899495,
+    "private_inputs": false,
+    "paid_inference": false,
+    "training": false
+  },
+  "worker_exit": 0,
+  "rows": [
+    {
+      "arm": "program",
+      "answer": "-240",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "-240",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "1000",
+            "value": {
+              "numerator": 1000,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "b",
+            "expr": "1600",
+            "value": {
+              "numerator": 1600,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "c",
+            "expr": "70",
+            "value": {
+              "numerator": 70,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "d",
+            "expr": "12",
+            "value": {
+              "numerator": 12,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "e",
+            "expr": "24",
+            "value": {
+              "numerator": 24,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "f",
+            "expr": "1000+70*(24-12)",
+            "value": {
+              "numerator": 1840,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "g",
+            "expr": "b-f",
+            "value": {
+              "numerator": -240,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": -240,
+          "denominator": 1
+        },
+        "program_sha256": "6a684613da1f69e43a132ca94db5ee22b9f40217b526045fc4a4afac72d1cdbe",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "1000"
+            },
+            {
+              "name": "b",
+              "expr": "1600"
+            },
+            {
+              "name": "c",
+              "expr": "70"
+            },
+            {
+              "name": "d",
+              "expr": "12"
+            },
+            {
+              "name": "e",
+              "expr": "24"
+            },
+            {
+              "name": "f",
+              "expr": "1000+70*(24-12)"
+            },
+            {
+              "name": "g",
+              "expr": "b-f"
+            }
+          ],
+          "result": "g"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"1000\"},{\"name\":\"b\",\"expr\":\"1600\"},{\"name\":\"c\",\"expr\":\"70\"},{\"name\":\"d\",\"expr\":\"12\"},{\"name\":\"e\",\"expr\":\"24\"},{\"name\":\"f\",\"expr\":\"1000+70*(24-12)\"},{\"name\":\"g\",\"expr\":\"b-f\"}],\"result\":\"g\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 88,
+            "prompt_tokens": 451,
+            "total_tokens": 539,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 451,
+            "prompt_ms": 25534.26,
+            "prompt_per_token_ms": 56.61698447893569,
+            "prompt_per_second": 17.66254436196702,
+            "predicted_n": 88,
+            "predicted_ms": 8284.625,
+            "predicted_per_token_ms": 95.22557471264368,
+            "predicted_per_second": 10.501380569428308
+          },
+          "seconds": 33.82568589499999,
+          "request_sha256": "51e759692114939f8493c656de1a31b1db2997d2ad75956b048c052a0612af4c"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 451,
+        "completion_tokens": 88,
+        "total_tokens": 539
+      },
+      "seconds": 33.826448438,
+      "question_sha256": "79a51caa84107c5dcf3f151db2465e374936204c015989cbcb2dfb0bcf2eb30d",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:936",
+      "question": "A hotel in the Philippines charges 1000 pesos for a 12-hour stay or 1600 pesos for a 24-hour stay. After 12 hours, visitors have the option to add 70 pesos for every additional hour. Cameron arrives at 5 pm at the hotel and wants to leave at 10 am the next morning. He decides to go with the option of adding on 70 pesos for every hour after the 12-hour mark instead of paying for 24 hours. How much money would Cameron save?",
+      "reference": "250",
+      "suite": "GSM8K follow-up",
+      "correct": false
+    },
+    {
+      "arm": "grounded_program",
+      "answer": "-730",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "-730",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "base_rate_12h",
+            "expr": "1000",
+            "value": {
+              "numerator": 1000,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "base_rate_24h",
+            "expr": "1600",
+            "value": {
+              "numerator": 1600,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "rate_per_extra_hour",
+            "expr": "70",
+            "value": {
+              "numerator": 70,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "arrival_time",
+            "expr": "17",
+            "value": {
+              "numerator": 17,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "departure_time",
+            "expr": "10",
+            "value": {
+              "numerator": 10,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "next_day_flag",
+            "expr": "True",
+            "value": true
+          },
+          {
+            "name": "total_hours_stay",
+            "expr": "17 + 24 - 10",
+            "value": {
+              "numerator": 31,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "hours_in_first_block",
+            "expr": "12",
+            "value": {
+              "numerator": 12,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "hours_in_extra_block",
+            "expr": "total_hours_stay - hours_in_first_block",
+            "value": {
+              "numerator": 19,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "cost_option_a",
+            "expr": "base_rate_24h",
+            "value": {
+              "numerator": 1600,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "cost_option_b",
+            "expr": "base_rate_12h + rate_per_extra_hour * hours_in_extra_block",
+            "value": {
+              "numerator": 2330,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "savings",
+            "expr": "cost_option_a - cost_option_b",
+            "value": {
+              "numerator": -730,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": -730,
+          "denominator": 1
+        },
+        "program_sha256": "b157d5d2a36d7039e71f65621ae71313fa29a253d0ea225705027b6acff5251a",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "base_rate_12h",
+              "expr": "1000"
+            },
+            {
+              "name": "base_rate_24h",
+              "expr": "1600"
+            },
+            {
+              "name": "rate_per_extra_hour",
+              "expr": "70"
+            },
+            {
+              "name": "arrival_time",
+              "expr": "17"
+            },
+            {
+              "name": "departure_time",
+              "expr": "10"
+            },
+            {
+              "name": "next_day_flag",
+              "expr": "True"
+            },
+            {
+              "name": "total_hours_stay",
+              "expr": "17 + 24 - 10"
+            },
+            {
+              "name": "hours_in_first_block",
+              "expr": "12"
+            },
+            {
+              "name": "hours_in_extra_block",
+              "expr": "total_hours_stay - hours_in_first_block"
+            },
+            {
+              "name": "cost_option_a",
+              "expr": "base_rate_24h"
+            },
+            {
+              "name": "cost_option_b",
+              "expr": "base_rate_12h + rate_per_extra_hour * hours_in_extra_block"
+            },
+            {
+              "name": "savings",
+              "expr": "cost_option_a - cost_option_b"
+            }
+          ],
+          "result": "savings"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"base_rate_12h\",\"expr\":\"1000\"},{\"name\":\"base_rate_24h\",\"expr\":\"1600\"},{\"name\":\"rate_per_extra_hour\",\"expr\":\"70\"},{\"name\":\"arrival_time\",\"expr\":\"17\"},{\"name\":\"departure_time\",\"expr\":\"10\"},{\"name\":\"next_day_flag\",\"expr\":\"True\"},{\"name\":\"total_hours_stay\",\"expr\":\"17 + 24 - 10\"},{\"name\":\"hours_in_first_block\",\"expr\":\"12\"},{\"name\":\"hours_in_extra_block\",\"expr\":\"total_hours_stay - hours_in_first_block\"},{\"name\":\"cost_option_a\",\"expr\":\"base_rate_24h\"},{\"name\":\"cost_option_b\",\"expr\":\"base_rate_12h + rate_per_extra_hour * hours_in_extra_block\"},{\"name\":\"savings\",\"expr\":\"cost_option_a - cost_option_b\"}],\"result\":\"savings\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 190,
+            "prompt_tokens": 557,
+            "total_tokens": 747,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 557,
+            "prompt_ms": 31515.259,
+            "prompt_per_token_ms": 56.58035727109515,
+            "prompt_per_second": 17.673978183076333,
+            "predicted_n": 190,
+            "predicted_ms": 18438.434,
+            "predicted_per_token_ms": 97.55785185185185,
+            "predicted_per_second": 10.250328200323302
+          },
+          "seconds": 49.98348724799999,
+          "request_sha256": "ffd724e1af1a10d568ddf40ef6426bc692f8744bc41d7fba6e4ff4fed0e4a628"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 557,
+        "completion_tokens": 190,
+        "total_tokens": 747
+      },
+      "seconds": 49.984128922999986,
+      "question_sha256": "79a51caa84107c5dcf3f151db2465e374936204c015989cbcb2dfb0bcf2eb30d",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:936",
+      "question": "A hotel in the Philippines charges 1000 pesos for a 12-hour stay or 1600 pesos for a 24-hour stay. After 12 hours, visitors have the option to add 70 pesos for every additional hour. Cameron arrives at 5 pm at the hotel and wants to leave at 10 am the next morning. He decides to go with the option of adding on 70 pesos for every hour after the 12-hour mark instead of paying for 24 hours. How much money would Cameron save?",
+      "reference": "250",
+      "suite": "GSM8K follow-up",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "0",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To determine how much Cameron saves, we need to calculate the cost of both options and find the difference.\n\n**1. Calculate the duration of the stay:**\n*   Arrival: 5:00 PM (17:00)\n*   Departure: 10:00 AM (10:00) the next day\n*   Total hours = 12 hours (first half) + 10 hours (second half) = **22 hours**.\n\n**2. Calculate the cost of the 24-hour package:**\n*   The hotel charges a flat rate for a 24-hour stay regardless of the actual duration (as long as it's within 24 hours).\n*   Cost = **1600 pesos**.\n\n**3. Calculate the cost of the 12-hour package with add-ons:**\n*   Base cost for the first 12 hours = **1000 pesos**.\n*   Additional hours needed = Total hours (22) - First 12 hours = **10 hours**.\n*   Cost for additional hours = 10 hours $\\times$ 70 pesos/hour = **700 pesos**.\n*   Total cost = 1000 + 700 = **1700 pesos**.\n\n**4. Calculate the savings:**\n*   Savings = Cost of 24-hour package - Cost of 12-hour package + add-ons\n*   Savings = 1600 - 1700 = **-100 pesos**.\n\n**Conclusion:**\nCameron would actually **spend 100 pesos more** by choosing the add-on option rather than paying for the 24-hour package. Therefore, he does not save any money; he loses 100 pesos. Since the question asks \"How much money would Cameron save?\" and the result is a negative saving (a loss), the answer is 0 (he saves nothing) or technically a loss of 100. In the context of \"how much saved,\" the answer is 0 because the premise of saving fails.\n\nHowever, usually in such problems, if the calculated saving is negative, the answer is 0 (no savings) or the specific loss amount. Let's re-read carefully: \"How much money would Cameron save?\"\nIf Option A costs 1600 and Option B costs 1700, he saves $1600 - 1700 = -100$.\nHe does not save money. He pays 100 pesos more.\nThe amount saved is **0** (since he cannot save a negative amount of money in a practical sense, or the question implies a positive saving exists). But mathematically, the difference is -100.\nLet's assume the question expects the numerical difference. If the difference is negative, he saves nothing.\nAnswer: 0.\n\nWait, let me double check the calculation.\nOption 1 (24hr): 1600.\nOption 2 (12hr + add): 1000 + (10 * 70) = 1700.\nDifference: 1600 - 1700 = -100.\nCameron loses 100 pesos.\nTherefore, he saves **0** pesos.\n\nFINAL: 0",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 722,
+            "prompt_tokens": 178,
+            "total_tokens": 900,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 178,
+            "prompt_ms": 9964.361,
+            "prompt_per_token_ms": 55.97955617977529,
+            "prompt_per_second": 17.863664313245977,
+            "predicted_n": 722,
+            "predicted_ms": 69421.734,
+            "predicted_per_token_ms": 96.28534535367545,
+            "predicted_per_second": 10.385796471174286
+          },
+          "seconds": 79.41995870699998,
+          "request_sha256": "236881097274a1dcb7f0e7790c826d9ac10db89ac146a2f91bbadc7e626cc61c"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 178,
+        "completion_tokens": 722,
+        "total_tokens": 900
+      },
+      "seconds": 79.42031002699997,
+      "question_sha256": "79a51caa84107c5dcf3f151db2465e374936204c015989cbcb2dfb0bcf2eb30d",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:936",
+      "question": "A hotel in the Philippines charges 1000 pesos for a 12-hour stay or 1600 pesos for a 24-hour stay. After 12 hours, visitors have the option to add 70 pesos for every additional hour. Cameron arrives at 5 pm at the hotel and wants to leave at 10 am the next morning. He decides to go with the option of adding on 70 pesos for every hour after the 12-hour mark instead of paying for 24 hours. How much money would Cameron save?",
+      "reference": "250",
+      "suite": "GSM8K follow-up",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "750",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To determine the total number of puzzle pieces Teddy placed, we break down the activity into two parts:\n\n1.  **First Puzzle:**\n    *   Total pieces: 500.\n    *   Teddy finished half of it.\n    *   Calculation: $500 / 2 = 250$ pieces.\n\n2.  **Second Puzzle:**\n    *   Total pieces: 500.\n    *   Teddy started and finished it.\n    *   Calculation: $500$ pieces.\n\n3.  **Total Pieces:**\n    *   Sum of pieces from both puzzles: $250 + 500 = 750$.\n\nThe time constraint (\"within an hour\") confirms the activity happened in that timeframe but does not change the count of pieces placed.\n\nFINAL: 750",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 182,
+            "prompt_tokens": 102,
+            "total_tokens": 284,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 102,
+            "prompt_ms": 5638.388,
+            "prompt_per_token_ms": 55.27831372549019,
+            "prompt_per_second": 18.09027686636677,
+            "predicted_n": 182,
+            "predicted_ms": 16765.288,
+            "predicted_per_token_ms": 92.62590055248619,
+            "predicted_per_second": 10.796116356605387
+          },
+          "seconds": 22.43255276100001,
+          "request_sha256": "e192e3903f2338ec05f637fc9509e256c03fee4adcc7af1b1e4b8b9b740e8680"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 102,
+        "completion_tokens": 182,
+        "total_tokens": 284
+      },
+      "seconds": 22.43268221400001,
+      "question_sha256": "4ba473f00c2f4b5bdda815ab2ce0ec413985b2e5e73d87153b1b8ecd543c7689",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:1074",
+      "question": "Teddy finished half of a 500 piece puzzle, and then started and finished another 500 piece puzzle within an hour.  How many puzzle pieces did Teddy place during that hour?",
+      "reference": "750",
+      "suite": "GSM8K follow-up",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "750",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "750",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "500/2",
+            "value": {
+              "numerator": 250,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "b",
+            "expr": "a+500",
+            "value": {
+              "numerator": 750,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 750,
+          "denominator": 1
+        },
+        "program_sha256": "7dc9968158c946f76474ae8c536104493b423949091f0a960f9c0d88b4683fa3",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "500/2"
+            },
+            {
+              "name": "b",
+              "expr": "a+500"
+            }
+          ],
+          "result": "b"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"500/2\"},{\"name\":\"b\",\"expr\":\"a+500\"}],\"result\":\"b\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 33,
+            "prompt_tokens": 375,
+            "total_tokens": 408,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 375,
+            "prompt_ms": 21080.825,
+            "prompt_per_token_ms": 56.21553333333333,
+            "prompt_per_second": 17.78867762528269,
+            "predicted_n": 33,
+            "predicted_ms": 3000.385,
+            "predicted_per_token_ms": 93.76203125,
+            "predicted_per_second": 10.66529795342931
+          },
+          "seconds": 24.11451219700001,
+          "request_sha256": "776e5c6a37c35b2f91dce29a048c051e57013dda65f17c08306fc210028b7480"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 375,
+        "completion_tokens": 33,
+        "total_tokens": 408
+      },
+      "seconds": 24.11483727899997,
+      "question_sha256": "4ba473f00c2f4b5bdda815ab2ce0ec413985b2e5e73d87153b1b8ecd543c7689",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:1074",
+      "question": "Teddy finished half of a 500 piece puzzle, and then started and finished another 500 piece puzzle within an hour.  How many puzzle pieces did Teddy place during that hour?",
+      "reference": "750",
+      "suite": "GSM8K follow-up",
+      "correct": true
+    },
+    {
+      "arm": "grounded_program",
+      "answer": "1000",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "1000",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "puzzle1_pieces",
+            "expr": "500",
+            "value": {
+              "numerator": 500,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "puzzle2_pieces",
+            "expr": "500",
+            "value": {
+              "numerator": 500,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "total_pieces",
+            "expr": "puzzle1_pieces+puzzle2_pieces",
+            "value": {
+              "numerator": 1000,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 1000,
+          "denominator": 1
+        },
+        "program_sha256": "b1780bdda19abf5ce02bb83acf1dd800edb0e313aa0cd8e56b73690e4d094b9b",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "puzzle1_pieces",
+              "expr": "500"
+            },
+            {
+              "name": "puzzle2_pieces",
+              "expr": "500"
+            },
+            {
+              "name": "total_pieces",
+              "expr": "puzzle1_pieces+puzzle2_pieces"
+            }
+          ],
+          "result": "total_pieces"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"puzzle1_pieces\",\"expr\":\"500\"},{\"name\":\"puzzle2_pieces\",\"expr\":\"500\"},{\"name\":\"total_pieces\",\"expr\":\"puzzle1_pieces+puzzle2_pieces\"}],\"result\":\"total_pieces\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 52,
+            "prompt_tokens": 481,
+            "total_tokens": 533,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 481,
+            "prompt_ms": 27135.792,
+            "prompt_per_token_ms": 56.415367983367986,
+            "prompt_per_second": 17.725666529283536,
+            "predicted_n": 52,
+            "predicted_ms": 5053.495,
+            "predicted_per_token_ms": 99.08813725490195,
+            "predicted_per_second": 10.092025420031089
+          },
+          "seconds": 32.226120697,
+          "request_sha256": "1ebe2fd0a03f94f5d224ad4dad50319e9d04b6a1280e51250b08a9f125a66d51"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 481,
+        "completion_tokens": 52,
+        "total_tokens": 533
+      },
+      "seconds": 32.22648819800003,
+      "question_sha256": "4ba473f00c2f4b5bdda815ab2ce0ec413985b2e5e73d87153b1b8ecd543c7689",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:1074",
+      "question": "Teddy finished half of a 500 piece puzzle, and then started and finished another 500 piece puzzle within an hour.  How many puzzle pieces did Teddy place during that hour?",
+      "reference": "750",
+      "suite": "GSM8K follow-up",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "29",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "Here is the step-by-step breakdown:\n\n1.  **Steve's Age**: Given as 60 years old.\n2.  **Wife's Age**: She is 4 years older than Steve.\n    *   $60 + 4 = 64$ years old.\n3.  **Son's Age**: He is currently half as old as his mom (Steve's wife).\n    *   $64 / 2 = 32$ years old.\n4.  **Son's Wife's Age**: She is 3 years younger than her husband (the son).\n    *   $32 - 3 = 29$ years old.\n\nSteve's son's wife is 29 years old.\n\nFINAL: 29",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 165,
+            "prompt_tokens": 112,
+            "total_tokens": 277,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 112,
+            "prompt_ms": 6303.594,
+            "prompt_per_token_ms": 56.282089285714285,
+            "prompt_per_second": 17.767641761192106,
+            "predicted_n": 165,
+            "predicted_ms": 15239.47,
+            "predicted_per_token_ms": 92.92359756097561,
+            "predicted_per_second": 10.761529108295761
+          },
+          "seconds": 21.569716416999995,
+          "request_sha256": "61e27a3096d68368252214225a2ea347c18e7a9aadb53b9cce87e0b5de6b8e69"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 112,
+        "completion_tokens": 165,
+        "total_tokens": 277
+      },
+      "seconds": 21.56980084500003,
+      "question_sha256": "4783e30761c87bde4f49b6e28196113c5566c9708aef88a3df37c50d0d0147b6",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:644",
+      "question": "Steve is 60 years old. His wife is 4 years older than him. Their son is currently half as old as his mom and their son's wife is 3 years younger than her husband. How old is Steve's son's wife?",
+      "reference": "29",
+      "suite": "GSM8K follow-up",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "29",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "29",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "60",
+            "value": {
+              "numerator": 60,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "b",
+            "expr": "a+4",
+            "value": {
+              "numerator": 64,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "c",
+            "expr": "b/2",
+            "value": {
+              "numerator": 32,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "d",
+            "expr": "c-3",
+            "value": {
+              "numerator": 29,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 29,
+          "denominator": 1
+        },
+        "program_sha256": "a23e832c7f6c66b26ac09421ffde356da5d365bdb5ccdf5f56e0a6bf0c494214",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "60"
+            },
+            {
+              "name": "b",
+              "expr": "a+4"
+            },
+            {
+              "name": "c",
+              "expr": "b/2"
+            },
+            {
+              "name": "d",
+              "expr": "c-3"
+            }
+          ],
+          "result": "d"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"60\"},{\"name\":\"b\",\"expr\":\"a+4\"},{\"name\":\"c\",\"expr\":\"b/2\"},{\"name\":\"d\",\"expr\":\"c-3\"}],\"result\":\"d\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 48,
+            "prompt_tokens": 385,
+            "total_tokens": 433,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 385,
+            "prompt_ms": 21687.7,
+            "prompt_per_token_ms": 56.33168831168831,
+            "prompt_per_second": 17.75199767610212,
+            "predicted_n": 48,
+            "predicted_ms": 4460.985,
+            "predicted_per_token_ms": 94.91457446808509,
+            "predicted_per_second": 10.535789741503278
+          },
+          "seconds": 26.183979795000027,
+          "request_sha256": "5b054e160fe4ceae76597d2f355f2033a72a4f85c18a9914ec7561c6047f9d59"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 385,
+        "completion_tokens": 48,
+        "total_tokens": 433
+      },
+      "seconds": 26.184314604000008,
+      "question_sha256": "4783e30761c87bde4f49b6e28196113c5566c9708aef88a3df37c50d0d0147b6",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:644",
+      "question": "Steve is 60 years old. His wife is 4 years older than him. Their son is currently half as old as his mom and their son's wife is 3 years younger than her husband. How old is Steve's son's wife?",
+      "reference": "29",
+      "suite": "GSM8K follow-up",
+      "correct": true
+    },
+    {
+      "arm": "grounded_program",
+      "answer": "35",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "35",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "steve_age",
+            "expr": "60",
+            "value": {
+              "numerator": 60,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "wife_age",
+            "expr": "steve_age+4",
+            "value": {
+              "numerator": 64,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "son_age",
+            "expr": "wife_age//2",
+            "value": {
+              "numerator": 32,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "husband_age",
+            "expr": "son_age+3",
+            "value": {
+              "numerator": 35,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "son_wife_age",
+            "expr": "husband_age",
+            "value": {
+              "numerator": 35,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 35,
+          "denominator": 1
+        },
+        "program_sha256": "97f62abc80942240f1029fc8cb078f62b4691a4c4580251fb35c888cd11cd42b",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "steve_age",
+              "expr": "60"
+            },
+            {
+              "name": "wife_age",
+              "expr": "steve_age+4"
+            },
+            {
+              "name": "son_age",
+              "expr": "wife_age//2"
+            },
+            {
+              "name": "husband_age",
+              "expr": "son_age+3"
+            },
+            {
+              "name": "son_wife_age",
+              "expr": "husband_age"
+            }
+          ],
+          "result": "son_wife_age"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"steve_age\",\"expr\":\"60\"},{\"name\":\"wife_age\",\"expr\":\"steve_age+4\"},{\"name\":\"son_age\",\"expr\":\"wife_age//2\"},{\"name\":\"husband_age\",\"expr\":\"son_age+3\"},{\"name\":\"son_wife_age\",\"expr\":\"husband_age\"}],\"result\":\"son_wife_age\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 74,
+            "prompt_tokens": 491,
+            "total_tokens": 565,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 491,
+            "prompt_ms": 27825.074,
+            "prompt_per_token_ms": 56.670211812627294,
+            "prompt_per_second": 17.645954867900798,
+            "predicted_n": 74,
+            "predicted_ms": 7077.589,
+            "predicted_per_token_ms": 96.95327397260274,
+            "predicted_per_second": 10.314246843098688
+          },
+          "seconds": 34.939283321000005,
+          "request_sha256": "c990d69354f855e458cc2b6da110ecb235370fc7f9ca2cb4e954591720a56b88"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 491,
+        "completion_tokens": 74,
+        "total_tokens": 565
+      },
+      "seconds": 34.93970872,
+      "question_sha256": "4783e30761c87bde4f49b6e28196113c5566c9708aef88a3df37c50d0d0147b6",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:644",
+      "question": "Steve is 60 years old. His wife is 4 years older than him. Their son is currently half as old as his mom and their son's wife is 3 years younger than her husband. How old is Steve's son's wife?",
+      "reference": "29",
+      "suite": "GSM8K follow-up",
+      "correct": false
+    },
+    {
+      "arm": "grounded_program",
+      "answer": "130000",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "130000",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "cities_per_country",
+            "expr": "5",
+            "value": {
+              "numerator": 5,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "people_per_city",
+            "expr": "1000",
+            "value": {
+              "numerator": 1000,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "total_cities",
+            "expr": "cities_per_country*26",
+            "value": {
+              "numerator": 130,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "total_people",
+            "expr": "total_cities*people_per_city",
+            "value": {
+              "numerator": 130000,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 130000,
+          "denominator": 1
+        },
+        "program_sha256": "670cc974898d4f61085ccc992936e87cd4bb2c8dc7bdff1128890a1501bce60f",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "cities_per_country",
+              "expr": "5"
+            },
+            {
+              "name": "people_per_city",
+              "expr": "1000"
+            },
+            {
+              "name": "total_cities",
+              "expr": "cities_per_country*26"
+            },
+            {
+              "name": "total_people",
+              "expr": "total_cities*people_per_city"
+            }
+          ],
+          "result": "total_people"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"cities_per_country\",\"expr\":\"5\"},{\"name\":\"people_per_city\",\"expr\":\"1000\"},{\"name\":\"total_cities\",\"expr\":\"cities_per_country*26\"},{\"name\":\"total_people\",\"expr\":\"total_cities*people_per_city\"}],\"result\":\"total_people\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 63,
+            "prompt_tokens": 491,
+            "total_tokens": 554,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 491,
+            "prompt_ms": 27803.717,
+            "prompt_per_token_ms": 56.62671486761711,
+            "prompt_per_second": 17.659509338265817,
+            "predicted_n": 63,
+            "predicted_ms": 5894.94,
+            "predicted_per_token_ms": 95.07967741935484,
+            "predicted_per_second": 10.517494664916013
+          },
+          "seconds": 33.70533925299998,
+          "request_sha256": "6f9690f64aa5d114ed38a9b589066cd65f3df44429705fcedb548baaf4bad16f"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 491,
+        "completion_tokens": 63,
+        "total_tokens": 554
+      },
+      "seconds": 33.70572835399997,
+      "question_sha256": "92303715c78aff5231d63f86db905092a9dc7b3423b70b07f20688f75564f11b",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:1043",
+      "question": "There are 26 countries in South America and, in each country, there are 5 cities with 1000 people living in each city.  If the whole population lives in these cities, how many people are there in South America?",
+      "reference": "130000",
+      "suite": "GSM8K follow-up",
+      "correct": true
+    },
+    {
+      "arm": "reasoning",
+      "answer": "130,000",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To find the total population of South America based on the provided information, we can break down the calculation into steps:\n\n1.  **Calculate the population per country:**\n    There are 5 cities in each country, and each city has 1,000 people.\n    $$5 \\text{ cities} \\times 1,000 \\text{ people/city} = 5,000 \\text{ people per country}$$\n\n2.  **Calculate the total population for all countries:**\n    There are 26 countries in South America.\n    $$26 \\text{ countries} \\times 5,000 \\text{ people/country} = 130,000 \\text{ people}$$\n\nThe problem states that the whole population lives in these cities, so no additional adjustments are needed.\n\nFINAL: 130,000",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 193,
+            "prompt_tokens": 112,
+            "total_tokens": 305,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 112,
+            "prompt_ms": 6268.282,
+            "prompt_per_token_ms": 55.96680357142857,
+            "prompt_per_second": 17.867734731781372,
+            "predicted_n": 193,
+            "predicted_ms": 17739.423,
+            "predicted_per_token_ms": 92.392828125,
+            "predicted_per_second": 10.82335090605822
+          },
+          "seconds": 24.035433321000028,
+          "request_sha256": "02b3d608d1631ed24f52c1d7d0e5ceb95dea899948921552957e043dc56e29a8"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 112,
+        "completion_tokens": 193,
+        "total_tokens": 305
+      },
+      "seconds": 24.035513733000016,
+      "question_sha256": "92303715c78aff5231d63f86db905092a9dc7b3423b70b07f20688f75564f11b",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:1043",
+      "question": "There are 26 countries in South America and, in each country, there are 5 cities with 1000 people living in each city.  If the whole population lives in these cities, how many people are there in South America?",
+      "reference": "130000",
+      "suite": "GSM8K follow-up",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "130000",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "130000",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "26*5",
+            "value": {
+              "numerator": 130,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "b",
+            "expr": "a*1000",
+            "value": {
+              "numerator": 130000,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 130000,
+          "denominator": 1
+        },
+        "program_sha256": "3c9015eb5c3a0ff0ad96d0065374fbf076f0048937f5dad03b80ac6c776f4b39",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "26*5"
+            },
+            {
+              "name": "b",
+              "expr": "a*1000"
+            }
+          ],
+          "result": "b"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"26*5\"},{\"name\":\"b\",\"expr\":\"a*1000\"}],\"result\":\"b\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 33,
+            "prompt_tokens": 385,
+            "total_tokens": 418,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 385,
+            "prompt_ms": 21692.869,
+            "prompt_per_token_ms": 56.34511428571428,
+            "prompt_per_second": 17.74776771113125,
+            "predicted_n": 33,
+            "predicted_ms": 2978.484,
+            "predicted_per_token_ms": 93.077625,
+            "predicted_per_second": 10.743720631032431
+          },
+          "seconds": 24.705043851000028,
+          "request_sha256": "53371c9c24340d1fe8678d9c04481dbd0d946b7cca1e09a01ef0d55a994b3d9b"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 385,
+        "completion_tokens": 33,
+        "total_tokens": 418
+      },
+      "seconds": 24.705364034000013,
+      "question_sha256": "92303715c78aff5231d63f86db905092a9dc7b3423b70b07f20688f75564f11b",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:1043",
+      "question": "There are 26 countries in South America and, in each country, there are 5 cities with 1000 people living in each city.  If the whole population lives in these cities, how many people are there in South America?",
+      "reference": "130000",
+      "suite": "GSM8K follow-up",
+      "correct": true
+    }
+  ],
+  "summary": {
+    "reasoning": {
+      "correct": 3,
+      "n": 4,
+      "answered": 4,
+      "seconds": 147.45830681900003
+    },
+    "program": {
+      "correct": 3,
+      "n": 4,
+      "answered": 4,
+      "seconds": 108.83096435499999
+    },
+    "grounded_program": {
+      "correct": 1,
+      "n": 4,
+      "answered": 4,
+      "seconds": 150.85605419499998
+    }
+  },
+  "wall_seconds": 441.96834273099995,
+  "protocol": {
+    "phase": "disjoint follow-up after one observed primary semantic error",
+    "primary_protocol_unchanged": true,
+    "memory": false,
+    "training": false,
+    "native_thinking": false,
+    "generation_budget": {
+      "reasoning": 768,
+      "program": [
+        512,
+        256
+      ],
+      "grounded_program": [
+        512,
+        256
+      ]
+    },
+    "feedback": "mechanical interpreter errors only",
+    "frontier_reference": false,
+    "labels_solver_visible": false
+  }
+}
