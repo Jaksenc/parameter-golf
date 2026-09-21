@@ -1,0 +1,131 @@
+name: Duplex v6 missing-response completion and audit
+on:
+  push:
+    branches: ['research/duplex-v6-binding-budget']
+    paths: ['.github/workflows/duplex-v6-missing-responses.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  prepare:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    outputs:
+      shards: ${{ steps.plan.outputs.shards }}
+    defaults:
+      run:
+        working-directory: experiments/duplex-v5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 35553557091
+          pattern: v6-shard-*
+          path: experiments/duplex-v5/original/
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 35553120048
+          name: v6-frozen-data
+          path: experiments/duplex-v5/data/
+      - name: Determine absent pairs, regardless of recorded correctness
+        id: plan
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          python assemble_v6.py prepare
+          mkdir carry
+          cp -r original data resume-existing.json resume-plan.json carry/
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: v6-resume-input
+          path: experiments/duplex-v5/carry/
+          retention-days: 3
+          if-no-files-found: error
+  inference:
+    needs: prepare
+    if: needs.prepare.outputs.shards != '[]'
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        shard: ${{ fromJSON(needs.prepare.outputs.shards) }}
+    defaults:
+      run:
+        working-directory: experiments/duplex-v5
+    env:
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      HF_HUB_DOWNLOAD_TIMEOUT: '120'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: v6-resume-input
+          path: experiments/duplex-v5/carry/
+      - name: Resume unchanged generation only for missing pairs
+        timeout-minutes: 12
+        run: |
+          grep -qw bf16 /proc/cpuinfo
+          cp -r carry/data .
+          cp carry/resume-existing.json .
+          python -m pip install --no-cache-dir torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir transformers==5.17.0 huggingface-hub==1.32.0 sentencepiece==0.2.2 protobuf==6.33.6
+          python -u resume_missing_v6.py run --shard '${{ matrix.shard }}'
+      - name: Preserve continuation receipt
+        if: always()
+        run: |
+          mkdir -p 'out/shard-${{ matrix.shard }}'
+          cp resume_missing_v6.py 'out/shard-${{ matrix.shard }}/'
+          python -m pip freeze > 'out/shard-${{ matrix.shard }}/dependencies.txt'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: v6-resumed-${{ matrix.shard }}
+          path: experiments/duplex-v5/out/shard-${{ matrix.shard }}/
+          retention-days: 3
+          if-no-files-found: error
+  audit:
+    needs: [prepare,inference]
+    if: always() && needs.prepare.result == 'success' && (needs.inference.result == 'success' || needs.inference.result == 'skipped')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    defaults:
+      run:
+        working-directory: experiments/duplex-v5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: v6-resume-input
+          path: experiments/duplex-v5/carry/
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        if: needs.inference.result == 'success'
+        with:
+          pattern: v6-resumed-*
+          path: experiments/duplex-v5/resumed/
+      - name: Prove unchanged old outputs and complete 128-pair coverage
+        run: |
+          cp -r carry/original carry/data .
+          mkdir -p resumed
+          python assemble_v6.py assemble
+          cp carry/resume-plan.json evidence/
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: v6-complete
+          path: experiments/duplex-v5/evidence/
+          retention-days: 3
+          if-no-files-found: error
