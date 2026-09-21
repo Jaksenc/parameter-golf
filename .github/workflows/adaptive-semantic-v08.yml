@@ -1,0 +1,58 @@
+name: Adaptive semantic v08 pilot
+on:
+  push:
+    branches: [research/adaptive-semantic-v08-20260921]
+    paths: [.github/workflows/adaptive-semantic-v08.yml]
+permissions:
+  contents: read
+jobs:
+  preflight:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Exact source integrity and nonbenchmark contract checks
+        run: python3 -u research/adaptive_semantic/run.py --prepare
+      - name: Nonbenchmark live format and throughput preflight
+        env:
+          OMP_NUM_THREADS: '4'
+          OPENBLAS_NUM_THREADS: '1'
+        run: python3 -u research/adaptive_semantic/run.py --preflight
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: adaptive-semantic-preflight
+          path: semantic-preflight.json
+          retention-days: 1
+          if-no-files-found: warn
+  benchmark:
+    needs: preflight
+    runs-on: ubuntu-24.04
+    timeout-minutes: 27
+    strategy:
+      max-parallel: 12
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Frozen question-only solver; labels scored after worker exits
+        env:
+          OMP_NUM_THREADS: '4'
+          OPENBLAS_NUM_THREADS: '1'
+        run: python3 -u research/adaptive_semantic/run.py --shard ${{ matrix.shard }} --shards 12
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: adaptive-semantic-${{ matrix.shard }}
+          path: semantic-shard-*.json
+          retention-days: 1
+          if-no-files-found: warn
+      - name: Runtime diagnostic tail
+        if: always()
+        run: tail -25 /tmp/adaptive-language-runtime/server.log || true
