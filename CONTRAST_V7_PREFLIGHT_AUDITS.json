@@ -1,0 +1,23 @@
+{
+  "created_utc": "2026-09-21T20:50:52.530557+00:00",
+  "model_outcomes_inspected": false,
+  "unit_tests_passed": 58,
+  "parser_fuzz_fixtures": 20000,
+  "parser_fuzz_mismatches": 0,
+  "unique_evaluation_inputs": 295,
+  "external_answer_keys_checked_against_sources": 64,
+  "external_source_files_hash_checked": 8,
+  "old_inputs_used_for_stem_overlap_audit": 421,
+  "hashes": {
+    "contrast_v7.py": "52771fdb5d8c7e5315c6f49ac87b725ba1244c0fe5ba4f5a0674ec4de3778d0b",
+    "analyze_contrast.py": "8e84dcda07d7542343c3630524bd7f1729f870ab9230da5f2daf43c7e6e1cede",
+    "decide_contrast.py": "d234f421f9477bc3f9579659443c924fe21cf1190ac9c5189d88e9a66b82caf8",
+    "audit_inputs.py": "66215fd93aafb628a65b817285e70f0b777c9335dcdeae2d7b664f4956a2ba22",
+    "diagnose_contrast.py": "e3a3844518cb04a3a346c59bfa61bf64508328a9475045544151f3c5282075f1",
+    "audit_live.py": "e178f2eedafed2f0f3152d03188442f2cdb6024ce3eb7a19529af417e66b930d",
+    "test_analysis.py": "9fefa390b4c9cb03ec847bcb677e841ef8804fe1e74bcf70bc1465f7ab97a98e",
+    "test_harness_isolation.py": "f801b45e3182c3ee0e2af87a67ca3418a1fdacb05ff4cb7178b4854eef219f2a",
+    "test_reducer_roundtrip.py": "053b6392704a80120a410e601377c00e84f4c19f8229d61b79777bcac71c90a5"
+  },
+  "limits": "Synthetic fixture scores are software tests, not neural evaluations. Source matching verifies provenance and label mapping, not the semantic truth of every original benchmark key or exclusion of pretrained contamination. Scientific protocol and inputs unchanged."
+}
