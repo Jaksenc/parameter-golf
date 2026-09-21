@@ -1,0 +1,5201 @@
+{
+  "primary": [
+    {
+      "id": "bbh:boolean_expressions:140",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "boolean_expressions",
+      "answer": "True",
+      "reference": "True",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 21.05352282100001,
+      "usage": {
+        "prompt_tokens": 343,
+        "completion_tokens": 20,
+        "total_tokens": 363
+      }
+    },
+    {
+      "id": "bbh:boolean_expressions:140",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "boolean_expressions",
+      "answer": "(True)",
+      "reference": "True",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 3.8878975819999937,
+      "usage": {
+        "prompt_tokens": 60,
+        "completion_tokens": 6,
+        "total_tokens": 66
+      }
+    },
+    {
+      "id": "bbh:boolean_expressions:140",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "boolean_expressions",
+      "answer": "True",
+      "reference": "True",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 24.213872518000002,
+      "usage": {
+        "prompt_tokens": 70,
+        "completion_tokens": 224,
+        "total_tokens": 294
+      }
+    },
+    {
+      "id": "bbh:geometric_shapes:102",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "geometric_shapes",
+      "answer": "(C)",
+      "reference": "(C)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 75.853259233,
+      "usage": {
+        "prompt_tokens": 222,
+        "completion_tokens": 676,
+        "total_tokens": 898
+      }
+    },
+    {
+      "id": "bbh:geometric_shapes:102",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "geometric_shapes",
+      "answer": "(C)",
+      "reference": "(C)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 28.444703603999983,
+      "usage": {
+        "prompt_tokens": 495,
+        "completion_tokens": 8,
+        "total_tokens": 503
+      }
+    },
+    {
+      "id": "bbh:geometric_shapes:102",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "geometric_shapes",
+      "answer": "(C)",
+      "reference": "(C)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 12.069295196000013,
+      "usage": {
+        "prompt_tokens": 212,
+        "completion_tokens": 3,
+        "total_tokens": 215
+      }
+    },
+    {
+      "id": "bbh:multistep_arithmetic_two:125",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "multistep_arithmetic_two",
+      "answer": "-391",
+      "reference": "-391",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 25.133369859999988,
+      "usage": {
+        "prompt_tokens": 360,
+        "completion_tokens": 54,
+        "total_tokens": 414
+      }
+    },
+    {
+      "id": "bbh:multistep_arithmetic_two:125",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "multistep_arithmetic_two",
+      "answer": "(B)",
+      "reference": "-391",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 4.875184073999975,
+      "usage": {
+        "prompt_tokens": 77,
+        "completion_tokens": 6,
+        "total_tokens": 83
+      }
+    },
+    {
+      "id": "bbh:multistep_arithmetic_two:125",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "multistep_arithmetic_two",
+      "answer": "-391",
+      "reference": "-391",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 49.89926394699995,
+      "usage": {
+        "prompt_tokens": 87,
+        "completion_tokens": 489,
+        "total_tokens": 576
+      }
+    },
+    {
+      "id": "bbh:salient_translation_error_detection:5",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "salient_translation_error_detection",
+      "answer": "(F)",
+      "reference": "(F)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 16.546857640999974,
+      "usage": {
+        "prompt_tokens": 287,
+        "completion_tokens": 3,
+        "total_tokens": 290
+      }
+    },
+    {
+      "id": "bbh:salient_translation_error_detection:5",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "salient_translation_error_detection",
+      "answer": "(F)",
+      "reference": "(F)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 56.512296694999975,
+      "usage": {
+        "prompt_tokens": 297,
+        "completion_tokens": 428,
+        "total_tokens": 725
+      }
+    },
+    {
+      "id": "bbh:salient_translation_error_detection:5",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "salient_translation_error_detection",
+      "answer": "(D)",
+      "reference": "(F)",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 32.69099526300005,
+      "usage": {
+        "prompt_tokens": 570,
+        "completion_tokens": 8,
+        "total_tokens": 578
+      }
+    },
+    {
+      "id": "bbh:tracking_shuffled_objects_three_objects:215",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "tracking_shuffled_objects_three_objects",
+      "answer": "(B)",
+      "reference": "(B)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 31.495505917999992,
+      "usage": {
+        "prompt_tokens": 159,
+        "completion_tokens": 248,
+        "total_tokens": 407
+      }
+    },
+    {
+      "id": "bbh:tracking_shuffled_objects_three_objects:215",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "tracking_shuffled_objects_three_objects",
+      "answer": "(B)",
+      "reference": "(B)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 32.74965646700002,
+      "usage": {
+        "prompt_tokens": 169,
+        "completion_tokens": 257,
+        "total_tokens": 426
+      }
+    },
+    {
+      "id": "bbh:tracking_shuffled_objects_three_objects:215",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "tracking_shuffled_objects_three_objects",
+      "answer": "pink",
+      "reference": "(B)",
+      "correct": false,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 45.537093266000056,
+      "usage": {
+        "prompt_tokens": 442,
+        "completion_tokens": 223,
+        "total_tokens": 665
+      }
+    },
+    {
+      "id": "gsm8k:1200",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(A)",
+      "reference": "8",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 12.960607149999987,
+      "usage": {
+        "prompt_tokens": 84,
+        "completion_tokens": 92,
+        "total_tokens": 176
+      }
+    },
+    {
+      "id": "gsm8k:1200",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "8",
+      "reference": "8",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 18.76276611800006,
+      "usage": {
+        "prompt_tokens": 94,
+        "completion_tokens": 151,
+        "total_tokens": 245
+      }
+    },
+    {
+      "id": "gsm8k:1200",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "8",
+      "reference": "8",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 23.318247337000003,
+      "usage": {
+        "prompt_tokens": 367,
+        "completion_tokens": 30,
+        "total_tokens": 397
+      }
+    },
+    {
+      "id": "gsm8k:58",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "-23",
+      "reference": "57",
+      "correct": false,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 29.04901807400006,
+      "usage": {
+        "prompt_tokens": 418,
+        "completion_tokens": 62,
+        "total_tokens": 480
+      }
+    },
+    {
+      "id": "gsm8k:58",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(A)",
+      "reference": "57",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 8.039353533000053,
+      "usage": {
+        "prompt_tokens": 135,
+        "completion_tokens": 6,
+        "total_tokens": 141
+      }
+    },
+    {
+      "id": "gsm8k:58",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": null,
+      "reference": "57",
+      "correct": false,
+      "status": "incomplete_or_missing_answer",
+      "seconds": 79.86720387399998,
+      "usage": {
+        "prompt_tokens": 145,
+        "completion_tokens": 768,
+        "total_tokens": 913
+      }
+    },
+    {
+      "id": "gsm8k:947",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "13",
+      "reference": "13",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 25.14750347400002,
+      "usage": {
+        "prompt_tokens": 390,
+        "completion_tokens": 38,
+        "total_tokens": 428
+      }
+    },
+    {
+      "id": "gsm8k:947",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(A)",
+      "reference": "13",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 6.420459637000022,
+      "usage": {
+        "prompt_tokens": 107,
+        "completion_tokens": 6,
+        "total_tokens": 113
+      }
+    },
+    {
+      "id": "gsm8k:947",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "13",
+      "reference": "13",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 17.043101761000003,
+      "usage": {
+        "prompt_tokens": 117,
+        "completion_tokens": 117,
+        "total_tokens": 234
+      }
+    },
+    {
+      "id": "bbh:boolean_expressions:236",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "boolean_expressions",
+      "answer": "True",
+      "reference": "True",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 27.941760958999993,
+      "usage": {
+        "prompt_tokens": 70,
+        "completion_tokens": 188,
+        "total_tokens": 258
+      }
+    },
+    {
+      "id": "bbh:boolean_expressions:236",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "boolean_expressions",
+      "answer": "True",
+      "reference": "True",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 10.563766184000002,
+      "usage": {
+        "prompt_tokens": 343,
+        "completion_tokens": 38,
+        "total_tokens": 381
+      }
+    },
+    {
+      "id": "bbh:boolean_expressions:236",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "boolean_expressions",
+      "answer": "True",
+      "reference": "True",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 1.7380344929999865,
+      "usage": {
+        "prompt_tokens": 60,
+        "completion_tokens": 4,
+        "total_tokens": 64
+      }
+    },
+    {
+      "id": "bbh:geometric_shapes:184",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "geometric_shapes",
+      "answer": "(E)",
+      "reference": "(E)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 2.541971904999997,
+      "usage": {
+        "prompt_tokens": 136,
+        "completion_tokens": 3,
+        "total_tokens": 139
+      }
+    },
+    {
+      "id": "bbh:geometric_shapes:184",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "geometric_shapes",
+      "answer": "(E)",
+      "reference": "(E)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 42.17408494200001,
+      "usage": {
+        "prompt_tokens": 146,
+        "completion_tokens": 281,
+        "total_tokens": 427
+      }
+    },
+    {
+      "id": "bbh:geometric_shapes:184",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "geometric_shapes",
+      "answer": "(E)",
+      "reference": "(E)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 7.176933015000003,
+      "usage": {
+        "prompt_tokens": 419,
+        "completion_tokens": 8,
+        "total_tokens": 427
+      }
+    },
+    {
+      "id": "bbh:multistep_arithmetic_two:151",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "multistep_arithmetic_two",
+      "answer": "-84",
+      "reference": "-84",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 11.96915006399999,
+      "usage": {
+        "prompt_tokens": 360,
+        "completion_tokens": 46,
+        "total_tokens": 406
+      }
+    },
+    {
+      "id": "bbh:multistep_arithmetic_two:151",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "multistep_arithmetic_two",
+      "answer": "(B)",
+      "reference": "-84",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 2.211122176999993,
+      "usage": {
+        "prompt_tokens": 77,
+        "completion_tokens": 6,
+        "total_tokens": 83
+      }
+    },
+    {
+      "id": "bbh:multistep_arithmetic_two:151",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "multistep_arithmetic_two",
+      "answer": "-84",
+      "reference": "-84",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 42.30808318299998,
+      "usage": {
+        "prompt_tokens": 87,
+        "completion_tokens": 287,
+        "total_tokens": 374
+      }
+    },
+    {
+      "id": "bbh:salient_translation_error_detection:93",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "salient_translation_error_detection",
+      "answer": "(D)",
+      "reference": "(A)",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 5.074119037999992,
+      "usage": {
+        "prompt_tokens": 303,
+        "completion_tokens": 3,
+        "total_tokens": 306
+      }
+    },
+    {
+      "id": "bbh:salient_translation_error_detection:93",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "salient_translation_error_detection",
+      "answer": "(D)",
+      "reference": "(A)",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 23.108713217000002,
+      "usage": {
+        "prompt_tokens": 313,
+        "completion_tokens": 127,
+        "total_tokens": 440
+      }
+    },
+    {
+      "id": "bbh:salient_translation_error_detection:93",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "salient_translation_error_detection",
+      "answer": "(D)",
+      "reference": "(A)",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 10.205242352000027,
+      "usage": {
+        "prompt_tokens": 586,
+        "completion_tokens": 8,
+        "total_tokens": 594
+      }
+    },
+    {
+      "id": "bbh:tracking_shuffled_objects_three_objects:233",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "tracking_shuffled_objects_three_objects",
+      "answer": "(B)",
+      "reference": "(C)",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 98.86289554400003,
+      "usage": {
+        "prompt_tokens": 1439,
+        "completion_tokens": 520,
+        "total_tokens": 1959
+      }
+    },
+    {
+      "id": "bbh:tracking_shuffled_objects_three_objects:233",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "tracking_shuffled_objects_three_objects",
+      "answer": "(C)",
+      "reference": "(C)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 37.761709585000006,
+      "usage": {
+        "prompt_tokens": 157,
+        "completion_tokens": 243,
+        "total_tokens": 400
+      }
+    },
+    {
+      "id": "bbh:tracking_shuffled_objects_three_objects:233",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "tracking_shuffled_objects_three_objects",
+      "answer": "(C)",
+      "reference": "(C)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 37.226053277000005,
+      "usage": {
+        "prompt_tokens": 167,
+        "completion_tokens": 240,
+        "total_tokens": 407
+      }
+    },
+    {
+      "id": "gsm8k:1205",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "4",
+      "reference": "4",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 42.99787020400004,
+      "usage": {
+        "prompt_tokens": 128,
+        "completion_tokens": 286,
+        "total_tokens": 414
+      }
+    },
+    {
+      "id": "gsm8k:1205",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "8/3",
+      "reference": "4",
+      "correct": false,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 13.44730150600003,
+      "usage": {
+        "prompt_tokens": 401,
+        "completion_tokens": 49,
+        "total_tokens": 450
+      }
+    },
+    {
+      "id": "gsm8k:1205",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(D)",
+      "reference": "4",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 29.65111692800008,
+      "usage": {
+        "prompt_tokens": 118,
+        "completion_tokens": 195,
+        "total_tokens": 313
+      }
+    },
+    {
+      "id": "gsm8k:636",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(A)",
+      "reference": "1050",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 2.4286044909999873,
+      "usage": {
+        "prompt_tokens": 96,
+        "completion_tokens": 6,
+        "total_tokens": 102
+      }
+    },
+    {
+      "id": "gsm8k:636",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "1050",
+      "reference": "1050",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 35.079715900999986,
+      "usage": {
+        "prompt_tokens": 106,
+        "completion_tokens": 235,
+        "total_tokens": 341
+      }
+    },
+    {
+      "id": "gsm8k:636",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "1400",
+      "reference": "1050",
+      "correct": false,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 13.644009471999993,
+      "usage": {
+        "prompt_tokens": 379,
+        "completion_tokens": 55,
+        "total_tokens": 434
+      }
+    },
+    {
+      "id": "gsm8k:975",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "20",
+      "reference": "20",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 61.231698445000006,
+      "usage": {
+        "prompt_tokens": 1054,
+        "completion_tokens": 310,
+        "total_tokens": 1364
+      }
+    },
+    {
+      "id": "gsm8k:975",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(A)",
+      "reference": "20",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 2.3371069579999357,
+      "usage": {
+        "prompt_tokens": 96,
+        "completion_tokens": 6,
+        "total_tokens": 102
+      }
+    },
+    {
+      "id": "gsm8k:975",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "20",
+      "reference": "20",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 38.18800739100004,
+      "usage": {
+        "prompt_tokens": 106,
+        "completion_tokens": 257,
+        "total_tokens": 363
+      }
+    },
+    {
+      "id": "bbh:causal_judgement:10",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "causal_judgement",
+      "answer": "No",
+      "reference": "Yes",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 10.802405875999995,
+      "usage": {
+        "prompt_tokens": 209,
+        "completion_tokens": 6,
+        "total_tokens": 215
+      }
+    },
+    {
+      "id": "bbh:causal_judgement:10",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "causal_judgement",
+      "answer": "No",
+      "reference": "Yes",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 60.88279293099998,
+      "usage": {
+        "prompt_tokens": 219,
+        "completion_tokens": 364,
+        "total_tokens": 583
+      }
+    },
+    {
+      "id": "bbh:causal_judgement:10",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "causal_judgement",
+      "answer": "No",
+      "reference": "Yes",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 24.214018070999998,
+      "usage": {
+        "prompt_tokens": 492,
+        "completion_tokens": 6,
+        "total_tokens": 498
+      }
+    },
+    {
+      "id": "bbh:hyperbaton:15",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "hyperbaton",
+      "answer": "(A)",
+      "reference": "(A)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 4.6520271420000086,
+      "usage": {
+        "prompt_tokens": 78,
+        "completion_tokens": 6,
+        "total_tokens": 84
+      }
+    },
+    {
+      "id": "bbh:hyperbaton:15",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "hyperbaton",
+      "answer": "(A)",
+      "reference": "(A)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 41.00024094,
+      "usage": {
+        "prompt_tokens": 88,
+        "completion_tokens": 268,
+        "total_tokens": 356
+      }
+    },
+    {
+      "id": "bbh:hyperbaton:15",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "hyperbaton",
+      "answer": "A",
+      "reference": "(A)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 17.902886213000016,
+      "usage": {
+        "prompt_tokens": 361,
+        "completion_tokens": 6,
+        "total_tokens": 367
+      }
+    },
+    {
+      "id": "bbh:navigate:112",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "navigate",
+      "answer": "No",
+      "reference": "No",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 5.343769114999986,
+      "usage": {
+        "prompt_tokens": 95,
+        "completion_tokens": 6,
+        "total_tokens": 101
+      }
+    },
+    {
+      "id": "bbh:navigate:112",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "navigate",
+      "answer": "No",
+      "reference": "No",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 36.18066657999998,
+      "usage": {
+        "prompt_tokens": 105,
+        "completion_tokens": 227,
+        "total_tokens": 332
+      }
+    },
+    {
+      "id": "bbh:navigate:112",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "navigate",
+      "answer": "No",
+      "reference": "No",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 18.597831413999984,
+      "usage": {
+        "prompt_tokens": 378,
+        "completion_tokens": 6,
+        "total_tokens": 384
+      }
+    },
+    {
+      "id": "bbh:snarks:167",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "snarks",
+      "answer": "(B)",
+      "reference": "(B)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 5.163202324999986,
+      "usage": {
+        "prompt_tokens": 98,
+        "completion_tokens": 3,
+        "total_tokens": 101
+      }
+    },
+    {
+      "id": "bbh:snarks:167",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "snarks",
+      "answer": "(B)",
+      "reference": "(B)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 49.93360268499998,
+      "usage": {
+        "prompt_tokens": 108,
+        "completion_tokens": 321,
+        "total_tokens": 429
+      }
+    },
+    {
+      "id": "bbh:snarks:167",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "snarks",
+      "answer": "(B)",
+      "reference": "(B)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 19.254599685000017,
+      "usage": {
+        "prompt_tokens": 381,
+        "completion_tokens": 8,
+        "total_tokens": 389
+      }
+    },
+    {
+      "id": "bbh:web_of_lies:190",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "web_of_lies",
+      "answer": "False",
+      "reference": "No",
+      "correct": false,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 27.33234171099997,
+      "usage": {
+        "prompt_tokens": 375,
+        "completion_tokens": 69,
+        "total_tokens": 444
+      }
+    },
+    {
+      "id": "bbh:web_of_lies:190",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "web_of_lies",
+      "answer": "(A)",
+      "reference": "No",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 5.258156965000012,
+      "usage": {
+        "prompt_tokens": 92,
+        "completion_tokens": 6,
+        "total_tokens": 98
+      }
+    },
+    {
+      "id": "bbh:web_of_lies:190",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "web_of_lies",
+      "answer": "No",
+      "reference": "No",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 35.20778200199999,
+      "usage": {
+        "prompt_tokens": 102,
+        "completion_tokens": 219,
+        "total_tokens": 321
+      }
+    },
+    {
+      "id": "gsm8k:1286",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "105",
+      "reference": "105",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 20.987968696999985,
+      "usage": {
+        "prompt_tokens": 101,
+        "completion_tokens": 118,
+        "total_tokens": 219
+      }
+    },
+    {
+      "id": "gsm8k:1286",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "105",
+      "reference": "105",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 25.36763296700002,
+      "usage": {
+        "prompt_tokens": 374,
+        "completion_tokens": 54,
+        "total_tokens": 428
+      }
+    },
+    {
+      "id": "gsm8k:1286",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(A)",
+      "reference": "105",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 5.1787296239999705,
+      "usage": {
+        "prompt_tokens": 91,
+        "completion_tokens": 6,
+        "total_tokens": 97
+      }
+    },
+    {
+      "id": "gsm8k:642",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "11400",
+      "reference": "10,800",
+      "correct": false,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 30.088835577000054,
+      "usage": {
+        "prompt_tokens": 403,
+        "completion_tokens": 78,
+        "total_tokens": 481
+      }
+    },
+    {
+      "id": "gsm8k:642",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(A)",
+      "reference": "10,800",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 6.593382428000041,
+      "usage": {
+        "prompt_tokens": 120,
+        "completion_tokens": 6,
+        "total_tokens": 126
+      }
+    },
+    {
+      "id": "gsm8k:642",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "10800",
+      "reference": "10,800",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 53.33683485499989,
+      "usage": {
+        "prompt_tokens": 130,
+        "completion_tokens": 342,
+        "total_tokens": 472
+      }
+    },
+    {
+      "id": "bbh:causal_judgement:168",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "causal_judgement",
+      "answer": "No",
+      "reference": "Yes",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 4.057976792000005,
+      "usage": {
+        "prompt_tokens": 199,
+        "completion_tokens": 6,
+        "total_tokens": 205
+      }
+    },
+    {
+      "id": "bbh:causal_judgement:168",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "causal_judgement",
+      "answer": "Yes",
+      "reference": "Yes",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 21.951600701000018,
+      "usage": {
+        "prompt_tokens": 209,
+        "completion_tokens": 128,
+        "total_tokens": 337
+      }
+    },
+    {
+      "id": "bbh:causal_judgement:168",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "causal_judgement",
+      "answer": "Yes",
+      "reference": "Yes",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 7.981837925000008,
+      "usage": {
+        "prompt_tokens": 482,
+        "completion_tokens": 6,
+        "total_tokens": 488
+      }
+    },
+    {
+      "id": "bbh:hyperbaton:219",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "hyperbaton",
+      "answer": "(A)",
+      "reference": "(A)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 80.380997251,
+      "usage": {
+        "prompt_tokens": 92,
+        "completion_tokens": 544,
+        "total_tokens": 636
+      }
+    },
+    {
+      "id": "bbh:hyperbaton:219",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "hyperbaton",
+      "answer": "(A)",
+      "reference": "(A)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 6.891141492000031,
+      "usage": {
+        "prompt_tokens": 365,
+        "completion_tokens": 8,
+        "total_tokens": 373
+      }
+    },
+    {
+      "id": "bbh:hyperbaton:219",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "hyperbaton",
+      "answer": "(B)",
+      "reference": "(A)",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 2.28095579699999,
+      "usage": {
+        "prompt_tokens": 82,
+        "completion_tokens": 6,
+        "total_tokens": 88
+      }
+    },
+    {
+      "id": "bbh:navigate:41",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "navigate",
+      "answer": "No",
+      "reference": "No",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 2.931286254999975,
+      "usage": {
+        "prompt_tokens": 109,
+        "completion_tokens": 6,
+        "total_tokens": 115
+      }
+    },
+    {
+      "id": "bbh:navigate:41",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "navigate",
+      "answer": "No",
+      "reference": "No",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 45.002085487000045,
+      "usage": {
+        "prompt_tokens": 119,
+        "completion_tokens": 294,
+        "total_tokens": 413
+      }
+    },
+    {
+      "id": "bbh:navigate:41",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "navigate",
+      "answer": "No",
+      "reference": "No",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 7.196644130000038,
+      "usage": {
+        "prompt_tokens": 392,
+        "completion_tokens": 6,
+        "total_tokens": 398
+      }
+    },
+    {
+      "id": "bbh:snarks:93",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "snarks",
+      "answer": "(B)",
+      "reference": "(A)",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 17.431551627000033,
+      "usage": {
+        "prompt_tokens": 103,
+        "completion_tokens": 109,
+        "total_tokens": 212
+      }
+    },
+    {
+      "id": "bbh:snarks:93",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "snarks",
+      "answer": "(B)",
+      "reference": "(A)",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 6.789688932999979,
+      "usage": {
+        "prompt_tokens": 376,
+        "completion_tokens": 8,
+        "total_tokens": 384
+      }
+    },
+    {
+      "id": "bbh:snarks:93",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "snarks",
+      "answer": "(B)",
+      "reference": "(A)",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 1.98574604800001,
+      "usage": {
+        "prompt_tokens": 93,
+        "completion_tokens": 3,
+        "total_tokens": 96
+      }
+    },
+    {
+      "id": "bbh:web_of_lies:230",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "web_of_lies",
+      "answer": "True",
+      "reference": "No",
+      "correct": false,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 16.10530182900004,
+      "usage": {
+        "prompt_tokens": 377,
+        "completion_tokens": 72,
+        "total_tokens": 449
+      }
+    },
+    {
+      "id": "bbh:web_of_lies:230",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "web_of_lies",
+      "answer": "(A)",
+      "reference": "No",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 2.371408775999953,
+      "usage": {
+        "prompt_tokens": 94,
+        "completion_tokens": 6,
+        "total_tokens": 100
+      }
+    },
+    {
+      "id": "bbh:web_of_lies:230",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "web_of_lies",
+      "answer": "No",
+      "reference": "No",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 33.449466073999986,
+      "usage": {
+        "prompt_tokens": 104,
+        "completion_tokens": 220,
+        "total_tokens": 324
+      }
+    },
+    {
+      "id": "gsm8k:14",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(C)",
+      "reference": "60",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 2.5942131630000063,
+      "usage": {
+        "prompt_tokens": 103,
+        "completion_tokens": 6,
+        "total_tokens": 109
+      }
+    },
+    {
+      "id": "gsm8k:14",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "60%",
+      "reference": "60",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 45.64637535899999,
+      "usage": {
+        "prompt_tokens": 113,
+        "completion_tokens": 294,
+        "total_tokens": 407
+      }
+    },
+    {
+      "id": "gsm8k:14",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "80",
+      "reference": "60",
+      "correct": false,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 16.95505979699999,
+      "usage": {
+        "prompt_tokens": 386,
+        "completion_tokens": 71,
+        "total_tokens": 457
+      }
+    },
+    {
+      "id": "gsm8k:673",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(B)",
+      "reference": "9",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 21.197311043000013,
+      "usage": {
+        "prompt_tokens": 82,
+        "completion_tokens": 133,
+        "total_tokens": 215
+      }
+    },
+    {
+      "id": "gsm8k:673",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(B)",
+      "reference": "9",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 23.15326904699998,
+      "usage": {
+        "prompt_tokens": 92,
+        "completion_tokens": 148,
+        "total_tokens": 240
+      }
+    },
+    {
+      "id": "gsm8k:673",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "9",
+      "reference": "9",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 10.548901548000003,
+      "usage": {
+        "prompt_tokens": 365,
+        "completion_tokens": 31,
+        "total_tokens": 396
+      }
+    },
+    {
+      "id": "bbh:date_understanding:180",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "date_understanding",
+      "answer": "(D)",
+      "reference": "(D)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 9.922559558000003,
+      "usage": {
+        "prompt_tokens": 174,
+        "completion_tokens": 3,
+        "total_tokens": 177
+      }
+    },
+    {
+      "id": "bbh:date_understanding:180",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "date_understanding",
+      "answer": null,
+      "reference": "(D)",
+      "correct": false,
+      "status": "incomplete_or_missing_answer",
+      "seconds": 85.06483966300001,
+      "usage": {
+        "prompt_tokens": 184,
+        "completion_tokens": 768,
+        "total_tokens": 952
+      }
+    },
+    {
+      "id": "bbh:date_understanding:180",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "date_understanding",
+      "answer": "(D)",
+      "reference": "(D)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 136.181470853,
+      "usage": {
+        "prompt_tokens": 1476,
+        "completion_tokens": 520,
+        "total_tokens": 1996
+      }
+    },
+    {
+      "id": "bbh:logical_deduction_five_objects:115",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "logical_deduction_five_objects",
+      "answer": "loquat peach pear plum watermelon",
+      "reference": "(A)",
+      "correct": false,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 31.056727805000037,
+      "usage": {
+        "prompt_tokens": 473,
+        "completion_tokens": 41,
+        "total_tokens": 514
+      }
+    },
+    {
+      "id": "bbh:logical_deduction_five_objects:115",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "logical_deduction_five_objects",
+      "answer": "(D)",
+      "reference": "(A)",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 10.898101276000034,
+      "usage": {
+        "prompt_tokens": 190,
+        "completion_tokens": 3,
+        "total_tokens": 193
+      }
+    },
+    {
+      "id": "bbh:logical_deduction_five_objects:115",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "logical_deduction_five_objects",
+      "answer": "(A)",
+      "reference": "(A)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 52.729078042000026,
+      "usage": {
+        "prompt_tokens": 200,
+        "completion_tokens": 391,
+        "total_tokens": 591
+      }
+    },
+    {
+      "id": "bbh:object_counting:135",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "object_counting",
+      "answer": "(A)",
+      "reference": "10",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 5.409610870000051,
+      "usage": {
+        "prompt_tokens": 86,
+        "completion_tokens": 6,
+        "total_tokens": 92
+      }
+    },
+    {
+      "id": "bbh:object_counting:135",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "object_counting",
+      "answer": "10",
+      "reference": "10",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 18.778386220000016,
+      "usage": {
+        "prompt_tokens": 96,
+        "completion_tokens": 139,
+        "total_tokens": 235
+      }
+    },
+    {
+      "id": "bbh:object_counting:135",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "object_counting",
+      "answer": "10",
+      "reference": "10",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 24.489607677000038,
+      "usage": {
+        "prompt_tokens": 369,
+        "completion_tokens": 37,
+        "total_tokens": 406
+      }
+    },
+    {
+      "id": "bbh:sports_understanding:179",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "sports_understanding",
+      "answer": "Yes",
+      "reference": "yes",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 20.173156169000038,
+      "usage": {
+        "prompt_tokens": 349,
+        "completion_tokens": 6,
+        "total_tokens": 355
+      }
+    },
+    {
+      "id": "bbh:sports_understanding:179",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "sports_understanding",
+      "answer": "(A)",
+      "reference": "yes",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 4.347065782000016,
+      "usage": {
+        "prompt_tokens": 66,
+        "completion_tokens": 6,
+        "total_tokens": 72
+      }
+    },
+    {
+      "id": "bbh:sports_understanding:179",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "sports_understanding",
+      "answer": "(Yes)",
+      "reference": "yes",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 18.32528014600001,
+      "usage": {
+        "prompt_tokens": 76,
+        "completion_tokens": 149,
+        "total_tokens": 225
+      }
+    },
+    {
+      "id": "bbh:word_sorting:200",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "word_sorting",
+      "answer": "acuity, anticonvulsant, carrageen, discovery, drafty, embolden, glamour, hangout, hasty, pewee, proscenium, registrar, scrub, supposable, sushi, you'd",
+      "reference": "acuity anticonvulsant carrageen discovery disseminate drafty embolden glamour hangout hasty magnificent pewee proscenium registrar scrub supposable sushi you'd",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 57.833528629,
+      "usage": {
+        "prompt_tokens": 107,
+        "completion_tokens": 540,
+        "total_tokens": 647
+      }
+    },
+    {
+      "id": "bbh:word_sorting:200",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "word_sorting",
+      "answer": "acuity anticonvulsant carrageen discovery disseminate drafty embolden glamour hangout hasty magnificent pewee proscenium registrar scrub supposable sushi you'd",
+      "reference": "acuity anticonvulsant carrageen discovery disseminate drafty embolden glamour hangout hasty magnificent pewee proscenium registrar scrub supposable sushi you'd",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 30.576981723000017,
+      "usage": {
+        "prompt_tokens": 380,
+        "completion_tokens": 94,
+        "total_tokens": 474
+      }
+    },
+    {
+      "id": "bbh:word_sorting:200",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "word_sorting",
+      "answer": "<answer>acuity anticonvulsant carrageen discovery drafty disseminate embolden glamour hangout hasty proscenium pewee registrar scrub supposable sushi you'd magnificent</answer>",
+      "reference": "acuity anticonvulsant carrageen discovery disseminate drafty embolden glamour hangout hasty magnificent pewee proscenium registrar scrub supposable sushi you'd",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 9.829540583999915,
+      "usage": {
+        "prompt_tokens": 97,
+        "completion_tokens": 46,
+        "total_tokens": 143
+      }
+    },
+    {
+      "id": "gsm8k:164",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(B)",
+      "reference": "15",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 31.247760524,
+      "usage": {
+        "prompt_tokens": 129,
+        "completion_tokens": 250,
+        "total_tokens": 379
+      }
+    },
+    {
+      "id": "gsm8k:164",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "-15",
+      "reference": "15",
+      "correct": false,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 27.104770377000023,
+      "usage": {
+        "prompt_tokens": 402,
+        "completion_tokens": 46,
+        "total_tokens": 448
+      }
+    },
+    {
+      "id": "gsm8k:164",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "B",
+      "reference": "15",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 6.873779803000048,
+      "usage": {
+        "prompt_tokens": 119,
+        "completion_tokens": 2,
+        "total_tokens": 121
+      }
+    },
+    {
+      "id": "gsm8k:728",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "40",
+      "reference": "40",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 27.55892161899999,
+      "usage": {
+        "prompt_tokens": 387,
+        "completion_tokens": 60,
+        "total_tokens": 447
+      }
+    },
+    {
+      "id": "gsm8k:728",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(A)",
+      "reference": "40",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 6.416551161000029,
+      "usage": {
+        "prompt_tokens": 104,
+        "completion_tokens": 6,
+        "total_tokens": 110
+      }
+    },
+    {
+      "id": "gsm8k:728",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "40%",
+      "reference": "40",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 33.87539847000005,
+      "usage": {
+        "prompt_tokens": 114,
+        "completion_tokens": 288,
+        "total_tokens": 402
+      }
+    },
+    {
+      "id": "bbh:date_understanding:69",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "date_understanding",
+      "answer": "(F)",
+      "reference": "(F)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 44.73867961799999,
+      "usage": {
+        "prompt_tokens": 186,
+        "completion_tokens": 373,
+        "total_tokens": 559
+      }
+    },
+    {
+      "id": "bbh:date_understanding:69",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "date_understanding",
+      "answer": "(F)",
+      "reference": "(F)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 26.32247548000001,
+      "usage": {
+        "prompt_tokens": 459,
+        "completion_tokens": 8,
+        "total_tokens": 467
+      }
+    },
+    {
+      "id": "bbh:date_understanding:69",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "date_understanding",
+      "answer": "(F)",
+      "reference": "(F)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 10.003926489999998,
+      "usage": {
+        "prompt_tokens": 176,
+        "completion_tokens": 3,
+        "total_tokens": 179
+      }
+    },
+    {
+      "id": "bbh:logical_deduction_five_objects:228",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "logical_deduction_five_objects",
+      "answer": "(E)",
+      "reference": "(E)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 136.20085526300002,
+      "usage": {
+        "prompt_tokens": 1530,
+        "completion_tokens": 520,
+        "total_tokens": 2050
+      }
+    },
+    {
+      "id": "bbh:logical_deduction_five_objects:228",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "logical_deduction_five_objects",
+      "answer": "(E)",
+      "reference": "(E)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 11.439528741999993,
+      "usage": {
+        "prompt_tokens": 201,
+        "completion_tokens": 3,
+        "total_tokens": 204
+      }
+    },
+    {
+      "id": "bbh:logical_deduction_five_objects:228",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "logical_deduction_five_objects",
+      "answer": "(E)",
+      "reference": "(E)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 56.57138321000002,
+      "usage": {
+        "prompt_tokens": 211,
+        "completion_tokens": 483,
+        "total_tokens": 694
+      }
+    },
+    {
+      "id": "bbh:object_counting:61",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "object_counting",
+      "answer": "3",
+      "reference": "3",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 22.41382791799998,
+      "usage": {
+        "prompt_tokens": 354,
+        "completion_tokens": 29,
+        "total_tokens": 383
+      }
+    },
+    {
+      "id": "bbh:object_counting:61",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "object_counting",
+      "answer": "(A)",
+      "reference": "3",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 4.524439970000003,
+      "usage": {
+        "prompt_tokens": 71,
+        "completion_tokens": 6,
+        "total_tokens": 77
+      }
+    },
+    {
+      "id": "bbh:object_counting:61",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "object_counting",
+      "answer": "3",
+      "reference": "3",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 7.730793458000051,
+      "usage": {
+        "prompt_tokens": 81,
+        "completion_tokens": 36,
+        "total_tokens": 117
+      }
+    },
+    {
+      "id": "bbh:sports_understanding:49",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "sports_understanding",
+      "answer": "No",
+      "reference": "no",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 22.039392997999983,
+      "usage": {
+        "prompt_tokens": 76,
+        "completion_tokens": 200,
+        "total_tokens": 276
+      }
+    },
+    {
+      "id": "bbh:sports_understanding:49",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "sports_understanding",
+      "answer": "No",
+      "reference": "no",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 19.997026182000013,
+      "usage": {
+        "prompt_tokens": 349,
+        "completion_tokens": 6,
+        "total_tokens": 355
+      }
+    },
+    {
+      "id": "bbh:sports_understanding:49",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "sports_understanding",
+      "answer": "(B)",
+      "reference": "no",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 4.190750416000014,
+      "usage": {
+        "prompt_tokens": 66,
+        "completion_tokens": 6,
+        "total_tokens": 72
+      }
+    },
+    {
+      "id": "bbh:word_sorting:205",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "word_sorting",
+      "answer": "atmospheric chess credit geopolitic intercept loci lunge newsmen siren swart tamp umber",
+      "reference": "atmospheric chess credit geopolitic intercept loci lunge newsmen siren swart tamp umber",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 27.04087625599999,
+      "usage": {
+        "prompt_tokens": 363,
+        "completion_tokens": 75,
+        "total_tokens": 438
+      }
+    },
+    {
+      "id": "bbh:word_sorting:205",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "word_sorting",
+      "answer": "<answer>atmospheric chess credit geopolitic intercept loci lunge newsmen siren swart umber tamp",
+      "reference": "atmospheric chess credit geopolitic intercept loci lunge newsmen siren swart tamp umber",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 6.965576284999997,
+      "usage": {
+        "prompt_tokens": 80,
+        "completion_tokens": 29,
+        "total_tokens": 109
+      }
+    },
+    {
+      "id": "bbh:word_sorting:205",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "word_sorting",
+      "answer": "atmospheric, chess, credit, geopolitic, intercept, loci, lunge, newsmen, siren, swart, tamp, umber",
+      "reference": "atmospheric chess credit geopolitic intercept loci lunge newsmen siren swart tamp umber",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 55.639437802999964,
+      "usage": {
+        "prompt_tokens": 90,
+        "completion_tokens": 555,
+        "total_tokens": 645
+      }
+    },
+    {
+      "id": "gsm8k:181",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(B)",
+      "reference": "160",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 8.57930671400004,
+      "usage": {
+        "prompt_tokens": 146,
+        "completion_tokens": 6,
+        "total_tokens": 152
+      }
+    },
+    {
+      "id": "gsm8k:181",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "160",
+      "reference": "160",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 31.55759742400005,
+      "usage": {
+        "prompt_tokens": 156,
+        "completion_tokens": 253,
+        "total_tokens": 409
+      }
+    },
+    {
+      "id": "gsm8k:181",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "160",
+      "reference": "160",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 28.030507782999962,
+      "usage": {
+        "prompt_tokens": 429,
+        "completion_tokens": 47,
+        "total_tokens": 476
+      }
+    },
+    {
+      "id": "gsm8k:797",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "540",
+      "reference": "540",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 26.121544628000038,
+      "usage": {
+        "prompt_tokens": 401,
+        "completion_tokens": 42,
+        "total_tokens": 443
+      }
+    },
+    {
+      "id": "gsm8k:797",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(A)",
+      "reference": "540",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 7.086255635000043,
+      "usage": {
+        "prompt_tokens": 118,
+        "completion_tokens": 6,
+        "total_tokens": 124
+      }
+    },
+    {
+      "id": "gsm8k:797",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "540 seconds",
+      "reference": "540",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 23.04395131199999,
+      "usage": {
+        "prompt_tokens": 128,
+        "completion_tokens": 179,
+        "total_tokens": 307
+      }
+    },
+    {
+      "id": "bbh:disambiguation_qa:172",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "disambiguation_qa",
+      "answer": "(C)",
+      "reference": "(B)",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 31.949916947000006,
+      "usage": {
+        "prompt_tokens": 126,
+        "completion_tokens": 202,
+        "total_tokens": 328
+      }
+    },
+    {
+      "id": "bbh:disambiguation_qa:172",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "disambiguation_qa",
+      "answer": "(C)",
+      "reference": "(B)",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 6.782920771999997,
+      "usage": {
+        "prompt_tokens": 399,
+        "completion_tokens": 8,
+        "total_tokens": 407
+      }
+    },
+    {
+      "id": "bbh:disambiguation_qa:172",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "disambiguation_qa",
+      "answer": "(C) Ambiguous",
+      "reference": "(B)",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 2.6689059889999953,
+      "usage": {
+        "prompt_tokens": 116,
+        "completion_tokens": 5,
+        "total_tokens": 121
+      }
+    },
+    {
+      "id": "bbh:logical_deduction_seven_objects:231",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "logical_deduction_seven_objects",
+      "answer": "(C)",
+      "reference": "(F)",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 101.446563131,
+      "usage": {
+        "prompt_tokens": 1642,
+        "completion_tokens": 520,
+        "total_tokens": 2162
+      }
+    },
+    {
+      "id": "bbh:logical_deduction_seven_objects:231",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "logical_deduction_seven_objects",
+      "answer": "(C)",
+      "reference": "(F)",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 4.161661694000003,
+      "usage": {
+        "prompt_tokens": 257,
+        "completion_tokens": 3,
+        "total_tokens": 260
+      }
+    },
+    {
+      "id": "bbh:logical_deduction_seven_objects:231",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "logical_deduction_seven_objects",
+      "answer": null,
+      "reference": "(F)",
+      "correct": false,
+      "status": "incomplete_or_missing_answer",
+      "seconds": 119.81471524499997,
+      "usage": {
+        "prompt_tokens": 267,
+        "completion_tokens": 768,
+        "total_tokens": 1035
+      }
+    },
+    {
+      "id": "bbh:penguins_in_a_table:141",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "penguins_in_a_table",
+      "answer": "(C)",
+      "reference": "(E)",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 38.43366302600003,
+      "usage": {
+        "prompt_tokens": 1379,
+        "completion_tokens": 130,
+        "total_tokens": 1509
+      }
+    },
+    {
+      "id": "bbh:penguins_in_a_table:141",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "penguins_in_a_table",
+      "answer": "(D)",
+      "reference": "(E)",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 4.838294264000012,
+      "usage": {
+        "prompt_tokens": 321,
+        "completion_tokens": 3,
+        "total_tokens": 324
+      }
+    },
+    {
+      "id": "bbh:penguins_in_a_table:141",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "penguins_in_a_table",
+      "answer": "(E)",
+      "reference": "(E)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 48.57475486199996,
+      "usage": {
+        "prompt_tokens": 331,
+        "completion_tokens": 295,
+        "total_tokens": 626
+      }
+    },
+    {
+      "id": "bbh:temporal_sequences:158",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "temporal_sequences",
+      "answer": "(B)",
+      "reference": "(B)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 4.100977274000002,
+      "usage": {
+        "prompt_tokens": 220,
+        "completion_tokens": 6,
+        "total_tokens": 226
+      }
+    },
+    {
+      "id": "bbh:temporal_sequences:158",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "temporal_sequences",
+      "answer": "(B)",
+      "reference": "(B)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 56.91462204100003,
+      "usage": {
+        "prompt_tokens": 230,
+        "completion_tokens": 361,
+        "total_tokens": 591
+      }
+    },
+    {
+      "id": "bbh:temporal_sequences:158",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "temporal_sequences",
+      "answer": "B",
+      "reference": "(B)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 7.58836790700002,
+      "usage": {
+        "prompt_tokens": 503,
+        "completion_tokens": 6,
+        "total_tokens": 509
+      }
+    },
+    {
+      "id": "gsm8k:1064",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "247",
+      "reference": "247",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 17.912196850999976,
+      "usage": {
+        "prompt_tokens": 399,
+        "completion_tokens": 83,
+        "total_tokens": 482
+      }
+    },
+    {
+      "id": "gsm8k:1064",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(A)",
+      "reference": "247",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 2.79614759399999,
+      "usage": {
+        "prompt_tokens": 116,
+        "completion_tokens": 6,
+        "total_tokens": 122
+      }
+    },
+    {
+      "id": "gsm8k:1064",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "343",
+      "reference": "247",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 40.125222562999966,
+      "usage": {
+        "prompt_tokens": 126,
+        "completion_tokens": 257,
+        "total_tokens": 383
+      }
+    },
+    {
+      "id": "gsm8k:216",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "220",
+      "reference": "220",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 12.152334991999965,
+      "usage": {
+        "prompt_tokens": 388,
+        "completion_tokens": 46,
+        "total_tokens": 434
+      }
+    },
+    {
+      "id": "gsm8k:216",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(B)",
+      "reference": "220",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 2.4646538780000355,
+      "usage": {
+        "prompt_tokens": 105,
+        "completion_tokens": 6,
+        "total_tokens": 111
+      }
+    },
+    {
+      "id": "gsm8k:216",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "220",
+      "reference": "220",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 49.60536165499991,
+      "usage": {
+        "prompt_tokens": 115,
+        "completion_tokens": 323,
+        "total_tokens": 438
+      }
+    },
+    {
+      "id": "gsm8k:801",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(A)",
+      "reference": "1240",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 2.7950691589999224,
+      "usage": {
+        "prompt_tokens": 113,
+        "completion_tokens": 6,
+        "total_tokens": 119
+      }
+    },
+    {
+      "id": "gsm8k:801",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "1240",
+      "reference": "1240",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 46.236674777000076,
+      "usage": {
+        "prompt_tokens": 123,
+        "completion_tokens": 297,
+        "total_tokens": 420
+      }
+    },
+    {
+      "id": "gsm8k:801",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "1360",
+      "reference": "1240",
+      "correct": false,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 16.217963994,
+      "usage": {
+        "prompt_tokens": 396,
+        "completion_tokens": 71,
+        "total_tokens": 467
+      }
+    },
+    {
+      "id": "bbh:disambiguation_qa:51",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "disambiguation_qa",
+      "answer": "(C)",
+      "reference": "(C)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 26.260112590000006,
+      "usage": {
+        "prompt_tokens": 134,
+        "completion_tokens": 194,
+        "total_tokens": 328
+      }
+    },
+    {
+      "id": "bbh:disambiguation_qa:51",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "disambiguation_qa",
+      "answer": "(C)",
+      "reference": "(C)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 23.64007549499999,
+      "usage": {
+        "prompt_tokens": 407,
+        "completion_tokens": 8,
+        "total_tokens": 415
+      }
+    },
+    {
+      "id": "bbh:disambiguation_qa:51",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "disambiguation_qa",
+      "answer": "(C) Ambiguous",
+      "reference": "(C)",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 7.3242419489999975,
+      "usage": {
+        "prompt_tokens": 124,
+        "completion_tokens": 5,
+        "total_tokens": 129
+      }
+    },
+    {
+      "id": "bbh:logical_deduction_seven_objects:67",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "logical_deduction_seven_objects",
+      "answer": null,
+      "reference": "(C)",
+      "correct": false,
+      "status": "incomplete_or_missing_answer",
+      "seconds": 88.130439661,
+      "usage": {
+        "prompt_tokens": 189,
+        "completion_tokens": 768,
+        "total_tokens": 957
+      }
+    },
+    {
+      "id": "bbh:logical_deduction_seven_objects:67",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "logical_deduction_seven_objects",
+      "answer": "(C)",
+      "reference": "(C)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 137.79837919800002,
+      "usage": {
+        "prompt_tokens": 1486,
+        "completion_tokens": 520,
+        "total_tokens": 2006
+      }
+    },
+    {
+      "id": "bbh:logical_deduction_seven_objects:67",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "logical_deduction_seven_objects",
+      "answer": "(C)",
+      "reference": "(C)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 10.308019088000037,
+      "usage": {
+        "prompt_tokens": 179,
+        "completion_tokens": 3,
+        "total_tokens": 182
+      }
+    },
+    {
+      "id": "bbh:penguins_in_a_table:89",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "penguins_in_a_table",
+      "answer": "(E)",
+      "reference": "(E)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 42.88875662799995,
+      "usage": {
+        "prompt_tokens": 331,
+        "completion_tokens": 243,
+        "total_tokens": 574
+      }
+    },
+    {
+      "id": "bbh:penguins_in_a_table:89",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "penguins_in_a_table",
+      "answer": "Bernard Donna Gladys Gwen James Jody Louis Marian Vincent",
+      "reference": "(E)",
+      "correct": false,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 39.32935231900001,
+      "usage": {
+        "prompt_tokens": 604,
+        "completion_tokens": 53,
+        "total_tokens": 657
+      }
+    },
+    {
+      "id": "bbh:penguins_in_a_table:89",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "penguins_in_a_table",
+      "answer": "(D)",
+      "reference": "(E)",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 18.333118292999984,
+      "usage": {
+        "prompt_tokens": 321,
+        "completion_tokens": 3,
+        "total_tokens": 324
+      }
+    },
+    {
+      "id": "bbh:temporal_sequences:214",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "temporal_sequences",
+      "answer": "(B)",
+      "reference": "(B)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 29.68257336199997,
+      "usage": {
+        "prompt_tokens": 514,
+        "completion_tokens": 8,
+        "total_tokens": 522
+      }
+    },
+    {
+      "id": "bbh:temporal_sequences:214",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "temporal_sequences",
+      "answer": "(B)",
+      "reference": "(B)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 13.229253838999966,
+      "usage": {
+        "prompt_tokens": 231,
+        "completion_tokens": 3,
+        "total_tokens": 234
+      }
+    },
+    {
+      "id": "bbh:temporal_sequences:214",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "temporal_sequences",
+      "answer": "(B)",
+      "reference": "(B)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 56.117543470999976,
+      "usage": {
+        "prompt_tokens": 241,
+        "completion_tokens": 426,
+        "total_tokens": 667
+      }
+    },
+    {
+      "id": "gsm8k:1076",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "162",
+      "reference": "162",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 29.309803193999983,
+      "usage": {
+        "prompt_tokens": 383,
+        "completion_tokens": 78,
+        "total_tokens": 461
+      }
+    },
+    {
+      "id": "gsm8k:1076",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(A)",
+      "reference": "162",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 6.190021973000057,
+      "usage": {
+        "prompt_tokens": 100,
+        "completion_tokens": 6,
+        "total_tokens": 106
+      }
+    },
+    {
+      "id": "gsm8k:1076",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "162",
+      "reference": "162",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 29.367509795000046,
+      "usage": {
+        "prompt_tokens": 110,
+        "completion_tokens": 238,
+        "total_tokens": 348
+      }
+    },
+    {
+      "id": "gsm8k:217",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "18",
+      "reference": "15",
+      "correct": false,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 24.425217821000047,
+      "usage": {
+        "prompt_tokens": 367,
+        "completion_tokens": 38,
+        "total_tokens": 405
+      }
+    },
+    {
+      "id": "gsm8k:217",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(A)",
+      "reference": "15",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 5.2819845940000505,
+      "usage": {
+        "prompt_tokens": 84,
+        "completion_tokens": 6,
+        "total_tokens": 90
+      }
+    },
+    {
+      "id": "gsm8k:217",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "15",
+      "reference": "15",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 18.225269982999976,
+      "usage": {
+        "prompt_tokens": 94,
+        "completion_tokens": 135,
+        "total_tokens": 229
+      }
+    },
+    {
+      "id": "gsm8k:81",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(A)",
+      "reference": "17",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 6.675337843999955,
+      "usage": {
+        "prompt_tokens": 110,
+        "completion_tokens": 6,
+        "total_tokens": 116
+      }
+    },
+    {
+      "id": "gsm8k:81",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "17",
+      "reference": "17",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 30.441968870999972,
+      "usage": {
+        "prompt_tokens": 120,
+        "completion_tokens": 242,
+        "total_tokens": 362
+      }
+    },
+    {
+      "id": "gsm8k:81",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "17",
+      "reference": "17",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 28.889934898999968,
+      "usage": {
+        "prompt_tokens": 393,
+        "completion_tokens": 69,
+        "total_tokens": 462
+      }
+    },
+    {
+      "id": "bbh:dyck_languages:49",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "dyck_languages",
+      "answer": "]",
+      "reference": "]",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 25.041142791,
+      "usage": {
+        "prompt_tokens": 90,
+        "completion_tokens": 331,
+        "total_tokens": 421
+      }
+    },
+    {
+      "id": "bbh:dyck_languages:49",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "dyck_languages",
+      "answer": "[ < [ ] > ] [ { [ ] } ]",
+      "reference": "]",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 10.564302939999976,
+      "usage": {
+        "prompt_tokens": 363,
+        "completion_tokens": 17,
+        "total_tokens": 380
+      }
+    },
+    {
+      "id": "bbh:dyck_languages:49",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "dyck_languages",
+      "answer": "[ < [ ] > ] [ { [ ] } ]",
+      "reference": "]",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 3.1270415070000013,
+      "usage": {
+        "prompt_tokens": 80,
+        "completion_tokens": 15,
+        "total_tokens": 95
+      }
+    },
+    {
+      "id": "bbh:logical_deduction_three_objects:111",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "logical_deduction_three_objects",
+      "answer": "(A)",
+      "reference": "(A)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 3.713328160000003,
+      "usage": {
+        "prompt_tokens": 125,
+        "completion_tokens": 6,
+        "total_tokens": 131
+      }
+    },
+    {
+      "id": "bbh:logical_deduction_three_objects:111",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "logical_deduction_three_objects",
+      "answer": "(A)",
+      "reference": "(A)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 20.127945046000008,
+      "usage": {
+        "prompt_tokens": 135,
+        "completion_tokens": 242,
+        "total_tokens": 377
+      }
+    },
+    {
+      "id": "bbh:logical_deduction_three_objects:111",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "logical_deduction_three_objects",
+      "answer": "A",
+      "reference": "(A)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 10.813217964999978,
+      "usage": {
+        "prompt_tokens": 408,
+        "completion_tokens": 6,
+        "total_tokens": 414
+      }
+    },
+    {
+      "id": "bbh:reasoning_about_colored_objects:120",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "reasoning_about_colored_objects",
+      "answer": "(F)",
+      "reference": "(F)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 10.09712399,
+      "usage": {
+        "prompt_tokens": 182,
+        "completion_tokens": 82,
+        "total_tokens": 264
+      }
+    },
+    {
+      "id": "bbh:reasoning_about_colored_objects:120",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "reasoning_about_colored_objects",
+      "answer": "(E)",
+      "reference": "(F)",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 11.926343651000025,
+      "usage": {
+        "prompt_tokens": 455,
+        "completion_tokens": 8,
+        "total_tokens": 463
+      }
+    },
+    {
+      "id": "bbh:reasoning_about_colored_objects:120",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "reasoning_about_colored_objects",
+      "answer": "(F) brown",
+      "reference": "(F)",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 4.5449432460000025,
+      "usage": {
+        "prompt_tokens": 172,
+        "completion_tokens": 4,
+        "total_tokens": 176
+      }
+    },
+    {
+      "id": "bbh:tracking_shuffled_objects_five_objects:159",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "tracking_shuffled_objects_five_objects",
+      "answer": "(C)",
+      "reference": "(C)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 29.45898172700001,
+      "usage": {
+        "prompt_tokens": 211,
+        "completion_tokens": 355,
+        "total_tokens": 566
+      }
+    },
+    {
+      "id": "bbh:tracking_shuffled_objects_five_objects:159",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "tracking_shuffled_objects_five_objects",
+      "answer": null,
+      "reference": "(C)",
+      "correct": false,
+      "status": "program_failed",
+      "seconds": 50.84691140600003,
+      "usage": {
+        "prompt_tokens": 1175,
+        "completion_tokens": 310,
+        "total_tokens": 1485
+      }
+    },
+    {
+      "id": "bbh:tracking_shuffled_objects_five_objects:159",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "tracking_shuffled_objects_five_objects",
+      "answer": "(C)",
+      "reference": "(C)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 26.520009674999983,
+      "usage": {
+        "prompt_tokens": 201,
+        "completion_tokens": 314,
+        "total_tokens": 515
+      }
+    },
+    {
+      "id": "gsm8k:1123",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "105",
+      "reference": "105",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 18.02150403400003,
+      "usage": {
+        "prompt_tokens": 118,
+        "completion_tokens": 219,
+        "total_tokens": 337
+      }
+    },
+    {
+      "id": "gsm8k:1123",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "45",
+      "reference": "105",
+      "correct": false,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 13.632009971000002,
+      "usage": {
+        "prompt_tokens": 391,
+        "completion_tokens": 55,
+        "total_tokens": 446
+      }
+    },
+    {
+      "id": "gsm8k:1123",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(A)",
+      "reference": "105",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 3.102067046000002,
+      "usage": {
+        "prompt_tokens": 108,
+        "completion_tokens": 6,
+        "total_tokens": 114
+      }
+    },
+    {
+      "id": "gsm8k:220",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "70 minutes",
+      "reference": "70",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 14.760029724999981,
+      "usage": {
+        "prompt_tokens": 110,
+        "completion_tokens": 177,
+        "total_tokens": 287
+      }
+    },
+    {
+      "id": "gsm8k:220",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "70",
+      "reference": "70",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 12.306799815000034,
+      "usage": {
+        "prompt_tokens": 383,
+        "completion_tokens": 39,
+        "total_tokens": 422
+      }
+    },
+    {
+      "id": "gsm8k:220",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "75",
+      "reference": "70",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 2.9158166650000226,
+      "usage": {
+        "prompt_tokens": 100,
+        "completion_tokens": 6,
+        "total_tokens": 106
+      }
+    },
+    {
+      "id": "gsm8k:869",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "500",
+      "reference": "500",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 13.247022995999998,
+      "usage": {
+        "prompt_tokens": 97,
+        "completion_tokens": 163,
+        "total_tokens": 260
+      }
+    },
+    {
+      "id": "gsm8k:869",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "3000",
+      "reference": "500",
+      "correct": false,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 12.173187025000004,
+      "usage": {
+        "prompt_tokens": 370,
+        "completion_tokens": 42,
+        "total_tokens": 412
+      }
+    },
+    {
+      "id": "gsm8k:869",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(A)",
+      "reference": "500",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 6.158760854000036,
+      "usage": {
+        "prompt_tokens": 87,
+        "completion_tokens": 60,
+        "total_tokens": 147
+      }
+    },
+    {
+      "id": "bbh:dyck_languages:82",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "dyck_languages",
+      "answer": "> }",
+      "reference": ">",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 46.85258625700001,
+      "usage": {
+        "prompt_tokens": 88,
+        "completion_tokens": 436,
+        "total_tokens": 524
+      }
+    },
+    {
+      "id": "bbh:dyck_languages:82",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "dyck_languages",
+      "answer": "< { ( { } ) < > }",
+      "reference": ">",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 21.576866893999977,
+      "usage": {
+        "prompt_tokens": 361,
+        "completion_tokens": 14,
+        "total_tokens": 375
+      }
+    },
+    {
+      "id": "bbh:dyck_languages:82",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "dyck_languages",
+      "answer": "< >",
+      "reference": ">",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 4.857970305000009,
+      "usage": {
+        "prompt_tokens": 78,
+        "completion_tokens": 5,
+        "total_tokens": 83
+      }
+    },
+    {
+      "id": "bbh:logical_deduction_three_objects:165",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "logical_deduction_three_objects",
+      "answer": "(A)",
+      "reference": "(A)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 8.216992169000008,
+      "usage": {
+        "prompt_tokens": 138,
+        "completion_tokens": 6,
+        "total_tokens": 144
+      }
+    },
+    {
+      "id": "bbh:logical_deduction_three_objects:165",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "logical_deduction_three_objects",
+      "answer": "(A)",
+      "reference": "(A)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 24.774453901000015,
+      "usage": {
+        "prompt_tokens": 148,
+        "completion_tokens": 176,
+        "total_tokens": 324
+      }
+    },
+    {
+      "id": "bbh:logical_deduction_three_objects:165",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "logical_deduction_three_objects",
+      "answer": "(A)",
+      "reference": "(A)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 93.911038953,
+      "usage": {
+        "prompt_tokens": 1169,
+        "completion_tokens": 285,
+        "total_tokens": 1454
+      }
+    },
+    {
+      "id": "bbh:reasoning_about_colored_objects:42",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "reasoning_about_colored_objects",
+      "answer": "(D)",
+      "reference": "(D)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 27.45528181200001,
+      "usage": {
+        "prompt_tokens": 477,
+        "completion_tokens": 8,
+        "total_tokens": 485
+      }
+    },
+    {
+      "id": "bbh:reasoning_about_colored_objects:42",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "reasoning_about_colored_objects",
+      "answer": "(D) green",
+      "reference": "(D)",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 11.169106615999965,
+      "usage": {
+        "prompt_tokens": 194,
+        "completion_tokens": 4,
+        "total_tokens": 198
+      }
+    },
+    {
+      "id": "bbh:reasoning_about_colored_objects:42",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "reasoning_about_colored_objects",
+      "answer": "(D)",
+      "reference": "(D)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 25.76961158900002,
+      "usage": {
+        "prompt_tokens": 204,
+        "completion_tokens": 150,
+        "total_tokens": 354
+      }
+    },
+    {
+      "id": "bbh:tracking_shuffled_objects_five_objects:175",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "tracking_shuffled_objects_five_objects",
+      "answer": "(C)",
+      "reference": "(C)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 45.942851054000016,
+      "usage": {
+        "prompt_tokens": 223,
+        "completion_tokens": 351,
+        "total_tokens": 574
+      }
+    },
+    {
+      "id": "bbh:tracking_shuffled_objects_five_objects:175",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "tracking_shuffled_objects_five_objects",
+      "answer": null,
+      "reference": "(C)",
+      "correct": false,
+      "status": "program_failed",
+      "seconds": 151.19378630999995,
+      "usage": {
+        "prompt_tokens": 1475,
+        "completion_tokens": 687,
+        "total_tokens": 2162
+      }
+    },
+    {
+      "id": "bbh:tracking_shuffled_objects_five_objects:175",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "tracking_shuffled_objects_five_objects",
+      "answer": "(D)",
+      "reference": "(C)",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 12.143256640999994,
+      "usage": {
+        "prompt_tokens": 213,
+        "completion_tokens": 3,
+        "total_tokens": 216
+      }
+    },
+    {
+      "id": "gsm8k:1127",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "750",
+      "reference": "750",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 27.642550013999994,
+      "usage": {
+        "prompt_tokens": 420,
+        "completion_tokens": 42,
+        "total_tokens": 462
+      }
+    },
+    {
+      "id": "gsm8k:1127",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "750",
+      "reference": "750",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 9.9280422490001,
+      "usage": {
+        "prompt_tokens": 137,
+        "completion_tokens": 25,
+        "total_tokens": 162
+      }
+    },
+    {
+      "id": "gsm8k:1127",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "750",
+      "reference": "750",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 25.842500717000007,
+      "usage": {
+        "prompt_tokens": 147,
+        "completion_tokens": 188,
+        "total_tokens": 335
+      }
+    },
+    {
+      "id": "gsm8k:391",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "15",
+      "reference": "15",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 26.25816502400005,
+      "usage": {
+        "prompt_tokens": 378,
+        "completion_tokens": 53,
+        "total_tokens": 431
+      }
+    },
+    {
+      "id": "gsm8k:391",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(B)",
+      "reference": "15",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 5.521170167000037,
+      "usage": {
+        "prompt_tokens": 95,
+        "completion_tokens": 3,
+        "total_tokens": 98
+      }
+    },
+    {
+      "id": "gsm8k:391",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "15",
+      "reference": "15",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 34.59165832499991,
+      "usage": {
+        "prompt_tokens": 105,
+        "completion_tokens": 302,
+        "total_tokens": 407
+      }
+    },
+    {
+      "id": "gsm8k:892",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "1.25",
+      "reference": "1",
+      "correct": false,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 28.15994725799999,
+      "usage": {
+        "prompt_tokens": 392,
+        "completion_tokens": 65,
+        "total_tokens": 457
+      }
+    },
+    {
+      "id": "gsm8k:892",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(A)",
+      "reference": "1",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 26.63101731100005,
+      "usage": {
+        "prompt_tokens": 109,
+        "completion_tokens": 217,
+        "total_tokens": 326
+      }
+    },
+    {
+      "id": "gsm8k:892",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(A)",
+      "reference": "1",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 32.533342978000064,
+      "usage": {
+        "prompt_tokens": 119,
+        "completion_tokens": 275,
+        "total_tokens": 394
+      }
+    },
+    {
+      "id": "bbh:formal_fallacies:213",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "formal_fallacies",
+      "answer": "valid",
+      "reference": "invalid",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 7.0369334519999995,
+      "usage": {
+        "prompt_tokens": 449,
+        "completion_tokens": 6,
+        "total_tokens": 455
+      }
+    },
+    {
+      "id": "bbh:formal_fallacies:213",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "formal_fallacies",
+      "answer": "valid",
+      "reference": "invalid",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 3.3105800139999815,
+      "usage": {
+        "prompt_tokens": 166,
+        "completion_tokens": 6,
+        "total_tokens": 172
+      }
+    },
+    {
+      "id": "bbh:formal_fallacies:213",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "formal_fallacies",
+      "answer": null,
+      "reference": "invalid",
+      "correct": false,
+      "status": "incomplete_or_missing_answer",
+      "seconds": 115.587221841,
+      "usage": {
+        "prompt_tokens": 176,
+        "completion_tokens": 768,
+        "total_tokens": 944
+      }
+    },
+    {
+      "id": "bbh:movie_recommendation:195",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "movie_recommendation",
+      "answer": "(A)",
+      "reference": "(A)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 6.313866217999987,
+      "usage": {
+        "prompt_tokens": 377,
+        "completion_tokens": 8,
+        "total_tokens": 385
+      }
+    },
+    {
+      "id": "bbh:movie_recommendation:195",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "movie_recommendation",
+      "answer": "(D)",
+      "reference": "(A)",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 1.799249489000033,
+      "usage": {
+        "prompt_tokens": 94,
+        "completion_tokens": 3,
+        "total_tokens": 97
+      }
+    },
+    {
+      "id": "bbh:movie_recommendation:195",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "movie_recommendation",
+      "answer": "(D)",
+      "reference": "(A)",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 37.945086118000006,
+      "usage": {
+        "prompt_tokens": 104,
+        "completion_tokens": 249,
+        "total_tokens": 353
+      }
+    },
+    {
+      "id": "bbh:ruin_names:11",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "ruin_names",
+      "answer": "(A)",
+      "reference": "(C)",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 6.252991170999962,
+      "usage": {
+        "prompt_tokens": 384,
+        "completion_tokens": 8,
+        "total_tokens": 392
+      }
+    },
+    {
+      "id": "bbh:ruin_names:11",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "ruin_names",
+      "answer": "(C)",
+      "reference": "(C)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 1.8858299309999893,
+      "usage": {
+        "prompt_tokens": 101,
+        "completion_tokens": 3,
+        "total_tokens": 104
+      }
+    },
+    {
+      "id": "bbh:ruin_names:11",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "ruin_names",
+      "answer": "(A)",
+      "reference": "(C)",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 21.72347980899997,
+      "usage": {
+        "prompt_tokens": 111,
+        "completion_tokens": 142,
+        "total_tokens": 253
+      }
+    },
+    {
+      "id": "bbh:tracking_shuffled_objects_seven_objects:150",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "tracking_shuffled_objects_seven_objects",
+      "answer": "(F)",
+      "reference": "(F)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 76.592563928,
+      "usage": {
+        "prompt_tokens": 256,
+        "completion_tokens": 508,
+        "total_tokens": 764
+      }
+    },
+    {
+      "id": "bbh:tracking_shuffled_objects_seven_objects:150",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "tracking_shuffled_objects_seven_objects",
+      "answer": "(F)",
+      "reference": "(F)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 87.09604553100002,
+      "usage": {
+        "prompt_tokens": 266,
+        "completion_tokens": 577,
+        "total_tokens": 843
+      }
+    },
+    {
+      "id": "bbh:tracking_shuffled_objects_seven_objects:150",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "tracking_shuffled_objects_seven_objects",
+      "answer": "(D)",
+      "reference": "(F)",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 99.36890883000001,
+      "usage": {
+        "prompt_tokens": 1640,
+        "completion_tokens": 520,
+        "total_tokens": 2160
+      }
+    },
+    {
+      "id": "gsm8k:1131",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "96",
+      "reference": "96",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 13.463708829999973,
+      "usage": {
+        "prompt_tokens": 400,
+        "completion_tokens": 54,
+        "total_tokens": 454
+      }
+    },
+    {
+      "id": "gsm8k:1131",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(A)",
+      "reference": "96",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 2.7517075450000448,
+      "usage": {
+        "prompt_tokens": 117,
+        "completion_tokens": 6,
+        "total_tokens": 123
+      }
+    },
+    {
+      "id": "gsm8k:1131",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "$96",
+      "reference": "96",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 36.83089602200005,
+      "usage": {
+        "prompt_tokens": 127,
+        "completion_tokens": 242,
+        "total_tokens": 369
+      }
+    },
+    {
+      "id": "gsm8k:393",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "20",
+      "reference": "20",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 14.312662211000088,
+      "usage": {
+        "prompt_tokens": 370,
+        "completion_tokens": 62,
+        "total_tokens": 432
+      }
+    },
+    {
+      "id": "gsm8k:393",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(C)",
+      "reference": "20",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 2.354618708999965,
+      "usage": {
+        "prompt_tokens": 87,
+        "completion_tokens": 6,
+        "total_tokens": 93
+      }
+    },
+    {
+      "id": "gsm8k:393",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "20%",
+      "reference": "20",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 41.659361456000056,
+      "usage": {
+        "prompt_tokens": 97,
+        "completion_tokens": 277,
+        "total_tokens": 374
+      }
+    },
+    {
+      "id": "gsm8k:902",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "8",
+      "reference": "8",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 11.624656867999988,
+      "usage": {
+        "prompt_tokens": 376,
+        "completion_tokens": 44,
+        "total_tokens": 420
+      }
+    },
+    {
+      "id": "gsm8k:902",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(A)",
+      "reference": "8",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 2.274171444999979,
+      "usage": {
+        "prompt_tokens": 93,
+        "completion_tokens": 6,
+        "total_tokens": 99
+      }
+    },
+    {
+      "id": "gsm8k:902",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "$8.00",
+      "reference": "8",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 28.498091811999984,
+      "usage": {
+        "prompt_tokens": 103,
+        "completion_tokens": 187,
+        "total_tokens": 290
+      }
+    },
+    {
+      "id": "bbh:formal_fallacies:84",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "formal_fallacies",
+      "answer": "valid",
+      "reference": "valid",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 58.48115400299999,
+      "usage": {
+        "prompt_tokens": 214,
+        "completion_tokens": 455,
+        "total_tokens": 669
+      }
+    },
+    {
+      "id": "bbh:formal_fallacies:84",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "formal_fallacies",
+      "answer": "valid",
+      "reference": "valid",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 24.120370449999996,
+      "usage": {
+        "prompt_tokens": 487,
+        "completion_tokens": 6,
+        "total_tokens": 493
+      }
+    },
+    {
+      "id": "bbh:formal_fallacies:84",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "formal_fallacies",
+      "answer": "invalid",
+      "reference": "valid",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 10.439816325999999,
+      "usage": {
+        "prompt_tokens": 204,
+        "completion_tokens": 6,
+        "total_tokens": 210
+      }
+    },
+    {
+      "id": "bbh:movie_recommendation:197",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "movie_recommendation",
+      "answer": "(A)",
+      "reference": "(A)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 19.61153972699998,
+      "usage": {
+        "prompt_tokens": 390,
+        "completion_tokens": 8,
+        "total_tokens": 398
+      }
+    },
+    {
+      "id": "bbh:movie_recommendation:197",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "movie_recommendation",
+      "answer": "(A)",
+      "reference": "(A)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 5.903238810000005,
+      "usage": {
+        "prompt_tokens": 107,
+        "completion_tokens": 6,
+        "total_tokens": 113
+      }
+    },
+    {
+      "id": "bbh:movie_recommendation:197",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "movie_recommendation",
+      "answer": "(A)",
+      "reference": "(A)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 69.011052025,
+      "usage": {
+        "prompt_tokens": 117,
+        "completion_tokens": 600,
+        "total_tokens": 717
+      }
+    },
+    {
+      "id": "bbh:ruin_names:144",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "ruin_names",
+      "answer": "(D)",
+      "reference": "rita, sue and bob poo",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 6.370243020999993,
+      "usage": {
+        "prompt_tokens": 123,
+        "completion_tokens": 3,
+        "total_tokens": 126
+      }
+    },
+    {
+      "id": "bbh:ruin_names:144",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "ruin_names",
+      "answer": "(D)",
+      "reference": "rita, sue and bob poo",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 26.606483146999977,
+      "usage": {
+        "prompt_tokens": 133,
+        "completion_tokens": 197,
+        "total_tokens": 330
+      }
+    },
+    {
+      "id": "bbh:ruin_names:144",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "ruin_names",
+      "answer": "(D)",
+      "reference": "rita, sue and bob poo",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 20.44592789899997,
+      "usage": {
+        "prompt_tokens": 406,
+        "completion_tokens": 8,
+        "total_tokens": 414
+      }
+    },
+    {
+      "id": "bbh:tracking_shuffled_objects_seven_objects:183",
+      "arm": "direct",
+      "suite": "BBH",
+      "family": "tracking_shuffled_objects_seven_objects",
+      "answer": "(C)",
+      "reference": "(C)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 49.56733372400004,
+      "usage": {
+        "prompt_tokens": 249,
+        "completion_tokens": 356,
+        "total_tokens": 605
+      }
+    },
+    {
+      "id": "bbh:tracking_shuffled_objects_seven_objects:183",
+      "arm": "reasoning",
+      "suite": "BBH",
+      "family": "tracking_shuffled_objects_seven_objects",
+      "answer": "(C)",
+      "reference": "(C)",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 57.695853416000034,
+      "usage": {
+        "prompt_tokens": 259,
+        "completion_tokens": 435,
+        "total_tokens": 694
+      }
+    },
+    {
+      "id": "bbh:tracking_shuffled_objects_seven_objects:183",
+      "arm": "program",
+      "suite": "BBH",
+      "family": "tracking_shuffled_objects_seven_objects",
+      "answer": null,
+      "reference": "(C)",
+      "correct": false,
+      "status": "program_failed",
+      "seconds": 114.158425217,
+      "usage": {
+        "prompt_tokens": 1348,
+        "completion_tokens": 464,
+        "total_tokens": 1812
+      }
+    },
+    {
+      "id": "gsm8k:114",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "6",
+      "reference": "6",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 43.170826756,
+      "usage": {
+        "prompt_tokens": 142,
+        "completion_tokens": 360,
+        "total_tokens": 502
+      }
+    },
+    {
+      "id": "gsm8k:114",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "0.12",
+      "reference": "6",
+      "correct": false,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 48.63662880499999,
+      "usage": {
+        "prompt_tokens": 415,
+        "completion_tokens": 274,
+        "total_tokens": 689
+      }
+    },
+    {
+      "id": "gsm8k:114",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(A)",
+      "reference": "6",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 6.982403730999977,
+      "usage": {
+        "prompt_tokens": 132,
+        "completion_tokens": 6,
+        "total_tokens": 138
+      }
+    },
+    {
+      "id": "gsm8k:429",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "13",
+      "reference": "13",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 30.785062128999925,
+      "usage": {
+        "prompt_tokens": 104,
+        "completion_tokens": 255,
+        "total_tokens": 359
+      }
+    },
+    {
+      "id": "gsm8k:429",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "13",
+      "reference": "13",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 22.660435502999917,
+      "usage": {
+        "prompt_tokens": 377,
+        "completion_tokens": 46,
+        "total_tokens": 423
+      }
+    },
+    {
+      "id": "gsm8k:429",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(A)",
+      "reference": "13",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 5.1778351549999115,
+      "usage": {
+        "prompt_tokens": 94,
+        "completion_tokens": 6,
+        "total_tokens": 100
+      }
+    },
+    {
+      "id": "gsm8k:911",
+      "arm": "direct",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "(B)",
+      "reference": "64",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 6.05394886199997,
+      "usage": {
+        "prompt_tokens": 111,
+        "completion_tokens": 6,
+        "total_tokens": 117
+      }
+    },
+    {
+      "id": "gsm8k:911",
+      "arm": "reasoning",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "<answer>",
+      "reference": "64",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 34.592118254999946,
+      "usage": {
+        "prompt_tokens": 121,
+        "completion_tokens": 275,
+        "total_tokens": 396
+      }
+    },
+    {
+      "id": "gsm8k:911",
+      "arm": "program",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "answer": "64",
+      "reference": "64",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 23.34654809799997,
+      "usage": {
+        "prompt_tokens": 394,
+        "completion_tokens": 44,
+        "total_tokens": 438
+      }
+    }
+  ],
+  "followup": [
+    {
+      "id": "gsm8k:424",
+      "arm": "reasoning",
+      "answer": "570",
+      "reference": "570",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 29.086698412000004,
+      "usage": {
+        "prompt_tokens": 123,
+        "completion_tokens": 241,
+        "total_tokens": 364
+      }
+    },
+    {
+      "id": "gsm8k:424",
+      "arm": "program",
+      "answer": "570",
+      "reference": "570",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 27.304813179000007,
+      "usage": {
+        "prompt_tokens": 396,
+        "completion_tokens": 53,
+        "total_tokens": 449
+      }
+    },
+    {
+      "id": "gsm8k:424",
+      "arm": "grounded_program",
+      "answer": "570",
+      "reference": "570",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 42.19833769900001,
+      "usage": {
+        "prompt_tokens": 502,
+        "completion_tokens": 143,
+        "total_tokens": 645
+      }
+    },
+    {
+      "id": "gsm8k:770",
+      "arm": "reasoning",
+      "answer": "4",
+      "reference": "4",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 27.855413851999998,
+      "usage": {
+        "prompt_tokens": 166,
+        "completion_tokens": 203,
+        "total_tokens": 369
+      }
+    },
+    {
+      "id": "gsm8k:770",
+      "arm": "program",
+      "answer": "4",
+      "reference": "4",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 28.10609495,
+      "usage": {
+        "prompt_tokens": 439,
+        "completion_tokens": 38,
+        "total_tokens": 477
+      }
+    },
+    {
+      "id": "gsm8k:770",
+      "arm": "grounded_program",
+      "answer": "4",
+      "reference": "4",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 41.211449063,
+      "usage": {
+        "prompt_tokens": 545,
+        "completion_tokens": 110,
+        "total_tokens": 655
+      }
+    },
+    {
+      "id": "gsm8k:91",
+      "arm": "reasoning",
+      "answer": "28",
+      "reference": "28",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 20.331395234000013,
+      "usage": {
+        "prompt_tokens": 97,
+        "completion_tokens": 164,
+        "total_tokens": 261
+      }
+    },
+    {
+      "id": "gsm8k:91",
+      "arm": "program",
+      "answer": "28",
+      "reference": "28",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 27.85976378700002,
+      "usage": {
+        "prompt_tokens": 370,
+        "completion_tokens": 75,
+        "total_tokens": 445
+      }
+    },
+    {
+      "id": "gsm8k:91",
+      "arm": "grounded_program",
+      "answer": "28",
+      "reference": "28",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 34.30961359700001,
+      "usage": {
+        "prompt_tokens": 476,
+        "completion_tokens": 75,
+        "total_tokens": 551
+      }
+    },
+    {
+      "id": "gsm8k:818",
+      "arm": "program",
+      "answer": "16",
+      "reference": "16",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 27.343319242999996,
+      "usage": {
+        "prompt_tokens": 391,
+        "completion_tokens": 60,
+        "total_tokens": 451
+      }
+    },
+    {
+      "id": "gsm8k:818",
+      "arm": "grounded_program",
+      "answer": "16",
+      "reference": "16",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 38.212010083999985,
+      "usage": {
+        "prompt_tokens": 497,
+        "completion_tokens": 108,
+        "total_tokens": 605
+      }
+    },
+    {
+      "id": "gsm8k:818",
+      "arm": "reasoning",
+      "answer": "16",
+      "reference": "16",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 29.965845657999978,
+      "usage": {
+        "prompt_tokens": 118,
+        "completion_tokens": 256,
+        "total_tokens": 374
+      }
+    },
+    {
+      "id": "gsm8k:936",
+      "arm": "program",
+      "answer": "-240",
+      "reference": "250",
+      "correct": false,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 33.826448438,
+      "usage": {
+        "prompt_tokens": 451,
+        "completion_tokens": 88,
+        "total_tokens": 539
+      }
+    },
+    {
+      "id": "gsm8k:936",
+      "arm": "grounded_program",
+      "answer": "-730",
+      "reference": "250",
+      "correct": false,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 49.984128922999986,
+      "usage": {
+        "prompt_tokens": 557,
+        "completion_tokens": 190,
+        "total_tokens": 747
+      }
+    },
+    {
+      "id": "gsm8k:936",
+      "arm": "reasoning",
+      "answer": "0",
+      "reference": "250",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 79.42031002699997,
+      "usage": {
+        "prompt_tokens": 178,
+        "completion_tokens": 722,
+        "total_tokens": 900
+      }
+    },
+    {
+      "id": "gsm8k:1074",
+      "arm": "reasoning",
+      "answer": "750",
+      "reference": "750",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 22.43268221400001,
+      "usage": {
+        "prompt_tokens": 102,
+        "completion_tokens": 182,
+        "total_tokens": 284
+      }
+    },
+    {
+      "id": "gsm8k:1074",
+      "arm": "program",
+      "answer": "750",
+      "reference": "750",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 24.11483727899997,
+      "usage": {
+        "prompt_tokens": 375,
+        "completion_tokens": 33,
+        "total_tokens": 408
+      }
+    },
+    {
+      "id": "gsm8k:1074",
+      "arm": "grounded_program",
+      "answer": "1000",
+      "reference": "750",
+      "correct": false,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 32.22648819800003,
+      "usage": {
+        "prompt_tokens": 481,
+        "completion_tokens": 52,
+        "total_tokens": 533
+      }
+    },
+    {
+      "id": "gsm8k:644",
+      "arm": "reasoning",
+      "answer": "29",
+      "reference": "29",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 21.56980084500003,
+      "usage": {
+        "prompt_tokens": 112,
+        "completion_tokens": 165,
+        "total_tokens": 277
+      }
+    },
+    {
+      "id": "gsm8k:644",
+      "arm": "program",
+      "answer": "29",
+      "reference": "29",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 26.184314604000008,
+      "usage": {
+        "prompt_tokens": 385,
+        "completion_tokens": 48,
+        "total_tokens": 433
+      }
+    },
+    {
+      "id": "gsm8k:644",
+      "arm": "grounded_program",
+      "answer": "35",
+      "reference": "29",
+      "correct": false,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 34.93970872,
+      "usage": {
+        "prompt_tokens": 491,
+        "completion_tokens": 74,
+        "total_tokens": 565
+      }
+    },
+    {
+      "id": "gsm8k:1043",
+      "arm": "grounded_program",
+      "answer": "130000",
+      "reference": "130000",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 33.70572835399997,
+      "usage": {
+        "prompt_tokens": 491,
+        "completion_tokens": 63,
+        "total_tokens": 554
+      }
+    },
+    {
+      "id": "gsm8k:1043",
+      "arm": "reasoning",
+      "answer": "130,000",
+      "reference": "130000",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 24.035513733000016,
+      "usage": {
+        "prompt_tokens": 112,
+        "completion_tokens": 193,
+        "total_tokens": 305
+      }
+    },
+    {
+      "id": "gsm8k:1043",
+      "arm": "program",
+      "answer": "130000",
+      "reference": "130000",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 24.705364034000013,
+      "usage": {
+        "prompt_tokens": 385,
+        "completion_tokens": 33,
+        "total_tokens": 418
+      }
+    },
+    {
+      "id": "gsm8k:354",
+      "arm": "grounded_program",
+      "answer": "45",
+      "reference": "45",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 34.37955925699998,
+      "usage": {
+        "prompt_tokens": 525,
+        "completion_tokens": 164,
+        "total_tokens": 689
+      }
+    },
+    {
+      "id": "gsm8k:354",
+      "arm": "reasoning",
+      "answer": "45",
+      "reference": "45",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 28.703075928999965,
+      "usage": {
+        "prompt_tokens": 146,
+        "completion_tokens": 272,
+        "total_tokens": 418
+      }
+    },
+    {
+      "id": "gsm8k:354",
+      "arm": "program",
+      "answer": "45",
+      "reference": "45",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 21.322711486000003,
+      "usage": {
+        "prompt_tokens": 419,
+        "completion_tokens": 62,
+        "total_tokens": 481
+      }
+    },
+    {
+      "id": "gsm8k:933",
+      "arm": "grounded_program",
+      "answer": "15",
+      "reference": "15",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 30.135830906000024,
+      "usage": {
+        "prompt_tokens": 506,
+        "completion_tokens": 123,
+        "total_tokens": 629
+      }
+    },
+    {
+      "id": "gsm8k:933",
+      "arm": "reasoning",
+      "answer": "15",
+      "reference": "15",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 17.840537268999924,
+      "usage": {
+        "prompt_tokens": 127,
+        "completion_tokens": 153,
+        "total_tokens": 280
+      }
+    },
+    {
+      "id": "gsm8k:933",
+      "arm": "program",
+      "answer": "9",
+      "reference": "15",
+      "correct": false,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 22.11909030600009,
+      "usage": {
+        "prompt_tokens": 400,
+        "completion_tokens": 80,
+        "total_tokens": 480
+      }
+    },
+    {
+      "id": "gsm8k:331",
+      "arm": "program",
+      "answer": "0.0084",
+      "reference": "8400",
+      "correct": false,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 24.25321435900014,
+      "usage": {
+        "prompt_tokens": 440,
+        "completion_tokens": 89,
+        "total_tokens": 529
+      }
+    },
+    {
+      "id": "gsm8k:331",
+      "arm": "grounded_program",
+      "answer": "8400",
+      "reference": "8400",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 35.02932974800001,
+      "usage": {
+        "prompt_tokens": 546,
+        "completion_tokens": 158,
+        "total_tokens": 704
+      }
+    },
+    {
+      "id": "gsm8k:331",
+      "arm": "reasoning",
+      "answer": "$8,400",
+      "reference": "8400",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 46.50076414499995,
+      "usage": {
+        "prompt_tokens": 167,
+        "completion_tokens": 464,
+        "total_tokens": 631
+      }
+    },
+    {
+      "id": "gsm8k:829",
+      "arm": "grounded_program",
+      "answer": "14000",
+      "reference": "14,000",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 28.995492512000055,
+      "usage": {
+        "prompt_tokens": 518,
+        "completion_tokens": 105,
+        "total_tokens": 623
+      }
+    },
+    {
+      "id": "gsm8k:829",
+      "arm": "reasoning",
+      "answer": "14,000",
+      "reference": "14,000",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 28.70598986699997,
+      "usage": {
+        "prompt_tokens": 139,
+        "completion_tokens": 273,
+        "total_tokens": 412
+      }
+    },
+    {
+      "id": "gsm8k:829",
+      "arm": "program",
+      "answer": "0",
+      "reference": "14,000",
+      "correct": false,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 19.600527852999903,
+      "usage": {
+        "prompt_tokens": 412,
+        "completion_tokens": 47,
+        "total_tokens": 459
+      }
+    },
+    {
+      "id": "gsm8k:634",
+      "arm": "reasoning",
+      "answer": "(14)",
+      "reference": "14",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 10.828107975999984,
+      "usage": {
+        "prompt_tokens": 94,
+        "completion_tokens": 128,
+        "total_tokens": 222
+      }
+    },
+    {
+      "id": "gsm8k:634",
+      "arm": "program",
+      "answer": "14",
+      "reference": "14",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 11.596939324000004,
+      "usage": {
+        "prompt_tokens": 367,
+        "completion_tokens": 38,
+        "total_tokens": 405
+      }
+    },
+    {
+      "id": "gsm8k:634",
+      "arm": "grounded_program",
+      "answer": "14",
+      "reference": "14",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 15.649746839000017,
+      "usage": {
+        "prompt_tokens": 473,
+        "completion_tokens": 56,
+        "total_tokens": 529
+      }
+    },
+    {
+      "id": "gsm8k:1055",
+      "arm": "grounded_program",
+      "answer": "2304",
+      "reference": "2304",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 38.53868031100001,
+      "usage": {
+        "prompt_tokens": 1098,
+        "completion_tokens": 153,
+        "total_tokens": 1251
+      }
+    },
+    {
+      "id": "gsm8k:1055",
+      "arm": "reasoning",
+      "answer": "$2,304",
+      "reference": "2304",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 12.030276369000006,
+      "usage": {
+        "prompt_tokens": 104,
+        "completion_tokens": 136,
+        "total_tokens": 240
+      }
+    },
+    {
+      "id": "gsm8k:1055",
+      "arm": "program",
+      "answer": "2304",
+      "reference": "2304",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 13.008331241000008,
+      "usage": {
+        "prompt_tokens": 377,
+        "completion_tokens": 51,
+        "total_tokens": 428
+      }
+    },
+    {
+      "id": "gsm8k:753",
+      "arm": "program",
+      "answer": "102 6",
+      "reference": "128",
+      "correct": false,
+      "status": "model_answer_unverified",
+      "seconds": 26.509206397000014,
+      "usage": {
+        "prompt_tokens": 884,
+        "completion_tokens": 63,
+        "total_tokens": 947
+      }
+    },
+    {
+      "id": "gsm8k:753",
+      "arm": "grounded_program",
+      "answer": "128",
+      "reference": "128",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 22.888896665999994,
+      "usage": {
+        "prompt_tokens": 497,
+        "completion_tokens": 141,
+        "total_tokens": 638
+      }
+    },
+    {
+      "id": "gsm8k:753",
+      "arm": "reasoning",
+      "answer": "128",
+      "reference": "128",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 19.085943190000023,
+      "usage": {
+        "prompt_tokens": 118,
+        "completion_tokens": 232,
+        "total_tokens": 350
+      }
+    },
+    {
+      "id": "gsm8k:327",
+      "arm": "program",
+      "answer": "31",
+      "reference": "31",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 15.709503546999997,
+      "usage": {
+        "prompt_tokens": 413,
+        "completion_tokens": 72,
+        "total_tokens": 485
+      }
+    },
+    {
+      "id": "gsm8k:327",
+      "arm": "grounded_program",
+      "answer": "31",
+      "reference": "31",
+      "correct": true,
+      "status": "computation_checked_semantics_unverified",
+      "seconds": 23.331529242000045,
+      "usage": {
+        "prompt_tokens": 519,
+        "completion_tokens": 148,
+        "total_tokens": 667
+      }
+    },
+    {
+      "id": "gsm8k:327",
+      "arm": "reasoning",
+      "answer": "31",
+      "reference": "31",
+      "correct": true,
+      "status": "model_answer_unverified",
+      "seconds": 16.810771047000003,
+      "usage": {
+        "prompt_tokens": 140,
+        "completion_tokens": 192,
+        "total_tokens": 332
+      }
+    }
+  ],
+  "by_family": {
+    "boolean_expressions": {
+      "program": {
+        "correct": 2,
+        "n": 2
+      },
+      "direct": {
+        "correct": 1,
+        "n": 2
+      },
+      "reasoning": {
+        "correct": 2,
+        "n": 2
+      }
+    },
+    "geometric_shapes": {
+      "reasoning": {
+        "correct": 2,
+        "n": 2
+      },
+      "program": {
+        "correct": 2,
+        "n": 2
+      },
+      "direct": {
+        "correct": 2,
+        "n": 2
+      }
+    },
+    "multistep_arithmetic_two": {
+      "program": {
+        "correct": 2,
+        "n": 2
+      },
+      "direct": {
+        "correct": 0,
+        "n": 2
+      },
+      "reasoning": {
+        "correct": 2,
+        "n": 2
+      }
+    },
+    "salient_translation_error_detection": {
+      "direct": {
+        "correct": 1,
+        "n": 2
+      },
+      "reasoning": {
+        "correct": 1,
+        "n": 2
+      },
+      "program": {
+        "correct": 0,
+        "n": 2
+      }
+    },
+    "tracking_shuffled_objects_three_objects": {
+      "direct": {
+        "correct": 2,
+        "n": 2
+      },
+      "reasoning": {
+        "correct": 2,
+        "n": 2
+      },
+      "program": {
+        "correct": 0,
+        "n": 2
+      }
+    },
+    "gsm8k": {
+      "direct": {
+        "correct": 1,
+        "n": 32
+      },
+      "reasoning": {
+        "correct": 21,
+        "n": 32
+      },
+      "program": {
+        "correct": 20,
+        "n": 32
+      }
+    },
+    "causal_judgement": {
+      "direct": {
+        "correct": 0,
+        "n": 2
+      },
+      "reasoning": {
+        "correct": 1,
+        "n": 2
+      },
+      "program": {
+        "correct": 1,
+        "n": 2
+      }
+    },
+    "hyperbaton": {
+      "direct": {
+        "correct": 1,
+        "n": 2
+      },
+      "reasoning": {
+        "correct": 2,
+        "n": 2
+      },
+      "program": {
+        "correct": 2,
+        "n": 2
+      }
+    },
+    "navigate": {
+      "direct": {
+        "correct": 2,
+        "n": 2
+      },
+      "reasoning": {
+        "correct": 2,
+        "n": 2
+      },
+      "program": {
+        "correct": 2,
+        "n": 2
+      }
+    },
+    "snarks": {
+      "direct": {
+        "correct": 1,
+        "n": 2
+      },
+      "reasoning": {
+        "correct": 1,
+        "n": 2
+      },
+      "program": {
+        "correct": 1,
+        "n": 2
+      }
+    },
+    "web_of_lies": {
+      "program": {
+        "correct": 0,
+        "n": 2
+      },
+      "direct": {
+        "correct": 0,
+        "n": 2
+      },
+      "reasoning": {
+        "correct": 2,
+        "n": 2
+      }
+    },
+    "date_understanding": {
+      "direct": {
+        "correct": 2,
+        "n": 2
+      },
+      "reasoning": {
+        "correct": 1,
+        "n": 2
+      },
+      "program": {
+        "correct": 2,
+        "n": 2
+      }
+    },
+    "logical_deduction_five_objects": {
+      "program": {
+        "correct": 1,
+        "n": 2
+      },
+      "direct": {
+        "correct": 1,
+        "n": 2
+      },
+      "reasoning": {
+        "correct": 2,
+        "n": 2
+      }
+    },
+    "object_counting": {
+      "direct": {
+        "correct": 0,
+        "n": 2
+      },
+      "reasoning": {
+        "correct": 2,
+        "n": 2
+      },
+      "program": {
+        "correct": 2,
+        "n": 2
+      }
+    },
+    "sports_understanding": {
+      "program": {
+        "correct": 2,
+        "n": 2
+      },
+      "direct": {
+        "correct": 0,
+        "n": 2
+      },
+      "reasoning": {
+        "correct": 1,
+        "n": 2
+      }
+    },
+    "word_sorting": {
+      "reasoning": {
+        "correct": 0,
+        "n": 2
+      },
+      "program": {
+        "correct": 2,
+        "n": 2
+      },
+      "direct": {
+        "correct": 0,
+        "n": 2
+      }
+    },
+    "disambiguation_qa": {
+      "reasoning": {
+        "correct": 1,
+        "n": 2
+      },
+      "program": {
+        "correct": 1,
+        "n": 2
+      },
+      "direct": {
+        "correct": 0,
+        "n": 2
+      }
+    },
+    "logical_deduction_seven_objects": {
+      "program": {
+        "correct": 1,
+        "n": 2
+      },
+      "direct": {
+        "correct": 1,
+        "n": 2
+      },
+      "reasoning": {
+        "correct": 0,
+        "n": 2
+      }
+    },
+    "penguins_in_a_table": {
+      "program": {
+        "correct": 0,
+        "n": 2
+      },
+      "direct": {
+        "correct": 0,
+        "n": 2
+      },
+      "reasoning": {
+        "correct": 2,
+        "n": 2
+      }
+    },
+    "temporal_sequences": {
+      "direct": {
+        "correct": 2,
+        "n": 2
+      },
+      "reasoning": {
+        "correct": 2,
+        "n": 2
+      },
+      "program": {
+        "correct": 2,
+        "n": 2
+      }
+    },
+    "dyck_languages": {
+      "reasoning": {
+        "correct": 1,
+        "n": 2
+      },
+      "program": {
+        "correct": 0,
+        "n": 2
+      },
+      "direct": {
+        "correct": 0,
+        "n": 2
+      }
+    },
+    "logical_deduction_three_objects": {
+      "direct": {
+        "correct": 2,
+        "n": 2
+      },
+      "reasoning": {
+        "correct": 2,
+        "n": 2
+      },
+      "program": {
+        "correct": 2,
+        "n": 2
+      }
+    },
+    "reasoning_about_colored_objects": {
+      "reasoning": {
+        "correct": 2,
+        "n": 2
+      },
+      "program": {
+        "correct": 1,
+        "n": 2
+      },
+      "direct": {
+        "correct": 0,
+        "n": 2
+      }
+    },
+    "tracking_shuffled_objects_five_objects": {
+      "reasoning": {
+        "correct": 2,
+        "n": 2
+      },
+      "program": {
+        "correct": 0,
+        "n": 2
+      },
+      "direct": {
+        "correct": 1,
+        "n": 2
+      }
+    },
+    "formal_fallacies": {
+      "program": {
+        "correct": 1,
+        "n": 2
+      },
+      "direct": {
+        "correct": 0,
+        "n": 2
+      },
+      "reasoning": {
+        "correct": 1,
+        "n": 2
+      }
+    },
+    "movie_recommendation": {
+      "program": {
+        "correct": 2,
+        "n": 2
+      },
+      "direct": {
+        "correct": 1,
+        "n": 2
+      },
+      "reasoning": {
+        "correct": 1,
+        "n": 2
+      }
+    },
+    "ruin_names": {
+      "program": {
+        "correct": 0,
+        "n": 2
+      },
+      "direct": {
+        "correct": 1,
+        "n": 2
+      },
+      "reasoning": {
+        "correct": 0,
+        "n": 2
+      }
+    },
+    "tracking_shuffled_objects_seven_objects": {
+      "direct": {
+        "correct": 2,
+        "n": 2
+      },
+      "reasoning": {
+        "correct": 2,
+        "n": 2
+      },
+      "program": {
+        "correct": 0,
+        "n": 2
+      }
+    }
+  },
+  "raw_results_commit": "ca58761d9360a4068149e18453050669af43c3ef"
+}
