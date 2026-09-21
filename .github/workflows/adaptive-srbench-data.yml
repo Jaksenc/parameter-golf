@@ -1,0 +1,33 @@
+name: Adaptive SRBench read-only data inspection
+on:
+  push:
+    branches: [research/adaptive-external-benchmarks-20260920]
+    paths: [.github/workflows/adaptive-srbench-data.yml]
+permissions:
+  contents: read
+jobs:
+  data:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Inspect public benchmark inputs without writes or model execution
+        run: |
+          python3 -u - <<'PY'
+          import sys,json,gzip,base64,concurrent.futures
+          sys.path.insert(0,'research/adaptive_external')
+          from srbench_data import acquire,NAMES,REF,sha
+          reports=[];datasets=[]
+          with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
+              for report,data in pool.map(acquire,NAMES):
+                  reports.append(report)
+                  if data:datasets.append(data)
+                  print('DATASET '+json.dumps(report),flush=True)
+          obj={'pmlb_commit':REF,'datasets':datasets}
+          raw=json.dumps(obj,separators=(',',':')).encode();packed=gzip.compress(raw,mtime=0)
+          print('DATA_MANIFEST '+json.dumps({'pmlb_commit':REF,'reports':reports,'pack_sha256':sha(packed),'decoded_sha256':sha(raw),'pack_bytes':len(packed),'no_benchmark_scores_computed':True}),flush=True)
+          payload=base64.b64encode(packed).decode()
+          for i in range(0,len(payload),4000):print('DATA_PACK '+str(i//4000)+' '+payload[i:i+4000],flush=True)
+          PY
