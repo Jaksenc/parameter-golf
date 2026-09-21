@@ -1,0 +1,462 @@
+{
+  "manifest": {
+    "model": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "torch": "2.10.0+cpu",
+    "transformers": "5.3.0",
+    "python": "3.12.14",
+    "machine": "aarch64",
+    "platform": "Linux-6.17.0-1022-azure-aarch64-with-glibc2.39",
+    "threads": 4,
+    "dtype": "bfloat16",
+    "attention": "sdpa",
+    "parameters": 4539265536,
+    "load_seconds": 43.438162880999926,
+    "seed": 17,
+    "sampling": false,
+    "thinking_template": false,
+    "max_input_tokens": 8192,
+    "max_output_tokens_per_arm": 512,
+    "generation_seconds_soft_limit": 90,
+    "tools": false,
+    "persistent_memory": false,
+    "trained_neural_guide": false,
+    "new_training": false,
+    "claim": "direct vs bounded explicit reasoning baseline, not complete Adaptive architecture"
+  },
+  "rows": [
+    {
+      "id": 384,
+      "task": "bbeh_buggy_tables",
+      "arm": "direct",
+      "question_sha256": "2f6782144f2a04b07148a37e9d8cd845edf8b64da000b05a0d5b2cdf2b87747d",
+      "prompt_sha256": "ffad3c5705194bff5abfc813fc33327323423ced40af6e3355c6dd78b76a1685",
+      "input_tokens": 3169,
+      "status": "budget_limited",
+      "response": "To solve this task, we need to:\n1.  Reconstruct the table by replacing \"ERROR\" values with the provided list of values in column order.\n",
+      "output_tokens": 34,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.26733137899998,
+      "reference": "237.0",
+      "correct": false
+    },
+    {
+      "id": 384,
+      "task": "bbeh_buggy_tables",
+      "arm": "reasoning",
+      "question_sha256": "2f6782144f2a04b07148a37e9d8cd845edf8b64da000b05a0d5b2cdf2b87747d",
+      "prompt_sha256": "59af508a5f08e9839993b8d1b2ab61a773b83f0fc7c387e24ec02c158b2dd56e",
+      "input_tokens": 3177,
+      "status": "budget_limited",
+      "response": "To solve this task, we need to reconstruct the table by replacing the \"ERROR\" values with the provided list of values in column order. Then, we will filter the rows",
+      "output_tokens": 35,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.35301681499993,
+      "reference": "237.0",
+      "correct": false
+    },
+    {
+      "id": 389,
+      "task": "bbeh_dyck_languages",
+      "arm": "reasoning",
+      "question_sha256": "72059b2fe7f9bf3ba5fc99ce8489e9ff3a679aa844cf52846506a9d7589da572",
+      "prompt_sha256": "32feedbb70f61b4c82d49221200f43caae0c6cbbe21e41442e0452b2fc92d242",
+      "input_tokens": 931,
+      "status": "budget_limited",
+      "response": "To determine if there is a mistake in the reasoning sequence, let's trace the input string step-by-step against the provided thoughts and verify the stack operations.\n\n**Input String Analysis:**\nThe input string is:\n`{ { } } { { { ( ( ( { ( { ( ) } ( ) ) ( ) ( [ ( ) ] ) ( [ ] < < [ < ( { { ( )",
+      "output_tokens": 84,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.65767667500006,
+      "reference": "15",
+      "correct": false
+    },
+    {
+      "id": 389,
+      "task": "bbeh_dyck_languages",
+      "arm": "direct",
+      "question_sha256": "72059b2fe7f9bf3ba5fc99ce8489e9ff3a679aa844cf52846506a9d7589da572",
+      "prompt_sha256": "641f4b36cee479400d2b7be0a2b964c83f50917f36fcdbc29b9a1b41f6708d6e",
+      "input_tokens": 923,
+      "status": "budget_limited",
+      "response": "The mistake occurs in Thought 42.\nAt Thought 41, the stack is correctly identified as `(`.\nHowever, Thought 42 states: \"Now, we have reached the end. The final stack is '('.\"\nWhile the stack content is correct, the reasoning implies that the input sequence has ended and the stack is in a final state. Looking at the input string provided:\n`{",
+      "output_tokens": 85,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.32534187599992,
+      "reference": "15",
+      "correct": false
+    },
+    {
+      "id": 123,
+      "task": "bbeh_linguini",
+      "arm": "reasoning",
+      "question_sha256": "bacb1d785b9a60d9c15c99c2e87b02323b8df8076ae889462dc5c41cc8a3943e",
+      "prompt_sha256": "0f1d2cbe2b5bc0cd8975e269e5112e99b4cdaa5dca966db7a80adb2a6d07ab77",
+      "input_tokens": 185,
+      "status": "budget_limited",
+      "response": "To determine the value of the Mansi numeral **ont\u044allows\u0101tn ont\u044allowxujplow**, we must first analyze the provided examples to deduce the place value system and the specific words used for each digit.\n\n### Step 1: Analyze the Place Value System\nLet's look at the numbers given:\n- **8**: `\u0144ollow`\n- **15**: `atxujplow`\n- **49**: `atlow nop",
+      "output_tokens": 101,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.76083371699997,
+      "reference": "819",
+      "correct": false
+    },
+    {
+      "id": 123,
+      "task": "bbeh_linguini",
+      "arm": "direct",
+      "question_sha256": "bacb1d785b9a60d9c15c99c2e87b02323b8df8076ae889462dc5c41cc8a3943e",
+      "prompt_sha256": "ed4333d00124dd26301ce395d0990e739bde93a84c5cac66e1ba8069d5a83a60",
+      "input_tokens": 177,
+      "status": "ok",
+      "response": "The final answer is: 918\n",
+      "output_tokens": 12,
+      "eos_reached": true,
+      "seconds_soft_limit_reached": false,
+      "generation_seconds": 13.514716384999929,
+      "reference": "819",
+      "correct": false
+    },
+    {
+      "id": 420,
+      "task": "bbeh_nycc",
+      "arm": "direct",
+      "question_sha256": "c5d6a6577d55eaa72aa1c92081921a73fb34335fd841a1b3db078712852e75d9",
+      "prompt_sha256": "3b41b7054997286cd69a8776b2c0a8d575bb0c64159b709787681aa52c2898b7",
+      "input_tokens": 230,
+      "status": "ok",
+      "response": "The final answer is: (B)\n",
+      "output_tokens": 11,
+      "eos_reached": true,
+      "seconds_soft_limit_reached": false,
+      "generation_seconds": 13.91100590799988,
+      "reference": "(I)",
+      "correct": false
+    },
+    {
+      "id": 420,
+      "task": "bbeh_nycc",
+      "arm": "reasoning",
+      "question_sha256": "c5d6a6577d55eaa72aa1c92081921a73fb34335fd841a1b3db078712852e75d9",
+      "prompt_sha256": "b8e9b56b8cf6b5511d55632d34011c14f24656db9c838a2efd9ab6b6af5a1e0f",
+      "input_tokens": 238,
+      "status": "budget_limited",
+      "response": "To determine the funniest caption, we must analyze the visual elements of the cartoon and how they interact with the options provided.\n\n**Visual Analysis:**\n1.  **Subject:** A child dressed as a historical figure (implied by the hat and cape) riding a coin-operated horse.\n2.  **Action:** The child is on the ride.\n3.  **Context:** The mother is standing nearby holding grocery bags, implying they are in a rush or have limited funds/time.\n4",
+      "output_tokens": 104,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.52521101699995,
+      "reference": "(I)",
+      "correct": false
+    },
+    {
+      "id": 285,
+      "task": "bbeh_sarc_triples",
+      "arm": "reasoning",
+      "question_sha256": "c190d0732c7db291e39ec146bd757cb2f130a1a6466f0d1ab8d64206f5f1a3c2",
+      "prompt_sha256": "d9c4a1fd5550123c45a3fd391c981c98f217de8e9bfaa8296de1ebc8979ded49",
+      "input_tokens": 361,
+      "status": "budget_limited",
+      "response": "To determine if the replies are sarcastic, let's analyze each pair:\n\n**Pair 1:**\n*   **POST:** Claims that society killed figures like witches and Jesus due to jealousy of their \"super powers.\" This is a hyperbolic or conspiratorial take on history.\n*   **REPLY:** \"I understand that the majority of today's society is fucked, but how does this disgruntled whale relate to the point?\"\n    *   The reply acknowledges the post's sentiment",
+      "output_tokens": 102,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.30517979000001,
+      "reference": "0,1,0",
+      "correct": false
+    },
+    {
+      "id": 285,
+      "task": "bbeh_sarc_triples",
+      "arm": "direct",
+      "question_sha256": "c190d0732c7db291e39ec146bd757cb2f130a1a6466f0d1ab8d64206f5f1a3c2",
+      "prompt_sha256": "8fad4e569b12e42c7143b7c1ec9acc6b71e93c187d8e74ff41bab8c1274817ae",
+      "input_tokens": 353,
+      "status": "ok",
+      "response": "The final answer is: 0,1,0\n",
+      "output_tokens": 14,
+      "eos_reached": true,
+      "seconds_soft_limit_reached": false,
+      "generation_seconds": 18.36447725700009,
+      "reference": "0,1,0",
+      "correct": true
+    },
+    {
+      "id": 221,
+      "task": "bbeh_sportqa",
+      "arm": "reasoning",
+      "question_sha256": "a54c6374aad6cca98cd845131472560d48fa25a9f3e03cb1f539703974ada4ca",
+      "prompt_sha256": "c6d8283a780f0c1f5d3a5f7299a89ca391d69de34cd0cd96c1177003b5957b9e",
+      "input_tokens": 407,
+      "status": "budget_limited",
+      "response": "To determine the correct answers, let's analyze the logic of tennis strategy regarding drop shots and groundstrokes.\n\n**Main Question Analysis:**\n\"Why did the tennis player decide to use a drop shot instead of a groundstroke in the last rally?\"\n*   **A) The opponent was positioned far behind the baseline.** This is the primary tactical reason for a drop shot. If the opponent is deep in the court, a low, short shot forces them to run forward to retrieve it, often leading",
+      "output_tokens": 101,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.00726605,
+      "reference": "AB, ABC, ABC",
+      "correct": false
+    },
+    {
+      "id": 221,
+      "task": "bbeh_sportqa",
+      "arm": "direct",
+      "question_sha256": "a54c6374aad6cca98cd845131472560d48fa25a9f3e03cb1f539703974ada4ca",
+      "prompt_sha256": "24a6b74eb588d1ec12fbc09cd8570293348dd16c1aad6c01769be1f35ac0bbea",
+      "input_tokens": 399,
+      "status": "ok",
+      "response": "AC, A, AB\n",
+      "output_tokens": 8,
+      "eos_reached": true,
+      "seconds_soft_limit_reached": false,
+      "generation_seconds": 14.298532123000086,
+      "reference": "AB, ABC, ABC",
+      "correct": false
+    },
+    {
+      "id": 433,
+      "task": "bbeh_web_of_lies",
+      "arm": "reasoning",
+      "question_sha256": "78e2542e1e653662478cb915b842b9984b506d5c96e9c58b5a034ee65969921a",
+      "prompt_sha256": "a4c1dd49597704223bd37e9b12a2d8f152771e146d9e4452c1e1dbaab94c962c",
+      "input_tokens": 920,
+      "status": "budget_limited",
+      "response": "To solve this logic puzzle, we need to determine the truthfulness of **Jaymie**, **Andree**, and **Shalonda**. Let's break down the relevant logical chains step by step.\n\n### Step 1: Analyze the \"Crista\" Anchor\nThe statement \"Crista tells the truth\" is given as a fact in the text.\n*   **Crista = True (T)**\n\n### Step 2: Trace the Chain",
+      "output_tokens": 96,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.070467022,
+      "reference": "no, no, yes",
+      "correct": false
+    },
+    {
+      "id": 433,
+      "task": "bbeh_web_of_lies",
+      "arm": "direct",
+      "question_sha256": "78e2542e1e653662478cb915b842b9984b506d5c96e9c58b5a034ee65969921a",
+      "prompt_sha256": "d7b0c345ccf2a319a15f08484726dd72a2d321cdc44ee44146b621eeca07b5fc",
+      "input_tokens": 912,
+      "status": "budget_limited",
+      "response": "To solve this logic puzzle, we need to determine the truthfulness of **Jaymie**, **Andree**, and **Shalonda**. Let's break down the relevant logical chains step by step.\n\n**Step 1: Analyze the statements involving the target individuals.**\n\n*   **Jaymie**: \"Kristian tells the truth.\"\n    *   If Jaymie is True $\\rightarrow$ Kristian is True.\n    *   If Jaymie is False $\\rightarrow$ Krist",
+      "output_tokens": 99,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.22138194200011,
+      "reference": "no, no, yes",
+      "correct": false
+    }
+  ],
+  "benchmark": "BBEH Mini stratified pilot",
+  "bbeh_commit": "80d12ca916b7158f22293fcf3144f4d3d854d4be",
+  "data_sha256": "14e77b3d6be68faa008d268abf53b1f8d2420ffdd762504a304dafc3f8d43026",
+  "scorer_sha256": "4b4f06e5babb015de2ba639bae995a5526182ffb5b5890af54dfcf038580eb34",
+  "shard": 5,
+  "shards": 6,
+  "per_task": 2,
+  "total_selected": 46,
+  "selection": "per-task ascending SHA256(adaptive-bbeh-pilot-v1 + NUL + original question), first n; no target use",
+  "selected_ids": [
+    96,
+    318,
+    67,
+    236,
+    348,
+    384,
+    243,
+    298,
+    220,
+    260,
+    336,
+    389,
+    317,
+    436,
+    219,
+    449,
+    34,
+    123,
+    158,
+    208,
+    16,
+    69,
+    365,
+    420,
+    108,
+    444,
+    37,
+    340,
+    192,
+    285,
+    307,
+    432,
+    124,
+    233,
+    179,
+    221,
+    105,
+    262,
+    29,
+    353,
+    255,
+    433,
+    210,
+    309,
+    151,
+    284
+  ],
+  "summary": {
+    "direct": {
+      "correct": 1,
+      "total": 7,
+      "statuses": {
+        "budget_limited": 3,
+        "ok": 4
+      },
+      "output_tokens": 263,
+      "generation_seconds": 330.90278687
+    },
+    "reasoning": {
+      "correct": 0,
+      "total": 7,
+      "statuses": {
+        "budget_limited": 7
+      },
+      "output_tokens": 623,
+      "generation_seconds": 632.6796510859999
+    }
+  },
+  "worker_exit": 0,
+  "request_wall_seconds": 1011.8274220159999,
+  "run_id": "35546669639",
+  "source_sha256": "ad3064cf5284c23523d7639f1b766691240f771d1f5066ea9072efca575c89c9",
+  "evaluation_isolation": "worker receives only id,task,question; no answer feedback; no training or cross-case memory",
+  "limitations": [
+    "public development pilot, not full benchmark or leaderboard submission",
+    "frozen pretrained baseline only; not full Adaptive system",
+    "pretraining overlap unknown",
+    "greedy bounded decoding; budget failures retained",
+    "load/overhead reported separately; energy not measured"
+  ],
+  "metadata_repair": "Mini lacks task labels; restored by exact input-only matching to original task files",
+  "membership_manifest": [
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_boardgame_qa/task.json",
+      "blob": "59bfa63f5b98bd93d13137df28297d69fc85ceab",
+      "sha256": "3d47dc41eb825b2ee77a696e79859d8d2043b1bf04077e120caec4ad324f32a8"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_boolean_expressions/task.json",
+      "blob": "3b1b165e0f026d61c1ba8a7112cc5289d978262a",
+      "sha256": "49e763f10dbea048be56036c8cbf2a6d0bb735235e3806b50809a1addb57eee2"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_buggy_tables/task.json",
+      "blob": "e2eeae579ff119ffd424c7eb269fc4dfb68a8da3",
+      "sha256": "c27b76200bf1b0d4ada3729f5a40aa1f0062267e42c4f40820b3e40891c3fe85"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_causal_understanding/task.json",
+      "blob": "1222dc4953e0147aa954c76d8d33910c05ba460d",
+      "sha256": "b10bbf43f7f5cdde927b0ad03f99a7a78b3525de4bfa90008b36b12b010c9a81"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_disambiguation_qa/task.json",
+      "blob": "04a553ccada1641884d6b07a3d2aff73ea25b2f5",
+      "sha256": "6d34e0c89c3b1e1386df5919159b8d67b4668308d1225bd1ee54eb1e946472bd"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_dyck_languages/task.json",
+      "blob": "9c73487fbb6c5e453ad5bbf1b372f79b9a18f668",
+      "sha256": "a089612502bdfb98a447c8cba84f972724308ea0d059e8561e3cc9785de585cc"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_geometric_shapes/task.json",
+      "blob": "5ff75c179f5f406967f8b02ec57db2ab7c5817eb",
+      "sha256": "7ff506d026450cb878a0963ce478724ad1451bc56469c813c791b9345ac1bea7"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_hyperbaton/task.json",
+      "blob": "9e276ca2c4b57a7e506f2d7128f7a4cacd55c960",
+      "sha256": "0fbacc94f4c740c3050021f4c57089f2011d7bd77fcff3346a7f4b9dbef842e2"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_linguini/task.json",
+      "blob": "e8edd908fb96511855d29c0b128f3a89f163c7b0",
+      "sha256": "ba387d2aa1bde122e6c9937fca4e075b9cc7d64e6047b170cfcffd6304919ea8"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_movie_recommendation/task.json",
+      "blob": "c07c9f17ca3def29062934bf79b53cbee99b9ede",
+      "sha256": "808882647b84c116a57e0975e3d357749525e12d215c4a5dae83de83ae8c4772"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_multistep_arithmetic/task.json",
+      "blob": "ac431dc3911aa5640f001c6a4de74588713e8506",
+      "sha256": "47207086cd2afe74df9968172d24134c82af8c666144092f04e4c1ebad8cf3d2"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_nycc/task.json",
+      "blob": "09666db9e95cf7b65a0d2d33e7acc3a84104e5c6",
+      "sha256": "67c9a9dca40e6ec820a279da19a019cedd5427fbaaae3fd175cdb74965474b08"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_object_counting/task.json",
+      "blob": "757780e10d5ea8d40c4d2cc9a8444a9c20a0d603",
+      "sha256": "a0a8b10ca1aa06eae611c7c7e854fbec4f9622c8f74a74ffa00436a9a8609b67"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_object_properties/task.json",
+      "blob": "e8bc36ad02c89d763e4981967ec5235f64a107ad",
+      "sha256": "d606b3aa0c35d5397afc5937207174593c82ad5dfcaf7e5dfb40a99278aef0e4"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_sarc_triples/task.json",
+      "blob": "fcb7b152123953c768f7fb415c29d37df0aa6b62",
+      "sha256": "4c7b8eb4b542d326152394456c0a1afc8ef5447ee06dd4187b7eb91027a6b821"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_shuffled_objects/task.json",
+      "blob": "8099cd6873756c47cbba0538fc11767e5fe2bfc6",
+      "sha256": "43cda28220c66e8d63e667d3091cd18b0b17aa55c005bb24bbb63144afdba9c1"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_spatial_reasoning/task.json",
+      "blob": "dc362278dac49294d0225c0249e6bf9e7c8e31d4",
+      "sha256": "e77986b73e0ed15b5f950978b7758f55311b4d50e7215961084b126e4d960cb7"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_sportqa/task.json",
+      "blob": "c7407a7bd287cda7719fb7b7cbdca840a50a79ad",
+      "sha256": "69b3f164d9617eab9185830eacf4250badb56c2d718ddc75012597ed1a4bc9bf"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_temporal_sequence/task.json",
+      "blob": "e0ffd804b234344a967ecf9f6b2dad2b5f960279",
+      "sha256": "55f6711d3d76925acb5d2fffdc1947e0e7186c686f0a343598394a57df6c7c6e"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_time_arithmetic/task.json",
+      "blob": "e1a8fcfe7cb58c0eb12700969904e16f3d5bff51",
+      "sha256": "2510515a6f12024a742743e29a389f07beacb3bf4c71e0b59be12f3e364cf31b"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_web_of_lies/task.json",
+      "blob": "2bccd9eae0f1f10559a0d1e830aa0ccd4ac63c5a",
+      "sha256": "15f23d32579285701f68dae7947e2191eff21ee97440dfa73cb3565a66c77a6d"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_word_sorting/task.json",
+      "blob": "2995a286e30f32ce0eac590a52461243d3d383ff",
+      "sha256": "f49674b7b85774d6190c2844e1682c2ee8ff591ca1eeee4e785a45ef1e20024d"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_zebra_puzzles/task.json",
+      "blob": "4a42b417ae48dda20f34f607ab3f4b2bbcb58066",
+      "sha256": "0acd979060ee49f063f241dd1a298bd80b63d6b7fbfb08057ff480bff98a6198"
+    }
+  ],
+  "entry_source_sha256": "83814e872004563e6f4894340f03d31749b9f3a766572c8a4b019053939bb146"
+}
