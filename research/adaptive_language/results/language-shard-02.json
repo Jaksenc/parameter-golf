@@ -1,0 +1,1661 @@
+{
+  "status": "completed",
+  "shard": 2,
+  "shards": 12,
+  "run_id": "35652499808",
+  "source_commit": "d8212eabc5e1c5c93f8757ff8b3e81a4b960124d",
+  "core": {
+    "decoded_sha256": "6b37dcfc4a451d5dba399080ba362b5b5320b03e977bf49532aab2be3cd108ca",
+    "transport_repairs": [
+      "TK+TVJrofJK8b2RR",
+      "dXZ3vX7tDJtd",
+      "KuOR3d/cy5RJK"
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/openai/grade-school-math/3101c7d5072418e28b9008a6636bde82a006892c/grade_school_math/data/test.jsonl",
+      "sha256": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14",
+      "bytes": 749738
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/boolean_expressions.json",
+      "sha256": "ea6c754ec005e2d3f2d085d349a740f593b5764f32ea4638ffed4cfc0061b12a",
+      "bytes": 17172
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/causal_judgement.json",
+      "sha256": "6e8bca44dd402008ed41c07a3d0a1d5e7b03db7001a7e002fcdf4c60985ea081",
+      "bytes": 202943
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/date_understanding.json",
+      "sha256": "0148d4ac5fca05b2f82373e5fef7208e15363b9c6079493034d77b3dab496bf5",
+      "bytes": 61760
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/disambiguation_qa.json",
+      "sha256": "cf06df9ebf911b883671cb1b35d3fbd1a1c306b19b9e9a012407e596c85fe8c6",
+      "bytes": 85255
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/dyck_languages.json",
+      "sha256": "3f9badedf15c2be1ce53d94fdf016299bb30ba231ef087ab9f51a7ed6d0bdc25",
+      "bytes": 43814
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/formal_fallacies.json",
+      "sha256": "4c1adb664821157faade1d4153685403afcc02648f3c180a608a18f17f589629",
+      "bytes": 145562
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/geometric_shapes.json",
+      "sha256": "07be68a124420caa2ebc0b2c858ad79fc55c5c8806170e496e1e17ebfb11f31c",
+      "bytes": 77242
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/hyperbaton.json",
+      "sha256": "b6d7f55c75f5d02f2987a4f3123802dfa093872089a56a334144aae8a7264fdc",
+      "bytes": 44706
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/logical_deduction_five_objects.json",
+      "sha256": "d2df31394b903b7f0e085d42a69572a092987856eac076799017d70ef266fa8f",
+      "bytes": 155477
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/logical_deduction_seven_objects.json",
+      "sha256": "2896c7e3482eea318dd37bcc370d24ec3cc91e8374c1784287b5dbd38a529e33",
+      "bytes": 198404
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/logical_deduction_three_objects.json",
+      "sha256": "e590fae72e3a6041fbd23bd8ff6b74baf44ca563f6ba40a041c55e7b867c1681",
+      "bytes": 112213
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/movie_recommendation.json",
+      "sha256": "a8b53a87ee21a865b7248e694f388a9b8f7cf6b839b11d44796a2dd3fc088983",
+      "bytes": 57684
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/multistep_arithmetic_two.json",
+      "sha256": "c9d5a6433c9b78256422a15c78463949c8bec8d85607aa28b52d7234ad4a8595",
+      "bytes": 18325
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/navigate.json",
+      "sha256": "b7944dfd3c81da5c4815bd75b00d6fa3c64140823498e78ed496f4c3d36f7f0d",
+      "bytes": 55163
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/object_counting.json",
+      "sha256": "8acef14dbbdd40d2326ef7755750b6b5fe919fef06276af1bab3f1c297f022ff",
+      "bytes": 35890
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/penguins_in_a_table.json",
+      "sha256": "bb87ee449698eee51215e025a453b1bcb2f5e6589c2063b2c79e68b8f0655228",
+      "bytes": 74516
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/reasoning_about_colored_objects.json",
+      "sha256": "0a8850cf95166020fce7a78244026ceedd7ea839302471512b4f8744e85a6a49",
+      "bytes": 98694
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/ruin_names.json",
+      "sha256": "b6f723aef2bafdd4c7bfc3c7e0329c7e8a8279391a609969c8ed76c9319f5f7f",
+      "bytes": 53178
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/salient_translation_error_detection.json",
+      "sha256": "becf3eb8dd53c821a555ecd5c1334ecd93eb25f980e63be963c518e7138de5da",
+      "bytes": 286443
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/snarks.json",
+      "sha256": "54a0661fe2de06167645a4965e6bcf963c4ba307e76262a7c750998b0e3d0d0e",
+      "bytes": 42646
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/sports_understanding.json",
+      "sha256": "63ca262858f6176864515cd8cf53cdaa40839ebecc155b726d77930855d167bf",
+      "bytes": 28617
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/temporal_sequences.json",
+      "sha256": "92a1189faaa84aacc4c405aaa13f13f48c2992eb884772eedb622505252baef5",
+      "bytes": 148176
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/tracking_shuffled_objects_five_objects.json",
+      "sha256": "2063a46a4fb484236ed4310523606543a3e1dd4a4dc34eda65d407910ece25a5",
+      "bytes": 169722
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/tracking_shuffled_objects_seven_objects.json",
+      "sha256": "b59fd05b850c37cf57cb514ae1e6975c00b1638ade2291722056b2af3c54084d",
+      "bytes": 214906
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/tracking_shuffled_objects_three_objects.json",
+      "sha256": "546cc7bf10c6a01a6a4c17ae28a4966485f21f29fd5d111f37858ec78e354f6b",
+      "bytes": 128736
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/web_of_lies.json",
+      "sha256": "3e60323f8514a107fdb4edf35f8832a9171c5a09c0eaa47823559de905e8ab8b",
+      "bytes": 52964
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/word_sorting.json",
+      "sha256": "2a6132d2c99f00d0d2eb1113ac6b4a918bd969d863c48749210d969713db8d43",
+      "bytes": 66300
+    }
+  ],
+  "selected_ids": [
+    "bbh:boolean_expressions:140",
+    "bbh:boolean_expressions:236",
+    "bbh:causal_judgement:10",
+    "bbh:causal_judgement:168",
+    "bbh:date_understanding:180",
+    "bbh:date_understanding:69",
+    "bbh:disambiguation_qa:172",
+    "bbh:disambiguation_qa:51",
+    "bbh:dyck_languages:49",
+    "bbh:dyck_languages:82",
+    "bbh:formal_fallacies:213",
+    "bbh:formal_fallacies:84",
+    "bbh:geometric_shapes:102",
+    "bbh:geometric_shapes:184",
+    "bbh:hyperbaton:15",
+    "bbh:hyperbaton:219",
+    "bbh:logical_deduction_five_objects:115",
+    "bbh:logical_deduction_five_objects:228",
+    "bbh:logical_deduction_seven_objects:231",
+    "bbh:logical_deduction_seven_objects:67",
+    "bbh:logical_deduction_three_objects:111",
+    "bbh:logical_deduction_three_objects:165",
+    "bbh:movie_recommendation:195",
+    "bbh:movie_recommendation:197",
+    "bbh:multistep_arithmetic_two:125",
+    "bbh:multistep_arithmetic_two:151",
+    "bbh:navigate:112",
+    "bbh:navigate:41",
+    "bbh:object_counting:135",
+    "bbh:object_counting:61",
+    "bbh:penguins_in_a_table:141",
+    "bbh:penguins_in_a_table:89",
+    "bbh:reasoning_about_colored_objects:120",
+    "bbh:reasoning_about_colored_objects:42",
+    "bbh:ruin_names:11",
+    "bbh:ruin_names:144",
+    "bbh:salient_translation_error_detection:5",
+    "bbh:salient_translation_error_detection:93",
+    "bbh:snarks:167",
+    "bbh:snarks:93",
+    "bbh:sports_understanding:179",
+    "bbh:sports_understanding:49",
+    "bbh:temporal_sequences:158",
+    "bbh:temporal_sequences:214",
+    "bbh:tracking_shuffled_objects_five_objects:159",
+    "bbh:tracking_shuffled_objects_five_objects:175",
+    "bbh:tracking_shuffled_objects_seven_objects:150",
+    "bbh:tracking_shuffled_objects_seven_objects:183",
+    "bbh:tracking_shuffled_objects_three_objects:215",
+    "bbh:tracking_shuffled_objects_three_objects:233",
+    "bbh:web_of_lies:190",
+    "bbh:web_of_lies:230",
+    "bbh:word_sorting:200",
+    "bbh:word_sorting:205",
+    "gsm8k:1064",
+    "gsm8k:1076",
+    "gsm8k:1123",
+    "gsm8k:1127",
+    "gsm8k:1131",
+    "gsm8k:114",
+    "gsm8k:1200",
+    "gsm8k:1205",
+    "gsm8k:1286",
+    "gsm8k:14",
+    "gsm8k:164",
+    "gsm8k:181",
+    "gsm8k:216",
+    "gsm8k:217",
+    "gsm8k:220",
+    "gsm8k:391",
+    "gsm8k:393",
+    "gsm8k:429",
+    "gsm8k:58",
+    "gsm8k:636",
+    "gsm8k:642",
+    "gsm8k:673",
+    "gsm8k:728",
+    "gsm8k:797",
+    "gsm8k:801",
+    "gsm8k:81",
+    "gsm8k:869",
+    "gsm8k:892",
+    "gsm8k:902",
+    "gsm8k:911",
+    "gsm8k:947",
+    "gsm8k:975"
+  ],
+  "cohort_sha256": "edd6e937ab32c23ed79d52a380bec145adaa09b0a7855f14d14b77e373da48b0",
+  "runtime": {
+    "model": "unsloth/Qwen3.5-4B-GGUF",
+    "model_revision": "e87f176479d0855a907a41277aca2f8ee7a09523",
+    "weights": {
+      "url": "https://huggingface.co/unsloth/Qwen3.5-4B-GGUF/resolve/e87f176479d0855a907a41277aca2f8ee7a09523/Qwen3.5-4B-Q4_K_M.gguf",
+      "sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+      "bytes": 2740937888
+    },
+    "runtime": {
+      "url": "https://github.com/ggml-org/llama.cpp/releases/download/b10964/llama-b10964-bin-ubuntu-x64.tar.gz",
+      "sha256": "9abf88aea48a55d0f80edb1ee20220b186848cca0b4e919d71518cfd7ca67443",
+      "bytes": 16825086
+    },
+    "tag": "b10964",
+    "command": [
+      "/tmp/adaptive-language-runtime/binary/llama-b10964/llama-server",
+      "-m",
+      "/tmp/adaptive-language-runtime/model.gguf",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "8787",
+      "-c",
+      "8192",
+      "-np",
+      "1",
+      "-t",
+      "4",
+      "-tb",
+      "4",
+      "-ngl",
+      "0",
+      "--jinja",
+      "--chat-template-kwargs",
+      "{\"enable_thinking\":false}",
+      "--no-webui"
+    ],
+    "server_version": "",
+    "machine": "x86_64",
+    "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "setup_seconds": 41.505775809,
+    "private_inputs": false,
+    "paid_inference": false,
+    "training": false
+  },
+  "worker_exit": 0,
+  "rows": [
+    {
+      "arm": "direct",
+      "answer": "No",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "No\nFINAL: No",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 209,
+            "total_tokens": 215,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 209,
+            "prompt_ms": 10105.562,
+            "prompt_per_token_ms": 48.35197129186603,
+            "prompt_per_second": 20.68168004906605,
+            "predicted_n": 6,
+            "predicted_ms": 691.503,
+            "predicted_per_token_ms": 138.3006,
+            "predicted_per_second": 7.230626620564191
+          },
+          "seconds": 10.802144518999995,
+          "request_sha256": "2a03b69119eed76feb70c6f2dec7c3abb2c1abf8af8219f170537facc026a9cf"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 209,
+        "completion_tokens": 6,
+        "total_tokens": 215
+      },
+      "seconds": 10.802405875999995,
+      "question_sha256": "d69784a1ef1b143a92ff8fe0fa9e09c6246ad5cd4ba85132be883e0a56b0fa91",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:causal_judgement:10",
+      "suite": "BBH",
+      "family": "causal_judgement",
+      "question": "How would a typical person answer each of the following questions about causation?\nSara has an electric guitar that she plays through an amplifier. The guitar will play through the amplifier if either the amplifier is set to channel A or the power mixer is turned on. Today, the amplifier is set to channel A. Sara checks to see if the power mixer is on. She sees that the power mixer is turned on, and she does not turn off the power mixer or adjust it at all. Because the guitar will play through the amplifier if either the amplifier is set to channel A or the power mixer is turned on, Sara's guitar plays through the amplifier. Did the guitar play through the amplifier because Sara did not turn off the power mixer?\nOptions:\n- Yes\n- No",
+      "reference": "Yes",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "No",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "The question asks whether the guitar played through the amplifier *because* Sara did not turn off the power mixer.\n\n1.  **Analyze the Causal Structure**: The guitar plays if (Amplifier = A) OR (Power Mixer = On).\n2.  **Identify the Actual State**: Both conditions are true (Amplifier = A, Power Mixer = On).\n3.  **Evaluate the Specific Action**: Sara checked the mixer, saw it was on, and *did not turn it off*.\n4.  **Apply Counterfactual Reasoning**: To determine if \"not turning off\" caused the result, we ask: What would have happened if she *had* turned it off?\n    *   If she turned the mixer off, the \"Power Mixer = On\" condition would become false.\n    *   However, the \"Amplifier = A\" condition would remain true.\n    *   Since the condition is an \"OR\" relationship, the guitar would still play because the amplifier is set to channel A.\n5.  **Conclusion**: The outcome (guitar playing) would have occurred regardless of whether she turned the mixer off or not. Therefore, her inaction (not turning it off) was not the necessary cause of the guitar playing. The cause was the amplifier being set to channel A (and/or the mixer being on, but not the specific act of *not* turning it off).\n\nIn standard causal reasoning (such as the counterfactual theory of causation), an event is not a cause if the result would have happened anyway. Since the guitar would play even if the mixer were off, she did not play it through the amplifier *because* she did not turn off the mixer.\n\nFINAL: No",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 364,
+            "prompt_tokens": 219,
+            "total_tokens": 583,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 219,
+            "prompt_ms": 10410.264,
+            "prompt_per_token_ms": 47.53545205479452,
+            "prompt_per_second": 21.036930475538373,
+            "predicted_n": 364,
+            "predicted_ms": 50426.179,
+            "predicted_per_token_ms": 138.91509366391185,
+            "predicted_per_second": 7.1986418007202175
+          },
+          "seconds": 60.882678641,
+          "request_sha256": "ae611cc29213a1539d580893e7603af1a4125c201deedeb38099e37cecd9bd0b"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 219,
+        "completion_tokens": 364,
+        "total_tokens": 583
+      },
+      "seconds": 60.88279293099998,
+      "question_sha256": "d69784a1ef1b143a92ff8fe0fa9e09c6246ad5cd4ba85132be883e0a56b0fa91",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:causal_judgement:10",
+      "suite": "BBH",
+      "family": "causal_judgement",
+      "question": "How would a typical person answer each of the following questions about causation?\nSara has an electric guitar that she plays through an amplifier. The guitar will play through the amplifier if either the amplifier is set to channel A or the power mixer is turned on. Today, the amplifier is set to channel A. Sara checks to see if the power mixer is on. She sees that the power mixer is turned on, and she does not turn off the power mixer or adjust it at all. Because the guitar will play through the amplifier if either the amplifier is set to channel A or the power mixer is turned on, Sara's guitar plays through the amplifier. Did the guitar play through the amplifier because Sara did not turn off the power mixer?\nOptions:\n- Yes\n- No",
+      "reference": "Yes",
+      "correct": false
+    },
+    {
+      "arm": "program",
+      "answer": "No",
+      "status": "model_answer_unverified",
+      "execution": {
+        "answer": "No",
+        "status": "model_answer_unverified",
+        "trace": [],
+        "program_sha256": "1b96e430b6bef656ce72703c869090b0fb63ac41956076943d5352402d436976",
+        "plan": {
+          "answer": "No"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"answer\":\"No\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 492,
+            "total_tokens": 498,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 492,
+            "prompt_ms": 23473.075,
+            "prompt_per_token_ms": 47.70950203252033,
+            "prompt_per_second": 20.960185233506902,
+            "predicted_n": 6,
+            "predicted_ms": 691.509,
+            "predicted_per_token_ms": 138.30180000000001,
+            "predicted_per_second": 7.23056388275496
+          },
+          "seconds": 24.21388516600001,
+          "request_sha256": "2f9ad0670310b02cabc358e1314020d9b853252ade447d9f4937ecebc09cc1c8"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 492,
+        "completion_tokens": 6,
+        "total_tokens": 498
+      },
+      "seconds": 24.214018070999998,
+      "question_sha256": "d69784a1ef1b143a92ff8fe0fa9e09c6246ad5cd4ba85132be883e0a56b0fa91",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:causal_judgement:10",
+      "suite": "BBH",
+      "family": "causal_judgement",
+      "question": "How would a typical person answer each of the following questions about causation?\nSara has an electric guitar that she plays through an amplifier. The guitar will play through the amplifier if either the amplifier is set to channel A or the power mixer is turned on. Today, the amplifier is set to channel A. Sara checks to see if the power mixer is on. She sees that the power mixer is turned on, and she does not turn off the power mixer or adjust it at all. Because the guitar will play through the amplifier if either the amplifier is set to channel A or the power mixer is turned on, Sara's guitar plays through the amplifier. Did the guitar play through the amplifier because Sara did not turn off the power mixer?\nOptions:\n- Yes\n- No",
+      "reference": "Yes",
+      "correct": false
+    },
+    {
+      "arm": "direct",
+      "answer": "(A)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "FINAL: (A)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 78,
+            "total_tokens": 84,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 78,
+            "prompt_ms": 3895.639,
+            "prompt_per_token_ms": 49.94408974358974,
+            "prompt_per_second": 20.022389138213267,
+            "predicted_n": 6,
+            "predicted_ms": 708.585,
+            "predicted_per_token_ms": 141.717,
+            "predicted_per_second": 7.056316461680673
+          },
+          "seconds": 4.651931070000018,
+          "request_sha256": "1c51c497382a90c4560210bdf293f45a65bd936c43e2728ba4f19cf97ee9c687"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 78,
+        "completion_tokens": 6,
+        "total_tokens": 84
+      },
+      "seconds": 4.6520271420000086,
+      "question_sha256": "5ead8081d1a4995cbe3493a2e5208a24408f5577623ed98ef428d81d4224da50",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:hyperbaton:15",
+      "suite": "BBH",
+      "family": "hyperbaton",
+      "question": "Which sentence has the correct adjective order:\nOptions:\n(A) enormous yellow Egyptian driving computer\n(B) driving yellow enormous Egyptian computer",
+      "reference": "(A)",
+      "correct": true
+    },
+    {
+      "arm": "reasoning",
+      "answer": "(A)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To determine the correct adjective order, we apply the standard English sequence known as the \"OSASCOMP\" rule (Opinion, Size, Age, Shape, Color, Origin, Material, Purpose).\n\n1.  **Analyze the adjectives**:\n    *   **enormous**: Size\n    *   **yellow**: Color\n    *   **Egyptian**: Origin\n    *   **driving**: Purpose (or function)\n\n2.  **Apply the sequence**:\n    *   **Size** comes first: *enormous*\n    *   **Color** comes next: *yellow*\n    *   **Origin** follows: *Egyptian*\n    *   **Purpose** comes last: *driving*\n    *   **Noun**: *computer*\n\n3.  **Construct the phrase**: enormous yellow Egyptian driving computer.\n\n4.  **Evaluate the options**:\n    *   (A) enormous yellow Egyptian driving computer: Follows the correct order (Size-Color-Origin-Purpose).\n    *   (B) driving yellow enormous Egyptian computer: Incorrect. It places Purpose before Size and Color, and mixes the order of Size and Origin.\n\nTherefore, sentence (A) has the correct adjective order.\n\nFINAL: (A)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 268,
+            "prompt_tokens": 88,
+            "total_tokens": 356,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 88,
+            "prompt_ms": 4225.217,
+            "prompt_per_token_ms": 48.01382954545454,
+            "prompt_per_second": 20.827332655340545,
+            "predicted_n": 268,
+            "predicted_ms": 36700.772,
+            "predicted_per_token_ms": 137.45607490636704,
+            "predicted_per_second": 7.275051325895816
+          },
+          "seconds": 41.000123151,
+          "request_sha256": "3f1d52462428514437825d9c575984babd5382ed2ef071b5a581f5a22901167c"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 88,
+        "completion_tokens": 268,
+        "total_tokens": 356
+      },
+      "seconds": 41.00024094,
+      "question_sha256": "5ead8081d1a4995cbe3493a2e5208a24408f5577623ed98ef428d81d4224da50",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:hyperbaton:15",
+      "suite": "BBH",
+      "family": "hyperbaton",
+      "question": "Which sentence has the correct adjective order:\nOptions:\n(A) enormous yellow Egyptian driving computer\n(B) driving yellow enormous Egyptian computer",
+      "reference": "(A)",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "A",
+      "status": "model_answer_unverified",
+      "execution": {
+        "answer": "A",
+        "status": "model_answer_unverified",
+        "trace": [],
+        "program_sha256": "ae174266a26b7a56a85c0665f563091caeb5bf79c86a24a8cd0cafb36a6c22dc",
+        "plan": {
+          "answer": "A"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"answer\":\"A\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 361,
+            "total_tokens": 367,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 361,
+            "prompt_ms": 17142.281,
+            "prompt_per_token_ms": 47.485542936288084,
+            "prompt_per_second": 21.059041092606055,
+            "predicted_n": 6,
+            "predicted_ms": 703.204,
+            "predicted_per_token_ms": 140.64079999999998,
+            "predicted_per_second": 7.1103122280305575
+          },
+          "seconds": 17.902589571999982,
+          "request_sha256": "65bfd23888fd786ef1948d8f830c05c1154755192d02c9facb64d2944a922fcb"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 361,
+        "completion_tokens": 6,
+        "total_tokens": 367
+      },
+      "seconds": 17.902886213000016,
+      "question_sha256": "5ead8081d1a4995cbe3493a2e5208a24408f5577623ed98ef428d81d4224da50",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:hyperbaton:15",
+      "suite": "BBH",
+      "family": "hyperbaton",
+      "question": "Which sentence has the correct adjective order:\nOptions:\n(A) enormous yellow Egyptian driving computer\n(B) driving yellow enormous Egyptian computer",
+      "reference": "(A)",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "No",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "No\nFINAL: No",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 95,
+            "total_tokens": 101,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 95,
+            "prompt_ms": 4605.77,
+            "prompt_per_token_ms": 48.481789473684216,
+            "prompt_per_second": 20.626301356776388,
+            "predicted_n": 6,
+            "predicted_ms": 682.54,
+            "predicted_per_token_ms": 136.50799999999998,
+            "predicted_per_second": 7.325577988103261
+          },
+          "seconds": 5.343704940999999,
+          "request_sha256": "5086c2eb9a3764bcaddc30e2ec61ab2684f8d5069ad5c861b6a980625e7dc77b"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 95,
+        "completion_tokens": 6,
+        "total_tokens": 101
+      },
+      "seconds": 5.343769114999986,
+      "question_sha256": "f89a17a44846297fab0139f16743bf3597c6971c4c1b42795a95522e19c6d05c",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:navigate:112",
+      "suite": "BBH",
+      "family": "navigate",
+      "question": "If you follow these instructions, do you return to the starting point? Take 8 steps. Take 9 steps. Turn around. Take 5 steps. Turn left.\nOptions:\n- Yes\n- No",
+      "reference": "No",
+      "correct": true
+    },
+    {
+      "arm": "reasoning",
+      "answer": "No",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "Let's trace the path step by step:\n\n1.  **Start at point A**.\n2.  **Take 8 steps**: Move 8 units forward to point B.\n3.  **Take 9 steps**: Move 9 units further forward to point C.\n    *   Total distance from start: $8 + 9 = 17$ units.\n4.  **Turn around**: Now facing the opposite direction (back towards the start).\n5.  **Take 5 steps**: Move 5 units backward to point D.\n    *   Distance from start: $17 - 5 = 12$ units away.\n6.  **Turn left**: Rotate 90 degrees to the left. This changes the direction of travel but does not change the current position. You are now at point D, facing a new direction.\n\nTo return to the starting point, you would need to be at the origin. You are currently 12 units away from the start. Therefore, you do not return to the starting point.\n\nFINAL: No",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 227,
+            "prompt_tokens": 105,
+            "total_tokens": 332,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 105,
+            "prompt_ms": 4981.553,
+            "prompt_per_token_ms": 47.4433619047619,
+            "prompt_per_second": 21.077764303621784,
+            "predicted_n": 227,
+            "predicted_ms": 31156.784,
+            "predicted_per_token_ms": 137.8618761061947,
+            "predicted_per_second": 7.253636960733816
+          },
+          "seconds": 36.18057979300002,
+          "request_sha256": "a15d95674f9ad1e05cea518b08442e2b79d8e0006e1f3976b12e0dc6a64f25dc"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 105,
+        "completion_tokens": 227,
+        "total_tokens": 332
+      },
+      "seconds": 36.18066657999998,
+      "question_sha256": "f89a17a44846297fab0139f16743bf3597c6971c4c1b42795a95522e19c6d05c",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:navigate:112",
+      "suite": "BBH",
+      "family": "navigate",
+      "question": "If you follow these instructions, do you return to the starting point? Take 8 steps. Take 9 steps. Turn around. Take 5 steps. Turn left.\nOptions:\n- Yes\n- No",
+      "reference": "No",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "No",
+      "status": "model_answer_unverified",
+      "execution": {
+        "answer": "No",
+        "status": "model_answer_unverified",
+        "trace": [],
+        "program_sha256": "1b96e430b6bef656ce72703c869090b0fb63ac41956076943d5352402d436976",
+        "plan": {
+          "answer": "No"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"answer\":\"No\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 378,
+            "total_tokens": 384,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 378,
+            "prompt_ms": 17845.219,
+            "prompt_per_token_ms": 47.20957407407408,
+            "prompt_per_second": 21.182144080159507,
+            "predicted_n": 6,
+            "predicted_ms": 696.961,
+            "predicted_per_token_ms": 139.3922,
+            "predicted_per_second": 7.174002562553715
+          },
+          "seconds": 18.597688290999997,
+          "request_sha256": "d4737ab5126ee5053eb2250d908eb0afff05949e177a1687d1aa4f20b4bbe525"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 378,
+        "completion_tokens": 6,
+        "total_tokens": 384
+      },
+      "seconds": 18.597831413999984,
+      "question_sha256": "f89a17a44846297fab0139f16743bf3597c6971c4c1b42795a95522e19c6d05c",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:navigate:112",
+      "suite": "BBH",
+      "family": "navigate",
+      "question": "If you follow these instructions, do you return to the starting point? Take 8 steps. Take 9 steps. Turn around. Take 5 steps. Turn left.\nOptions:\n- Yes\n- No",
+      "reference": "No",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "(B)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "(B)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 3,
+            "prompt_tokens": 98,
+            "total_tokens": 101,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 98,
+            "prompt_ms": 4827.645,
+            "prompt_per_token_ms": 49.26168367346939,
+            "prompt_per_second": 20.29975277801081,
+            "predicted_n": 3,
+            "predicted_ms": 274.83,
+            "predicted_per_token_ms": 137.415,
+            "predicted_per_second": 7.277225921478733
+          },
+          "seconds": 5.163126399000021,
+          "request_sha256": "7a1c865323e689a7d71ecf8f80d973dc0834321132ec2b8b6829fe3d99c09b58"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 98,
+        "completion_tokens": 3,
+        "total_tokens": 101
+      },
+      "seconds": 5.163202324999986,
+      "question_sha256": "ecdb15aa418b375325233ef9ea4ca75df6bb7e2eda902c417b24bfe08f48e257",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:snarks:167",
+      "suite": "BBH",
+      "family": "snarks",
+      "question": "Which statement is sarcastic?\nOptions:\n(A) I'll just bring my keyboard and mouse to the computer and plug it all in\n(B) I'll just bring my keyboard and mouse to the bus and plug it all in",
+      "reference": "(B)",
+      "correct": true
+    },
+    {
+      "arm": "reasoning",
+      "answer": "(B)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To determine which statement is sarcastic, we must analyze the literal meaning versus the implied context of each option.\n\n1.  **Analyze Option (A):** \"I'll just bring my keyboard and mouse to the computer and plug it all in.\"\n    *   **Context:** A computer requires a keyboard and mouse to be used, and these devices are designed to plug into a computer.\n    *   **Logic:** This statement describes a logical, standard procedure. There is no contradiction between the objects and their intended function.\n    *   **Tone:** Sincere or practical.\n\n2.  **Analyze Option (B):** \"I'll just bring my keyboard and mouse to the bus and plug it all in.\"\n    *   **Context:** A bus is a vehicle for transportation. It does not have ports for keyboards or mice, nor does it require them to function.\n    *   **Logic:** This statement describes an impossible or nonsensical action. You cannot \"plug\" a keyboard and mouse into a bus in a way that makes them work.\n    *   **Tone:** Sarcasm. The speaker is likely implying that the task is impossible, absurd, or that they are joking about the situation. The exaggeration of an impossible action is a common form of sarcasm.\n\n**Conclusion:** Option (B) relies on the absurdity of the situation (plugging peripherals into a bus) to convey a sarcastic meaning, whereas Option (A) is a straightforward description of reality.\n\nFINAL: (B)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 321,
+            "prompt_tokens": 108,
+            "total_tokens": 429,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 108,
+            "prompt_ms": 5150.451,
+            "prompt_per_token_ms": 47.68936111111111,
+            "prompt_per_second": 20.96903746875759,
+            "predicted_n": 321,
+            "predicted_ms": 44739.134,
+            "predicted_per_token_ms": 139.80979374999998,
+            "predicted_per_second": 7.152574745858962
+          },
+          "seconds": 49.933478127,
+          "request_sha256": "92bef23a8a45bc4a6332b693e09a232fba3cac37a9aef67431703dc68f3a6880"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 108,
+        "completion_tokens": 321,
+        "total_tokens": 429
+      },
+      "seconds": 49.93360268499998,
+      "question_sha256": "ecdb15aa418b375325233ef9ea4ca75df6bb7e2eda902c417b24bfe08f48e257",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:snarks:167",
+      "suite": "BBH",
+      "family": "snarks",
+      "question": "Which statement is sarcastic?\nOptions:\n(A) I'll just bring my keyboard and mouse to the computer and plug it all in\n(B) I'll just bring my keyboard and mouse to the bus and plug it all in",
+      "reference": "(B)",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "(B)",
+      "status": "model_answer_unverified",
+      "execution": {
+        "answer": "(B)",
+        "status": "model_answer_unverified",
+        "trace": [],
+        "program_sha256": "a4d322bd1bff79635afb5b03060311e6ef36b0d576270f8b37801ab928323571",
+        "plan": {
+          "answer": "(B)"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"answer\":\"(B)\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 8,
+            "prompt_tokens": 381,
+            "total_tokens": 389,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 381,
+            "prompt_ms": 18224.973,
+            "prompt_per_token_ms": 47.834574803149614,
+            "prompt_per_second": 20.90538076517315,
+            "predicted_n": 8,
+            "predicted_ms": 971.15,
+            "predicted_per_token_ms": 138.7357142857143,
+            "predicted_per_second": 7.207949338413221
+          },
+          "seconds": 19.25448332100001,
+          "request_sha256": "322c1f139c460bdfc81efab9453b92bc2414b0713f7ca22cf6a0358596c0ae22"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 381,
+        "completion_tokens": 8,
+        "total_tokens": 389
+      },
+      "seconds": 19.254599685000017,
+      "question_sha256": "ecdb15aa418b375325233ef9ea4ca75df6bb7e2eda902c417b24bfe08f48e257",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:snarks:167",
+      "suite": "BBH",
+      "family": "snarks",
+      "question": "Which statement is sarcastic?\nOptions:\n(A) I'll just bring my keyboard and mouse to the computer and plug it all in\n(B) I'll just bring my keyboard and mouse to the bus and plug it all in",
+      "reference": "(B)",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "False",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "False",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "False",
+            "value": false
+          },
+          {
+            "name": "b",
+            "expr": "not a",
+            "value": true
+          },
+          {
+            "name": "c",
+            "expr": "not b",
+            "value": false
+          },
+          {
+            "name": "d",
+            "expr": "not c",
+            "value": true
+          },
+          {
+            "name": "e",
+            "expr": "not d",
+            "value": false
+          },
+          {
+            "name": "f",
+            "expr": "e",
+            "value": false
+          },
+          {
+            "name": "result",
+            "expr": "f",
+            "value": false
+          }
+        ],
+        "value": false,
+        "program_sha256": "332861e4607721932dd70ac42573e6998a00da802c694e563820658f33b0c9c3",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "False"
+            },
+            {
+              "name": "b",
+              "expr": "not a"
+            },
+            {
+              "name": "c",
+              "expr": "not b"
+            },
+            {
+              "name": "d",
+              "expr": "not c"
+            },
+            {
+              "name": "e",
+              "expr": "not d"
+            },
+            {
+              "name": "f",
+              "expr": "e"
+            },
+            {
+              "name": "result",
+              "expr": "f"
+            }
+          ],
+          "result": "f"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"False\"},{\"name\":\"b\",\"expr\":\"not a\"},{\"name\":\"c\",\"expr\":\"not b\"},{\"name\":\"d\",\"expr\":\"not c\"},{\"name\":\"e\",\"expr\":\"not d\"},{\"name\":\"f\",\"expr\":\"e\"},{\"name\":\"result\",\"expr\":\"f\"}],\"result\":\"f\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 69,
+            "prompt_tokens": 375,
+            "total_tokens": 444,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 375,
+            "prompt_ms": 17842.923,
+            "prompt_per_token_ms": 47.581128,
+            "prompt_per_second": 21.016735878981265,
+            "predicted_n": 69,
+            "predicted_ms": 9483.323,
+            "predicted_per_token_ms": 139.4606323529412,
+            "predicted_per_second": 7.1704823298752975
+          },
+          "seconds": 27.33183212099999,
+          "request_sha256": "a6bda728fc1ab1e9e38f32b68456ea20019fa2a62819b0d7ca34f71349caa2fc"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 375,
+        "completion_tokens": 69,
+        "total_tokens": 444
+      },
+      "seconds": 27.33234171099997,
+      "question_sha256": "f778ed42bbb15891fc78a3fd152b6e7064afd9ba200d222da93ce176df2f572c",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:web_of_lies:190",
+      "suite": "BBH",
+      "family": "web_of_lies",
+      "question": "Question: Phoebe lies. Lorine says Phoebe tells the truth. Dallas says Lorine lies. Alexis says Dallas lies. Jim says Alexis tells the truth. Does Jim tell the truth?",
+      "reference": "No",
+      "correct": false
+    },
+    {
+      "arm": "direct",
+      "answer": "(A)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "FINAL: (A)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 92,
+            "total_tokens": 98,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 92,
+            "prompt_ms": 4515.583,
+            "prompt_per_token_ms": 49.08242391304348,
+            "prompt_per_second": 20.37389192048956,
+            "predicted_n": 6,
+            "predicted_ms": 685.482,
+            "predicted_per_token_ms": 137.0964,
+            "predicted_per_second": 7.294137555763682
+          },
+          "seconds": 5.258083967999994,
+          "request_sha256": "6f4f33a61f0dedfececd82887195615c70162788f41e7b79f231ce6cf3eae231"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 92,
+        "completion_tokens": 6,
+        "total_tokens": 98
+      },
+      "seconds": 5.258156965000012,
+      "question_sha256": "f778ed42bbb15891fc78a3fd152b6e7064afd9ba200d222da93ce176df2f572c",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:web_of_lies:190",
+      "suite": "BBH",
+      "family": "web_of_lies",
+      "question": "Question: Phoebe lies. Lorine says Phoebe tells the truth. Dallas says Lorine lies. Alexis says Dallas lies. Jim says Alexis tells the truth. Does Jim tell the truth?",
+      "reference": "No",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "No",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "Let's analyze the statements logically, starting with the known fact:\n\n1.  **Fact**: Phoebe lies. (Phoebe = False)\n2.  **Lorine's statement**: \"Phoebe tells the truth.\"\n    *   Since Phoebe lies, Lorine's statement is false.\n    *   Therefore, **Lorine lies**.\n3.  **Dallas's statement**: \"Lorine lies.\"\n    *   Since Lorine indeed lies, Dallas's statement is true.\n    *   Therefore, **Dallas tells the truth**.\n4.  **Alexis's statement**: \"Dallas lies.\"\n    *   Since Dallas tells the truth, Alexis's statement is false.\n    *   Therefore, **Alexis lies**.\n5.  **Jim's statement**: \"Alexis tells the truth.\"\n    *   Since Alexis lies, Jim's statement is false.\n    *   Therefore, **Jim lies**.\n\nConclusion: Jim does not tell the truth.\n\nFINAL: No",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 219,
+            "prompt_tokens": 102,
+            "total_tokens": 321,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 102,
+            "prompt_ms": 4926.664,
+            "prompt_per_token_ms": 48.30062745098039,
+            "prompt_per_second": 20.703664792240755,
+            "predicted_n": 219,
+            "predicted_ms": 30237.488,
+            "predicted_per_token_ms": 138.70407339449542,
+            "predicted_per_second": 7.209593601161578
+          },
+          "seconds": 35.20768350600002,
+          "request_sha256": "405513d1968c1f423fe280d26bf415725cee1618e5776a4e8e5121e96dec480c"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 102,
+        "completion_tokens": 219,
+        "total_tokens": 321
+      },
+      "seconds": 35.20778200199999,
+      "question_sha256": "f778ed42bbb15891fc78a3fd152b6e7064afd9ba200d222da93ce176df2f572c",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:web_of_lies:190",
+      "suite": "BBH",
+      "family": "web_of_lies",
+      "question": "Question: Phoebe lies. Lorine says Phoebe tells the truth. Dallas says Lorine lies. Alexis says Dallas lies. Jim says Alexis tells the truth. Does Jim tell the truth?",
+      "reference": "No",
+      "correct": true
+    },
+    {
+      "arm": "reasoning",
+      "answer": "105",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To find the total amount of money James has, we need to sum the value of each coin type:\n\n1.  **Quarter**: 1 coin $\\times$ 25 cents = 25 cents\n2.  **Nickels**: 2 coins $\\times$ 5 cents = 10 cents\n3.  **Dimes**: 7 coins $\\times$ 10 cents = 70 cents\n\nTotal = $25 + 10 + 70 = 105$ cents.\n\nFINAL: 105",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 118,
+            "prompt_tokens": 101,
+            "total_tokens": 219,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 101,
+            "prompt_ms": 4846.368,
+            "prompt_per_token_ms": 47.98384158415842,
+            "prompt_per_second": 20.840348896328138,
+            "predicted_n": 118,
+            "predicted_ms": 16096.84,
+            "predicted_per_token_ms": 137.57982905982905,
+            "predicted_per_second": 7.2685073592083915
+          },
+          "seconds": 20.987885505999998,
+          "request_sha256": "febc28b4f39690a35ad835730e2d6029aaa8499e46bf889c04b907a381519d64"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 101,
+        "completion_tokens": 118,
+        "total_tokens": 219
+      },
+      "seconds": 20.987968696999985,
+      "question_sha256": "5e272f343ad926d1af44791be62d88f1f0f8cd2cda9b6a12c22ee6545259c90b",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:1286",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "James likes to check the coin return of the vending machine for change. One day he finds a quarter, two nickels, and 7 dimes. How much money in cents does James have?",
+      "reference": "105",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "105",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "105",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "quarters",
+            "expr": "25",
+            "value": {
+              "numerator": 25,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "nickels",
+            "expr": "5*2",
+            "value": {
+              "numerator": 10,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "dimes",
+            "expr": "10*7",
+            "value": {
+              "numerator": 70,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "total",
+            "expr": "quarters+nickels+dimes",
+            "value": {
+              "numerator": 105,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 105,
+          "denominator": 1
+        },
+        "program_sha256": "b9251e4cc0a7efd670363d1f91b817f5cd8284fd01f49e2a248f5540a9f3940f",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "quarters",
+              "expr": "25"
+            },
+            {
+              "name": "nickels",
+              "expr": "5*2"
+            },
+            {
+              "name": "dimes",
+              "expr": "10*7"
+            },
+            {
+              "name": "total",
+              "expr": "quarters+nickels+dimes"
+            }
+          ],
+          "result": "total"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"quarters\",\"expr\":\"25\"},{\"name\":\"nickels\",\"expr\":\"5*2\"},{\"name\":\"dimes\",\"expr\":\"10*7\"},{\"name\":\"total\",\"expr\":\"quarters+nickels+dimes\"}],\"result\":\"total\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 54,
+            "prompt_tokens": 374,
+            "total_tokens": 428,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 374,
+            "prompt_ms": 17941.638,
+            "prompt_per_token_ms": 47.97229411764705,
+            "prompt_per_second": 20.84536540086251,
+            "predicted_n": 54,
+            "predicted_ms": 7369.085,
+            "predicted_per_token_ms": 139.0393396226415,
+            "predicted_per_second": 7.192209073446704
+          },
+          "seconds": 25.367190439000012,
+          "request_sha256": "01ccc29d54beb5400fbdb947dab31e01954f94cef64c0cee8f9b59ade2c43273"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 374,
+        "completion_tokens": 54,
+        "total_tokens": 428
+      },
+      "seconds": 25.36763296700002,
+      "question_sha256": "5e272f343ad926d1af44791be62d88f1f0f8cd2cda9b6a12c22ee6545259c90b",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:1286",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "James likes to check the coin return of the vending machine for change. One day he finds a quarter, two nickels, and 7 dimes. How much money in cents does James have?",
+      "reference": "105",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "(A)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "FINAL: (A)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 91,
+            "total_tokens": 97,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 91,
+            "prompt_ms": 4434.894,
+            "prompt_per_token_ms": 48.7350989010989,
+            "prompt_per_second": 20.51909245181508,
+            "predicted_n": 6,
+            "predicted_ms": 689.703,
+            "predicted_per_token_ms": 137.9406,
+            "predicted_per_second": 7.249497247365896
+          },
+          "seconds": 5.178659282000012,
+          "request_sha256": "4d8ed225833c93a40dfcd9b562924a9fed35ebeab956165950e58c30afe0a408"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 91,
+        "completion_tokens": 6,
+        "total_tokens": 97
+      },
+      "seconds": 5.1787296239999705,
+      "question_sha256": "5e272f343ad926d1af44791be62d88f1f0f8cd2cda9b6a12c22ee6545259c90b",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:1286",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "James likes to check the coin return of the vending machine for change. One day he finds a quarter, two nickels, and 7 dimes. How much money in cents does James have?",
+      "reference": "105",
+      "correct": false
+    },
+    {
+      "arm": "program",
+      "answer": "11400",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "11400",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "10*750",
+            "value": {
+              "numerator": 7500,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "b",
+            "expr": "a/5",
+            "value": {
+              "numerator": 1500,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "c",
+            "expr": "10*60",
+            "value": {
+              "numerator": 600,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "d",
+            "expr": "3*10",
+            "value": {
+              "numerator": 30,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "e",
+            "expr": "d*60",
+            "value": {
+              "numerator": 1800,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "f",
+            "expr": "a+b+c+e",
+            "value": {
+              "numerator": 11400,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 11400,
+          "denominator": 1
+        },
+        "program_sha256": "30985d2f0dbb45f96febdd1fb09e247b142f624657ce30139a6ad9163ba9c40e",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "10*750"
+            },
+            {
+              "name": "b",
+              "expr": "a/5"
+            },
+            {
+              "name": "c",
+              "expr": "10*60"
+            },
+            {
+              "name": "d",
+              "expr": "3*10"
+            },
+            {
+              "name": "e",
+              "expr": "d*60"
+            },
+            {
+              "name": "f",
+              "expr": "a+b+c+e"
+            }
+          ],
+          "result": "f"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"10*750\"},{\"name\":\"b\",\"expr\":\"a/5\"},{\"name\":\"c\",\"expr\":\"10*60\"},{\"name\":\"d\",\"expr\":\"3*10\"},{\"name\":\"e\",\"expr\":\"d*60\"},{\"name\":\"f\",\"expr\":\"a+b+c+e\"}],\"result\":\"f\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 78,
+            "prompt_tokens": 403,
+            "total_tokens": 481,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 403,
+            "prompt_ms": 19404.027,
+            "prompt_per_token_ms": 48.14895037220843,
+            "prompt_per_second": 20.768884726866233,
+            "predicted_n": 78,
+            "predicted_ms": 10630.198,
+            "predicted_per_token_ms": 138.05451948051947,
+            "predicted_per_second": 7.24351512549437
+          },
+          "seconds": 30.088364386000023,
+          "request_sha256": "bbae89d9613de238f9904ae6a1ddcdcef3f98004bd5f33d2a7d9af97a477f76d"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 403,
+        "completion_tokens": 78,
+        "total_tokens": 481
+      },
+      "seconds": 30.088835577000054,
+      "question_sha256": "820f9fab14df057237e5de943bf40095454d80a1f0e5edeb6736b386953a9da5",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:642",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "James buys a new wardrobe.  He buys 10 suits and 10 dress pants.  He also buys 3 dress shirts per suit.  The suits cost $750 each and the dress pants cost 1/5 that cost.  The dress shirts were $60 each.  How much did everything cost?",
+      "reference": "10,800",
+      "correct": false
+    },
+    {
+      "arm": "direct",
+      "answer": "(A)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "FINAL: (A)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 120,
+            "total_tokens": 126,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 120,
+            "prompt_ms": 5853.547,
+            "prompt_per_token_ms": 48.77955833333333,
+            "prompt_per_second": 20.500390617859566,
+            "predicted_n": 6,
+            "predicted_ms": 684.76,
+            "predicted_per_token_ms": 136.952,
+            "predicted_per_second": 7.3018283778258075
+          },
+          "seconds": 6.593311523000011,
+          "request_sha256": "84f3c68e1245838bfc6e2d70b0b0f4c3dd2f38b31274c4b16003d6d0268c2316"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 120,
+        "completion_tokens": 6,
+        "total_tokens": 126
+      },
+      "seconds": 6.593382428000041,
+      "question_sha256": "820f9fab14df057237e5de943bf40095454d80a1f0e5edeb6736b386953a9da5",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:642",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "James buys a new wardrobe.  He buys 10 suits and 10 dress pants.  He also buys 3 dress shirts per suit.  The suits cost $750 each and the dress pants cost 1/5 that cost.  The dress shirts were $60 each.  How much did everything cost?",
+      "reference": "10,800",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "10800",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To find the total cost, we need to calculate the cost of each category of items separately and then sum them up.\n\n**1. Cost of Suits:**\n*   Quantity: 10 suits\n*   Price per suit: $750\n*   Calculation: $10 \\times 750 = \\$7,500$\n\n**2. Cost of Dress Pants:**\n*   Quantity: 10 dress pants\n*   Price per pant: $1/5$ of the suit cost ($750)\n    *   $750 / 5 = \\$150$ per pant\n*   Calculation: $10 \\times 150 = \\$1,500$\n\n**3. Cost of Dress Shirts:**\n*   Quantity: 3 shirts per suit $\\times$ 10 suits = 30 shirts\n*   Price per shirt: $60\n*   Calculation: $30 \\times 60 = \\$1,800$\n\n**4. Total Cost:**\n*   Sum: $\\$7,500$ (suits) + $\\$1,500$ (pants) + $\\$1,800$ (shirts)\n*   $7,500 + 1,500 = 9,000$\n*   $9,000 + 1,800 = 10,800$\n\nThe total cost for everything is $10,800.\n\nFINAL: 10800",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 342,
+            "prompt_tokens": 130,
+            "total_tokens": 472,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 130,
+            "prompt_ms": 6267.029,
+            "prompt_per_token_ms": 48.20791538461539,
+            "prompt_per_second": 20.743481480618644,
+            "predicted_n": 342,
+            "predicted_ms": 47027.025,
+            "predicted_per_token_ms": 137.9091642228739,
+            "predicted_per_second": 7.251149737836913
+          },
+          "seconds": 53.33669626899996,
+          "request_sha256": "b308ebaf5b1f9e282eb39fa5a1875c491a9e52b2c1f60d58f5daa076fedcb699"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 130,
+        "completion_tokens": 342,
+        "total_tokens": 472
+      },
+      "seconds": 53.33683485499989,
+      "question_sha256": "820f9fab14df057237e5de943bf40095454d80a1f0e5edeb6736b386953a9da5",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:642",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "James buys a new wardrobe.  He buys 10 suits and 10 dress pants.  He also buys 3 dress shirts per suit.  The suits cost $750 each and the dress pants cost 1/5 that cost.  The dress shirts were $60 each.  How much did everything cost?",
+      "reference": "10,800",
+      "correct": true
+    }
+  ],
+  "summary": {
+    "direct": {
+      "correct": 3,
+      "n": 7,
+      "answered": 7,
+      "seconds": 42.991673475,
+      "completion_tokens": 39,
+      "statuses": {
+        "model_answer_unverified": 7
+      }
+    },
+    "reasoning": {
+      "correct": 6,
+      "n": 7,
+      "answered": 7,
+      "seconds": 297.5298886899998,
+      "completion_tokens": 1859,
+      "statuses": {
+        "model_answer_unverified": 7
+      }
+    },
+    "program": {
+      "correct": 4,
+      "n": 7,
+      "answered": 7,
+      "seconds": 162.75814563800006,
+      "completion_tokens": 227,
+      "statuses": {
+        "model_answer_unverified": 4,
+        "computation_checked_semantics_unverified": 3
+      }
+    }
+  },
+  "wall_seconds": 549.6499555590001,
+  "protocol": {
+    "arms": {
+      "direct": 768,
+      "reasoning": 768,
+      "program": [
+        512,
+        256
+      ]
+    },
+    "temperature": 0,
+    "seed": 1707,
+    "native_thinking": false,
+    "memory": false,
+    "training": false,
+    "labels_solver_visible": false,
+    "selection_salt": "adaptive-language-v07-20260921\u0000",
+    "gpu": false,
+    "paid_inference": false,
+    "energy_measured": false,
+    "official_leaderboard": false,
+    "frontier_reference_evaluated": false
+  }
+}
