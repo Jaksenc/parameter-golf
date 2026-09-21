@@ -1,0 +1,22 @@
+{
+  "experiment": "Orbit v2",
+  "primary": "synchronize_0.1",
+  "ridge": 0.1,
+  "temperature": 1.0717734625362931,
+  "native_comparison_temperature": 1.1755479062836087,
+  "frozen_model_sha256": "a5c9e9fd57f8531d4df936bc682db7eb064d35e8595ff9be47a8d7d7e0c60757",
+  "selection_rule": "Minimum uncalibrated cross-entropy on 73 independent development inputs; tie-break by views then name. Temperatures independently fitted on 73 calibration inputs.",
+  "development_primary_nll": 0.354075498847057,
+  "development_native_nll": 0.36277811513266744,
+  "development_primary_target_argmax_accuracy": 0.9178082191780822,
+  "development_native_target_argmax_accuracy": 0.8493150684931506,
+  "new_evaluation_outcomes_inspected": false,
+  "training_input_count": 301,
+  "development_input_count": 73,
+  "calibration_input_count": 73,
+  "all_methods_reported_regardless_of_evaluation": true,
+  "new_probe_run": 35617181813,
+  "new_archive_sha256": "1dbce74898ece615fa5c291b708bc60d80e95cf1fba935ed27577311af32b196",
+  "protocol_commit": "539ab40a6a03d2ec5dd778ca805a4d440d3b8d38",
+  "implementation_lock_commit": "704be06486031887fbc74cd2f74f0f66fe063978"
+}
