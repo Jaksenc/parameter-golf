@@ -1,0 +1,131 @@
+{
+  "status": "completed",
+  "run_id": "35651400314",
+  "runtime": {
+    "model": "unsloth/Qwen3.5-4B-GGUF",
+    "model_revision": "e87f176479d0855a907a41277aca2f8ee7a09523",
+    "weights": {
+      "url": "https://huggingface.co/unsloth/Qwen3.5-4B-GGUF/resolve/e87f176479d0855a907a41277aca2f8ee7a09523/Qwen3.5-4B-Q4_K_M.gguf",
+      "sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+      "bytes": 2740937888
+    },
+    "runtime": {
+      "url": "https://github.com/ggml-org/llama.cpp/releases/download/b10964/llama-b10964-bin-ubuntu-x64.tar.gz",
+      "sha256": "9abf88aea48a55d0f80edb1ee20220b186848cca0b4e919d71518cfd7ca67443",
+      "bytes": 16825086
+    },
+    "tag": "b10964",
+    "command": [
+      "/tmp/adaptive-language-runtime/binary/llama-b10964/llama-server",
+      "-m",
+      "/tmp/adaptive-language-runtime/model.gguf",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "8787",
+      "-c",
+      "8192",
+      "-np",
+      "1",
+      "-t",
+      "4",
+      "-tb",
+      "4",
+      "-ngl",
+      "0",
+      "--jinja",
+      "--chat-template-kwargs",
+      "{\"enable_thinking\":false}",
+      "--no-webui"
+    ],
+    "server_version": "",
+    "machine": "x86_64",
+    "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "setup_seconds": 221.915997043,
+    "private_inputs": false,
+    "paid_inference": false,
+    "training": false
+  },
+  "rows": [
+    {
+      "text": "102",
+      "reasoning_content": "",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 46,
+        "total_tokens": 50,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 46,
+        "prompt_ms": 2795.071,
+        "prompt_per_token_ms": 60.76241304347826,
+        "prompt_per_second": 16.457542581208134,
+        "predicted_n": 4,
+        "predicted_ms": 273.055,
+        "predicted_per_token_ms": 91.01833333333333,
+        "predicted_per_second": 10.98679753163282
+      },
+      "seconds": 3.0713839029999974,
+      "request_sha256": "2b42726b214623e361086fc9b9088bf9006294c1f78620ea06ce42e895d8e0b7"
+    },
+    {
+      "text": "The machine produces 18 parts per minute for 7 minutes, resulting in $18 \\times 7 = 126$ parts per shift. In each shift, 9 defective parts are lost, leaving $126 - 9 = 117$ usable parts per shift. With five identical shifts, the total usable parts are $117 \\times 5 = 585$.\n\nFINAL: 585",
+      "reasoning_content": "",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 95,
+        "prompt_tokens": 69,
+        "total_tokens": 164,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 69,
+        "prompt_ms": 3933.592,
+        "prompt_per_token_ms": 57.00857971014493,
+        "prompt_per_second": 17.54121932320383,
+        "predicted_n": 95,
+        "predicted_ms": 8697.367,
+        "predicted_per_token_ms": 92.52518085106384,
+        "predicted_per_second": 10.80786863426598
+      },
+      "seconds": 12.653975024999966,
+      "request_sha256": "8d84591bb15287eb87d5ec0454e80782fe66375c8967b304601d51132c4820f2"
+    },
+    {
+      "text": "{\"expression\":\"((9 * 17) - 23) / 5\"}",
+      "reasoning_content": "",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 64,
+        "total_tokens": 84,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 64,
+        "prompt_ms": 3637.785,
+        "prompt_per_token_ms": 56.840390625,
+        "prompt_per_second": 17.59312328793483,
+        "predicted_n": 20,
+        "predicted_ms": 1757.273,
+        "predicted_per_token_ms": 92.48805263157894,
+        "predicted_per_second": 10.812207323506364
+      },
+      "seconds": 5.420058637000011,
+      "request_sha256": "40d7c915e45ee6fc63c2c999e0440a21cec10a9ac75cac9a05b1fa2226493f1a"
+    }
+  ],
+  "all_finished": true
+}
