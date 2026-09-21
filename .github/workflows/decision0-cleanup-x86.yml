@@ -1,0 +1,33 @@
+name: Decision-0 bounded cleanup
+on:
+  push:
+    branches: ['decision0/verified-cpu4b-20260921']
+    paths: ['.github/workflows/decision0-cleanup-x86.yml']
+permissions:
+  actions: write
+  contents: read
+jobs:
+  cleanup:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Stop only superseded Decision-0 runs
+        shell: bash
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          python3 - <<'PY'
+          import json,subprocess,os
+          repo='Jaksenc/parameter-golf';branch='decision0/verified-cpu4b-20260921'
+          workflows={363650311,363652988,363673579}
+          runs=json.loads(subprocess.check_output(['gh','api',f'repos/{repo}/actions/runs?branch=decision0%2Fverified-cpu4b-20260921&per_page=100']))['workflow_runs']
+          for r in runs:
+              target=r['workflow_id'] in workflows or r['id']==35644622073
+              if target and r['head_branch']==branch and str(r['id'])!=os.environ['GITHUB_RUN_ID'] and r['status'] in ('queued','in_progress','waiting','pending'):
+                  rid=int(r['id']);p=subprocess.run(['gh','api','-X','POST',f'repos/{repo}/actions/runs/{rid}/cancel'],capture_output=True,text=True)
+                  print(json.dumps({'cancel_requested':rid,'returncode':p.returncode,'response':p.stdout,'error':p.stderr}))
+                  if p.returncode and '409' not in p.stderr:raise RuntimeError('Cancellation failed')
+          print('All 16 useful feature artifacts were already recovered and checked locally. No artifact is deleted.')
+          PY
