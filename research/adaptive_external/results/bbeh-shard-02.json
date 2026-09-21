@@ -1,0 +1,494 @@
+{
+  "manifest": {
+    "model": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "torch": "2.10.0+cpu",
+    "transformers": "5.3.0",
+    "python": "3.12.14",
+    "machine": "aarch64",
+    "platform": "Linux-6.17.0-1022-azure-aarch64-with-glibc2.39",
+    "threads": 4,
+    "dtype": "bfloat16",
+    "attention": "sdpa",
+    "parameters": 4539265536,
+    "load_seconds": 37.213936669000006,
+    "seed": 17,
+    "sampling": false,
+    "thinking_template": false,
+    "max_input_tokens": 8192,
+    "max_output_tokens_per_arm": 512,
+    "generation_seconds_soft_limit": 90,
+    "tools": false,
+    "persistent_memory": false,
+    "trained_neural_guide": false,
+    "new_training": false,
+    "claim": "direct vs bounded explicit reasoning baseline, not complete Adaptive architecture"
+  },
+  "rows": [
+    {
+      "id": 67,
+      "task": "bbeh_boolean_expressions",
+      "arm": "reasoning",
+      "question_sha256": "823bbaf5781a6234626fc1fcf1f800a90a496dbcce6542ec22ebc30772992e6c",
+      "prompt_sha256": "f906be8cdca313d19f476405acda0cd879aea6309edd7538e3deee6e84eca729",
+      "input_tokens": 893,
+      "status": "budget_limited",
+      "response": "To determine which expression evaluates to `True`, we need to analyze each option step by step. The problem states that only one expression evaluates to true.\n\n**General Strategy:**\n1.  **Simplify Arithmetic Expressions**: Calculate the values of all mathematical comparisons (e.g., `9 * 1`, `max(...)`, `min(...)`).\n2.  **Verify Facts**: Check the truth values of geographical statements (e.g., \"The capital of India is Mumbai",
+      "output_tokens": 98,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.02765327700001,
+      "reference": "(B)",
+      "correct": false
+    },
+    {
+      "id": 67,
+      "task": "bbeh_boolean_expressions",
+      "arm": "direct",
+      "question_sha256": "823bbaf5781a6234626fc1fcf1f800a90a496dbcce6542ec22ebc30772992e6c",
+      "prompt_sha256": "13d1e0ed4ad3d5d21c30c81fed98dcdd99952c0718d0cf0ff3f45aa4f5b7c5f3",
+      "input_tokens": 885,
+      "status": "budget_limited",
+      "response": "To determine which expression evaluates to true, let's analyze each option step by step. The key to solving this is finding the single expression that results in `True` while all others result in `False`.\n\n**Analysis of Option (A):**\nThe structure is: `X and (False) and (Y)`.\nIn boolean logic, if any part of an `AND` chain is `False`, the entire expression is `False`.\nHere, the second",
+      "output_tokens": 95,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.318655181,
+      "reference": "(B)",
+      "correct": false
+    },
+    {
+      "id": 220,
+      "task": "bbeh_disambiguation_qa",
+      "arm": "direct",
+      "question_sha256": "3a8022e927e195eb8026d08c6250ca7a14475c9b3abea1aaa9f1f82c7a0cd32c",
+      "prompt_sha256": "23a74b351ed255f085861e8a65592b72ea5ff2e8d7e3611ccdeb038c177a0993",
+      "input_tokens": 261,
+      "status": "ok",
+      "response": "The final answer is: (D)\n",
+      "output_tokens": 11,
+      "eos_reached": true,
+      "seconds_soft_limit_reached": false,
+      "generation_seconds": 13.197602987999971,
+      "reference": "(B)",
+      "correct": false
+    },
+    {
+      "id": 220,
+      "task": "bbeh_disambiguation_qa",
+      "arm": "reasoning",
+      "question_sha256": "3a8022e927e195eb8026d08c6250ca7a14475c9b3abea1aaa9f1f82c7a0cd32c",
+      "prompt_sha256": "3c354b5a59d2adafb7fa52f297898061503b3dc15fa00b5660625fecb2837139",
+      "input_tokens": 269,
+      "status": "budget_limited",
+      "response": "To determine the correct antecedent, let's analyze the sentence structure and pronoun usage step by step.\n\n**1. Analyze the Subjects:**\nThe sentence introduces two main subjects: \"The teacher\" and \"the school principal\".\n- Subject 1: The teacher (Female, implied by \"her\" later, but let's verify).\n- Subject 2: The school principal (Gender not explicitly stated in the noun, but pronouns will clarify).\n\n**2. Analyze the Pronouns and Context:**\n- \"...met in **",
+      "output_tokens": 113,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.01452075399999,
+      "reference": "(B)",
+      "correct": false
+    },
+    {
+      "id": 219,
+      "task": "bbeh_hyperbaton",
+      "arm": "reasoning",
+      "question_sha256": "683f647e00557adc44ef078965ffdf19a294105c4842f49e14b19bb5462957f1",
+      "prompt_sha256": "57d6a8fb9b43b7cc926df4dd1155a03ba1b6df7e9f57853ba04b0e3554a571af",
+      "input_tokens": 1284,
+      "status": "budget_limited",
+      "response": "To determine the correct adjective order, we must apply the standard English adjective order hierarchy (often remembered by the mnemonic \"OSASCOMP\"):\n1.  **O**pinion (e.g., lovely, terrible, wonderful, repulsive, silly, nice, good, awful)\n2.  **S**ize (e.g., enormous, tiny, small, large, huge, midsize, normal-size, little, massive)\n3.",
+      "output_tokens": 92,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.05150375999995,
+      "reference": "E",
+      "correct": false
+    },
+    {
+      "id": 219,
+      "task": "bbeh_hyperbaton",
+      "arm": "direct",
+      "question_sha256": "683f647e00557adc44ef078965ffdf19a294105c4842f49e14b19bb5462957f1",
+      "prompt_sha256": "58767c3d75666a08aad1f6c2ca432df9d6b735d6fc89050633fa559c135224e7",
+      "input_tokens": 1276,
+      "status": "budget_limited",
+      "response": "To determine the correct adjective order, we must apply the standard English adjective order hierarchy (often remembered by the mnemonic \"OSASCOMP\"):\n1.  **O**pinion (e.g., lovely, nice, terrible, wonderful, repulsive, silly, ridiculous, awful)\n2.  **S**ize (e.g., enormous, small, tiny, midsize, large, huge, little, normal-size)\n3.  **A",
+      "output_tokens": 93,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.42466651100005,
+      "reference": "E",
+      "correct": false
+    },
+    {
+      "id": 16,
+      "task": "bbeh_multistep_arithmetic",
+      "arm": "direct",
+      "question_sha256": "7bf1d338ea5f3a9df8adaee57f9add0e68ebde073f8f0dfbc1e6bc614c9b043d",
+      "prompt_sha256": "05822361c493b558e9ae42a175c84a2ac9c0d7dd770ffd09c12971fcb94321d5",
+      "input_tokens": 502,
+      "status": "budget_limited",
+      "response": "To solve this problem, we need to carefully parse the definitions of the custom operations and evaluate the expressions for A, B, and C step by step.\n\n**Definitions:**\n1.  **$a >< b$**:\n    *   If $a$ or $b$ is prime: $\\min(a, b)$\n    *   Otherwise: $\\max(a, b)$\n    *   *Note*: Primes are 2, 3, 5, 7, 11, ...\n\n2. ",
+      "output_tokens": 110,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.11479073999999,
+      "reference": "-25200",
+      "correct": false
+    },
+    {
+      "id": 16,
+      "task": "bbeh_multistep_arithmetic",
+      "arm": "reasoning",
+      "question_sha256": "7bf1d338ea5f3a9df8adaee57f9add0e68ebde073f8f0dfbc1e6bc614c9b043d",
+      "prompt_sha256": "234c5f06b3ec11d67a59d056c5422d508c51b1fc7eb1664faafe5445766d1fcf",
+      "input_tokens": 510,
+      "status": "budget_limited",
+      "response": "To solve this problem, we must first decode the custom operations and then evaluate the expressions for A, B, and C step by step.\n\n### 1. Decoding the Operations\n\nLet's define the operations clearly based on the problem description. Note that the text uses symbols like `+*`, `*--`, etc., which correspond to the defined operators `><`, `][`, `@`, `;` combined with standard arithmetic operators. The notation $a <op1><op2> b$ means $(a \\ op1 \\",
+      "output_tokens": 111,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.262930117,
+      "reference": "-25200",
+      "correct": false
+    },
+    {
+      "id": 37,
+      "task": "bbeh_object_properties",
+      "arm": "reasoning",
+      "question_sha256": "10b11d0d69d10398fdb7303735d3d0dd0d5aba3c89871b1e5fe476bd2b54d843",
+      "prompt_sha256": "054e543ecb5e4a52c13171fc41f6b76d79ab67034914a2ef5d985ba02326efb7",
+      "input_tokens": 1416,
+      "status": "budget_limited",
+      "response": "To solve this problem, we need to track the collection of items through each step, filtering and modifying the list based on the specific rules provided.\n\n### Step 1: Initialize the Collection\nLet's list the initial 46 items with their properties (Size, Origin, Material, Smell, Color).\n\n1.  XL Mexican Concrete Grass (Beige)\n2.  XXL Japanese Glass Coconut (Black)\n3.  L",
+      "output_tokens": 91,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.1161174209999,
+      "reference": "13",
+      "correct": false
+    },
+    {
+      "id": 37,
+      "task": "bbeh_object_properties",
+      "arm": "direct",
+      "question_sha256": "10b11d0d69d10398fdb7303735d3d0dd0d5aba3c89871b1e5fe476bd2b54d843",
+      "prompt_sha256": "07113b2793a9a9013b8d0446cedf2e65488077a6985e5f7390082657aecdaf87",
+      "input_tokens": 1408,
+      "status": "budget_limited",
+      "response": "To solve this problem, we need to track the collection of items through each step, filtering and modifying the list based on the given rules.\n\n**Step 1: Initial Collection and Color Assignment**\nLet's list the 46 items with their properties (Size, Origin, Material, Smell) and assign colors based on the sequence provided.\n\nSequence of counts: 1, 1, 3, 5, 2, 1",
+      "output_tokens": 93,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.678235298,
+      "reference": "13",
+      "correct": false
+    },
+    {
+      "id": 124,
+      "task": "bbeh_spatial_reasoning",
+      "arm": "direct",
+      "question_sha256": "6e926c6f89a942034cf1c104c657d0fea53b97e75c7fa06502c8dd55308aee41",
+      "prompt_sha256": "652d13c431f67969ac68e1da7247374534daff206d2d79338eec387d4d201210",
+      "input_tokens": 1899,
+      "status": "budget_limited",
+      "response": "To solve this problem, we need to track the position of the \"cursor\" (the vertex where the object is seen) on the diamond grid.\n\n**Coordinate System:**\nLet's define a coordinate system $(r, c)$ for the vertices of the diamond grid.\n- The top vertex is at $(0, 0)$.\n- Moving **down-right** increases the row index by",
+      "output_tokens": 81,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.47468344999993,
+      "reference": "carrot",
+      "correct": false
+    },
+    {
+      "id": 124,
+      "task": "bbeh_spatial_reasoning",
+      "arm": "reasoning",
+      "question_sha256": "6e926c6f89a942034cf1c104c657d0fea53b97e75c7fa06502c8dd55308aee41",
+      "prompt_sha256": "1eab54180508484d0e0c810108551d74bccc17f9a956b0a0f476794927805096",
+      "input_tokens": 1907,
+      "status": "budget_limited",
+      "response": "To solve this problem, we need to track the position of the \"cursor\" (the vertex where the object is seen) on the diamond grid.\n\n**1. Define the Coordinate System:**\nLet the top vertex be at $(0, 0)$.\nThe grid is defined such that:\n- Moving **down-right** increases the row index by 1 and the column index by",
+      "output_tokens": 80,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.07090611700005,
+      "reference": "carrot",
+      "correct": false
+    },
+    {
+      "id": 29,
+      "task": "bbeh_time_arithmetic",
+      "arm": "reasoning",
+      "question_sha256": "370fcf2ac9013d5e21fe93fea2c85b3a40d23537c996fe6235014f271fb94b2e",
+      "prompt_sha256": "4017810f109e6d94e58ead04f03edf45228651053a5e0a3106063d5b9315dcbf",
+      "input_tokens": 539,
+      "status": "budget_limited",
+      "response": "To solve this task, we need to calculate the values for $X$, $Y$, and $Z$ first, then derive $X'$, $Y'$, and $Z'$, and finally use them to determine the order of exam times in Question 4.\n\n### Step 1: Solve Question 1 to find X\n**Question:** David was born on 2009-09-11. Compute his age in days on 2015-05-21.\n**Calculation",
+      "output_tokens": 110,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.03923301300006,
+      "reference": "[Dan, Kyle, Jenny, Jason, Lily]",
+      "correct": false
+    },
+    {
+      "id": 29,
+      "task": "bbeh_time_arithmetic",
+      "arm": "direct",
+      "question_sha256": "370fcf2ac9013d5e21fe93fea2c85b3a40d23537c996fe6235014f271fb94b2e",
+      "prompt_sha256": "9000e11306e775a55e04714f85dd7846e8d5655dd73f8c0a83a57e8b192dc8a6",
+      "input_tokens": 531,
+      "status": "ok",
+      "response": "The final answer is: [Kyle, Jason, Dan, Jenny, Lily]\n",
+      "output_tokens": 19,
+      "eos_reached": true,
+      "seconds_soft_limit_reached": false,
+      "generation_seconds": 23.734680118999904,
+      "reference": "[Dan, Kyle, Jenny, Jason, Lily]",
+      "correct": false
+    },
+    {
+      "id": 151,
+      "task": "bbeh_zebra_puzzles",
+      "arm": "reasoning",
+      "question_sha256": "2407768cc1f351a789ea2169c6b404692c6b4c1f3d5b9d081121c1279ee1b2fc",
+      "prompt_sha256": "2b346f3b4ffbea0afe4d57ab35d785f93b9ac8100330d5d679254e9bc5185b28",
+      "input_tokens": 3859,
+      "status": "budget_limited",
+      "response": "To solve this puzzle, we need to determine the attributes of each person in positions 1 through 7. Let's break down the clues step by step to",
+      "output_tokens": 32,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.01916165400007,
+      "reference": "7",
+      "correct": false
+    },
+    {
+      "id": 151,
+      "task": "bbeh_zebra_puzzles",
+      "arm": "direct",
+      "question_sha256": "2407768cc1f351a789ea2169c6b404692c6b4c1f3d5b9d081121c1279ee1b2fc",
+      "prompt_sha256": "a32bed15a6f5ac7825869a47a1bbafe198e685c66f9fefe331be8e56079ffdd2",
+      "input_tokens": 3851,
+      "status": "budget_limited",
+      "response": "To solve this puzzle, we need to align all the attributes to the 7 positions (1 to 7) based on the clues. Let's break down the",
+      "output_tokens": 33,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.18780624600004,
+      "reference": "7",
+      "correct": false
+    }
+  ],
+  "benchmark": "BBEH Mini stratified pilot",
+  "bbeh_commit": "80d12ca916b7158f22293fcf3144f4d3d854d4be",
+  "data_sha256": "14e77b3d6be68faa008d268abf53b1f8d2420ffdd762504a304dafc3f8d43026",
+  "scorer_sha256": "4b4f06e5babb015de2ba639bae995a5526182ffb5b5890af54dfcf038580eb34",
+  "shard": 2,
+  "shards": 6,
+  "per_task": 2,
+  "total_selected": 46,
+  "selection": "per-task ascending SHA256(adaptive-bbeh-pilot-v1 + NUL + original question), first n; no target use",
+  "selected_ids": [
+    96,
+    318,
+    67,
+    236,
+    348,
+    384,
+    243,
+    298,
+    220,
+    260,
+    336,
+    389,
+    317,
+    436,
+    219,
+    449,
+    34,
+    123,
+    158,
+    208,
+    16,
+    69,
+    365,
+    420,
+    108,
+    444,
+    37,
+    340,
+    192,
+    285,
+    307,
+    432,
+    124,
+    233,
+    179,
+    221,
+    105,
+    262,
+    29,
+    353,
+    255,
+    433,
+    210,
+    309,
+    151,
+    284
+  ],
+  "summary": {
+    "direct": {
+      "correct": 0,
+      "total": 8,
+      "statuses": {
+        "budget_limited": 6,
+        "ok": 2
+      },
+      "output_tokens": 535,
+      "generation_seconds": 579.1311205329998
+    },
+    "reasoning": {
+      "correct": 0,
+      "total": 8,
+      "statuses": {
+        "budget_limited": 8
+      },
+      "output_tokens": 727,
+      "generation_seconds": 720.602026113
+    }
+  },
+  "worker_exit": 0,
+  "request_wall_seconds": 1342.7869096180002,
+  "run_id": "35546669639",
+  "source_sha256": "ad3064cf5284c23523d7639f1b766691240f771d1f5066ea9072efca575c89c9",
+  "evaluation_isolation": "worker receives only id,task,question; no answer feedback; no training or cross-case memory",
+  "limitations": [
+    "public development pilot, not full benchmark or leaderboard submission",
+    "frozen pretrained baseline only; not full Adaptive system",
+    "pretraining overlap unknown",
+    "greedy bounded decoding; budget failures retained",
+    "load/overhead reported separately; energy not measured"
+  ],
+  "metadata_repair": "Mini lacks task labels; restored by exact input-only matching to original task files",
+  "membership_manifest": [
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_boardgame_qa/task.json",
+      "blob": "59bfa63f5b98bd93d13137df28297d69fc85ceab",
+      "sha256": "3d47dc41eb825b2ee77a696e79859d8d2043b1bf04077e120caec4ad324f32a8"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_boolean_expressions/task.json",
+      "blob": "3b1b165e0f026d61c1ba8a7112cc5289d978262a",
+      "sha256": "49e763f10dbea048be56036c8cbf2a6d0bb735235e3806b50809a1addb57eee2"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_buggy_tables/task.json",
+      "blob": "e2eeae579ff119ffd424c7eb269fc4dfb68a8da3",
+      "sha256": "c27b76200bf1b0d4ada3729f5a40aa1f0062267e42c4f40820b3e40891c3fe85"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_causal_understanding/task.json",
+      "blob": "1222dc4953e0147aa954c76d8d33910c05ba460d",
+      "sha256": "b10bbf43f7f5cdde927b0ad03f99a7a78b3525de4bfa90008b36b12b010c9a81"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_disambiguation_qa/task.json",
+      "blob": "04a553ccada1641884d6b07a3d2aff73ea25b2f5",
+      "sha256": "6d34e0c89c3b1e1386df5919159b8d67b4668308d1225bd1ee54eb1e946472bd"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_dyck_languages/task.json",
+      "blob": "9c73487fbb6c5e453ad5bbf1b372f79b9a18f668",
+      "sha256": "a089612502bdfb98a447c8cba84f972724308ea0d059e8561e3cc9785de585cc"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_geometric_shapes/task.json",
+      "blob": "5ff75c179f5f406967f8b02ec57db2ab7c5817eb",
+      "sha256": "7ff506d026450cb878a0963ce478724ad1451bc56469c813c791b9345ac1bea7"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_hyperbaton/task.json",
+      "blob": "9e276ca2c4b57a7e506f2d7128f7a4cacd55c960",
+      "sha256": "0fbacc94f4c740c3050021f4c57089f2011d7bd77fcff3346a7f4b9dbef842e2"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_linguini/task.json",
+      "blob": "e8edd908fb96511855d29c0b128f3a89f163c7b0",
+      "sha256": "ba387d2aa1bde122e6c9937fca4e075b9cc7d64e6047b170cfcffd6304919ea8"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_movie_recommendation/task.json",
+      "blob": "c07c9f17ca3def29062934bf79b53cbee99b9ede",
+      "sha256": "808882647b84c116a57e0975e3d357749525e12d215c4a5dae83de83ae8c4772"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_multistep_arithmetic/task.json",
+      "blob": "ac431dc3911aa5640f001c6a4de74588713e8506",
+      "sha256": "47207086cd2afe74df9968172d24134c82af8c666144092f04e4c1ebad8cf3d2"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_nycc/task.json",
+      "blob": "09666db9e95cf7b65a0d2d33e7acc3a84104e5c6",
+      "sha256": "67c9a9dca40e6ec820a279da19a019cedd5427fbaaae3fd175cdb74965474b08"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_object_counting/task.json",
+      "blob": "757780e10d5ea8d40c4d2cc9a8444a9c20a0d603",
+      "sha256": "a0a8b10ca1aa06eae611c7c7e854fbec4f9622c8f74a74ffa00436a9a8609b67"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_object_properties/task.json",
+      "blob": "e8bc36ad02c89d763e4981967ec5235f64a107ad",
+      "sha256": "d606b3aa0c35d5397afc5937207174593c82ad5dfcaf7e5dfb40a99278aef0e4"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_sarc_triples/task.json",
+      "blob": "fcb7b152123953c768f7fb415c29d37df0aa6b62",
+      "sha256": "4c7b8eb4b542d326152394456c0a1afc8ef5447ee06dd4187b7eb91027a6b821"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_shuffled_objects/task.json",
+      "blob": "8099cd6873756c47cbba0538fc11767e5fe2bfc6",
+      "sha256": "43cda28220c66e8d63e667d3091cd18b0b17aa55c005bb24bbb63144afdba9c1"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_spatial_reasoning/task.json",
+      "blob": "dc362278dac49294d0225c0249e6bf9e7c8e31d4",
+      "sha256": "e77986b73e0ed15b5f950978b7758f55311b4d50e7215961084b126e4d960cb7"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_sportqa/task.json",
+      "blob": "c7407a7bd287cda7719fb7b7cbdca840a50a79ad",
+      "sha256": "69b3f164d9617eab9185830eacf4250badb56c2d718ddc75012597ed1a4bc9bf"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_temporal_sequence/task.json",
+      "blob": "e0ffd804b234344a967ecf9f6b2dad2b5f960279",
+      "sha256": "55f6711d3d76925acb5d2fffdc1947e0e7186c686f0a343598394a57df6c7c6e"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_time_arithmetic/task.json",
+      "blob": "e1a8fcfe7cb58c0eb12700969904e16f3d5bff51",
+      "sha256": "2510515a6f12024a742743e29a389f07beacb3bf4c71e0b59be12f3e364cf31b"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_web_of_lies/task.json",
+      "blob": "2bccd9eae0f1f10559a0d1e830aa0ccd4ac63c5a",
+      "sha256": "15f23d32579285701f68dae7947e2191eff21ee97440dfa73cb3565a66c77a6d"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_word_sorting/task.json",
+      "blob": "2995a286e30f32ce0eac590a52461243d3d383ff",
+      "sha256": "f49674b7b85774d6190c2844e1682c2ee8ff591ca1eeee4e785a45ef1e20024d"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_zebra_puzzles/task.json",
+      "blob": "4a42b417ae48dda20f34f607ab3f4b2bbcb58066",
+      "sha256": "0acd979060ee49f063f241dd1a298bd80b63d6b7fbfb08057ff480bff98a6198"
+    }
+  ],
+  "entry_source_sha256": "83814e872004563e6f4894340f03d31749b9f3a766572c8a4b019053939bb146"
+}
