@@ -1,0 +1,36 @@
+name: Adaptive semantic constrained follow-up
+on:
+  push:
+    branches: [research/adaptive-semantic-v08-20260921]
+    paths: [.github/workflows/adaptive-semantic-schema.yml]
+permissions:
+  contents: read
+jobs:
+  followup:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 22
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        shard: [0, 1]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Fixed-model first-response comparison, new questions, no training
+        env:
+          OMP_NUM_THREADS: '4'
+          OPENBLAS_NUM_THREADS: '1'
+        run: python3 -u research/adaptive_semantic/schema_followup.py --shard ${{ matrix.shard }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: adaptive-semantic-schema-${{ matrix.shard }}
+          path: schema-shard-*.json
+          retention-days: 1
+          if-no-files-found: warn
+      - name: Runtime diagnostic tail
+        if: always()
+        run: tail -20 /tmp/adaptive-language-runtime/server.log || true
