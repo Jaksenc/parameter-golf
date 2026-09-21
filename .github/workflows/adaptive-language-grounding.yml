@@ -1,0 +1,28 @@
+name: Adaptive language grounding follow-up
+on:
+  push:
+    branches: [research/adaptive-language-v07-20260921]
+    paths: [.github/workflows/adaptive-language-grounding.yml]
+permissions:
+  contents: write
+jobs:
+  followup:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 22
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        shard: [0,1,2,3]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {persist-credentials: false}
+      - name: Run disjoint public grounding experiment
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '4'
+        run: python3 -u research/adaptive_language/grounding_followup.py --shard ${{ matrix.shard }}
+      - name: Runtime diagnostic tail
+        if: always()
+        run: tail -30 /tmp/adaptive-language-runtime/server.log || true
