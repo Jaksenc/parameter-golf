@@ -1,0 +1,43 @@
+name: Adaptive language v07 popular benchmark pilot
+on:
+  push:
+    branches: [research/adaptive-language-v07-20260921]
+    paths: [.github/workflows/adaptive-language-benchmarks.yml]
+permissions:
+  contents: read
+jobs:
+  prepare:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {persist-credentials: false}
+      - name: Check exact tested source and input-only cohort
+        run: |
+          python3 research/adaptive_language/prepare_core.py
+          python3 -m pip install --no-cache-dir pytest==8.4.2
+          cd /tmp/adaptive-language-core && python3 -m pytest -q tests
+          cd "$GITHUB_WORKSPACE" && python3 research/adaptive_language/benchmark.py --prepare
+  benchmark:
+    needs: prepare
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {persist-credentials: false}
+      - name: Score public-only fixed model experiment
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '4'
+        run: python3 -u research/adaptive_language/benchmark.py --shard ${{ matrix.shard }} --shards 12
+      - name: Runtime diagnostic tail
+        if: always()
+        run: tail -30 /tmp/adaptive-language-runtime/server.log || true
