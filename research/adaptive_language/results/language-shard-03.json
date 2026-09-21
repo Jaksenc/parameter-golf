@@ -1,0 +1,1607 @@
+{
+  "status": "completed",
+  "shard": 3,
+  "shards": 12,
+  "run_id": "35652499808",
+  "source_commit": "d8212eabc5e1c5c93f8757ff8b3e81a4b960124d",
+  "core": {
+    "decoded_sha256": "6b37dcfc4a451d5dba399080ba362b5b5320b03e977bf49532aab2be3cd108ca",
+    "transport_repairs": [
+      "TK+TVJrofJK8b2RR",
+      "dXZ3vX7tDJtd",
+      "KuOR3d/cy5RJK"
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/openai/grade-school-math/3101c7d5072418e28b9008a6636bde82a006892c/grade_school_math/data/test.jsonl",
+      "sha256": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14",
+      "bytes": 749738
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/boolean_expressions.json",
+      "sha256": "ea6c754ec005e2d3f2d085d349a740f593b5764f32ea4638ffed4cfc0061b12a",
+      "bytes": 17172
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/causal_judgement.json",
+      "sha256": "6e8bca44dd402008ed41c07a3d0a1d5e7b03db7001a7e002fcdf4c60985ea081",
+      "bytes": 202943
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/date_understanding.json",
+      "sha256": "0148d4ac5fca05b2f82373e5fef7208e15363b9c6079493034d77b3dab496bf5",
+      "bytes": 61760
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/disambiguation_qa.json",
+      "sha256": "cf06df9ebf911b883671cb1b35d3fbd1a1c306b19b9e9a012407e596c85fe8c6",
+      "bytes": 85255
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/dyck_languages.json",
+      "sha256": "3f9badedf15c2be1ce53d94fdf016299bb30ba231ef087ab9f51a7ed6d0bdc25",
+      "bytes": 43814
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/formal_fallacies.json",
+      "sha256": "4c1adb664821157faade1d4153685403afcc02648f3c180a608a18f17f589629",
+      "bytes": 145562
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/geometric_shapes.json",
+      "sha256": "07be68a124420caa2ebc0b2c858ad79fc55c5c8806170e496e1e17ebfb11f31c",
+      "bytes": 77242
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/hyperbaton.json",
+      "sha256": "b6d7f55c75f5d02f2987a4f3123802dfa093872089a56a334144aae8a7264fdc",
+      "bytes": 44706
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/logical_deduction_five_objects.json",
+      "sha256": "d2df31394b903b7f0e085d42a69572a092987856eac076799017d70ef266fa8f",
+      "bytes": 155477
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/logical_deduction_seven_objects.json",
+      "sha256": "2896c7e3482eea318dd37bcc370d24ec3cc91e8374c1784287b5dbd38a529e33",
+      "bytes": 198404
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/logical_deduction_three_objects.json",
+      "sha256": "e590fae72e3a6041fbd23bd8ff6b74baf44ca563f6ba40a041c55e7b867c1681",
+      "bytes": 112213
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/movie_recommendation.json",
+      "sha256": "a8b53a87ee21a865b7248e694f388a9b8f7cf6b839b11d44796a2dd3fc088983",
+      "bytes": 57684
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/multistep_arithmetic_two.json",
+      "sha256": "c9d5a6433c9b78256422a15c78463949c8bec8d85607aa28b52d7234ad4a8595",
+      "bytes": 18325
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/navigate.json",
+      "sha256": "b7944dfd3c81da5c4815bd75b00d6fa3c64140823498e78ed496f4c3d36f7f0d",
+      "bytes": 55163
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/object_counting.json",
+      "sha256": "8acef14dbbdd40d2326ef7755750b6b5fe919fef06276af1bab3f1c297f022ff",
+      "bytes": 35890
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/penguins_in_a_table.json",
+      "sha256": "bb87ee449698eee51215e025a453b1bcb2f5e6589c2063b2c79e68b8f0655228",
+      "bytes": 74516
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/reasoning_about_colored_objects.json",
+      "sha256": "0a8850cf95166020fce7a78244026ceedd7ea839302471512b4f8744e85a6a49",
+      "bytes": 98694
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/ruin_names.json",
+      "sha256": "b6f723aef2bafdd4c7bfc3c7e0329c7e8a8279391a609969c8ed76c9319f5f7f",
+      "bytes": 53178
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/salient_translation_error_detection.json",
+      "sha256": "becf3eb8dd53c821a555ecd5c1334ecd93eb25f980e63be963c518e7138de5da",
+      "bytes": 286443
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/snarks.json",
+      "sha256": "54a0661fe2de06167645a4965e6bcf963c4ba307e76262a7c750998b0e3d0d0e",
+      "bytes": 42646
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/sports_understanding.json",
+      "sha256": "63ca262858f6176864515cd8cf53cdaa40839ebecc155b726d77930855d167bf",
+      "bytes": 28617
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/temporal_sequences.json",
+      "sha256": "92a1189faaa84aacc4c405aaa13f13f48c2992eb884772eedb622505252baef5",
+      "bytes": 148176
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/tracking_shuffled_objects_five_objects.json",
+      "sha256": "2063a46a4fb484236ed4310523606543a3e1dd4a4dc34eda65d407910ece25a5",
+      "bytes": 169722
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/tracking_shuffled_objects_seven_objects.json",
+      "sha256": "b59fd05b850c37cf57cb514ae1e6975c00b1638ade2291722056b2af3c54084d",
+      "bytes": 214906
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/tracking_shuffled_objects_three_objects.json",
+      "sha256": "546cc7bf10c6a01a6a4c17ae28a4966485f21f29fd5d111f37858ec78e354f6b",
+      "bytes": 128736
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/web_of_lies.json",
+      "sha256": "3e60323f8514a107fdb4edf35f8832a9171c5a09c0eaa47823559de905e8ab8b",
+      "bytes": 52964
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/word_sorting.json",
+      "sha256": "2a6132d2c99f00d0d2eb1113ac6b4a918bd969d863c48749210d969713db8d43",
+      "bytes": 66300
+    }
+  ],
+  "selected_ids": [
+    "bbh:boolean_expressions:140",
+    "bbh:boolean_expressions:236",
+    "bbh:causal_judgement:10",
+    "bbh:causal_judgement:168",
+    "bbh:date_understanding:180",
+    "bbh:date_understanding:69",
+    "bbh:disambiguation_qa:172",
+    "bbh:disambiguation_qa:51",
+    "bbh:dyck_languages:49",
+    "bbh:dyck_languages:82",
+    "bbh:formal_fallacies:213",
+    "bbh:formal_fallacies:84",
+    "bbh:geometric_shapes:102",
+    "bbh:geometric_shapes:184",
+    "bbh:hyperbaton:15",
+    "bbh:hyperbaton:219",
+    "bbh:logical_deduction_five_objects:115",
+    "bbh:logical_deduction_five_objects:228",
+    "bbh:logical_deduction_seven_objects:231",
+    "bbh:logical_deduction_seven_objects:67",
+    "bbh:logical_deduction_three_objects:111",
+    "bbh:logical_deduction_three_objects:165",
+    "bbh:movie_recommendation:195",
+    "bbh:movie_recommendation:197",
+    "bbh:multistep_arithmetic_two:125",
+    "bbh:multistep_arithmetic_two:151",
+    "bbh:navigate:112",
+    "bbh:navigate:41",
+    "bbh:object_counting:135",
+    "bbh:object_counting:61",
+    "bbh:penguins_in_a_table:141",
+    "bbh:penguins_in_a_table:89",
+    "bbh:reasoning_about_colored_objects:120",
+    "bbh:reasoning_about_colored_objects:42",
+    "bbh:ruin_names:11",
+    "bbh:ruin_names:144",
+    "bbh:salient_translation_error_detection:5",
+    "bbh:salient_translation_error_detection:93",
+    "bbh:snarks:167",
+    "bbh:snarks:93",
+    "bbh:sports_understanding:179",
+    "bbh:sports_understanding:49",
+    "bbh:temporal_sequences:158",
+    "bbh:temporal_sequences:214",
+    "bbh:tracking_shuffled_objects_five_objects:159",
+    "bbh:tracking_shuffled_objects_five_objects:175",
+    "bbh:tracking_shuffled_objects_seven_objects:150",
+    "bbh:tracking_shuffled_objects_seven_objects:183",
+    "bbh:tracking_shuffled_objects_three_objects:215",
+    "bbh:tracking_shuffled_objects_three_objects:233",
+    "bbh:web_of_lies:190",
+    "bbh:web_of_lies:230",
+    "bbh:word_sorting:200",
+    "bbh:word_sorting:205",
+    "gsm8k:1064",
+    "gsm8k:1076",
+    "gsm8k:1123",
+    "gsm8k:1127",
+    "gsm8k:1131",
+    "gsm8k:114",
+    "gsm8k:1200",
+    "gsm8k:1205",
+    "gsm8k:1286",
+    "gsm8k:14",
+    "gsm8k:164",
+    "gsm8k:181",
+    "gsm8k:216",
+    "gsm8k:217",
+    "gsm8k:220",
+    "gsm8k:391",
+    "gsm8k:393",
+    "gsm8k:429",
+    "gsm8k:58",
+    "gsm8k:636",
+    "gsm8k:642",
+    "gsm8k:673",
+    "gsm8k:728",
+    "gsm8k:797",
+    "gsm8k:801",
+    "gsm8k:81",
+    "gsm8k:869",
+    "gsm8k:892",
+    "gsm8k:902",
+    "gsm8k:911",
+    "gsm8k:947",
+    "gsm8k:975"
+  ],
+  "cohort_sha256": "edd6e937ab32c23ed79d52a380bec145adaa09b0a7855f14d14b77e373da48b0",
+  "runtime": {
+    "model": "unsloth/Qwen3.5-4B-GGUF",
+    "model_revision": "e87f176479d0855a907a41277aca2f8ee7a09523",
+    "weights": {
+      "url": "https://huggingface.co/unsloth/Qwen3.5-4B-GGUF/resolve/e87f176479d0855a907a41277aca2f8ee7a09523/Qwen3.5-4B-Q4_K_M.gguf",
+      "sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+      "bytes": 2740937888
+    },
+    "runtime": {
+      "url": "https://github.com/ggml-org/llama.cpp/releases/download/b10964/llama-b10964-bin-ubuntu-x64.tar.gz",
+      "sha256": "9abf88aea48a55d0f80edb1ee20220b186848cca0b4e919d71518cfd7ca67443",
+      "bytes": 16825086
+    },
+    "tag": "b10964",
+    "command": [
+      "/tmp/adaptive-language-runtime/binary/llama-b10964/llama-server",
+      "-m",
+      "/tmp/adaptive-language-runtime/model.gguf",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "8787",
+      "-c",
+      "8192",
+      "-np",
+      "1",
+      "-t",
+      "4",
+      "-tb",
+      "4",
+      "-ngl",
+      "0",
+      "--jinja",
+      "--chat-template-kwargs",
+      "{\"enable_thinking\":false}",
+      "--no-webui"
+    ],
+    "server_version": "",
+    "machine": "x86_64",
+    "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "setup_seconds": 31.26418526799999,
+    "private_inputs": false,
+    "paid_inference": false,
+    "training": false
+  },
+  "worker_exit": 0,
+  "rows": [
+    {
+      "arm": "direct",
+      "answer": "No",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "No\nFINAL: No",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 199,
+            "total_tokens": 205,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 199,
+            "prompt_ms": 3332.517,
+            "prompt_per_token_ms": 16.746316582914574,
+            "prompt_per_second": 59.71462411144489,
+            "predicted_n": 6,
+            "predicted_ms": 720.939,
+            "predicted_per_token_ms": 144.18779999999998,
+            "predicted_per_second": 6.935399527560584
+          },
+          "seconds": 4.057746352000009,
+          "request_sha256": "3826a0bfb8068557ad5bc2548bef2c576908c910fb91a2ba8530bf8a0ad3dc17"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 199,
+        "completion_tokens": 6,
+        "total_tokens": 205
+      },
+      "seconds": 4.057976792000005,
+      "question_sha256": "dbb7a0ab7319cac1353d206c1532ae6910b70d655f55d22ab7b64e305d8e7995",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:causal_judgement:168",
+      "suite": "BBH",
+      "family": "causal_judgement",
+      "question": "How would a typical person answer each of the following questions about causation?\nA machine is set up in such a way that it will short circuit if both the black wire and the red wire touch the battery at the same time. The machine will not short circuit if just one of these wires touches the battery. The black wire is designated as the one that is supposed to touch the battery, while the red wire is supposed to remain in some other part of the machine. One day, the black wire and the red wire both end up touching the battery at the same time. There is a short circuit. Did the fact that the red wire touched the battery cause the machine to short circuit?\nOptions:\n- Yes\n- No",
+      "reference": "Yes",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "Yes",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "In causal reasoning, particularly regarding sufficient conditions, an event is considered a cause if its absence would have prevented the outcome (the \"but-for\" test). Here, the short circuit occurs only if *both* wires touch the battery. If the red wire had not touched the battery, the black wire alone would not have caused a short circuit. Therefore, the red wire's contact was a necessary condition for the short circuit to occur. Without it, the effect (short circuit) would not have happened. Thus, a typical person would agree that the red wire touching the battery was a cause of the short circuit.\n\nFINAL: Yes",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 128,
+            "prompt_tokens": 209,
+            "total_tokens": 337,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 209,
+            "prompt_ms": 3292.644,
+            "prompt_per_token_ms": 15.754277511961721,
+            "prompt_per_second": 63.474824487554685,
+            "predicted_n": 128,
+            "predicted_ms": 18613.803,
+            "predicted_per_token_ms": 146.5653779527559,
+            "predicted_per_second": 6.822893741810849
+          },
+          "seconds": 21.95149833299999,
+          "request_sha256": "0411f3fcdee15b504f0bdf2468001373221ef86fc8ca287214da2c9bf97d821a"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 209,
+        "completion_tokens": 128,
+        "total_tokens": 337
+      },
+      "seconds": 21.951600701000018,
+      "question_sha256": "dbb7a0ab7319cac1353d206c1532ae6910b70d655f55d22ab7b64e305d8e7995",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:causal_judgement:168",
+      "suite": "BBH",
+      "family": "causal_judgement",
+      "question": "How would a typical person answer each of the following questions about causation?\nA machine is set up in such a way that it will short circuit if both the black wire and the red wire touch the battery at the same time. The machine will not short circuit if just one of these wires touches the battery. The black wire is designated as the one that is supposed to touch the battery, while the red wire is supposed to remain in some other part of the machine. One day, the black wire and the red wire both end up touching the battery at the same time. There is a short circuit. Did the fact that the red wire touched the battery cause the machine to short circuit?\nOptions:\n- Yes\n- No",
+      "reference": "Yes",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "Yes",
+      "status": "model_answer_unverified",
+      "execution": {
+        "answer": "Yes",
+        "status": "model_answer_unverified",
+        "trace": [],
+        "program_sha256": "614041fc61ab3952e8192af7aa18a9ce55e55c3baa2ef94c32bf59a6cea66121",
+        "plan": {
+          "answer": "Yes"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"answer\":\"Yes\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 482,
+            "total_tokens": 488,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 482,
+            "prompt_ms": 7217.535,
+            "prompt_per_token_ms": 14.974139004149377,
+            "prompt_per_second": 66.78180292856217,
+            "predicted_n": 6,
+            "predicted_ms": 717.2,
+            "predicted_per_token_ms": 143.44,
+            "predicted_per_second": 6.971556051310652
+          },
+          "seconds": 7.981679106000001,
+          "request_sha256": "34a4297b2e4b4b2889aed21544ea04df4d103ee01904cc61d3ca9be16fecbe30"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 482,
+        "completion_tokens": 6,
+        "total_tokens": 488
+      },
+      "seconds": 7.981837925000008,
+      "question_sha256": "dbb7a0ab7319cac1353d206c1532ae6910b70d655f55d22ab7b64e305d8e7995",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:causal_judgement:168",
+      "suite": "BBH",
+      "family": "causal_judgement",
+      "question": "How would a typical person answer each of the following questions about causation?\nA machine is set up in such a way that it will short circuit if both the black wire and the red wire touch the battery at the same time. The machine will not short circuit if just one of these wires touches the battery. The black wire is designated as the one that is supposed to touch the battery, while the red wire is supposed to remain in some other part of the machine. One day, the black wire and the red wire both end up touching the battery at the same time. There is a short circuit. Did the fact that the red wire touched the battery cause the machine to short circuit?\nOptions:\n- Yes\n- No",
+      "reference": "Yes",
+      "correct": true
+    },
+    {
+      "arm": "reasoning",
+      "answer": "(A)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To determine the correct adjective order, we apply the standard English sequence known as the \"Order of Adjectives\" (often remembered by the acronym OSASCOMP):\n1.  **O**pinion (e.g., *massive*, *orange*)\n2.  **S**ize (e.g., *massive*)\n3.  **A**ge (e.g., *ancient*)\n4.  **S**hape (e.g., *triangular*)\n5.  **C**olor (e.g., *silver*, *orange*)\n6.  **O**rigin (e.g., *hiking* implies origin/function here)\n7.  **M**aterial (e.g., *silver* could be material, but usually comes before origin in specific contexts or follows color; however, \"hiking\" acts as a noun adjunct indicating origin/purpose).\n\nLet's analyze the adjectives in the options:\n*   **massive**: Size\n*   **ancient**: Age\n*   **triangular**: Shape\n*   **orange**: Color\n*   **silver**: Color/Material\n*   **hiking**: Origin/Function (acts as a noun adjunct)\n\n**Correct Sequence Logic:**\n1.  **Opinion/Size**: \"massive\" (Size) usually comes before Age.\n2.  **Age**: \"ancient\".\n3.  **Shape**: \"triangular\".\n4.  **Color**: \"orange\", \"silver\".\n5.  **Origin/Function**: \"hiking\".\n\nThe standard order is: Size -> Age -> Shape -> Color -> Origin.\nSo: **massive** (Size) -> **ancient** (Age) -> **triangular** (Shape) -> **orange** (Color) -> **silver** (Color) -> **hiking** (Origin).\n*Note: Colors can be swapped, but they must come after Shape and before Origin.*\n\n**Evaluating Option (A):**\n\"massive ancient triangular orange silver hiking computer\"\nOrder: Size -> Age -> Shape -> Color -> Color -> Origin.\nThis follows the correct hierarchy.\n\n**Evaluating Option (B):**\n\"hiking ancient triangular silver massive orange computer\"\nOrder: Origin -> Age -> Shape -> Color -> Size -> Color.\nThis is incorrect because Size (\"massive\") is placed after Color (\"silver\"), and Origin (\"hiking\") is placed at the very beginning.\n\nTherefore, Option (A) follows the correct grammatical rules for adjective stacking.\n\nFINAL: (A)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 544,
+            "prompt_tokens": 92,
+            "total_tokens": 636,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 92,
+            "prompt_ms": 1601.578,
+            "prompt_per_token_ms": 17.40845652173913,
+            "prompt_per_second": 57.44334649951486,
+            "predicted_n": 544,
+            "predicted_ms": 78731.367,
+            "predicted_per_token_ms": 144.9933093922652,
+            "predicted_per_second": 6.896869960355191
+          },
+          "seconds": 80.38087858099999,
+          "request_sha256": "b07dd6340fa6dfdd12e567069ec6c5c5cbe9d070b8bb22d885cee6af48d1c00d"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 92,
+        "completion_tokens": 544,
+        "total_tokens": 636
+      },
+      "seconds": 80.380997251,
+      "question_sha256": "79bf3a8305acdddd85c795abb8a470e60a48f5d1c58c75b2baaa01a3cc3d0222",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:hyperbaton:219",
+      "suite": "BBH",
+      "family": "hyperbaton",
+      "question": "Which sentence has the correct adjective order:\nOptions:\n(A) massive ancient triangular orange silver hiking computer\n(B) hiking ancient triangular silver massive orange computer",
+      "reference": "(A)",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "(A)",
+      "status": "model_answer_unverified",
+      "execution": {
+        "answer": "(A)",
+        "status": "model_answer_unverified",
+        "trace": [],
+        "program_sha256": "8a522f6380b7a145ecd977925f565d579f2cddbacf8816264d279f521ed930d5",
+        "plan": {
+          "answer": "(A)"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"answer\":\"(A)\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 8,
+            "prompt_tokens": 365,
+            "total_tokens": 373,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 365,
+            "prompt_ms": 5807.926,
+            "prompt_per_token_ms": 15.912126027397262,
+            "prompt_per_second": 62.84515333012162,
+            "predicted_n": 8,
+            "predicted_ms": 1021.045,
+            "predicted_per_token_ms": 145.86357142857142,
+            "predicted_per_second": 6.855721344309018
+          },
+          "seconds": 6.891016030999992,
+          "request_sha256": "1bf949f6fd4ace86b14fd6987a2350c349ea5172c3a64f40561addf740f9c57c"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 365,
+        "completion_tokens": 8,
+        "total_tokens": 373
+      },
+      "seconds": 6.891141492000031,
+      "question_sha256": "79bf3a8305acdddd85c795abb8a470e60a48f5d1c58c75b2baaa01a3cc3d0222",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:hyperbaton:219",
+      "suite": "BBH",
+      "family": "hyperbaton",
+      "question": "Which sentence has the correct adjective order:\nOptions:\n(A) massive ancient triangular orange silver hiking computer\n(B) hiking ancient triangular silver massive orange computer",
+      "reference": "(A)",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "(B)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "FINAL: (B)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 82,
+            "total_tokens": 88,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 82,
+            "prompt_ms": 1503.391,
+            "prompt_per_token_ms": 18.334036585365855,
+            "prompt_per_second": 54.54336230561444,
+            "predicted_n": 6,
+            "predicted_ms": 728.686,
+            "predicted_per_token_ms": 145.7372,
+            "predicted_per_second": 6.861666067414497
+          },
+          "seconds": 2.2808790309999836,
+          "request_sha256": "861be4f3c574368aef103e0cf6d3609886f611fd8b1e5a41bfa8acc03ca6c1f9"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 82,
+        "completion_tokens": 6,
+        "total_tokens": 88
+      },
+      "seconds": 2.28095579699999,
+      "question_sha256": "79bf3a8305acdddd85c795abb8a470e60a48f5d1c58c75b2baaa01a3cc3d0222",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:hyperbaton:219",
+      "suite": "BBH",
+      "family": "hyperbaton",
+      "question": "Which sentence has the correct adjective order:\nOptions:\n(A) massive ancient triangular orange silver hiking computer\n(B) hiking ancient triangular silver massive orange computer",
+      "reference": "(A)",
+      "correct": false
+    },
+    {
+      "arm": "direct",
+      "answer": "No",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "No\nFINAL: No",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 109,
+            "total_tokens": 115,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 109,
+            "prompt_ms": 2148.754,
+            "prompt_per_token_ms": 19.713339449541284,
+            "prompt_per_second": 50.7270725266829,
+            "predicted_n": 6,
+            "predicted_ms": 737.188,
+            "predicted_per_token_ms": 147.4376,
+            "predicted_per_second": 6.782530372171006
+          },
+          "seconds": 2.931212570000014,
+          "request_sha256": "2d49cb22baa5c4e9f2a131ce91d30180b22d22667c16ab1909a38d3e82b7f0a0"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 109,
+        "completion_tokens": 6,
+        "total_tokens": 115
+      },
+      "seconds": 2.931286254999975,
+      "question_sha256": "3bdc7b761440a0279591ddaaa52c8edfe0da97b5ec3664479acf0bce027c2911",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:navigate:41",
+      "suite": "BBH",
+      "family": "navigate",
+      "question": "If you follow these instructions, do you return to the starting point? Take 6 steps. Take 10 steps. Take 10 steps. Take 1 step. Take 7 steps. Take 5 steps. Turn around.\nOptions:\n- Yes\n- No",
+      "reference": "No",
+      "correct": true
+    },
+    {
+      "arm": "reasoning",
+      "answer": "No",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To determine if you return to the starting point, we need to calculate the net displacement.\n\n1.  **Analyze the movement:**\n    *   Assume you start at position 0 on a straight line.\n    *   \"Take 6 steps\": Move +6. Position = 6.\n    *   \"Take 10 steps\": Move +10. Position = 16.\n    *   \"Take 10 steps\": Move +10. Position = 26.\n    *   \"Take 1 step\": Move +1. Position = 27.\n    *   \"Take 7 steps\": Move +7. Position = 34.\n    *   \"Take 5 steps\": Move +5. Position = 39.\n\n2.  **Analyze the final instruction:**\n    *   \"Turn around\": This reverses your direction of travel. However, it does not specify a number of steps to take after turning.\n\n3.  **Evaluate the result:**\n    *   Your total displacement is 39 steps away from the start in the original direction.\n    *   Since no further movement is described after turning around, you remain at position 39.\n    *   Position 39 is not the starting point (0).\n\nTherefore, you do not return to the starting point.\n\nFINAL: No",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 294,
+            "prompt_tokens": 119,
+            "total_tokens": 413,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 119,
+            "prompt_ms": 2075.761,
+            "prompt_per_token_ms": 17.44336974789916,
+            "prompt_per_second": 57.328372582392674,
+            "predicted_n": 294,
+            "predicted_ms": 42882.102,
+            "predicted_per_token_ms": 146.35529692832765,
+            "predicted_per_second": 6.832687446151777
+          },
+          "seconds": 45.001990207999995,
+          "request_sha256": "504994626cee927c5572cee18957d57dcd714ffeb3d540d4a1cb01f9c31c7aa0"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 119,
+        "completion_tokens": 294,
+        "total_tokens": 413
+      },
+      "seconds": 45.002085487000045,
+      "question_sha256": "3bdc7b761440a0279591ddaaa52c8edfe0da97b5ec3664479acf0bce027c2911",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:navigate:41",
+      "suite": "BBH",
+      "family": "navigate",
+      "question": "If you follow these instructions, do you return to the starting point? Take 6 steps. Take 10 steps. Take 10 steps. Take 1 step. Take 7 steps. Take 5 steps. Turn around.\nOptions:\n- Yes\n- No",
+      "reference": "No",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "No",
+      "status": "model_answer_unverified",
+      "execution": {
+        "answer": "No",
+        "status": "model_answer_unverified",
+        "trace": [],
+        "program_sha256": "1b96e430b6bef656ce72703c869090b0fb63ac41956076943d5352402d436976",
+        "plan": {
+          "answer": "No"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"answer\":\"No\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 392,
+            "total_tokens": 398,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 392,
+            "prompt_ms": 6369.083,
+            "prompt_per_token_ms": 16.247660714285715,
+            "prompt_per_second": 61.547321647401986,
+            "predicted_n": 6,
+            "predicted_ms": 768.231,
+            "predicted_per_token_ms": 153.6462,
+            "predicted_per_second": 6.508459044219772
+          },
+          "seconds": 7.196529059999989,
+          "request_sha256": "e9fc054f3cc953b4bdf8ad18983e0860340823678e850f27719326ed97340897"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 392,
+        "completion_tokens": 6,
+        "total_tokens": 398
+      },
+      "seconds": 7.196644130000038,
+      "question_sha256": "3bdc7b761440a0279591ddaaa52c8edfe0da97b5ec3664479acf0bce027c2911",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:navigate:41",
+      "suite": "BBH",
+      "family": "navigate",
+      "question": "If you follow these instructions, do you return to the starting point? Take 6 steps. Take 10 steps. Take 10 steps. Take 1 step. Take 7 steps. Take 5 steps. Turn around.\nOptions:\n- Yes\n- No",
+      "reference": "No",
+      "correct": true
+    },
+    {
+      "arm": "reasoning",
+      "answer": "(B)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "The phrase \"eyes on the ball\" is a common idiom meaning to be focused and attentive. In contrast, \"cleats on the ball\" is not a standard idiom; cleats are footwear designed for traction, not for focus. By substituting the logical idiom with a nonsensical one regarding footwear, the speaker creates an absurdity intended to mock the situation or the person's lack of focus. This misuse of language to convey a negative or mocking meaning is the definition of sarcasm.\n\nFINAL: (B)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 109,
+            "prompt_tokens": 103,
+            "total_tokens": 212,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 103,
+            "prompt_ms": 1827.722,
+            "prompt_per_token_ms": 17.744873786407766,
+            "prompt_per_second": 56.35430333497108,
+            "predicted_n": 109,
+            "predicted_ms": 15557.15,
+            "predicted_per_token_ms": 144.04768518518517,
+            "predicted_per_second": 6.9421455729359165
+          },
+          "seconds": 17.431468481999957,
+          "request_sha256": "3b09898fb909c4c755013c13a354b3201b6651c6c2a4908436506b6571fb4a94"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 103,
+        "completion_tokens": 109,
+        "total_tokens": 212
+      },
+      "seconds": 17.431551627000033,
+      "question_sha256": "59990d56ae6ce9a562f81657b584676e7187fbc4dc2e8eb848977e9651eee1ef",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:snarks:93",
+      "suite": "BBH",
+      "family": "snarks",
+      "question": "Which statement is sarcastic?\nOptions:\n(A) But his eyes were on the ball, shouldn't be a red\n(B) But his cleats were on the ball, shouldn't be a red",
+      "reference": "(A)",
+      "correct": false
+    },
+    {
+      "arm": "program",
+      "answer": "(B)",
+      "status": "model_answer_unverified",
+      "execution": {
+        "answer": "(B)",
+        "status": "model_answer_unverified",
+        "trace": [],
+        "program_sha256": "a4d322bd1bff79635afb5b03060311e6ef36b0d576270f8b37801ab928323571",
+        "plan": {
+          "answer": "(B)"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"answer\":\"(B)\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 8,
+            "prompt_tokens": 376,
+            "total_tokens": 384,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 376,
+            "prompt_ms": 5722.279,
+            "prompt_per_token_ms": 15.218827127659576,
+            "prompt_per_second": 65.70808588675945,
+            "predicted_n": 8,
+            "predicted_ms": 1010.959,
+            "predicted_per_token_ms": 144.42271428571428,
+            "predicted_per_second": 6.924118584433197
+          },
+          "seconds": 6.789583176999997,
+          "request_sha256": "f9e8575b1ecb97b720521997434213a7673a544ddf22349d0590623abe3e42b0"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 376,
+        "completion_tokens": 8,
+        "total_tokens": 384
+      },
+      "seconds": 6.789688932999979,
+      "question_sha256": "59990d56ae6ce9a562f81657b584676e7187fbc4dc2e8eb848977e9651eee1ef",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:snarks:93",
+      "suite": "BBH",
+      "family": "snarks",
+      "question": "Which statement is sarcastic?\nOptions:\n(A) But his eyes were on the ball, shouldn't be a red\n(B) But his cleats were on the ball, shouldn't be a red",
+      "reference": "(A)",
+      "correct": false
+    },
+    {
+      "arm": "direct",
+      "answer": "(B)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "(B)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 3,
+            "prompt_tokens": 93,
+            "total_tokens": 96,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 93,
+            "prompt_ms": 1636.31,
+            "prompt_per_token_ms": 17.594731182795698,
+            "prompt_per_second": 56.83519626476646,
+            "predicted_n": 3,
+            "predicted_ms": 293.927,
+            "predicted_per_token_ms": 146.9635,
+            "predicted_per_second": 6.804410618963211
+          },
+          "seconds": 1.985674409000012,
+          "request_sha256": "5a00dc313ca1d3f664a8b53d23c569e8b1e4c65286a97af903778fa3841f516d"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 93,
+        "completion_tokens": 3,
+        "total_tokens": 96
+      },
+      "seconds": 1.98574604800001,
+      "question_sha256": "59990d56ae6ce9a562f81657b584676e7187fbc4dc2e8eb848977e9651eee1ef",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:snarks:93",
+      "suite": "BBH",
+      "family": "snarks",
+      "question": "Which statement is sarcastic?\nOptions:\n(A) But his eyes were on the ball, shouldn't be a red\n(B) But his cleats were on the ball, shouldn't be a red",
+      "reference": "(A)",
+      "correct": false
+    },
+    {
+      "arm": "program",
+      "answer": "True",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "True",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "jamey_truth",
+            "expr": "False",
+            "value": false
+          },
+          {
+            "name": "sal_truth",
+            "expr": "not jamey_truth",
+            "value": true
+          },
+          {
+            "name": "teressa_truth",
+            "expr": "not sal_truth",
+            "value": false
+          },
+          {
+            "name": "maybelle_truth",
+            "expr": "teressa_truth",
+            "value": false
+          },
+          {
+            "name": "ka_truth",
+            "expr": "not maybelle_truth",
+            "value": true
+          }
+        ],
+        "value": true,
+        "program_sha256": "f5b8e4934dd5734fa80ef27a8a39c63d94294a91f14e3b08891d599865a90405",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "jamey_truth",
+              "expr": "False"
+            },
+            {
+              "name": "sal_truth",
+              "expr": "not jamey_truth"
+            },
+            {
+              "name": "teressa_truth",
+              "expr": "not sal_truth"
+            },
+            {
+              "name": "maybelle_truth",
+              "expr": "teressa_truth"
+            },
+            {
+              "name": "ka_truth",
+              "expr": "not maybelle_truth"
+            }
+          ],
+          "result": "ka_truth"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"jamey_truth\",\"expr\":\"False\"},{\"name\":\"sal_truth\",\"expr\":\"not jamey_truth\"},{\"name\":\"teressa_truth\",\"expr\":\"not sal_truth\"},{\"name\":\"maybelle_truth\",\"expr\":\"teressa_truth\"},{\"name\":\"ka_truth\",\"expr\":\"not maybelle_truth\"}],\"result\":\"ka_truth\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 72,
+            "prompt_tokens": 377,
+            "total_tokens": 449,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 377,
+            "prompt_ms": 5789.057,
+            "prompt_per_token_ms": 15.355588859416445,
+            "prompt_per_second": 65.12286888866356,
+            "predicted_n": 72,
+            "predicted_ms": 10260.853,
+            "predicted_per_token_ms": 144.51905633802815,
+            "predicted_per_second": 6.919502696315794
+          },
+          "seconds": 16.104860414999962,
+          "request_sha256": "1d63831bf2a2d7429d1a885dd17e64bf99f726ec92551e02000c173c973716da"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 377,
+        "completion_tokens": 72,
+        "total_tokens": 449
+      },
+      "seconds": 16.10530182900004,
+      "question_sha256": "21bdf72fc78da4ac4f5a18af1630a442e00c76a139b9721a19a0850237f3344f",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:web_of_lies:230",
+      "suite": "BBH",
+      "family": "web_of_lies",
+      "question": "Question: Jamey lies. Sal says Jamey tells the truth. Teressa says Sal lies. Maybelle says Teressa tells the truth. Ka says Maybelle lies. Does Ka tell the truth?",
+      "reference": "No",
+      "correct": false
+    },
+    {
+      "arm": "direct",
+      "answer": "(A)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "FINAL: (A)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 94,
+            "total_tokens": 100,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 94,
+            "prompt_ms": 1602.701,
+            "prompt_per_token_ms": 17.050010638297874,
+            "prompt_per_second": 58.65098979784751,
+            "predicted_n": 6,
+            "predicted_ms": 713.094,
+            "predicted_per_token_ms": 142.61880000000002,
+            "predicted_per_second": 7.011698317472871
+          },
+          "seconds": 2.371342394999999,
+          "request_sha256": "3b2f62ea523b0ebbe4606163954ead92f7146fa905179629a2e7c72d21855475"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 94,
+        "completion_tokens": 6,
+        "total_tokens": 100
+      },
+      "seconds": 2.371408775999953,
+      "question_sha256": "21bdf72fc78da4ac4f5a18af1630a442e00c76a139b9721a19a0850237f3344f",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:web_of_lies:230",
+      "suite": "BBH",
+      "family": "web_of_lies",
+      "question": "Question: Jamey lies. Sal says Jamey tells the truth. Teressa says Sal lies. Maybelle says Teressa tells the truth. Ka says Maybelle lies. Does Ka tell the truth?",
+      "reference": "No",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "No",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "Let's analyze the statements logically:\n\n1.  **Fact**: Jamey lies.\n2.  **Sal's statement**: \"Jamey tells the truth.\"\n    *   Since Jamey lies, Sal's statement is false.\n    *   Therefore, **Sal lies**.\n3.  **Teressa's statement**: \"Sal lies.\"\n    *   Since Sal does lie, Teressa's statement is true.\n    *   Therefore, **Teressa tells the truth**.\n4.  **Maybelle's statement**: \"Teressa tells the truth.\"\n    *   Since Teressa tells the truth, Maybelle's statement is true.\n    *   Therefore, **Maybelle tells the truth**.\n5.  **Ka's statement**: \"Maybelle lies.\"\n    *   Since Maybelle tells the truth, Ka's statement is false.\n    *   Therefore, **Ka lies**.\n\nThe question asks if Ka tells the truth. Based on the deduction, Ka lies.\n\nFINAL: No",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 220,
+            "prompt_tokens": 104,
+            "total_tokens": 324,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 104,
+            "prompt_ms": 1726.899,
+            "prompt_per_token_ms": 16.604798076923075,
+            "prompt_per_second": 60.223556791682675,
+            "predicted_n": 220,
+            "predicted_ms": 31679.227,
+            "predicted_per_token_ms": 144.65400456621003,
+            "predicted_per_second": 6.913047467982727
+          },
+          "seconds": 33.449371015999986,
+          "request_sha256": "63ff5895bc3a926e46e384dceff40966057da5c6e28f7930f2ebc86f62ff0b31"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 104,
+        "completion_tokens": 220,
+        "total_tokens": 324
+      },
+      "seconds": 33.449466073999986,
+      "question_sha256": "21bdf72fc78da4ac4f5a18af1630a442e00c76a139b9721a19a0850237f3344f",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:web_of_lies:230",
+      "suite": "BBH",
+      "family": "web_of_lies",
+      "question": "Question: Jamey lies. Sal says Jamey tells the truth. Teressa says Sal lies. Maybelle says Teressa tells the truth. Ka says Maybelle lies. Does Ka tell the truth?",
+      "reference": "No",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "(C)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "FINAL: (C)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 103,
+            "total_tokens": 109,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 103,
+            "prompt_ms": 1815.659,
+            "prompt_per_token_ms": 17.6277572815534,
+            "prompt_per_second": 56.728713927009416,
+            "predicted_n": 6,
+            "predicted_ms": 720.496,
+            "predicted_per_token_ms": 144.0992,
+            "predicted_per_second": 6.93966378716884
+          },
+          "seconds": 2.5941389519999802,
+          "request_sha256": "69001b0d9f4da0602836e02799092f56b3a63d214a347433ff87ebddf8117f09"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 103,
+        "completion_tokens": 6,
+        "total_tokens": 109
+      },
+      "seconds": 2.5942131630000063,
+      "question_sha256": "8aba72e5533aaf2c7e62b0a22bcef10ca8b597ce2b045683dd4489528d1d0d3d",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:14",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "In a dance class of 20 students, 20% enrolled in contemporary dance, 25% of the remaining enrolled in jazz dance, and the rest enrolled in hip-hop dance. What percentage of the entire students enrolled in hip-hop dance?",
+      "reference": "60",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "60%",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "Here is the step-by-step calculation:\n\n1.  **Total students**: 20.\n2.  **Contemporary dance enrollment**:\n    *   Percentage: 20%.\n    *   Number of students: $20 \\times 0.20 = 4$ students.\n3.  **Remaining students**:\n    *   Total - Contemporary = $20 - 4 = 16$ students.\n4.  **Jazz dance enrollment**:\n    *   Percentage of the *remaining*: 25%.\n    *   Number of students: $16 \\times 0.25 = 4$ students.\n5.  **Hip-hop dance enrollment**:\n    *   This is the \"rest\" of the students.\n    *   Number of students: $16 - 4 = 12$ students.\n    *   Alternatively: $20 - 4 (\\text{contemporary}) - 4 (\\text{jazz}) = 12$.\n6.  **Calculate percentage of entire class**:\n    *   $\\frac{12}{20} \\times 100\\% = 0.6 \\times 100\\% = 60\\%$.\n\nThe percentage of the entire class enrolled in hip-hop dance is 60%.\n\nFINAL: 60%",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 294,
+            "prompt_tokens": 113,
+            "total_tokens": 407,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 113,
+            "prompt_ms": 1818.16,
+            "prompt_per_token_ms": 16.08991150442478,
+            "prompt_per_second": 62.1507458089497,
+            "predicted_n": 294,
+            "predicted_ms": 43783.794,
+            "predicted_per_token_ms": 149.43274402730376,
+            "predicted_per_second": 6.691973747181434
+          },
+          "seconds": 45.646282025999994,
+          "request_sha256": "d58cc5848ebdc8ea384c5ddca05efe3a415d63681d6c146946457debd693da68"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 113,
+        "completion_tokens": 294,
+        "total_tokens": 407
+      },
+      "seconds": 45.64637535899999,
+      "question_sha256": "8aba72e5533aaf2c7e62b0a22bcef10ca8b597ce2b045683dd4489528d1d0d3d",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:14",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "In a dance class of 20 students, 20% enrolled in contemporary dance, 25% of the remaining enrolled in jazz dance, and the rest enrolled in hip-hop dance. What percentage of the entire students enrolled in hip-hop dance?",
+      "reference": "60",
+      "correct": false
+    },
+    {
+      "arm": "program",
+      "answer": "80",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "80",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "20*0.20",
+            "value": {
+              "numerator": 4,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "b",
+            "expr": "20-a",
+            "value": {
+              "numerator": 16,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "c",
+            "expr": "b*0.25",
+            "value": {
+              "numerator": 4,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "d",
+            "expr": "20-c",
+            "value": {
+              "numerator": 16,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "e",
+            "expr": "d/20*100",
+            "value": {
+              "numerator": 80,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 80,
+          "denominator": 1
+        },
+        "program_sha256": "611aec44e67172e5196e21d27c3a4f84574ae4e1707816d8fcf35b8fa0a729ea",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "20*0.20"
+            },
+            {
+              "name": "b",
+              "expr": "20-a"
+            },
+            {
+              "name": "c",
+              "expr": "b*0.25"
+            },
+            {
+              "name": "d",
+              "expr": "20-c"
+            },
+            {
+              "name": "e",
+              "expr": "d/20*100"
+            }
+          ],
+          "result": "e"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"20*0.20\"},{\"name\":\"b\",\"expr\":\"20-a\"},{\"name\":\"c\",\"expr\":\"b*0.25\"},{\"name\":\"d\",\"expr\":\"20-c\"},{\"name\":\"e\",\"expr\":\"d/20*100\"}],\"result\":\"e\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 71,
+            "prompt_tokens": 386,
+            "total_tokens": 457,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 386,
+            "prompt_ms": 6426.801,
+            "prompt_per_token_ms": 16.64974352331606,
+            "prompt_per_second": 60.06098523977947,
+            "predicted_n": 71,
+            "predicted_ms": 10468.59,
+            "predicted_per_token_ms": 149.5512857142857,
+            "predicted_per_second": 6.68666936043918
+          },
+          "seconds": 16.954537843000026,
+          "request_sha256": "c692683c0c25170be9272d3286cd27106ee1a23ca019e4cbc6c8f288db916619"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 386,
+        "completion_tokens": 71,
+        "total_tokens": 457
+      },
+      "seconds": 16.95505979699999,
+      "question_sha256": "8aba72e5533aaf2c7e62b0a22bcef10ca8b597ce2b045683dd4489528d1d0d3d",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:14",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "In a dance class of 20 students, 20% enrolled in contemporary dance, 25% of the remaining enrolled in jazz dance, and the rest enrolled in hip-hop dance. What percentage of the entire students enrolled in hip-hop dance?",
+      "reference": "60",
+      "correct": false
+    },
+    {
+      "arm": "direct",
+      "answer": "(B)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "Let $J$ be the number of books Janey has and $S$ be the number of books Sally has.\nWe are given:\n1. $J = 21$\n2. $J = 2S + 3$ (Janey has 3 more than twice the number of books Sally has)\n\nSubstitute the value of $J$ into the second equation:\n$21 = 2S + 3$\n\nSubtract 3 from both sides:\n$18 = 2S$\n\nDivide by 2:\n$S = 9$\n\nFINAL: (B)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 133,
+            "prompt_tokens": 82,
+            "total_tokens": 215,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 82,
+            "prompt_ms": 1676.643,
+            "prompt_per_token_ms": 20.446865853658537,
+            "prompt_per_second": 48.90725097710127,
+            "predicted_n": 133,
+            "predicted_ms": 19464.417,
+            "predicted_per_token_ms": 147.45770454545456,
+            "predicted_per_second": 6.781605634527867
+          },
+          "seconds": 21.197230942000033,
+          "request_sha256": "d97ae62d7d2d16f2d293a79253cb72d39e1eeb1fe96ee0ef278c0aad16535977"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 82,
+        "completion_tokens": 133,
+        "total_tokens": 215
+      },
+      "seconds": 21.197311043000013,
+      "question_sha256": "7d983dd6df21ff415a6d7008ca23b4837d0bfc0ae2461238124dc449d78ed081",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:673",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Janey has 3 more than twice the number of books that Sally has. If Janey has 21 books, how many does Sally have?",
+      "reference": "9",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "(B)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "Let $J$ be the number of books Janey has and $S$ be the number of books Sally has.\n\nFrom the problem, we know:\n1. $J = 21$\n2. Janey has 3 more than twice the number of books Sally has. This translates to the equation: $J = 2S + 3$.\n\nSubstitute the value of $J$ into the equation:\n$$21 = 2S + 3$$\n\nSubtract 3 from both sides:\n$$18 = 2S$$\n\nDivide by 2:\n$$S = 9$$\n\nSally has 9 books.\n\nFINAL: (B)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 148,
+            "prompt_tokens": 92,
+            "total_tokens": 240,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 92,
+            "prompt_ms": 1675.252,
+            "prompt_per_token_ms": 18.209260869565217,
+            "prompt_per_second": 54.917110977930484,
+            "predicted_n": 148,
+            "predicted_ms": 21431.928,
+            "predicted_per_token_ms": 145.79542857142857,
+            "predicted_per_second": 6.858925617891213
+          },
+          "seconds": 23.15318796500003,
+          "request_sha256": "9c33c02a10195ad66b5b3d1662ad41a981d6bc5f4cd1cde7dbb2ea634861d863"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 92,
+        "completion_tokens": 148,
+        "total_tokens": 240
+      },
+      "seconds": 23.15326904699998,
+      "question_sha256": "7d983dd6df21ff415a6d7008ca23b4837d0bfc0ae2461238124dc449d78ed081",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:673",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Janey has 3 more than twice the number of books that Sally has. If Janey has 21 books, how many does Sally have?",
+      "reference": "9",
+      "correct": false
+    },
+    {
+      "arm": "program",
+      "answer": "9",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "9",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "21",
+            "value": {
+              "numerator": 21,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "b",
+            "expr": "(a-3)/2",
+            "value": {
+              "numerator": 9,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 9,
+          "denominator": 1
+        },
+        "program_sha256": "14efa4cbb734cc30fcdf42e87edeab26836249dc415738d342436080320ae2a1",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "21"
+            },
+            {
+              "name": "b",
+              "expr": "(a-3)/2"
+            }
+          ],
+          "result": "b"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"21\"},{\"name\":\"b\",\"expr\":\"(a-3)/2\"}],\"result\":\"b\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 31,
+            "prompt_tokens": 365,
+            "total_tokens": 396,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 365,
+            "prompt_ms": 6031.15,
+            "prompt_per_token_ms": 16.523698630136984,
+            "prompt_per_second": 60.519138141150535,
+            "predicted_n": 31,
+            "predicted_ms": 4459.126,
+            "predicted_per_token_ms": 148.63753333333335,
+            "predicted_per_second": 6.727775801805107
+          },
+          "seconds": 10.548571479999964,
+          "request_sha256": "c2d2282c93b75eda4862098ebac219e5b5a16b6df020850e65bf347460aa0947"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 365,
+        "completion_tokens": 31,
+        "total_tokens": 396
+      },
+      "seconds": 10.548901548000003,
+      "question_sha256": "7d983dd6df21ff415a6d7008ca23b4837d0bfc0ae2461238124dc449d78ed081",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:673",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Janey has 3 more than twice the number of books that Sally has. If Janey has 21 books, how many does Sally have?",
+      "reference": "9",
+      "correct": true
+    }
+  ],
+  "summary": {
+    "direct": {
+      "correct": 1,
+      "n": 7,
+      "answered": 7,
+      "seconds": 37.41889787399995,
+      "completion_tokens": 166,
+      "statuses": {
+        "model_answer_unverified": 7
+      }
+    },
+    "reasoning": {
+      "correct": 4,
+      "n": 7,
+      "answered": 7,
+      "seconds": 267.01534554600005,
+      "completion_tokens": 1737,
+      "statuses": {
+        "model_answer_unverified": 7
+      }
+    },
+    "program": {
+      "correct": 4,
+      "n": 7,
+      "answered": 7,
+      "seconds": 72.46857565400009,
+      "completion_tokens": 202,
+      "statuses": {
+        "model_answer_unverified": 4,
+        "computation_checked_semantics_unverified": 3
+      }
+    }
+  },
+  "wall_seconds": 413.462614442,
+  "protocol": {
+    "arms": {
+      "direct": 768,
+      "reasoning": 768,
+      "program": [
+        512,
+        256
+      ]
+    },
+    "temperature": 0,
+    "seed": 1707,
+    "native_thinking": false,
+    "memory": false,
+    "training": false,
+    "labels_solver_visible": false,
+    "selection_salt": "adaptive-language-v07-20260921\u0000",
+    "gpu": false,
+    "paid_inference": false,
+    "energy_measured": false,
+    "official_leaderboard": false,
+    "frontier_reference_evaluated": false
+  }
+}
