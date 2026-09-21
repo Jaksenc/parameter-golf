@@ -2,7 +2,7 @@ import unittest,copy,random,math
 from unittest.mock import patch
 import analyze_v8 as a
 import countercase_v8 as c
-import countercase_v8_decide as decide
+import decide
 from test_countercase import fixture
 
 class AnalysisTests(unittest.TestCase):
