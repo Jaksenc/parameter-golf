@@ -1,0 +1,24 @@
+name: Adaptive semantic source evidence
+on:
+  push:
+    branches: [research/adaptive-semantic-v08-20260921]
+    paths: [.github/workflows/adaptive-semantic-sources.yml]
+permissions:
+  contents: read
+jobs:
+  evidence:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - run: python3 research/adaptive_semantic/export_sources.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: adaptive-semantic-source-evidence
+          path: semantic-source-evidence.zip
+          retention-days: 1
+          if-no-files-found: error
+          compression-level: 0
