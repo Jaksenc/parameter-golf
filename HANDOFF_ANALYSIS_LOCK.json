@@ -1,0 +1,16 @@
+{
+  "experiment": "Handoff v5",
+  "primary": "handoff64",
+  "inference_run": 35640245638,
+  "inference_commit": "726aef026dd7fd30d7a472e47c69cc6156dac143",
+  "source_sha256": "2fe06521028bed0ecae5fe1584aba3eae0f6852d5c2699d51d6703c3ade8dfb4",
+  "analysis_sha256": "2e9f4f7474343aa26e2c52d14d3a4e5845dbe1783e43684b7fcc3725ceae0219",
+  "new_evaluation_outcomes_inspected": false,
+  "prelaunch_unit_tests": 27,
+  "selection": "No outcome-based method or budget selection. Every arm remains reported.",
+  "uncertainty": "Paired bootstrap over source groups or fresh policy pairs; descriptive, no multiplicity correction.",
+  "fresh_policy_case_count": 64,
+  "fresh_policy_pair_count": 32,
+  "reference_cases": "231 reused public JevBench and 64 reused English cases",
+  "probability_claim": "Only raw categorical readouts have measured distributions. Hybrid label paths have no fabricated calibrated probabilities."
+}
