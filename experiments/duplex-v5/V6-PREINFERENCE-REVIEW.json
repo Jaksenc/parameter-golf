@@ -1,0 +1,21 @@
+{
+  "scope": "Assistant review before target model outputs. Not independent human adjudication. No records are removed or relabelled in primary scoring.",
+  "reviewed": "All 32 questions, reference programs and tables; additional prose inspection for 11 questionable or prose-grounded cases",
+  "data_hash": "485956e198fcaf2a01c021c00ccde5f629ac53316323797b9504420e2441bbd8",
+  "primary": "All original 32 references unchanged: development 8, evaluation 24.",
+  "sensitivity": "After primary scoring, describe results excluding these preflagged evaluation records. This is not an official benchmark or fully human-adjudicated clean subset.",
+  "flags": [
+    {"id":"finqa:FIS/2012/page_48.pdf-4","split":"development","type":"wording_direction","reason":"Revenue and operating income both have unfavorable currency impacts; the expense reduction implied by their difference is favorable, so the requested unfavorable expense impact is ambiguous."},
+    {"id":"finqa:HII/2017/page_124.pdf-4","split":"evaluation","type":"requested_quantity","reason":"Question asks number of plans, while reference sums securities under the plans. Text mentions two plans."},
+    {"id":"finqa:BLL/2010/page_28.pdf-3","split":"evaluation","type":"wrong_period","reason":"Five-year period ends 2010 with 178.93, but reference uses 2009 value 134.96."},
+    {"id":"finqa:GS/2013/page_220.pdf-1","split":"evaluation","type":"return_units","reason":"Bare total return could mean dollar gain per initial 100 or fractional ROI; reference chooses dollar gain 148.36."},
+    {"id":"finqa:JKHY/2019/page_18.pdf-2","split":"evaluation","type":"return_units","reason":"Bare five-year return is expressed as reference dollar/index gain 140.29, not fractional ROI 1.4029."},
+    {"id":"finqa:ETFC/2012/page_43.pdf-1","split":"evaluation","type":"sign_convention","reason":"Accounting loss is negative in table; reference computes positive increase in loss magnitude, not change in signed value."},
+    {"id":"finqa:UNP/2014/page_35.pdf-1","split":"evaluation","type":"counterfactual_direction","reason":"Removing a 261 buyout from a 4249 cash-use magnitude suggests subtraction, but reference adds. Total investing cash use is also not explicitly identical to capital expenditure."},
+    {"id":"finqa:AON/2011/page_134.pdf-4","split":"evaluation","type":"absolute_or_relative","reason":"Question says increase in total revenue; reference returns relative growth, not absolute 2775."}
+  ],
+  "metadata_limit": "Column is a copied first-row column anchor, not a guaranteed semantic header; some FinQA tables have no header. Binding checks establish source copying, not source interpretation.",
+  "grammar_limit": "Derived counts and powers of 10 must use allowed constants 0, 1, 100 and permitted arithmetic; format failures retained.",
+  "source_group_audit": "Reconstructed all 32 prior v5 IDs exactly; all 32 selected company/year filings are distinct and excluded from the prior v5 filing set.",
+  "no_new_model_output_used": true
+}
