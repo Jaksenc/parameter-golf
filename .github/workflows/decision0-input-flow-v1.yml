@@ -1,0 +1,144 @@
+name: Decision-0 input-flow v1
+on:
+  push:
+    branches: ['decision0/verified-cpu4b-20260921']
+    paths: ['.github/workflows/decision0-input-flow-v1.yml']
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: decision0-input-flow-v1
+  cancel-in-progress: false
+defaults:
+  run:
+    shell: bash
+    working-directory: decision0/input_flow_v1
+env:
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  TOKENIZERS_PARALLELISM: 'false'
+  OMP_NUM_THREADS: '4'
+  MKL_NUM_THREADS: '4'
+jobs:
+  development:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        shard: [0,1,2,3,4,5,6,7]
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Check exact tested source and run unit tests
+        run: |
+          test "$(git hash-object flow_data.py)" = b5f3f204676de10e027cafb07512a2cdd9a65927
+          test "$(git hash-object flow_study.py)" = 35d9e8a127b86f43040d11b6d5bd14c679ebe143
+          test "$(git hash-object prompt_variants.py)" = a954591520b15569c28f4d5d48f1ed0c3c9bf7c7
+          test "$(git hash-object test_flow.py)" = 4c3ce95e0bb8c14aaee9641641477edd45133ada
+          python -m unittest -v test_flow
+      - name: Install pinned model runtime
+        run: |
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6' 'numpy==2.4.6' 'safetensors==0.8.0'
+      - name: Four real-model arrangements on development cases
+        run: python -u flow_study.py run --phase dev --shard '${{ matrix.shard }}' --nshards 8 --out dev-result
+      - name: Preserve source and runtime
+        if: always()
+        run: |
+          mkdir -p dev-result/source
+          cp *.py THIRD_PARTY_NOTICES.md dev-result/source/
+          python -m pip freeze > dev-result/dependencies.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: flow-dev-${{ matrix.shard }}
+          path: decision0/input_flow_v1/dev-result/
+          retention-days: 1
+          if-no-files-found: error
+  select:
+    needs: development
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Lock selection using development only
+        run: |
+          gh run download "$GITHUB_RUN_ID" -p 'flow-dev-*' -D dev-artifacts
+          python3 flow_study.py aggregate --phase dev --root dev-artifacts --out selection
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: flow-selection
+          path: decision0/input_flow_v1/selection/
+          retention-days: 1
+          if-no-files-found: error
+  benchmark:
+    needs: select
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      max-parallel: 16
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Install identical pinned model runtime
+        run: |
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6' 'numpy==2.4.6' 'safetensors==0.8.0'
+      - name: Read frozen selection
+        run: gh run download "$GITHUB_RUN_ID" -n flow-selection -D selection
+      - name: All four predeclared variants on public regression cases
+        run: python -u flow_study.py run --phase bench --shard '${{ matrix.shard }}' --nshards 16 --selection selection/selection.json --out bench-result
+      - name: Preserve source and runtime
+        if: always()
+        run: |
+          mkdir -p bench-result/source
+          cp *.py THIRD_PARTY_NOTICES.md bench-result/source/
+          python -m pip freeze > bench-result/dependencies.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: flow-bench-${{ matrix.shard }}
+          path: decision0/input_flow_v1/bench-result/
+          retention-days: 1
+          if-no-files-found: error
+  report:
+    needs: benchmark
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Audit complete coverage and compare without reselection
+        run: |
+          gh run download "$GITHUB_RUN_ID" -p 'flow-bench-*' -D bench-artifacts
+          gh run download "$GITHUB_RUN_ID" -n flow-selection -D selection
+          python3 flow_study.py aggregate --phase bench --root bench-artifacts --selection selection/selection.json --out report
+          cp *.py THIRD_PARTY_NOTICES.md report/
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: flow-final-results
+          path: decision0/input_flow_v1/report/
+          retention-days: 3
+          if-no-files-found: error
