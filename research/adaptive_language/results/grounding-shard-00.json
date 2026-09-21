@@ -1,0 +1,1379 @@
+{
+  "status": "completed",
+  "shard": 0,
+  "run_id": "35654549907",
+  "source_commit": "6be5913ffa87f8a4ff0cfd302c9f19cae6870fdd",
+  "prompt_sha256": "d70e42e1309ab259d89191004e35cf10268e95de83b49559bb287eca3664f600",
+  "core": {
+    "decoded_sha256": "6b37dcfc4a451d5dba399080ba362b5b5320b03e977bf49532aab2be3cd108ca",
+    "transport_repairs": [
+      "TK+TVJrofJK8b2RR",
+      "dXZ3vX7tDJtd",
+      "KuOR3d/cy5RJK"
+    ]
+  },
+  "excluded_primary_ids": [
+    14,
+    58,
+    81,
+    114,
+    164,
+    181,
+    216,
+    217,
+    220,
+    391,
+    393,
+    429,
+    636,
+    642,
+    673,
+    728,
+    797,
+    801,
+    869,
+    892,
+    902,
+    911,
+    947,
+    975,
+    1064,
+    1076,
+    1123,
+    1127,
+    1131,
+    1200,
+    1205,
+    1286
+  ],
+  "selected_ids": [
+    "gsm8k:424",
+    "gsm8k:936",
+    "gsm8k:354",
+    "gsm8k:634",
+    "gsm8k:770",
+    "gsm8k:1074",
+    "gsm8k:933",
+    "gsm8k:1055",
+    "gsm8k:91",
+    "gsm8k:644",
+    "gsm8k:331",
+    "gsm8k:753",
+    "gsm8k:818",
+    "gsm8k:1043",
+    "gsm8k:829",
+    "gsm8k:327"
+  ],
+  "data_sha256": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14",
+  "runtime": {
+    "model": "unsloth/Qwen3.5-4B-GGUF",
+    "model_revision": "e87f176479d0855a907a41277aca2f8ee7a09523",
+    "weights": {
+      "url": "https://huggingface.co/unsloth/Qwen3.5-4B-GGUF/resolve/e87f176479d0855a907a41277aca2f8ee7a09523/Qwen3.5-4B-Q4_K_M.gguf",
+      "sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+      "bytes": 2740937888
+    },
+    "runtime": {
+      "url": "https://github.com/ggml-org/llama.cpp/releases/download/b10964/llama-b10964-bin-ubuntu-x64.tar.gz",
+      "sha256": "9abf88aea48a55d0f80edb1ee20220b186848cca0b4e919d71518cfd7ca67443",
+      "bytes": 16825086
+    },
+    "tag": "b10964",
+    "command": [
+      "/tmp/adaptive-language-runtime/binary/llama-b10964/llama-server",
+      "-m",
+      "/tmp/adaptive-language-runtime/model.gguf",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "8787",
+      "-c",
+      "8192",
+      "-np",
+      "1",
+      "-t",
+      "4",
+      "-tb",
+      "4",
+      "-ngl",
+      "0",
+      "--jinja",
+      "--chat-template-kwargs",
+      "{\"enable_thinking\":false}",
+      "--no-webui"
+    ],
+    "server_version": "",
+    "machine": "x86_64",
+    "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "setup_seconds": 30.969415630999997,
+    "private_inputs": false,
+    "paid_inference": false,
+    "training": false
+  },
+  "worker_exit": 0,
+  "rows": [
+    {
+      "arm": "reasoning",
+      "answer": "570",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To find the total number of employees that can join the day trip, we need to calculate the capacity of each type of vehicle and sum them up.\n\n1.  **Buses**:\n    *   Quantity: 4\n    *   Capacity per bus: 60\n    *   Total for buses: $4 \\times 60 = 240$\n\n2.  **Minibusses**:\n    *   Quantity: 6\n    *   Capacity per minibus: 30\n    *   Total for minibusses: $6 \\times 30 = 180$\n\n3.  **Minivans**:\n    *   Quantity: 10\n    *   Capacity per minivan: 15\n    *   Total for minivans: $10 \\times 15 = 150$\n\n**Total Capacity**:\n$$240 + 180 + 150 = 570$$\n\nThere are no exceptions or constraints mentioned (e.g., driver space, partial loads) that would reduce this number.\n\nFINAL: 570",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 241,
+            "prompt_tokens": 123,
+            "total_tokens": 364,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 123,
+            "prompt_ms": 6846.703,
+            "prompt_per_token_ms": 55.66425203252033,
+            "prompt_per_second": 17.964851111549603,
+            "predicted_n": 241,
+            "predicted_ms": 22232.225,
+            "predicted_per_token_ms": 92.63427083333333,
+            "predicted_per_second": 10.795140837230642
+          },
+          "seconds": 29.086345875999996,
+          "request_sha256": "05fd03f0c4a93f9b51639d80d0ad15b0e1643f170452f9ff5f802b35f89d1f7e"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 123,
+        "completion_tokens": 241,
+        "total_tokens": 364
+      },
+      "seconds": 29.086698412000004,
+      "question_sha256": "1b2d26d37a4a1baeb271d75dc0cecc200a827d66a437ad02dff20ab9a47acfbc",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:424",
+      "question": "The employees of Google went on a day trip. 4 buses were rented that have the capacity of holding 60 employees. 6 minibusses that can hold 30 employees, and 10 minivans that can hold 15 employees. How many employees can join the day trip?",
+      "reference": "570",
+      "suite": "GSM8K follow-up",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "570",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "570",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "4*60",
+            "value": {
+              "numerator": 240,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "b",
+            "expr": "6*30",
+            "value": {
+              "numerator": 180,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "c",
+            "expr": "10*15",
+            "value": {
+              "numerator": 150,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "d",
+            "expr": "a+b+c",
+            "value": {
+              "numerator": 570,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 570,
+          "denominator": 1
+        },
+        "program_sha256": "58ca51820a470e5446ba8ee8f84fe0d0e73986ae1fe9d42cb6c21cc832887e1d",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "4*60"
+            },
+            {
+              "name": "b",
+              "expr": "6*30"
+            },
+            {
+              "name": "c",
+              "expr": "10*15"
+            },
+            {
+              "name": "d",
+              "expr": "a+b+c"
+            }
+          ],
+          "result": "d"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"4*60\"},{\"name\":\"b\",\"expr\":\"6*30\"},{\"name\":\"c\",\"expr\":\"10*15\"},{\"name\":\"d\",\"expr\":\"a+b+c\"}],\"result\":\"d\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 53,
+            "prompt_tokens": 396,
+            "total_tokens": 449,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 396,
+            "prompt_ms": 22339.297,
+            "prompt_per_token_ms": 56.412366161616156,
+            "prompt_per_second": 17.726609749626412,
+            "predicted_n": 53,
+            "predicted_ms": 4936.773,
+            "predicted_per_token_ms": 94.93794230769231,
+            "predicted_per_second": 10.533196482803644
+          },
+          "seconds": 27.304112825999994,
+          "request_sha256": "6c42c7f562074db64bd5373df4a78a75177b356f323939b4b50250cebda751b1"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 396,
+        "completion_tokens": 53,
+        "total_tokens": 449
+      },
+      "seconds": 27.304813179000007,
+      "question_sha256": "1b2d26d37a4a1baeb271d75dc0cecc200a827d66a437ad02dff20ab9a47acfbc",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:424",
+      "question": "The employees of Google went on a day trip. 4 buses were rented that have the capacity of holding 60 employees. 6 minibusses that can hold 30 employees, and 10 minivans that can hold 15 employees. How many employees can join the day trip?",
+      "reference": "570",
+      "suite": "GSM8K follow-up",
+      "correct": true
+    },
+    {
+      "arm": "grounded_program",
+      "answer": "570",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "570",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "bus_capacity",
+            "expr": "60",
+            "value": {
+              "numerator": 60,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "bus_count",
+            "expr": "4",
+            "value": {
+              "numerator": 4,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "minibus_capacity",
+            "expr": "30",
+            "value": {
+              "numerator": 30,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "minibus_count",
+            "expr": "6",
+            "value": {
+              "numerator": 6,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "minivan_capacity",
+            "expr": "15",
+            "value": {
+              "numerator": 15,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "minivan_count",
+            "expr": "10",
+            "value": {
+              "numerator": 10,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "total_bus_capacity",
+            "expr": "bus_capacity*bus_count",
+            "value": {
+              "numerator": 240,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "total_minibus_capacity",
+            "expr": "minibus_capacity*minibus_count",
+            "value": {
+              "numerator": 180,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "total_minivan_capacity",
+            "expr": "minivan_capacity*minivan_count",
+            "value": {
+              "numerator": 150,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "total_employees",
+            "expr": "total_bus_capacity+total_minibus_capacity+total_minivan_capacity",
+            "value": {
+              "numerator": 570,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 570,
+          "denominator": 1
+        },
+        "program_sha256": "88c279e06f545a135e74d1e84de8f5fe1eed2dfa84395a32cb2d71815c0fcd15",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "bus_capacity",
+              "expr": "60"
+            },
+            {
+              "name": "bus_count",
+              "expr": "4"
+            },
+            {
+              "name": "minibus_capacity",
+              "expr": "30"
+            },
+            {
+              "name": "minibus_count",
+              "expr": "6"
+            },
+            {
+              "name": "minivan_capacity",
+              "expr": "15"
+            },
+            {
+              "name": "minivan_count",
+              "expr": "10"
+            },
+            {
+              "name": "total_bus_capacity",
+              "expr": "bus_capacity*bus_count"
+            },
+            {
+              "name": "total_minibus_capacity",
+              "expr": "minibus_capacity*minibus_count"
+            },
+            {
+              "name": "total_minivan_capacity",
+              "expr": "minivan_capacity*minivan_count"
+            },
+            {
+              "name": "total_employees",
+              "expr": "total_bus_capacity+total_minibus_capacity+total_minivan_capacity"
+            }
+          ],
+          "result": "total_employees"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"bus_capacity\",\"expr\":\"60\"},{\"name\":\"bus_count\",\"expr\":\"4\"},{\"name\":\"minibus_capacity\",\"expr\":\"30\"},{\"name\":\"minibus_count\",\"expr\":\"6\"},{\"name\":\"minivan_capacity\",\"expr\":\"15\"},{\"name\":\"minivan_count\",\"expr\":\"10\"},{\"name\":\"total_bus_capacity\",\"expr\":\"bus_capacity*bus_count\"},{\"name\":\"total_minibus_capacity\",\"expr\":\"minibus_capacity*minibus_count\"},{\"name\":\"total_minivan_capacity\",\"expr\":\"minivan_capacity*minivan_count\"},{\"name\":\"total_employees\",\"expr\":\"total_bus_capacity+total_minibus_capacity+total_minivan_capacity\"}],\"result\":\"total_employees\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 143,
+            "prompt_tokens": 502,
+            "total_tokens": 645,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 502,
+            "prompt_ms": 28337.21,
+            "prompt_per_token_ms": 56.448625498007964,
+            "prompt_per_second": 17.71522319946106,
+            "predicted_n": 143,
+            "predicted_ms": 13828.989,
+            "predicted_per_token_ms": 97.38724647887324,
+            "predicted_per_second": 10.268284977303836
+          },
+          "seconds": 42.197715481,
+          "request_sha256": "99bc5aa9c9092d04708198f40ef16527bfc6aaf0aa89f9d7856022dde0f74ff5"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 502,
+        "completion_tokens": 143,
+        "total_tokens": 645
+      },
+      "seconds": 42.19833769900001,
+      "question_sha256": "1b2d26d37a4a1baeb271d75dc0cecc200a827d66a437ad02dff20ab9a47acfbc",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:424",
+      "question": "The employees of Google went on a day trip. 4 buses were rented that have the capacity of holding 60 employees. 6 minibusses that can hold 30 employees, and 10 minivans that can hold 15 employees. How many employees can join the day trip?",
+      "reference": "570",
+      "suite": "GSM8K follow-up",
+      "correct": true
+    },
+    {
+      "arm": "reasoning",
+      "answer": "4",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To find the difference in sales between vanilla and fruity scents, we calculate the total number of each type sold based on the quantity available and the sales rate per unit.\n\n1.  **Calculate total Vanilla sales:**\n    *   Number of vanilla scents available: 4\n    *   Sales per vanilla scent: 5\n    *   Total Vanilla sold = $4 \\times 5 = 20$\n\n2.  **Calculate total Fruity sales:**\n    *   Number of fruity scents available: 8\n    *   Sales per fruity scent: 2\n    *   Total Fruity sold = $8 \\times 2 = 16$\n\n3.  **Calculate the difference:**\n    *   Difference = Total Vanilla sold - Total Fruity sold\n    *   Difference = $20 - 16 = 4$\n\nThe company sold 4 more vanilla scents than fruity scents.\n\nFINAL: 4",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 203,
+            "prompt_tokens": 166,
+            "total_tokens": 369,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 166,
+            "prompt_ms": 9182.039,
+            "prompt_per_token_ms": 55.31348795180723,
+            "prompt_per_second": 18.078773135248063,
+            "predicted_n": 203,
+            "predicted_ms": 18641.683,
+            "predicted_per_token_ms": 92.2855594059406,
+            "predicted_per_second": 10.835931498245088
+          },
+          "seconds": 27.855295229999996,
+          "request_sha256": "4a967144154e48f65a32b96f3253454038e9b28240617ff5d4f6ccc88c055f34"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 166,
+        "completion_tokens": 203,
+        "total_tokens": 369
+      },
+      "seconds": 27.855413851999998,
+      "question_sha256": "6b14d2eb20ae834c16bb2f9121a37bea3888e3694704164071952487b8ef9eba",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:770",
+      "question": "A perfume company is trying to create new scents. They already have 4 vanilla scents and 8 fruity scents available and they need to decide which kind of scent to focus on. They decide to focus on whichever scent sells the most and monitor their number of sales as part of their research. By the end of the day, they sell 5 of each of the vanilla scents and 2 of each of the fruity scents available. How many more vanilla scents sold compared with the fruity scents?",
+      "reference": "4",
+      "suite": "GSM8K follow-up",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "4",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "4",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "5*4",
+            "value": {
+              "numerator": 20,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "b",
+            "expr": "2*8",
+            "value": {
+              "numerator": 16,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "c",
+            "expr": "a-b",
+            "value": {
+              "numerator": 4,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 4,
+          "denominator": 1
+        },
+        "program_sha256": "824e70a5d416f9e8fe6797425b104c6383a374b054f251c15704dcc6759e31d4",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "5*4"
+            },
+            {
+              "name": "b",
+              "expr": "2*8"
+            },
+            {
+              "name": "c",
+              "expr": "a-b"
+            }
+          ],
+          "result": "c"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"5*4\"},{\"name\":\"b\",\"expr\":\"2*8\"},{\"name\":\"c\",\"expr\":\"a-b\"}],\"result\":\"c\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 38,
+            "prompt_tokens": 439,
+            "total_tokens": 477,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 439,
+            "prompt_ms": 24634.479,
+            "prompt_per_token_ms": 56.11498633257403,
+            "prompt_per_second": 17.82055143118716,
+            "predicted_n": 38,
+            "predicted_ms": 3437.299,
+            "predicted_per_token_ms": 92.89997297297298,
+            "predicted_per_second": 10.764265779613586
+          },
+          "seconds": 28.105726535000002,
+          "request_sha256": "63d08c8c39d9cbb8d9121f3511b18d81bed24a7a3c3b1af087191fc8b0f0f1a9"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 439,
+        "completion_tokens": 38,
+        "total_tokens": 477
+      },
+      "seconds": 28.10609495,
+      "question_sha256": "6b14d2eb20ae834c16bb2f9121a37bea3888e3694704164071952487b8ef9eba",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:770",
+      "question": "A perfume company is trying to create new scents. They already have 4 vanilla scents and 8 fruity scents available and they need to decide which kind of scent to focus on. They decide to focus on whichever scent sells the most and monitor their number of sales as part of their research. By the end of the day, they sell 5 of each of the vanilla scents and 2 of each of the fruity scents available. How many more vanilla scents sold compared with the fruity scents?",
+      "reference": "4",
+      "suite": "GSM8K follow-up",
+      "correct": true
+    },
+    {
+      "arm": "grounded_program",
+      "answer": "4",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "4",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "vanilla_available",
+            "expr": "4",
+            "value": {
+              "numerator": 4,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "fruity_available",
+            "expr": "8",
+            "value": {
+              "numerator": 8,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "vanilla_sold_per_unit",
+            "expr": "5",
+            "value": {
+              "numerator": 5,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "fruity_sold_per_unit",
+            "expr": "2",
+            "value": {
+              "numerator": 2,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "total_vanilla_sold",
+            "expr": "vanilla_sold_per_unit*vanilla_available",
+            "value": {
+              "numerator": 20,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "total_fruity_sold",
+            "expr": "fruity_sold_per_unit*fruity_available",
+            "value": {
+              "numerator": 16,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "difference",
+            "expr": "total_vanilla_sold-total_fruity_sold",
+            "value": {
+              "numerator": 4,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 4,
+          "denominator": 1
+        },
+        "program_sha256": "0e17c403eed32d1b462137c82d031f53d9b7c63eeee33c8287f01d48dd4a06e1",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "vanilla_available",
+              "expr": "4"
+            },
+            {
+              "name": "fruity_available",
+              "expr": "8"
+            },
+            {
+              "name": "vanilla_sold_per_unit",
+              "expr": "5"
+            },
+            {
+              "name": "fruity_sold_per_unit",
+              "expr": "2"
+            },
+            {
+              "name": "total_vanilla_sold",
+              "expr": "vanilla_sold_per_unit*vanilla_available"
+            },
+            {
+              "name": "total_fruity_sold",
+              "expr": "fruity_sold_per_unit*fruity_available"
+            },
+            {
+              "name": "difference",
+              "expr": "total_vanilla_sold-total_fruity_sold"
+            }
+          ],
+          "result": "difference"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"vanilla_available\",\"expr\":\"4\"},{\"name\":\"fruity_available\",\"expr\":\"8\"},{\"name\":\"vanilla_sold_per_unit\",\"expr\":\"5\"},{\"name\":\"fruity_sold_per_unit\",\"expr\":\"2\"},{\"name\":\"total_vanilla_sold\",\"expr\":\"vanilla_sold_per_unit*vanilla_available\"},{\"name\":\"total_fruity_sold\",\"expr\":\"fruity_sold_per_unit*fruity_available\"},{\"name\":\"difference\",\"expr\":\"total_vanilla_sold-total_fruity_sold\"}],\"result\":\"difference\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 110,
+            "prompt_tokens": 545,
+            "total_tokens": 655,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 545,
+            "prompt_ms": 30810.882,
+            "prompt_per_token_ms": 56.53372844036698,
+            "prompt_per_second": 17.68855562135482,
+            "predicted_n": 110,
+            "predicted_ms": 10365.048,
+            "predicted_per_token_ms": 95.09218348623854,
+            "predicted_per_second": 10.5161114545731
+          },
+          "seconds": 41.21099615,
+          "request_sha256": "d3238c0a2d90bb8792eca90915a19b95263d7bafc29c8dfea33e264834eeace0"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 545,
+        "completion_tokens": 110,
+        "total_tokens": 655
+      },
+      "seconds": 41.211449063,
+      "question_sha256": "6b14d2eb20ae834c16bb2f9121a37bea3888e3694704164071952487b8ef9eba",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:770",
+      "question": "A perfume company is trying to create new scents. They already have 4 vanilla scents and 8 fruity scents available and they need to decide which kind of scent to focus on. They decide to focus on whichever scent sells the most and monitor their number of sales as part of their research. By the end of the day, they sell 5 of each of the vanilla scents and 2 of each of the fruity scents available. How many more vanilla scents sold compared with the fruity scents?",
+      "reference": "4",
+      "suite": "GSM8K follow-up",
+      "correct": true
+    },
+    {
+      "arm": "reasoning",
+      "answer": "28",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "Let's break down the information given:\n\n1.  **Cindy's pets**: The problem states Cindy has 4 pets.\n2.  **Marcia's pets**: Marcia has two more pets than Cindy.\n    *   Calculation: $4 + 2 = 6$ pets.\n3.  **Jan's pets**: Jan has three times the number of pets as Marcia.\n    *   Calculation: $6 \\times 3 = 18$ pets.\n\nNow, calculate the total number of pets for all three:\n*   Total = Cindy's pets + Marcia's pets + Jan's pets\n*   Total = $4 + 6 + 18$\n*   Total = $28$\n\nFINAL: 28",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 164,
+            "prompt_tokens": 97,
+            "total_tokens": 261,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 97,
+            "prompt_ms": 5424.039,
+            "prompt_per_token_ms": 55.91792783505154,
+            "prompt_per_second": 17.883352239908305,
+            "predicted_n": 164,
+            "predicted_ms": 14874.279,
+            "predicted_per_token_ms": 91.253245398773,
+            "predicted_per_second": 10.958514358914472
+          },
+          "seconds": 20.331320446000007,
+          "request_sha256": "3e59180bd1ae49ccfebcf8eed600fd1f28e415072e04eeed82e54dd335daad5b"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 97,
+        "completion_tokens": 164,
+        "total_tokens": 261
+      },
+      "seconds": 20.331395234000013,
+      "question_sha256": "b921f344bdd631db8f5bf33080152f83e0ab50125e8a6577be1f1eba8b2292fd",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:91",
+      "question": "Jan has three times the number of pets as Marcia. Marcia has two more pets than Cindy. If Cindy has four pets, how many total pets do the three have?",
+      "reference": "28",
+      "suite": "GSM8K follow-up",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "28",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "28",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "cindy_pets",
+            "expr": "4",
+            "value": {
+              "numerator": 4,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "marcia_pets",
+            "expr": "cindy_pets+2",
+            "value": {
+              "numerator": 6,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "jan_pets",
+            "expr": "marcia_pets*3",
+            "value": {
+              "numerator": 18,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "total_pets",
+            "expr": "cindy_pets+marcia_pets+jan_pets",
+            "value": {
+              "numerator": 28,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 28,
+          "denominator": 1
+        },
+        "program_sha256": "e63401362dd73ffecd0b9b58d8033b10a7e167da0daac51de38c53e5d8bc89aa",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "cindy_pets",
+              "expr": "4"
+            },
+            {
+              "name": "marcia_pets",
+              "expr": "cindy_pets+2"
+            },
+            {
+              "name": "jan_pets",
+              "expr": "marcia_pets*3"
+            },
+            {
+              "name": "total_pets",
+              "expr": "cindy_pets+marcia_pets+jan_pets"
+            }
+          ],
+          "result": "total_pets"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"cindy_pets\",\"expr\":\"4\"},{\"name\":\"marcia_pets\",\"expr\":\"cindy_pets+2\"},{\"name\":\"jan_pets\",\"expr\":\"marcia_pets*3\"},{\"name\":\"total_pets\",\"expr\":\"cindy_pets+marcia_pets+jan_pets\"}],\"result\":\"total_pets\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 75,
+            "prompt_tokens": 370,
+            "total_tokens": 445,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 370,
+            "prompt_ms": 20803.364,
+            "prompt_per_token_ms": 56.22530810810811,
+            "prompt_per_second": 17.785585062108225,
+            "predicted_n": 75,
+            "predicted_ms": 7020.833,
+            "predicted_per_token_ms": 94.87612162162162,
+            "predicted_per_second": 10.54005984759928
+          },
+          "seconds": 27.85927760200002,
+          "request_sha256": "1dc4b794d46729ba57b785645de963b0dd7f06ea6943f3ea3f4be636314e297f"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 370,
+        "completion_tokens": 75,
+        "total_tokens": 445
+      },
+      "seconds": 27.85976378700002,
+      "question_sha256": "b921f344bdd631db8f5bf33080152f83e0ab50125e8a6577be1f1eba8b2292fd",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:91",
+      "question": "Jan has three times the number of pets as Marcia. Marcia has two more pets than Cindy. If Cindy has four pets, how many total pets do the three have?",
+      "reference": "28",
+      "suite": "GSM8K follow-up",
+      "correct": true
+    },
+    {
+      "arm": "grounded_program",
+      "answer": "28",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "28",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "cindy_pets",
+            "expr": "4",
+            "value": {
+              "numerator": 4,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "marcia_pets",
+            "expr": "cindy_pets+2",
+            "value": {
+              "numerator": 6,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "jan_pets",
+            "expr": "marcia_pets*3",
+            "value": {
+              "numerator": 18,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "total_pets",
+            "expr": "cindy_pets+marcia_pets+jan_pets",
+            "value": {
+              "numerator": 28,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 28,
+          "denominator": 1
+        },
+        "program_sha256": "e63401362dd73ffecd0b9b58d8033b10a7e167da0daac51de38c53e5d8bc89aa",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "cindy_pets",
+              "expr": "4"
+            },
+            {
+              "name": "marcia_pets",
+              "expr": "cindy_pets+2"
+            },
+            {
+              "name": "jan_pets",
+              "expr": "marcia_pets*3"
+            },
+            {
+              "name": "total_pets",
+              "expr": "cindy_pets+marcia_pets+jan_pets"
+            }
+          ],
+          "result": "total_pets"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"cindy_pets\",\"expr\":\"4\"},{\"name\":\"marcia_pets\",\"expr\":\"cindy_pets+2\"},{\"name\":\"jan_pets\",\"expr\":\"marcia_pets*3\"},{\"name\":\"total_pets\",\"expr\":\"cindy_pets+marcia_pets+jan_pets\"}],\"result\":\"total_pets\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 75,
+            "prompt_tokens": 476,
+            "total_tokens": 551,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 476,
+            "prompt_ms": 27281.836,
+            "prompt_per_token_ms": 57.31478151260504,
+            "prompt_per_second": 17.447506098929708,
+            "predicted_n": 75,
+            "predicted_ms": 6991.339,
+            "predicted_per_token_ms": 94.47755405405405,
+            "predicted_per_second": 10.584524652573705
+          },
+          "seconds": 34.309177225999974,
+          "request_sha256": "d10c1a1554065485829ccb6b19be705ff376533106a7f217d48114a552751f60"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 476,
+        "completion_tokens": 75,
+        "total_tokens": 551
+      },
+      "seconds": 34.30961359700001,
+      "question_sha256": "b921f344bdd631db8f5bf33080152f83e0ab50125e8a6577be1f1eba8b2292fd",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:91",
+      "question": "Jan has three times the number of pets as Marcia. Marcia has two more pets than Cindy. If Cindy has four pets, how many total pets do the three have?",
+      "reference": "28",
+      "suite": "GSM8K follow-up",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "16",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "16",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "20",
+            "value": {
+              "numerator": 20,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "b",
+            "expr": "a*2",
+            "value": {
+              "numerator": 40,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "c",
+            "expr": "b*0.2",
+            "value": {
+              "numerator": 8,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "d",
+            "expr": "c*2",
+            "value": {
+              "numerator": 16,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "e",
+            "expr": "b-c-d",
+            "value": {
+              "numerator": 16,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 16,
+          "denominator": 1
+        },
+        "program_sha256": "997f81f33b63e54e4349dab311e5bf6fa29e55cea2013dd921841e02654df0b9",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "20"
+            },
+            {
+              "name": "b",
+              "expr": "a*2"
+            },
+            {
+              "name": "c",
+              "expr": "b*0.2"
+            },
+            {
+              "name": "d",
+              "expr": "c*2"
+            },
+            {
+              "name": "e",
+              "expr": "b-c-d"
+            }
+          ],
+          "result": "e"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"20\"},{\"name\":\"b\",\"expr\":\"a*2\"},{\"name\":\"c\",\"expr\":\"b*0.2\"},{\"name\":\"d\",\"expr\":\"c*2\"},{\"name\":\"e\",\"expr\":\"b-c-d\"}],\"result\":\"e\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 60,
+            "prompt_tokens": 391,
+            "total_tokens": 451,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 391,
+            "prompt_ms": 21805.534,
+            "prompt_per_token_ms": 55.76862915601023,
+            "prompt_per_second": 17.931227916729764,
+            "predicted_n": 60,
+            "predicted_ms": 5499.643,
+            "predicted_per_token_ms": 93.21428813559322,
+            "predicted_per_second": 10.72796906999236
+          },
+          "seconds": 27.342819773999963,
+          "request_sha256": "24571a70613f07d4c53f33073aabbff2e5c45b950fea11c0ae5181f74d84dd73"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 391,
+        "completion_tokens": 60,
+        "total_tokens": 451
+      },
+      "seconds": 27.343319242999996,
+      "question_sha256": "d002a3129a63c8dd2c3eef113dd6af3d2a854aa227e4fdf9c9456f91a3b03fff",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:818",
+      "question": "Joe has twice as many cars as Robert. He sells 20% of them and gives away twice as many cars as the number he sold to his mother. If Robert has 20 cars, how many cars does joe remain with after selling and giving some to his mother?",
+      "reference": "16",
+      "suite": "GSM8K follow-up",
+      "correct": true
+    },
+    {
+      "arm": "grounded_program",
+      "answer": "16",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "16",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "robert_cars",
+            "expr": "20",
+            "value": {
+              "numerator": 20,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "joe_initial_cars",
+            "expr": "robert_cars*2",
+            "value": {
+              "numerator": 40,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "joe_sold_cars",
+            "expr": "joe_initial_cars*0.2",
+            "value": {
+              "numerator": 8,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "joe_given_to_mother",
+            "expr": "joe_sold_cars*2",
+            "value": {
+              "numerator": 16,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "joe_remaining_cars",
+            "expr": "joe_initial_cars-joe_sold_cars-joe_given_to_mother",
+            "value": {
+              "numerator": 16,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 16,
+          "denominator": 1
+        },
+        "program_sha256": "bd3bd2cc177eb1f657b3064cae053c9eb8a810b23517ae09f46e207ef1dd0f14",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "robert_cars",
+              "expr": "20"
+            },
+            {
+              "name": "joe_initial_cars",
+              "expr": "robert_cars*2"
+            },
+            {
+              "name": "joe_sold_cars",
+              "expr": "joe_initial_cars*0.2"
+            },
+            {
+              "name": "joe_given_to_mother",
+              "expr": "joe_sold_cars*2"
+            },
+            {
+              "name": "joe_remaining_cars",
+              "expr": "joe_initial_cars-joe_sold_cars-joe_given_to_mother"
+            }
+          ],
+          "result": "joe_remaining_cars"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"robert_cars\",\"expr\":\"20\"},{\"name\":\"joe_initial_cars\",\"expr\":\"robert_cars*2\"},{\"name\":\"joe_sold_cars\",\"expr\":\"joe_initial_cars*0.2\"},{\"name\":\"joe_given_to_mother\",\"expr\":\"joe_sold_cars*2\"},{\"name\":\"joe_remaining_cars\",\"expr\":\"joe_initial_cars-joe_sold_cars-joe_given_to_mother\"}],\"result\":\"joe_remaining_cars\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 108,
+            "prompt_tokens": 497,
+            "total_tokens": 605,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 497,
+            "prompt_ms": 27982.61,
+            "prompt_per_token_ms": 56.303038229376256,
+            "prompt_per_second": 17.761030868814597,
+            "predicted_n": 108,
+            "predicted_ms": 10191.751,
+            "predicted_per_token_ms": 95.2500093457944,
+            "predicted_per_second": 10.498686633925809
+          },
+          "seconds": 38.211507509,
+          "request_sha256": "3d501648151bfe504e1a7e76707b79007a8bddd018f172028a747d5c218f7d24"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 497,
+        "completion_tokens": 108,
+        "total_tokens": 605
+      },
+      "seconds": 38.212010083999985,
+      "question_sha256": "d002a3129a63c8dd2c3eef113dd6af3d2a854aa227e4fdf9c9456f91a3b03fff",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:818",
+      "question": "Joe has twice as many cars as Robert. He sells 20% of them and gives away twice as many cars as the number he sold to his mother. If Robert has 20 cars, how many cars does joe remain with after selling and giving some to his mother?",
+      "reference": "16",
+      "suite": "GSM8K follow-up",
+      "correct": true
+    },
+    {
+      "arm": "reasoning",
+      "answer": "16",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "Here is the step-by-step reasoning:\n\n1.  **Determine Joe's initial number of cars:**\n    The problem states Robert has 20 cars and Joe has twice as many.\n    Joe's cars = $2 \\times 20 = 40$.\n\n2.  **Calculate the number of cars Joe sold:**\n    Joe sells 20% of his cars.\n    Sold = $20\\% \\text{ of } 40 = 0.20 \\times 40 = 8$.\n\n3.  **Calculate the number of cars Joe gave away to his mother:**\n    The problem states he gave away twice as many cars as the number he sold.\n    Given to mother = $2 \\times \\text{Sold} = 2 \\times 8 = 16$.\n\n4.  **Calculate the remaining cars:**\n    Remaining = Initial - Sold - Given to mother\n    Remaining = $40 - 8 - 16 = 16$.\n\nAlternatively, the total cars removed are $8 + 16 = 24$.\n$40 - 24 = 16$.\n\nFINAL: 16",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 256,
+            "prompt_tokens": 118,
+            "total_tokens": 374,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 118,
+            "prompt_ms": 6520.132,
+            "prompt_per_token_ms": 55.255355932203386,
+            "prompt_per_second": 18.097793112163988,
+            "predicted_n": 256,
+            "predicted_ms": 23417.262,
+            "predicted_per_token_ms": 91.83239999999999,
+            "predicted_per_second": 10.889402868704291
+          },
+          "seconds": 29.965741373000014,
+          "request_sha256": "8340cbee6497ab7c12d50a39757eb49b98b0cbcee12f0d28dcea70e06dd210c6"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 118,
+        "completion_tokens": 256,
+        "total_tokens": 374
+      },
+      "seconds": 29.965845657999978,
+      "question_sha256": "d002a3129a63c8dd2c3eef113dd6af3d2a854aa227e4fdf9c9456f91a3b03fff",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:818",
+      "question": "Joe has twice as many cars as Robert. He sells 20% of them and gives away twice as many cars as the number he sold to his mother. If Robert has 20 cars, how many cars does joe remain with after selling and giving some to his mother?",
+      "reference": "16",
+      "suite": "GSM8K follow-up",
+      "correct": true
+    }
+  ],
+  "summary": {
+    "reasoning": {
+      "correct": 4,
+      "n": 4,
+      "answered": 4,
+      "seconds": 107.23935315599999
+    },
+    "program": {
+      "correct": 4,
+      "n": 4,
+      "answered": 4,
+      "seconds": 110.61399115900002
+    },
+    "grounded_program": {
+      "correct": 4,
+      "n": 4,
+      "answered": 4,
+      "seconds": 155.931410443
+    }
+  },
+  "wall_seconds": 405.051202951,
+  "protocol": {
+    "phase": "disjoint follow-up after one observed primary semantic error",
+    "primary_protocol_unchanged": true,
+    "memory": false,
+    "training": false,
+    "native_thinking": false,
+    "generation_budget": {
+      "reasoning": 768,
+      "program": [
+        512,
+        256
+      ],
+      "grounded_program": [
+        512,
+        256
+      ]
+    },
+    "feedback": "mechanical interpreter errors only",
+    "frontier_reference": false,
+    "labels_solver_visible": false
+  }
+}
