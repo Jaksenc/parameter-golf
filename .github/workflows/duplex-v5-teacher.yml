@@ -1,0 +1,152 @@
+name: Duplex v5 teacher qualification and retention
+on:
+  push:
+    branches: ['research/duplex-v5-teacher-qualification']
+    paths: ['.github/workflows/duplex-v5-teacher.yml']
+permissions:
+  contents: read
+concurrency:
+  group: duplex-v5-teacher
+  cancel-in-progress: false
+jobs:
+  prepare:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    defaults:
+      run:
+        working-directory: experiments/duplex-v5
+    env:
+      HF_HUB_DISABLE_TELEMETRY: '1'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Validate boundaries and build the fixed source population
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          python -m unittest -v test_study
+          python -m pip install --no-cache-dir datasets==4.8.5 huggingface-hub==1.32.0
+          python -c "from study import prepare; prepare('data')"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: v5-frozen-data
+          path: experiments/duplex-v5/data/
+          retention-days: 3
+          if-no-files-found: error
+  preflight:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: experiments/duplex-v5
+    env:
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      HF_HUB_DOWNLOAD_TIMEOUT: '120'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Validate actual-model generation on owned integration input only
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          grep -qw bf16 /proc/cpuinfo
+          python -m pip install --no-cache-dir torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir transformers==5.17.0 huggingface-hub==1.32.0 sentencepiece==0.2.2 protobuf==6.33.6
+          python -u run.py --preflight --shard 0
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: v5-owned-preflight
+          path: experiments/duplex-v5/out/preflight/
+          retention-days: 3
+          if-no-files-found: error
+  inference:
+    needs: [prepare, preflight]
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 22
+    strategy:
+      fail-fast: false
+      max-parallel: 16
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    defaults:
+      run:
+        working-directory: experiments/duplex-v5
+    env:
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      HF_HUB_DOWNLOAD_TIMEOUT: '120'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: v5-frozen-data
+          path: experiments/duplex-v5/data
+      - name: Run fixed whole-case partition without target-label access
+        timeout-minutes: 19
+        run: |
+          grep -qw bf16 /proc/cpuinfo
+          python -m pip install --no-cache-dir torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir transformers==5.17.0 huggingface-hub==1.32.0 sentencepiece==0.2.2 protobuf==6.33.6
+          python -u run.py --shard '${{ matrix.shard }}'
+      - name: Preserve dependencies and exact source
+        if: always()
+        run: |
+          mkdir -p 'out/shard-${{ matrix.shard }}'
+          python -m pip freeze > 'out/shard-${{ matrix.shard }}/dependencies.txt'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: v5-shard-${{ matrix.shard }}
+          path: experiments/duplex-v5/out/shard-${{ matrix.shard }}/
+          retention-days: 3
+          if-no-files-found: error
+  audit:
+    needs: inference
+    runs-on: ubuntu-24.04
+    timeout-minutes: 4
+    defaults:
+      run:
+        working-directory: experiments/duplex-v5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: v5-frozen-data
+          path: experiments/duplex-v5/data
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: v5-shard-*
+          path: experiments/duplex-v5/shards
+      - name: Reconcile every outcome, paired comparison, and retention reference
+        run: |
+          python -m unittest -v test_study
+          python audit.py
+          cp study.py run.py audit.py test_study.py results/
+          cp -r data results/data
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: v5-teacher-complete
+          path: experiments/duplex-v5/results/
+          retention-days: 3
+          if-no-files-found: error
