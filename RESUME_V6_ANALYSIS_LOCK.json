@@ -1,0 +1,14 @@
+{
+  "created_utc": "2026-09-21T19:39:02.121087+00:00",
+  "new_model_outcomes_inspected": false,
+  "test_count": 40,
+  "files": {
+    "resume_v6.py": "36704cab3cc5bce62394c60dc05e415e5113d8ff2fc63b793993e8ea9b88a812",
+    "analyze_resume.py": "90ec72605ab0f1c3d69a059f52459dfb43b5ec07c476f50c4ff20f866d86f020",
+    "decide_resume.py": "df0f4a9fc2bbd951394703ac19bcbb5a1ee0af9778152de6f4fa6d7b8d005f8f",
+    "test_resume_v6.py": "b0818d553670805ed143d071edbbf1aa3831d65547ab637ce785567b77add97d",
+    "test_runtime_controls.py": "871bd97e50f8ce27df46e621ca73f3e21de1f12555a76c3c157dd09c3ea6bd82"
+  },
+  "protocol_commit": "3c32b0d98210b2477a9b4243700357ebe741d5c4",
+  "run_id": 35645701540
+}
