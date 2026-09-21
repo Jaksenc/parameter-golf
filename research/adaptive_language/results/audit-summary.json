@@ -1,0 +1,521 @@
+{
+  "status": "audited",
+  "raw_results_commit": "ca58761d9360a4068149e18453050669af43c3ef",
+  "primary": {
+    "status": "audited",
+    "task_count": 86,
+    "attempts": 258,
+    "summary": {
+      "ALL": {
+        "direct": {
+          "correct": 24,
+          "n": 86,
+          "accuracy": 0.27906976744186046,
+          "wilson_descriptive_95": [
+            0.1952867777055854,
+            0.3817459141183472
+          ],
+          "answered": 86,
+          "statuses": {
+            "model_answer_unverified": 86
+          },
+          "seconds": 768.1172616740002,
+          "median_seconds": 5.376689992500019,
+          "prompt_tokens": 11571,
+          "completion_tokens": 2840,
+          "calls": 86,
+          "truncated_calls": 0,
+          "repaired_requests": 0
+        },
+        "reasoning": {
+          "correct": 60,
+          "n": 86,
+          "accuracy": 0.6976744186046512,
+          "wilson_descriptive_95": [
+            0.5938796504460166,
+            0.7845647831852016
+          ],
+          "answered": 81,
+          "statuses": {
+            "model_answer_unverified": 81,
+            "incomplete_or_missing_answer": 5
+          },
+          "seconds": 3489.042807979,
+          "median_seconds": 35.69422429099998,
+          "prompt_tokens": 12431,
+          "completion_tokens": 26426,
+          "calls": 86,
+          "truncated_calls": 5,
+          "repaired_requests": 0
+        },
+        "program": {
+          "correct": 51,
+          "n": 86,
+          "accuracy": 0.5930232558139535,
+          "wilson_descriptive_95": [
+            0.487382730957907,
+            0.6907087672214898
+          ],
+          "answered": 83,
+          "statuses": {
+            "computation_checked_semantics_unverified": 45,
+            "model_answer_unverified": 38,
+            "program_failed": 3
+          },
+          "seconds": 2719.394280584,
+          "median_seconds": 23.49331179649998,
+          "prompt_tokens": 46884,
+          "completion_tokens": 8258,
+          "calls": 98,
+          "truncated_calls": 7,
+          "repaired_requests": 12
+        }
+      },
+      "GSM8K": {
+        "direct": {
+          "correct": 1,
+          "n": 32,
+          "accuracy": 0.03125,
+          "wilson_descriptive_95": [
+            0.005537860164003122,
+            0.15744263820012558
+          ],
+          "answered": 32,
+          "statuses": {
+            "model_answer_unverified": 32
+          },
+          "seconds": 232.41155304900036,
+          "median_seconds": 6.106354858000003,
+          "prompt_tokens": 3417,
+          "completion_tokens": 871,
+          "calls": 32,
+          "truncated_calls": 0,
+          "repaired_requests": 0
+        },
+        "reasoning": {
+          "correct": 21,
+          "n": 32,
+          "accuracy": 0.65625,
+          "wilson_descriptive_95": [
+            0.4831108797896222,
+            0.7958956207556682
+          ],
+          "answered": 31,
+          "statuses": {
+            "model_answer_unverified": 31,
+            "incomplete_or_missing_answer": 1
+          },
+          "seconds": 1063.322243786,
+          "median_seconds": 32.04547020100006,
+          "prompt_tokens": 3737,
+          "completion_tokens": 8098,
+          "calls": 32,
+          "truncated_calls": 1,
+          "repaired_requests": 0
+        },
+        "program": {
+          "correct": 20,
+          "n": 32,
+          "accuracy": 0.625,
+          "wilson_descriptive_95": [
+            0.4525440735307745,
+            0.7706611269054578
+          ],
+          "answered": 32,
+          "statuses": {
+            "computation_checked_semantics_unverified": 32
+          },
+          "seconds": 740.7387037770002,
+          "median_seconds": 23.88588295950001,
+          "prompt_tokens": 13148,
+          "completion_tokens": 2178,
+          "calls": 33,
+          "truncated_calls": 0,
+          "repaired_requests": 1
+        }
+      },
+      "BBH": {
+        "direct": {
+          "correct": 23,
+          "n": 54,
+          "accuracy": 0.42592592592592593,
+          "wilson_descriptive_95": [
+            0.30331824019929265,
+            0.5583726617400995
+          ],
+          "answered": 54,
+          "statuses": {
+            "model_answer_unverified": 54
+          },
+          "seconds": 535.7057086249998,
+          "median_seconds": 5.210679644999999,
+          "prompt_tokens": 8154,
+          "completion_tokens": 1969,
+          "calls": 54,
+          "truncated_calls": 0,
+          "repaired_requests": 0
+        },
+        "reasoning": {
+          "correct": 39,
+          "n": 54,
+          "accuracy": 0.7222222222222222,
+          "wilson_descriptive_95": [
+            0.5910955707120475,
+            0.8238317234697763
+          ],
+          "answered": 50,
+          "statuses": {
+            "model_answer_unverified": 50,
+            "incomplete_or_missing_answer": 4
+          },
+          "seconds": 2425.720564193,
+          "median_seconds": 42.24108406249999,
+          "prompt_tokens": 8694,
+          "completion_tokens": 18328,
+          "calls": 54,
+          "truncated_calls": 4,
+          "repaired_requests": 0
+        },
+        "program": {
+          "correct": 31,
+          "n": 54,
+          "accuracy": 0.5740740740740741,
+          "wilson_descriptive_95": [
+            0.4416273382599005,
+            0.6966817598007073
+          ],
+          "answered": 51,
+          "statuses": {
+            "computation_checked_semantics_unverified": 13,
+            "model_answer_unverified": 38,
+            "program_failed": 3
+          },
+          "seconds": 1978.6555768070002,
+          "median_seconds": 23.026951706499986,
+          "prompt_tokens": 33736,
+          "completion_tokens": 6080,
+          "calls": 65,
+          "truncated_calls": 7,
+          "repaired_requests": 11
+        }
+      }
+    },
+    "paired": {
+      "ALL:direct->reasoning": {
+        "repaired": 39,
+        "both_correct": 21,
+        "both_wrong": 23,
+        "broken": 3,
+        "mcnemar_exact_descriptive": 5.631591193377972e-09
+      },
+      "ALL:direct->program": {
+        "repaired": 34,
+        "both_correct": 17,
+        "both_wrong": 28,
+        "broken": 7,
+        "mcnemar_exact_descriptive": 2.532080361561384e-05
+      },
+      "ALL:reasoning->program": {
+        "both_correct": 38,
+        "both_wrong": 13,
+        "repaired": 13,
+        "broken": 22,
+        "mcnemar_exact_descriptive": 0.17546524899080396
+      },
+      "GSM8K:direct->reasoning": {
+        "both_wrong": 11,
+        "repaired": 20,
+        "both_correct": 1,
+        "mcnemar_exact_descriptive": 1.9073486328125e-06
+      },
+      "GSM8K:direct->program": {
+        "repaired": 19,
+        "both_wrong": 12,
+        "both_correct": 1,
+        "mcnemar_exact_descriptive": 3.814697265625e-06
+      },
+      "GSM8K:reasoning->program": {
+        "repaired": 7,
+        "both_correct": 13,
+        "broken": 8,
+        "both_wrong": 4,
+        "mcnemar_exact_descriptive": 1.0
+      },
+      "BBH:direct->reasoning": {
+        "repaired": 19,
+        "both_correct": 20,
+        "both_wrong": 12,
+        "broken": 3,
+        "mcnemar_exact_descriptive": 0.0008554458618164062
+      },
+      "BBH:direct->program": {
+        "repaired": 15,
+        "both_correct": 16,
+        "both_wrong": 16,
+        "broken": 7,
+        "mcnemar_exact_descriptive": 0.13380050659179688
+      },
+      "BBH:reasoning->program": {
+        "both_correct": 25,
+        "both_wrong": 9,
+        "repaired": 6,
+        "broken": 14,
+        "mcnemar_exact_descriptive": 0.11531829833984375
+      }
+    },
+    "source_manifest": [
+      {
+        "name": "language-shard-00.json",
+        "sha256": "21728bae0df877262ac9f29f4bc826de736d80d4fb4c42b945ad9feb91f7b845",
+        "bytes": 81882,
+        "url": "https://raw.githubusercontent.com/Jaksenc/parameter-golf/ca58761d9360a4068149e18453050669af43c3ef/research/adaptive_language/results/language-shard-00.json"
+      },
+      {
+        "name": "language-shard-01.json",
+        "sha256": "dd96cbf3f14b6042eb9f897742c93989428f07f0acc20e5cece1c538cd15de70",
+        "bytes": 79191,
+        "url": "https://raw.githubusercontent.com/Jaksenc/parameter-golf/ca58761d9360a4068149e18453050669af43c3ef/research/adaptive_language/results/language-shard-01.json"
+      },
+      {
+        "name": "language-shard-02.json",
+        "sha256": "9d728d7e82625ae91a4e80f09797b7ae7dab787e6c9a5f2c4a36e0c67152265e",
+        "bytes": 64455,
+        "url": "https://raw.githubusercontent.com/Jaksenc/parameter-golf/ca58761d9360a4068149e18453050669af43c3ef/research/adaptive_language/results/language-shard-02.json"
+      },
+      {
+        "name": "language-shard-03.json",
+        "sha256": "db1ff5c337d861d4a5a36db155e96e874ba5604a9df3f365dec2598ccb0396fb",
+        "bytes": 62789,
+        "url": "https://raw.githubusercontent.com/Jaksenc/parameter-golf/ca58761d9360a4068149e18453050669af43c3ef/research/adaptive_language/results/language-shard-03.json"
+      },
+      {
+        "name": "language-shard-04.json",
+        "sha256": "7bb6e1091f5758e389135a5e91f9944989f83a4ea6e13c5a718ebda3785e67ed",
+        "bytes": 71211,
+        "url": "https://raw.githubusercontent.com/Jaksenc/parameter-golf/ca58761d9360a4068149e18453050669af43c3ef/research/adaptive_language/results/language-shard-04.json"
+      },
+      {
+        "name": "language-shard-05.json",
+        "sha256": "9c049a7c8b4ee369a3a66322e99ffd30aa1f6cba9edf7494dcf6ce3b234d0368",
+        "bytes": 67673,
+        "url": "https://raw.githubusercontent.com/Jaksenc/parameter-golf/ca58761d9360a4068149e18453050669af43c3ef/research/adaptive_language/results/language-shard-05.json"
+      },
+      {
+        "name": "language-shard-06.json",
+        "sha256": "9d413a54369b6863affa9d371b87b2a3ec39c02af48748ac28628513f5c1c3e8",
+        "bytes": 73749,
+        "url": "https://raw.githubusercontent.com/Jaksenc/parameter-golf/ca58761d9360a4068149e18453050669af43c3ef/research/adaptive_language/results/language-shard-06.json"
+      },
+      {
+        "name": "language-shard-07.json",
+        "sha256": "d6aaff84fa8caee28476504dbe5ca9d910f04597c0892752c266ed6ff3ad6889",
+        "bytes": 72140,
+        "url": "https://raw.githubusercontent.com/Jaksenc/parameter-golf/ca58761d9360a4068149e18453050669af43c3ef/research/adaptive_language/results/language-shard-07.json"
+      },
+      {
+        "name": "language-shard-08.json",
+        "sha256": "4b82c0098cd93d2cb9c3155f947d95c2b1ae2ab329fe6aad398f8079018d3c6d",
+        "bytes": 65834,
+        "url": "https://raw.githubusercontent.com/Jaksenc/parameter-golf/ca58761d9360a4068149e18453050669af43c3ef/research/adaptive_language/results/language-shard-08.json"
+      },
+      {
+        "name": "language-shard-09.json",
+        "sha256": "93b7e7e2de9bcd4a2ee72809bcdac80dfe5fae3eda02dcfa413e50c4a6b087fe",
+        "bytes": 71079,
+        "url": "https://raw.githubusercontent.com/Jaksenc/parameter-golf/ca58761d9360a4068149e18453050669af43c3ef/research/adaptive_language/results/language-shard-09.json"
+      },
+      {
+        "name": "language-shard-10.json",
+        "sha256": "d93a727c8ef6027108b454a484ce4afd353fc1e310e9bd9aa66dd3276230a433",
+        "bytes": 71099,
+        "url": "https://raw.githubusercontent.com/Jaksenc/parameter-golf/ca58761d9360a4068149e18453050669af43c3ef/research/adaptive_language/results/language-shard-10.json"
+      },
+      {
+        "name": "language-shard-11.json",
+        "sha256": "3080be8089a7e806c89b80a3bb0d78b3bdda77084a95d2171fd1bf6be60a0a2d",
+        "bytes": 78316,
+        "url": "https://raw.githubusercontent.com/Jaksenc/parameter-golf/ca58761d9360a4068149e18453050669af43c3ef/research/adaptive_language/results/language-shard-11.json"
+      }
+    ],
+    "run_ids": [
+      "35652499808"
+    ],
+    "programs_independently_replayed": 45,
+    "steps_independently_replayed": 212,
+    "setup_seconds_sum": 602.586341513,
+    "source_weight_consistency": true,
+    "no_frontier_comparison": true,
+    "scope": "Public zero-shot pilot; correlated BBH families; descriptive intervals/tests, no multiplicity or contamination correction; system rather than weight improvement.",
+    "outcome_types": {
+      "direct": {
+        "model_answer_unverified": 86
+      },
+      "program": {
+        "accepted_program_correct": 28,
+        "direct_json_correct": 23,
+        "direct_json_wrong": 15,
+        "accepted_program_wrong": 17,
+        "program_failed": 3
+      },
+      "reasoning": {
+        "model_answer_unverified": 81,
+        "incomplete_or_missing_answer": 5
+      }
+    }
+  },
+  "followup": {
+    "status": "audited",
+    "task_count": 16,
+    "attempts": 48,
+    "summary": {
+      "reasoning": {
+        "correct": 14,
+        "n": 16,
+        "accuracy": 0.875,
+        "wilson_descriptive_95": [
+          0.639771727342413,
+          0.9650225122567595
+        ],
+        "answered": 16,
+        "statuses": {
+          "model_answer_unverified": 16
+        },
+        "seconds": 435.20312576699985,
+        "median_seconds": 23.234097973500013,
+        "prompt_tokens": 2043,
+        "completion_tokens": 3976,
+        "calls": 16,
+        "truncated_calls": 0,
+        "repaired_requests": 0
+      },
+      "program": {
+        "correct": 11,
+        "n": 16,
+        "accuracy": 0.6875,
+        "wilson_descriptive_95": [
+          0.44404355834740666,
+          0.8583535614521796
+        ],
+        "answered": 16,
+        "statuses": {
+          "computation_checked_semantics_unverified": 15,
+          "model_answer_unverified": 1
+        },
+        "seconds": 373.5644800270002,
+        "median_seconds": 24.479289196500076,
+        "prompt_tokens": 6904,
+        "completion_tokens": 930,
+        "calls": 17,
+        "truncated_calls": 0,
+        "repaired_requests": 1
+      },
+      "grounded_program": {
+        "correct": 13,
+        "n": 16,
+        "accuracy": 0.8125,
+        "wilson_descriptive_95": [
+          0.5699111903802586,
+          0.9340840092857187
+        ],
+        "answered": 16,
+        "statuses": {
+          "computation_checked_semantics_unverified": 16
+        },
+        "seconds": 535.7365301190001,
+        "median_seconds": 34.344586426999996,
+        "prompt_tokens": 8722,
+        "completion_tokens": 1863,
+        "calls": 17,
+        "truncated_calls": 0,
+        "repaired_requests": 1
+      }
+    },
+    "paired": {
+      "program->grounded_program": {
+        "both_correct": 9,
+        "both_wrong": 1,
+        "broken": 2,
+        "repaired": 4,
+        "mcnemar_exact_descriptive": 0.6875
+      },
+      "reasoning->grounded_program": {
+        "both_correct": 12,
+        "both_wrong": 1,
+        "repaired": 1,
+        "broken": 2,
+        "mcnemar_exact_descriptive": 1.0
+      }
+    },
+    "primary_overlap": 0,
+    "programs_independently_replayed": 31,
+    "steps_independently_replayed": 174,
+    "prompt_sha256": "d70e42e1309ab259d89191004e35cf10268e95de83b49559bb287eca3664f600",
+    "source_manifest": [
+      {
+        "name": "grounding-shard-00.json",
+        "sha256": "ceb158fd269defcaa9cd94259d4e633dc600a6c1d8d01ca6f1d85be5253cc760",
+        "bytes": 46310,
+        "url": "https://raw.githubusercontent.com/Jaksenc/parameter-golf/ca58761d9360a4068149e18453050669af43c3ef/research/adaptive_language/results/grounding-shard-00.json"
+      },
+      {
+        "name": "grounding-shard-01.json",
+        "sha256": "a87be8663b1cde98bfb5ddc97715f35cae28148935a487096c4603bead161348",
+        "bytes": 45763,
+        "url": "https://raw.githubusercontent.com/Jaksenc/parameter-golf/ca58761d9360a4068149e18453050669af43c3ef/research/adaptive_language/results/grounding-shard-01.json"
+      },
+      {
+        "name": "grounding-shard-02.json",
+        "sha256": "66936efefded9cff6cafbc6a3d0c1af85a9893c99a6a4f51e896fc786caa5e35",
+        "bytes": 52015,
+        "url": "https://raw.githubusercontent.com/Jaksenc/parameter-golf/ca58761d9360a4068149e18453050669af43c3ef/research/adaptive_language/results/grounding-shard-02.json"
+      },
+      {
+        "name": "grounding-shard-03.json",
+        "sha256": "a856c755121334676109fd3d4fa28acd21c581cc7c901c3dabefdd6492574f05",
+        "bytes": 44881,
+        "url": "https://raw.githubusercontent.com/Jaksenc/parameter-golf/ca58761d9360a4068149e18453050669af43c3ef/research/adaptive_language/results/grounding-shard-03.json"
+      }
+    ],
+    "run_ids": [
+      "35654549907"
+    ],
+    "source_commits": [
+      "6be5913ffa87f8a4ff0cfd302c9f19cae6870fdd"
+    ],
+    "setup_seconds_sum": 179.35695366500005,
+    "outcome_types": {
+      "grounded_program": {
+        "accepted_program_correct": 13,
+        "accepted_program_wrong": 3
+      },
+      "program": {
+        "accepted_program_correct": 11,
+        "accepted_program_wrong": 4,
+        "direct_json_wrong": 1
+      },
+      "reasoning": {
+        "model_answer_unverified": 16
+      }
+    }
+  },
+  "checks": {
+    "upstream_question_reference_match": true,
+    "primary_followup_disjoint": true,
+    "model_runtime_pins_match": true,
+    "program_trace_replay": true,
+    "score_replay": true,
+    "all_planned_attempts_present": true
+  },
+  "limitations": [
+    "No comparison with a frontier model",
+    "Small public zero-shot pilots, not official leaderboard scores",
+    "No new model weights trained",
+    "No persistent memory used in scored runs",
+    "No arbitrary Python tool; bounded expression interpreter",
+    "Same upper output-token limit is not equal total FLOPs or latency",
+    "Follow-up is a prompt revision after observing one primary semantic error; cohorts remain separate",
+    "Pretraining overlap unknown; descriptive intervals/tests not contamination or multiplicity corrected"
+  ],
+  "audit_source_sha256": "61f0d35655573031c5e1ba4ea76b6dba53f6b0b8837b97854ef771bae77ebcbf",
+  "independent_evaluator_source_sha256": "4a3fc56fc56b06841dd2e04178a11494b256f9fd365f2aecc6616ad29c210b72"
+}
