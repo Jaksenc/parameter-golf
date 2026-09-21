@@ -1,0 +1,40 @@
+name: Adaptive external BBEH pilot
+on:
+  push:
+    branches: [research/adaptive-external-benchmarks-20260920]
+    paths: [.github/workflows/adaptive-external-bbeh.yml]
+permissions:
+  contents: write
+jobs:
+  bbeh:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5]
+    env:
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      MKL_NUM_THREADS: '4'
+      OPENBLAS_NUM_THREADS: '4'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned CPU-only dependencies without cache
+        run: |
+          python -m pip install --no-cache-dir torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir transformers==5.3.0 accelerate==1.12.0
+      - name: Run fixed-protocol pilot and publish only public benchmark receipts
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python -u research/adaptive_external/bbeh_run.py --shard ${{ matrix.shard }} --shards 6 --per-task 2
+      - name: Cost and scope boundary
+        if: always()
+        run: echo 'Standard public CPU runners only. No Actions artifacts or caches. No paid inference. No model training. Main and other research branches unchanged.'
