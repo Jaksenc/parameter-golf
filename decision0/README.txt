@@ -1,0 +1,1 @@
+Isolated Decision-0 compute carrier branch. No merge intended; main is untouched. The public JevBench set is evaluation only, never training.
