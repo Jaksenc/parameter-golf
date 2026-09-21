@@ -1,0 +1,1751 @@
+{
+  "status": "completed",
+  "shard": 4,
+  "shards": 12,
+  "run_id": "35652499808",
+  "source_commit": "d8212eabc5e1c5c93f8757ff8b3e81a4b960124d",
+  "core": {
+    "decoded_sha256": "6b37dcfc4a451d5dba399080ba362b5b5320b03e977bf49532aab2be3cd108ca",
+    "transport_repairs": [
+      "TK+TVJrofJK8b2RR",
+      "dXZ3vX7tDJtd",
+      "KuOR3d/cy5RJK"
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/openai/grade-school-math/3101c7d5072418e28b9008a6636bde82a006892c/grade_school_math/data/test.jsonl",
+      "sha256": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14",
+      "bytes": 749738
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/boolean_expressions.json",
+      "sha256": "ea6c754ec005e2d3f2d085d349a740f593b5764f32ea4638ffed4cfc0061b12a",
+      "bytes": 17172
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/causal_judgement.json",
+      "sha256": "6e8bca44dd402008ed41c07a3d0a1d5e7b03db7001a7e002fcdf4c60985ea081",
+      "bytes": 202943
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/date_understanding.json",
+      "sha256": "0148d4ac5fca05b2f82373e5fef7208e15363b9c6079493034d77b3dab496bf5",
+      "bytes": 61760
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/disambiguation_qa.json",
+      "sha256": "cf06df9ebf911b883671cb1b35d3fbd1a1c306b19b9e9a012407e596c85fe8c6",
+      "bytes": 85255
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/dyck_languages.json",
+      "sha256": "3f9badedf15c2be1ce53d94fdf016299bb30ba231ef087ab9f51a7ed6d0bdc25",
+      "bytes": 43814
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/formal_fallacies.json",
+      "sha256": "4c1adb664821157faade1d4153685403afcc02648f3c180a608a18f17f589629",
+      "bytes": 145562
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/geometric_shapes.json",
+      "sha256": "07be68a124420caa2ebc0b2c858ad79fc55c5c8806170e496e1e17ebfb11f31c",
+      "bytes": 77242
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/hyperbaton.json",
+      "sha256": "b6d7f55c75f5d02f2987a4f3123802dfa093872089a56a334144aae8a7264fdc",
+      "bytes": 44706
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/logical_deduction_five_objects.json",
+      "sha256": "d2df31394b903b7f0e085d42a69572a092987856eac076799017d70ef266fa8f",
+      "bytes": 155477
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/logical_deduction_seven_objects.json",
+      "sha256": "2896c7e3482eea318dd37bcc370d24ec3cc91e8374c1784287b5dbd38a529e33",
+      "bytes": 198404
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/logical_deduction_three_objects.json",
+      "sha256": "e590fae72e3a6041fbd23bd8ff6b74baf44ca563f6ba40a041c55e7b867c1681",
+      "bytes": 112213
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/movie_recommendation.json",
+      "sha256": "a8b53a87ee21a865b7248e694f388a9b8f7cf6b839b11d44796a2dd3fc088983",
+      "bytes": 57684
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/multistep_arithmetic_two.json",
+      "sha256": "c9d5a6433c9b78256422a15c78463949c8bec8d85607aa28b52d7234ad4a8595",
+      "bytes": 18325
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/navigate.json",
+      "sha256": "b7944dfd3c81da5c4815bd75b00d6fa3c64140823498e78ed496f4c3d36f7f0d",
+      "bytes": 55163
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/object_counting.json",
+      "sha256": "8acef14dbbdd40d2326ef7755750b6b5fe919fef06276af1bab3f1c297f022ff",
+      "bytes": 35890
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/penguins_in_a_table.json",
+      "sha256": "bb87ee449698eee51215e025a453b1bcb2f5e6589c2063b2c79e68b8f0655228",
+      "bytes": 74516
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/reasoning_about_colored_objects.json",
+      "sha256": "0a8850cf95166020fce7a78244026ceedd7ea839302471512b4f8744e85a6a49",
+      "bytes": 98694
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/ruin_names.json",
+      "sha256": "b6f723aef2bafdd4c7bfc3c7e0329c7e8a8279391a609969c8ed76c9319f5f7f",
+      "bytes": 53178
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/salient_translation_error_detection.json",
+      "sha256": "becf3eb8dd53c821a555ecd5c1334ecd93eb25f980e63be963c518e7138de5da",
+      "bytes": 286443
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/snarks.json",
+      "sha256": "54a0661fe2de06167645a4965e6bcf963c4ba307e76262a7c750998b0e3d0d0e",
+      "bytes": 42646
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/sports_understanding.json",
+      "sha256": "63ca262858f6176864515cd8cf53cdaa40839ebecc155b726d77930855d167bf",
+      "bytes": 28617
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/temporal_sequences.json",
+      "sha256": "92a1189faaa84aacc4c405aaa13f13f48c2992eb884772eedb622505252baef5",
+      "bytes": 148176
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/tracking_shuffled_objects_five_objects.json",
+      "sha256": "2063a46a4fb484236ed4310523606543a3e1dd4a4dc34eda65d407910ece25a5",
+      "bytes": 169722
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/tracking_shuffled_objects_seven_objects.json",
+      "sha256": "b59fd05b850c37cf57cb514ae1e6975c00b1638ade2291722056b2af3c54084d",
+      "bytes": 214906
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/tracking_shuffled_objects_three_objects.json",
+      "sha256": "546cc7bf10c6a01a6a4c17ae28a4966485f21f29fd5d111f37858ec78e354f6b",
+      "bytes": 128736
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/web_of_lies.json",
+      "sha256": "3e60323f8514a107fdb4edf35f8832a9171c5a09c0eaa47823559de905e8ab8b",
+      "bytes": 52964
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/word_sorting.json",
+      "sha256": "2a6132d2c99f00d0d2eb1113ac6b4a918bd969d863c48749210d969713db8d43",
+      "bytes": 66300
+    }
+  ],
+  "selected_ids": [
+    "bbh:boolean_expressions:140",
+    "bbh:boolean_expressions:236",
+    "bbh:causal_judgement:10",
+    "bbh:causal_judgement:168",
+    "bbh:date_understanding:180",
+    "bbh:date_understanding:69",
+    "bbh:disambiguation_qa:172",
+    "bbh:disambiguation_qa:51",
+    "bbh:dyck_languages:49",
+    "bbh:dyck_languages:82",
+    "bbh:formal_fallacies:213",
+    "bbh:formal_fallacies:84",
+    "bbh:geometric_shapes:102",
+    "bbh:geometric_shapes:184",
+    "bbh:hyperbaton:15",
+    "bbh:hyperbaton:219",
+    "bbh:logical_deduction_five_objects:115",
+    "bbh:logical_deduction_five_objects:228",
+    "bbh:logical_deduction_seven_objects:231",
+    "bbh:logical_deduction_seven_objects:67",
+    "bbh:logical_deduction_three_objects:111",
+    "bbh:logical_deduction_three_objects:165",
+    "bbh:movie_recommendation:195",
+    "bbh:movie_recommendation:197",
+    "bbh:multistep_arithmetic_two:125",
+    "bbh:multistep_arithmetic_two:151",
+    "bbh:navigate:112",
+    "bbh:navigate:41",
+    "bbh:object_counting:135",
+    "bbh:object_counting:61",
+    "bbh:penguins_in_a_table:141",
+    "bbh:penguins_in_a_table:89",
+    "bbh:reasoning_about_colored_objects:120",
+    "bbh:reasoning_about_colored_objects:42",
+    "bbh:ruin_names:11",
+    "bbh:ruin_names:144",
+    "bbh:salient_translation_error_detection:5",
+    "bbh:salient_translation_error_detection:93",
+    "bbh:snarks:167",
+    "bbh:snarks:93",
+    "bbh:sports_understanding:179",
+    "bbh:sports_understanding:49",
+    "bbh:temporal_sequences:158",
+    "bbh:temporal_sequences:214",
+    "bbh:tracking_shuffled_objects_five_objects:159",
+    "bbh:tracking_shuffled_objects_five_objects:175",
+    "bbh:tracking_shuffled_objects_seven_objects:150",
+    "bbh:tracking_shuffled_objects_seven_objects:183",
+    "bbh:tracking_shuffled_objects_three_objects:215",
+    "bbh:tracking_shuffled_objects_three_objects:233",
+    "bbh:web_of_lies:190",
+    "bbh:web_of_lies:230",
+    "bbh:word_sorting:200",
+    "bbh:word_sorting:205",
+    "gsm8k:1064",
+    "gsm8k:1076",
+    "gsm8k:1123",
+    "gsm8k:1127",
+    "gsm8k:1131",
+    "gsm8k:114",
+    "gsm8k:1200",
+    "gsm8k:1205",
+    "gsm8k:1286",
+    "gsm8k:14",
+    "gsm8k:164",
+    "gsm8k:181",
+    "gsm8k:216",
+    "gsm8k:217",
+    "gsm8k:220",
+    "gsm8k:391",
+    "gsm8k:393",
+    "gsm8k:429",
+    "gsm8k:58",
+    "gsm8k:636",
+    "gsm8k:642",
+    "gsm8k:673",
+    "gsm8k:728",
+    "gsm8k:797",
+    "gsm8k:801",
+    "gsm8k:81",
+    "gsm8k:869",
+    "gsm8k:892",
+    "gsm8k:902",
+    "gsm8k:911",
+    "gsm8k:947",
+    "gsm8k:975"
+  ],
+  "cohort_sha256": "edd6e937ab32c23ed79d52a380bec145adaa09b0a7855f14d14b77e373da48b0",
+  "runtime": {
+    "model": "unsloth/Qwen3.5-4B-GGUF",
+    "model_revision": "e87f176479d0855a907a41277aca2f8ee7a09523",
+    "weights": {
+      "url": "https://huggingface.co/unsloth/Qwen3.5-4B-GGUF/resolve/e87f176479d0855a907a41277aca2f8ee7a09523/Qwen3.5-4B-Q4_K_M.gguf",
+      "sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+      "bytes": 2740937888
+    },
+    "runtime": {
+      "url": "https://github.com/ggml-org/llama.cpp/releases/download/b10964/llama-b10964-bin-ubuntu-x64.tar.gz",
+      "sha256": "9abf88aea48a55d0f80edb1ee20220b186848cca0b4e919d71518cfd7ca67443",
+      "bytes": 16825086
+    },
+    "tag": "b10964",
+    "command": [
+      "/tmp/adaptive-language-runtime/binary/llama-b10964/llama-server",
+      "-m",
+      "/tmp/adaptive-language-runtime/model.gguf",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "8787",
+      "-c",
+      "8192",
+      "-np",
+      "1",
+      "-t",
+      "4",
+      "-tb",
+      "4",
+      "-ngl",
+      "0",
+      "--jinja",
+      "--chat-template-kwargs",
+      "{\"enable_thinking\":false}",
+      "--no-webui"
+    ],
+    "server_version": "",
+    "machine": "x86_64",
+    "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "setup_seconds": 36.731205865999996,
+    "private_inputs": false,
+    "paid_inference": false,
+    "training": false
+  },
+  "worker_exit": 0,
+  "rows": [
+    {
+      "arm": "direct",
+      "answer": "(D)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "(D)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 3,
+            "prompt_tokens": 174,
+            "total_tokens": 177,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 174,
+            "prompt_ms": 9727.638,
+            "prompt_per_token_ms": 55.905965517241384,
+            "prompt_per_second": 17.887178778651094,
+            "predicted_n": 3,
+            "predicted_ms": 188.529,
+            "predicted_per_token_ms": 94.2645,
+            "predicted_per_second": 10.608447506749625
+          },
+          "seconds": 9.922319416999997,
+          "request_sha256": "4a2d62118f8771b21eaaee4feb476f3d267aba5d4edacc61baf190003e58ef3d"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 174,
+        "completion_tokens": 3,
+        "total_tokens": 177
+      },
+      "seconds": 9.922559558000003,
+      "question_sha256": "bca22d8abc3874c14ca654185ff2ff0ba2310098f6b5820a63d5c81ddaba9d3b",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:date_understanding:180",
+      "suite": "BBH",
+      "family": "date_understanding",
+      "question": "Jane and John married on Jan 2, 1958. It is their 5-year anniversary today. What is the date a month ago in MM/DD/YYYY?\nOptions:\n(A) 12/02/2000\n(B) 12/02/2055\n(C) 12/01/1960\n(D) 12/02/1960\n(E) 05/02/1961\n(F) 11/18/1960",
+      "reference": "(D)",
+      "correct": true
+    },
+    {
+      "arm": "reasoning",
+      "answer": null,
+      "status": "incomplete_or_missing_answer",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To find the date a month ago from today, we first need to determine \"today's\" date based on the information provided.\n\n1.  **Determine Today's Date:**\n    *   Jane and John married on Jan 2, 1958.\n    *   Their 5-year anniversary is today.\n    *   Adding 5 years to Jan 2, 1958: $1958 + 5 = 1963$.\n    *   So, today is **Jan 2, 1963**.\n\n2.  **Calculate the Date a Month Ago:**\n    *   We need to go back one month from Jan 2, 1963.\n    *   One month before January is December.\n    *   The day remains the same (2nd).\n    *   The year remains the same (1960? No, 1963).\n    *   Result: **Dec 2, 1962**.\n\nWait, let me re-read the options. None of the options match Dec 2, 1962. Let me re-evaluate the problem statement. Is it possible the question implies a different year or there is a trick?\n\nLet's re-read carefully: \"Jane and John married on Jan 2, 1958. It is their 5-year anniversary today.\"\n*   Marriage: Jan 2, 1958.\n*   5th Anniversary: Jan 2, 1963.\n*   \"What is the date a month ago in MM/DD/YYYY?\"\n*   A month ago from Jan 2, 1963 is Dec 2, 1962.\n\nLet's look at the options again:\n(A) 12/02/2000\n(B) 12/02/2055\n(C) 12/01/1960\n(D) 12/02/1960\n(E) 05/02/1961\n(F) 11/18/1960\n\nThere seems to be a discrepancy between my calculation (Dec 2, 1962) and the options. Let's reconsider the \"5-year anniversary\" part. Could \"5-year anniversary\" mean something else? No, standard interpretation is 5 years later.\n\nIs it possible the marriage date was different in the user's mind? Or perhaps the \"today\" is relative to a different context?\nLet's try working backwards from the options.\nIf the answer is (D) 12/02/1960:\n*   Date a month ago = Dec 2, 1960.\n*   Today = Jan 2, 1961.\n*   If today is Jan 2, 1961, and they married Jan 2, 1958, that is a **3-year** anniversary.\n*   The prompt says \"5-year anniversary\". This contradicts.\n\nIf the answer is (C) 12/01/1960:\n*   Date a month ago = Dec 1, 1960.\n*   Today = Jan 1, 1961.\n*   Anniversary = 3 years. Contradicts.\n\nIf the answer is (A) 12/02/2000:\n*   Today = Jan 2, 200",
+          "reasoning_content": "",
+          "finish_reason": "length",
+          "usage": {
+            "completion_tokens": 768,
+            "prompt_tokens": 184,
+            "total_tokens": 952,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 184,
+            "prompt_ms": 10279.684,
+            "prompt_per_token_ms": 55.86784782608695,
+            "prompt_per_second": 17.899382899318695,
+            "predicted_n": 768,
+            "predicted_ms": 74754.188,
+            "predicted_per_token_ms": 97.46308735332464,
+            "predicted_per_second": 10.260294714190461
+          },
+          "seconds": 85.064776295,
+          "request_sha256": "02a003de8a1c195bb5865b625e3b0a23ab87ca2f6ad8ee37abcc0658b2496c86"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 184,
+        "completion_tokens": 768,
+        "total_tokens": 952
+      },
+      "seconds": 85.06483966300001,
+      "question_sha256": "bca22d8abc3874c14ca654185ff2ff0ba2310098f6b5820a63d5c81ddaba9d3b",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:date_understanding:180",
+      "suite": "BBH",
+      "family": "date_understanding",
+      "question": "Jane and John married on Jan 2, 1958. It is their 5-year anniversary today. What is the date a month ago in MM/DD/YYYY?\nOptions:\n(A) 12/02/2000\n(B) 12/02/2055\n(C) 12/01/1960\n(D) 12/02/1960\n(E) 05/02/1961\n(F) 11/18/1960",
+      "reference": "(D)",
+      "correct": false
+    },
+    {
+      "arm": "program",
+      "answer": "(D)",
+      "status": "model_answer_unverified",
+      "execution": {
+        "answer": "(D)",
+        "status": "model_answer_unverified",
+        "trace": [],
+        "program_sha256": "c15f935f103dcbc9a6375a8dd4ec1a0759c7bf37d5ef08224685d32ec6ac2d86",
+        "plan": {
+          "answer": "(D)"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"date_add(\\\"1958-01-02\\\",365*5)\"},{\"name\":\"b\",\"expr\":\"date_add(a,-30)\"},{\"name\":\"c\",\"expr\":\"date_add(a,-31)\"},{\"name\":\"d\",\"expr\":\"date_add(a,-32)\"},{\"name\":\"e\",\"expr\":\"date_add(a,-33)\"},{\"name\":\"f\",\"expr\":\"date_add(a,-34)\"},{\"name\":\"g\",\"expr\":\"date_add(a,-35)\"},{\"name\":\"h\",\"expr\":\"date_add(a,-36)\"},{\"name\":\"i\",\"expr\":\"date_add(a,-37)\"},{\"name\":\"j\",\"expr\":\"date_add(a,-38)\"},{\"name\":\"k\",\"expr\":\"date_add(a,-39)\"},{\"name\":\"l\",\"expr\":\"date_add(a,-40)\"},{\"name\":\"m\",\"expr\":\"date_add(a,-41)\"},{\"name\":\"n\",\"expr\":\"date_add(a,-42)\"},{\"name\":\"o\",\"expr\":\"date_add(a,-43)\"},{\"name\":\"p\",\"expr\":\"date_add(a,-44)\"},{\"name\":\"q\",\"expr\":\"date_add(a,-45)\"},{\"name\":\"r\",\"expr\":\"date_add(a,-46)\"},{\"name\":\"s\",\"expr\":\"date_add(a,-47)\"},{\"name\":\"t\",\"expr\":\"date_add(a,-48)\"},{\"name\":\"u\",\"expr\":\"date_add(a,-49)\"},{\"name\":\"v\",\"expr\":\"date_add(a,-50)\"},{\"name\":\"w\",\"expr\":\"date_add(a,-51)\"},{\"name\":\"x\",\"expr\":\"date_add(a,-52)\"},{\"name\":\"y\",\"expr\":\"date_add(a,-53)\"},{\"name\":\"z\",\"expr\":\"date_add(a,-54)\"},{\"name\":\"aa\",\"expr\":\"date_add(a,-55)\"},{\"name\":\"bb\",\"expr\":\"date_add(a,-56)\"},{\"name\":\"cc\",\"expr\":\"date_add(a,-57)\"},{\"name\":\"dd\",\"expr\":\"date_add(a,-58)\"},{\"name\":\"ee\",\"expr\":\"date_add(a,-59)\"},{\"name\":\"ff\",\"expr\":\"date_add(a,-60)\"},{\"name\":\"gg\",\"expr\":\"date_add(a,-61)\"},{\"name\":\"hh\",\"expr\":\"date_add(a,-62)\"},{\"name\":\"ii\",\"expr\":\"date_add(a,-63)\"},{\"name\":\"jj\",\"expr\":\"",
+          "reasoning_content": "",
+          "finish_reason": "length",
+          "usage": {
+            "completion_tokens": 512,
+            "prompt_tokens": 457,
+            "total_tokens": 969,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 457,
+            "prompt_ms": 25782.731,
+            "prompt_per_token_ms": 56.417354485776805,
+            "prompt_per_second": 17.725042393685914,
+            "predicted_n": 512,
+            "predicted_ms": 51630.551,
+            "predicted_per_token_ms": 101.0382602739726,
+            "predicted_per_second": 9.897240879726423
+          },
+          "seconds": 77.446631838,
+          "request_sha256": "62025965a48514000c54deaae79b460223178017cde306c42546b84199581724"
+        },
+        {
+          "text": "{\"answer\":\"(D)\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 8,
+            "prompt_tokens": 1019,
+            "total_tokens": 1027,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 1019,
+            "prompt_ms": 57985.226,
+            "prompt_per_token_ms": 56.904049067713444,
+            "prompt_per_second": 17.573441897079093,
+            "predicted_n": 8,
+            "predicted_ms": 712.84,
+            "predicted_per_token_ms": 101.83428571428571,
+            "predicted_per_second": 9.819875427866
+          },
+          "seconds": 58.73462854000002,
+          "request_sha256": "9c6376055cbe2bd8484efab9bbb227e531b667e3e393ec0832bb40f6b348216a"
+        }
+      ],
+      "errors": [
+        "incomplete_generation"
+      ],
+      "usage": {
+        "prompt_tokens": 1476,
+        "completion_tokens": 520,
+        "total_tokens": 1996
+      },
+      "seconds": 136.181470853,
+      "question_sha256": "bca22d8abc3874c14ca654185ff2ff0ba2310098f6b5820a63d5c81ddaba9d3b",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:date_understanding:180",
+      "suite": "BBH",
+      "family": "date_understanding",
+      "question": "Jane and John married on Jan 2, 1958. It is their 5-year anniversary today. What is the date a month ago in MM/DD/YYYY?\nOptions:\n(A) 12/02/2000\n(B) 12/02/2055\n(C) 12/01/1960\n(D) 12/02/1960\n(E) 05/02/1961\n(F) 11/18/1960",
+      "reference": "(D)",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "loquat peach pear plum watermelon",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "loquat peach pear plum watermelon",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "['watermelon','peach','pear','plum','loquat']",
+            "value": [
+              "watermelon",
+              "peach",
+              "pear",
+              "plum",
+              "loquat"
+            ]
+          },
+          {
+            "name": "b",
+            "expr": "sorted(a)",
+            "value": [
+              "loquat",
+              "peach",
+              "pear",
+              "plum",
+              "watermelon"
+            ]
+          }
+        ],
+        "value": [
+          "loquat",
+          "peach",
+          "pear",
+          "plum",
+          "watermelon"
+        ],
+        "program_sha256": "74f7693760705439ea09d73b65ab065690bdf3a91f8898836166dcef34da807d",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "['watermelon','peach','pear','plum','loquat']"
+            },
+            {
+              "name": "b",
+              "expr": "sorted(a)"
+            }
+          ],
+          "result": "b"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"['watermelon','peach','pear','plum','loquat']\"},{\"name\":\"b\",\"expr\":\"sorted(a)\"}],\"result\":\"b\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 41,
+            "prompt_tokens": 473,
+            "total_tokens": 514,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 473,
+            "prompt_ms": 26959.319,
+            "prompt_per_token_ms": 56.996446088794926,
+            "prompt_per_second": 17.544953565036266,
+            "predicted_n": 41,
+            "predicted_ms": 4047.553,
+            "predicted_per_token_ms": 101.188825,
+            "predicted_per_second": 9.88251420055525
+          },
+          "seconds": 31.056199693000053,
+          "request_sha256": "fcb33fb20c7c716ceae9dd89263d556ffe300886165f34d7ebbc4bcc7ba58a53"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 473,
+        "completion_tokens": 41,
+        "total_tokens": 514
+      },
+      "seconds": 31.056727805000037,
+      "question_sha256": "6f6547b9a7c505dc33798ea6cb107d31d4e7d5a7f21dc12eb2967b93d9252af3",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:logical_deduction_five_objects:115",
+      "suite": "BBH",
+      "family": "logical_deduction_five_objects",
+      "question": "The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells five fruits: loquats, peaches, pears, plums, and watermelons. The watermelons are the most expensive. The peaches are more expensive than the loquats. The plums are the second-cheapest. The pears are the third-most expensive.\nOptions:\n(A) The loquats are the cheapest\n(B) The peaches are the cheapest\n(C) The pears are the cheapest\n(D) The plums are the cheapest\n(E) The watermelons are the cheapest",
+      "reference": "(A)",
+      "correct": false
+    },
+    {
+      "arm": "direct",
+      "answer": "(D)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "(D)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 3,
+            "prompt_tokens": 190,
+            "total_tokens": 193,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 190,
+            "prompt_ms": 10673.334,
+            "prompt_per_token_ms": 56.17544210526316,
+            "prompt_per_second": 17.80137302927089,
+            "predicted_n": 3,
+            "predicted_ms": 193.883,
+            "predicted_per_token_ms": 96.9415,
+            "predicted_per_second": 10.315499553854643
+          },
+          "seconds": 10.898027937999984,
+          "request_sha256": "3dab843026fade9076c7f257378540e3fa67992a4366373130a6a0d9286101f1"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 190,
+        "completion_tokens": 3,
+        "total_tokens": 193
+      },
+      "seconds": 10.898101276000034,
+      "question_sha256": "6f6547b9a7c505dc33798ea6cb107d31d4e7d5a7f21dc12eb2967b93d9252af3",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:logical_deduction_five_objects:115",
+      "suite": "BBH",
+      "family": "logical_deduction_five_objects",
+      "question": "The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells five fruits: loquats, peaches, pears, plums, and watermelons. The watermelons are the most expensive. The peaches are more expensive than the loquats. The plums are the second-cheapest. The pears are the third-most expensive.\nOptions:\n(A) The loquats are the cheapest\n(B) The peaches are the cheapest\n(C) The pears are the cheapest\n(D) The plums are the cheapest\n(E) The watermelons are the cheapest",
+      "reference": "(A)",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "(A)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To determine the correct answer, let's analyze the cost ranking of the five fruits based on the provided statements:\n\n1.  **Watermelons**: Most expensive (Rank 1).\n2.  **Pears**: Third-most expensive (Rank 3).\n3.  **Plums**: Second-cheapest (Rank 4).\n4.  **Peaches**: More expensive than loquats.\n\nLet's deduce the full order from most expensive to least expensive:\n-   **Rank 1 (Most Expensive)**: Watermelons.\n-   **Rank 3**: Pears.\n-   **Rank 4 (Second-Cheapest)**: Plums.\n-   This leaves Rank 2 and Rank 5 (Cheapest).\n-   We know Pears are Rank 3 and Plums are Rank 4.\n-   The remaining fruits are Loquats and Peaches.\n-   The statement says \"Peaches are more expensive than the loquats.\"\n-   Therefore, Peaches must be Rank 2 and Loquats must be Rank 5 (Cheapest).\n\nThe final order from most to least expensive is:\n1.  Watermelons\n2.  Peaches\n3.  Pears\n4.  Plums\n5.  Loquats (Cheapest)\n\nNow evaluate the options:\n(A) The loquats are the cheapest - **True** (Rank 5).\n(B) The peaches are the cheapest - False (Rank 2).\n(C) The pears are the cheapest - False (Rank 3).\n(D) The plums are the cheapest - False (Rank 4).\n(E) The watermelons are the cheapest - False (Rank 1).\n\nThe correct option is (A).\n\nFINAL: (A)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 391,
+            "prompt_tokens": 200,
+            "total_tokens": 591,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 200,
+            "prompt_ms": 11199.925,
+            "prompt_per_token_ms": 55.999624999999995,
+            "prompt_per_second": 17.85726243702525,
+            "predicted_n": 391,
+            "predicted_ms": 41501.841,
+            "predicted_per_token_ms": 106.41497692307692,
+            "predicted_per_second": 9.397173489243526
+          },
+          "seconds": 52.728931296999974,
+          "request_sha256": "012e8f478727bc5ce70ad30b2691e99ea3c5520b634b8670cff18683423e94e2"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 200,
+        "completion_tokens": 391,
+        "total_tokens": 591
+      },
+      "seconds": 52.729078042000026,
+      "question_sha256": "6f6547b9a7c505dc33798ea6cb107d31d4e7d5a7f21dc12eb2967b93d9252af3",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:logical_deduction_five_objects:115",
+      "suite": "BBH",
+      "family": "logical_deduction_five_objects",
+      "question": "The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells five fruits: loquats, peaches, pears, plums, and watermelons. The watermelons are the most expensive. The peaches are more expensive than the loquats. The plums are the second-cheapest. The pears are the third-most expensive.\nOptions:\n(A) The loquats are the cheapest\n(B) The peaches are the cheapest\n(C) The pears are the cheapest\n(D) The plums are the cheapest\n(E) The watermelons are the cheapest",
+      "reference": "(A)",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "(A)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "FINAL: (A)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 86,
+            "total_tokens": 92,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 86,
+            "prompt_ms": 4908.791,
+            "prompt_per_token_ms": 57.07896511627907,
+            "prompt_per_second": 17.519588835621644,
+            "predicted_n": 6,
+            "predicted_ms": 471.16,
+            "predicted_per_token_ms": 94.232,
+            "predicted_per_second": 10.612106290856609
+          },
+          "seconds": 5.409531590999961,
+          "request_sha256": "3b6e07c723bbe86d93d925e066eb6f8add9fb344d7e535f83051d7f241b37c13"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 86,
+        "completion_tokens": 6,
+        "total_tokens": 92
+      },
+      "seconds": 5.409610870000051,
+      "question_sha256": "89f196cd0a59f2d0270e083a7ce120ec47cc006287415b9a0033b6afbb76c974",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:object_counting:135",
+      "suite": "BBH",
+      "family": "object_counting",
+      "question": "I have three trombones, a drum, a trumpet, a clarinet, a flute, a piano, and two violins. How many musical instruments do I have?",
+      "reference": "10",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "10",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To determine the total number of musical instruments, we simply sum the individual items listed:\n\n1.  **Trombones**: 3\n2.  **Drum**: 1\n3.  **Trumpet**: 1\n4.  **Clarinet**: 1\n5.  **Flute**: 1\n6.  **Piano**: 1\n7.  **Violins**: 2\n\nCalculation: $3 + 1 + 1 + 1 + 1 + 1 + 2 = 10$.\n\nThere are no trick items or duplicates mentioned that would alter this count.\n\nFINAL: 10",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 139,
+            "prompt_tokens": 96,
+            "total_tokens": 235,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 96,
+            "prompt_ms": 5510.757,
+            "prompt_per_token_ms": 57.403718749999996,
+            "prompt_per_second": 17.420474174419233,
+            "predicted_n": 139,
+            "predicted_ms": 13240.94,
+            "predicted_per_token_ms": 95.94884057971015,
+            "predicted_per_second": 10.422220778887299
+          },
+          "seconds": 18.778258229000016,
+          "request_sha256": "6de5d253d1aef1e8448e6bb0d9f3a36330192cdf7ce5bca501b5457d6f584209"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 96,
+        "completion_tokens": 139,
+        "total_tokens": 235
+      },
+      "seconds": 18.778386220000016,
+      "question_sha256": "89f196cd0a59f2d0270e083a7ce120ec47cc006287415b9a0033b6afbb76c974",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:object_counting:135",
+      "suite": "BBH",
+      "family": "object_counting",
+      "question": "I have three trombones, a drum, a trumpet, a clarinet, a flute, a piano, and two violins. How many musical instruments do I have?",
+      "reference": "10",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "10",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "10",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "3+1+1+1+1+1+2",
+            "value": {
+              "numerator": 10,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "b",
+            "expr": "a",
+            "value": {
+              "numerator": 10,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 10,
+          "denominator": 1
+        },
+        "program_sha256": "a5e45245bc5c074bbb8aefe607c79b8efb68886f5241b531cf9b8d4e69cf13b9",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "3+1+1+1+1+1+2"
+            },
+            {
+              "name": "b",
+              "expr": "a"
+            }
+          ],
+          "result": "b"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"3+1+1+1+1+1+2\"},{\"name\":\"b\",\"expr\":\"a\"}],\"result\":\"b\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 37,
+            "prompt_tokens": 369,
+            "total_tokens": 406,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 369,
+            "prompt_ms": 20842.639,
+            "prompt_per_token_ms": 56.48411653116531,
+            "prompt_per_second": 17.704092077783432,
+            "predicted_n": 37,
+            "predicted_ms": 3609.292,
+            "predicted_per_token_ms": 100.2581111111111,
+            "predicted_per_second": 9.97425533872017
+          },
+          "seconds": 24.488856929000008,
+          "request_sha256": "d235e7cce3873a9096247b5f4e92ecaa28bf8e798dd578b5251140daf154b57f"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 369,
+        "completion_tokens": 37,
+        "total_tokens": 406
+      },
+      "seconds": 24.489607677000038,
+      "question_sha256": "89f196cd0a59f2d0270e083a7ce120ec47cc006287415b9a0033b6afbb76c974",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:object_counting:135",
+      "suite": "BBH",
+      "family": "object_counting",
+      "question": "I have three trombones, a drum, a trumpet, a clarinet, a flute, a piano, and two violins. How many musical instruments do I have?",
+      "reference": "10",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "Yes",
+      "status": "model_answer_unverified",
+      "execution": {
+        "answer": "Yes",
+        "status": "model_answer_unverified",
+        "trace": [],
+        "program_sha256": "614041fc61ab3952e8192af7aa18a9ce55e55c3baa2ef94c32bf59a6cea66121",
+        "plan": {
+          "answer": "Yes"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"answer\":\"Yes\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 349,
+            "total_tokens": 355,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 349,
+            "prompt_ms": 19664.392,
+            "prompt_per_token_ms": 56.344962750716334,
+            "prompt_per_second": 17.747815442247084,
+            "predicted_n": 6,
+            "predicted_ms": 502.23,
+            "predicted_per_token_ms": 100.446,
+            "predicted_per_second": 9.955598032773828
+          },
+          "seconds": 20.17303199600002,
+          "request_sha256": "8e0d9c299872fffd4afedd7523cdcd99adc285d839688c25e3e8b554e44f176e"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 349,
+        "completion_tokens": 6,
+        "total_tokens": 355
+      },
+      "seconds": 20.173156169000038,
+      "question_sha256": "ced8486cb05ac1a59fb2d147b9f9a3858ccfd69cc7349b6a2870bd19a3839218",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:sports_understanding:179",
+      "suite": "BBH",
+      "family": "sports_understanding",
+      "question": "Is the following sentence plausible? \"Mike Trout hit a walkoff homer.\"",
+      "reference": "yes",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "(A)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "FINAL: (A)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 66,
+            "total_tokens": 72,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 66,
+            "prompt_ms": 3819.059,
+            "prompt_per_token_ms": 57.86453030303031,
+            "prompt_per_second": 17.28174401076286,
+            "predicted_n": 6,
+            "predicted_ms": 496.453,
+            "predicted_per_token_ms": 99.2906,
+            "predicted_per_second": 10.071446843910703
+          },
+          "seconds": 4.346991301999992,
+          "request_sha256": "a6b9c984cc11659a09bdc3e83996ef9674f7d12cde1af97cb3a0bfa76b36f717"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 66,
+        "completion_tokens": 6,
+        "total_tokens": 72
+      },
+      "seconds": 4.347065782000016,
+      "question_sha256": "ced8486cb05ac1a59fb2d147b9f9a3858ccfd69cc7349b6a2870bd19a3839218",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:sports_understanding:179",
+      "suite": "BBH",
+      "family": "sports_understanding",
+      "question": "Is the following sentence plausible? \"Mike Trout hit a walkoff homer.\"",
+      "reference": "yes",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "(Yes)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "The sentence \"Mike Trout hit a walkoff homer\" is plausible. Mike Trout is a professional baseball player for the Los Angeles Angels who has hit numerous home runs throughout his career. A \"walkoff homer\" is a specific type of home run that ends the game in a single play, often occurring in the bottom of the final inning with the tying or winning run on first, second, or third base. Given Trout's history of hitting home runs in critical moments, including several walkoff home runs (e.g., in 2014, 2016, 2018, and 2021), this event is factually possible and has occurred in reality.\n\nFINAL: (Yes)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 149,
+            "prompt_tokens": 76,
+            "total_tokens": 225,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 76,
+            "prompt_ms": 4289.23,
+            "prompt_per_token_ms": 56.43723684210526,
+            "prompt_per_second": 17.71879801269692,
+            "predicted_n": 149,
+            "predicted_ms": 14003.756,
+            "predicted_per_token_ms": 94.61997297297297,
+            "predicted_per_second": 10.568593168861268
+          },
+          "seconds": 18.325141585999972,
+          "request_sha256": "f82df87c73bc50a07ae1cf713f895cd8ccf8ad562021c37b542a56f82626aee4"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 76,
+        "completion_tokens": 149,
+        "total_tokens": 225
+      },
+      "seconds": 18.32528014600001,
+      "question_sha256": "ced8486cb05ac1a59fb2d147b9f9a3858ccfd69cc7349b6a2870bd19a3839218",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:sports_understanding:179",
+      "suite": "BBH",
+      "family": "sports_understanding",
+      "question": "Is the following sentence plausible? \"Mike Trout hit a walkoff homer.\"",
+      "reference": "yes",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "acuity, anticonvulsant, carrageen, discovery, drafty, embolden, glamour, hangout, hasty, pewee, proscenium, registrar, scrub, supposable, sushi, you'd",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To sort the list alphabetically, I will arrange the words from A to Z based on their spelling.\n\n**Original List:**\nhangout, drafty, supposable, sushi, proscenium, anticonvulsant, you'd, magnificent, scrub, embolden, hasty, pewee, carrageen, disseminate, glamour, discovery, registrar, acuity\n\n**Sorting Process:**\n\n1.  **A**:\n    *   anticonvulsant\n    *   acuity\n    *   *Correction*: 'a-c' comes before 'a-n'.\n    *   Order: **acuity**, **anticonvulsant**\n\n2.  **C**:\n    *   carrageen\n\n3.  **D**:\n    *   discovery\n    *   drafty\n    *   *Correction*: 'd-i' comes before 'd-r'.\n    *   Order: **discovery**, **drafty**\n\n4.  **E**:\n    *   embolden\n\n5.  **G**:\n    *   glamour\n    *   hangout\n\n6.  **H**:\n    *   hasty\n\n7.  **P**:\n    *   pewee\n    *   proscenium\n    *   *Correction*: 'p-e' comes before 'p-r'.\n    *   Order: **pewee**, **proscenium**\n\n8.  **R**:\n    *   registrar\n\n9.  **S**:\n    *   scrub\n    *   supposable\n    *   sushi\n    *   *Correction*: 's-c', 's-u' (supposable), 's-u' (sushi).\n    *   Compare 'supposable' vs 'sushi': 's-u-p' vs 's-u-s'. 'p' comes before 's'.\n    *   Order: **scrub**, **supposable**, **sushi**\n\n10. **Y**:\n    *   you'd\n\n**Final Sorted List:**\nacuity, anticonvulsant, carrageen, discovery, drafty, embolden, glamour, hangout, hasty, pewee, proscenium, registrar, scrub, supposable, sushi, you'd\n\nFINAL: acuity, anticonvulsant, carrageen, discovery, drafty, embolden, glamour, hangout, hasty, pewee, proscenium, registrar, scrub, supposable, sushi, you'd",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 540,
+            "prompt_tokens": 107,
+            "total_tokens": 647,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 107,
+            "prompt_ms": 5989.787,
+            "prompt_per_token_ms": 55.97931775700935,
+            "prompt_per_second": 17.863740396778717,
+            "predicted_n": 540,
+            "predicted_ms": 51817.242,
+            "predicted_per_token_ms": 96.13588497217069,
+            "predicted_per_second": 10.401943044363497
+          },
+          "seconds": 57.83338797599998,
+          "request_sha256": "d052066341c5653b6c52e0f78503bbda20f19e8326c4d82b5fd716d3f661a74a"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 107,
+        "completion_tokens": 540,
+        "total_tokens": 647
+      },
+      "seconds": 57.833528629,
+      "question_sha256": "33f69bcd14f998107f22a448f6a41bca822ada9ad29ffb58dc3f476a4a5df7fd",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:word_sorting:200",
+      "suite": "BBH",
+      "family": "word_sorting",
+      "question": "Sort the following words alphabetically: List: hangout drafty supposable sushi proscenium anticonvulsant you'd magnificent scrub embolden hasty pewee carrageen disseminate glamour discovery registrar acuity",
+      "reference": "acuity anticonvulsant carrageen discovery disseminate drafty embolden glamour hangout hasty magnificent pewee proscenium registrar scrub supposable sushi you'd",
+      "correct": false
+    },
+    {
+      "arm": "program",
+      "answer": "acuity anticonvulsant carrageen discovery disseminate drafty embolden glamour hangout hasty magnificent pewee proscenium registrar scrub supposable sushi you'd",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "acuity anticonvulsant carrageen discovery disseminate drafty embolden glamour hangout hasty magnificent pewee proscenium registrar scrub supposable sushi you'd",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "['hangout','drafty','supposable','sushi','proscenium','anticonvulsant','you\\'d','magnificent','scrub','embolden','hasty','pewee','carrageen','disseminate','glamour','discovery','registrar','acuity']",
+            "value": [
+              "hangout",
+              "drafty",
+              "supposable",
+              "sushi",
+              "proscenium",
+              "anticonvulsant",
+              "you'd",
+              "magnificent",
+              "scrub",
+              "embolden",
+              "hasty",
+              "pewee",
+              "carrageen",
+              "disseminate",
+              "glamour",
+              "discovery",
+              "registrar",
+              "acuity"
+            ]
+          },
+          {
+            "name": "b",
+            "expr": "sorted(a)",
+            "value": [
+              "acuity",
+              "anticonvulsant",
+              "carrageen",
+              "discovery",
+              "disseminate",
+              "drafty",
+              "embolden",
+              "glamour",
+              "hangout",
+              "hasty",
+              "magnificent",
+              "pewee",
+              "proscenium",
+              "registrar",
+              "scrub",
+              "supposable",
+              "sushi",
+              "you'd"
+            ]
+          }
+        ],
+        "value": [
+          "acuity",
+          "anticonvulsant",
+          "carrageen",
+          "discovery",
+          "disseminate",
+          "drafty",
+          "embolden",
+          "glamour",
+          "hangout",
+          "hasty",
+          "magnificent",
+          "pewee",
+          "proscenium",
+          "registrar",
+          "scrub",
+          "supposable",
+          "sushi",
+          "you'd"
+        ],
+        "program_sha256": "6fba112de294f7b17d0843af1c1c0f6b743b950410d2e1c3912ed8247576370c",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "['hangout','drafty','supposable','sushi','proscenium','anticonvulsant','you\\'d','magnificent','scrub','embolden','hasty','pewee','carrageen','disseminate','glamour','discovery','registrar','acuity']"
+            },
+            {
+              "name": "b",
+              "expr": "sorted(a)"
+            }
+          ],
+          "result": "b"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"['hangout','drafty','supposable','sushi','proscenium','anticonvulsant','you\\\\'d','magnificent','scrub','embolden','hasty','pewee','carrageen','disseminate','glamour','discovery','registrar','acuity']\"},{\"name\":\"b\",\"expr\":\"sorted(a)\"}],\"result\":\"b\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 94,
+            "prompt_tokens": 380,
+            "total_tokens": 474,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 380,
+            "prompt_ms": 21430.116,
+            "prompt_per_token_ms": 56.395042105263165,
+            "prompt_per_second": 17.732055206794026,
+            "predicted_n": 94,
+            "predicted_ms": 9109.595,
+            "predicted_per_token_ms": 97.95263440860214,
+            "predicted_per_second": 10.209015878312922
+          },
+          "seconds": 30.576489719999927,
+          "request_sha256": "97acec5292367224d37b3b8f1e754546b9f056259e79d811e43ee965fbfeb6b4"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 380,
+        "completion_tokens": 94,
+        "total_tokens": 474
+      },
+      "seconds": 30.576981723000017,
+      "question_sha256": "33f69bcd14f998107f22a448f6a41bca822ada9ad29ffb58dc3f476a4a5df7fd",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:word_sorting:200",
+      "suite": "BBH",
+      "family": "word_sorting",
+      "question": "Sort the following words alphabetically: List: hangout drafty supposable sushi proscenium anticonvulsant you'd magnificent scrub embolden hasty pewee carrageen disseminate glamour discovery registrar acuity",
+      "reference": "acuity anticonvulsant carrageen discovery disseminate drafty embolden glamour hangout hasty magnificent pewee proscenium registrar scrub supposable sushi you'd",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "<answer>acuity anticonvulsant carrageen discovery drafty disseminate embolden glamour hangout hasty proscenium pewee registrar scrub supposable sushi you'd magnificent</answer>",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "FINAL: <answer>acuity anticonvulsant carrageen discovery drafty disseminate embolden glamour hangout hasty proscenium pewee registrar scrub supposable sushi you'd magnificent</answer>",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 46,
+            "prompt_tokens": 97,
+            "total_tokens": 143,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 97,
+            "prompt_ms": 5486.257,
+            "prompt_per_token_ms": 56.55935051546391,
+            "prompt_per_second": 17.680542490080214,
+            "predicted_n": 46,
+            "predicted_ms": 4310.37,
+            "predicted_per_token_ms": 95.786,
+            "predicted_per_second": 10.439939030756062
+          },
+          "seconds": 9.829441077999945,
+          "request_sha256": "3ce6b4f988926ad54bea04e44410c752ea72d312bda615c0ed5d492f61c362a3"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 97,
+        "completion_tokens": 46,
+        "total_tokens": 143
+      },
+      "seconds": 9.829540583999915,
+      "question_sha256": "33f69bcd14f998107f22a448f6a41bca822ada9ad29ffb58dc3f476a4a5df7fd",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:word_sorting:200",
+      "suite": "BBH",
+      "family": "word_sorting",
+      "question": "Sort the following words alphabetically: List: hangout drafty supposable sushi proscenium anticonvulsant you'd magnificent scrub embolden hasty pewee carrageen disseminate glamour discovery registrar acuity",
+      "reference": "acuity anticonvulsant carrageen discovery disseminate drafty embolden glamour hangout hasty magnificent pewee proscenium registrar scrub supposable sushi you'd",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "(B)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To determine how much more money Jackie will have if she hires an accountant, we need to compare the net financial outcome of both scenarios.\n\n**Scenario 1: Doing taxes herself**\n*   **Cost:** She loses 3 hours of freelance work.\n*   **Lost Income:** 3 hours $\\times$ $35/hour = $105.\n*   **Net Change:** -$105 (She is $105 poorer compared to the baseline of working those hours).\n\n**Scenario 2: Hiring an accountant**\n*   **Cost:** She pays the accountant $90.\n*   **Lost Income:** 0 hours of freelance work (she can still work her full 3 hours).\n*   **Net Change:** -$90 (She is $90 poorer compared to the baseline of working her full hours).\n\n**Comparison**\n*   Cost of doing it herself: $105\n*   Cost of hiring an accountant: $90\n*   Difference: $105 - $90 = $15\n\nBy hiring the accountant, she saves $15 compared to doing the taxes herself.\n\nFINAL: (B)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 250,
+            "prompt_tokens": 129,
+            "total_tokens": 379,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 129,
+            "prompt_ms": 7227.616,
+            "prompt_per_token_ms": 56.028031007751935,
+            "prompt_per_second": 17.848208869978706,
+            "predicted_n": 250,
+            "predicted_ms": 23992.03,
+            "predicted_per_token_ms": 96.35353413654617,
+            "predicted_per_second": 10.37844650911157
+          },
+          "seconds": 31.247643734999997,
+          "request_sha256": "8f11a7e5bfd0f462377be37d853d2982843d282b38cdd4f0028f05842b4d8644"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 129,
+        "completion_tokens": 250,
+        "total_tokens": 379
+      },
+      "seconds": 31.247760524,
+      "question_sha256": "bee14fca4246442a51d1fcf03645c0a5e392f4524236c99bf18d84714a9ac320",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:164",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Jackie is trying to decide whether to do her taxes herself or hire an accountant. If she does the taxes herself, she'll be able to do 3 fewer hours of freelance work, losing $35/hour in missed income. The accountant charges $90. How much more money will she have if she hires the accountant?",
+      "reference": "15",
+      "correct": false
+    },
+    {
+      "arm": "program",
+      "answer": "-15",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "-15",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "35",
+            "value": {
+              "numerator": 35,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "b",
+            "expr": "90",
+            "value": {
+              "numerator": 90,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "c",
+            "expr": "a*3",
+            "value": {
+              "numerator": 105,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "d",
+            "expr": "b-c",
+            "value": {
+              "numerator": -15,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": -15,
+          "denominator": 1
+        },
+        "program_sha256": "059de9e76474fd83a029a135c0d0d269667de23d56dcce380a007d0715f75680",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "35"
+            },
+            {
+              "name": "b",
+              "expr": "90"
+            },
+            {
+              "name": "c",
+              "expr": "a*3"
+            },
+            {
+              "name": "d",
+              "expr": "b-c"
+            }
+          ],
+          "result": "d"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"35\"},{\"name\":\"b\",\"expr\":\"90\"},{\"name\":\"c\",\"expr\":\"a*3\"},{\"name\":\"d\",\"expr\":\"b-c\"}],\"result\":\"d\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 46,
+            "prompt_tokens": 402,
+            "total_tokens": 448,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 402,
+            "prompt_ms": 22669.979,
+            "prompt_per_token_ms": 56.39298258706467,
+            "prompt_per_second": 17.732702796063464,
+            "predicted_n": 46,
+            "predicted_ms": 4399.15,
+            "predicted_per_token_ms": 97.75888888888888,
+            "predicted_per_second": 10.22924883216076
+          },
+          "seconds": 27.104350538999938,
+          "request_sha256": "a8b64dec5643ab29149cac6d4856d2bcf99ae7357c63f27c29353df867633743"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 402,
+        "completion_tokens": 46,
+        "total_tokens": 448
+      },
+      "seconds": 27.104770377000023,
+      "question_sha256": "bee14fca4246442a51d1fcf03645c0a5e392f4524236c99bf18d84714a9ac320",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:164",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Jackie is trying to decide whether to do her taxes herself or hire an accountant. If she does the taxes herself, she'll be able to do 3 fewer hours of freelance work, losing $35/hour in missed income. The accountant charges $90. How much more money will she have if she hires the accountant?",
+      "reference": "15",
+      "correct": false
+    },
+    {
+      "arm": "direct",
+      "answer": "B",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "B",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 2,
+            "prompt_tokens": 119,
+            "total_tokens": 121,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 119,
+            "prompt_ms": 6748.507,
+            "prompt_per_token_ms": 56.710142857142856,
+            "prompt_per_second": 17.63352990520718,
+            "predicted_n": 2,
+            "predicted_ms": 92.755,
+            "predicted_per_token_ms": 92.755,
+            "predicted_per_second": 10.781089968195785
+          },
+          "seconds": 6.873719971000014,
+          "request_sha256": "962a3e1bf71c4b263dc1d3e7187f1589474477ff8446557bb66732879c38fc28"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 119,
+        "completion_tokens": 2,
+        "total_tokens": 121
+      },
+      "seconds": 6.873779803000048,
+      "question_sha256": "bee14fca4246442a51d1fcf03645c0a5e392f4524236c99bf18d84714a9ac320",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:164",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Jackie is trying to decide whether to do her taxes herself or hire an accountant. If she does the taxes herself, she'll be able to do 3 fewer hours of freelance work, losing $35/hour in missed income. The accountant charges $90. How much more money will she have if she hires the accountant?",
+      "reference": "15",
+      "correct": false
+    },
+    {
+      "arm": "program",
+      "answer": "40",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "40",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "15+45+40+50",
+            "value": {
+              "numerator": 150,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "b",
+            "expr": "15+45",
+            "value": {
+              "numerator": 60,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "c",
+            "expr": "b/a",
+            "value": {
+              "numerator": 2,
+              "denominator": 5
+            }
+          },
+          {
+            "name": "d",
+            "expr": "c*100",
+            "value": {
+              "numerator": 40,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 40,
+          "denominator": 1
+        },
+        "program_sha256": "0e807718360fb15948f134dbcebda1aee4da96759e40c2bd5eb4127ed7eb0c67",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "15+45+40+50"
+            },
+            {
+              "name": "b",
+              "expr": "15+45"
+            },
+            {
+              "name": "c",
+              "expr": "b/a"
+            },
+            {
+              "name": "d",
+              "expr": "c*100"
+            }
+          ],
+          "result": "d"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"15+45+40+50\"},{\"name\":\"b\",\"expr\":\"15+45\"},{\"name\":\"c\",\"expr\":\"b/a\"},{\"name\":\"d\",\"expr\":\"c*100\"}],\"result\":\"d\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 60,
+            "prompt_tokens": 387,
+            "total_tokens": 447,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 387,
+            "prompt_ms": 21849.888,
+            "prompt_per_token_ms": 56.45965891472868,
+            "prompt_per_second": 17.711761268524583,
+            "predicted_n": 60,
+            "predicted_ms": 5675.622,
+            "predicted_per_token_ms": 96.19698305084746,
+            "predicted_per_second": 10.39533640541953
+          },
+          "seconds": 27.558428603999914,
+          "request_sha256": "4f6901ffba0231d69574cab30f4c1914645125b817256f480556676dc08d48f9"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 387,
+        "completion_tokens": 60,
+        "total_tokens": 447
+      },
+      "seconds": 27.55892161899999,
+      "question_sha256": "532f21d9d56d9a0cc773a18c0a49a4e7aa7449fc1b06ad0b9dcb3710b23d9613",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:728",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Candy has 15 light blue spools of thread, 45 dark blue spools of thread, 40 light green spools of thread, and 50 dark green spools of thread. What percent of her spools are blue?",
+      "reference": "40",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "(A)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "FINAL: (A)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 104,
+            "total_tokens": 110,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 104,
+            "prompt_ms": 5912.216,
+            "prompt_per_token_ms": 56.848230769230774,
+            "prompt_per_second": 17.59069695694474,
+            "predicted_n": 6,
+            "predicted_ms": 472.156,
+            "predicted_per_token_ms": 94.4312,
+            "predicted_per_second": 10.589720346665086
+          },
+          "seconds": 6.4164814690000185,
+          "request_sha256": "96091e400db6d5abfc092f0a88eeba8e32c2327e813445a19ea7605449d8560f"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 104,
+        "completion_tokens": 6,
+        "total_tokens": 110
+      },
+      "seconds": 6.416551161000029,
+      "question_sha256": "532f21d9d56d9a0cc773a18c0a49a4e7aa7449fc1b06ad0b9dcb3710b23d9613",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:728",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Candy has 15 light blue spools of thread, 45 dark blue spools of thread, 40 light green spools of thread, and 50 dark green spools of thread. What percent of her spools are blue?",
+      "reference": "40",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "40%",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To find the percentage of blue spools, we first identify the total number of spools and the number of blue spools.\n\n1.  **Identify Blue Spools**:\n    *   Light blue: 15\n    *   Dark blue: 45\n    *   Total blue = $15 + 45 = 60$\n\n2.  **Calculate Total Spools**:\n    *   Light blue: 15\n    *   Dark blue: 45\n    *   Light green: 40\n    *   Dark green: 50\n    *   Total = $15 + 45 + 40 + 50 = 150$\n\n3.  **Calculate Percentage**:\n    *   $\\text{Percentage} = (\\frac{\\text{Blue Spools}}{\\text{Total Spools}}) \\times 100$\n    *   $\\text{Percentage} = (\\frac{60}{150}) \\times 100$\n    *   $\\frac{60}{150} = \\frac{6}{15} = \\frac{2}{5} = 0.4$\n    *   $0.4 \\times 100 = 40\\%$\n\nFINAL: 40%",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 288,
+            "prompt_tokens": 114,
+            "total_tokens": 402,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 114,
+            "prompt_ms": 6420.706,
+            "prompt_per_token_ms": 56.321982456140354,
+            "prompt_per_second": 17.755056842658735,
+            "predicted_n": 288,
+            "predicted_ms": 27429.274,
+            "predicted_per_token_ms": 95.57238327526133,
+            "predicted_per_second": 10.46327365427171
+          },
+          "seconds": 33.87531137600001,
+          "request_sha256": "ffd1dffff621c079974c3e9c431b1d67019f62fb082317f56e0e55de579b1a4d"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 114,
+        "completion_tokens": 288,
+        "total_tokens": 402
+      },
+      "seconds": 33.87539847000005,
+      "question_sha256": "532f21d9d56d9a0cc773a18c0a49a4e7aa7449fc1b06ad0b9dcb3710b23d9613",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:728",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Candy has 15 light blue spools of thread, 45 dark blue spools of thread, 40 light green spools of thread, and 50 dark green spools of thread. What percent of her spools are blue?",
+      "reference": "40",
+      "correct": false
+    }
+  ],
+  "summary": {
+    "direct": {
+      "correct": 1,
+      "n": 7,
+      "answered": 7,
+      "seconds": 53.697209034000096,
+      "completion_tokens": 72,
+      "statuses": {
+        "model_answer_unverified": 7
+      }
+    },
+    "reasoning": {
+      "correct": 2,
+      "n": 7,
+      "answered": 6,
+      "seconds": 297.8542716940001,
+      "completion_tokens": 2525,
+      "statuses": {
+        "incomplete_or_missing_answer": 1,
+        "model_answer_unverified": 6
+      }
+    },
+    "program": {
+      "correct": 5,
+      "n": 7,
+      "answered": 7,
+      "seconds": 297.14163622300015,
+      "completion_tokens": 804,
+      "statuses": {
+        "model_answer_unverified": 2,
+        "computation_checked_semantics_unverified": 5
+      }
+    }
+  },
+  "wall_seconds": 690.032356458,
+  "protocol": {
+    "arms": {
+      "direct": 768,
+      "reasoning": 768,
+      "program": [
+        512,
+        256
+      ]
+    },
+    "temperature": 0,
+    "seed": 1707,
+    "native_thinking": false,
+    "memory": false,
+    "training": false,
+    "labels_solver_visible": false,
+    "selection_salt": "adaptive-language-v07-20260921\u0000",
+    "gpu": false,
+    "paid_inference": false,
+    "energy_measured": false,
+    "official_leaderboard": false,
+    "frontier_reference_evaluated": false
+  }
+}
