@@ -1,0 +1,24 @@
+name: Adaptive language quantized preflight
+on:
+  push:
+    branches: [research/adaptive-language-v07-20260921]
+    paths: [.github/workflows/adaptive-language-preflight.yml]
+permissions:
+  contents: write
+jobs:
+  preflight:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Public-only quantized inference preflight
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '4'
+        run: python3 -u research/adaptive_language/bootstrap.py
+      - name: Retain diagnostic log in job output
+        if: always()
+        run: tail -80 /tmp/adaptive-language-runtime/server.log || true
