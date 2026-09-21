@@ -1,0 +1,103 @@
+name: Jev reconstruction v1 - train and benchmark
+on:
+  push:
+    branches: ['research/jev-reconstruction-20260921']
+    paths: ['.github/workflows/jev-reconstruction-v1.yml']
+permissions:
+  contents: read
+jobs:
+  prepare:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          python -m pip install --no-cache-dir 'huggingface-hub==1.32.0' 'pyarrow==21.0.0'
+          python -u reconstruct_v1.py prepare
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: reconstruction-inputs
+          path: |
+            reconstruction-inputs/
+            reconstruct_v1.py
+            jevbench_public_v1.py
+          retention-days: 7
+          if-no-files-found: error
+  extract:
+    needs: prepare
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 28
+    strategy:
+      fail-fast: false
+      max-parallel: 16
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    env:
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      MKL_NUM_THREADS: '4'
+      HF_HUB_DOWNLOAD_TIMEOUT: '120'
+    steps:
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: reconstruction-inputs
+      - name: Validate hardware and install pinned CPU runtime
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          grep -qw bf16 /proc/cpuinfo
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6'
+          lscpu
+          free -h
+      - name: Extract native hidden states and two candidate orderings
+        run: python -u reconstruct_v1.py extract --shard '${{ matrix.shard }}' --out 'shard-${{ matrix.shard }}'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: reconstruction-shard-${{ matrix.shard }}
+          path: shard-${{ matrix.shard }}/
+          retention-days: 7
+          if-no-files-found: error
+  fit_and_score:
+    needs: extract
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: reconstruction-inputs
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: reconstruction-shard-*
+          path: downloaded-features
+      - name: Fit on independent examples, select on development, calibrate, then score
+        run: |
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'safetensors==0.7.0' 'numpy==2.2.6'
+          mkdir -p features
+          for n in $(seq 0 15); do mv "downloaded-features/reconstruction-shard-$n" "features/shard-$n"; done
+          python -u reconstruct_v1.py finalize
+          python -m pip freeze > reconstruction-results/dependencies.txt
+          cp reconstruct_v1.py jevbench_public_v1.py reconstruction-results/
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: jev-reconstruction-v1-results
+          path: reconstruction-results/
+          retention-days: 14
+          if-no-files-found: error
