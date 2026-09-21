@@ -1,0 +1,29 @@
+name: Adaptive language verified delivery
+on:
+  push:
+    branches: [research/adaptive-language-v07-20260921]
+    paths: [.github/workflows/adaptive-language-delivery.yml]
+permissions:
+  contents: read
+jobs:
+  recover:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install test runner only
+        run: python3 -m pip install --no-cache-dir pytest==8.3.5
+      - name: Replay existing results and test recovered source; no inference
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+        run: python3 -u research/adaptive_language/deliver_recovered.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: adaptive-language-verified-source
+          path: Adaptive-Language-v0.7-recovered.zip
+          retention-days: 1
+          if-no-files-found: error
+          compression-level: 0
