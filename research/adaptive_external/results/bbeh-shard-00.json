@@ -1,0 +1,494 @@
+{
+  "manifest": {
+    "model": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "torch": "2.10.0+cpu",
+    "transformers": "5.3.0",
+    "python": "3.12.14",
+    "machine": "aarch64",
+    "platform": "Linux-6.17.0-1022-azure-aarch64-with-glibc2.39",
+    "threads": 4,
+    "dtype": "bfloat16",
+    "attention": "sdpa",
+    "parameters": 4539265536,
+    "load_seconds": 35.454562417000034,
+    "seed": 17,
+    "sampling": false,
+    "thinking_template": false,
+    "max_input_tokens": 8192,
+    "max_output_tokens_per_arm": 512,
+    "generation_seconds_soft_limit": 90,
+    "tools": false,
+    "persistent_memory": false,
+    "trained_neural_guide": false,
+    "new_training": false,
+    "claim": "direct vs bounded explicit reasoning baseline, not complete Adaptive architecture"
+  },
+  "rows": [
+    {
+      "id": 96,
+      "task": "bbeh_boardgame_qa",
+      "arm": "direct",
+      "question_sha256": "73aeec966fea2ccd93dc756a5ad09f75e08c905a3b774414a943f0d773a1cb00",
+      "prompt_sha256": "b528f2e11a551fea7e14702dc8583b6e201d0345e4d817fcc76da091dd815293",
+      "input_tokens": 2461,
+      "status": "budget_limited",
+      "response": "To determine the truth value of the statement \"the goat neglects the bee\", we need to trace the logical deductions based on the provided facts and rules.\n\n**1. Analyze the Goal:**\nWe need to find the truth value of \"goat neglects the bee\".\nLooking at the rules, **",
+      "output_tokens": 64,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.45295817800002,
+      "reference": "proved",
+      "correct": false
+    },
+    {
+      "id": 96,
+      "task": "bbeh_boardgame_qa",
+      "arm": "reasoning",
+      "question_sha256": "73aeec966fea2ccd93dc756a5ad09f75e08c905a3b774414a943f0d773a1cb00",
+      "prompt_sha256": "89072e69db4edc337b5db5576e0424f906e5393186dc327585ba136344b330e2",
+      "input_tokens": 2469,
+      "status": "budget_limited",
+      "response": "To determine the truth value of the statement \"the goat neglects the bee\", we need to trace the logical deductions based on the provided facts, rules, and preferences.\n\n**1. Analyze the Goal:**\nWe need to find the truth value of: `goat neglects the bee`.\nLooking at the",
+      "output_tokens": 65,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.0672368380001,
+      "reference": "proved",
+      "correct": false
+    },
+    {
+      "id": 243,
+      "task": "bbeh_causal_understanding",
+      "arm": "reasoning",
+      "question_sha256": "5fb655c2ed8dd185f7a2d737b01a31048722bfceaab67fefde37e705b4060612",
+      "prompt_sha256": "a4f887efd406093b751c3c50597fcfbd398733df7c35ad0a593089b5f0e1e672",
+      "input_tokens": 109,
+      "status": "budget_limited",
+      "response": "To determine whether Sam throwing the poisonous test tube is a **necessary cause** of Agent X's survival, we must analyze the logical definition of a necessary cause and apply it to the specific causal chain described.\n\n**1. Definition of a Necessary Cause**\nIn logic and philosophy, an event $A$ is a *necessary cause* of event $B$ if and only if $B$ could not have occurred without $A$. Formally:\n$$B \\implies A$$\n(If $B$ happened, then $A$ must have happened).\nEquivalently, if $",
+      "output_tokens": 122,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.40632665600015,
+      "reference": "No",
+      "correct": false
+    },
+    {
+      "id": 243,
+      "task": "bbeh_causal_understanding",
+      "arm": "direct",
+      "question_sha256": "5fb655c2ed8dd185f7a2d737b01a31048722bfceaab67fefde37e705b4060612",
+      "prompt_sha256": "6cfd0ef6cff28ea872142c92a6084a8fedf430e686edaff2eedb47ea0c60ac14",
+      "input_tokens": 101,
+      "status": "ok",
+      "response": "The final answer is: No\n",
+      "output_tokens": 9,
+      "eos_reached": true,
+      "seconds_soft_limit_reached": false,
+      "generation_seconds": 8.42877666000004,
+      "reference": "No",
+      "correct": true
+    },
+    {
+      "id": 317,
+      "task": "bbeh_geometric_shapes",
+      "arm": "reasoning",
+      "question_sha256": "ff36d3e4671079636ac9e9a750865418c371d0578200131f030bbf59716502ba",
+      "prompt_sha256": "fac3080745931fc8a1e2e5e917b833942680e4ad89c81fb0cfb660092e7f5cc3",
+      "input_tokens": 2344,
+      "status": "budget_limited",
+      "response": "To determine which shapes are present in the SVG path, let's analyze the coordinates and the sequence of lines.\n\n**1. Analyze the Path Data:**\nThe path consists of a series of `M` (move to) and `L` (line to) commands. Let's trace the connected segments to identify closed loops or distinct shapes.",
+      "output_tokens": 71,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.17481419199999,
+      "reference": "(J)",
+      "correct": false
+    },
+    {
+      "id": 317,
+      "task": "bbeh_geometric_shapes",
+      "arm": "direct",
+      "question_sha256": "ff36d3e4671079636ac9e9a750865418c371d0578200131f030bbf59716502ba",
+      "prompt_sha256": "03723aa2fd2b5075415cd6a6f7ab48d820ecdf0ed14237550c953a5903144daf",
+      "input_tokens": 2336,
+      "status": "budget_limited",
+      "response": "To determine which shapes are present, let's analyze the SVG path data provided. The path consists of a sequence of `M` (move to) and `L` (line to) commands. We need to trace the connected segments to identify closed loops or specific geometric figures.\n\n**Step 1: Parse and Group the Segments**\nLet",
+      "output_tokens": 71,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.0706918599999,
+      "reference": "(J)",
+      "correct": false
+    },
+    {
+      "id": 158,
+      "task": "bbeh_movie_recommendation",
+      "arm": "direct",
+      "question_sha256": "fe7b74454839190fca34481e634c9ebad45a806e99c29ba2c3203b9b31bf72cc",
+      "prompt_sha256": "8dc8466bec6e1e291b0149e2db99b0d6624678ad0c67f9a46c054891fb1baacb",
+      "input_tokens": 238,
+      "status": "budget_limited",
+      "response": "To determine which option has the most similar movies in terms of whether a group of people will like them, we need to analyze the genre, tone, and target audience of the films listed in each option. The key factor is \"group of people will like them,\" which often correlates with broad appeal, family-friendly content, or specific genre conventions that attract large audiences.\n\n**Analysis of the Movies:**\n\n1.  **Pretty Woman**: Romantic comedy/drama. Very popular, broad appeal, family-friendly (PG-13).\n2.  **Interview with the Vampire The Vampire Chronicles**: Gothic",
+      "output_tokens": 121,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.11850923199972,
+      "reference": "(A)",
+      "correct": false
+    },
+    {
+      "id": 158,
+      "task": "bbeh_movie_recommendation",
+      "arm": "reasoning",
+      "question_sha256": "fe7b74454839190fca34481e634c9ebad45a806e99c29ba2c3203b9b31bf72cc",
+      "prompt_sha256": "6c87eff60c24d45f3065ddf12564670a40f90a63307900956e0c1a46082beef7",
+      "input_tokens": 246,
+      "status": "budget_limited",
+      "response": "To determine which option has movies with the most similar audience reception regarding whether a group of people will like them, we need to analyze the genre, tone, and target demographic of each film in the options. The core question is about \"group liking,\" which often correlates with genre appeal (e.g., family-friendly vs. adult-oriented horror/drama) and general popularity among broad audiences.\n\n**Step 1: Analyze the movies in each option.**\n\n*   **Pretty Woman**: Romantic comedy/drama. Very popular, family-friendly, broad appeal.\n*   **Interview with the Vampire (1",
+      "output_tokens": 122,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.59278485599998,
+      "reference": "(A)",
+      "correct": false
+    },
+    {
+      "id": 108,
+      "task": "bbeh_object_counting",
+      "arm": "direct",
+      "question_sha256": "698bed1957471b8e6190c39f92f5018ff5e9feff6a7e51a4eb2e2bcbf6d7baa4",
+      "prompt_sha256": "8fd4f67f1d4fa7a440b200b8e3473d1293b1b085ffd1424164cb86bfe498a2a5",
+      "input_tokens": 3307,
+      "status": "budget_limited",
+      "response": "To find the absolute difference between the total number of mobiles and fruits that \"I\" (the narrator) have, we need to carefully extract the relevant items from the text, ensuring we only count items belonging to \"I\" and",
+      "output_tokens": 46,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.11662647599996,
+      "reference": "181",
+      "correct": false
+    },
+    {
+      "id": 108,
+      "task": "bbeh_object_counting",
+      "arm": "reasoning",
+      "question_sha256": "698bed1957471b8e6190c39f92f5018ff5e9feff6a7e51a4eb2e2bcbf6d7baa4",
+      "prompt_sha256": "8bd2c49612b48abc47120bc3a7b684c1b6cd4615cb385f9702c6f5c84f3eec70",
+      "input_tokens": 3315,
+      "status": "budget_limited",
+      "response": "To find the absolute difference between the total number of **mobiles** and **fruits** that **I** (the narrator) have, we need to carefully extract the relevant items from the text, ignoring items belonging to",
+      "output_tokens": 45,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.26504817500017,
+      "reference": "181",
+      "correct": false
+    },
+    {
+      "id": 307,
+      "task": "bbeh_shuffled_objects",
+      "arm": "reasoning",
+      "question_sha256": "0fcd040bf080cd2a534c7b14acc45f15ba7b8fbd5826e3474cc952420fdba204",
+      "prompt_sha256": "14a9b77ec66f4e7d6329b1b93b624ee1a9244f32a54e53f5f1fec85c0f580022",
+      "input_tokens": 3017,
+      "status": "budget_limited",
+      "response": "To determine who ends up with which book, let's track the ownership of the books through each transaction step-by-step.\n\n**Initial State:**\n*   Alice: The Great Gatsby (GG)\n*   Bob: The Fellowship of the Ring (",
+      "output_tokens": 52,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.58151216900023,
+      "reference": "(B)",
+      "correct": false
+    },
+    {
+      "id": 307,
+      "task": "bbeh_shuffled_objects",
+      "arm": "direct",
+      "question_sha256": "0fcd040bf080cd2a534c7b14acc45f15ba7b8fbd5826e3474cc952420fdba204",
+      "prompt_sha256": "6f5c9a5b431f0e4d39b435965fee188b098c3d26a53ec23596762eda1164ea53",
+      "input_tokens": 3009,
+      "status": "budget_limited",
+      "response": "To solve this problem, we need to track the location of each book through a series of swaps. Since the question asks specifically for the book Claire has at the end, we can focus on tracking the book currently held by Claire, or alternatively, track the book",
+      "output_tokens": 52,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.1731231849999,
+      "reference": "(B)",
+      "correct": false
+    },
+    {
+      "id": 105,
+      "task": "bbeh_temporal_sequence",
+      "arm": "reasoning",
+      "question_sha256": "ad83b27508b7b9109a0f4ffc595af1f3261c7c61e0ea78f2e40e8c2ed97d3105",
+      "prompt_sha256": "2523340ec2520afa3bb7ccf125c98afe3b9f989b46ca7531a47e5f63be1709f8",
+      "input_tokens": 1159,
+      "status": "budget_limited",
+      "response": "To solve this problem, we need to determine the common free time slots for Rachel, Isabella, and Lisa, taking into account their different time zones, specific constraints, and the requirement that the meeting must start on the hour (:00) or half-hour (:30).\n\n### Step 1: Normalize Time Zones\n*   **Rachel**: Local Time (LT_R). Timezone is +1 hour relative to Isabella and Lisa.\n    *   If it is $",
+      "output_tokens": 98,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.64483592800025,
+      "reference": "65, 1",
+      "correct": false
+    },
+    {
+      "id": 105,
+      "task": "bbeh_temporal_sequence",
+      "arm": "direct",
+      "question_sha256": "ad83b27508b7b9109a0f4ffc595af1f3261c7c61e0ea78f2e40e8c2ed97d3105",
+      "prompt_sha256": "118a1d96da14588f7a5e3c9bdaee86d13c6b3d484a32e876fd55d15b431f5a43",
+      "input_tokens": 1151,
+      "status": "budget_limited",
+      "response": "To find the solution, we must first align the time zones and then determine the common free slots for Rachel, Isabella, and Lisa within their respective working hours (9:00 to 17:00 local time).\n\n**1. Time Zone Alignment:**\n*   **Rachel:** UTC+1 (1 hour ahead of others). Her \"9:00 to 17:00\" local time corresponds to 8:00 to 16",
+      "output_tokens": 98,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.15498441,
+      "reference": "65, 1",
+      "correct": false
+    },
+    {
+      "id": 210,
+      "task": "bbeh_word_sorting",
+      "arm": "direct",
+      "question_sha256": "1a5969347f010978e4756578651c14401c64e9e7ccbb0d1d2bdacc1b37f992f9",
+      "prompt_sha256": "72c92a21be59fd4b3d1604d33935d835075a2474f33157eb96327fac6d8eb3a7",
+      "input_tokens": 1096,
+      "status": "budget_limited",
+      "response": "The mistake occurs in Thought 5.\n\nIn Thought 5, the thinker attempts to sort the subpart [\"severalty\", \"serviceman\", \"sextans\"] by looking at their second letters.\n- \"severalty\": second letter is 'e'.\n- \"serviceman\": second letter is 'e'.\n- \"sextans\": second letter is 'e'.\n\nThe thinker correctly identifies that all three words have the same second letter ('e'). However",
+      "output_tokens": 101,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.7168287909999,
+      "reference": "4",
+      "correct": false
+    },
+    {
+      "id": 210,
+      "task": "bbeh_word_sorting",
+      "arm": "reasoning",
+      "question_sha256": "1a5969347f010978e4756578651c14401c64e9e7ccbb0d1d2bdacc1b37f992f9",
+      "prompt_sha256": "fdda2734def6c5999da675e1a42e6a406c13002849b832cfc7ac0ca18086bee7",
+      "input_tokens": 1104,
+      "status": "budget_limited",
+      "response": "To determine if there is a mistake, let's verify the steps against the provided list of words:\nList: quicksand, tribune, sextans, gavel, proust, menu, malarial, severalty, wholesome, mimeograph, imperial, agribusiness, property, serviceman.\n\n**Thought 1:** Identifies the first letter of each word.\n- \"quicksand\": q (17) - Correct.\n- \"trib",
+      "output_tokens": 97,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.28005625000014,
+      "reference": "4",
+      "correct": false
+    }
+  ],
+  "benchmark": "BBEH Mini stratified pilot",
+  "bbeh_commit": "80d12ca916b7158f22293fcf3144f4d3d854d4be",
+  "data_sha256": "14e77b3d6be68faa008d268abf53b1f8d2420ffdd762504a304dafc3f8d43026",
+  "scorer_sha256": "4b4f06e5babb015de2ba639bae995a5526182ffb5b5890af54dfcf038580eb34",
+  "shard": 0,
+  "shards": 6,
+  "per_task": 2,
+  "total_selected": 46,
+  "selection": "per-task ascending SHA256(adaptive-bbeh-pilot-v1 + NUL + original question), first n; no target use",
+  "selected_ids": [
+    96,
+    318,
+    67,
+    236,
+    348,
+    384,
+    243,
+    298,
+    220,
+    260,
+    336,
+    389,
+    317,
+    436,
+    219,
+    449,
+    34,
+    123,
+    158,
+    208,
+    16,
+    69,
+    365,
+    420,
+    108,
+    444,
+    37,
+    340,
+    192,
+    285,
+    307,
+    432,
+    124,
+    233,
+    179,
+    221,
+    105,
+    262,
+    29,
+    353,
+    255,
+    433,
+    210,
+    309,
+    151,
+    284
+  ],
+  "summary": {
+    "direct": {
+      "correct": 1,
+      "total": 8,
+      "statuses": {
+        "budget_limited": 7,
+        "ok": 1
+      },
+      "output_tokens": 562,
+      "generation_seconds": 640.2324987919994
+    },
+    "reasoning": {
+      "correct": 0,
+      "total": 8,
+      "statuses": {
+        "budget_limited": 8
+      },
+      "output_tokens": 672,
+      "generation_seconds": 723.012615064001
+    }
+  },
+  "worker_exit": 0,
+  "request_wall_seconds": 1403.082076903,
+  "run_id": "35546669639",
+  "source_sha256": "ad3064cf5284c23523d7639f1b766691240f771d1f5066ea9072efca575c89c9",
+  "evaluation_isolation": "worker receives only id,task,question; no answer feedback; no training or cross-case memory",
+  "limitations": [
+    "public development pilot, not full benchmark or leaderboard submission",
+    "frozen pretrained baseline only; not full Adaptive system",
+    "pretraining overlap unknown",
+    "greedy bounded decoding; budget failures retained",
+    "load/overhead reported separately; energy not measured"
+  ],
+  "metadata_repair": "Mini lacks task labels; restored by exact input-only matching to original task files",
+  "membership_manifest": [
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_boardgame_qa/task.json",
+      "blob": "59bfa63f5b98bd93d13137df28297d69fc85ceab",
+      "sha256": "3d47dc41eb825b2ee77a696e79859d8d2043b1bf04077e120caec4ad324f32a8"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_boolean_expressions/task.json",
+      "blob": "3b1b165e0f026d61c1ba8a7112cc5289d978262a",
+      "sha256": "49e763f10dbea048be56036c8cbf2a6d0bb735235e3806b50809a1addb57eee2"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_buggy_tables/task.json",
+      "blob": "e2eeae579ff119ffd424c7eb269fc4dfb68a8da3",
+      "sha256": "c27b76200bf1b0d4ada3729f5a40aa1f0062267e42c4f40820b3e40891c3fe85"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_causal_understanding/task.json",
+      "blob": "1222dc4953e0147aa954c76d8d33910c05ba460d",
+      "sha256": "b10bbf43f7f5cdde927b0ad03f99a7a78b3525de4bfa90008b36b12b010c9a81"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_disambiguation_qa/task.json",
+      "blob": "04a553ccada1641884d6b07a3d2aff73ea25b2f5",
+      "sha256": "6d34e0c89c3b1e1386df5919159b8d67b4668308d1225bd1ee54eb1e946472bd"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_dyck_languages/task.json",
+      "blob": "9c73487fbb6c5e453ad5bbf1b372f79b9a18f668",
+      "sha256": "a089612502bdfb98a447c8cba84f972724308ea0d059e8561e3cc9785de585cc"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_geometric_shapes/task.json",
+      "blob": "5ff75c179f5f406967f8b02ec57db2ab7c5817eb",
+      "sha256": "7ff506d026450cb878a0963ce478724ad1451bc56469c813c791b9345ac1bea7"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_hyperbaton/task.json",
+      "blob": "9e276ca2c4b57a7e506f2d7128f7a4cacd55c960",
+      "sha256": "0fbacc94f4c740c3050021f4c57089f2011d7bd77fcff3346a7f4b9dbef842e2"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_linguini/task.json",
+      "blob": "e8edd908fb96511855d29c0b128f3a89f163c7b0",
+      "sha256": "ba387d2aa1bde122e6c9937fca4e075b9cc7d64e6047b170cfcffd6304919ea8"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_movie_recommendation/task.json",
+      "blob": "c07c9f17ca3def29062934bf79b53cbee99b9ede",
+      "sha256": "808882647b84c116a57e0975e3d357749525e12d215c4a5dae83de83ae8c4772"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_multistep_arithmetic/task.json",
+      "blob": "ac431dc3911aa5640f001c6a4de74588713e8506",
+      "sha256": "47207086cd2afe74df9968172d24134c82af8c666144092f04e4c1ebad8cf3d2"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_nycc/task.json",
+      "blob": "09666db9e95cf7b65a0d2d33e7acc3a84104e5c6",
+      "sha256": "67c9a9dca40e6ec820a279da19a019cedd5427fbaaae3fd175cdb74965474b08"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_object_counting/task.json",
+      "blob": "757780e10d5ea8d40c4d2cc9a8444a9c20a0d603",
+      "sha256": "a0a8b10ca1aa06eae611c7c7e854fbec4f9622c8f74a74ffa00436a9a8609b67"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_object_properties/task.json",
+      "blob": "e8bc36ad02c89d763e4981967ec5235f64a107ad",
+      "sha256": "d606b3aa0c35d5397afc5937207174593c82ad5dfcaf7e5dfb40a99278aef0e4"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_sarc_triples/task.json",
+      "blob": "fcb7b152123953c768f7fb415c29d37df0aa6b62",
+      "sha256": "4c7b8eb4b542d326152394456c0a1afc8ef5447ee06dd4187b7eb91027a6b821"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_shuffled_objects/task.json",
+      "blob": "8099cd6873756c47cbba0538fc11767e5fe2bfc6",
+      "sha256": "43cda28220c66e8d63e667d3091cd18b0b17aa55c005bb24bbb63144afdba9c1"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_spatial_reasoning/task.json",
+      "blob": "dc362278dac49294d0225c0249e6bf9e7c8e31d4",
+      "sha256": "e77986b73e0ed15b5f950978b7758f55311b4d50e7215961084b126e4d960cb7"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_sportqa/task.json",
+      "blob": "c7407a7bd287cda7719fb7b7cbdca840a50a79ad",
+      "sha256": "69b3f164d9617eab9185830eacf4250badb56c2d718ddc75012597ed1a4bc9bf"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_temporal_sequence/task.json",
+      "blob": "e0ffd804b234344a967ecf9f6b2dad2b5f960279",
+      "sha256": "55f6711d3d76925acb5d2fffdc1947e0e7186c686f0a343598394a57df6c7c6e"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_time_arithmetic/task.json",
+      "blob": "e1a8fcfe7cb58c0eb12700969904e16f3d5bff51",
+      "sha256": "2510515a6f12024a742743e29a389f07beacb3bf4c71e0b59be12f3e364cf31b"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_web_of_lies/task.json",
+      "blob": "2bccd9eae0f1f10559a0d1e830aa0ccd4ac63c5a",
+      "sha256": "15f23d32579285701f68dae7947e2191eff21ee97440dfa73cb3565a66c77a6d"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_word_sorting/task.json",
+      "blob": "2995a286e30f32ce0eac590a52461243d3d383ff",
+      "sha256": "f49674b7b85774d6190c2844e1682c2ee8ff591ca1eeee4e785a45ef1e20024d"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_zebra_puzzles/task.json",
+      "blob": "4a42b417ae48dda20f34f607ab3f4b2bbcb58066",
+      "sha256": "0acd979060ee49f063f241dd1a298bd80b63d6b7fbfb08057ff480bff98a6198"
+    }
+  ],
+  "entry_source_sha256": "83814e872004563e6f4894340f03d31749b9f3a766572c8a4b019053939bb146"
+}
