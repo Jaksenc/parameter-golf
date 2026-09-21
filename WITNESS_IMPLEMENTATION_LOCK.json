@@ -1,0 +1,20 @@
+{
+  "experiment": "Witness v3",
+  "primary": "witness",
+  "arms": ["native", "program_only", "witness"],
+  "new_evaluation_outcomes_inspected": false,
+  "interpreter_tests_passed": 41,
+  "source_sha256": {
+    "witness_vm.py": "a1d2ca7c6612a1757af6337c32ac9cc18dae2100d1507443515ed72626b3d0da",
+    "witness_data.py": "c8b4b561ce4e1a054ba46d713935f8173506503abd54bb96b92e80704c661a03",
+    "witness_probe.py": "191cd4c4cc05072a5ba41a81e66da498d1af20ba7507db5912d85128931a45f2",
+    "analyze_witness.py": "e9b893e140bb0108c99d31c7ec222b592557c565694aee8d6cd70e4dbe7f182d",
+    "test_vm.py": "c26ffa62b551c284ee9f23d1ee5008ef663aec6973bfd21936e9006a5efcb7d7"
+  },
+  "protocol_commit": "43e6ece5cac38292a4eb8b1444372969f68d1024",
+  "execution_commit": "b7b4c0beaff8124c2297ca7b69cf8334ede1c9a7",
+  "execution_run": 35622066453,
+  "backbone_training": false,
+  "jev_api_calls": 0,
+  "scope": "Program-only uses the same interpreter acceptance gate as Witness, but its readout receives no execution result. This isolates feedback conditional on accepted programs."
+}
