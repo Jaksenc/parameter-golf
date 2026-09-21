@@ -1,0 +1,16 @@
+{
+  "new_model_outcomes_inspected": false,
+  "unit_tests_passed": 47,
+  "primary": "contrast_consensus",
+  "inference_run": 35651891496,
+  "protocol_commit": "821d0b465870500513ee6bd793f7739dfebd78b2",
+  "source_sha256": "52771fdb5d8c7e5315c6f49ac87b725ba1244c0fe5ba4f5a0674ec4de3778d0b",
+  "analysis_sha256": "cc07a127bcba42685c0e1201ecd94eaf0826372d2f2c9fa3929c90c3735b9a3b",
+  "policy_entry_sha256": "d234f421f9477bc3f9579659443c924fe21cf1190ac9c5189d88e9a66b82caf8",
+  "base_tests_sha256": "4996bc8173ac6c1bda16b6de036e3423aba5fdab06c61f8f57dd1ec94dbe450c",
+  "policy_tests_sha256": "7a4d0f77ba65643ad4c9ec5ed8068f55f3647579bf2baad6ffb9b209e3355f4b",
+  "jobs_hash": "a9fdb0c0c268d8a458ef6da8fa10fb76736b1ad01f1bd86df1defaf438b5c791",
+  "evaluation_hash": "7893baaf60db70170fcbcb592e330aed337cc685a2966b526ce4c8d49ef0dc82",
+  "prepared_artifact_sha256": "9e40116e37620b6a86aefad2bd068ba4577d597dd0ccaa806154f87f0cda7ac8",
+  "limits": "External source and labels were inspected for schema and overlap only. No model outcome is used for candidate selection, switching, or parameter fitting. Independent arithmetic auditing is not a full neural rerun."
+}
