@@ -1,0 +1,1899 @@
+{
+  "status": "completed",
+  "shard": 11,
+  "shards": 12,
+  "run_id": "35652499808",
+  "source_commit": "d8212eabc5e1c5c93f8757ff8b3e81a4b960124d",
+  "core": {
+    "decoded_sha256": "6b37dcfc4a451d5dba399080ba362b5b5320b03e977bf49532aab2be3cd108ca",
+    "transport_repairs": [
+      "TK+TVJrofJK8b2RR",
+      "dXZ3vX7tDJtd",
+      "KuOR3d/cy5RJK"
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/openai/grade-school-math/3101c7d5072418e28b9008a6636bde82a006892c/grade_school_math/data/test.jsonl",
+      "sha256": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14",
+      "bytes": 749738
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/boolean_expressions.json",
+      "sha256": "ea6c754ec005e2d3f2d085d349a740f593b5764f32ea4638ffed4cfc0061b12a",
+      "bytes": 17172
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/causal_judgement.json",
+      "sha256": "6e8bca44dd402008ed41c07a3d0a1d5e7b03db7001a7e002fcdf4c60985ea081",
+      "bytes": 202943
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/date_understanding.json",
+      "sha256": "0148d4ac5fca05b2f82373e5fef7208e15363b9c6079493034d77b3dab496bf5",
+      "bytes": 61760
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/disambiguation_qa.json",
+      "sha256": "cf06df9ebf911b883671cb1b35d3fbd1a1c306b19b9e9a012407e596c85fe8c6",
+      "bytes": 85255
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/dyck_languages.json",
+      "sha256": "3f9badedf15c2be1ce53d94fdf016299bb30ba231ef087ab9f51a7ed6d0bdc25",
+      "bytes": 43814
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/formal_fallacies.json",
+      "sha256": "4c1adb664821157faade1d4153685403afcc02648f3c180a608a18f17f589629",
+      "bytes": 145562
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/geometric_shapes.json",
+      "sha256": "07be68a124420caa2ebc0b2c858ad79fc55c5c8806170e496e1e17ebfb11f31c",
+      "bytes": 77242
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/hyperbaton.json",
+      "sha256": "b6d7f55c75f5d02f2987a4f3123802dfa093872089a56a334144aae8a7264fdc",
+      "bytes": 44706
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/logical_deduction_five_objects.json",
+      "sha256": "d2df31394b903b7f0e085d42a69572a092987856eac076799017d70ef266fa8f",
+      "bytes": 155477
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/logical_deduction_seven_objects.json",
+      "sha256": "2896c7e3482eea318dd37bcc370d24ec3cc91e8374c1784287b5dbd38a529e33",
+      "bytes": 198404
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/logical_deduction_three_objects.json",
+      "sha256": "e590fae72e3a6041fbd23bd8ff6b74baf44ca563f6ba40a041c55e7b867c1681",
+      "bytes": 112213
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/movie_recommendation.json",
+      "sha256": "a8b53a87ee21a865b7248e694f388a9b8f7cf6b839b11d44796a2dd3fc088983",
+      "bytes": 57684
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/multistep_arithmetic_two.json",
+      "sha256": "c9d5a6433c9b78256422a15c78463949c8bec8d85607aa28b52d7234ad4a8595",
+      "bytes": 18325
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/navigate.json",
+      "sha256": "b7944dfd3c81da5c4815bd75b00d6fa3c64140823498e78ed496f4c3d36f7f0d",
+      "bytes": 55163
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/object_counting.json",
+      "sha256": "8acef14dbbdd40d2326ef7755750b6b5fe919fef06276af1bab3f1c297f022ff",
+      "bytes": 35890
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/penguins_in_a_table.json",
+      "sha256": "bb87ee449698eee51215e025a453b1bcb2f5e6589c2063b2c79e68b8f0655228",
+      "bytes": 74516
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/reasoning_about_colored_objects.json",
+      "sha256": "0a8850cf95166020fce7a78244026ceedd7ea839302471512b4f8744e85a6a49",
+      "bytes": 98694
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/ruin_names.json",
+      "sha256": "b6f723aef2bafdd4c7bfc3c7e0329c7e8a8279391a609969c8ed76c9319f5f7f",
+      "bytes": 53178
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/salient_translation_error_detection.json",
+      "sha256": "becf3eb8dd53c821a555ecd5c1334ecd93eb25f980e63be963c518e7138de5da",
+      "bytes": 286443
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/snarks.json",
+      "sha256": "54a0661fe2de06167645a4965e6bcf963c4ba307e76262a7c750998b0e3d0d0e",
+      "bytes": 42646
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/sports_understanding.json",
+      "sha256": "63ca262858f6176864515cd8cf53cdaa40839ebecc155b726d77930855d167bf",
+      "bytes": 28617
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/temporal_sequences.json",
+      "sha256": "92a1189faaa84aacc4c405aaa13f13f48c2992eb884772eedb622505252baef5",
+      "bytes": 148176
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/tracking_shuffled_objects_five_objects.json",
+      "sha256": "2063a46a4fb484236ed4310523606543a3e1dd4a4dc34eda65d407910ece25a5",
+      "bytes": 169722
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/tracking_shuffled_objects_seven_objects.json",
+      "sha256": "b59fd05b850c37cf57cb514ae1e6975c00b1638ade2291722056b2af3c54084d",
+      "bytes": 214906
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/tracking_shuffled_objects_three_objects.json",
+      "sha256": "546cc7bf10c6a01a6a4c17ae28a4966485f21f29fd5d111f37858ec78e354f6b",
+      "bytes": 128736
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/web_of_lies.json",
+      "sha256": "3e60323f8514a107fdb4edf35f8832a9171c5a09c0eaa47823559de905e8ab8b",
+      "bytes": 52964
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/word_sorting.json",
+      "sha256": "2a6132d2c99f00d0d2eb1113ac6b4a918bd969d863c48749210d969713db8d43",
+      "bytes": 66300
+    }
+  ],
+  "selected_ids": [
+    "bbh:boolean_expressions:140",
+    "bbh:boolean_expressions:236",
+    "bbh:causal_judgement:10",
+    "bbh:causal_judgement:168",
+    "bbh:date_understanding:180",
+    "bbh:date_understanding:69",
+    "bbh:disambiguation_qa:172",
+    "bbh:disambiguation_qa:51",
+    "bbh:dyck_languages:49",
+    "bbh:dyck_languages:82",
+    "bbh:formal_fallacies:213",
+    "bbh:formal_fallacies:84",
+    "bbh:geometric_shapes:102",
+    "bbh:geometric_shapes:184",
+    "bbh:hyperbaton:15",
+    "bbh:hyperbaton:219",
+    "bbh:logical_deduction_five_objects:115",
+    "bbh:logical_deduction_five_objects:228",
+    "bbh:logical_deduction_seven_objects:231",
+    "bbh:logical_deduction_seven_objects:67",
+    "bbh:logical_deduction_three_objects:111",
+    "bbh:logical_deduction_three_objects:165",
+    "bbh:movie_recommendation:195",
+    "bbh:movie_recommendation:197",
+    "bbh:multistep_arithmetic_two:125",
+    "bbh:multistep_arithmetic_two:151",
+    "bbh:navigate:112",
+    "bbh:navigate:41",
+    "bbh:object_counting:135",
+    "bbh:object_counting:61",
+    "bbh:penguins_in_a_table:141",
+    "bbh:penguins_in_a_table:89",
+    "bbh:reasoning_about_colored_objects:120",
+    "bbh:reasoning_about_colored_objects:42",
+    "bbh:ruin_names:11",
+    "bbh:ruin_names:144",
+    "bbh:salient_translation_error_detection:5",
+    "bbh:salient_translation_error_detection:93",
+    "bbh:snarks:167",
+    "bbh:snarks:93",
+    "bbh:sports_understanding:179",
+    "bbh:sports_understanding:49",
+    "bbh:temporal_sequences:158",
+    "bbh:temporal_sequences:214",
+    "bbh:tracking_shuffled_objects_five_objects:159",
+    "bbh:tracking_shuffled_objects_five_objects:175",
+    "bbh:tracking_shuffled_objects_seven_objects:150",
+    "bbh:tracking_shuffled_objects_seven_objects:183",
+    "bbh:tracking_shuffled_objects_three_objects:215",
+    "bbh:tracking_shuffled_objects_three_objects:233",
+    "bbh:web_of_lies:190",
+    "bbh:web_of_lies:230",
+    "bbh:word_sorting:200",
+    "bbh:word_sorting:205",
+    "gsm8k:1064",
+    "gsm8k:1076",
+    "gsm8k:1123",
+    "gsm8k:1127",
+    "gsm8k:1131",
+    "gsm8k:114",
+    "gsm8k:1200",
+    "gsm8k:1205",
+    "gsm8k:1286",
+    "gsm8k:14",
+    "gsm8k:164",
+    "gsm8k:181",
+    "gsm8k:216",
+    "gsm8k:217",
+    "gsm8k:220",
+    "gsm8k:391",
+    "gsm8k:393",
+    "gsm8k:429",
+    "gsm8k:58",
+    "gsm8k:636",
+    "gsm8k:642",
+    "gsm8k:673",
+    "gsm8k:728",
+    "gsm8k:797",
+    "gsm8k:801",
+    "gsm8k:81",
+    "gsm8k:869",
+    "gsm8k:892",
+    "gsm8k:902",
+    "gsm8k:911",
+    "gsm8k:947",
+    "gsm8k:975"
+  ],
+  "cohort_sha256": "edd6e937ab32c23ed79d52a380bec145adaa09b0a7855f14d14b77e373da48b0",
+  "runtime": {
+    "model": "unsloth/Qwen3.5-4B-GGUF",
+    "model_revision": "e87f176479d0855a907a41277aca2f8ee7a09523",
+    "weights": {
+      "url": "https://huggingface.co/unsloth/Qwen3.5-4B-GGUF/resolve/e87f176479d0855a907a41277aca2f8ee7a09523/Qwen3.5-4B-Q4_K_M.gguf",
+      "sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+      "bytes": 2740937888
+    },
+    "runtime": {
+      "url": "https://github.com/ggml-org/llama.cpp/releases/download/b10964/llama-b10964-bin-ubuntu-x64.tar.gz",
+      "sha256": "9abf88aea48a55d0f80edb1ee20220b186848cca0b4e919d71518cfd7ca67443",
+      "bytes": 16825086
+    },
+    "tag": "b10964",
+    "command": [
+      "/tmp/adaptive-language-runtime/binary/llama-b10964/llama-server",
+      "-m",
+      "/tmp/adaptive-language-runtime/model.gguf",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "8787",
+      "-c",
+      "8192",
+      "-np",
+      "1",
+      "-t",
+      "4",
+      "-tb",
+      "4",
+      "-ngl",
+      "0",
+      "--jinja",
+      "--chat-template-kwargs",
+      "{\"enable_thinking\":false}",
+      "--no-webui"
+    ],
+    "server_version": "",
+    "machine": "x86_64",
+    "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "setup_seconds": 29.461745869,
+    "private_inputs": false,
+    "paid_inference": false,
+    "training": false
+  },
+  "worker_exit": 0,
+  "rows": [
+    {
+      "arm": "reasoning",
+      "answer": "valid",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To determine the validity of the argument, let's break down the logical structure using set theory or propositional logic.\n\n**1. Define the Sets/Propositions:**\nLet $P(x)$ mean \"$x$ is an ingredient of Pink Smoothie\".\nLet $L(x)$ mean \"$x$ is an ingredient of A.D LIPSTICK CHIC\".\nLet $I(x)$ mean \"$x$ is an ingredient of ILLUMINIZING POWDER\".\n\n**2. Translate the Premises:**\n*   **Premise 1:** \"Not being an ingredient of Pink Smoothie is sufficient for not being an ingredient of A.D LIPSTICK CHIC.\"\n    *   Logic: $\\neg P(x) \\implies \\neg L(x)$.\n    *   By contraposition, this is equivalent to: $L(x) \\implies P(x)$. (If something is in Lipstick, it must be in Pink Smoothie).\n*   **Premise 2:** \"Everything that is an ingredient of ILLUMINIZING POWDER is an ingredient of A.D LIPSTICK CHIC, too.\"\n    *   Logic: $I(x) \\implies L(x)$.\n*   **Conclusion:** \"Every ingredient of ILLUMINIZING POWDER is an ingredient of Pink Smoothie.\"\n    *   Logic: $I(x) \\implies P(x)$.\n\n**3. Evaluate the Deduction:**\nWe have the chain:\n1.  $I(x) \\implies L(x)$ (from Premise 2)\n2.  $L(x) \\implies P(x)$ (from Premise 1 via contraposition)\n\nBy the hypothetical syllogism (transitive property of implication):\nIf $I(x) \\implies L(x)$ and $L(x) \\implies P(x)$, then $I(x) \\implies P(x)$.\n\nThe conclusion follows necessarily from the premises. There are no hidden exceptions or logical gaps in the provided text.\n\n**4. Conclusion:**\nThe argument is deductively valid.\n\nFINAL: valid",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 455,
+            "prompt_tokens": 214,
+            "total_tokens": 669,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 214,
+            "prompt_ms": 10279.72,
+            "prompt_per_token_ms": 48.036074766355135,
+            "prompt_per_second": 20.817687641297624,
+            "predicted_n": 455,
+            "predicted_ms": 48195.324,
+            "predicted_per_token_ms": 106.1571013215859,
+            "predicted_per_second": 9.42000099428733
+          },
+          "seconds": 58.480817125,
+          "request_sha256": "c5e7dc6171a7e6642cbc95460bdf7d02f5d3b26c33daa478f1fa9bc32e33206a"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 214,
+        "completion_tokens": 455,
+        "total_tokens": 669
+      },
+      "seconds": 58.48115400299999,
+      "question_sha256": "04ba87a8dadced8c11fdbb6af704df271b4af5b365723969ab648f9aed4170fd",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:formal_fallacies:84",
+      "suite": "BBH",
+      "family": "formal_fallacies",
+      "question": "\"Is Titanium oxide an ingredient of my washing power? Which chemicals does my perfume contain? It is really difficult to keep track of all chemicals one is regularly exposed to. The following argument seeks to clarify some such relations: To start with, not being an ingredient of Pink Smoothie is sufficient for not being an ingredient of A.D LIPSTICK CHIC. Now, everything that is an ingredient of ILLUMINIZING POWDER is an ingredient of A.D LIPSTICK CHIC, too. All this entails that every ingredient of ILLUMINIZING POWDER is an ingredient of Pink Smoothie.\"\nIs the argument, given the explicitly stated premises, deductively valid or invalid?\nOptions:\n- valid \n- invalid",
+      "reference": "valid",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "valid",
+      "status": "model_answer_unverified",
+      "execution": {
+        "answer": "valid",
+        "status": "model_answer_unverified",
+        "trace": [],
+        "program_sha256": "b4c85c5b0856e902423f73fefb71e4cec37c8577137b6171a0e9ec7e13e028f2",
+        "plan": {
+          "answer": "valid"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"answer\":\"valid\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 487,
+            "total_tokens": 493,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 487,
+            "prompt_ms": 23563.581,
+            "prompt_per_token_ms": 48.38517659137577,
+            "prompt_per_second": 20.66748683063071,
+            "predicted_n": 6,
+            "predicted_ms": 516.727,
+            "predicted_per_token_ms": 103.3454,
+            "predicted_per_second": 9.676289413945856
+          },
+          "seconds": 24.120216948999996,
+          "request_sha256": "dc4db82f364eea02c251dc6fefacf95a79230144ef3cf7f7adfd41c4b1867560"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 487,
+        "completion_tokens": 6,
+        "total_tokens": 493
+      },
+      "seconds": 24.120370449999996,
+      "question_sha256": "04ba87a8dadced8c11fdbb6af704df271b4af5b365723969ab648f9aed4170fd",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:formal_fallacies:84",
+      "suite": "BBH",
+      "family": "formal_fallacies",
+      "question": "\"Is Titanium oxide an ingredient of my washing power? Which chemicals does my perfume contain? It is really difficult to keep track of all chemicals one is regularly exposed to. The following argument seeks to clarify some such relations: To start with, not being an ingredient of Pink Smoothie is sufficient for not being an ingredient of A.D LIPSTICK CHIC. Now, everything that is an ingredient of ILLUMINIZING POWDER is an ingredient of A.D LIPSTICK CHIC, too. All this entails that every ingredient of ILLUMINIZING POWDER is an ingredient of Pink Smoothie.\"\nIs the argument, given the explicitly stated premises, deductively valid or invalid?\nOptions:\n- valid \n- invalid",
+      "reference": "valid",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "invalid",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "invalid\nFINAL: invalid",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 204,
+            "total_tokens": 210,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 204,
+            "prompt_ms": 9897.739,
+            "prompt_per_token_ms": 48.518328431372545,
+            "prompt_per_second": 20.610767772316485,
+            "predicted_n": 6,
+            "predicted_ms": 510.265,
+            "predicted_per_token_ms": 102.053,
+            "predicted_per_second": 9.798830019695648
+          },
+          "seconds": 10.439705588999999,
+          "request_sha256": "3b2a8f63b9de2a6fffbe0070ff5b6c975385953e20bac8dc5f811e3d6ff796e9"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 204,
+        "completion_tokens": 6,
+        "total_tokens": 210
+      },
+      "seconds": 10.439816325999999,
+      "question_sha256": "04ba87a8dadced8c11fdbb6af704df271b4af5b365723969ab648f9aed4170fd",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:formal_fallacies:84",
+      "suite": "BBH",
+      "family": "formal_fallacies",
+      "question": "\"Is Titanium oxide an ingredient of my washing power? Which chemicals does my perfume contain? It is really difficult to keep track of all chemicals one is regularly exposed to. The following argument seeks to clarify some such relations: To start with, not being an ingredient of Pink Smoothie is sufficient for not being an ingredient of A.D LIPSTICK CHIC. Now, everything that is an ingredient of ILLUMINIZING POWDER is an ingredient of A.D LIPSTICK CHIC, too. All this entails that every ingredient of ILLUMINIZING POWDER is an ingredient of Pink Smoothie.\"\nIs the argument, given the explicitly stated premises, deductively valid or invalid?\nOptions:\n- valid \n- invalid",
+      "reference": "valid",
+      "correct": false
+    },
+    {
+      "arm": "program",
+      "answer": "(A)",
+      "status": "model_answer_unverified",
+      "execution": {
+        "answer": "(A)",
+        "status": "model_answer_unverified",
+        "trace": [],
+        "program_sha256": "8a522f6380b7a145ecd977925f565d579f2cddbacf8816264d279f521ed930d5",
+        "plan": {
+          "answer": "(A)"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"answer\":\"(A)\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 8,
+            "prompt_tokens": 390,
+            "total_tokens": 398,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 390,
+            "prompt_ms": 18850.844,
+            "prompt_per_token_ms": 48.33549743589744,
+            "prompt_per_second": 20.688728844183313,
+            "predicted_n": 8,
+            "predicted_ms": 722.563,
+            "predicted_per_token_ms": 103.22328571428571,
+            "predicted_per_second": 9.687736571067159
+          },
+          "seconds": 19.611398624000003,
+          "request_sha256": "695a8a716c14f69b778a32322044456b9034b0098e8bd10662629f630455eb6d"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 390,
+        "completion_tokens": 8,
+        "total_tokens": 398
+      },
+      "seconds": 19.61153972699998,
+      "question_sha256": "83a5d326528807c67c7c6bf80ed321f370e4f61a51b1c04d98ad91238e737932",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:movie_recommendation:197",
+      "suite": "BBH",
+      "family": "movie_recommendation",
+      "question": "Find a movie similar to Jurassic Park, The Silence of the Lambs, Dances with Wolves, Seven:\nOptions:\n(A) Forrest Gump\n(B) Righteous Kill\n(C) Cheech and Chong's Up in Smoke\n(D) Blood The Last Vampire",
+      "reference": "(A)",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "(A)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "FINAL: (A)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 107,
+            "total_tokens": 113,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 107,
+            "prompt_ms": 5356.912,
+            "prompt_per_token_ms": 50.06459813084113,
+            "prompt_per_second": 19.974194087937228,
+            "predicted_n": 6,
+            "predicted_ms": 516.159,
+            "predicted_per_token_ms": 103.23179999999999,
+            "predicted_per_second": 9.686937552188375
+          },
+          "seconds": 5.903153842000023,
+          "request_sha256": "b0bdee4ec1a0601a226dd66ea512212b16cc106ad89c0a22c4b539f2fe31fe41"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 107,
+        "completion_tokens": 6,
+        "total_tokens": 113
+      },
+      "seconds": 5.903238810000005,
+      "question_sha256": "83a5d326528807c67c7c6bf80ed321f370e4f61a51b1c04d98ad91238e737932",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:movie_recommendation:197",
+      "suite": "BBH",
+      "family": "movie_recommendation",
+      "question": "Find a movie similar to Jurassic Park, The Silence of the Lambs, Dances with Wolves, Seven:\nOptions:\n(A) Forrest Gump\n(B) Righteous Kill\n(C) Cheech and Chong's Up in Smoke\n(D) Blood The Last Vampire",
+      "reference": "(A)",
+      "correct": true
+    },
+    {
+      "arm": "reasoning",
+      "answer": "(A)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To find a movie similar to *Jurassic Park*, *The Silence of the Lambs*, *Dances with Wolves*, and *Seven*, we must first analyze the common threads among these films:\n\n1.  **Genre & Tone**: All four are major studio releases from the 1990s that blend high-concept action/thriller elements with deep character development and emotional resonance.\n    *   *Jurassic Park*: Sci-fi thriller with a focus on human nature and survival.\n    *   *The Silence of the Lambs*: Psychological thriller/crime drama featuring a cat-and-mouse game and intense character study.\n    *   *Dances with Wolves*: Western drama focusing on cultural clash, redemption, and friendship.\n    *   *Seven*: Psychological crime thriller involving a detective and a serial killer, exploring dark themes.\n2.  **Key Characteristics**:\n    *   **Complex Protagonists**: Each film features a protagonist who undergoes significant growth or faces a profound moral dilemma.\n    *   **Atmospheric Tension**: They all build suspense through atmosphere and dialogue rather than just jump scares or pure action.\n    *   **Cultural/Social Themes**: They touch upon broader societal issues (technology, crime, racism, morality).\n    *   **Critical Acclaim**: All are widely regarded as critical darlings of the 90s.\n\n**Evaluating the Options**:\n\n*   **(A) Forrest Gump**: Directed by Robert Zemeckis (same director as *Jurassic Park*). It shares the 1990s setting, the blend of action/adventure with deep emotional storytelling, and features a protagonist whose life is shaped by historical events and personal growth. Like *Seven* and *Silence of the Lambs*, it deals with complex human behavior and morality. It is often cited alongside these films as a quintessential 90s drama/thriller hybrid.\n*   **(B) Righteous Kill**: A 2008 action-thriller. While it has crime elements, it lacks the character-driven depth and emotional scope of the reference films. It is more of a standard action movie.\n*   **(C) Cheech and Chong's Up in Smoke**: A comedy. The tone and genre are completely opposite to the serious, dramatic nature of the reference list.\n*   **(D) Blood: The Last Vampire**: A horror film. While it has a supernatural element, it does not share the grounded, character-driven drama or the specific blend of thriller/drama found in the reference list.\n\n**Conclusion**:\n*Forrest Gump* is the only option that matches the 1990s era, the director (Zemeckis), and the specific blend of high-stakes narrative with profound character study and emotional depth found in the other four films.\n\nFINAL: (A)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 600,
+            "prompt_tokens": 117,
+            "total_tokens": 717,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 117,
+            "prompt_ms": 5749.415,
+            "prompt_per_token_ms": 49.140299145299146,
+            "prompt_per_second": 20.34989646772759,
+            "predicted_n": 600,
+            "predicted_ms": 63228.719,
+            "predicted_per_token_ms": 105.55712687813022,
+            "predicted_per_second": 9.473543185336398
+          },
+          "seconds": 69.01083585699999,
+          "request_sha256": "3d1ae2a44b7b8765c4d4adea87e1a9e37bf585fe5cdbc0200fa303de6a512e60"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 117,
+        "completion_tokens": 600,
+        "total_tokens": 717
+      },
+      "seconds": 69.011052025,
+      "question_sha256": "83a5d326528807c67c7c6bf80ed321f370e4f61a51b1c04d98ad91238e737932",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:movie_recommendation:197",
+      "suite": "BBH",
+      "family": "movie_recommendation",
+      "question": "Find a movie similar to Jurassic Park, The Silence of the Lambs, Dances with Wolves, Seven:\nOptions:\n(A) Forrest Gump\n(B) Righteous Kill\n(C) Cheech and Chong's Up in Smoke\n(D) Blood The Last Vampire",
+      "reference": "(A)",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "(D)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "(D)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 3,
+            "prompt_tokens": 123,
+            "total_tokens": 126,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 123,
+            "prompt_ms": 6130.051,
+            "prompt_per_token_ms": 49.837813008130084,
+            "prompt_per_second": 20.06508591853477,
+            "predicted_n": 3,
+            "predicted_ms": 204.235,
+            "predicted_per_token_ms": 102.1175,
+            "predicted_per_second": 9.792640830415941
+          },
+          "seconds": 6.370167256999991,
+          "request_sha256": "119396896cb624e644fd61eb34b46cfc4620255530787d00d136718895ac4acc"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 123,
+        "completion_tokens": 3,
+        "total_tokens": 126
+      },
+      "seconds": 6.370243020999993,
+      "question_sha256": "76a78be4caeb5e9f4b7fe68a1965686879b337b0e9de03b5bbb2c99abc02c92f",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:ruin_names:144",
+      "suite": "BBH",
+      "family": "ruin_names",
+      "question": "Which of the following is a humorous edit of this artist or movie name: 'rita, sue and bob too'?\nOptions:\n(A) rita\n(B) sue and bob too\n(C) rita\n(D) sue and bob poo\n(E) rita\n(F) sue and box too\n(G) rita,y sue and bob too",
+      "reference": "rita, sue and bob poo",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "(D)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "The original phrase is \"Rita, Sue and Bob Too,\" which is a famous song by The Beatles. The question asks for a \"humorous edit.\"\n\nLooking at the options:\n- (A), (C), (E), (G) are variations of the original text or contain typos that don't create a clear joke.\n- (B) is the original text.\n- (D) changes \"too\" to \"poo\". This creates a pun based on the sound-alike nature of \"too\" and \"poo,\" which is a common type of humorous edit or meme (often associated with the song's lyrics or just as a silly alteration).\n- (F) changes \"too\" to \"box too\", which is less of a standard pun than \"poo\".\n\nThe edit \"poo\" is the most distinct and humorous alteration among the choices, playing on the phonetic similarity.\n\nFINAL: (D)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 197,
+            "prompt_tokens": 133,
+            "total_tokens": 330,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 133,
+            "prompt_ms": 6490.572,
+            "prompt_per_token_ms": 48.80129323308271,
+            "prompt_per_second": 20.491260246400472,
+            "predicted_n": 197,
+            "predicted_ms": 20087.042,
+            "predicted_per_token_ms": 102.48490816326532,
+            "predicted_per_second": 9.757534235254747
+          },
+          "seconds": 26.60637581499998,
+          "request_sha256": "b8369723a29726ee4541b33c5945734ba85d327700f31ace37a976ca0a492c4b"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 133,
+        "completion_tokens": 197,
+        "total_tokens": 330
+      },
+      "seconds": 26.606483146999977,
+      "question_sha256": "76a78be4caeb5e9f4b7fe68a1965686879b337b0e9de03b5bbb2c99abc02c92f",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:ruin_names:144",
+      "suite": "BBH",
+      "family": "ruin_names",
+      "question": "Which of the following is a humorous edit of this artist or movie name: 'rita, sue and bob too'?\nOptions:\n(A) rita\n(B) sue and bob too\n(C) rita\n(D) sue and bob poo\n(E) rita\n(F) sue and box too\n(G) rita,y sue and bob too",
+      "reference": "rita, sue and bob poo",
+      "correct": false
+    },
+    {
+      "arm": "program",
+      "answer": "(D)",
+      "status": "model_answer_unverified",
+      "execution": {
+        "answer": "(D)",
+        "status": "model_answer_unverified",
+        "trace": [],
+        "program_sha256": "c15f935f103dcbc9a6375a8dd4ec1a0759c7bf37d5ef08224685d32ec6ac2d86",
+        "plan": {
+          "answer": "(D)"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"answer\":\"(D)\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 8,
+            "prompt_tokens": 406,
+            "total_tokens": 414,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 406,
+            "prompt_ms": 19678.498,
+            "prompt_per_token_ms": 48.469206896551725,
+            "prompt_per_second": 20.631655932276946,
+            "predicted_n": 8,
+            "predicted_ms": 727.311,
+            "predicted_per_token_ms": 103.90157142857143,
+            "predicted_per_second": 9.624493511028982
+          },
+          "seconds": 20.445799274000024,
+          "request_sha256": "367b4b6c96ed6fd25793c20d74cf06fe35617394a650028a6df4472e8ffacaac"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 406,
+        "completion_tokens": 8,
+        "total_tokens": 414
+      },
+      "seconds": 20.44592789899997,
+      "question_sha256": "76a78be4caeb5e9f4b7fe68a1965686879b337b0e9de03b5bbb2c99abc02c92f",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:ruin_names:144",
+      "suite": "BBH",
+      "family": "ruin_names",
+      "question": "Which of the following is a humorous edit of this artist or movie name: 'rita, sue and bob too'?\nOptions:\n(A) rita\n(B) sue and bob too\n(C) rita\n(D) sue and bob poo\n(E) rita\n(F) sue and box too\n(G) rita,y sue and bob too",
+      "reference": "rita, sue and bob poo",
+      "correct": false
+    },
+    {
+      "arm": "direct",
+      "answer": "(C)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "Let's track the partners step by step.\n\n**Initial Partners:**\n- Alice: Patrick\n- Bob: Lola\n- Claire: Izzi\n- Dave: Rodrigo\n- Eve: Helga\n- Fred: Sam\n- Gertrude: Melissa\n\n**Step 1: Eve and Bob switch partners.**\n- Eve was with Helga, Bob was with Lola.\n- New pairs: Eve-Lola, Bob-Helga.\n\n**Step 2: Eve and Dave switch partners.**\n- Eve was with Lola, Dave was with Rodrigo.\n- New pairs: Eve-Rodrigo, Dave-Lola.\n\n**Step 3: Fred and Gertrude switch partners.**\n- Fred was with Sam, Gertrude was with Melissa.\n- New pairs: Fred-Melissa, Gertrude-Sam.\n\n**Step 4: Gertrude and Alice switch partners.**\n- Gertrude was with Sam, Alice was with Patrick.\n- New pairs: Gertrude-Patrick, Alice-Sam.\n\n**Step 5: Alice and Dave switch partners.**\n- Alice was with Sam, Dave was with Lola.\n- New pairs: Alice-Lola, Dave-Sam.\n\n**Step 6: Claire and Alice switch partners.**\n- Claire was with Izzi, Alice was with Lola.\n- New pairs: Claire-Lola, Alice-Izzi.\n\n**Step 7: Alice and Dave switch partners.**\n- Alice was with Izzi, Dave was with Sam.\n- New pairs: Alice-Sam, Dave-Izzi.\n\nAt the end of the dance, Dave is dancing with Izzi.\n\n(C)\n\nFINAL: (C)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 356,
+            "prompt_tokens": 249,
+            "total_tokens": 605,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 249,
+            "prompt_ms": 12285.201,
+            "prompt_per_token_ms": 49.33815662650602,
+            "prompt_per_second": 20.268288650710723,
+            "predicted_n": 356,
+            "predicted_ms": 37243.279,
+            "predicted_per_token_ms": 104.91064507042255,
+            "predicted_per_second": 9.531921182342725
+          },
+          "seconds": 49.56719984199998,
+          "request_sha256": "677fb64c6864520ff99bfa4dc27a716c6002dd45d2e293100b0fe45b46f646fa"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 249,
+        "completion_tokens": 356,
+        "total_tokens": 605
+      },
+      "seconds": 49.56733372400004,
+      "question_sha256": "de4d6fdcbc85381fc533587a8273e635f434092e81c0085dab66edc35778d65d",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:tracking_shuffled_objects_seven_objects:183",
+      "suite": "BBH",
+      "family": "tracking_shuffled_objects_seven_objects",
+      "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Patrick, Bob is dancing with Lola, Claire is dancing with Izzi, Dave is dancing with Rodrigo, Eve is dancing with Helga, Fred is dancing with Sam, and Gertrude is dancing with Melissa.\nThroughout the song, the dancers often trade partners. First, Eve and Bob switch partners. Then, Eve and Dave switch partners. Then, Fred and Gertrude switch partners. Then, Gertrude and Alice switch partners. Then, Alice and Dave switch partners. Then, Claire and Alice switch partners. Finally, Alice and Dave switch partners. At the end of the dance, Dave is dancing with\nOptions:\n(A) Patrick\n(B) Lola\n(C) Izzi\n(D) Rodrigo\n(E) Helga\n(F) Sam\n(G) Melissa",
+      "reference": "(C)",
+      "correct": true
+    },
+    {
+      "arm": "reasoning",
+      "answer": "(C)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "Let's track the partners step-by-step.\n\n**Initial State:**\n- Alice: Patrick\n- Bob: Lola\n- Claire: Izzi\n- Dave: Rodrigo\n- Eve: Helga\n- Fred: Sam\n- Gertrude: Melissa\n\n**Step 1: Eve and Bob switch partners.**\n- Eve gets Lola (from Bob).\n- Bob gets Helga (from Eve).\n- *Current relevant pairs:* Eve-Lola, Bob-Helga.\n\n**Step 2: Eve and Dave switch partners.**\n- Eve gets Rodrigo (from Dave).\n- Dave gets Lola (from Eve).\n- *Current relevant pairs:* Eve-Rodrigo, Dave-Lola.\n\n**Step 3: Fred and Gertrude switch partners.**\n- Fred gets Melissa (from Gertrude).\n- Gertrude gets Sam (from Fred).\n- *Current relevant pairs:* Fred-Melissa, Gertrude-Sam.\n\n**Step 4: Gertrude and Alice switch partners.**\n- Gertrude gets Patrick (from Alice).\n- Alice gets Sam (from Gertrude).\n- *Current relevant pairs:* Gertrude-Patrick, Alice-Sam.\n\n**Step 5: Alice and Dave switch partners.**\n- Alice gets Lola (from Dave).\n- Dave gets Sam (from Alice).\n- *Current relevant pairs:* Alice-Lola, Dave-Sam.\n\n**Step 6: Claire and Alice switch partners.**\n- Claire gets Lola (from Alice).\n- Alice gets Izzi (from Claire).\n- *Current relevant pairs:* Claire-Lola, Alice-Izzi.\n- *Note: Dave is not involved in this step.*\n\n**Step 7: Alice and Dave switch partners.**\n- Alice gets Sam (from Dave).\n- Dave gets Izzi (from Alice).\n- *Current relevant pairs:* Alice-Sam, Dave-Izzi.\n\nAt the end of the dance, Dave is dancing with **Izzi**.\n\nThis corresponds to Option (C).\n\nFINAL: (C)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 435,
+            "prompt_tokens": 259,
+            "total_tokens": 694,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 259,
+            "prompt_ms": 12659.269,
+            "prompt_per_token_ms": 48.87748648648649,
+            "prompt_per_second": 20.459317200700923,
+            "predicted_n": 435,
+            "predicted_ms": 45006.04,
+            "predicted_per_token_ms": 103.7005529953917,
+            "predicted_per_second": 9.643150119406195
+          },
+          "seconds": 57.695676007999964,
+          "request_sha256": "69ed78ca20023598a6e1f50a0e1ff855d5e68659ec0cb21b9e9a7c14f6fd5d69"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 259,
+        "completion_tokens": 435,
+        "total_tokens": 694
+      },
+      "seconds": 57.695853416000034,
+      "question_sha256": "de4d6fdcbc85381fc533587a8273e635f434092e81c0085dab66edc35778d65d",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:tracking_shuffled_objects_seven_objects:183",
+      "suite": "BBH",
+      "family": "tracking_shuffled_objects_seven_objects",
+      "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Patrick, Bob is dancing with Lola, Claire is dancing with Izzi, Dave is dancing with Rodrigo, Eve is dancing with Helga, Fred is dancing with Sam, and Gertrude is dancing with Melissa.\nThroughout the song, the dancers often trade partners. First, Eve and Bob switch partners. Then, Eve and Dave switch partners. Then, Fred and Gertrude switch partners. Then, Gertrude and Alice switch partners. Then, Alice and Dave switch partners. Then, Claire and Alice switch partners. Finally, Alice and Dave switch partners. At the end of the dance, Dave is dancing with\nOptions:\n(A) Patrick\n(B) Lola\n(C) Izzi\n(D) Rodrigo\n(E) Helga\n(F) Sam\n(G) Melissa",
+      "reference": "(C)",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": null,
+      "status": "program_failed",
+      "execution": null,
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"{'Alice':'Patrick','Bob':'Lola','Claire':'Izzi','Dave':'Rodrigo','Eve':'Helga','Fred':'Sam','Gertrude':'Melissa'}\"},{\"name\":\"b\",\"expr\":\"a['Eve']='Bob';a['Bob']='Helga';a\"},{\"name\":\"c\",\"expr\":\"b['Eve']='Rodrigo';b['Rodrigo']='Helga';b\"},{\"name\":\"d\",\"expr\":\"c['Fred']='Gertrude';c['Gertrude']='Sam';c\"},{\"name\":\"e\",\"expr\":\"d['Gertrude']='Alice';d['Alice']='Melissa';d\"},{\"name\":\"f\",\"expr\":\"e['Alice']='Dave';e['Dave']='Melissa';e\"},{\"name\":\"g\",\"expr\":\"f['Alice']='Rodrigo';f['Rodrigo']='Melissa';f\"},{\"name\":\"h\",\"expr\":\"g['Alice']='Rodrigo';g['Rodrigo']='Melissa';g\"},{\"name\":\"i\",\"expr\":\"h['Dave']\"}],\"result\":\"i\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 232,
+            "prompt_tokens": 532,
+            "total_tokens": 764,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 532,
+            "prompt_ms": 25480.917,
+            "prompt_per_token_ms": 47.89646052631579,
+            "prompt_per_second": 20.878369487251966,
+            "predicted_n": 232,
+            "predicted_ms": 24239.539,
+            "predicted_per_token_ms": 104.93306926406926,
+            "predicted_per_second": 9.529884211081736
+          },
+          "seconds": 49.760665819999986,
+          "request_sha256": "319068852d5ef00f98f9ee4f50abbecef10b471738ae6c1ca727bdcb97f49f7e"
+        },
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"{'Alice':'Patrick','Bob':'Lola','Claire':'Izzi','Dave':'Rodrigo','Eve':'Helga','Fred':'Sam','Gertrude':'Melissa'}\"},{\"name\":\"b\",\"expr\":\"a['Eve']='Bob';a['Bob']='Helga';a\"},{\"name\":\"c\",\"expr\":\"b['Eve']='Rodrigo';b['Rodrigo']='Helga';b\"},{\"name\":\"d\",\"expr\":\"c['Fred']='Gertrude';c['Gertrude']='Sam';c\"},{\"name\":\"e\",\"expr\":\"d['Gertrude']='Alice';d['Alice']='Melissa';d\"},{\"name\":\"f\",\"expr\":\"e['Alice']='Dave';e['Dave']='Melissa';e\"},{\"name\":\"g\",\"expr\":\"f['Alice']='Rodrigo';f['Rodrigo']='Melissa';f\"},{\"name\":\"h\",\"expr\":\"g['Alice']='Rodrigo';g['Rodrigo']='Melissa';g\"},{\"name\":\"i\",\"expr\":\"h['Dave']\"}],\"result\":\"i\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 232,
+            "prompt_tokens": 816,
+            "total_tokens": 1048,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 816,
+            "prompt_ms": 39363.101,
+            "prompt_per_token_ms": 48.2390943627451,
+            "prompt_per_second": 20.730074086388672,
+            "predicted_n": 232,
+            "predicted_ms": 25024.509,
+            "predicted_per_token_ms": 108.33120779220778,
+            "predicted_per_second": 9.230950345519268
+          },
+          "seconds": 64.39681817600007,
+          "request_sha256": "874f8b09469f9e7776287fb5c75668b5d80c2e9c6bc2ec4a080657ae25f72afd"
+        }
+      ],
+      "errors": [
+        "syntax_not_supported:Dict",
+        "syntax_not_supported:Dict"
+      ],
+      "usage": {
+        "prompt_tokens": 1348,
+        "completion_tokens": 464,
+        "total_tokens": 1812
+      },
+      "seconds": 114.158425217,
+      "question_sha256": "de4d6fdcbc85381fc533587a8273e635f434092e81c0085dab66edc35778d65d",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:tracking_shuffled_objects_seven_objects:183",
+      "suite": "BBH",
+      "family": "tracking_shuffled_objects_seven_objects",
+      "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Patrick, Bob is dancing with Lola, Claire is dancing with Izzi, Dave is dancing with Rodrigo, Eve is dancing with Helga, Fred is dancing with Sam, and Gertrude is dancing with Melissa.\nThroughout the song, the dancers often trade partners. First, Eve and Bob switch partners. Then, Eve and Dave switch partners. Then, Fred and Gertrude switch partners. Then, Gertrude and Alice switch partners. Then, Alice and Dave switch partners. Then, Claire and Alice switch partners. Finally, Alice and Dave switch partners. At the end of the dance, Dave is dancing with\nOptions:\n(A) Patrick\n(B) Lola\n(C) Izzi\n(D) Rodrigo\n(E) Helga\n(F) Sam\n(G) Melissa",
+      "reference": "(C)",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "6",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "Let $J$ be the number of photographs Jamal's phone can hold.\nLet $B$ be the number of photographs Brittany's phone can hold.\nLet $D$ be the number of ducks in Jamal's photograph.\n\nFrom the problem statement, we have the following relationships:\n1. Jamal's phone holds 6 times more photographs than Brittany's:\n   $J = 6 \\times B$\n\n2. Brittany's phone holds 50 times more photographs than the number of ducks in Jamal's photo:\n   $B = 50 \\times D$\n\n3. Jamal's phone can hold 1800 photographs:\n   $J = 1800$\n\nWe need to find $D$.\n\nStep 1: Find $B$.\nSubstitute $J = 1800$ into the first equation:\n$1800 = 6 \\times B$\n$B = \\frac{1800}{6}$\n$B = 300$\n\nStep 2: Find $D$.\nSubstitute $B = 300$ into the second equation:\n$300 = 50 \\times D$\n$D = \\frac{300}{50}$\n$D = 6$\n\nVerification:\n- If $D = 6$, then $B = 50 \\times 6 = 300$.\n- If $B = 300$, then $J = 6 \\times 300 = 1800$.\n- This matches the given value for $J$.\n\nThe number of ducks is 6.\n\nFINAL: 6",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 360,
+            "prompt_tokens": 142,
+            "total_tokens": 502,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 142,
+            "prompt_ms": 6938.198,
+            "prompt_per_token_ms": 48.86054929577465,
+            "prompt_per_second": 20.46640928955905,
+            "predicted_n": 360,
+            "predicted_ms": 36185.623,
+            "predicted_per_token_ms": 100.79560724233983,
+            "predicted_per_second": 9.921067270280243
+          },
+          "seconds": 43.17070710600001,
+          "request_sha256": "bbb4a6fb977b95baddb45a7c40cf8253b7cbdcc7444ae212fff491f5c46d90d3"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 142,
+        "completion_tokens": 360,
+        "total_tokens": 502
+      },
+      "seconds": 43.170826756,
+      "question_sha256": "c149b54f8d8fa351b0a7021347b0972cbe70254fdb4a605b8fc3249f9626aced",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:114",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Jamal's phone can hold 6 times more photographs than can Brittany's phone.  The maximum number of photographs that Brittany's phone can hold is 50 times more than the number of birds in Jamal's photograph of the ducks at the zoo.  If Jamal's phone can hold 1800 photographs, how many ducks can be seen in Jamal's photograph of ducks at the zoo?",
+      "reference": "6",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "0.12",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "0.12",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "1800/6",
+            "value": {
+              "numerator": 300,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "b",
+            "expr": "50*a",
+            "value": {
+              "numerator": 15000,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "c",
+            "expr": "1800/b",
+            "value": {
+              "numerator": 3,
+              "denominator": 25
+            }
+          },
+          {
+            "name": "d",
+            "expr": "c*1",
+            "value": {
+              "numerator": 3,
+              "denominator": 25
+            }
+          },
+          {
+            "name": "e",
+            "expr": "d*1",
+            "value": {
+              "numerator": 3,
+              "denominator": 25
+            }
+          },
+          {
+            "name": "f",
+            "expr": "e*1",
+            "value": {
+              "numerator": 3,
+              "denominator": 25
+            }
+          },
+          {
+            "name": "g",
+            "expr": "f*1",
+            "value": {
+              "numerator": 3,
+              "denominator": 25
+            }
+          },
+          {
+            "name": "h",
+            "expr": "g*1",
+            "value": {
+              "numerator": 3,
+              "denominator": 25
+            }
+          },
+          {
+            "name": "i",
+            "expr": "h*1",
+            "value": {
+              "numerator": 3,
+              "denominator": 25
+            }
+          },
+          {
+            "name": "j",
+            "expr": "i*1",
+            "value": {
+              "numerator": 3,
+              "denominator": 25
+            }
+          },
+          {
+            "name": "k",
+            "expr": "j*1",
+            "value": {
+              "numerator": 3,
+              "denominator": 25
+            }
+          },
+          {
+            "name": "l",
+            "expr": "k*1",
+            "value": {
+              "numerator": 3,
+              "denominator": 25
+            }
+          },
+          {
+            "name": "m",
+            "expr": "l*1",
+            "value": {
+              "numerator": 3,
+              "denominator": 25
+            }
+          },
+          {
+            "name": "n",
+            "expr": "m*1",
+            "value": {
+              "numerator": 3,
+              "denominator": 25
+            }
+          },
+          {
+            "name": "o",
+            "expr": "n*1",
+            "value": {
+              "numerator": 3,
+              "denominator": 25
+            }
+          },
+          {
+            "name": "p",
+            "expr": "o*1",
+            "value": {
+              "numerator": 3,
+              "denominator": 25
+            }
+          },
+          {
+            "name": "q",
+            "expr": "p*1",
+            "value": {
+              "numerator": 3,
+              "denominator": 25
+            }
+          },
+          {
+            "name": "r",
+            "expr": "q*1",
+            "value": {
+              "numerator": 3,
+              "denominator": 25
+            }
+          },
+          {
+            "name": "s",
+            "expr": "r*1",
+            "value": {
+              "numerator": 3,
+              "denominator": 25
+            }
+          },
+          {
+            "name": "t",
+            "expr": "s*1",
+            "value": {
+              "numerator": 3,
+              "denominator": 25
+            }
+          },
+          {
+            "name": "u",
+            "expr": "t*1",
+            "value": {
+              "numerator": 3,
+              "denominator": 25
+            }
+          },
+          {
+            "name": "v",
+            "expr": "u*1",
+            "value": {
+              "numerator": 3,
+              "denominator": 25
+            }
+          },
+          {
+            "name": "w",
+            "expr": "v*1",
+            "value": {
+              "numerator": 3,
+              "denominator": 25
+            }
+          },
+          {
+            "name": "x",
+            "expr": "w*1",
+            "value": {
+              "numerator": 3,
+              "denominator": 25
+            }
+          },
+          {
+            "name": "y",
+            "expr": "x*1",
+            "value": {
+              "numerator": 3,
+              "denominator": 25
+            }
+          },
+          {
+            "name": "z",
+            "expr": "y*1",
+            "value": {
+              "numerator": 3,
+              "denominator": 25
+            }
+          }
+        ],
+        "value": {
+          "numerator": 3,
+          "denominator": 25
+        },
+        "program_sha256": "1dfe81639e57d60656be61521eceb75e9020c62e5e0b36c33222f54abb7d4656",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "1800/6"
+            },
+            {
+              "name": "b",
+              "expr": "50*a"
+            },
+            {
+              "name": "c",
+              "expr": "1800/b"
+            },
+            {
+              "name": "d",
+              "expr": "c*1"
+            },
+            {
+              "name": "e",
+              "expr": "d*1"
+            },
+            {
+              "name": "f",
+              "expr": "e*1"
+            },
+            {
+              "name": "g",
+              "expr": "f*1"
+            },
+            {
+              "name": "h",
+              "expr": "g*1"
+            },
+            {
+              "name": "i",
+              "expr": "h*1"
+            },
+            {
+              "name": "j",
+              "expr": "i*1"
+            },
+            {
+              "name": "k",
+              "expr": "j*1"
+            },
+            {
+              "name": "l",
+              "expr": "k*1"
+            },
+            {
+              "name": "m",
+              "expr": "l*1"
+            },
+            {
+              "name": "n",
+              "expr": "m*1"
+            },
+            {
+              "name": "o",
+              "expr": "n*1"
+            },
+            {
+              "name": "p",
+              "expr": "o*1"
+            },
+            {
+              "name": "q",
+              "expr": "p*1"
+            },
+            {
+              "name": "r",
+              "expr": "q*1"
+            },
+            {
+              "name": "s",
+              "expr": "r*1"
+            },
+            {
+              "name": "t",
+              "expr": "s*1"
+            },
+            {
+              "name": "u",
+              "expr": "t*1"
+            },
+            {
+              "name": "v",
+              "expr": "u*1"
+            },
+            {
+              "name": "w",
+              "expr": "v*1"
+            },
+            {
+              "name": "x",
+              "expr": "w*1"
+            },
+            {
+              "name": "y",
+              "expr": "x*1"
+            },
+            {
+              "name": "z",
+              "expr": "y*1"
+            }
+          ],
+          "result": "z"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"1800/6\"},{\"name\":\"b\",\"expr\":\"50*a\"},{\"name\":\"c\",\"expr\":\"1800/b\"},{\"name\":\"d\",\"expr\":\"c*1\"},{\"name\":\"e\",\"expr\":\"d*1\"},{\"name\":\"f\",\"expr\":\"e*1\"},{\"name\":\"g\",\"expr\":\"f*1\"},{\"name\":\"h\",\"expr\":\"g*1\"},{\"name\":\"i\",\"expr\":\"h*1\"},{\"name\":\"j\",\"expr\":\"i*1\"},{\"name\":\"k\",\"expr\":\"j*1\"},{\"name\":\"l\",\"expr\":\"k*1\"},{\"name\":\"m\",\"expr\":\"l*1\"},{\"name\":\"n\",\"expr\":\"m*1\"},{\"name\":\"o\",\"expr\":\"n*1\"},{\"name\":\"p\",\"expr\":\"o*1\"},{\"name\":\"q\",\"expr\":\"p*1\"},{\"name\":\"r\",\"expr\":\"q*1\"},{\"name\":\"s\",\"expr\":\"r*1\"},{\"name\":\"t\",\"expr\":\"s*1\"},{\"name\":\"u\",\"expr\":\"t*1\"},{\"name\":\"v\",\"expr\":\"u*1\"},{\"name\":\"w\",\"expr\":\"v*1\"},{\"name\":\"x\",\"expr\":\"w*1\"},{\"name\":\"y\",\"expr\":\"x*1\"},{\"name\":\"z\",\"expr\":\"y*1\"}],\"result\":\"z\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 274,
+            "prompt_tokens": 415,
+            "total_tokens": 689,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 415,
+            "prompt_ms": 19843.833,
+            "prompt_per_token_ms": 47.81646506024096,
+            "prompt_per_second": 20.91329835319618,
+            "predicted_n": 274,
+            "predicted_ms": 28752.172,
+            "predicted_per_token_ms": 105.31931135531136,
+            "predicted_per_second": 9.494934852226121
+          },
+          "seconds": 48.63544549699998,
+          "request_sha256": "77bbea3c1e971b04648dd7953ff9052bd0c7670b179518a1cc67edc01c2d6f44"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 415,
+        "completion_tokens": 274,
+        "total_tokens": 689
+      },
+      "seconds": 48.63662880499999,
+      "question_sha256": "c149b54f8d8fa351b0a7021347b0972cbe70254fdb4a605b8fc3249f9626aced",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:114",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Jamal's phone can hold 6 times more photographs than can Brittany's phone.  The maximum number of photographs that Brittany's phone can hold is 50 times more than the number of birds in Jamal's photograph of the ducks at the zoo.  If Jamal's phone can hold 1800 photographs, how many ducks can be seen in Jamal's photograph of ducks at the zoo?",
+      "reference": "6",
+      "correct": false
+    },
+    {
+      "arm": "direct",
+      "answer": "(A)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "FINAL: (A)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 132,
+            "total_tokens": 138,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 132,
+            "prompt_ms": 6446.428,
+            "prompt_per_token_ms": 48.83657575757576,
+            "prompt_per_second": 20.47645610871633,
+            "predicted_n": 6,
+            "predicted_ms": 505.554,
+            "predicted_per_token_ms": 101.1108,
+            "predicted_per_second": 9.890140321310879
+          },
+          "seconds": 6.982321015000025,
+          "request_sha256": "f42b9b0aea563b66b17f26a3216fd8c39fcd1d4b5bab7afcb716c795b0831809"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 132,
+        "completion_tokens": 6,
+        "total_tokens": 138
+      },
+      "seconds": 6.982403730999977,
+      "question_sha256": "c149b54f8d8fa351b0a7021347b0972cbe70254fdb4a605b8fc3249f9626aced",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:114",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Jamal's phone can hold 6 times more photographs than can Brittany's phone.  The maximum number of photographs that Brittany's phone can hold is 50 times more than the number of birds in Jamal's photograph of the ducks at the zoo.  If Jamal's phone can hold 1800 photographs, how many ducks can be seen in Jamal's photograph of ducks at the zoo?",
+      "reference": "6",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "13",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To find the total number of letters in Indras and her sister's names, let's break down the information step-by-step:\n\n1.  **Count the letters in Indras' name:**\n    The name is \"Indras\".\n    I-n-d-r-a-s = 6 letters.\n    (This matches the problem statement: \"Indras has 6 letters in her name.\")\n\n2.  **Calculate half of the letters in Indras' name:**\n    Half of 6 is $6 / 2 = 3$.\n\n3.  **Determine the number of letters in the sister's name:**\n    The problem states the sister's name has \"4 more letters than half of the letters in Indras' name\".\n    Sister's letters = (Half of Indras' letters) + 4\n    Sister's letters = $3 + 4 = 7$.\n\n4.  **Calculate the total number of letters in both names:**\n    Total = (Letters in Indras' name) + (Letters in sister's name)\n    Total = $6 + 7 = 13$.\n\nThe total number of letters is 13.\n\nFINAL: 13",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 255,
+            "prompt_tokens": 104,
+            "total_tokens": 359,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 104,
+            "prompt_ms": 5073.352,
+            "prompt_per_token_ms": 48.782230769230765,
+            "prompt_per_second": 20.499267545401935,
+            "predicted_n": 255,
+            "predicted_ms": 25682.322,
+            "predicted_per_token_ms": 101.11150393700787,
+            "predicted_per_second": 9.890071466279412
+          },
+          "seconds": 30.784943079000072,
+          "request_sha256": "f8f4ea2e33b0853ba7bbfd40765f20c8041eef5f5a197487bfd71c77269ce1b3"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 104,
+        "completion_tokens": 255,
+        "total_tokens": 359
+      },
+      "seconds": 30.785062128999925,
+      "question_sha256": "e0191327ea7a8219d262f7af1befe50403ed9a4346bff2e72c3bd72784bdf259",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:429",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Indras has 6 letters in her name. Her sister's name has 4 more letters than half of the letters in Indras' name. How many letters are in Indras and her sister's names?",
+      "reference": "13",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "13",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "13",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "6",
+            "value": {
+              "numerator": 6,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "b",
+            "expr": "a//2",
+            "value": {
+              "numerator": 3,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "c",
+            "expr": "b+4",
+            "value": {
+              "numerator": 7,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "d",
+            "expr": "a+c",
+            "value": {
+              "numerator": 13,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 13,
+          "denominator": 1
+        },
+        "program_sha256": "e66cc818420158672022e12e864e830577cf5c8a557ddc248dfe4268fdf7ba81",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "6"
+            },
+            {
+              "name": "b",
+              "expr": "a//2"
+            },
+            {
+              "name": "c",
+              "expr": "b+4"
+            },
+            {
+              "name": "d",
+              "expr": "a+c"
+            }
+          ],
+          "result": "d"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"6\"},{\"name\":\"b\",\"expr\":\"a//2\"},{\"name\":\"c\",\"expr\":\"b+4\"},{\"name\":\"d\",\"expr\":\"a+c\"}],\"result\":\"d\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 46,
+            "prompt_tokens": 377,
+            "total_tokens": 423,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 377,
+            "prompt_ms": 18019.494,
+            "prompt_per_token_ms": 47.797066312997345,
+            "prompt_per_second": 20.92178615004395,
+            "predicted_n": 46,
+            "predicted_ms": 4601.609,
+            "predicted_per_token_ms": 102.25797777777778,
+            "predicted_per_second": 9.779188105725627
+          },
+          "seconds": 22.66002486299999,
+          "request_sha256": "bb9181157aa25ff6c8f8b15d152a41ecf10f8c5144b3d2e33ec1f3a07a3a80eb"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 377,
+        "completion_tokens": 46,
+        "total_tokens": 423
+      },
+      "seconds": 22.660435502999917,
+      "question_sha256": "e0191327ea7a8219d262f7af1befe50403ed9a4346bff2e72c3bd72784bdf259",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:429",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Indras has 6 letters in her name. Her sister's name has 4 more letters than half of the letters in Indras' name. How many letters are in Indras and her sister's names?",
+      "reference": "13",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "(A)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "FINAL: (A)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 94,
+            "total_tokens": 100,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 94,
+            "prompt_ms": 4631.279,
+            "prompt_per_token_ms": 49.268925531914896,
+            "prompt_per_second": 20.29676899189187,
+            "predicted_n": 6,
+            "predicted_ms": 511.912,
+            "predicted_per_token_ms": 102.38239999999999,
+            "predicted_per_second": 9.767303755332948
+          },
+          "seconds": 5.177752670000018,
+          "request_sha256": "428d322e1e7b538fc467023704efb73aa299110f8b4d24d8c51d887fffadd87a"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 94,
+        "completion_tokens": 6,
+        "total_tokens": 100
+      },
+      "seconds": 5.1778351549999115,
+      "question_sha256": "e0191327ea7a8219d262f7af1befe50403ed9a4346bff2e72c3bd72784bdf259",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:429",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Indras has 6 letters in her name. Her sister's name has 4 more letters than half of the letters in Indras' name. How many letters are in Indras and her sister's names?",
+      "reference": "13",
+      "correct": false
+    },
+    {
+      "arm": "direct",
+      "answer": "(B)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "FINAL: (B)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 111,
+            "total_tokens": 117,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 111,
+            "prompt_ms": 5496.977,
+            "prompt_per_token_ms": 49.52231531531531,
+            "prompt_per_second": 20.192916943258087,
+            "predicted_n": 6,
+            "predicted_ms": 527.227,
+            "predicted_per_token_ms": 105.44539999999999,
+            "predicted_per_second": 9.483581076082977
+          },
+          "seconds": 6.053854119999983,
+          "request_sha256": "cf496d5b03c8d453118db8e683dcd473098915a22776660efdc6d209d42621f6"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 111,
+        "completion_tokens": 6,
+        "total_tokens": 117
+      },
+      "seconds": 6.05394886199997,
+      "question_sha256": "042c02746802e4b6763c837914f0f28fae17f14c6a32cd98c2e254791fc07dfb",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:911",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Colby works for a manufacturing company in the packaging division.  He gets paid $0.20 for every package he completes. If he completes 10 less than 50 packages per hour, how much money, in dollars, does he earn in a typical eight-hour workday?",
+      "reference": "64",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "<answer>",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To find Colby's earnings, we need to determine the number of packages he completes per hour and then multiply by the hourly rate and the number of hours worked.\n\n1.  **Calculate packages per hour:**\n    The problem states he completes \"10 less than 50 packages per hour\".\n    $$50 - 10 = 40 \\text{ packages per hour}$$\n\n2.  **Calculate total packages in an eight-hour day:**\n    He works for 8 hours.\n    $$40 \\text{ packages/hour} \\times 8 \\text{ hours} = 320 \\text{ packages}$$\n\n3.  **Calculate total earnings:**\n    He earns $\\$0.20$ for every package.\n    $$320 \\text{ packages} \\times \\$0.20/\\text{package} = \\$64.00$$\n\nAlternatively, calculate hourly earnings first:\n$$40 \\text{ packages} \\times \\$0.20 = \\$8.00 \\text{ per hour}$$\n$$\\$8.00/\\text{hour} \\times 8 \\text{ hours} = \\$64.00$$\n\nColby earns $\\$64$.\n\nFINAL: <answer>",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 275,
+            "prompt_tokens": 121,
+            "total_tokens": 396,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 121,
+            "prompt_ms": 5831.906,
+            "prompt_per_token_ms": 48.19757024793388,
+            "prompt_per_second": 20.747933865875066,
+            "predicted_n": 275,
+            "predicted_ms": 28730.282,
+            "predicted_per_token_ms": 104.85504379562043,
+            "predicted_per_second": 9.536975655164124
+          },
+          "seconds": 34.59199946499996,
+          "request_sha256": "75aec636f91abb2a2bc202254b2b0f6dd7650f0ab435e4041fa0df49e856ea8f"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 121,
+        "completion_tokens": 275,
+        "total_tokens": 396
+      },
+      "seconds": 34.592118254999946,
+      "question_sha256": "042c02746802e4b6763c837914f0f28fae17f14c6a32cd98c2e254791fc07dfb",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:911",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Colby works for a manufacturing company in the packaging division.  He gets paid $0.20 for every package he completes. If he completes 10 less than 50 packages per hour, how much money, in dollars, does he earn in a typical eight-hour workday?",
+      "reference": "64",
+      "correct": false
+    },
+    {
+      "arm": "program",
+      "answer": "64",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "64",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "50-10",
+            "value": {
+              "numerator": 40,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "b",
+            "expr": "a*8",
+            "value": {
+              "numerator": 320,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "c",
+            "expr": "b*0.20",
+            "value": {
+              "numerator": 64,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 64,
+          "denominator": 1
+        },
+        "program_sha256": "8ed7fbf537ddcf192c0ae554be84acc2d1cf44fc291e92c90ff289b20a58933b",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "50-10"
+            },
+            {
+              "name": "b",
+              "expr": "a*8"
+            },
+            {
+              "name": "c",
+              "expr": "b*0.20"
+            }
+          ],
+          "result": "c"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"50-10\"},{\"name\":\"b\",\"expr\":\"a*8\"},{\"name\":\"c\",\"expr\":\"b*0.20\"}],\"result\":\"c\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 44,
+            "prompt_tokens": 394,
+            "total_tokens": 438,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 394,
+            "prompt_ms": 18804.023,
+            "prompt_per_token_ms": 47.72594670050762,
+            "prompt_per_second": 20.952963097311674,
+            "predicted_n": 44,
+            "predicted_ms": 4505.142,
+            "predicted_per_token_ms": 104.77074418604651,
+            "predicted_per_second": 9.544649203066186
+          },
+          "seconds": 23.346110246999956,
+          "request_sha256": "e3bf98011f9aa9ea5c96a0843cf9a4b9a96cd798be36000d7d366d004453942b"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 394,
+        "completion_tokens": 44,
+        "total_tokens": 438
+      },
+      "seconds": 23.34654809799997,
+      "question_sha256": "042c02746802e4b6763c837914f0f28fae17f14c6a32cd98c2e254791fc07dfb",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:911",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Colby works for a manufacturing company in the packaging division.  He gets paid $0.20 for every package he completes. If he completes 10 less than 50 packages per hour, how much money, in dollars, does he earn in a typical eight-hour workday?",
+      "reference": "64",
+      "correct": true
+    }
+  ],
+  "summary": {
+    "direct": {
+      "correct": 2,
+      "n": 7,
+      "answered": 7,
+      "seconds": 90.49481962899989,
+      "completion_tokens": 389,
+      "statuses": {
+        "model_answer_unverified": 7
+      }
+    },
+    "reasoning": {
+      "correct": 5,
+      "n": 7,
+      "answered": 7,
+      "seconds": 320.34254973099985,
+      "completion_tokens": 2577,
+      "statuses": {
+        "model_answer_unverified": 7
+      }
+    },
+    "program": {
+      "correct": 4,
+      "n": 7,
+      "answered": 6,
+      "seconds": 272.9798756989998,
+      "completion_tokens": 850,
+      "statuses": {
+        "model_answer_unverified": 3,
+        "program_failed": 1,
+        "computation_checked_semantics_unverified": 3
+      }
+    }
+  },
+  "wall_seconds": 716.585350028,
+  "protocol": {
+    "arms": {
+      "direct": 768,
+      "reasoning": 768,
+      "program": [
+        512,
+        256
+      ]
+    },
+    "temperature": 0,
+    "seed": 1707,
+    "native_thinking": false,
+    "memory": false,
+    "training": false,
+    "labels_solver_visible": false,
+    "selection_salt": "adaptive-language-v07-20260921\u0000",
+    "gpu": false,
+    "paid_inference": false,
+    "energy_measured": false,
+    "official_leaderboard": false,
+    "frontier_reference_evaluated": false
+  }
+}
