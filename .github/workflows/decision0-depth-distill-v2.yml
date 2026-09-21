@@ -1,0 +1,164 @@
+name: Decision-0 across-depth distillation v2
+on:
+  push:
+    branches: ['decision0/verified-cpu4b-20260921']
+    paths: ['.github/workflows/decision0-depth-distill-v2.yml']
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: decision0-depth-distill-v2
+  cancel-in-progress: false
+defaults:
+  run:
+    shell: bash
+    working-directory: decision0/depth_distill_v1
+env:
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  TOKENIZERS_PARALLELISM: 'false'
+  OMP_NUM_THREADS: '4'
+  MKL_NUM_THREADS: '4'
+jobs:
+  teacher:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        shard: [0,1,2,3]
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          ref: 7a6226bbdfd69376522156110f29dd3de13d2bff
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Apply frozen split repair and test references before model calls
+        run: |
+          git -C "$GITHUB_WORKSPACE" apply "$GITHUB_WORKSPACE/decision0/depth_distill_v1/revision2.patch"
+          test "$(git hash-object cases.py)" = 0437e6f4e8c9f627d36a9c4591b9966861145a04
+          test "$(git hash-object study.py)" = 8c2dd2bd4da074ab4a2340ba7829c3184332dbee
+          test "$(git hash-object test_study.py)" = 74c3ac8ed114efbacc623aa282678ccbf6c6232c
+          python -m unittest -v test_study
+      - name: Install pinned CPU runtime
+        run: |
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6' 'numpy==2.4.6' 'safetensors==0.8.0'
+      - name: Score only independent training requests
+        run: python -u study.py teacher --shard '${{ matrix.shard }}' --out teacher-result
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: dd2-teacher-${{ matrix.shard }}
+          path: decision0/depth_distill_v1/teacher-result/
+          retention-days: 1
+          if-no-files-found: warn
+  train:
+    needs: teacher
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 65
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        arm: [reference, repeat_distill]
+        seed: [73019,73037]
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          ref: 7a6226bbdfd69376522156110f29dd3de13d2bff
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Apply identical frozen repair
+        run: |
+          git -C "$GITHUB_WORKSPACE" apply "$GITHUB_WORKSPACE/decision0/depth_distill_v1/revision2.patch"
+          python -m unittest -v test_study
+      - name: Install identical runtime
+        run: |
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6' 'numpy==2.4.6' 'safetensors==0.8.0'
+      - name: Retrieve this run's checked teacher signals
+        run: gh run download "$GITHUB_RUN_ID" -p 'dd2-teacher-*' -D teachers
+      - name: Train all 32 blocks with fixed data and fixed budget
+        timeout-minutes: 60
+        run: python -u study.py train --arm '${{ matrix.arm }}' --seed '${{ matrix.seed }}' --teacher-root teachers --out trained
+      - name: Record source and dependencies
+        if: always()
+        run: |
+          mkdir -p trained/source
+          cp *.py snli_replay.json DATA_NOTICES.md trained/source/
+          python -m pip freeze > trained/dependencies.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: dd2-trained-${{ matrix.arm }}-${{ matrix.seed }}
+          path: decision0/depth_distill_v1/trained/
+          retention-days: 1
+          if-no-files-found: error
+  evaluate:
+    needs: train
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11]
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          ref: 7a6226bbdfd69376522156110f29dd3de13d2bff
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Apply identical frozen repair
+        run: git -C "$GITHUB_WORKSPACE" apply "$GITHUB_WORKSPACE/decision0/depth_distill_v1/revision2.patch"
+      - name: Install identical runtime
+        run: |
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6' 'numpy==2.4.6' 'safetensors==0.8.0'
+      - name: Retrieve all frozen final checkpoints
+        run: gh run download "$GITHUB_RUN_ID" -p 'dd2-trained-*' -D checkpoints
+      - name: Full-model comparison of four adapters and two unchanged references
+        run: python -u study.py evaluate --shard '${{ matrix.shard }}' --checkpoint-root checkpoints --out evaluation
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: dd2-evaluation-${{ matrix.shard }}
+          path: decision0/depth_distill_v1/evaluation/
+          retention-days: 1
+          if-no-files-found: warn
+  report:
+    needs: evaluate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          ref: 7a6226bbdfd69376522156110f29dd3de13d2bff
+      - name: Check complete coverage and preserve results
+        run: |
+          git -C "$GITHUB_WORKSPACE" apply "$GITHUB_WORKSPACE/decision0/depth_distill_v1/revision2.patch"
+          gh run download "$GITHUB_RUN_ID" -p 'dd2-evaluation-*' -D evaluations
+          python3 study.py aggregate --root evaluations --out final
+          cp *.py snli_replay.json DATA_NOTICES.md final/
+          cp ../input_flow_v1/THIRD_PARTY_NOTICES.md final/
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: dd2-final-results
+          path: decision0/depth_distill_v1/final/
+          retention-days: 3
+          if-no-files-found: error
