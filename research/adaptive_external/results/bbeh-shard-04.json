@@ -1,0 +1,462 @@
+{
+  "manifest": {
+    "model": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "torch": "2.10.0+cpu",
+    "transformers": "5.3.0",
+    "python": "3.12.14",
+    "machine": "aarch64",
+    "platform": "Linux-6.17.0-1022-azure-aarch64-with-glibc2.39",
+    "threads": 4,
+    "dtype": "bfloat16",
+    "attention": "sdpa",
+    "parameters": 4539265536,
+    "load_seconds": 43.72820637699999,
+    "seed": 17,
+    "sampling": false,
+    "thinking_template": false,
+    "max_input_tokens": 8192,
+    "max_output_tokens_per_arm": 512,
+    "generation_seconds_soft_limit": 90,
+    "tools": false,
+    "persistent_memory": false,
+    "trained_neural_guide": false,
+    "new_training": false,
+    "claim": "direct vs bounded explicit reasoning baseline, not complete Adaptive architecture"
+  },
+  "rows": [
+    {
+      "id": 348,
+      "task": "bbeh_buggy_tables",
+      "arm": "direct",
+      "question_sha256": "836810152b55bd81064aa94986ffce5ce9e6fb2abdf94d8b6a093f724b3ed41d",
+      "prompt_sha256": "1b01a80f2a7592cca49159bfe630124e7fbd6f12ae82e59f0e873dda596a3cd5",
+      "input_tokens": 3282,
+      "status": "budget_limited",
+      "response": "To solve this task, we need to:\n1.  Reconstruct the table by replacing \"ERROR\" values with the provided list of numbers/strings in column order.\n2.  Filter the rows based",
+      "output_tokens": 43,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.51176201300004,
+      "reference": "135.0",
+      "correct": false
+    },
+    {
+      "id": 348,
+      "task": "bbeh_buggy_tables",
+      "arm": "reasoning",
+      "question_sha256": "836810152b55bd81064aa94986ffce5ce9e6fb2abdf94d8b6a093f724b3ed41d",
+      "prompt_sha256": "c6a9ea6f4c9eafdfbc7320bb51945fcd675d5a8b5d4fa508b478114b554bd655",
+      "input_tokens": 3290,
+      "status": "budget_limited",
+      "response": "To solve this task, we need to reconstruct the table by replacing the \"ERROR\" values with the provided list, filter the rows based on specific conditions, and then perform the required calculation.\n\n### Step 1",
+      "output_tokens": 43,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.125140891,
+      "reference": "135.0",
+      "correct": false
+    },
+    {
+      "id": 336,
+      "task": "bbeh_dyck_languages",
+      "arm": "direct",
+      "question_sha256": "4bff0ae642b957b23756d31d3c771f01a90e7f8a4b6c0c8c2ec356acc3e3885c",
+      "prompt_sha256": "0ce3a0de33135df114cf663fc7308a91735686e0492d3256afafa566418c27bb",
+      "input_tokens": 934,
+      "status": "budget_limited",
+      "response": "The sequence of thoughts attempts to parse the input string by pushing opening brackets onto a stack and popping them when the corresponding closing bracket is encountered.\n\nLet's trace the input string against the thoughts:\nInput: `{ { < { < > } > } [ ( < < > > ) [ { < ( ) > } ] ] [ ] } < ( { [ < [ { [ ( ) ] } ] > < { ( [ [ [ { } < > { ( < {",
+      "output_tokens": 98,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.17433441399999,
+      "reference": "24",
+      "correct": false
+    },
+    {
+      "id": 336,
+      "task": "bbeh_dyck_languages",
+      "arm": "reasoning",
+      "question_sha256": "4bff0ae642b957b23756d31d3c771f01a90e7f8a4b6c0c8c2ec356acc3e3885c",
+      "prompt_sha256": "15325e4464f705d8f7cbe694a74d653ce7b6efa24ffc2cac32c42a55e679a8be",
+      "input_tokens": 942,
+      "status": "budget_limited",
+      "response": "To determine if there is a mistake in the reasoning sequence, let's trace the input string against the provided thoughts step by step.\n\n**Input String:**\n`{ { < { < > } > } [ ( < < > > ) [ { < ( ) > } ] ] [ ] } < ( { [ < [ { [ ( ) ] } ] > < { ( [ [ [ { } < > { ( < { [ ] }",
+      "output_tokens": 92,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.24355041299998,
+      "reference": "24",
+      "correct": false
+    },
+    {
+      "id": 34,
+      "task": "bbeh_linguini",
+      "arm": "direct",
+      "question_sha256": "ae84b9e1fa5e6225ac14a9d8063cc90c070589d8ab3169f1ff144d11a141ea57",
+      "prompt_sha256": "68366bb29fe628c3ac8d3723bae5eabf97776316621bf5dec1475e354ddb7920",
+      "input_tokens": 419,
+      "status": "budget_limited",
+      "response": "To find the masked element for (3), we need to analyze the pattern of negation in the provided Movima language data.\n\n**1. Analyze the Negation Pattern:**\nLet's compare the base forms and their negative forms to identify the morphological rule.\n- `maropa` (papaya) $\\rightarrow$ `kas maroka\u2019pa` (The negative prefix `ka-` seems to be added, with a vowel change or assimilation? Let's look closer).\n  - Actually, looking at `",
+      "output_tokens": 109,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.35202477900009,
+      "reference": "kas ji\u0142aka\u2019pa",
+      "correct": false
+    },
+    {
+      "id": 34,
+      "task": "bbeh_linguini",
+      "arm": "reasoning",
+      "question_sha256": "ae84b9e1fa5e6225ac14a9d8063cc90c070589d8ab3169f1ff144d11a141ea57",
+      "prompt_sha256": "f31554b0760a356574adec3c291cf6cd484ed77d20762bbb8fc591c036ec7b43",
+      "input_tokens": 427,
+      "status": "budget_limited",
+      "response": "To solve this task, we need to identify the linguistic pattern used to form the negative form in the Movima language based on the provided examples, and then apply that pattern to the specific masked element (3).\n\n**Step 1: Analyze the morphological pattern.**\nLet's compare the base forms and their negative forms to identify the affixes.\n- `maropa` (papaya) $\\rightarrow$ `kas` + `maroka\u2019pa`. The prefix `kas` is added. The root",
+      "output_tokens": 106,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.10689128700005,
+      "reference": "kas ji\u0142aka\u2019pa",
+      "correct": false
+    },
+    {
+      "id": 365,
+      "task": "bbeh_nycc",
+      "arm": "reasoning",
+      "question_sha256": "6ec8a18bef00b198156cb3f40323b4f0ef20af2dcc73677c879d659acf7f3a10",
+      "prompt_sha256": "08c1e360e84f5b542ae0b9e25c6262a4cb748b0c4e44dbf9a921718b3fddf9f8",
+      "input_tokens": 307,
+      "status": "budget_limited",
+      "response": "To determine the funniest caption, we need to analyze the visual setup and the punchline of each option based on the principles of humor, specifically incongruity and situational irony.\n\n**Visual Setup Analysis:**\n*   **Scene:** A living room.\n*   **Action:** A mechanic is working on a car elevated on a lift.\n*   **Context:** Two people are watching on a couch.\n*   **Key Incongruity:** Cars and lifts are typically found in garages, not living rooms. The presence",
+      "output_tokens": 111,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.02231848499991,
+      "reference": "(B)",
+      "correct": false
+    },
+    {
+      "id": 365,
+      "task": "bbeh_nycc",
+      "arm": "direct",
+      "question_sha256": "6ec8a18bef00b198156cb3f40323b4f0ef20af2dcc73677c879d659acf7f3a10",
+      "prompt_sha256": "99aae11222d6122858a45feb3b342b37ff14ada768bb7606a4f74a0cb4686d6f",
+      "input_tokens": 299,
+      "status": "ok",
+      "response": "The final answer is: (A)\n",
+      "output_tokens": 11,
+      "eos_reached": true,
+      "seconds_soft_limit_reached": false,
+      "generation_seconds": 14.183799702999977,
+      "reference": "(B)",
+      "correct": false
+    },
+    {
+      "id": 192,
+      "task": "bbeh_sarc_triples",
+      "arm": "direct",
+      "question_sha256": "884abe493b9d464f157ff79829d5193c9d1ce741a5268de7bdcb874c7f66f582",
+      "prompt_sha256": "6e9917b1011275497f4df7cdf60f8060fdd51262a502f05c4be5fde26edb7c74",
+      "input_tokens": 367,
+      "status": "ok",
+      "response": "The final answer is: 1,0,1\n",
+      "output_tokens": 14,
+      "eos_reached": true,
+      "seconds_soft_limit_reached": false,
+      "generation_seconds": 17.396907862000035,
+      "reference": "1,0,1",
+      "correct": true
+    },
+    {
+      "id": 192,
+      "task": "bbeh_sarc_triples",
+      "arm": "reasoning",
+      "question_sha256": "884abe493b9d464f157ff79829d5193c9d1ce741a5268de7bdcb874c7f66f582",
+      "prompt_sha256": "c71528cf5e13195618d1dcbfea924b15366a7fcbff9d1d112640ed37e9b24c0e",
+      "input_tokens": 375,
+      "status": "budget_limited",
+      "response": "To determine if the replies are sarcastic, let's analyze each pair:\n\n**Pair 1:**\n*   **POST:** Criticizes LePage for being oblivious to ideological shifts.\n*   **REPLY:** \"That's right, these people need to stop getting all uppity and be thankful for what we've given them, huh LePage?\"\n*   **Analysis:** The reply agrees with the sentiment of the post (that LePage is out of touch) but uses the phrase \"getting all uppity\" and \"be thankful",
+      "output_tokens": 112,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.46494733999998,
+      "reference": "1,0,1",
+      "correct": false
+    },
+    {
+      "id": 179,
+      "task": "bbeh_sportqa",
+      "arm": "reasoning",
+      "question_sha256": "9cfa7e439ad01855d93552cc7600243ce2c52b49ab7d5d6b200f631caf183d0f",
+      "prompt_sha256": "66176d02e24670a26e905046dbf6c25c39706532ab661984fc112b6140bcc32a",
+      "input_tokens": 522,
+      "status": "budget_limited",
+      "response": "To determine the correct answers, let's analyze the rules of football (soccer) regarding \"Serious Foul Play\" and the consequences associated with it.\n\n**Main Question Analysis:**\n*   **Scenario:** A player commits serious foul play (excessive force/brutality).\n*   **Rule:** According to the Laws of the Game (Law 12), a player sent off for serious foul play receives a **red card**.\n*   **Immediate Consequence:** The player is dismissed (cannot",
+      "output_tokens": 106,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.47984856300002,
+      "reference": "AB, A, AC",
+      "correct": false
+    },
+    {
+      "id": 179,
+      "task": "bbeh_sportqa",
+      "arm": "direct",
+      "question_sha256": "9cfa7e439ad01855d93552cc7600243ce2c52b49ab7d5d6b200f631caf183d0f",
+      "prompt_sha256": "084947d5fb9e1a372c0424d1e4419fce8fc8a4f0f49dbdc43fea8c637d7c9162",
+      "input_tokens": 514,
+      "status": "ok",
+      "response": "The final answer is: BC, A, AB\n",
+      "output_tokens": 13,
+      "eos_reached": true,
+      "seconds_soft_limit_reached": false,
+      "generation_seconds": 20.239830502999894,
+      "reference": "AB, A, AC",
+      "correct": false
+    },
+    {
+      "id": 255,
+      "task": "bbeh_web_of_lies",
+      "arm": "reasoning",
+      "question_sha256": "261ba4971327efaed5aa845a48e08cda6225b630d74d9b22ae24a76c75ae8119",
+      "prompt_sha256": "e7b6282ffbdffa280b829424e07bbcfd9b5a09ecba03bd040d68103f0a0b52b2",
+      "input_tokens": 659,
+      "status": "budget_limited",
+      "response": "To solve this logic puzzle, we need to determine the truthfulness of Shalonda, Octavian, and Kandi based on the statements provided. We are given that each person either always tells the truth (T) or always lies (F).\n\nLet's break down the relevant logical chains step by step.\n\n**Step 1: Analyze the base facts and direct contradictions.**\n*   **Vernell tells the truth.** (Given explicitly: \"Vernell tells the",
+      "output_tokens": 99,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.78367788199989,
+      "reference": "yes, unknown, yes",
+      "correct": false
+    },
+    {
+      "id": 255,
+      "task": "bbeh_web_of_lies",
+      "arm": "direct",
+      "question_sha256": "261ba4971327efaed5aa845a48e08cda6225b630d74d9b22ae24a76c75ae8119",
+      "prompt_sha256": "b6cbebaee2e2a9d623e43b041d3f95f308720976fb7923315a9a3c50b700c251",
+      "input_tokens": 651,
+      "status": "budget_limited",
+      "response": "To determine whether Shalonda, Octavian, and Kandi tell the truth, we need to solve the logic puzzle step by step. Let's denote \"T\" for Truth-teller and \"L\" for Liar.\n\n**Step 1: Analyze the direct statements.**\n*   **Vernell** says: \"Vernell tells the truth.\" This is a tautology. If Vernell is a liar, they would be lying about telling the truth",
+      "output_tokens": 98,
+      "eos_reached": false,
+      "seconds_soft_limit_reached": true,
+      "generation_seconds": 90.61065559600002,
+      "reference": "yes, unknown, yes",
+      "correct": false
+    }
+  ],
+  "benchmark": "BBEH Mini stratified pilot",
+  "bbeh_commit": "80d12ca916b7158f22293fcf3144f4d3d854d4be",
+  "data_sha256": "14e77b3d6be68faa008d268abf53b1f8d2420ffdd762504a304dafc3f8d43026",
+  "scorer_sha256": "4b4f06e5babb015de2ba639bae995a5526182ffb5b5890af54dfcf038580eb34",
+  "shard": 4,
+  "shards": 6,
+  "per_task": 2,
+  "total_selected": 46,
+  "selection": "per-task ascending SHA256(adaptive-bbeh-pilot-v1 + NUL + original question), first n; no target use",
+  "selected_ids": [
+    96,
+    318,
+    67,
+    236,
+    348,
+    384,
+    243,
+    298,
+    220,
+    260,
+    336,
+    389,
+    317,
+    436,
+    219,
+    449,
+    34,
+    123,
+    158,
+    208,
+    16,
+    69,
+    365,
+    420,
+    108,
+    444,
+    37,
+    340,
+    192,
+    285,
+    307,
+    432,
+    124,
+    233,
+    179,
+    221,
+    105,
+    262,
+    29,
+    353,
+    255,
+    433,
+    210,
+    309,
+    151,
+    284
+  ],
+  "summary": {
+    "direct": {
+      "correct": 1,
+      "total": 7,
+      "statuses": {
+        "budget_limited": 4,
+        "ok": 3
+      },
+      "output_tokens": 386,
+      "generation_seconds": 413.46931487000006
+    },
+    "reasoning": {
+      "correct": 0,
+      "total": 7,
+      "statuses": {
+        "budget_limited": 7
+      },
+      "output_tokens": 669,
+      "generation_seconds": 632.2263748609998
+    }
+  },
+  "worker_exit": 0,
+  "request_wall_seconds": 1095.2026196670001,
+  "run_id": "35546669639",
+  "source_sha256": "ad3064cf5284c23523d7639f1b766691240f771d1f5066ea9072efca575c89c9",
+  "evaluation_isolation": "worker receives only id,task,question; no answer feedback; no training or cross-case memory",
+  "limitations": [
+    "public development pilot, not full benchmark or leaderboard submission",
+    "frozen pretrained baseline only; not full Adaptive system",
+    "pretraining overlap unknown",
+    "greedy bounded decoding; budget failures retained",
+    "load/overhead reported separately; energy not measured"
+  ],
+  "metadata_repair": "Mini lacks task labels; restored by exact input-only matching to original task files",
+  "membership_manifest": [
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_boardgame_qa/task.json",
+      "blob": "59bfa63f5b98bd93d13137df28297d69fc85ceab",
+      "sha256": "3d47dc41eb825b2ee77a696e79859d8d2043b1bf04077e120caec4ad324f32a8"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_boolean_expressions/task.json",
+      "blob": "3b1b165e0f026d61c1ba8a7112cc5289d978262a",
+      "sha256": "49e763f10dbea048be56036c8cbf2a6d0bb735235e3806b50809a1addb57eee2"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_buggy_tables/task.json",
+      "blob": "e2eeae579ff119ffd424c7eb269fc4dfb68a8da3",
+      "sha256": "c27b76200bf1b0d4ada3729f5a40aa1f0062267e42c4f40820b3e40891c3fe85"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_causal_understanding/task.json",
+      "blob": "1222dc4953e0147aa954c76d8d33910c05ba460d",
+      "sha256": "b10bbf43f7f5cdde927b0ad03f99a7a78b3525de4bfa90008b36b12b010c9a81"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_disambiguation_qa/task.json",
+      "blob": "04a553ccada1641884d6b07a3d2aff73ea25b2f5",
+      "sha256": "6d34e0c89c3b1e1386df5919159b8d67b4668308d1225bd1ee54eb1e946472bd"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_dyck_languages/task.json",
+      "blob": "9c73487fbb6c5e453ad5bbf1b372f79b9a18f668",
+      "sha256": "a089612502bdfb98a447c8cba84f972724308ea0d059e8561e3cc9785de585cc"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_geometric_shapes/task.json",
+      "blob": "5ff75c179f5f406967f8b02ec57db2ab7c5817eb",
+      "sha256": "7ff506d026450cb878a0963ce478724ad1451bc56469c813c791b9345ac1bea7"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_hyperbaton/task.json",
+      "blob": "9e276ca2c4b57a7e506f2d7128f7a4cacd55c960",
+      "sha256": "0fbacc94f4c740c3050021f4c57089f2011d7bd77fcff3346a7f4b9dbef842e2"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_linguini/task.json",
+      "blob": "e8edd908fb96511855d29c0b128f3a89f163c7b0",
+      "sha256": "ba387d2aa1bde122e6c9937fca4e075b9cc7d64e6047b170cfcffd6304919ea8"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_movie_recommendation/task.json",
+      "blob": "c07c9f17ca3def29062934bf79b53cbee99b9ede",
+      "sha256": "808882647b84c116a57e0975e3d357749525e12d215c4a5dae83de83ae8c4772"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_multistep_arithmetic/task.json",
+      "blob": "ac431dc3911aa5640f001c6a4de74588713e8506",
+      "sha256": "47207086cd2afe74df9968172d24134c82af8c666144092f04e4c1ebad8cf3d2"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_nycc/task.json",
+      "blob": "09666db9e95cf7b65a0d2d33e7acc3a84104e5c6",
+      "sha256": "67c9a9dca40e6ec820a279da19a019cedd5427fbaaae3fd175cdb74965474b08"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_object_counting/task.json",
+      "blob": "757780e10d5ea8d40c4d2cc9a8444a9c20a0d603",
+      "sha256": "a0a8b10ca1aa06eae611c7c7e854fbec4f9622c8f74a74ffa00436a9a8609b67"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_object_properties/task.json",
+      "blob": "e8bc36ad02c89d763e4981967ec5235f64a107ad",
+      "sha256": "d606b3aa0c35d5397afc5937207174593c82ad5dfcaf7e5dfb40a99278aef0e4"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_sarc_triples/task.json",
+      "blob": "fcb7b152123953c768f7fb415c29d37df0aa6b62",
+      "sha256": "4c7b8eb4b542d326152394456c0a1afc8ef5447ee06dd4187b7eb91027a6b821"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_shuffled_objects/task.json",
+      "blob": "8099cd6873756c47cbba0538fc11767e5fe2bfc6",
+      "sha256": "43cda28220c66e8d63e667d3091cd18b0b17aa55c005bb24bbb63144afdba9c1"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_spatial_reasoning/task.json",
+      "blob": "dc362278dac49294d0225c0249e6bf9e7c8e31d4",
+      "sha256": "e77986b73e0ed15b5f950978b7758f55311b4d50e7215961084b126e4d960cb7"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_sportqa/task.json",
+      "blob": "c7407a7bd287cda7719fb7b7cbdca840a50a79ad",
+      "sha256": "69b3f164d9617eab9185830eacf4250badb56c2d718ddc75012597ed1a4bc9bf"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_temporal_sequence/task.json",
+      "blob": "e0ffd804b234344a967ecf9f6b2dad2b5f960279",
+      "sha256": "55f6711d3d76925acb5d2fffdc1947e0e7186c686f0a343598394a57df6c7c6e"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_time_arithmetic/task.json",
+      "blob": "e1a8fcfe7cb58c0eb12700969904e16f3d5bff51",
+      "sha256": "2510515a6f12024a742743e29a389f07beacb3bf4c71e0b59be12f3e364cf31b"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_web_of_lies/task.json",
+      "blob": "2bccd9eae0f1f10559a0d1e830aa0ccd4ac63c5a",
+      "sha256": "15f23d32579285701f68dae7947e2191eff21ee97440dfa73cb3565a66c77a6d"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_word_sorting/task.json",
+      "blob": "2995a286e30f32ce0eac590a52461243d3d383ff",
+      "sha256": "f49674b7b85774d6190c2844e1682c2ee8ff591ca1eeee4e785a45ef1e20024d"
+    },
+    {
+      "path": "bbeh/benchmark_tasks/bbeh_zebra_puzzles/task.json",
+      "blob": "4a42b417ae48dda20f34f607ab3f4b2bbcb58066",
+      "sha256": "0acd979060ee49f063f241dd1a298bd80b63d6b7fbfb08057ff480bff98a6198"
+    }
+  ],
+  "entry_source_sha256": "83814e872004563e6f4894340f03d31749b9f3a766572c8a4b019053939bb146"
+}
