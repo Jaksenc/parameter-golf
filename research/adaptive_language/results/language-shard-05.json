@@ -1,0 +1,1679 @@
+{
+  "status": "completed",
+  "shard": 5,
+  "shards": 12,
+  "run_id": "35652499808",
+  "source_commit": "d8212eabc5e1c5c93f8757ff8b3e81a4b960124d",
+  "core": {
+    "decoded_sha256": "6b37dcfc4a451d5dba399080ba362b5b5320b03e977bf49532aab2be3cd108ca",
+    "transport_repairs": [
+      "TK+TVJrofJK8b2RR",
+      "dXZ3vX7tDJtd",
+      "KuOR3d/cy5RJK"
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/openai/grade-school-math/3101c7d5072418e28b9008a6636bde82a006892c/grade_school_math/data/test.jsonl",
+      "sha256": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14",
+      "bytes": 749738
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/boolean_expressions.json",
+      "sha256": "ea6c754ec005e2d3f2d085d349a740f593b5764f32ea4638ffed4cfc0061b12a",
+      "bytes": 17172
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/causal_judgement.json",
+      "sha256": "6e8bca44dd402008ed41c07a3d0a1d5e7b03db7001a7e002fcdf4c60985ea081",
+      "bytes": 202943
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/date_understanding.json",
+      "sha256": "0148d4ac5fca05b2f82373e5fef7208e15363b9c6079493034d77b3dab496bf5",
+      "bytes": 61760
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/disambiguation_qa.json",
+      "sha256": "cf06df9ebf911b883671cb1b35d3fbd1a1c306b19b9e9a012407e596c85fe8c6",
+      "bytes": 85255
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/dyck_languages.json",
+      "sha256": "3f9badedf15c2be1ce53d94fdf016299bb30ba231ef087ab9f51a7ed6d0bdc25",
+      "bytes": 43814
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/formal_fallacies.json",
+      "sha256": "4c1adb664821157faade1d4153685403afcc02648f3c180a608a18f17f589629",
+      "bytes": 145562
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/geometric_shapes.json",
+      "sha256": "07be68a124420caa2ebc0b2c858ad79fc55c5c8806170e496e1e17ebfb11f31c",
+      "bytes": 77242
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/hyperbaton.json",
+      "sha256": "b6d7f55c75f5d02f2987a4f3123802dfa093872089a56a334144aae8a7264fdc",
+      "bytes": 44706
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/logical_deduction_five_objects.json",
+      "sha256": "d2df31394b903b7f0e085d42a69572a092987856eac076799017d70ef266fa8f",
+      "bytes": 155477
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/logical_deduction_seven_objects.json",
+      "sha256": "2896c7e3482eea318dd37bcc370d24ec3cc91e8374c1784287b5dbd38a529e33",
+      "bytes": 198404
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/logical_deduction_three_objects.json",
+      "sha256": "e590fae72e3a6041fbd23bd8ff6b74baf44ca563f6ba40a041c55e7b867c1681",
+      "bytes": 112213
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/movie_recommendation.json",
+      "sha256": "a8b53a87ee21a865b7248e694f388a9b8f7cf6b839b11d44796a2dd3fc088983",
+      "bytes": 57684
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/multistep_arithmetic_two.json",
+      "sha256": "c9d5a6433c9b78256422a15c78463949c8bec8d85607aa28b52d7234ad4a8595",
+      "bytes": 18325
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/navigate.json",
+      "sha256": "b7944dfd3c81da5c4815bd75b00d6fa3c64140823498e78ed496f4c3d36f7f0d",
+      "bytes": 55163
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/object_counting.json",
+      "sha256": "8acef14dbbdd40d2326ef7755750b6b5fe919fef06276af1bab3f1c297f022ff",
+      "bytes": 35890
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/penguins_in_a_table.json",
+      "sha256": "bb87ee449698eee51215e025a453b1bcb2f5e6589c2063b2c79e68b8f0655228",
+      "bytes": 74516
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/reasoning_about_colored_objects.json",
+      "sha256": "0a8850cf95166020fce7a78244026ceedd7ea839302471512b4f8744e85a6a49",
+      "bytes": 98694
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/ruin_names.json",
+      "sha256": "b6f723aef2bafdd4c7bfc3c7e0329c7e8a8279391a609969c8ed76c9319f5f7f",
+      "bytes": 53178
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/salient_translation_error_detection.json",
+      "sha256": "becf3eb8dd53c821a555ecd5c1334ecd93eb25f980e63be963c518e7138de5da",
+      "bytes": 286443
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/snarks.json",
+      "sha256": "54a0661fe2de06167645a4965e6bcf963c4ba307e76262a7c750998b0e3d0d0e",
+      "bytes": 42646
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/sports_understanding.json",
+      "sha256": "63ca262858f6176864515cd8cf53cdaa40839ebecc155b726d77930855d167bf",
+      "bytes": 28617
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/temporal_sequences.json",
+      "sha256": "92a1189faaa84aacc4c405aaa13f13f48c2992eb884772eedb622505252baef5",
+      "bytes": 148176
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/tracking_shuffled_objects_five_objects.json",
+      "sha256": "2063a46a4fb484236ed4310523606543a3e1dd4a4dc34eda65d407910ece25a5",
+      "bytes": 169722
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/tracking_shuffled_objects_seven_objects.json",
+      "sha256": "b59fd05b850c37cf57cb514ae1e6975c00b1638ade2291722056b2af3c54084d",
+      "bytes": 214906
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/tracking_shuffled_objects_three_objects.json",
+      "sha256": "546cc7bf10c6a01a6a4c17ae28a4966485f21f29fd5d111f37858ec78e354f6b",
+      "bytes": 128736
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/web_of_lies.json",
+      "sha256": "3e60323f8514a107fdb4edf35f8832a9171c5a09c0eaa47823559de905e8ab8b",
+      "bytes": 52964
+    },
+    {
+      "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/word_sorting.json",
+      "sha256": "2a6132d2c99f00d0d2eb1113ac6b4a918bd969d863c48749210d969713db8d43",
+      "bytes": 66300
+    }
+  ],
+  "selected_ids": [
+    "bbh:boolean_expressions:140",
+    "bbh:boolean_expressions:236",
+    "bbh:causal_judgement:10",
+    "bbh:causal_judgement:168",
+    "bbh:date_understanding:180",
+    "bbh:date_understanding:69",
+    "bbh:disambiguation_qa:172",
+    "bbh:disambiguation_qa:51",
+    "bbh:dyck_languages:49",
+    "bbh:dyck_languages:82",
+    "bbh:formal_fallacies:213",
+    "bbh:formal_fallacies:84",
+    "bbh:geometric_shapes:102",
+    "bbh:geometric_shapes:184",
+    "bbh:hyperbaton:15",
+    "bbh:hyperbaton:219",
+    "bbh:logical_deduction_five_objects:115",
+    "bbh:logical_deduction_five_objects:228",
+    "bbh:logical_deduction_seven_objects:231",
+    "bbh:logical_deduction_seven_objects:67",
+    "bbh:logical_deduction_three_objects:111",
+    "bbh:logical_deduction_three_objects:165",
+    "bbh:movie_recommendation:195",
+    "bbh:movie_recommendation:197",
+    "bbh:multistep_arithmetic_two:125",
+    "bbh:multistep_arithmetic_two:151",
+    "bbh:navigate:112",
+    "bbh:navigate:41",
+    "bbh:object_counting:135",
+    "bbh:object_counting:61",
+    "bbh:penguins_in_a_table:141",
+    "bbh:penguins_in_a_table:89",
+    "bbh:reasoning_about_colored_objects:120",
+    "bbh:reasoning_about_colored_objects:42",
+    "bbh:ruin_names:11",
+    "bbh:ruin_names:144",
+    "bbh:salient_translation_error_detection:5",
+    "bbh:salient_translation_error_detection:93",
+    "bbh:snarks:167",
+    "bbh:snarks:93",
+    "bbh:sports_understanding:179",
+    "bbh:sports_understanding:49",
+    "bbh:temporal_sequences:158",
+    "bbh:temporal_sequences:214",
+    "bbh:tracking_shuffled_objects_five_objects:159",
+    "bbh:tracking_shuffled_objects_five_objects:175",
+    "bbh:tracking_shuffled_objects_seven_objects:150",
+    "bbh:tracking_shuffled_objects_seven_objects:183",
+    "bbh:tracking_shuffled_objects_three_objects:215",
+    "bbh:tracking_shuffled_objects_three_objects:233",
+    "bbh:web_of_lies:190",
+    "bbh:web_of_lies:230",
+    "bbh:word_sorting:200",
+    "bbh:word_sorting:205",
+    "gsm8k:1064",
+    "gsm8k:1076",
+    "gsm8k:1123",
+    "gsm8k:1127",
+    "gsm8k:1131",
+    "gsm8k:114",
+    "gsm8k:1200",
+    "gsm8k:1205",
+    "gsm8k:1286",
+    "gsm8k:14",
+    "gsm8k:164",
+    "gsm8k:181",
+    "gsm8k:216",
+    "gsm8k:217",
+    "gsm8k:220",
+    "gsm8k:391",
+    "gsm8k:393",
+    "gsm8k:429",
+    "gsm8k:58",
+    "gsm8k:636",
+    "gsm8k:642",
+    "gsm8k:673",
+    "gsm8k:728",
+    "gsm8k:797",
+    "gsm8k:801",
+    "gsm8k:81",
+    "gsm8k:869",
+    "gsm8k:892",
+    "gsm8k:902",
+    "gsm8k:911",
+    "gsm8k:947",
+    "gsm8k:975"
+  ],
+  "cohort_sha256": "edd6e937ab32c23ed79d52a380bec145adaa09b0a7855f14d14b77e373da48b0",
+  "runtime": {
+    "model": "unsloth/Qwen3.5-4B-GGUF",
+    "model_revision": "e87f176479d0855a907a41277aca2f8ee7a09523",
+    "weights": {
+      "url": "https://huggingface.co/unsloth/Qwen3.5-4B-GGUF/resolve/e87f176479d0855a907a41277aca2f8ee7a09523/Qwen3.5-4B-Q4_K_M.gguf",
+      "sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+      "bytes": 2740937888
+    },
+    "runtime": {
+      "url": "https://github.com/ggml-org/llama.cpp/releases/download/b10964/llama-b10964-bin-ubuntu-x64.tar.gz",
+      "sha256": "9abf88aea48a55d0f80edb1ee20220b186848cca0b4e919d71518cfd7ca67443",
+      "bytes": 16825086
+    },
+    "tag": "b10964",
+    "command": [
+      "/tmp/adaptive-language-runtime/binary/llama-b10964/llama-server",
+      "-m",
+      "/tmp/adaptive-language-runtime/model.gguf",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "8787",
+      "-c",
+      "8192",
+      "-np",
+      "1",
+      "-t",
+      "4",
+      "-tb",
+      "4",
+      "-ngl",
+      "0",
+      "--jinja",
+      "--chat-template-kwargs",
+      "{\"enable_thinking\":false}",
+      "--no-webui"
+    ],
+    "server_version": "",
+    "machine": "x86_64",
+    "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "setup_seconds": 43.791443421,
+    "private_inputs": false,
+    "paid_inference": false,
+    "training": false
+  },
+  "worker_exit": 0,
+  "rows": [
+    {
+      "arm": "reasoning",
+      "answer": "(F)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "**Step 1: Determine Jane's birth date.**\nJane was born on the last day of February in 2001.\n- The year 2001 is not a leap year (leap years are divisible by 4, except for end-of-century years not divisible by 400).\n- Therefore, February 2001 had 28 days.\n- Jane's birth date is **02/28/2001**.\n\n**Step 2: Calculate the date of her 16th birthday.**\n- Her age is calculated as: Current Year - Birth Year.\n- We need to find the year when she turns 16: $2001 + 16 = 2017$.\n- Her birthday occurs on the same date every year: February 28th.\n- So, her 16th birthday is on **02/28/2017**.\n\n**Step 3: Verify the options.**\n- (A) 08/28/2017: Incorrect month.\n- (B) 02/22/2017: Incorrect day.\n- (C) 03/01/2017: Incorrect date.\n- (D) 01/28/2018: Incorrect year and month.\n- (E) 02/07/2017: Incorrect day.\n- (F) 02/28/2017: Matches our calculation.\n\n**Conclusion:**\nToday is her 16th birthday, which falls on February 28, 2017.\n\nFINAL: (F)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 373,
+            "prompt_tokens": 186,
+            "total_tokens": 559,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 186,
+            "prompt_ms": 10335.841,
+            "prompt_per_token_ms": 55.5690376344086,
+            "prompt_per_second": 17.995632866256358,
+            "predicted_n": 373,
+            "predicted_ms": 34396.594,
+            "predicted_per_token_ms": 92.46396236559139,
+            "predicted_per_second": 10.815024301534041
+          },
+          "seconds": 44.73840283300001,
+          "request_sha256": "272c17fcf542fcda3750419b5495833072e781d1f8b9f1a21b0aaf1ad774016e"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 186,
+        "completion_tokens": 373,
+        "total_tokens": 559
+      },
+      "seconds": 44.73867961799999,
+      "question_sha256": "236b760ecf44df6882c1633c9c41cd1eef3d9bd8e03842966bfcdece525f11cc",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:date_understanding:69",
+      "suite": "BBH",
+      "family": "date_understanding",
+      "question": "Jane was born on the last day of Feburary in 2001. Today is her 16-year-old birthday. What is the date today in MM/DD/YYYY?\nOptions:\n(A) 08/28/2017\n(B) 02/22/2017\n(C) 03/01/2017\n(D) 01/28/2018\n(E) 02/07/2017\n(F) 02/28/2017",
+      "reference": "(F)",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "(F)",
+      "status": "model_answer_unverified",
+      "execution": {
+        "answer": "(F)",
+        "status": "model_answer_unverified",
+        "trace": [],
+        "program_sha256": "01c11708bedec737be7c08d7e1ba40a5a6d444b96bad07bb2d062823bf10f012",
+        "plan": {
+          "answer": "(F)"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"answer\":\"(F)\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 8,
+            "prompt_tokens": 459,
+            "total_tokens": 467,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 459,
+            "prompt_ms": 25646.863,
+            "prompt_per_token_ms": 55.87551851851852,
+            "prompt_per_second": 17.896925639599665,
+            "predicted_n": 8,
+            "predicted_ms": 645.805,
+            "predicted_per_token_ms": 92.25785714285713,
+            "predicted_per_second": 10.839185202963744
+          },
+          "seconds": 26.322353201999988,
+          "request_sha256": "366c114e29b17e1d9ac641849ef237fe04d466b771ea8d6ea565271db2383a93"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 459,
+        "completion_tokens": 8,
+        "total_tokens": 467
+      },
+      "seconds": 26.32247548000001,
+      "question_sha256": "236b760ecf44df6882c1633c9c41cd1eef3d9bd8e03842966bfcdece525f11cc",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:date_understanding:69",
+      "suite": "BBH",
+      "family": "date_understanding",
+      "question": "Jane was born on the last day of Feburary in 2001. Today is her 16-year-old birthday. What is the date today in MM/DD/YYYY?\nOptions:\n(A) 08/28/2017\n(B) 02/22/2017\n(C) 03/01/2017\n(D) 01/28/2018\n(E) 02/07/2017\n(F) 02/28/2017",
+      "reference": "(F)",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "(F)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "(F)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 3,
+            "prompt_tokens": 176,
+            "total_tokens": 179,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 176,
+            "prompt_ms": 9796.621,
+            "prompt_per_token_ms": 55.66261931818181,
+            "prompt_per_second": 17.965378062497265,
+            "predicted_n": 3,
+            "predicted_ms": 177.97,
+            "predicted_per_token_ms": 88.985,
+            "predicted_per_second": 11.237849075686913
+          },
+          "seconds": 10.003858473999998,
+          "request_sha256": "b61ed1122ee960bf886adb6bc800db2a4637398f83b94a060f2f5f1192353bdf"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 176,
+        "completion_tokens": 3,
+        "total_tokens": 179
+      },
+      "seconds": 10.003926489999998,
+      "question_sha256": "236b760ecf44df6882c1633c9c41cd1eef3d9bd8e03842966bfcdece525f11cc",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:date_understanding:69",
+      "suite": "BBH",
+      "family": "date_understanding",
+      "question": "Jane was born on the last day of Feburary in 2001. Today is her 16-year-old birthday. What is the date today in MM/DD/YYYY?\nOptions:\n(A) 08/28/2017\n(B) 02/22/2017\n(C) 03/01/2017\n(D) 01/28/2018\n(E) 02/07/2017\n(F) 02/28/2017",
+      "reference": "(F)",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "(E)",
+      "status": "model_answer_unverified",
+      "execution": {
+        "answer": "(E)",
+        "status": "model_answer_unverified",
+        "trace": [],
+        "program_sha256": "d7061f9a291d486671168daaec5e8a5eb9d057ee554c08092bd91e11c691522a",
+        "plan": {
+          "answer": "(E)"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"5\"},{\"name\":\"b\",\"expr\":\"a-1\"},{\"name\":\"c\",\"expr\":\"b-1\"},{\"name\":\"d\",\"expr\":\"c-1\"},{\"name\":\"e\",\"expr\":\"d-1\"},{\"name\":\"f\",\"expr\":\"a-2\"},{\"name\":\"g\",\"expr\":\"a-3\"},{\"name\":\"h\",\"expr\":\"a-4\"},{\"name\":\"i\",\"expr\":\"a-5\"},{\"name\":\"j\",\"expr\":\"a-6\"},{\"name\":\"k\",\"expr\":\"a-7\"},{\"name\":\"l\",\"expr\":\"a-8\"},{\"name\":\"m\",\"expr\":\"a-9\"},{\"name\":\"n\",\"expr\":\"a-10\"},{\"name\":\"o\",\"expr\":\"a-11\"},{\"name\":\"p\",\"expr\":\"a-12\"},{\"name\":\"q\",\"expr\":\"a-13\"},{\"name\":\"r\",\"expr\":\"a-14\"},{\"name\":\"s\",\"expr\":\"a-15\"},{\"name\":\"t\",\"expr\":\"a-16\"},{\"name\":\"u\",\"expr\":\"a-17\"},{\"name\":\"v\",\"expr\":\"a-18\"},{\"name\":\"w\",\"expr\":\"a-19\"},{\"name\":\"x\",\"expr\":\"a-20\"},{\"name\":\"y\",\"expr\":\"a-21\"},{\"name\":\"z\",\"expr\":\"a-22\"},{\"name\":\"aa\",\"expr\":\"a-23\"},{\"name\":\"ab\",\"expr\":\"a-24\"},{\"name\":\"ac\",\"expr\":\"a-25\"},{\"name\":\"ad\",\"expr\":\"a-26\"},{\"name\":\"ae\",\"expr\":\"a-27\"},{\"name\":\"af\",\"expr\":\"a-28\"},{\"name\":\"ag\",\"expr\":\"a-29\"},{\"name\":\"ah\",\"expr\":\"a-30\"},{\"name\":\"ai\",\"expr\":\"a-31\"},{\"name\":\"aj\",\"expr\":\"a-32\"},{\"name\":\"ak\",\"expr\":\"a-33\"},{\"name\":\"al\",\"expr\":\"a-34\"},{\"name\":\"am\",\"expr\":\"a-35\"},{\"name\":\"an\",\"expr\":\"a-36\"},{\"name\":\"ao\",\"expr\":\"a-37\"},{\"name\":\"ap\",\"expr\":\"a-38\"},{\"name\":\"aq\",\"expr\":\"a-39\"},{\"name\":\"ar\",\"expr\":\"a-40\"},{\"name\":\"as\",\"expr\":\"a-41\"},{\"name\":\"at\",\"expr\":\"a-42\"},{\"name\":\"au\",\"expr\":\"a-43\"},{\"name\":\"av\",\"expr\":\"a",
+          "reasoning_content": "",
+          "finish_reason": "length",
+          "usage": {
+            "completion_tokens": 512,
+            "prompt_tokens": 484,
+            "total_tokens": 996,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 484,
+            "prompt_ms": 27027.062,
+            "prompt_per_token_ms": 55.841037190082645,
+            "prompt_per_second": 17.907976827077984,
+            "predicted_n": 512,
+            "predicted_ms": 49127.454,
+            "predicted_per_token_ms": 96.13983170254403,
+            "predicted_per_second": 10.401516024013782
+          },
+          "seconds": 76.18784752100001,
+          "request_sha256": "7d8e72f558592d42c28a1c8a73c8125fa257468a92cb5dc34d9078421bace7c6"
+        },
+        {
+          "text": "{\"answer\":\"(E)\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 8,
+            "prompt_tokens": 1046,
+            "total_tokens": 1054,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 1046,
+            "prompt_ms": 59295.568,
+            "prompt_per_token_ms": 56.68792351816443,
+            "prompt_per_second": 17.64044152507317,
+            "predicted_n": 8,
+            "predicted_ms": 685.027,
+            "predicted_per_token_ms": 97.861,
+            "predicted_per_second": 10.218575326228017
+          },
+          "seconds": 60.01274679599999,
+          "request_sha256": "69e35e7820bd444b62e84818df4a64702108dcc6541a145ad5aa37ab0f4383b3"
+        }
+      ],
+      "errors": [
+        "incomplete_generation"
+      ],
+      "usage": {
+        "prompt_tokens": 1530,
+        "completion_tokens": 520,
+        "total_tokens": 2050
+      },
+      "seconds": 136.20085526300002,
+      "question_sha256": "f970670bb313abfc4a5dc2e734a1ba8b4698a774dd249ec2e892b63462252f4c",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:logical_deduction_five_objects:228",
+      "suite": "BBH",
+      "family": "logical_deduction_five_objects",
+      "question": "The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a branch, there are five birds: a robin, an owl, a quail, a hummingbird, and a crow. The crow is to the right of the robin. The quail is the leftmost. The hummingbird is to the right of the owl. The crow is the third from the left.\nOptions:\n(A) The robin is the third from the left\n(B) The owl is the third from the left\n(C) The quail is the third from the left\n(D) The hummingbird is the third from the left\n(E) The crow is the third from the left",
+      "reference": "(E)",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "(E)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "(E)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 3,
+            "prompt_tokens": 201,
+            "total_tokens": 204,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 201,
+            "prompt_ms": 11219.12,
+            "prompt_per_token_ms": 55.816517412935326,
+            "prompt_per_second": 17.915843666882964,
+            "predicted_n": 3,
+            "predicted_ms": 179.441,
+            "predicted_per_token_ms": 89.7205,
+            "predicted_per_second": 11.14572477861804
+          },
+          "seconds": 11.439463139999987,
+          "request_sha256": "310e976d5ee4a94becab0758ad20aa64555bbb3f16a714a878d297f7d433705c"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 201,
+        "completion_tokens": 3,
+        "total_tokens": 204
+      },
+      "seconds": 11.439528741999993,
+      "question_sha256": "f970670bb313abfc4a5dc2e734a1ba8b4698a774dd249ec2e892b63462252f4c",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:logical_deduction_five_objects:228",
+      "suite": "BBH",
+      "family": "logical_deduction_five_objects",
+      "question": "The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a branch, there are five birds: a robin, an owl, a quail, a hummingbird, and a crow. The crow is to the right of the robin. The quail is the leftmost. The hummingbird is to the right of the owl. The crow is the third from the left.\nOptions:\n(A) The robin is the third from the left\n(B) The owl is the third from the left\n(C) The quail is the third from the left\n(D) The hummingbird is the third from the left\n(E) The crow is the third from the left",
+      "reference": "(E)",
+      "correct": true
+    },
+    {
+      "arm": "reasoning",
+      "answer": "(E)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "Let's deduce the positions of the five birds (1 to 5, from left to right) based on the given statements:\n\n1.  **The quail is the leftmost.**\n    *   Position 1: Quail.\n    *   Remaining birds: Robin, Owl, Hummingbird, Crow.\n    *   Remaining positions: 2, 3, 4, 5.\n\n2.  **The crow is the third from the left.**\n    *   Position 3: Crow.\n    *   Remaining birds: Robin, Owl, Hummingbird.\n    *   Remaining positions: 2, 4, 5.\n\n3.  **The crow is to the right of the robin.**\n    *   Since Crow is at Position 3, Robin must be at Position 2 (the only remaining spot to the left of 3).\n    *   Position 2: Robin.\n    *   Remaining birds: Owl, Hummingbird.\n    *   Remaining positions: 4, 5.\n\n4.  **The hummingbird is to the right of the owl.**\n    *   We have positions 4 and 5 left. For the Hummingbird to be to the right of the Owl, Owl must be at Position 4 and Hummingbird at Position 5.\n    *   Position 4: Owl.\n    *   Position 5: Hummingbird.\n\n**Final Arrangement:**\n1.  Quail\n2.  Robin\n3.  Crow\n4.  Owl\n5.  Hummingbird\n\nThe question asks which bird is the third from the left. Based on our deduction, the bird at Position 3 is the **Crow**.\n\nComparing this with the options:\n(A) The robin is the third from the left (False, Robin is 2nd)\n(B) The owl is the third from the left (False, Owl is 4th)\n(C) The quail is the third from the left (False, Quail is 1st)\n(D) The hummingbird is the third from the left (False, Hummingbird is 5th)\n(E) The crow is the third from the left (True)\n\nFINAL: (E)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 483,
+            "prompt_tokens": 211,
+            "total_tokens": 694,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 211,
+            "prompt_ms": 11783.366,
+            "prompt_per_token_ms": 55.84533649289099,
+            "prompt_per_second": 17.90659816558359,
+            "predicted_n": 483,
+            "predicted_ms": 44759.725,
+            "predicted_per_token_ms": 92.8625,
+            "predicted_per_second": 10.768609503297888
+          },
+          "seconds": 56.571235575,
+          "request_sha256": "4c504a6f7b4ce9af4f7afe701e12b9367fb7b2eacd582e2c1b11faf65b33e7d2"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 211,
+        "completion_tokens": 483,
+        "total_tokens": 694
+      },
+      "seconds": 56.57138321000002,
+      "question_sha256": "f970670bb313abfc4a5dc2e734a1ba8b4698a774dd249ec2e892b63462252f4c",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:logical_deduction_five_objects:228",
+      "suite": "BBH",
+      "family": "logical_deduction_five_objects",
+      "question": "The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a branch, there are five birds: a robin, an owl, a quail, a hummingbird, and a crow. The crow is to the right of the robin. The quail is the leftmost. The hummingbird is to the right of the owl. The crow is the third from the left.\nOptions:\n(A) The robin is the third from the left\n(B) The owl is the third from the left\n(C) The quail is the third from the left\n(D) The hummingbird is the third from the left\n(E) The crow is the third from the left",
+      "reference": "(E)",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "3",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "3",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "1+1+1",
+            "value": {
+              "numerator": 3,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "b",
+            "expr": "a",
+            "value": {
+              "numerator": 3,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 3,
+          "denominator": 1
+        },
+        "program_sha256": "435b958b8393dacd7cfbb5c8ffcbbe7f2b22a0279955d78b55f30cfd456e09b5",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "1+1+1"
+            },
+            {
+              "name": "b",
+              "expr": "a"
+            }
+          ],
+          "result": "b"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"1+1+1\"},{\"name\":\"b\",\"expr\":\"a\"}],\"result\":\"b\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 29,
+            "prompt_tokens": 354,
+            "total_tokens": 383,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 354,
+            "prompt_ms": 19776.427,
+            "prompt_per_token_ms": 55.86561299435028,
+            "prompt_per_second": 17.90009894102711,
+            "predicted_n": 29,
+            "predicted_ms": 2600.085,
+            "predicted_per_token_ms": 92.86017857142858,
+            "predicted_per_second": 10.768878709734489
+          },
+          "seconds": 22.41326142300005,
+          "request_sha256": "9736e3393ae34e0689e4549dcb5c366d8e4fd1ce4ea3de0620adc20e1371c4e3"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 354,
+        "completion_tokens": 29,
+        "total_tokens": 383
+      },
+      "seconds": 22.41382791799998,
+      "question_sha256": "32d7b984f315aa1407eee8a781c5c819f0e3a2c41b816db0cede7ad37eb19767",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:object_counting:61",
+      "suite": "BBH",
+      "family": "object_counting",
+      "question": "I have a rabbit, a frog, and a snail. How many animals do I have?",
+      "reference": "3",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "(A)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "FINAL: (A)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 71,
+            "total_tokens": 77,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 71,
+            "prompt_ms": 4042.915,
+            "prompt_per_token_ms": 56.942464788732394,
+            "prompt_per_second": 17.561586132777958,
+            "predicted_n": 6,
+            "predicted_ms": 455.653,
+            "predicted_per_token_ms": 91.1306,
+            "predicted_per_second": 10.973262548474388
+          },
+          "seconds": 4.524334984999996,
+          "request_sha256": "fce98661816076622945659b626de3e72cabdda17dc84895544f7bcbc3f2b6e5"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 71,
+        "completion_tokens": 6,
+        "total_tokens": 77
+      },
+      "seconds": 4.524439970000003,
+      "question_sha256": "32d7b984f315aa1407eee8a781c5c819f0e3a2c41b816db0cede7ad37eb19767",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:object_counting:61",
+      "suite": "BBH",
+      "family": "object_counting",
+      "question": "I have a rabbit, a frog, and a snail. How many animals do I have?",
+      "reference": "3",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "3",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "You have listed three distinct animals: a rabbit, a frog, and a snail. Counting them individually results in a total of 3.\n\nFINAL: 3",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 36,
+            "prompt_tokens": 81,
+            "total_tokens": 117,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 81,
+            "prompt_ms": 4542.355,
+            "prompt_per_token_ms": 56.078456790123454,
+            "prompt_per_second": 17.832159749733346,
+            "predicted_n": 36,
+            "predicted_ms": 3165.302,
+            "predicted_per_token_ms": 90.4372,
+            "predicted_per_second": 11.057396734971892
+          },
+          "seconds": 7.73071767700003,
+          "request_sha256": "0cec7e4995da403e3371269033c99db6f7a01191fc6fe6dd32f9f0de172e7881"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 81,
+        "completion_tokens": 36,
+        "total_tokens": 117
+      },
+      "seconds": 7.730793458000051,
+      "question_sha256": "32d7b984f315aa1407eee8a781c5c819f0e3a2c41b816db0cede7ad37eb19767",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:object_counting:61",
+      "suite": "BBH",
+      "family": "object_counting",
+      "question": "I have a rabbit, a frog, and a snail. How many animals do I have?",
+      "reference": "3",
+      "correct": true
+    },
+    {
+      "arm": "reasoning",
+      "answer": "No",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "The sentence \"Robert Lewandowski threw a touchdown\" is **implausible**.\n\n**Reasoning:**\n1.  **Identity**: Robert Lewandowski is a professional footballer (soccer player) who plays as a striker for FC Barcelona and the Polish national team.\n2.  **Sport**: He plays association football (soccer), where the objective is to score goals by kicking the ball into the net. The concept of a \"touchdown\" belongs to American football (gridiron football).\n3.  **Role**: Even if he were playing American football, his primary position is a forward/runner, not a quarterback. While players can occasionally throw passes in American football, Lewandowski's career has been exclusively in soccer, where throwing the ball is not a method of scoring.\n4.  **Conclusion**: A soccer player cannot \"throw a touchdown\" because the sport does not use touchdowns, and he does not play American football.\n\nFINAL: No",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 200,
+            "prompt_tokens": 76,
+            "total_tokens": 276,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 76,
+            "prompt_ms": 4226.725,
+            "prompt_per_token_ms": 55.614802631578954,
+            "prompt_per_second": 17.980824397139628,
+            "predicted_n": 200,
+            "predicted_ms": 17787.899,
+            "predicted_per_token_ms": 89.3864271356784,
+            "predicted_per_second": 11.187380814339006
+          },
+          "seconds": 22.03928123000003,
+          "request_sha256": "b2d082269dcd64471e2e5fedd308fc266d1c6ce3730e819afdf93fe9ad2b4be3"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 76,
+        "completion_tokens": 200,
+        "total_tokens": 276
+      },
+      "seconds": 22.039392997999983,
+      "question_sha256": "c2b15592b1a8b05fab385a5bf668047e69870ceb9e4d2c57ad1a2aadb3b873b5",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:sports_understanding:49",
+      "suite": "BBH",
+      "family": "sports_understanding",
+      "question": "Is the following sentence plausible? \"Robert Lewandowski threw a touchdown.\"",
+      "reference": "no",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "No",
+      "status": "model_answer_unverified",
+      "execution": {
+        "answer": "No",
+        "status": "model_answer_unverified",
+        "trace": [],
+        "program_sha256": "1b96e430b6bef656ce72703c869090b0fb63ac41956076943d5352402d436976",
+        "plan": {
+          "answer": "No"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"answer\":\"No\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 349,
+            "total_tokens": 355,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 349,
+            "prompt_ms": 19502.369,
+            "prompt_per_token_ms": 55.88071346704871,
+            "prompt_per_second": 17.895261852547247,
+            "predicted_n": 6,
+            "predicted_ms": 460.372,
+            "predicted_per_token_ms": 92.0744,
+            "predicted_per_second": 10.86078215008732
+          },
+          "seconds": 19.996919122999998,
+          "request_sha256": "cfc47108a82d87630828c8be4e90b0e237cc4dfcffd38d5d6c86c2b096c87be6"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 349,
+        "completion_tokens": 6,
+        "total_tokens": 355
+      },
+      "seconds": 19.997026182000013,
+      "question_sha256": "c2b15592b1a8b05fab385a5bf668047e69870ceb9e4d2c57ad1a2aadb3b873b5",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:sports_understanding:49",
+      "suite": "BBH",
+      "family": "sports_understanding",
+      "question": "Is the following sentence plausible? \"Robert Lewandowski threw a touchdown.\"",
+      "reference": "no",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "(B)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "FINAL: (B)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 66,
+            "total_tokens": 72,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 66,
+            "prompt_ms": 3716.317,
+            "prompt_per_token_ms": 56.307833333333335,
+            "prompt_per_second": 17.759518361862025,
+            "predicted_n": 6,
+            "predicted_ms": 446.14,
+            "predicted_per_token_ms": 89.228,
+            "predicted_per_second": 11.207244362756086
+          },
+          "seconds": 4.190689112999962,
+          "request_sha256": "d0589d1b635cb19c4ef12c9ae5a266026671fa11efb4f53e7f438b2c9e2fe246"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 66,
+        "completion_tokens": 6,
+        "total_tokens": 72
+      },
+      "seconds": 4.190750416000014,
+      "question_sha256": "c2b15592b1a8b05fab385a5bf668047e69870ceb9e4d2c57ad1a2aadb3b873b5",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:sports_understanding:49",
+      "suite": "BBH",
+      "family": "sports_understanding",
+      "question": "Is the following sentence plausible? \"Robert Lewandowski threw a touchdown.\"",
+      "reference": "no",
+      "correct": false
+    },
+    {
+      "arm": "program",
+      "answer": "atmospheric chess credit geopolitic intercept loci lunge newsmen siren swart tamp umber",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "atmospheric chess credit geopolitic intercept loci lunge newsmen siren swart tamp umber",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "['intercept', 'tamp', 'geopolitic', 'loci', 'newsmen', 'umber', 'credit', 'atmospheric', 'lunge', 'siren', 'swart', 'chess']",
+            "value": [
+              "intercept",
+              "tamp",
+              "geopolitic",
+              "loci",
+              "newsmen",
+              "umber",
+              "credit",
+              "atmospheric",
+              "lunge",
+              "siren",
+              "swart",
+              "chess"
+            ]
+          },
+          {
+            "name": "b",
+            "expr": "sorted(a)",
+            "value": [
+              "atmospheric",
+              "chess",
+              "credit",
+              "geopolitic",
+              "intercept",
+              "loci",
+              "lunge",
+              "newsmen",
+              "siren",
+              "swart",
+              "tamp",
+              "umber"
+            ]
+          }
+        ],
+        "value": [
+          "atmospheric",
+          "chess",
+          "credit",
+          "geopolitic",
+          "intercept",
+          "loci",
+          "lunge",
+          "newsmen",
+          "siren",
+          "swart",
+          "tamp",
+          "umber"
+        ],
+        "program_sha256": "adc9c5a81c375da145066fb49683bc4555c760f2503cb80e52708fefb995ace0",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "['intercept', 'tamp', 'geopolitic', 'loci', 'newsmen', 'umber', 'credit', 'atmospheric', 'lunge', 'siren', 'swart', 'chess']"
+            },
+            {
+              "name": "b",
+              "expr": "sorted(a)"
+            }
+          ],
+          "result": "b"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"['intercept', 'tamp', 'geopolitic', 'loci', 'newsmen', 'umber', 'credit', 'atmospheric', 'lunge', 'siren', 'swart', 'chess']\"},{\"name\":\"b\",\"expr\":\"sorted(a)\"}],\"result\":\"b\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 75,
+            "prompt_tokens": 363,
+            "total_tokens": 438,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 363,
+            "prompt_ms": 20215.425,
+            "prompt_per_token_ms": 55.68987603305785,
+            "prompt_per_second": 17.956585132392718,
+            "predicted_n": 75,
+            "predicted_ms": 6793.838,
+            "predicted_per_token_ms": 91.80862162162161,
+            "predicted_per_second": 10.892223217568628
+          },
+          "seconds": 27.040437950000012,
+          "request_sha256": "4b55708927a120723b6175820fad7c07b32f3d85798589aa39cfac65b1aa97e3"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 363,
+        "completion_tokens": 75,
+        "total_tokens": 438
+      },
+      "seconds": 27.04087625599999,
+      "question_sha256": "b40e6c36a41c4ef9b58b3be4c2c53a7fc8c00e37b78b4b165954dec2d800609e",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:word_sorting:205",
+      "suite": "BBH",
+      "family": "word_sorting",
+      "question": "Sort the following words alphabetically: List: intercept tamp geopolitic loci newsmen umber credit atmospheric lunge siren swart chess",
+      "reference": "atmospheric chess credit geopolitic intercept loci lunge newsmen siren swart tamp umber",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "<answer>atmospheric chess credit geopolitic intercept loci lunge newsmen siren swart umber tamp",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "(FINAL: <answer>atmospheric chess credit geopolitic intercept loci lunge newsmen siren swart umber tamp",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 29,
+            "prompt_tokens": 80,
+            "total_tokens": 109,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 80,
+            "prompt_ms": 4450.046,
+            "prompt_per_token_ms": 55.625575000000005,
+            "prompt_per_second": 17.977342256686782,
+            "predicted_n": 29,
+            "predicted_ms": 2486.012,
+            "predicted_per_token_ms": 88.78614285714286,
+            "predicted_per_second": 11.263018843030524
+          },
+          "seconds": 6.965507486999968,
+          "request_sha256": "3dfa42a8307a2df2084b258f3a57e0f0e9d70cf66405332d5418047e0af80eb2"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 80,
+        "completion_tokens": 29,
+        "total_tokens": 109
+      },
+      "seconds": 6.965576284999997,
+      "question_sha256": "b40e6c36a41c4ef9b58b3be4c2c53a7fc8c00e37b78b4b165954dec2d800609e",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:word_sorting:205",
+      "suite": "BBH",
+      "family": "word_sorting",
+      "question": "Sort the following words alphabetically: List: intercept tamp geopolitic loci newsmen umber credit atmospheric lunge siren swart chess",
+      "reference": "atmospheric chess credit geopolitic intercept loci lunge newsmen siren swart tamp umber",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "atmospheric, chess, credit, geopolitic, intercept, loci, lunge, newsmen, siren, swart, tamp, umber",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To sort the list alphabetically, I will examine the first letter of each word and then proceed to subsequent letters if there are ties.\n\n**List:** intercept, tamp, geopolitic, loci, newsmen, umber, credit, atmospheric, lunge, siren, swart, chess.\n\n1.  **Identify the first letters:**\n    *   intercept (i)\n    *   tamp (t)\n    *   geopolitic (g)\n    *   loci (l)\n    *   newsmen (n)\n    *   umber (u)\n    *   credit (c)\n    *   atmospheric (a)\n    *   lunge (l)\n    *   siren (s)\n    *   swart (s)\n    *   chess (c)\n\n2.  **Group by first letter:**\n    *   **a:** atmospheric\n    *   **c:** credit, chess\n    *   **g:** geopolitic\n    *   **i:** intercept\n    *   **l:** loci, lunge\n    *   **n:** newsmen\n    *   **s:** siren, swart\n    *   **t:** tamp\n    *   **u:** umber\n\n3.  **Sort groups with ties:**\n    *   **c:** \"chess\" vs \"credit\". 'h' comes before 'r'. Order: chess, credit.\n    *   **l:** \"loci\" vs \"lunge\". 'o' comes before 'u'. Order: loci, lunge.\n    *   **s:** \"siren\" vs \"swart\". 'i' comes before 'w'. Order: siren, swart.\n\n4.  **Combine all sorted words:**\n    1.  atmospheric\n    2.  chess\n    3.  credit\n    4.  geopolitic\n    5.  intercept\n    6.  loci\n    7.  lunge\n    8.  newsmen\n    9.  siren\n    10. swart\n    11. tamp\n    12. umber\n\n**Final Sorted List:**\natmospheric, chess, credit, geopolitic, intercept, loci, lunge, newsmen, siren, swart, tamp, umber.\n\nFINAL: atmospheric, chess, credit, geopolitic, intercept, loci, lunge, newsmen, siren, swart, tamp, umber",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 555,
+            "prompt_tokens": 90,
+            "total_tokens": 645,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 90,
+            "prompt_ms": 4955.363,
+            "prompt_per_token_ms": 55.05958888888889,
+            "prompt_per_second": 18.162140694839106,
+            "predicted_n": 555,
+            "predicted_ms": 50656.475,
+            "predicted_per_token_ms": 91.43768050541516,
+            "predicted_per_second": 10.936410399657696
+          },
+          "seconds": 55.63930610800003,
+          "request_sha256": "43b5542e939466820135d6b1e805b15cb7e4364af1b4de3ffd9081953e003ce6"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 90,
+        "completion_tokens": 555,
+        "total_tokens": 645
+      },
+      "seconds": 55.639437802999964,
+      "question_sha256": "b40e6c36a41c4ef9b58b3be4c2c53a7fc8c00e37b78b4b165954dec2d800609e",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "bbh:word_sorting:205",
+      "suite": "BBH",
+      "family": "word_sorting",
+      "question": "Sort the following words alphabetically: List: intercept tamp geopolitic loci newsmen umber credit atmospheric lunge siren swart chess",
+      "reference": "atmospheric chess credit geopolitic intercept loci lunge newsmen siren swart tamp umber",
+      "correct": false
+    },
+    {
+      "arm": "direct",
+      "answer": "(B)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "FINAL: (B)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 146,
+            "total_tokens": 152,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 146,
+            "prompt_ms": 8071.352,
+            "prompt_per_token_ms": 55.283232876712326,
+            "prompt_per_second": 18.08866717744437,
+            "predicted_n": 6,
+            "predicted_ms": 476.838,
+            "predicted_per_token_ms": 95.36760000000001,
+            "predicted_per_second": 10.485741488723633
+          },
+          "seconds": 8.579239548999908,
+          "request_sha256": "c6ead92ed8d9d07b18dc6c6d7743496c308507ce49cebebfedecc77146f094e6"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 146,
+        "completion_tokens": 6,
+        "total_tokens": 152
+      },
+      "seconds": 8.57930671400004,
+      "question_sha256": "16b3730457e34d4a2abf5213162ab6ba80a709a4cfc59eed4a008162179b933d",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:181",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Sandra, the florist around the corner, is very unhappy with Fred's incomplete order delivery. Sandra had ordered four times as many red roses as white carnations. She also ordered 200 pink calla lilies, which were five times the number of white carnations. Sandra has threatened to switch suppliers if the missing red roses are not delivered by 5 pm. To keep Sandra's business, how many red roses must Fred deliver by 5 pm?",
+      "reference": "160",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "160",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To determine how many red roses Fred must deliver, we need to calculate the total number of red roses ordered based on the relationships provided.\n\n1.  **Identify the relationship between pink calla lilies and white carnations:**\n    The problem states that the 200 pink calla lilies were five times the number of white carnations.\n    Let $W$ be the number of white carnations.\n    $$5 \\times W = 200$$\n    $$W = \\frac{200}{5} = 40$$\n    So, there are 40 white carnations.\n\n2.  **Identify the relationship between red roses and white carnations:**\n    The problem states that Sandra ordered four times as many red roses as white carnations.\n    Let $R$ be the number of red roses.\n    $$R = 4 \\times W$$\n    $$R = 4 \\times 40 = 160$$\n\n3.  **Conclusion:**\n    The total number of red roses ordered is 160. To keep Sandra's business, Fred must deliver all of them.\n\nFINAL: 160",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 253,
+            "prompt_tokens": 156,
+            "total_tokens": 409,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 156,
+            "prompt_ms": 8581.241,
+            "prompt_per_token_ms": 55.007955128205126,
+            "prompt_per_second": 18.179188767685233,
+            "predicted_n": 253,
+            "predicted_ms": 22952.711,
+            "predicted_per_token_ms": 91.0821865079365,
+            "predicted_per_second": 10.979095236288211
+          },
+          "seconds": 31.557485544999963,
+          "request_sha256": "911c28a20978cf15fc237ba487db990bddb28863c27eec9666592dd011bc959a"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 156,
+        "completion_tokens": 253,
+        "total_tokens": 409
+      },
+      "seconds": 31.55759742400005,
+      "question_sha256": "16b3730457e34d4a2abf5213162ab6ba80a709a4cfc59eed4a008162179b933d",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:181",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Sandra, the florist around the corner, is very unhappy with Fred's incomplete order delivery. Sandra had ordered four times as many red roses as white carnations. She also ordered 200 pink calla lilies, which were five times the number of white carnations. Sandra has threatened to switch suppliers if the missing red roses are not delivered by 5 pm. To keep Sandra's business, how many red roses must Fred deliver by 5 pm?",
+      "reference": "160",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "160",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "160",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "200",
+            "value": {
+              "numerator": 200,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "b",
+            "expr": "a/5",
+            "value": {
+              "numerator": 40,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "c",
+            "expr": "b*4",
+            "value": {
+              "numerator": 160,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "d",
+            "expr": "c",
+            "value": {
+              "numerator": 160,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 160,
+          "denominator": 1
+        },
+        "program_sha256": "2207da3dc6b87eafa69938cb6f897a5dc03326da49cf7bd10c7d7f2cbf905330",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "200"
+            },
+            {
+              "name": "b",
+              "expr": "a/5"
+            },
+            {
+              "name": "c",
+              "expr": "b*4"
+            },
+            {
+              "name": "d",
+              "expr": "c"
+            }
+          ],
+          "result": "d"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"200\"},{\"name\":\"b\",\"expr\":\"a/5\"},{\"name\":\"c\",\"expr\":\"b*4\"},{\"name\":\"d\",\"expr\":\"c\"}],\"result\":\"d\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 47,
+            "prompt_tokens": 429,
+            "total_tokens": 476,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 429,
+            "prompt_ms": 23793.929,
+            "prompt_per_token_ms": 55.46370396270396,
+            "prompt_per_second": 18.029809200489755,
+            "predicted_n": 47,
+            "predicted_ms": 4202.571,
+            "predicted_per_token_ms": 91.36023913043478,
+            "predicted_per_second": 10.945680632165406
+          },
+          "seconds": 28.03005947700001,
+          "request_sha256": "c1c97e06721a3af83189f2f6da9a4a5a3e2a66c2dcc3ce7ee337dd25030d81e9"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 429,
+        "completion_tokens": 47,
+        "total_tokens": 476
+      },
+      "seconds": 28.030507782999962,
+      "question_sha256": "16b3730457e34d4a2abf5213162ab6ba80a709a4cfc59eed4a008162179b933d",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:181",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Sandra, the florist around the corner, is very unhappy with Fred's incomplete order delivery. Sandra had ordered four times as many red roses as white carnations. She also ordered 200 pink calla lilies, which were five times the number of white carnations. Sandra has threatened to switch suppliers if the missing red roses are not delivered by 5 pm. To keep Sandra's business, how many red roses must Fred deliver by 5 pm?",
+      "reference": "160",
+      "correct": true
+    },
+    {
+      "arm": "program",
+      "answer": "540",
+      "status": "computation_checked_semantics_unverified",
+      "execution": {
+        "answer": "540",
+        "status": "computation_checked_semantics_unverified",
+        "trace": [
+          {
+            "name": "a",
+            "expr": "2*150",
+            "value": {
+              "numerator": 300,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "b",
+            "expr": "1*240",
+            "value": {
+              "numerator": 240,
+              "denominator": 1
+            }
+          },
+          {
+            "name": "c",
+            "expr": "a+b",
+            "value": {
+              "numerator": 540,
+              "denominator": 1
+            }
+          }
+        ],
+        "value": {
+          "numerator": 540,
+          "denominator": 1
+        },
+        "program_sha256": "8ffa9800c6628defc53925f7bac2ab6f4ae822cb955dbd3cf7d34018a35c5236",
+        "interpreter_version": "bounded-expressions-0.7.0",
+        "plan": {
+          "steps": [
+            {
+              "name": "a",
+              "expr": "2*150"
+            },
+            {
+              "name": "b",
+              "expr": "1*240"
+            },
+            {
+              "name": "c",
+              "expr": "a+b"
+            }
+          ],
+          "result": "c"
+        }
+      },
+      "calls": [
+        {
+          "text": "{\"steps\":[{\"name\":\"a\",\"expr\":\"2*150\"},{\"name\":\"b\",\"expr\":\"1*240\"},{\"name\":\"c\",\"expr\":\"a+b\"}],\"result\":\"c\"}",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 42,
+            "prompt_tokens": 401,
+            "total_tokens": 443,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 401,
+            "prompt_ms": 22360.508,
+            "prompt_per_token_ms": 55.76186533665836,
+            "prompt_per_second": 17.933402944154935,
+            "predicted_n": 42,
+            "predicted_ms": 3754.539,
+            "predicted_per_token_ms": 91.57412195121952,
+            "predicted_per_second": 10.920115625380372
+          },
+          "seconds": 26.121165270999995,
+          "request_sha256": "b9e78092f15e4cbc9151058993bf2fe311246de3a4aa1bcfa68b52d9e57e85af"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 401,
+        "completion_tokens": 42,
+        "total_tokens": 443
+      },
+      "seconds": 26.121544628000038,
+      "question_sha256": "656e874e3f82ca4984c9340f9873fae61f97a5e1d405ca1c8a34bf0e8cec0ad1",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:797",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Carrie is planning the caroling schedule. The choir plans to sing \"Deck the Halls\" twice and \"Jingle Bells\" once. If \"Deck the Halls\" is 150 seconds long and \"Jingle Bells\" is 240 seconds long, how long will they be caroling?",
+      "reference": "540",
+      "correct": true
+    },
+    {
+      "arm": "direct",
+      "answer": "(A)",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "FINAL: (A)",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 118,
+            "total_tokens": 124,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 118,
+            "prompt_ms": 6613.079,
+            "prompt_per_token_ms": 56.04304237288135,
+            "prompt_per_second": 17.843428151999998,
+            "predicted_n": 6,
+            "predicted_ms": 443.085,
+            "predicted_per_token_ms": 88.61699999999999,
+            "predicted_per_second": 11.28451651488992
+          },
+          "seconds": 7.086188340000035,
+          "request_sha256": "02037232f6878745d62948b34d749d5401f28515005bc0b03acdc1ce04d1b84e"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 118,
+        "completion_tokens": 6,
+        "total_tokens": 124
+      },
+      "seconds": 7.086255635000043,
+      "question_sha256": "656e874e3f82ca4984c9340f9873fae61f97a5e1d405ca1c8a34bf0e8cec0ad1",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:797",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Carrie is planning the caroling schedule. The choir plans to sing \"Deck the Halls\" twice and \"Jingle Bells\" once. If \"Deck the Halls\" is 150 seconds long and \"Jingle Bells\" is 240 seconds long, how long will they be caroling?",
+      "reference": "540",
+      "correct": false
+    },
+    {
+      "arm": "reasoning",
+      "answer": "540 seconds",
+      "status": "model_answer_unverified",
+      "execution": null,
+      "calls": [
+        {
+          "text": "To find the total caroling time, we calculate the duration for each song based on the planned schedule:\n\n1.  **\"Deck the Halls\"**: Sung twice.\n    *   Duration per song: 150 seconds.\n    *   Total time: $150 \\times 2 = 300$ seconds.\n\n2.  **\"Jingle Bells\"**: Sung once.\n    *   Duration per song: 240 seconds.\n    *   Total time: $240 \\times 1 = 240$ seconds.\n\n3.  **Total Time**: Sum of both songs' durations.\n    *   $300 + 240 = 540$ seconds.\n\nThe total time is 540 seconds.\n\nFINAL: 540 seconds",
+          "reasoning_content": "",
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 179,
+            "prompt_tokens": 128,
+            "total_tokens": 307,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 128,
+            "prompt_ms": 7090.18,
+            "prompt_per_token_ms": 55.39203125,
+            "prompt_per_second": 18.053138284218452,
+            "predicted_n": 179,
+            "predicted_ms": 15929.877,
+            "predicted_per_token_ms": 89.49369101123595,
+            "predicted_per_second": 11.173972027530407
+          },
+          "seconds": 23.043859480999913,
+          "request_sha256": "41291ab9be8ad806e70ec228231e1ce478912239e894d4b30ea3edeefd7272e1"
+        }
+      ],
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 128,
+        "completion_tokens": 179,
+        "total_tokens": 307
+      },
+      "seconds": 23.04395131199999,
+      "question_sha256": "656e874e3f82ca4984c9340f9873fae61f97a5e1d405ca1c8a34bf0e8cec0ad1",
+      "semantic_verification": false,
+      "new_weights_trained": false,
+      "id": "gsm8k:797",
+      "suite": "GSM8K",
+      "family": "gsm8k",
+      "question": "Carrie is planning the caroling schedule. The choir plans to sing \"Deck the Halls\" twice and \"Jingle Bells\" once. If \"Deck the Halls\" is 150 seconds long and \"Jingle Bells\" is 240 seconds long, how long will they be caroling?",
+      "reference": "540",
+      "correct": false
+    }
+  ],
+  "summary": {
+    "direct": {
+      "correct": 2,
+      "n": 7,
+      "answered": 7,
+      "seconds": 52.78978425200009,
+      "completion_tokens": 59,
+      "statuses": {
+        "model_answer_unverified": 7
+      }
+    },
+    "reasoning": {
+      "correct": 5,
+      "n": 7,
+      "answered": 7,
+      "seconds": 241.32123582300005,
+      "completion_tokens": 2079,
+      "statuses": {
+        "model_answer_unverified": 7
+      }
+    },
+    "program": {
+      "correct": 7,
+      "n": 7,
+      "answered": 7,
+      "seconds": 286.12711351,
+      "completion_tokens": 727,
+      "statuses": {
+        "model_answer_unverified": 3,
+        "computation_checked_semantics_unverified": 4
+      }
+    }
+  },
+  "wall_seconds": 625.240895715,
+  "protocol": {
+    "arms": {
+      "direct": 768,
+      "reasoning": 768,
+      "program": [
+        512,
+        256
+      ]
+    },
+    "temperature": 0,
+    "seed": 1707,
+    "native_thinking": false,
+    "memory": false,
+    "training": false,
+    "labels_solver_visible": false,
+    "selection_salt": "adaptive-language-v07-20260921\u0000",
+    "gpu": false,
+    "paid_inference": false,
+    "energy_measured": false,
+    "official_leaderboard": false,
+    "frontier_reference_evaluated": false
+  }
+}
