@@ -1,0 +1,38 @@
+name: Adaptive language format diagnostic
+on:
+  push:
+    branches: [research/adaptive-language-v07-20260921]
+    paths: [.github/workflows/adaptive-language-format.yml]
+permissions:
+  contents: read
+jobs:
+  format:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    strategy:
+      max-parallel: 4
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Exact existing source and basic expression check
+        run: python3 research/adaptive_language/prepare_core.py
+      - name: Three fixed prompts on disjoint inputs, without memory or training
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '4'
+        run: python3 -u research/adaptive_language/format_followup.py --shard ${{ matrix.shard }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: adaptive-format-${{ matrix.shard }}
+          path: format-shard-*.json
+          retention-days: 1
+          if-no-files-found: warn
+      - name: Diagnostic tail
+        if: always()
+        run: tail -30 /tmp/adaptive-language-runtime/server.log || true
