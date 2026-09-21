@@ -1,0 +1,146 @@
+name: Evidence v4 - complete frozen population
+on:
+  push:
+    branches: ['research/anchor-evidence-v4-20260921']
+    paths: ['.github/workflows/evidence-v4-completion.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  parents:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Require every original shard artifact before continuation
+        run: |
+          python -u - <<'PY'
+          import json,os,time,urllib.request
+          url='https://api.github.com/repos/Jaksenc/parameter-golf/actions/runs/35631351186/artifacts?per_page=100'
+          needed={'evidence-fixed-shard-'+str(i) for i in range(16)}
+          for attempt in range(35):
+              req=urllib.request.Request(url,headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'})
+              data=json.load(urllib.request.urlopen(req,timeout=30))
+              available={a['name'] for a in data['artifacts'] if not a['expired']}
+              print(json.dumps({'parent_shards':len(needed&available),'required':16}),flush=True)
+              if needed<=available:break
+              time.sleep(10)
+          else:raise RuntimeError('Parent artifacts remain incomplete')
+          PY
+  resume:
+    needs: parents
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 22
+    strategy:
+      fail-fast: false
+      max-parallel: 16
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    env:
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      MKL_NUM_THREADS: '4'
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      HF_HUB_DOWNLOAD_TIMEOUT: '120'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 35555340129
+          name: jev-reconstruction-corrected-complete
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 35631351186
+          name: evidence-fixed-shard-${{ matrix.shard }}
+          path: original
+      - name: Verify frozen source and count incomplete inputs only
+        id: check
+        env:
+          SHARD: '${{ matrix.shard }}'
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          echo 'a0184e91a1aec54ec1ca200313e1c9ed51c6e456056f3b9ab0441a370077ae31  evidence_v4.py' | sha256sum -c -
+          echo 'cf62a0790fe714a3317ae8a8e4710866eed87a4172fb27e0908a880f2f026778  run_evidence_v4.py' | sha256sum -c -
+          python - <<'PY'
+          import os,json
+          from pathlib import Path
+          import resume_infrastructure as R
+          plan=R.E.partition(Path('reconstruction-inputs'))[int(os.environ['SHARD'])]
+          prior,_=R.load_prefix(Path('original/records.jsonl'),plan)
+          remaining=len(plan)-len(prior)
+          print(json.dumps({'completed_prior':len(prior),'remaining':remaining}))
+          with open(os.environ['GITHUB_OUTPUT'],'a') as f:f.write('remaining='+str(remaining)+'\n')
+          PY
+      - name: Install the unchanged model runtime only when new inference is required
+        if: steps.check.outputs.remaining != '0'
+        run: |
+          grep -qw bf16 /proc/cpuinfo
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6'
+      - name: Continue missing inputs and merge without replacing prior outcomes
+        run: |
+          python -u resume_infrastructure.py --prior original --out merged --shard '${{ matrix.shard }}'
+          cp -r original merged/original-parent
+          python -m pip freeze > merged/continuation-environment.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: evidence-resumed-shard-${{ matrix.shard }}
+          path: merged/
+          retention-days: 14
+          if-no-files-found: error
+  aggregate:
+    needs: resume
+    runs-on: ubuntu-24.04
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: evidence-resumed-shard-*
+          path: received
+      - name: Verify all 295 original inputs and continuation provenance
+        run: |
+          python - <<'PY'
+          import json,hashlib,shutil
+          from pathlib import Path
+          counts=[18,19,19,19,19,19,18,19,19,19,19,19,17,18,17,17]
+          seen=set();retained=0;continued=0;Path('records').mkdir()
+          for i,n in enumerate(counts):
+              d=Path('received')/f'evidence-resumed-shard-{i}'
+              c=json.loads((d/'complete.json').read_text())
+              if c['count']!=n or c['source_sha256']!='db7e73bcea3b497213bfe252ad4f154d8f110f321bee23f9fc17f82518b89851':raise ValueError('Incomplete or changed method')
+              if hashlib.sha256((d/'records.jsonl').read_bytes()).hexdigest()!=c['records_sha256']:raise ValueError('Corrupt records')
+              retained+=c['infrastructure_recovery']['retained_prior_rows'];continued+=c['infrastructure_recovery']['continued_rows']
+              for line in (d/'records.jsonl').read_text().splitlines():
+                  r=json.loads(line)
+                  if r['id'] in seen:raise ValueError('Duplicate input')
+                  seen.add(r['id'])
+              shutil.move(str(d),str(Path('records')/f'evidence-fixed-shard-{i}'))
+          assert len(seen)==295==retained+continued
+          Path('completion.json').write_text(json.dumps({'complete':True,'inputs':len(seen),'retained_prior_records':retained,'continued_inputs':continued,'parent_run':35631351186,'effective_source_sha256':'db7e73bcea3b497213bfe252ad4f154d8f110f321bee23f9fc17f82518b89851'},indent=2))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: evidence-v4-recovered-complete
+          path: |
+            records/
+            completion.json
+            evidence_v4.py
+            run_evidence_v4.py
+            resume_infrastructure.py
+            EVIDENCE_PROTOCOL.md
+            EVIDENCE_STATIC_AUDIT.md
+          retention-days: 14
+          if-no-files-found: error
