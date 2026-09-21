@@ -1,0 +1,89 @@
+name: Jev reconstruction v1 - corrected primary fit
+on:
+  push:
+    branches: ['research/jev-reconstruction-20260921']
+    paths: ['.github/workflows/jev-reconstruction-clean-v1.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  corrected_fit:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 32
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Wait for exactly the frozen sixteen extraction artifacts
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          python -u - <<'PY'
+          import os,time,json,urllib.request
+          url='https://api.github.com/repos/Jaksenc/parameter-golf/actions/runs/35554698513/artifacts?per_page=100'
+          expected={'reconstruction-shard-'+str(i) for i in range(16)}
+          for attempt in range(85):
+              req=urllib.request.Request(url,headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'})
+              data=json.load(urllib.request.urlopen(req,timeout=30))
+              names={a['name'] for a in data['artifacts'] if not a['expired']}
+              print(json.dumps({'extraction_artifacts':len(expected&names),'required':16}),flush=True)
+              if expected<=names:break
+              time.sleep(20)
+          else:raise RuntimeError('Complete frozen extraction artifacts did not arrive; no partial benchmark allowed')
+          PY
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 35554698513
+          name: reconstruction-inputs
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 35554698513
+          pattern: reconstruction-shard-*
+          path: downloaded-features
+      - name: Fit corrected head, calibrate separately, then score all public decisions
+        run: |
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'safetensors==0.7.0' 'numpy==2.2.6'
+          mkdir -p features
+          for n in $(seq 0 15); do mv "downloaded-features/reconstruction-shard-$n" "features/shard-$n"; done
+          python -u finalize_clean_v1.py --out results
+          python -m pip freeze > results/dependencies.txt
+      - name: Preserve pinned published comparison rows after fitting
+        run: |
+          python - <<'PY'
+          import json,hashlib,urllib.request
+          from pathlib import Path
+          root=Path('published-reference');root.mkdir()
+          prefix='https://raw.githubusercontent.com/fstandhartinger/jevbench/7128f5cf445ca41e4da1bdc7c84f97926250724d/results/v1.2/'
+          files={'jevbench-v1.2-per-task.json':'f9993fc449faf54ad61729f692504faf33d0e7ba','jevbench-v1.2-topics.json':'44033bbe6085922db2f545ad7e510720ff07467e'}
+          receipt=[]
+          for name,expected in files.items():
+              b=urllib.request.urlopen(prefix+name,timeout=45).read()
+              actual=hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()
+              if actual!=expected:raise RuntimeError('Published reference hash mismatch')
+              (root/name).write_bytes(b);receipt.append({'url':prefix+name,'git_blob':actual,'sha256':hashlib.sha256(b).hexdigest()})
+          (root/'manifest.json').write_text(json.dumps(receipt,indent=2))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: jev-reconstruction-corrected-complete
+          path: |
+            results/
+            features/
+            reconstruction-inputs/
+            published-reference/
+            reconstruct_v1.py
+            finalize_clean_v1.py
+            jevbench_public_v1.py
+            RECONSTRUCTION_PROTOCOL_CORRECTION.md
+            RECONSTRUCTION_ABLATIONS.md
+          retention-days: 14
+          if-no-files-found: error
