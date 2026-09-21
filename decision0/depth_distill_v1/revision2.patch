@@ -1,0 +1,167 @@
+--- a/decision0/depth_distill_v1/cases.py
++++ b/decision0/depth_distill_v1/cases.py
+@@ -2,6 +2,7 @@
+ from __future__ import annotations
+ import hashlib, json, random
+ from datetime import datetime, timedelta, timezone
++from pathlib import Path
+ 
+ FAMILIES = ('amount','elapsed','policy','join','probability','intent','entailment','judge')
+ 
+@@ -11,18 +12,19 @@
+ def visible(row):
+     return {k:row[k] for k in ('id','state','question','options')}
+ 
+-def corpus(split):
++def synthetic(split):
+     if split not in ('train','held'): raise ValueError(split)
+     rows=[]
+     for fi,family in enumerate(FAMILIES):
+-      for source in range(6):
++      nsource=({'intent':5,'entailment':3}.get(family,4) if split=='train' else 6)
++      for source in range(nsource):
+         rng=random.Random(int(digest(['depth-distill-v1',split,family,source])[:16],16))
+         tag=''.join(rng.choice('BCDFGHJKLMNPQRSTVWXYZ') for _ in range(5))
+         scenarios=[]
+         if family=='amount':
+           n=rng.randint(3,17); price=rng.randint(12,87); fee=rng.randint(1,30); credit=rng.randint(1,30)
+           total=n*price+fee-credit
+-          ds=rng.sample([-1,0,1],2)
++          ds=list(((-1,0),(0,1),(-1,1))[source%3]);rng.shuffle(ds)
+           opts=[('below','The final total is strictly below the cap.'),('equal','The final total equals the cap.'),('above','The final total is strictly above the cap.')]
+           order=list(range(4));rng.shuffle(order)
+           for edit,d in enumerate(ds):
+@@ -35,7 +37,7 @@
+         elif family=='elapsed':
+           base=datetime(2026,rng.randint(1,10),rng.randint(1,20),rng.randint(0,20),rng.choice([0,15,30,45]),tzinfo=timezone.utc)
+           window=rng.randint(45,1800);deadline=base+timedelta(minutes=window)
+-          ds=rng.sample([-1,0,1],2);offset=timezone(timedelta(hours=rng.choice([-5,-3,0,2,5])))
++          ds=list(((-1,0),(0,1),(-1,1))[source%3]);rng.shuffle(ds);offset=timezone(timedelta(hours=rng.choice([-5,-3,0,2,5])))
+           opts=[('before','Submission is before the exact deadline.'),('at','Submission is exactly at the deadline.'),('after','Submission is after the deadline.')]
+           for edit,d in enumerate(ds):
+             event=(deadline+timedelta(minutes=d)).astimezone(offset)
+@@ -51,7 +53,8 @@
+             if a=='yes' and (h=='no' or c=='yes'):return 'allow'
+             return 'unknown'
+           states=[(a,h,c) for a in ('yes','no','unrecorded') for h in ('yes','no','unrecorded') for c in ('yes','no','unrecorded')]
+-          s0=rng.choice(states)
++          required=('allow','deny','unknown')[source%3]
++          s0=rng.choice([s for s in states if oracle(*s)==required])
+           # Change exactly one field, not the rule or distractors.
+           candidates=[s for s in states if sum(a!=b for a,b in zip(s0,s))==1 and oracle(*s)!=oracle(*s0)]
+           s1=rng.choice(candidates)
+@@ -85,16 +88,20 @@
+             scenarios.append((state,q,target,{'counts':dict(zip(labels,cc)),'sum':total}))
+         elif family=='intent':
+           topics=[('cancel','cancellation','cancel my membership'),('refund','refunds','refund my latest purchase'),('address','address changes','change my shipping address'),('extend','extensions','extend my reservation'),('track','package tracking','track my current parcel')]
+-          chosen=rng.choice(topics);key,noun,request=chosen
++          topic_order=topics.copy();random.Random(int(digest([split,'topics'])[:16],16)).shuffle(topic_order)
++          chosen=topic_order[source%len(topics)];key,noun,request=chosen
+           opts=[('none','No present request for any listed action; discussion, history, quotation, and hypothetical interest alone do not count.')]+[(k,f'The speaker currently requests action: {r}.') for k,n,r in topics]
+           positives=[f'Please {request}. I am asking you to do this now.',f'After considering it, I have decided: {request}, please.',f'I previously declined. My instruction now is to {request}.']
+           negatives=[f'Can you explain your policy on {noun}? Do not make any changes or take action.',f'My colleague said "{request}" yesterday. I am only quoting them; I am not making that request.',f'I had considered asking you to {request}, but decided not to. Please leave everything as it is.']
++          if split=='held':
++            positives=[f'This is not a hypothetical inquiry: {request}.',f'I need you to {request}; that is my current request.',f'Go ahead and {request}. I approve that action.']
++            negatives=[f'We discussed whether I might {request}. I have not authorized it.',f'The help page mentions {noun}. I am reading it, not asking for action.',f'Someone else wants to {request}; I do not. No action for my account.']
+           scenarios=[(rng.choice(negatives),'Classify the present speaker\'s actionable request using the outcome definitions.', 'none',{'present_action':'none'}),(rng.choice(positives),'Classify the present speaker\'s actionable request using the outcome definitions.',key,{'present_action':key})]
+         elif family=='entailment':
+-          person=rng.choice(['Ari','Bo','Cleo','Dara','Emil','Faye','Gus','Hana']);obj=rng.choice(['parcel','folder','ticket','crate']);color=rng.choice(['teal','violet','orange','white']);other=rng.choice([c for c in ['teal','violet','orange','white'] if c!=color])
++          person=rng.choice(['Ari','Bo','Cleo','Dara','Emil','Faye','Gus','Hana'] if split=='train' else ['Ina','Jae','Kian','Luz','Mai','Noel','Oren','Pia']);obj=rng.choice(['parcel','folder','ticket','crate']);color=rng.choice(['teal','violet','orange','white']);other=rng.choice([c for c in ['teal','violet','orange','white'] if c!=color])
+           opts=[('supported','The claim follows from the passage.'),('contradicted','The passage establishes that the claim is false.'),('unknown','The passage establishes neither the claim nor its negation.')]
+           claim=f'{person} has the {color} {obj}.'
+-          modes=rng.sample(['supported','contradicted','unknown'],2)
++          modes=list((('supported','contradicted'),('contradicted','unknown'),('unknown','supported'))[source%3]);rng.shuffle(modes)
+           for mode in modes:
+             passage={'supported':f'{person} has exactly one {obj}. It is {color}.','contradicted':f'{person} has no {color} {obj}; their only {obj} is {other}.','unknown':f'{person} is waiting near a {color} {obj}. The owner is not identified.'}[mode]
+             scenarios.append((passage,f'Assess only this claim against the supplied passage: {claim}',mode,{'relation':mode,'claim':claim}))
+@@ -119,21 +126,35 @@
+             rows.append({'id':digest([split,family,source,edit])[:20],'source':digest([split,family,source])[:20],'split':split,'family':family,'edit':edit,'state':state,'question':question,'options':ordered,'expected':expected,'target_probs':target,'oracle':oracle,'teacher_eligible':family in ('policy','join','intent','entailment')})
+     return rows
+ 
++def corpus(split):
++    rows=synthetic(split)
++    data=json.loads((Path(__file__).parent/'snli_replay.json').read_text())
++    choices=[('entailment','The premise entails the claim.'),('contradiction','The premise contradicts the claim.'),('neutral','The premise neither establishes nor contradicts the claim.')]
++    for r in data[split]:
++        order=choices.copy();random.Random(int(digest(r['pair_id'])[:16],16)).shuffle(order)
++        rows.append({'id':'snli-'+digest(r['pair_id'])[:20],'source':'snli-'+digest(r['premise'])[:20],'split':split,'family':'snli','edit':None,'state':'Premise: '+r['premise']+'\nClaim: '+r['hypothesis'],'question':'Classify the relation between the premise and claim. Missing support alone is not contradiction.','options':[{'id':k,'description':v} for k,v in order],'expected':r['label'],'target_probs':{k:float(k==r['label']) for k,v in choices},'oracle':r,'teacher_eligible':False})
++    return rows
++
++def canonical(r):
++    return digest({'state':r['state'].removeprefix('Evidence record:\n'),'question':r['question'].removeprefix('Use no unstated assumptions. '),'options':sorted(r['options'],key=lambda x:x['id'])})
++
+ def checks():
+     sets={s:corpus(s) for s in ('train','held')};seen=set()
+     for split,rows in sets.items():
+-      assert len(rows)==96 and len({r['id'] for r in rows})==96
++      assert len(rows)==(96 if split=='train' else 120)
++      assert len({r['id'] for r in rows})==len(rows)
+       for r in rows:
+         assert len(r['options']) in range(2,7)
+         assert abs(sum(r['target_probs'].values())-1)<1e-12
+-        key=digest({k:r[k] for k in ('state','question','options')})
+-        assert key not in seen,('visible duplicate',r['id']);seen.add(key)
++        key=canonical(r)
++        assert key not in seen,('canonical duplicate',r['id']);seen.add(key)
+         assert not (set(visible(r)) & {'expected','oracle','target_probs','source','family','edit'})
+-      for source in {r['source'] for r in rows}:
+-        pair=[r for r in rows if r['source']==source];assert len(pair)==2
++      synthetic_rows=[r for r in rows if r['family']!='snli']
++      for source in {r['source'] for r in synthetic_rows}:
++        pair=[r for r in synthetic_rows if r['source']==source];assert len(pair)==2
+         assert pair[0]['options']==pair[1]['options']
+         assert pair[0]['target_probs']!=pair[1]['target_probs']
+         if pair[0]['family']!='probability':assert pair[0]['expected']!=pair[1]['expected']
+-    return {'counts':{k:len(v) for k,v in sets.items()},'source_counts':{k:len({r['source'] for r in v}) for k,v in sets.items()},'hashes':{k:digest(v) for k,v in sets.items()},'visible_overlap':0,'families':FAMILIES}
++    return {'counts':{k:len(v) for k,v in sets.items()},'source_counts':{k:len({r['source'] for r in v}) for k,v in sets.items()},'hashes':{k:digest(v) for k,v in sets.items()},'canonical_overlap':0,'families':FAMILIES+('snli',)}
+ 
+ if __name__=='__main__':print(json.dumps(checks(),indent=2))
+--- a/decision0/depth_distill_v1/study.py
++++ b/decision0/depth_distill_v1/study.py
+@@ -7,7 +7,7 @@
+ from flow_study import Runtime,corpus as old_corpus,save,filehash,prediction,softmax
+ from cases import corpus,checks,digest,visible,FAMILIES
+ 
+-PROTOCOL={'id':'decision0-depth-distill-v1','seeds':[73019,73037],'arms':['reference','repeat_distill'],
++PROTOCOL={'id':'decision0-depth-distill-v2','seeds':[73019,73037],'arms':['reference','repeat_distill'],
+  'rank':8,'scale':2.0,'lr':3e-5,'weight_decay':0.0,'epochs':1,'microbatch':1,'accumulation':4,
+  'training_rows':96,'updates':24,'teacher_weight':0.3,'train_token_limit':1024,'eval_token_limit':8192,
+  'teacher_gate':'eligible family and unique repeated-teacher argmax equals construction reference',
+@@ -15,7 +15,7 @@
+  'student_input':'baseline single-copy','teacher_input':'repeat_full','readout':'stock normalized hidden; FP32 native answer rows',
+  'base':'Qwen/Qwen3.5-4B','revision':'851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a',
+  'benchmark':'c6004e008ffba24aec091261ca1a5c02f7324702','official_score':None,
+- 'data_hashes':{'train':'eef49e64c696d07a86b39f303e6e803f625bdf61e8194e7eb4fbf906fac327e1','held':'81bfb471bc1e4719482a25cb9277d3dd2ea761adddef90ddbeef0b9f29c1243a'}}
++ 'data_hashes':{'train':'9e2cf5df51cac9b0d3253ea097bd43eaff5d9c1cc6a9dbfe1ea3fa2e5b0c6f90','held':'de79d3841b69a46357500f25952c37cf6c47ffcbc65848777c35c907c5ac5d0f'}}
+ 
+ def emit(**x):print(json.dumps(x,allow_nan=False),flush=True)
+ def memory():return resource.getrusage(resource.RUSAGE_SELF).ru_maxrss/1024
+--- a/decision0/depth_distill_v1/test_study.py
++++ b/decision0/depth_distill_v1/test_study.py
+@@ -14,7 +14,7 @@
+    self.assertEqual(messages(visible(a),'baseline'),original)
+  def test_pair_bindings(self):
+   for split in ('train','held'):
+-   rs=corpus(split)
++   rs=[r for r in corpus(split) if r['family']!='snli']
+    for group in {r['source'] for r in rs}:
+     a,b=[r for r in rs if r['source']==group]
+     self.assertEqual(a['options'],b['options']);self.assertEqual(a['question'],b['question'])
+@@ -53,7 +53,7 @@
+    for k in counts:self.assertAlmostEqual(r['target_probs'][k],counts[k]/total)
+  def test_cardinality_and_families(self):
+   for split in ('train','held'):
+-   rs=corpus(split);self.assertEqual({r['family'] for r in rs},set(FAMILIES));self.assertTrue({3,4,6} <= {len(r['options']) for r in rs})
++   rs=corpus(split);self.assertEqual({r['family'] for r in rs},set(FAMILIES+('snli',)));self.assertTrue({3,4,6} <= {len(r['options']) for r in rs})
+  def test_reference_teacher_control(self):
+   r=next(r for r in corpus('train') if r['teacher_eligible']);labels=[o['id'] for o in r['options']];n=len(labels);p=[.1/(n-1)]*n;p[labels.index(r['expected'])]=.9
+   t={'teacher':{'probabilities':p,'predicted':r['expected']}}
+@@ -69,7 +69,7 @@
+  def test_tied_teacher_excluded(self):
+   r=next(r for r in corpus('train') if r['teacher_eligible']);p=[1/len(r['options'])]*len(r['options']);q,use,w=target_for(r,{'teacher':{'probabilities':p,'predicted':r['expected']}},'repeat_distill');self.assertEqual(w,0)
+  def test_balanced_assignment(self):
+-  rows=corpus('held');a=assignment(rows);self.assertEqual(sorted(i for x in a for i in x),list(range(96)))
++  rows=corpus('held');a=assignment(rows);self.assertEqual(sorted(i for x in a for i in x),list(range(120)))
+  def test_target_not_in_prompt(self):
+   for r in corpus('train'):
+    text=json.dumps(messages(r,'baseline'));self.assertNotIn('target_probs',text);self.assertNotIn('oracle',text)
