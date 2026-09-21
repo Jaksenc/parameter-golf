@@ -1,0 +1,16 @@
+{
+  "new_model_outcomes_inspected": false,
+  "tests_passed": 45,
+  "fuzz_fixtures_in_one_test": 10000,
+  "created_utc": "2026-09-21T22:58:33.889363+00:00",
+  "run_id": 35665066216,
+  "source_commit": "03ae69ac70aa04ab599cd3af3926dbd72a4e0ce9",
+  "protocol_commit": "c8c1812a6a8d871dfdf79874abe29c3f6cfef612",
+  "files": {
+    "countercase_v8.py": "e50085c81381f226a632e06efbb7d740f276acd013a3931e0c18343d15a55ffd",
+    "analyze_v8.py": "f696b3cd585534baaf80455281dee6ccc27c409efb4a451f3e51aea516d0f0b6",
+    "decide.py": "60a501e71a74e07f9ecf9311017f0be62773ce7961980dd57cb3ce3e3ea325a4",
+    "test_countercase.py": "4b5bfbb4a7e7e84f020635e9cd09360a4c43bdbc84a33765669154cb23ca0a9c",
+    "test_analysis.py": "d7d5f71223190b7edcab2f7d8c77d790a341c39f4d50084d7ba8840c4a46eabb"
+  }
+}
