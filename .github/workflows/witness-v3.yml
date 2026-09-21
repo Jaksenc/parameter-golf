@@ -1,0 +1,135 @@
+name: Witness v3 - executable intermediate evidence
+on:
+  push:
+    branches: ['research/witness-v3-20260921']
+    paths: ['.github/workflows/witness-v3.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  smoke:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 10
+    env:
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      MKL_NUM_THREADS: '4'
+      HF_HUB_DOWNLOAD_TIMEOUT: '120'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 35555340129
+          name: jev-reconstruction-corrected-complete
+      - name: Verify source and install CPU runtime
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          grep -qw bf16 /proc/cpuinfo
+          python -m py_compile witness_vm.py witness_probe.py witness_data.py
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6'
+      - name: Run two calibration-only transport smoke cases
+        run: python -u witness_probe.py --smoke --out witness-smoke
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: witness-smoke
+          path: witness-smoke/
+          retention-days: 14
+          if-no-files-found: error
+  extract:
+    needs: smoke
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      max-parallel: 16
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    env:
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      MKL_NUM_THREADS: '4'
+      HF_HUB_DOWNLOAD_TIMEOUT: '120'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 35555340129
+          name: jev-reconstruction-corrected-complete
+      - name: Install pinned CPU runtime
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          grep -qw bf16 /proc/cpuinfo
+          python -m py_compile witness_vm.py witness_probe.py witness_data.py
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6'
+      - name: Generate intermediate program and compare no-execution with exact execution
+        run: python -u witness_probe.py --shard '${{ matrix.shard }}' --out 'witness-shard-${{ matrix.shard }}'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: witness-shard-${{ matrix.shard }}
+          path: witness-shard-${{ matrix.shard }}/
+          retention-days: 14
+          if-no-files-found: error
+  aggregate:
+    needs: extract
+    runs-on: ubuntu-24.04
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: witness-shard-*
+          path: witness-records
+      - name: Require all 503 unique decisions and identical source hashes
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          counts=[31,32,32,33,32,32,31,32,32,33,32,32,29,30,30,30]
+          seen=set(); sources=None
+          for i,n in enumerate(counts):
+              d=Path('witness-records')/f'witness-shard-{i}'
+              c=json.loads((d/'complete.json').read_text())
+              assert c['count']==n and not c['smoke']
+              assert hashlib.sha256((d/'records.json').read_bytes()).hexdigest()==c['records_sha256']
+              assert c['all_input_sha256']=='e1ba7ebeb5f1ddeb9b1c578c9b3834ed55fd114e602a5fb6ff09b4fbf2101e2b'
+              if sources is None:sources=c['source_hashes']
+              assert sources==c['source_hashes']
+              for r in json.loads((d/'records.json').read_text()):
+                  assert r['id'] not in seen
+                  seen.add(r['id'])
+          assert len(seen)==503
+          Path('witness-manifest.json').write_text(json.dumps({'status':'complete','records':503,'shards':16,'source_hashes':sources},indent=2))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: witness-v3-complete
+          path: |
+            witness-records/
+            witness-manifest.json
+            witness_vm.py
+            witness_data.py
+            witness_probe.py
+            WITNESS_PROTOCOL.md
+          retention-days: 14
+          if-no-files-found: error
