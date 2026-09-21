@@ -1,0 +1,22 @@
+name: Stop superseded Decision-0 distillation draft
+on:
+  push:
+    branches: ['decision0/verified-cpu4b-20260921']
+    paths: ['.github/workflows/decision0-stop-dd-draft.yml']
+permissions:
+  actions: write
+  contents: read
+jobs:
+  stop:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Cancel only the explicitly superseded study
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          status=$(gh api repos/Jaksenc/parameter-golf/actions/runs/35665822355 --jq .status)
+          if [ "$status" != completed ]; then
+            gh api -X POST repos/Jaksenc/parameter-golf/actions/runs/35665822355/cancel
+          fi
