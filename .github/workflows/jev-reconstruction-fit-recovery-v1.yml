@@ -1,0 +1,54 @@
+name: Jev reconstruction v1 - verified fit recovery
+on:
+  push:
+    branches: ['research/jev-reconstruction-20260921']
+    paths: ['.github/workflows/jev-reconstruction-fit-recovery-v1.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  replay:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 35555340129
+          name: jev-reconstruction-corrected-complete
+      - name: Install corrected environment and run unchanged fitted-model protocol
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'packaging==25.0' 'safetensors==0.7.0' 'numpy==2.2.6'
+          python -u finalize_clean_v1.py --out results
+          python -m pip freeze > results/dependencies.txt
+      - name: Retrieve pinned published comparison, never a training input
+        run: |
+          python - <<'PY'
+          import json,hashlib,urllib.request
+          from pathlib import Path
+          root=Path('published-reference');root.mkdir()
+          prefix='https://raw.githubusercontent.com/fstandhartinger/jevbench/7128f5cf445ca41e4da1bdc7c84f97926250724d/results/v1.2/'
+          files={'jevbench-v1.2-per-task.json':'f9993fc449faf54ad61729f692504faf33d0e7ba','jevbench-v1.2-topics.json':'44033bbe6085922db2f545ad7e510720ff07467e'}
+          receipt=[]
+          for name,expected in files.items():
+              b=urllib.request.urlopen(prefix+name,timeout=45).read()
+              actual=hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()
+              if actual!=expected:raise RuntimeError('Published reference hash mismatch')
+              (root/name).write_bytes(b);receipt.append({'url':prefix+name,'git_blob':actual,'sha256':hashlib.sha256(b).hexdigest()})
+          (root/'manifest.json').write_text(json.dumps(receipt,indent=2))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: jev-reconstruction-verified-results
+          path: |
+            results/
+            published-reference/
+          retention-days: 14
+          if-no-files-found: error
