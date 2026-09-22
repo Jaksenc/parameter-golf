@@ -1,0 +1,10 @@
+{
+  "created_utc": "2026-09-22T13:53:28.762581+00:00",
+  "purpose": "Conservative post-outcome safety repair, not original primary",
+  "trigger": "One accepted source-key disagreement among234 unused-source rows: Nothing misparsed as named constant. Preserve the original wrong result.",
+  "patch_sha256": "b3cf120c99def33c76a9fb42c7ba06690e40b5cdfea734de3fbd7521d00e2afd",
+  "additional_evaluation": "Seeded1000-row nonoverlapping sample from original BIG-bench formal_fallacies_syllogisms_negation source, not yet fetched or inspected. No more repairs chosen using this sample.",
+  "seed": 9292026,
+  "original_sample_disclosure": "The234 unused BBH source rows are now inspected. The64 sampled primary comparison is unchanged and remains frozen. The v9.1 patch adds abstention only; it never changes a formal interpretation to improve a score.",
+  "scope": "Same generator family, not external grammar generalization or neural training. No full JevBench improvement claimed."
+}
