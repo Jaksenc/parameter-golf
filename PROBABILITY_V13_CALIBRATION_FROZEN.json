@@ -1,0 +1,32 @@
+{
+  "scientific_source_sha256": "147e7610dec39eef889ef8938c4818e32cc008c45200b142b4b4b0b6aa7f091d",
+  "calibration_file_sha256": "2d512d84e278fd4b5e6b4d5f61972cef192de90585e7bfc239f9af3c1c8fcf1b",
+  "fit_count": 73,
+  "fit_population": "Predeclared historical source-development records only",
+  "target_probability_metrics_reduced": false,
+  "primary": "full_calibrated",
+  "paths": {
+    "native": {
+      "temperature": 1.4142135623730951,
+      "fit_log_loss": 0.3433640645180824,
+      "identity_log_loss": 0.3627781151326675,
+      "fit_record_hash": "0c08113ca999e35cc25b016c5aa5f534abdbfc2121bb8bde1d0cae813e9fcae3"
+    },
+    "full": {
+      "temperature": 1.0218971486541166,
+      "fit_log_loss": 0.4094744930787373,
+      "identity_log_loss": 0.4096220264137846,
+      "fit_record_hash": "d23db64c1bcd5bc5b153014261dd9d06043051da9c811ff41be54d34af04de27"
+    },
+    "masked_final": {
+      "temperature": 1.241857812073484,
+      "fit_log_loss": 0.3773948543979042,
+      "identity_log_loss": 0.3884451344918265,
+      "fit_record_hash": "ab49ec2137ff5b321b04aaf8df9e127939dac3af60a990bf0e2252d6ae451731"
+    }
+  },
+  "boundary_optima": false,
+  "model_weight_updates": 0,
+  "recovery_scope": "423 original rows preserved; 18 missing rows recomputed with unchanged solve and validation checks.",
+  "primary_and_diagnostic_selection": "Unchanged from pre-inference protocol; no target-based substitution."
+}
