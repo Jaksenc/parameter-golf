@@ -1,0 +1,63 @@
+name: Adaptive relational replay v09
+on:
+  push:
+    branches: [research/adaptive-replay-v09-20260921]
+    paths: [.github/workflows/adaptive-replay-v09.yml]
+permissions:
+  contents: read
+jobs:
+  preflight:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    outputs:
+      ready: ${{ steps.probe.outputs.ready }}
+      native: ${{ steps.probe.outputs.native }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - id: probe
+        name: Require correct completed answers on authored readiness probes
+        run: python3 -u research/adaptive_replay/run.py --preflight
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: replay-v09-preflight
+          path: |
+            replay-preflight.json
+            replay-source.zip
+          retention-days: 1
+          if-no-files-found: warn
+  benchmark:
+    needs: preflight
+    if: needs.preflight.outputs.ready == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    strategy:
+      max-parallel: 6
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Frozen disjoint pilot; advisory memories never learn from test outcomes
+        env:
+          NATIVE_READY: ${{ needs.preflight.outputs.native }}
+          OMP_NUM_THREADS: '4'
+        run: |
+          EXTRA=''
+          if [ "$NATIVE_READY" = 'true' ]; then EXTRA='--native'; fi
+          python3 -u research/adaptive_replay/run.py --shard ${{ matrix.shard }} $EXTRA
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: replay-v09-${{ matrix.shard }}
+          path: replay-shard-*.json
+          retention-days: 1
+          if-no-files-found: warn
+      - name: Diagnostic tail
+        if: always()
+        run: tail -25 /tmp/adaptive-language-runtime/server.log || true
