@@ -1,0 +1,26 @@
+name: Adaptive lost-artifact replication
+on:
+  push:
+    branches: [research/adaptive-replay-v09-20260921]
+    paths: [.github/workflows/adaptive-replay-replicate.yml]
+permissions:
+  contents: read
+jobs:
+  replicate:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - run: python3 -u research/adaptive_replay/replicate_missing.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: replay-v09-shard3-replication
+          path: |
+            replay-shard-03-replication.json
+            replication-source.zip
+          retention-days: 1
+          if-no-files-found: warn
