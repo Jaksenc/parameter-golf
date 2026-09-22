@@ -1,0 +1,51 @@
+name: Witness v9 - source-only fresh audit sample
+on:
+  push:
+    branches: ['research/witness-v9-20260922']
+    paths: ['.github/workflows/witness-v9-source-audit.yml']
+permissions:
+  contents: read
+jobs:
+  sample:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 4
+    steps:
+      - name: Fetch known source bytes and select by input only
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          python -u - <<'PY'
+          import urllib.request,hashlib,json,random,re
+          from pathlib import Path
+          out=Path('source-audit');out.mkdir()
+          urls={
+            'original_task.json':('https://raw.githubusercontent.com/google/BIG-bench/main/bigbench/benchmark_tasks/formal_fallacies_syllogisms_negation/task.json','fca6d6d6a232084cc31ebd95bda332571cbf0bf5'),
+            'bbh_source.json':('https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/formal_fallacies.json','f54e739fb41e1e0ad57b21b2cd61653465bb78fd')}
+          receipts=[];data={}
+          for name,(url,blob) in urls.items():
+            b=urllib.request.urlopen(url,timeout=45).read()
+            got=hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()
+            assert got==blob
+            (out/name).write_bytes(b);data[name]=json.loads(b)
+            receipts.append({'name':name,'url':url,'git_blob':got,'sha256':hashlib.sha256(b).hexdigest(),'bytes':len(b)})
+          def norm(s):return ' '.join(re.findall(r'\w+',s.casefold()))
+          question='Is the argument, given the explicitly stated premises, deductively valid or invalid?'
+          known={norm(x['input'].split(question)[0]) for x in data['bbh_source.json']['examples']}
+          originals=data['original_task.json']['examples'];order=list(range(len(originals)));random.Random(9292026).shuffle(order)
+          selected=[];excluded=[];seen=set()
+          for i in order:
+            row=originals[i];key=norm(row['input'].split(question)[0])
+            if key in known or key in seen:excluded.append(i);continue
+            seen.add(key);selected.append({'source_index':i,**row})
+            if len(selected)==1000:break
+          assert len(selected)==1000
+          (out/'fresh1000.json').write_text(json.dumps(selected,sort_keys=True,ensure_ascii=False,indent=2))
+          (out/'receipt.json').write_text(json.dumps({'sources':receipts,'source_rows':len(originals),'sample_rows':len(selected),'seed':9292026,'selected_indices':[x['source_index'] for x in selected],'excluded_indices':excluded,'sample_sha256':hashlib.sha256((out/'fresh1000.json').read_bytes()).hexdigest(),'metadata':{k:v for k,v in data['original_task.json'].items() if k!='examples'},'scope':'Input-only sample; no model outcome or proof verdict used for selection; same generator family, different nonoverlapping source rows.'},indent=2))
+          print(json.dumps({'total':len(originals),'sample':len(selected),'excluded':len(excluded)}))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: witness-v9-fresh-source-audit
+          path: source-audit/
+          retention-days: 14
+          if-no-files-found: error
