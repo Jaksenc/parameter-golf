@@ -1,0 +1,121 @@
+name: Decision-0 confidence-matched control
+on:
+  push:
+    branches: ['decision0/verified-cpu4b-20260921']
+    paths: ['.github/workflows/decision0-confidence-control-v1.yml']
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: decision0-confidence-control-v1
+  cancel-in-progress: false
+defaults:
+  run:
+    shell: bash
+    working-directory: decision0/confidence_control_v1
+env:
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  TOKENIZERS_PARALLELISM: 'false'
+  OMP_NUM_THREADS: '4'
+  MKL_NUM_THREADS: '4'
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  train:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 65
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        seed: [73019,73037]
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          ref: ae1daeaf4e66cec8d54b8c72a456f2dce7237af1
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Restore exact completed parent implementation
+        run: |
+          git -C "$GITHUB_WORKSPACE" apply "$GITHUB_WORKSPACE/decision0/depth_distill_v1/revision2.patch"
+          test "$(git hash-object ../depth_distill_v1/study.py)" = 8c2dd2bd4da074ab4a2340ba7829c3184332dbee
+          python -m py_compile confidence_study.py
+          python -c 'import confidence_study as c; c.check_parent()'
+      - name: Install identical CPU runtime
+        run: |
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6' 'numpy==2.4.6' 'safetensors==0.8.0'
+      - name: Reuse frozen teacher observations without new inference
+        run: gh run download 35666799668 -p 'dd2-teacher-*' -D teachers
+      - name: Train confidence-matched control through all 32 blocks
+        timeout-minutes: 60
+        run: python -u confidence_study.py train --seed '${{ matrix.seed }}' --teacher-root teachers --out trained
+      - name: Retain source and environment
+        if: always()
+        run: |
+          mkdir -p trained/source
+          cp confidence_study.py trained/source/
+          python -m pip freeze > trained/dependencies.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: cc1-trained-${{ matrix.seed }}
+          path: decision0/confidence_control_v1/trained/
+          retention-days: 1
+          if-no-files-found: error
+  evaluate:
+    needs: train
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11]
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          ref: ae1daeaf4e66cec8d54b8c72a456f2dce7237af1
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Apply exact parent repair and install identical runtime
+        run: |
+          git -C "$GITHUB_WORKSPACE" apply "$GITHUB_WORKSPACE/decision0/depth_distill_v1/revision2.patch"
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6' 'numpy==2.4.6' 'safetensors==0.8.0'
+      - name: Load this run's two frozen controls
+        run: gh run download "$GITHUB_RUN_ID" -p 'cc1-trained-*' -D checkpoints
+      - name: Fresh full-model public and heldout regression evaluation
+        run: python -u confidence_study.py evaluate --shard '${{ matrix.shard }}' --checkpoint-root checkpoints --out evaluation
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: cc1-eval-${{ matrix.shard }}
+          path: decision0/confidence_control_v1/evaluation/
+          retention-days: 1
+          if-no-files-found: error
+  report:
+    needs: evaluate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          ref: ae1daeaf4e66cec8d54b8c72a456f2dce7237af1
+      - name: Require complete coverage and summarize all fixed candidates
+        run: |
+          git -C "$GITHUB_WORKSPACE" apply "$GITHUB_WORKSPACE/decision0/depth_distill_v1/revision2.patch"
+          gh run download "$GITHUB_RUN_ID" -p 'cc1-eval-*' -D evaluations
+          python3 confidence_study.py aggregate --root evaluations --out final
+          cp confidence_study.py final/
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cc1-final
+          path: decision0/confidence_control_v1/final/
+          retention-days: 3
+          if-no-files-found: error
