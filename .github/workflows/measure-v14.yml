@@ -1,0 +1,124 @@
+name: Measure v14 - probability semantics
+on:
+  push:
+    branches: ['research/measure-v14-20260922']
+    paths: ['.github/workflows/measure-v14.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  prepare:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 35781209019
+          name: probability-v13-recovered-complete
+      - name: Freeze exact tasks and verified reference-note condition
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          echo '1e74fb444e03b0e783b760d014cf27ef4db739e70769a0cc80e7f2271691280c  measure_v14.py' | sha256sum -c -
+          python -u measure_v14.py prepare
+          python - <<'PY'
+          import json
+          m=json.load(open('measure-prepared/manifest.json'))
+          assert m['jobs_sha256']=='232d5768433c644aa999ffe552299e903f7356fa748dcb5932f89b3b049e1a1a'
+          assert m['evaluation_sha256']=='379a31bb3f3a84129372f1b916fd358c23ffe4b779c01f86edb482428c579c0a'
+          assert m['views']==128 and m['worlds']==32
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: measure-v14-prepared
+          path: |
+            measure_v14.py
+            MEASURE_V14_PROTOCOL.md
+            measure-prepared/
+            contrast_v7.py
+            handoff_v5.py
+            reconstruct_v1.py
+            evidence_v4.py
+            jevbench_public_v1.py
+            reconstruction-inputs/benchmark/vendor/
+          retention-days: 14
+          if-no-files-found: error
+  infer:
+    needs: prepare
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      max-parallel: 16
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    env:
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      MKL_NUM_THREADS: '4'
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      HF_HUB_DOWNLOAD_TIMEOUT: '120'
+    steps:
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: measure-v14-prepared
+      - name: Install pinned CPU model runtime
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          grep -qw bf16 /proc/cpuinfo
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6'
+      - name: Measure all assigned output channels
+        run: python -u measure_v14.py run --shard '${{ matrix.shard }}' --out 'measure-shard-${{ matrix.shard }}'
+      - name: Preserve dependencies
+        if: always()
+        run: |
+          mkdir -p 'measure-shard-${{ matrix.shard }}'
+          python -m pip freeze > 'measure-shard-${{ matrix.shard }}/dependencies.txt'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: measure-v14-shard-${{ matrix.shard }}
+          path: measure-shard-${{ matrix.shard }}/
+          retention-days: 14
+          if-no-files-found: error
+  aggregate:
+    needs: infer
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: measure-v14-prepared
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: measure-v14-shard-*
+          path: records
+      - name: Require every frozen input-note-channel observation
+        run: python -u measure_v14.py aggregate
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: measure-v14-complete
+          path: |
+            all_records.json
+            completion.json
+            records/
+            measure-prepared/
+            measure_v14.py
+            MEASURE_V14_PROTOCOL.md
+            contrast_v7.py
+            handoff_v5.py
+            reconstruct_v1.py
+            evidence_v4.py
+            jevbench_public_v1.py
+            reconstruction-inputs/benchmark/vendor/
+          retention-days: 14
+          if-no-files-found: error
