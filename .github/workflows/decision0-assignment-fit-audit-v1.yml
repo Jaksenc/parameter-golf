@@ -1,0 +1,68 @@
+name: Decision-0 frozen training-fit audit
+on:
+  push:
+    branches: ['decision0/verified-cpu4b-20260921']
+    paths: ['.github/workflows/decision0-assignment-fit-audit-v1.yml']
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: decision0-assignment-fit-audit-v1
+  cancel-in-progress: false
+jobs:
+  fit:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        shard: [0,1,2,3]
+    defaults:
+      run:
+        shell: bash
+        working-directory: decision0/conditional_assignment_v1
+    env:
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      MKL_NUM_THREADS: '4'
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          ref: 8d862fdca03e7bcaa31e540f9b7cc549d60837e4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Restore completed parent implementation and verify fit source
+        run: |
+          git -C "$GITHUB_WORKSPACE" apply "$GITHUB_WORKSPACE/decision0/depth_distill_v1/revision2.patch"
+          test "$(git hash-object ../depth_distill_v1/study.py)" = 8c2dd2bd4da074ab4a2340ba7829c3184332dbee
+          test "$(git hash-object fit_diagnostic.py)" = 9e2125a7efbdcfab48376dfb9e06007aa4a1113b
+          python -m py_compile fit_diagnostic.py triplet_study.py triplet_data.py
+      - name: Install matching CPU runtime
+        run: |
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6' 'numpy==2.4.6' 'safetensors==0.8.0'
+          python -m unittest -v test_triplet
+      - name: Retrieve both frozen completed checkpoints
+        run: gh run download 35737667113 -p 'ca1-trained-*' -D checkpoints
+      - name: Score seen training inputs with no optimizer or selection
+        timeout-minutes: 20
+        run: python -u fit_diagnostic.py --checkpoint-root checkpoints --shard '${{ matrix.shard }}' --out fit-result
+      - name: Preserve diagnostics and exact source
+        if: always()
+        run: |
+          mkdir -p fit-result/source
+          cp fit_diagnostic.py triplet_study.py triplet_data.py test_triplet.py fit-result/source/
+          python -m pip freeze > fit-result/dependencies.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: ca1-fit-${{ matrix.shard }}
+          path: decision0/conditional_assignment_v1/fit-result/
+          retention-days: 1
+          if-no-files-found: error
