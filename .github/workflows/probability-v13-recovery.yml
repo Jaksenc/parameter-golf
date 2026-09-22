@@ -1,0 +1,131 @@
+name: Probability v13 - missing worker recovery
+on:
+  push:
+    branches: ['research/probability-v13-20260922']
+    paths: ['.github/workflows/probability-v13-recovery.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  recover:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        worker: [0,1,2,3,4,5]
+    env:
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      MKL_NUM_THREADS: '4'
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      HF_HUB_DOWNLOAD_TIMEOUT: '120'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 35776811846
+          name: probability-v13-prepared
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 35776811846
+          name: probability-v13-shard-19
+          path: failed-worker
+      - name: Install identical frozen runtime
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          grep -qw bf16 /proc/cpuinfo
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6'
+      - name: Run three missing inputs under the original validation rule
+        run: python -u recover_probability19.py run --worker '${{ matrix.worker }}' --out 'recovered-${{ matrix.worker }}'
+      - name: Preserve dependency receipt
+        if: always()
+        run: |
+          mkdir -p 'recovered-${{ matrix.worker }}'
+          python -m pip freeze > 'recovered-${{ matrix.worker }}/dependencies.txt'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: probability-v13-recovered-${{ matrix.worker }}
+          path: recovered-${{ matrix.worker }}/
+          retention-days: 14
+          if-no-files-found: error
+  aggregate:
+    needs: recover
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Require original run to be terminal before copying successful records
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import json,os,time,urllib.request
+          from pathlib import Path
+          for _ in range(60):
+              req=urllib.request.Request('https://api.github.com/repos/Jaksenc/parameter-golf/actions/runs/35776811846',headers={'Authorization':'Bearer '+os.environ['GH_TOKEN']})
+              data=json.load(urllib.request.urlopen(req,timeout=30))
+              assert data['head_sha']=='55e1c317077e80ac9a365281b1512217e0e2e980'
+              if data['status']=='completed':
+                  Path('original-run-status.json').write_text(json.dumps({k:data[k] for k in ('id','status','conclusion','head_sha','updated_at')},indent=2))
+                  break
+              time.sleep(5)
+          else:raise RuntimeError('Refuse a moving source-artifact snapshot')
+          PY
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 35776811846
+          name: probability-v13-prepared
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 35776811846
+          pattern: probability-v13-shard-*
+          path: records
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: probability-v13-recovered-*
+          path: recovered-records
+      - name: Check all raw rows and recover the complete frozen experiment
+        run: python -u recover_probability19.py aggregate
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: probability-v13-recovered-complete
+          path: |
+            all_records.json
+            completion.json
+            RECOVERY.json
+            original-run-status.json
+            records/
+            recovered-records/
+            probability-prepared/
+            probability_v13.py
+            recover_probability19.py
+            PROBABILITY_V13*.md
+            PROBABILITY_V13*.json
+            probability_boundary.py
+            analyze_probability.py
+            audit_probability.py
+            decide_probability.py
+            test_probability_v13.py
+            contrast_v7.py
+            handoff_v5.py
+            reconstruct_v1.py
+            evidence_v4.py
+            jevbench_public_v1.py
+            reconstruction-inputs/benchmark/vendor/
+          retention-days: 14
+          if-no-files-found: error
