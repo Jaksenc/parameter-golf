@@ -1,0 +1,10 @@
+{
+  "created_utc": "2026-09-22T14:00:08.117302+00:00",
+  "version": "v9.2 rejection-only safety guard",
+  "patch_sha256": "5a42c69a228a9d5b019db364197706833d35c94de045141a34c0598051feaa69",
+  "known_findings": "v9.1 fresh1000:390 accepted,386 match source labels. Three errors absorb however as a predicate word; one potential source-label error. All frozen results retained.",
+  "new_confirmation": "1000 further unseen original-source rows, seed9292027; exclude all250 BBH rows and first1000 audit inputs by normalized stem. No target-based selection or further repair using this set.",
+  "primary_unchanged": true,
+  "new_neural_calls_for_this_guard": 0,
+  "scope": "Same generator family. This is a source-parser safety refinement, not a new general-purpose model or a retroactive replacement primary."
+}
