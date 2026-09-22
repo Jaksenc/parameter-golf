@@ -1,0 +1,16 @@
+{
+  "created_at_utc": "2026-09-22T19:58:44.902477+00:00",
+  "new_model_outputs_inspected": false,
+  "run_id": 35776811846,
+  "tests_passed": 37,
+  "extra_parser_fixtures": 10000,
+  "files": {
+    "probability_v13.py": "147e7610dec39eef889ef8938c4818e32cc008c45200b142b4b4b0b6aa7f091d",
+    "probability_boundary.py": "f2bf59a54a1511a225e4955a819c176527389f233b64f4383df3c44ef18ddf2a",
+    "analyze_probability.py": "2a66958c16553a4a77ceb1412c4e99bdff1e8252a5ab35d8c8afc83dbd1ec482",
+    "test_probability_v13.py": "da5569f439be066e0247ef0231943dd4133a9874cc00645f99e590083b1c1ed9"
+  },
+  "static_correction": "Interface exact ties now follow official lexical order; stable centered log-probability calculation. Scientific inference unchanged; initial boundary retained.",
+  "calibration_fit_ids": "Only the 73 predeclared source-development records; no public or external outputs fit or select parameters.",
+  "publication_boundary": "No full composite, production cost, private benchmark outcome, or pretrained-weight learning is inferred from this experiment."
+}
