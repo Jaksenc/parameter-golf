@@ -1,0 +1,62 @@
+name: Probability v13 - live probability boundary check
+on:
+  push:
+    branches: ['research/probability-v13-20260922']
+    paths: ['.github/workflows/probability-v13-live-check.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  check:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 15
+    env:
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      MKL_NUM_THREADS: '4'
+      HF_HUB_DOWNLOAD_TIMEOUT: '120'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 35776811846
+          name: probability-v13-prepared
+      - name: Install unchanged CPU runtime and verify source
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          echo '147e7610dec39eef889ef8938c4818e32cc008c45200b142b4b4b0b6aa7f091d  probability_v13.py' | sha256sum -c -
+          echo 'f2bf59a54a1511a225e4955a819c176527389f233b64f4383df3c44ef18ddf2a  probability_boundary.py' | sha256sum -c -
+          echo '13b55aa9def650b5735b6231f8386a02281989d16f650a1519547c713b3272d9  decide_probability.py' | sha256sum -c -
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6'
+      - name: Run actual full-draft endpoint on fixed source-selected fixtures
+        run: |
+          python -u - <<'PY'
+          import json,resource
+          from pathlib import Path
+          from reconstruct_v1 import Runtime
+          import probability_v13 as p
+          from decide_probability import decide
+          tasks=json.load(open('probability-prepared/evaluation.json'))
+          fixtures=[sorted([t for t in tasks if t['partition']==part],key=lambda t:t['id'])[0] for part in ('jevbench','external_bbh','source_check')]
+          rt=Runtime(Path('reconstruction-inputs'))
+          results=[decide(rt,p.request(t),'full',None) for t in fixtures]
+          p.write('live-interface.json',{'cases':results,'selection':'Lexically first public, external, and source-check input, fixed before new outcomes. Runtime checks, not a performance estimate.','calibration':'Raw identity probabilities; fit parameters evaluated independently later.','peak_rss_kib_linux':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,'entry_sha256':p.filehash('decide_probability.py')})
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: probability-v13-live-interface
+          path: |
+            live-interface.json
+            decide_probability.py
+            probability_boundary.py
+          retention-days: 14
+          if-no-files-found: error
