@@ -1,0 +1,14 @@
+{
+  "new_model_outcomes_inspected": false,
+  "created_utc": "2026-09-22T23:16:35.083419+00:00",
+  "tests_passed": 46,
+  "run_id": 35796368589,
+  "source_commit": "3eb76e01c58ad4696521ad6a176b9f121a1ce736",
+  "protocol_commit": "320e0cb89e53ef76691bae887edf2a1b611dda57",
+  "hashes": {
+    "src/measure_v14.py": "1e74fb444e03b0e783b760d014cf27ef4db739e70769a0cc80e7f2271691280c",
+    "src/analyze_measure.py": "eddd490206f11fdbca3ad52feed64b3d69220f644f2bf22580ba9117a9a6eab4",
+    "tests/test_measure.py": "0abd69afdededd9cc17df2ba37c20f8ee99ac1884dcf2776b8f6076dd6cfa43f",
+    "tests/test_analysis.py": "ffaf6bb2810bfd01ae90ea0e4a6ab3efc908043fd1527047a5ac929ccc814bfc"
+  }
+}
