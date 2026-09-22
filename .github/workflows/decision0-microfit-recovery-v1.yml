@@ -1,0 +1,53 @@
+name: Decision-0 persisted microfit evaluation
+on:
+  push:
+    branches: ['decision0/verified-cpu4b-20260921']
+    paths: ['.github/workflows/decision0-microfit-recovery-v1.yml']
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: decision0-microfit-recovery-v1
+  cancel-in-progress: false
+jobs:
+  evaluate:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 10
+    env:
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      MKL_NUM_THREADS: '4'
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          ref: a4de49153f06ec10c6d90c1912296ccbc60751a8
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Require exact read-only diagnostic
+        run: test "$(git hash-object decision0/primitive_ladder_v1/recover_microfit.py)" = 76ebb7066e4738065db2ef3c33dee9c892b90dd0
+      - name: Install matching runtime and retrieve persisted factors
+        run: |
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6' 'numpy==2.4.6' 'safetensors==0.8.0'
+          gh run download 35771406144 -n mf1-result -D prior
+      - name: Fresh baseline and persisted-checkpoint evaluation, no optimizer
+        timeout-minutes: 7
+        run: python -u decision0/primitive_ladder_v1/recover_microfit.py --checkpoint prior/recovery.safetensors --out result
+      - name: Preserve exact diagnostics
+        if: always()
+        run: |
+          mkdir -p result
+          cp decision0/primitive_ladder_v1/recover_microfit.py result/
+          python -m pip freeze > result/dependencies.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: mfr1-result
+          path: result/
+          retention-days: 3
+          if-no-files-found: error
