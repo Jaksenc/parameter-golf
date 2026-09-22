@@ -1,0 +1,58 @@
+name: Adaptive shared-core readout v2
+on:
+  push:
+    branches: [research/adaptive-shared-core-20260922]
+    paths: [.github/workflows/adaptive-shared-core-v2.yml]
+permissions:
+  contents: write
+jobs:
+  preflight:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    outputs:
+      ready: ${{ steps.probe.outputs.ready }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - id: probe
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -u research/shared_decisions/entry_v2.py --preflight
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: shared-v2-preflight
+          path: |
+            v2-preflight-shared.json
+            shared-source.zip
+          retention-days: 1
+          if-no-files-found: warn
+  pilot:
+    needs: preflight
+    if: needs.preflight.outputs.ready == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - env:
+          GITHUB_TOKEN: ${{ github.token }}
+          OMP_NUM_THREADS: '4'
+        run: python3 -u research/shared_decisions/entry_v2.py --shard ${{ matrix.shard }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: shared-v2-stage1-${{ matrix.shard }}
+          path: |
+            v2-stage1-*.json
+            sources-*.zip
+          retention-days: 1
+          if-no-files-found: warn
