@@ -1,0 +1,123 @@
+name: Bridge v15 - distribution aware code control
+on:
+  push:
+    branches: ['research/bridge-v15-20260922']
+    paths: ['.github/workflows/bridge-v15-semantic.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  prepare:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Require the completed main artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python -u - <<'PY'
+          import json,os,time,urllib.request
+          u='https://api.github.com/repos/Jaksenc/parameter-golf/actions/runs/35802731023/artifacts?name=bridge-v15-complete'
+          for i in range(100):
+              req=urllib.request.Request(u,headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'})
+              data=json.load(urllib.request.urlopen(req,timeout=30))
+              found=[x for x in data.get('artifacts',[]) if x['name']=='bridge-v15-complete' and not x['expired']]
+              if found:break
+              time.sleep(15)
+          else:raise RuntimeError('No complete main artifact; no partial substitution')
+          PY
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 35802731023
+          name: bridge-v15-complete
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: bridge-v15-semantic-prepared
+          path: |
+            semantic_bridge_v15.py
+            BRIDGE_V15_SEMANTIC_CONTROL.md
+            all_records.json
+            bridge-prepared/
+            bridge_v15.py
+            measure_v14.py
+            contrast_v7.py
+            handoff_v5.py
+            reconstruct_v1.py
+            evidence_v4.py
+            jevbench_public_v1.py
+            reconstruction-inputs/benchmark/vendor/
+          retention-days: 14
+          if-no-files-found: error
+  infer:
+    needs: prepare
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+    env:
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      MKL_NUM_THREADS: '4'
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      HF_HUB_DOWNLOAD_TIMEOUT: '120'
+    steps:
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: bridge-v15-semantic-prepared
+      - name: Install unchanged runtime
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          grep -qw bf16 /proc/cpuinfo
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6'
+      - run: python -u semantic_bridge_v15.py --shard '${{ matrix.shard }}' --out 'semantic-${{ matrix.shard }}'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: bridge-v15-semantic-${{ matrix.shard }}
+          path: semantic-${{ matrix.shard }}/
+          retention-days: 14
+          if-no-files-found: error
+  aggregate:
+    needs: infer
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: bridge-v15-semantic-*
+          path: semantic-data
+      - name: Require every control record
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          seen=set()
+          for i in range(8):
+              d=Path('semantic-data')/f'bridge-v15-semantic-{i}'
+              c=json.load(open(d/'complete.json'));p=d/'records.jsonl'
+              assert c['count']==24 and hashlib.sha256(p.read_bytes()).hexdigest()==c['records_sha256']
+              for s in p.read_text().splitlines():
+                  x=json.loads(s);key=(x['id'],x['support']);assert key not in seen;seen.add(key)
+          assert len(seen)==192
+          Path('semantic-completion.json').write_text(json.dumps({'complete':True,'views':192}))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: bridge-v15-semantic-complete
+          path: |
+            semantic-data/
+            semantic-completion.json
+          retention-days: 14
+          if-no-files-found: error
