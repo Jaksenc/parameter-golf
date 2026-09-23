@@ -1,0 +1,64 @@
+name: Adaptive complete public JevBench readouts
+on:
+  push:
+    branches: [research/adaptive-shared-core-20260922]
+    paths: [.github/workflows/adaptive-shared-full.yml]
+permissions:
+  contents: read
+jobs:
+  public:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Frozen readouts; exact source and public-data identity checks
+        env:
+          OMP_NUM_THREADS: '4'
+        run: python3 -u research/shared_decisions/full_stage1.py --shard ${{ matrix.shard }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: full-readouts-${{ matrix.shard }}
+          path: full-stage1-*.json
+          retention-days: 1
+          if-no-files-found: warn
+  collect:
+    needs: public
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: full-readouts-*
+          path: collected
+          merge-multiple: true
+      - name: Preserve every returned shard and missing-shard status
+        run: |
+          python3 - <<'PY'
+          import json,hashlib,zipfile
+          from pathlib import Path
+          root=Path('collected');root.mkdir(exist_ok=True)
+          files=sorted(root.glob('full-stage1-*.json'))
+          seen={int(p.stem.split('-')[-1]) for p in files}
+          m={'expected_shards':24,'received_shards':len(files),'missing_shards':sorted(set(range(24))-seen),'files':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in files}}
+          (root/'COLLECTION.json').write_text(json.dumps(m,indent=2))
+          with zipfile.ZipFile('Adaptive-JevBench-full-readouts.zip','w',zipfile.ZIP_DEFLATED) as z:
+            for p in root.iterdir():
+              if p.is_file():z.write(p,p.name)
+          print(json.dumps(m))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: complete-public-readouts
+          path: Adaptive-JevBench-full-readouts.zip
+          retention-days: 1
+          if-no-files-found: error
