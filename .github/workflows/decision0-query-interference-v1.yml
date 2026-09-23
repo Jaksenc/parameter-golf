@@ -1,0 +1,85 @@
+name: Decision-0 query interference v1
+on:
+  push:
+    branches: ['decision0/verified-cpu4b-20260921']
+    paths: ['.github/workflows/decision0-query-interference-v1.yml']
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: decision0-query-interference-v1
+  cancel-in-progress: false
+defaults:
+  run:
+    shell: bash
+    working-directory: decision0/query_interference_v1
+env:
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  TOKENIZERS_PARALLELISM: 'false'
+  OMP_NUM_THREADS: '4'
+  MKL_NUM_THREADS: '4'
+jobs:
+  probe:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        shard: [0,1,2,3,4,5,6,7]
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: 277e298876b29b5c2bca2bddee1ce3add2361b69
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Validate exact locally tested source
+        run: |
+          test "$(git hash-object query_interference.py)" = 2e4c99c0c4f7d3b955f444d3a004a0e03632dcc8
+          python query_interference.py selftest
+      - name: Install identical pinned runtime
+        run: |
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6' 'numpy==2.4.6' 'safetensors==0.8.0'
+      - name: Score six fixed conditions on unchanged full model
+        timeout-minutes: 20
+        run: python -u query_interference.py run --shard '${{ matrix.shard }}' --out output
+      - name: Preserve source and dependencies
+        if: always()
+        run: |
+          mkdir -p output/source
+          cp query_interference.py output/source/
+          python -m pip freeze > output/dependencies.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: qi1-shard-${{ matrix.shard }}
+          path: decision0/query_interference_v1/output/
+          retention-days: 1
+          if-no-files-found: error
+  report:
+    needs: probe
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: 277e298876b29b5c2bca2bddee1ce3add2361b69
+          persist-credentials: false
+      - name: Validate complete coverage and retain every fixed variant
+        run: |
+          gh run download "$GITHUB_RUN_ID" -p 'qi1-shard-*' -D artifacts
+          python3 query_interference.py aggregate --root artifacts --out final
+          cp query_interference.py final/
+          cp -r artifacts final/shards
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: qi1-final
+          path: decision0/query_interference_v1/final/
+          retention-days: 3
+          if-no-files-found: error
