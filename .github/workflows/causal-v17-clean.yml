@@ -1,0 +1,181 @@
+name: Causal v17.1 - clean objective and step size trial
+on:
+  push:
+    branches: ['research/causal-v17-20260923']
+    paths: ['.github/workflows/causal-v17-clean.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  prepare:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with: {persist-credentials: false}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 35808253851
+          name: learn-v16-evidence
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 35900447533
+          name: causal-v17-baseline
+          path: baseline
+      - run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          echo 'c46f27f29b44f83426830d2c4a3ff265f6c6211952c98167d24d3248f44c7cad  causal_v17_train.py' | sha256sum -c -
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'numpy==2.2.6'
+          python -m unittest -v test_causal_v17 test_causal_v17_repair
+          python causal_v17_data.py
+          python - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          m=json.load(open('causal-prepared/manifest.json'))
+          assert m['record_hash']=='26ce5f59a61db89f66582935ffd3461c0e386a87487682819a5c23a7a9d4228e'
+          assert json.load(open('baseline/complete.json'))['records']==256
+          p=list(Path('.').glob('causal_v17_*.py'))+[Path('test_causal_v17.py'),Path('test_causal_v17_repair.py'),Path('learn_v16.py'),Path('reconstruct_v1.py'),Path('measure_v14.py'),Path('handoff_v5.py')]
+          Path('causal-source-lock.json').write_text(json.dumps({str(x):hashlib.sha256(x.read_bytes()).hexdigest() for x in p},sort_keys=True,indent=2))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: causal-v17-clean-prepared
+          path: |
+            causal_v17_*.py
+            test_causal_v17*.py
+            causal-source-lock.json
+            CAUSAL_V17*.md
+            CAUSAL_V17*.json
+            causal-prepared/
+            baseline/
+            learn_v16.py
+            learn_data.py
+            relational_objective.py
+            bridge_v15.py
+            measure_v14.py
+            contrast_v7.py
+            handoff_v5.py
+            reconstruct_v1.py
+            evidence_v4.py
+            jevbench_public_v1.py
+            reconstruction-inputs/benchmark/vendor/
+          retention-days: 14
+          if-no-files-found: error
+  first_half:
+    needs: prepare
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        seed: [17101, 17102, 17103]
+        arm: [event_high, mixed_high, event_low, mixed_low]
+    env: {TOKENIZERS_PARALLELISM: 'false', OMP_NUM_THREADS: '4', MKL_NUM_THREADS: '4', HF_HUB_DOWNLOAD_TIMEOUT: '120'}
+    steps:
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with: {name: causal-v17-clean-prepared}
+      - run: |
+          grep -qw bf16 /proc/cpuinfo
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6' 'numpy==2.2.6' 'safetensors==0.8.0'
+          python -u causal_v17_train.py --seed '${{ matrix.seed }}' --arm '${{ matrix.arm }}' --stop 16 --out 'run-${{ matrix.seed }}-${{ matrix.arm }}'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: causal-v17-clean-half-${{ matrix.seed }}-${{ matrix.arm }}
+          path: run-${{ matrix.seed }}-${{ matrix.arm }}/
+          retention-days: 14
+          if-no-files-found: error
+  second_half:
+    needs: first_half
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 65
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        seed: [17101, 17102, 17103]
+        arm: [event_high, mixed_high, event_low, mixed_low]
+    env: {TOKENIZERS_PARALLELISM: 'false', OMP_NUM_THREADS: '4', MKL_NUM_THREADS: '4', HF_HUB_DOWNLOAD_TIMEOUT: '120'}
+    steps:
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with: {name: causal-v17-clean-prepared}
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: causal-v17-clean-half-${{ matrix.seed }}-${{ matrix.arm }}
+          path: run-${{ matrix.seed }}-${{ matrix.arm }}
+      - run: |
+          grep -qw bf16 /proc/cpuinfo
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6' 'numpy==2.2.6' 'safetensors==0.8.0'
+          python -u causal_v17_train.py --seed '${{ matrix.seed }}' --arm '${{ matrix.arm }}' --stop 32 --out 'run-${{ matrix.seed }}-${{ matrix.arm }}'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: causal-v17-clean-model-${{ matrix.seed }}-${{ matrix.arm }}
+          path: run-${{ matrix.seed }}-${{ matrix.arm }}/
+          retention-days: 14
+          if-no-files-found: error
+  aggregate:
+    needs: second_half
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with: {name: causal-v17-clean-prepared}
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with: {pattern: 'causal-v17-clean-model-*', path: models}
+      - run: |
+          python - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          folders=list(Path('models').iterdir());assert len(folders)==12
+          m=json.load(open('causal-prepared/manifest.json'));n=len(m['evaluation_indices']);assert n==256
+          for f in folders:
+              c=json.load(open(f/'segment-32.json'));assert c['complete'] and c['through_step']==32 and c['from_step']==16
+              r=json.load(open(f/'final-predictions.json'));assert len(r)==n and len({x['id'] for x in r})==n
+              log=[json.loads(s) for s in (f/'training.jsonl').read_text().splitlines()]
+              assert [x['step'] for x in log]==list(range(1,33))
+              assert all(x['optimizer_step']==x['step'] for x in log)
+              assert all(x['counterfactual_state_hash_preserved'] for x in log if x['step'] in (1,16,32))
+          assert json.load(open('baseline/complete.json'))['records']==n
+          Path('causal-completion.json').write_text(json.dumps({'complete':True,'models':12,'optimizer_steps_per_model':32,'new_final_predictions':12*n,'baseline_predictions':n,'factorial':'2 objectives x 2 learning rates x 3 paired seeds','invalid_parent_run_excluded':35900447533}))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: causal-v17-clean-complete
+          path: |
+            models/
+            baseline/
+            causal-prepared/
+            causal_v17_*.py
+            test_causal_v17*.py
+            CAUSAL_V17*.md
+            CAUSAL_V17*.json
+            causal-source-lock.json
+            causal-completion.json
+            learn_v16.py
+            learn_data.py
+            relational_objective.py
+            bridge_v15.py
+            measure_v14.py
+            contrast_v7.py
+            handoff_v5.py
+            reconstruct_v1.py
+            evidence_v4.py
+            jevbench_public_v1.py
+            reconstruction-inputs/benchmark/vendor/
+          retention-days: 14
+          if-no-files-found: error
