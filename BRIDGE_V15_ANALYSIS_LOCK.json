@@ -1,0 +1,13 @@
+{
+  "created_utc": "2026-09-23T00:38:22.370603+00:00",
+  "new_model_outputs_inspected": false,
+  "scientific_tests": 20,
+  "analysis_tests": 11,
+  "files": {
+    "analyze_bridge.py": "24c0c1c546a80821b3e236b1c138049ed6f00a799894e2fcb4b00c003287c3fc",
+    "test_analysis.py": "8680ce7c83e20ca8aba68d1f95af196136a38095815fcb79e238c25ecfd4305e"
+  },
+  "scientific_source": "a58cb1240ee9d662f91bcd24cc5a2e7f9a44ae45b61a4e182e5d53f0fb844b98",
+  "run_id": 35802731023,
+  "protocol_commit": "1405ba0e867a249c007a73f5a28f514b860453af"
+}
