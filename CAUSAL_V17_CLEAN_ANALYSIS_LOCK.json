@@ -1,0 +1,14 @@
+{
+  "created_utc": "2026-09-23T20:05:37.136995+00:00",
+  "clean_training_outcomes_inspected": false,
+  "clean_run_id": 35912706972,
+  "original_protocol_preserved": true,
+  "tests_passed": 38,
+  "files": {
+    "src/audit_causal_clean.py": "06a116eff390ea5047994547282a7f61e253e83cda71b818b04f40ca86d29841",
+    "src/audit_early_history.py": "36df38a2b70936e32059f079291445109e04e7d5b80d52cb8a2a2ee887890fd4",
+    "src/test_causal_clean_analysis.py": "534d3aaa7976aad68c01a9e29b67233fcc5377785daacd115a1c304d60ce6c90",
+    "src/test_causal_v17_repair.py": "a2647a50ca482ddcfe61feac79f2e94589b1b177fa57a2d9ff5916065a066e77"
+  },
+  "limits": "Independent offline reducer replaces unavailable earlier helper. Old early results are diagnostic; the clean factorial has no selected winning arm."
+}
