@@ -1,0 +1,24 @@
+name: Causal v17 - stop invalid diagnostic-state attempt
+on:
+  push:
+    branches: ['research/causal-v17-20260923']
+    paths: ['.github/workflows/causal-v17-cancel-invalid.yml']
+permissions:
+  contents: read
+  actions: write
+jobs:
+  cancel_only_known_attempt:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          gh run cancel 35900447533 --repo Jaksenc/parameter-golf || true
+          gh run view 35900447533 --repo Jaksenc/parameter-golf --json databaseId,status,conclusion > cancelled-attempt.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: causal-v17-invalid-attempt-cancellation
+          path: cancelled-attempt.json
+          retention-days: 14
