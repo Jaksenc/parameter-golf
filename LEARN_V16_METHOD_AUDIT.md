@@ -1,0 +1,11 @@
+# Learn v16 method audit — before inspecting model outcomes
+
+The repaired workflow 35808253851 passed all25 clean-runner preflight tests and launched the six frozen model jobs. The earlier run35808126059 failed during a tensor-hash unit test because NumPy was absent; no pretrained optimizer update occurred in that run. The repair added the missing pinned NumPy dependency. Scientific source, targets, model, seeds, schedules, hyperparameters and64-step budget did not change.
+
+The independent reducer and its test hashes were frozen in LEARN_V16_ANALYSIS_LOCK.json before training or held-out results were inspected. It separately reports event and modal queries,56 check examples versus16 training probes, all three seeds, actual probability losses, uniform probability control, and relation residuals. Uniform probabilities are a diagnostic only, not a candidate chosen from test results.
+
+A subsequent implementation audit independently derived the paired-loss output gradients with scalar/NumPy arithmetic. All300 fixtures (100 probability maps at three coefficients) match PyTorch: maximum loss error8.88e-16 and output-gradient error3.33e-16. It then compared ordinary joint-graph gradients against the memory-saving replay on a miniature32-block network using non-reentrant activation checkpointing and the actual low-rank hook pattern. Across eight updates in the two objective settings, every adapter parameter and replayed logit matched exactly. This is a method check, not another4B training result or capability score.
+
+The training runtime itself still requires every recomputed logit to match its detached observation, gradients in all32 block adapters, no gradients in original model parameters, actual final factor changes, serialized weight reload, and restoration of the original base probe. The independent small-network audit does not waive any of those checks.
+
+Representation and uncertainty limits remain unchanged. A zero relation residual can describe two identically wrong predictions. Source generation and verification concern a controlled grammar; the ten held-out worlds are not an independent natural-language benchmark. The original backbone remains frozen while added low-rank parameters are genuinely optimized. No live result or Jev superiority claim is recorded in this note.
