@@ -17,7 +17,17 @@ def snapshot(torch,factors,optimizer):
  return (copy.deepcopy(factors.state_dict()),copy.deepcopy(optimizer.state_dict()),ck.random_state())
 def restore(factors,optimizer,state):
  import causal_v17_state as ck
- factors.load_state_dict(state[0]);optimizer.load_state_dict(state[1]);ck.restore_random(state[2])
+ factors.load_state_dict(state[0]);optimizer.load_state_dict(copy.deepcopy(state[1]));ck.restore_random(state[2])
+def optimizer_fingerprint(torch,optimizer):
+ h=hashlib.sha256();state=optimizer.state_dict()
+ h.update(json.dumps(state['param_groups'],sort_keys=True,allow_nan=False).encode())
+ for sid,values in sorted(state['state'].items()):
+  for name,value in sorted(values.items()):
+   h.update(repr((sid,name)).encode())
+   if isinstance(value,torch.Tensor):
+    v=value.detach().cpu().contiguous();h.update(repr((str(v.dtype),tuple(v.shape))).encode());h.update(v.numpy().tobytes())
+   else:h.update(repr(value).encode())
+ return h.hexdigest()
 def update(torch,factors,optimizer,g,cap=1.):
  optimizer.zero_grad(set_to_none=True)
  for p,v in zip(factors.parameters(),g):p.grad=v.clone()
@@ -105,16 +115,18 @@ def run(root,out,seed,arm,stop):
   dot=sum(float((a.double()*b.double()).sum()) for a,b in zip(e,mgrad))
   en=math.sqrt(sum(float((a.double()**2).sum()) for a in e));mn=math.sqrt(sum(float((a.double()**2).sum()) for a in mgrad))
   combined=[.5*a+.5*modal_weight*b for a,b in zip(e,mgrad)]
-  counterfactuals=None
+  counterfactuals=None;counterfactual_state_hash=None
   if step in (1,16,32):
-   state=snapshot(torch,factors,optimizer);counterfactuals={}
+   state=snapshot(torch,factors,optimizer);counterfactuals={};counterfactual_state_hash=optimizer_fingerprint(torch,optimizer)
    for label,g in [('event_update',[.5*a for a in e]),('modal_update',[.5*a for a in mgrad])]:
     restore(factors,optimizer,state);norm=update(torch,factors,optimizer,g)
     with torch.no_grad():zz=[score(i,'counterfactual') for i in pair]
     after=[float(-(torch.tensor([float(Fraction(x)) for x in r[i]['target']])*torch.log_softmax(z,-1)).sum()) for i,z in zip(pair,zz)]
     counterfactuals[label]={'losses_before':losses,'losses_after':after,'gradient_norm':norm}
    restore(factors,optimizer,state)
+   if optimizer_fingerprint(torch,optimizer)!=counterfactual_state_hash:raise RuntimeError('Discarded diagnostics mutated optimizer state')
   norm=update(torch,factors,optimizer,combined)
+  if any(int(optimizer.state[p]['step'])!=step for p in params):raise RuntimeError('Optimizer progress differs from real update count')
   if any(not torch.isfinite(p).all() for p in params):raise RuntimeError('Nonfinite updated weights')
   cp=ck.save(out/'full-state',factors,optimizer,completed_steps=step,bindings=bindings,schedule_state={'next_index':step})
   for old in (out/'full-state').glob('step-*.pt'):
@@ -122,16 +134,16 @@ def run(root,out,seed,arm,stop):
   row={'step':step,'pair':pair,'world':r[pair[0]]['group'],'event_ce':losses[0],'mode_ce':losses[1],
        'weighted_loss':.5*(losses[0]+modal_weight*losses[1]),'event_grad_norm':en,'mode_grad_norm':mn,
        'gradient_cosine':dot/(en*mn) if en*mn>0 else None,'combined_preclip_norm':norm,'counterfactuals':counterfactuals,
-       'observed_logits':observed,'checkpoint_sha256':cp['sha256'],'seconds':time.perf_counter()-tick}
+       'observed_logits':observed,'optimizer_step':step,'counterfactual_state_hash_preserved':counterfactual_state_hash,'checkpoint_sha256':cp['sha256'],'seconds':time.perf_counter()-tick}
   append(out/'training.jsonl',row)
   if step in (1,8,16,32):
    save_file({k:v.detach().cpu().contiguous() for k,v in factors.state_dict().items()},str(out/f'adapter-step-{step}.safetensors'))
    evaluate(m['probe_indices'],out/f'probe-step-{step}.json',step)
   if step%4==0:print(json.dumps({'seed':seed,'arm':arm,'step':step,'stop':stop,'ce':losses,'seconds':row['seconds']}),flush=True)
- saved_hash=prior.tensors_digest(factors.state_dict());opt_state=copy.deepcopy(optimizer.state_dict())
+ saved_hash=prior.tensors_digest(factors.state_dict());opt_hash=optimizer_fingerprint(torch,optimizer)
  with torch.no_grad():before=score(m['probe_indices'][0],'integrity').clone();factors[0].b.add_(.001)
  restored=ck.load(out/'full-state',factors,optimizer,bindings=bindings)
- if prior.tensors_digest(factors.state_dict())!=saved_hash or restored['completed_steps']!=stop:raise RuntimeError('State roundtrip failure')
+ if prior.tensors_digest(factors.state_dict())!=saved_hash or restored['completed_steps']!=stop or optimizer_fingerprint(torch,optimizer)!=opt_hash:raise RuntimeError('State roundtrip failure')
  with torch.no_grad():after=score(m['probe_indices'][0],'integrity')
  err=float((before-after).abs().max())
  if err>1e-4:raise RuntimeError('Model roundtrip output mismatch')
