@@ -1,0 +1,77 @@
+name: Causal v17 - early trajectory
+on:
+  push:
+    branches: ['research/causal-v17-20260923']
+    paths: ['.github/workflows/causal-v17-early.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  evaluate:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 24
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        seed: [16101, 16102, 16103]
+        arm: [supervised, relational]
+        step: [1, 16]
+    env:
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      MKL_NUM_THREADS: '4'
+      HF_HUB_DOWNLOAD_TIMEOUT: '120'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with: {persist-credentials: false}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 35808253851
+          name: learn-v16-evidence
+      - run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          grep -qw bf16 /proc/cpuinfo
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6' 'numpy==2.2.6' 'safetensors==0.8.0'
+          python -u causal_v17_early.py --seed '${{ matrix.seed }}' --arm '${{ matrix.arm }}' --step '${{ matrix.step }}' --out result
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: causal-v17-early-${{ matrix.seed }}-${{ matrix.arm }}-${{ matrix.step }}
+          path: result/
+          retention-days: 14
+          if-no-files-found: error
+  aggregate:
+    needs: evaluate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with: {persist-credentials: false}
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with: {pattern: 'causal-v17-early-*', path: early-records}
+      - run: |
+          python - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          d=Path('early-records'); dirs=list(d.iterdir());assert len(dirs)==12
+          for p in dirs:
+              c=json.load(open(p/'complete.json'));r=p/'predictions.jsonl'
+              assert c['outputs']==72 and c['evaluated_step'] in [1,16]
+              assert hashlib.sha256(r.read_bytes()).hexdigest()==c['records_sha256']
+          Path('early-completion.json').write_text(json.dumps({'complete':True,'models':12,'new_predictions':864,'selection':'none'}))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: causal-v17-early-complete
+          path: |
+            early-records/
+            early-completion.json
+            causal_v17_early.py
+          retention-days: 14
+          if-no-files-found: error
