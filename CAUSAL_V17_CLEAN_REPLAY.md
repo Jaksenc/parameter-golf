@@ -1,0 +1,13 @@
+# Causal v17.1 — clean replay boundary, September 23, 2026
+
+The interrupted v17 attempt (35900447533) was stopped after discovering an optimizer-state aliasing defect in discarded diagnostic updates. Loading an optimizer state dictionary directly can attach its tensors to the live optimizer. A diagnostic step then changes the supposedly saved snapshot; restoring the model alone does not undo that change. Outputs from affected trajectories are not valid evidence for the intended factorial comparison. They remain archived, never merged into the clean run.
+
+The repair already committed at 3057ab679bc0c1bf986cb6390dffe2b795db80d9 deep-copies the optimizer state on every restoration, checks moment fingerprints before/after discarded diagnostics, verifies true optimizer step counts, and checks moments during checkpoint round trips. Frozen repaired trainer SHA256: c46f27f29b44f83426830d2c4a3ff265f6c6211952c98167d24d3248f44c7cad.
+
+This continuation independently reproduced the defect on an initialized AdamW optimizer and tested the repair. Six added tests cover alias rejection, three discarded branches, a complete32-step toy trajectory versus a diagnostic-free control, exact random-stream restoration and true update counts. The19 original data/checkpoint tests also pass. These are local correctness tests, not pretrained-model capability results.
+
+Restart all12 matched models from their original paired seed; do NOT load weights or optimizer state from the invalid attempt. Preserve all four original arms, three seeds,32 updates,16+16 process split, record hashes, schedule, code readout, calibration/test split, checkpoint/probe schedule, and analysis endpoints. This is a repair-only replay, not new hyperparameter selection. Original baseline run did not train or execute diagnostic updates and is reusable after integrity verification.
+
+The completed v16 early-checkpoint audit remains valid and separate; it did not use the faulty training diagnostic. No old or invalid result chooses a primary arm. No hidden benchmark, new JevBench score, paid inference, model substitution, main-branch change, or claim of exact reconstruction is implied.
+
+The actual clean neural run must verify optimizer steps, immutable diagnostic snapshots, parameter fingerprints, baseline equivalence, cross-process resumption, full evaluation counts and all12 arms before any full-experiment conclusion. Partial artifacts must be labeled partial. The old invalid comparison will not be reported as a capability result. Any readout/channel, task, objective or architecture change requires a separate experiment.
