@@ -1,0 +1,16 @@
+{
+  "created_utc": "2026-09-23T02:01:41.904633+00:00",
+  "new_training_or_test_outcomes_inspected": false,
+  "current_tests_passed": 39,
+  "run_id": 35808253851,
+  "protocol_commit": "3e32b74f5a14966e21493e9113b0fec387bb4265",
+  "files": {
+    "src/analyze_learn.py": "a9a59498e2f10e5339b110e99d3943c6db1e39d2c90bb48f7862ffff4d25306b",
+    "tests/test_analysis.py": "028a6dc1e9f79f39eef93b55dbc5a1df4e8fcc30bd10c5797919fe668052a830",
+    "src/learn_v16.py": "88d3ce9ebae554adbb1728b45254bfe7a87043a26d1264fe0fad55077054b587",
+    "src/learn_data.py": "ec0f093b50c1cb49998aa5918f71f48a4597cf54cd8d89d8be8d1d17e196f933",
+    "src/relational_objective.py": "17e96a17db6dc8682573a3a8048662d81c37c1e2c17ff78530083dd51b6a27bb"
+  },
+  "added_control": "Uniform probabilities are diagnostic only; no arm or checkpoint promotion.",
+  "uncertainty": "Report per seed and paired seed/world resampling;3seeds/10same-grammar worlds cannot support general-model claims."
+}
