@@ -1,0 +1,16 @@
+{
+  "created_utc": "2026-09-23T13:34:30.157530+00:00",
+  "trained_evaluation_outputs_inspected": false,
+  "evaluated_checkpoint": 32,
+  "original64_primary_complete": false,
+  "current_tests_passed": 40,
+  "files": {
+    "src/audit_learn.py": "8c6690d440f2dcb3886c7d474cc614c11d4e03463b11026d09e5d1b6bc939214",
+    "src/training_checkpoint.py": "41ee6b4386f7bccac492c0eeaaf25a7cdf613d5da62f5a668ebcee866abe762a",
+    "tests/test_recovery.py": "c76549bf3d148bdde34e9ad45b79c8c17e6b4ecdcc0da85ffcbb78f8b95cac23",
+    "tests/test_learn_v16.py": "44b432159fe7f1f4dd5e883bf51da414928ce8c26577602e2102b956d917f180"
+  },
+  "new_run": 35867355646,
+  "parent_checks": {"source_targets_reconstructed":152,"exact_relations_verified":100,"logged_prior_updates":366},
+  "scope": "Availability-defined intermediate checkpoint audit. The 64-step primary remains incomplete. No checkpoint selection by prediction quality."
+}
