@@ -1,0 +1,99 @@
+name: Adaptive JevBench final evidence comparison
+on:
+  push:
+    branches: [research/adaptive-shared-core-20260922]
+    paths: [.github/workflows/adaptive-shared-final.yml]
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - run: python3 research/shared_decisions/finalize_entry.py --verify-only
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: final-manifest-verification
+          path: |
+            research/shared_decisions/final_observations.json
+            research/shared_decisions/finalize_entry.py
+            manifest-transport-receipt.json
+          retention-days: 1
+          if-no-files-found: error
+  finish:
+    needs: verify
+    runs-on: ubuntu-24.04
+    timeout-minutes: 23
+    strategy:
+      max-parallel: 8
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: complete-public-readouts
+          run-id: 35802769624
+          github-token: ${{ github.token }}
+          path: readouts/original
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: completed-readout-recovery
+          run-id: 35807713946
+          github-token: ${{ github.token }}
+          path: readouts/recovery
+      - name: Frozen finalizer, fixed matched no-tool control, no training
+        env:
+          OMP_NUM_THREADS: '4'
+        run: python3 -u research/shared_decisions/finalize_entry.py --shard ${{ matrix.shard }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: final-comparison-${{ matrix.shard }}
+          path: |
+            final-comparison-*.json
+            final-comparison-source.zip
+            published-comparison*
+            manifest-transport-receipt.json
+          retention-days: 1
+          if-no-files-found: warn
+  collect:
+    needs: finish
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: final-comparison-*
+          path: collected
+          merge-multiple: true
+      - run: |
+          python3 - <<'PY'
+          import hashlib,json,zipfile
+          from pathlib import Path
+          root=Path('collected');root.mkdir(exist_ok=True)
+          files=sorted(root.glob('final-comparison-*.json'))
+          seen={int(p.stem.split('-')[-1]) for p in files}
+          m={'expected_shards':8,'missing_shards':sorted(set(range(8))-seen),'files':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in files}}
+          (root/'COLLECTION.json').write_text(json.dumps(m,indent=2))
+          with zipfile.ZipFile('Adaptive-JevBench-final-comparison.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for p in root.iterdir():
+                  if p.is_file():z.write(p,p.name)
+          print(json.dumps(m))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: complete-final-comparison
+          path: Adaptive-JevBench-final-comparison.zip
+          retention-days: 1
+          if-no-files-found: error
