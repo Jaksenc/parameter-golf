@@ -1,0 +1,14 @@
+{
+  "created_utc": "2026-09-23T18:17:21.781275+00:00",
+  "new_v17_training_outputs_inspected": false,
+  "test_count": 37,
+  "files": {
+    "src/analyze_causal_v17.py": "2a693c7153b9db97e5ebb85d11d8850e84dc106078273128a414d443f75c977e",
+    "tests/test_analysis_v17.py": "c906c2b7039fd6cf609604b30fb310762f50e094992ebca7bf3407dcb8833b7a",
+    "data/causal-source-lock.json": "04c315e270779e81a69e8ce6c3174fcf28550c8f5894e8d955fb80e25ccf3b44",
+    "data/CAUSAL_V17_PROTOCOL.md": "49f91962867d47d80f439286f2b97dd213a261c2802e6f716372096981fcefeb"
+  },
+  "training_run": 35900447533,
+  "old_trajectory_run": 35898948971,
+  "scope": "Predeclared factorial analysis; all arms and calibrated/raw metrics reported. No winner selected. Complete implementation also preserved in the conversation's Causal-v17-Frozen-Analysis.zip."
+}
