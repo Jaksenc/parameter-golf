@@ -1,0 +1,124 @@
+name: Bridge v15 - same draft probability diagnostic
+on:
+  push:
+    branches: ['research/bridge-v15-20260922']
+    paths: ['.github/workflows/bridge-v15.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  prepare:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 35796368589
+          name: measure-v14-complete
+      - name: Independent preflight and freeze
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          python -m unittest -v test_bridge_v15 2>&1 | tee preflight-tests.txt
+          test ${PIPESTATUS[0]} -eq 0
+          python -u bridge_v15.py prepare
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: bridge-v15-prepared
+          path: |
+            bridge_v15.py
+            test_bridge_v15.py
+            BRIDGE_V15_PROTOCOL.md
+            preflight-tests.txt
+            bridge-prepared/
+            measure_v14.py
+            contrast_v7.py
+            handoff_v5.py
+            reconstruct_v1.py
+            evidence_v4.py
+            jevbench_public_v1.py
+            reconstruction-inputs/benchmark/vendor/
+          retention-days: 14
+          if-no-files-found: error
+  infer:
+    needs: prepare
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      max-parallel: 16
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    env:
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      MKL_NUM_THREADS: '4'
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      HF_HUB_DOWNLOAD_TIMEOUT: '120'
+    steps:
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: bridge-v15-prepared
+      - name: Install pinned CPU runtime
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          grep -qw bf16 /proc/cpuinfo
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6'
+      - name: Matched generation and readouts
+        run: python -u bridge_v15.py run --shard '${{ matrix.shard }}' --out 'bridge-shard-${{ matrix.shard }}'
+      - name: Preserve dependencies
+        if: always()
+        run: |
+          mkdir -p 'bridge-shard-${{ matrix.shard }}'
+          python -m pip freeze > 'bridge-shard-${{ matrix.shard }}/dependencies.txt'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: bridge-v15-shard-${{ matrix.shard }}
+          path: bridge-shard-${{ matrix.shard }}/
+          retention-days: 14
+          if-no-files-found: error
+  aggregate:
+    needs: infer
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: bridge-v15-prepared
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: bridge-v15-shard-*
+          path: records
+      - name: Require full paired population
+        run: python -u bridge_v15.py aggregate
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: bridge-v15-complete
+          path: |
+            all_records.json
+            completion.json
+            records/
+            bridge-prepared/
+            bridge_v15.py
+            test_bridge_v15.py
+            BRIDGE_V15_PROTOCOL.md
+            preflight-tests.txt
+            measure_v14.py
+            contrast_v7.py
+            handoff_v5.py
+            reconstruct_v1.py
+            evidence_v4.py
+            jevbench_public_v1.py
+            reconstruction-inputs/benchmark/vendor/
+          retention-days: 14
+          if-no-files-found: error
