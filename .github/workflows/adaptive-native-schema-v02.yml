@@ -1,0 +1,63 @@
+name: Adaptive schema-only readout control
+on:
+  push:
+    branches: [research/adaptive-native-v02-20260923]
+    paths: [.github/workflows/adaptive-native-schema-v02.yml]
+permissions:
+  contents: read
+jobs:
+  preflight:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    outputs:
+      ready: ${{ steps.probe.outputs.ready }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - id: probe
+        name: Require correct complete outputs on authored readiness fixtures
+        run: python3 -u research/native_decisions/schema_control.py --preflight
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: native-schema-v02-preflight
+          path: |
+            schema-preflight.json
+            schema-source.zip
+          retention-days: 1
+          if-no-files-found: warn
+      - if: always()
+        run: tail -20 /tmp/native-scorer-*.log /tmp/adaptive-language-runtime/server.log || true
+  benchmark:
+    needs: preflight
+    if: needs.preflight.outputs.ready == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 22
+    strategy:
+      max-parallel: 2
+      fail-fast: false
+      matrix:
+        shard: [0, 1]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Matched native and probability-only generation; no training or new question selection
+        env:
+          OMP_NUM_THREADS: '4'
+          OPENBLAS_NUM_THREADS: '1'
+        run: python3 -u research/native_decisions/schema_control.py --shard ${{ matrix.shard }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: native-schema-v02-${{ matrix.shard }}
+          path: |
+            schema-shard-*.json
+            schema-journal-*.jsonl
+            schema-source.zip
+          retention-days: 1
+          if-no-files-found: warn
+      - if: always()
+        run: tail -20 /tmp/native-scorer-*.log /tmp/adaptive-language-runtime/server.log || true
