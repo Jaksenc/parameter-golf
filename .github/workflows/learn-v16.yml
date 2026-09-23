@@ -26,6 +26,7 @@ jobs:
       - name: Check scientific inputs and gradient replay
         run: |
           test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          python -m pip install --no-cache-dir 'numpy==2.2.6'
           python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
           python -m unittest -v test_learn_v16 2>&1 | tee learn-preflight.txt
           test ${PIPESTATUS[0]} -eq 0
@@ -96,7 +97,7 @@ jobs:
           for n,h in f['sources'].items():assert hashlib.sha256(Path(n).read_bytes()).hexdigest()==h
           PY
           python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
-          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6'
+          python -m pip install --no-cache-dir 'numpy==2.2.6' 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6'
       - name: Train fixed objective and evaluate fixed final checkpoint
         run: python -u learn_v16.py --seed '${{ matrix.seed }}' --arm '${{ matrix.arm }}' --out 'model-${{ matrix.seed }}-${{ matrix.arm }}'
       - name: Preserve runtime dependencies
