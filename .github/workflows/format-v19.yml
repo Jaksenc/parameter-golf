@@ -1,0 +1,218 @@
+name: Format v19 - representation generalization
+on:
+  push:
+    branches: ['research/format-v19-20260924']
+    paths: ['.github/workflows/format-v19.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  prepare:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with: {persist-credentials: false}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 36012803018
+          name: transfer-v18-complete
+      - name: Verify independent preflight and freeze sources
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'numpy==2.2.6'
+          python -m unittest -v test_format_v19
+          python format_v19_data.py
+          python - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          m=json.load(open('format-prepared/manifest.json'))
+          assert m['records_hash']=='18039ff25498f57ff9ff2f3ac8082e35aa33dc03ef40f46bcce45adef1a4fb99'
+          names=['format_v19_data.py','format_v19_run.py','test_format_v19.py','causal_v17_data.py','causal_v17_state.py','learn_v16.py','learn_data.py','relational_objective.py','bridge_v15.py','measure_v14.py','contrast_v7.py','handoff_v5.py','reconstruct_v1.py','evidence_v4.py','jevbench_public_v1.py']
+          Path('FORMAT_V19_SOURCE_LOCK.json').write_text(json.dumps({n:hashlib.sha256(Path(n).read_bytes()).hexdigest() for n in names},sort_keys=True,indent=2))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: format-v19-prepared
+          path: |
+            format_v19_*.py
+            test_format_v19.py
+            FORMAT_V19*.md
+            FORMAT_V19*.json
+            format-prepared/
+            transfer-prepared/
+            transfer-sources/
+            causal_v17_data.py
+            causal_v17_state.py
+            learn_v16.py
+            learn_data.py
+            relational_objective.py
+            bridge_v15.py
+            measure_v14.py
+            contrast_v7.py
+            handoff_v5.py
+            reconstruct_v1.py
+            evidence_v4.py
+            jevbench_public_v1.py
+            reconstruction-inputs/benchmark/vendor/
+          retention-days: 14
+          if-no-files-found: error
+  train:
+    needs: prepare
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 55
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        seed: [19101,19102,19103]
+        arm: [single,varied]
+    env: {TOKENIZERS_PARALLELISM: 'false', OMP_NUM_THREADS: '4', MKL_NUM_THREADS: '4', HF_HUB_DOWNLOAD_TIMEOUT: '120', HF_HUB_DISABLE_TELEMETRY: '1'}
+    steps:
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with: {name: format-v19-prepared}
+      - name: Install pinned CPU runtime
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          grep -qw bf16 /proc/cpuinfo
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6' 'numpy==2.2.6' 'safetensors==0.8.0'
+      - name: First sixteen matched event updates
+        run: python -u format_v19_run.py train --seed '${{ matrix.seed }}' --arm '${{ matrix.arm }}' --stop 16 --out 'model-${{ matrix.seed }}-${{ matrix.arm }}'
+      - name: Resume full state in a new process and finish fixed endpoint
+        run: python -u format_v19_run.py train --seed '${{ matrix.seed }}' --arm '${{ matrix.arm }}' --stop 32 --out 'model-${{ matrix.seed }}-${{ matrix.arm }}'
+      - name: Preserve dependency receipt
+        if: always()
+        run: |
+          mkdir -p 'model-${{ matrix.seed }}-${{ matrix.arm }}'
+          python -m pip freeze > 'model-${{ matrix.seed }}-${{ matrix.arm }}/dependencies.txt'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: format-v19-model-${{ matrix.seed }}-${{ matrix.arm }}
+          path: model-${{ matrix.seed }}-${{ matrix.arm }}/
+          retention-days: 14
+          if-no-files-found: error
+  evaluation_prepare:
+    needs: train
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with: {name: format-v19-prepared}
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with: {pattern: 'format-v19-model-*', path: models}
+      - name: Require every paired endpoint
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          for seed in [19101,19102,19103]:
+            hashes=[]
+            for arm in ['single','varied']:
+              d=Path('models')/f'format-v19-model-{seed}-{arm}'
+              c=json.load(open(d/'complete-32.json'))
+              assert c['complete'] and c['through_step']==32 and c['from_step']==16
+              assert c['adapter_sha256']==hashlib.sha256((d/'adapter-32.safetensors').read_bytes()).hexdigest()
+              h=[json.loads(x) for x in (d/'training.jsonl').read_text().splitlines()]
+              assert [x['optimizer_step'] for x in h]==list(range(1,33))
+              hashes.append(c['initial_adapter_sha256'])
+            assert len(set(hashes))==1
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: format-v19-evaluation-prepared
+          path: |
+            *.py
+            FORMAT_V19*.md
+            FORMAT_V19*.json
+            format-prepared/
+            transfer-prepared/
+            transfer-sources/
+            reconstruction-inputs/benchmark/vendor/
+            models/*/adapter-32.safetensors
+            models/*/complete-32.json
+          retention-days: 14
+          if-no-files-found: error
+  evaluate:
+    needs: evaluation_prepare
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      max-parallel: 16
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    env: {TOKENIZERS_PARALLELISM: 'false', OMP_NUM_THREADS: '4', MKL_NUM_THREADS: '4', HF_HUB_DOWNLOAD_TIMEOUT: '120', HF_HUB_DISABLE_TELEMETRY: '1'}
+    steps:
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with: {name: format-v19-evaluation-prepared}
+      - name: Install unchanged inference runtime
+        run: |
+          grep -qw bf16 /proc/cpuinfo
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6' 'numpy==2.2.6' 'safetensors==0.8.0'
+      - run: python -u format_v19_run.py evaluate --shard '${{ matrix.shard }}' --out 'evaluation-${{ matrix.shard }}'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: format-v19-evaluation-${{ matrix.shard }}
+          path: evaluation-${{ matrix.shard }}/
+          retention-days: 14
+          if-no-files-found: error
+  aggregate:
+    needs: evaluate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with: {name: format-v19-evaluation-prepared}
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with: {pattern: 'format-v19-model-*', path: models}
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with: {pattern: 'format-v19-evaluation-*', path: evaluated}
+      - name: Check every output before completion
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          m=json.load(open('format-prepared/manifest.json'));rows=[];seen=set()
+          for i in range(16):
+            d=Path('evaluated')/f'format-v19-evaluation-{i}';c=json.load(open(d/'complete.json'));p=d/'records.jsonl'
+            assert c['records_sha256']==hashlib.sha256(p.read_bytes()).hexdigest()
+            rr=[json.loads(x) for x in p.read_text().splitlines()]
+            assert c['indices']==m['evaluation_indices'][i::16] and len(rr)==c['count']
+            for r in rr:
+              assert r['index'] not in seen and len(r['outputs'])==7
+              seen.add(r['index']);rows.append(r)
+          assert seen==set(m['evaluation_indices']) and len(rows)==252
+          Path('all_records.json').write_text(json.dumps(sorted(rows,key=lambda x:x['index']),sort_keys=True,indent=2))
+          Path('completion.json').write_text(json.dumps({'complete':True,'models':6,'steps_per_model':32,'evaluation_requests':252,'probability_vectors':1764}))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: format-v19-complete
+          path: |
+            *.py
+            FORMAT_V19*.md
+            FORMAT_V19*.json
+            format-prepared/
+            transfer-prepared/
+            transfer-sources/
+            reconstruction-inputs/benchmark/vendor/
+            models/
+            evaluated/format-v19-evaluation-[0-9]*/
+            all_records.json
+            completion.json
+          retention-days: 14
+          if-no-files-found: error
