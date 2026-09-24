@@ -1,0 +1,16 @@
+{
+  "created_utc": "2026-09-24T17:24:02.108205+00:00",
+  "new_model_predictions_inspected": false,
+  "run_id": 36033383857,
+  "inference_commit": "414ddb341e40714572213a11badfdc60c70ca318",
+  "tests_passed": 33,
+  "data_hash": "18039ff25498f57ff9ff2f3ac8082e35aa33dc03ef40f46bcce45adef1a4fb99",
+  "hashes": {
+    "analyze_format_v19.py": "19c7bfa22aedd90712a55d6c4e04dbdc26d5b7679b686adadef4027974b5435c",
+    "test_format_analysis.py": "cf61ef745f766d251b2b10f817e56e36b491cb2e6648b8997d5c51ef71a30609",
+    "format_v19_run.py": "d951d0df4f5915c9dc07d026fb0c255a9d48c3e201a83c0abfe66664db835d2a",
+    "format_v19_data.py": "7c2590303e065928b0f9f6900b5c6d4a420ca8b8631f2d939e7ae704081a1d32",
+    "test_format_v19.py": "999c1d39a967d1a45144a2b7e5e43b896800afc505cc523622f072129d72ffab"
+  },
+  "scope": "Primary frozen; the full-population reducer fixture is synthetic, excluded from neural outcomes. No model prediction has selected these tests."
+}
