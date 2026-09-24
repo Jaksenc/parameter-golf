@@ -1,0 +1,12 @@
+{
+  "created_utc": "2026-09-24T14:29:25.332594+00:00",
+  "new_model_outcomes_inspected": false,
+  "tests_passed": 30,
+  "run_id": 36012803018,
+  "files": {
+    "transfer_v18.py": "d265a8761e7670fcfa721a1f24dd94a2b01197b9fb3d797a4eaf3f88c8af4608",
+    "analyze_transfer_v18.py": "d9557e9c8529f2b53fd0c635fafc64feb8c118809044423de55e53f2530859e8",
+    "test_transfer_v18.py": "77b3c5f7f6fcccbfdece1859549e82bba6f127986d239859efe163df8001aee8",
+    "test_analysis_v18.py": "a23da2b999063147e5e7081044e4a8cf1dcfa025735406eb0deb9bea6685b546"
+  }
+}
