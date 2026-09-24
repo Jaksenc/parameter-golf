@@ -1,0 +1,32 @@
+name: Adaptive native acquisition recovery
+on:
+  push:
+    branches: [research/adaptive-native-v02-20260923]
+    paths: [.github/workflows/adaptive-native-metadata-recovery.yml]
+permissions:
+  contents: read
+jobs:
+  complete:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 28
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Reuse verified metadata; require original asset hashes and inference sources
+        env:
+          OMP_NUM_THREADS: '4'
+          OPENBLAS_NUM_THREADS: '1'
+        run: python3 -u research/native_decisions/resume_cached_metadata.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: native-metadata-recovery
+          path: |
+            resumed-native-23.json
+            resumed-native-journal-23.jsonl
+            resume-source.zip
+            cached-metadata-source.zip
+          retention-days: 1
+          if-no-files-found: error
