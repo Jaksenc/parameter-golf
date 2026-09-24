@@ -1,0 +1,152 @@
+name: Decision-0 complete only missing compact evidence calls
+on:
+  push:
+    branches: ['decision0/compact-evidence-20260924']
+    paths: ['.github/workflows/decision0-compact-completion-v1.yml']
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: decision0-compact-completion-36034291168
+  cancel-in-progress: false
+defaults:
+  run:
+    shell: bash
+    working-directory: decision0_compact
+env:
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  TOKENIZERS_PARALLELISM: 'false'
+  OMP_NUM_THREADS: '4'
+  MKL_NUM_THREADS: '4'
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  plan:
+    if: github.repository == 'Jaksenc/parameter-golf' && github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+      needed: ${{ steps.plan.outputs.needed }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          ref: 4a76ef77f996574dec7aea4b8643f765a886a570
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Wait for original workers to close before taking their immutable snapshot
+        timeout-minutes: 36
+        run: |
+          python - <<'PYWAIT'
+          import json,subprocess,time
+          wanted={f'ce-{s}-{i}' for s in ['development','replication'] for i in range(24)}
+          for attempt in range(35):
+              raw=subprocess.check_output(['gh','api','repos/Jaksenc/parameter-golf/actions/runs/36034291168/artifacts?per_page=100'],text=True)
+              names={x['name'] for x in json.loads(raw)['artifacts'] if not x['expired']}
+              complete=wanted <= names and 'compact-evidence-final' in names
+              print(json.dumps({'original_source_archives':len(wanted & names),'expected':48,'original_final_collection_complete':complete}),flush=True)
+              if complete:break
+              time.sleep(60)
+          else:raise RuntimeError('Original collection not complete within the bounded wait; no inference duplicated')
+          PYWAIT
+      - name: Require all original source artifacts and build missing-only plan
+        id: plan
+        run: |
+          test "$(git hash-object recover_execution.py)" = c0da6087e3e8d9e0391e95ed176657facfb3932d
+          python verify_execution.py
+          gh api 'repos/Jaksenc/parameter-golf/actions/runs/36034291168/artifacts?per_page=100' > original-artifacts.json
+          python - <<'PY'
+          import json
+          a=json.load(open('original-artifacts.json'))['artifacts']
+          names={x['name'] for x in a if not x['expired']}
+          wanted={f'ce-{s}-{i}' for s in ['development','replication'] for i in range(24)}
+          assert wanted <= names, 'Original worker artifacts are not all available'
+          assert 'compact-evidence-final' in names, 'Original final collection has not completed'
+          PY
+          gh run download 36034291168 -R Jaksenc/parameter-golf -p 'ce-*' -D downloaded
+          python recover_execution.py plan --root downloaded --out completed --github-output "$GITHUB_OUTPUT"
+          mkdir -p completed/source
+          cp -R compact_evidence data completed/source/
+          cp verify_execution.py recover_execution.py EXECUTION.md requirements-inference.txt THIRD_PARTY_NOTICES.md completed/source/
+          cp original-artifacts.json completed/
+          git rev-parse HEAD > completed/recovery_source_commit.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: compact-recovery-plan
+          path: decision0_compact/completed/
+          retention-days: 1
+          if-no-files-found: error
+  recover:
+    needs: plan
+    if: needs.plan.outputs.needed == 'true'
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 28
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          ref: 4a76ef77f996574dec7aea4b8643f765a886a570
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Restore original durable calls without resetting them
+        run: |
+          python verify_execution.py
+          gh run download "$GITHUB_RUN_ID" -n compact-recovery-plan -D staging
+          cp -R staging/runs/${{ matrix.split }}/shard-${{ matrix.shard }} work
+      - name: Install unchanged native CPU runtime
+        run: |
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'safetensors==0.8.0' 'numpy==2.4.6' 'sentencepiece==0.2.2' 'protobuf==6.33.6'
+      - name: Resume absent records and prove original successes are unchanged
+        timeout-minutes: 20
+        run: python -u recover_execution.py resume --split '${{ matrix.split }}' --shard '${{ matrix.shard }}' --out work
+      - name: Preserve recovery environment even on failure
+        if: always()
+        run: |
+          mkdir -p work
+          python -m pip freeze > work/recovery_dependencies.txt
+          git rev-parse HEAD > work/recovery_source_commit.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: ce-recovered-${{ matrix.split }}-${{ matrix.shard }}
+          path: decision0_compact/work/
+          retention-days: 1
+          if-no-files-found: error
+  report:
+    needs: [plan, recover]
+    if: always() && needs.plan.result == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          ref: 4a76ef77f996574dec7aea4b8643f765a886a570
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Require complete coverage and preserve all original calls
+        run: |
+          python verify_execution.py
+          gh run download "$GITHUB_RUN_ID" -n compact-recovery-plan -D completed
+          mkdir -p recovered
+          if [ '${{ needs.plan.outputs.needed }}' = true ]; then
+            gh run download "$GITHUB_RUN_ID" -p 'ce-recovered-*' -D recovered
+          fi
+          python recover_execution.py merge --base completed --recovered recovered
+          git rev-parse HEAD > completed/recovery_source_commit.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: compact-evidence-completed
+          path: decision0_compact/completed/
+          retention-days: 3
+          if-no-files-found: error
