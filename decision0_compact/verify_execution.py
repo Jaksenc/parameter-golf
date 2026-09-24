@@ -19,8 +19,10 @@ for name,want in EXPECTED.items():
 from compact_evidence.__main__ import prepare,validate
 from compact_evidence.cases import digest
 from compact_evidence.protocol import PROTOCOL
-if digest(PROTOCOL)!='3c1e3f63d900ab3d77362a46aa7c98964a52175c71425ecff962142d13cad24a':raise RuntimeError('Protocol changed')
+# Canonical-object and pretty-serialized-file hashes are different identities.
+if digest(PROTOCOL)!='65282a5681e0b72876eecff688cbbe5abe3d83b4d95e3f342db7b2ac26529a89':raise RuntimeError('Protocol object changed')
 if not (ROOT/'data').exists():prepare(ROOT/'data')
+if hashlib.sha256((ROOT/'data/protocol.json').read_bytes()).hexdigest()!='3c1e3f63d900ab3d77362a46aa7c98964a52175c71425ecff962142d13cad24a':raise RuntimeError('Serialized protocol changed')
 v=validate()
 assert v['splits']['development']['public_corpus_sha256']=='2150ec4888a36137fd6f82d4c8c605b44afbc60351d0c3b92f12c38401f7d019'
 assert v['splits']['replication']['public_corpus_sha256']=='90c5daf83a908066aa546190c9d71e35af9024cb60a6389fcced17bbab9af348'
