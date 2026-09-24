@@ -1,0 +1,79 @@
+name: Adaptive native saved checkpoint evaluation
+on:
+  push:
+    branches: [research/adaptive-native-training-v03-20260924]
+    paths: [.github/workflows/adaptive-native-saved-v03.yml]
+permissions:
+  contents: read
+  actions: read
+jobs:
+  evaluate:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 35
+    strategy:
+      max-parallel: 2
+      fail-fast: false
+      matrix:
+        include:
+          - scope: terminal
+            artifact: '10824097326'
+            digest: '3126e642d56254e3092f6d419dee9d19901453f481478b85d52cec891cdb0544'
+          - scope: distributed
+            artifact: '10824697516'
+            digest: 'a246d90bda1ad86a8cd26f7c7b05f588afccb22369de351ea194f3a751606726'
+    env:
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '4'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Retrieve exact original training artifact, without regenerating weights
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ARTIFACT_ID: ${{ matrix.artifact }}
+          EXPECTED_SHA256: ${{ matrix.digest }}
+        run: |
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${ARTIFACT_ID}/zip" > original.zip
+          python3 - <<'PY'
+          import hashlib,os,pathlib,zipfile
+          assert hashlib.sha256(pathlib.Path('original.zip').read_bytes()).hexdigest()==os.environ['EXPECTED_SHA256']
+          with zipfile.ZipFile('original.zip') as z:
+              for item in z.infolist():
+                  p=pathlib.Path(item.filename)
+                  assert not p.is_absolute() and '..' not in p.parts
+              z.extractall('original')
+          PY
+      - name: Verify evaluated source and original artifact identities
+        run: |
+          python3 - <<'PY'
+          import hashlib,pathlib
+          p=pathlib.Path('research/native_training_v03/evaluate_saved.py')
+          assert hashlib.sha256(p.read_bytes()).hexdigest()=='56c323fe5660848167b210304994106c97f7968957e2d5d3f18e5bef247a8d96'
+          PY
+          python3 research/native_training_v03/evaluate_saved.py --scope ${{ matrix.scope }} --source original --validate-only
+      - name: Install matching CPU evaluation dependencies
+        run: |
+          python3 -m pip install --no-cache-dir torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
+          python3 -m pip install --no-cache-dir transformers==5.3.0 accelerate==1.12.0
+      - name: Compare frozen model and saved step-24 adapter; no optimizer or training
+        run: python3 -u research/native_training_v03/evaluate_saved.py --scope ${{ matrix.scope }} --source original --out evaluation
+      - name: Preserve diagnostic evidence
+        if: always()
+        run: |
+          mkdir -p evaluation/source
+          cp research/native_training_v03/evaluate_saved.py evaluation/source/
+          python3 -m pip freeze > evaluation/environment.txt
+          uname -a > evaluation/hardware.txt
+          cat /proc/cpuinfo >> evaluation/hardware.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: native-step24-evaluation-${{ matrix.scope }}
+          path: evaluation/
+          retention-days: 7
+          if-no-files-found: error
