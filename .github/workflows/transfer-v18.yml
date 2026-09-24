@@ -1,0 +1,145 @@
+name: Transfer v18 - saved adapter generalization
+on:
+  push:
+    branches: ['research/transfer-v18-20260924']
+    paths: ['.github/workflows/transfer-v18.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  prepare:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with: {persist-credentials: false}
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 35912706972
+          name: causal-v17-clean-complete
+      - name: Freeze new inputs and fixed saved checkpoints
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          echo 'd265a8761e7670fcfa721a1f24dd94a2b01197b9fb3d797a4eaf3f88c8af4608  transfer_v18.py' | sha256sum -c -
+          python -m pip install --no-cache-dir 'numpy==2.2.6'
+          python -u transfer_v18.py prepare
+          python - <<'PY'
+          import json
+          m=json.load(open('transfer-prepared/manifest.json'))
+          assert m['jobs_hash']=='a70f10784224deb6da8c991979c3d0d8b2b6aee787566c6fcd6ad03ee1d995c9'
+          assert m['evaluation_hash']=='5d5ff0cf6434de8d945a2eebc42b1cebffa2a1555b2cfebb48949514f13bdf90'
+          assert m['tasks']==176 and m['new_predictions']==1232
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: transfer-v18-prepared
+          path: |
+            transfer_v18.py
+            TRANSFER_V18_PROTOCOL.md
+            transfer-prepared/
+            transfer-sources/
+            causal_v17_data.py
+            learn_v16.py
+            learn_data.py
+            relational_objective.py
+            bridge_v15.py
+            measure_v14.py
+            contrast_v7.py
+            handoff_v5.py
+            reconstruct_v1.py
+            evidence_v4.py
+            jevbench_public_v1.py
+            reconstruction-inputs/benchmark/vendor/
+            models/*event_high/adapter-step-32.safetensors
+            models/*mixed_high/adapter-step-32.safetensors
+            models/*event_high/final-predictions.json
+            models/*mixed_high/final-predictions.json
+          retention-days: 14
+          if-no-files-found: error
+  evaluate:
+    needs: prepare
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      max-parallel: 16
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    env:
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      MKL_NUM_THREADS: '4'
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      HF_HUB_DOWNLOAD_TIMEOUT: '120'
+    steps:
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.11'}
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with: {name: transfer-v18-prepared}
+      - name: Install unchanged pinned CPU runtime
+        run: |
+          test "$GITHUB_REPOSITORY" = 'Jaksenc/parameter-golf'
+          grep -qw bf16 /proc/cpuinfo
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'sentencepiece==0.2.2' 'protobuf==6.33.6' 'numpy==2.2.6' 'safetensors==0.8.0'
+      - name: Evaluate all seven fixed model states on every assigned input
+        run: python -u transfer_v18.py run --shard '${{ matrix.shard }}' --out 'transfer-shard-${{ matrix.shard }}'
+      - name: Preserve dependency receipt
+        if: always()
+        run: |
+          mkdir -p 'transfer-shard-${{ matrix.shard }}'
+          python -m pip freeze > 'transfer-shard-${{ matrix.shard }}/dependencies.txt'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: transfer-v18-shard-${{ matrix.shard }}
+          path: transfer-shard-${{ matrix.shard }}/
+          retention-days: 14
+          if-no-files-found: error
+  aggregate:
+    needs: evaluate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with: {name: transfer-v18-prepared}
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: transfer-v18-shard-*
+          path: records
+      - name: Require complete paired observations
+        run: |
+          python -m pip install --no-cache-dir 'numpy==2.2.6'
+          python transfer_v18.py aggregate
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: transfer-v18-complete
+          path: |
+            all_records.json
+            completion.json
+            records/
+            transfer-prepared/
+            transfer-sources/
+            transfer_v18.py
+            TRANSFER_V18_PROTOCOL.md
+            causal_v17_data.py
+            learn_v16.py
+            learn_data.py
+            relational_objective.py
+            bridge_v15.py
+            measure_v14.py
+            contrast_v7.py
+            handoff_v5.py
+            reconstruct_v1.py
+            evidence_v4.py
+            jevbench_public_v1.py
+            reconstruction-inputs/benchmark/vendor/
+            models/*event_high/adapter-step-32.safetensors
+            models/*mixed_high/adapter-step-32.safetensors
+            models/*event_high/final-predictions.json
+            models/*mixed_high/final-predictions.json
+          retention-days: 14
+          if-no-files-found: error
