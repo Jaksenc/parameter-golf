@@ -1,0 +1,21 @@
+from .prompts import MODES
+PROTOCOL={
+ 'id':'decision0-compact-evidence-v1','version':1,
+ 'model':'Qwen/Qwen3.5-4B','revision':'851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a',
+ 'precision':'BF16 original model, FP32 selected native output rows','platform':'aarch64',
+ 'threads':4,'splits':['development','replication'],'sources_per_family':8,
+ 'families':['lookup','judging','policy'],'edits':['original','relevant','irrelevant'],
+ 'cases_per_split':72,'modes':list(MODES),
+ 'generation_caps':{'full_workspace':160,'evidence':64,'compact_state':64},
+ 'input_cap':8192,'decode':'greedy, nonthinking, one sample; EOS or complete structured JSON',
+ 'evidence_max_records':6,'compact_state_max_characters':160,
+ 'control':'Deterministic label-blind approximate-character-length source sample, same count as selector. Not guaranteed irrelevant.',
+ 'cost_rule':'Each evaluated production route includes its generation and decision. Shared experimental generation reuse is counted separately in physical ledger totals.',
+ 'selection':'None automatic. All predefined modes, families, and complete source groups reported. Replication configuration cannot change after development.',
+ 'primary_comparisons':['evidence vs length_matched_control','compact_state vs evidence','each vs baseline'],
+ 'integrity_gate':'Do not promote invalid/capped notes as completed training traces; no exactness or cost claims from mock outputs.',
+ 'training_updates':0,'benchmark_calls':0,'official_score':None,
+ 'repository_write_policy':'Local standalone repository only. Do not mutate Jaksenc/parameter-golf.',
+ 'execution_policy':'No remote run is scheduled. No paid provider, GPU allocation or model API is invoked.',
+ 'inference_scope':'Public fields only. No reference selection, solver or expected label enters generation or scoring.',
+}

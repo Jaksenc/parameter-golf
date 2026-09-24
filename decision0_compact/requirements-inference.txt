@@ -1,0 +1,9 @@
+# Pinned to the previous verified ARM environment, not a floating latest stack.
+# Install the CPU PyTorch build from its official CPU wheel index.
+torch==2.10.0
+transformers==5.17.0
+huggingface-hub==1.32.0
+safetensors==0.8.0
+numpy==2.4.6
+sentencepiece==0.2.2
+protobuf==6.33.6
