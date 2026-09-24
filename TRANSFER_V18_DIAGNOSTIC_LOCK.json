@@ -1,0 +1,10 @@
+{
+  "new_outcomes_inspected": false,
+  "created_utc": "2026-09-24T14:34:40.918578+00:00",
+  "source_sha256": "d5ce0b28d9a957dae70cb82ebfa4d87ff300d4990be8d82e51ad6a2db3f05b7d",
+  "diagnostics": [
+    "event/modal argmax consistency on identical sources",
+    "calibrated mass on answer codes F onward when K>5"
+  ],
+  "no_selection": true
+}
