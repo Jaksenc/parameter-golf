@@ -1,0 +1,117 @@
+name: Decision-0 frozen compact evidence v1
+on:
+  push:
+    branches: ['decision0/compact-evidence-20260924']
+    paths: ['.github/workflows/decision0-compact-evidence-v1.yml']
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: decision0-compact-evidence-v1
+  cancel-in-progress: false
+defaults:
+  run:
+    shell: bash
+    working-directory: decision0_compact
+env:
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  TOKENIZERS_PARALLELISM: 'false'
+  OMP_NUM_THREADS: '4'
+  MKL_NUM_THREADS: '4'
+jobs:
+  preflight:
+    if: github.repository == 'Jaksenc/parameter-golf' && github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          ref: 802f8a6e2e7aa90c1375e06c0aa51eff4db7516b
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Verify exact frozen source and both independent data splits
+        run: python verify_execution.py
+  infer:
+    needs: preflight
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 38
+    strategy:
+      fail-fast: false
+      max-parallel: 16
+      matrix:
+        split: [development, replication]
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          ref: 802f8a6e2e7aa90c1375e06c0aa51eff4db7516b
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Verify frozen experiment before downloads
+        run: |
+          python verify_execution.py
+          df -h .
+      - name: Install pinned CPU inference runtime
+        run: |
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir 'transformers==5.17.0' 'huggingface-hub==1.32.0' 'safetensors==0.8.0' 'numpy==2.4.6' 'sentencepiece==0.2.2' 'protobuf==6.33.6'
+      - name: Native full-model inference, one complete source group per worker
+        timeout-minutes: 30
+        run: |
+          mkdir -p runs/${{ matrix.split }}/shard-${{ matrix.shard }}
+          python -m compact_evidence doctor > runs/${{ matrix.split }}/shard-${{ matrix.shard }}/environment.json
+          python -u -m compact_evidence run --split '${{ matrix.split }}' --shard '${{ matrix.shard }}' --nshards 24 --out runs/${{ matrix.split }}/shard-${{ matrix.shard }}
+      - name: Preserve execution provenance even on interruption
+        if: always()
+        run: |
+          mkdir -p runs/${{ matrix.split }}/shard-${{ matrix.shard }}
+          python -m pip freeze > runs/${{ matrix.split }}/shard-${{ matrix.shard }}/dependencies.txt
+          git rev-parse HEAD > runs/${{ matrix.split }}/shard-${{ matrix.shard }}/source_commit.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: ce-${{ matrix.split }}-${{ matrix.shard }}
+          path: decision0_compact/runs/${{ matrix.split }}/shard-${{ matrix.shard }}/
+          retention-days: 1
+          if-no-files-found: error
+  report:
+    needs: infer
+    if: always() && needs.infer.result != 'skipped'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          ref: 802f8a6e2e7aa90c1375e06c0aa51eff4db7516b
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Recover source ledgers and require full coverage before reporting
+        run: |
+          python verify_execution.py
+          mkdir -p final/source final/runs/development final/runs/replication
+          cp -R compact_evidence data final/source/
+          cp requirements-inference.txt THIRD_PARTY_NOTICES.md EXECUTION.md verify_execution.py final/source/
+          gh run download "$GITHUB_RUN_ID" -p 'ce-*' -D downloaded
+          for split in development replication; do
+            for dir in downloaded/ce-${split}-*; do
+              shard=${dir##*-}
+              cp -R "$dir" "final/runs/$split/shard-$shard"
+            done
+            python -m compact_evidence report --split "$split" --root "final/runs/$split" --out "final/$split-summary.json"
+          done
+          git rev-parse HEAD > final/source_commit.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: compact-evidence-final
+          path: decision0_compact/final/
+          retention-days: 3
+          if-no-files-found: error
