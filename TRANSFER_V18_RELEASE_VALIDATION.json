@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "release": "Transfer-v18-Completed.zip",
+  "zip_bytes": 34833585,
+  "zip_sha256": "fa0a8e085e2e728a45e7bf1e627daf4a6b6469c02e34e2ed621428693cca7423",
+  "file_hashes_verified": 157,
+  "tests_passed": 36,
+  "skipped_tests": 0,
+  "numerical_result_files_replayed": 9,
+  "all_nine_results_byte_identical": true,
+  "recorded_cli_examples_replayed": 3,
+  "new_pretrained_model_inference_during_validation": false,
+  "new_optimizer_updates": 0,
+  "new_temperature_fits": 0,
+  "initial_packaging_failure": "Two unrelated ancestor training-test modules lacked dependencies in this inference-only release. They were retained under provenance/parent_tests rather than the active suite. No scientific sources, inputs, predictions or numerical results changed.",
+  "neural_run": 36012803018,
+  "neural_artifact": 10813762938,
+  "neural_artifact_sha256": "5615f165cec06946b8c0876c73a77b0fa7e26d750de4dd9e530918dc202b5f3f",
+  "limits": "This validation is offline recorded-data replay, independent arithmetic, source/checkpoint verification and saved-record interface execution; not a second neural run or integrated serving benchmark."
+}
