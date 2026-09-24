@@ -1,0 +1,11 @@
+{
+  "new_model_predictions_inspected": false,
+  "scope": "Three explanatory comments omitted during source publication; executable statements unchanged. Local source was aligned with the committed bytes and all 33 tests rerun successfully. The original locked local version is retained in release provenance.",
+  "original_local_sha256": "19c7bfa22aedd90712a55d6c4e04dbdc26d5b7679b686adadef4027974b5435c",
+  "committed_sha256": "f357045b4c19cc11e2728cf61cd5d63d15f9f339fd94adb0930f2f873f1a7b9c",
+  "verified_git_blob": "e2b58c7d2c536d250884b1ed89eb36d391a3e029",
+  "commit": "92886430d8f3955f278adf564a91aa20e908bcbf",
+  "scientific_inference_changed": false,
+  "primary_or_parameters_changed": false,
+  "tests_passed": 33
+}
