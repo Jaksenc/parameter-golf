@@ -1,0 +1,62 @@
+name: Adaptive native decision training v03
+on:
+  push:
+    branches: [research/adaptive-native-training-v03-20260924]
+    paths: [.github/workflows/adaptive-native-training-v03.yml]
+permissions:
+  contents: read
+jobs:
+  train:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 35
+    strategy:
+      max-parallel: 2
+      fail-fast: false
+      matrix:
+        scope: [terminal, distributed]
+    env:
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '4'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install CPU-only training dependencies
+        run: |
+          python3 -m pip install --no-cache-dir torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
+          python3 -m pip install --no-cache-dir transformers==5.3.0 accelerate==1.12.0
+      - name: Verify frozen source before any model execution
+        run: |
+          cp research/native_decisions/readout.py research/native_training_v03/readout.py
+          python3 - <<'PY'
+          import hashlib,pathlib,sys
+          expected={'train.py':'69ff23e08bc5f0c4210fd685000853172beb21437618060e6cc3c0647f0fe844','data.py':'ebf0b65010abab3c56aaf83b529f8ce3c08f5caf24d0d56da4cf52ebed0415a6','readout.py':'0e12ec6914bb29c14222bb432e7bd9e901f35ee7c62325ca12b938dcfaf5b186'}
+          root=pathlib.Path('research/native_training_v03')
+          for name,h in expected.items():
+              assert hashlib.sha256((root/name).read_bytes()).hexdigest()==h,name
+          sys.path.insert(0,str(root));import data,readout
+          print(data.checks());print(readout.checks())
+          PY
+      - name: Train adapters and evaluate frozen comparisons without hosted inference
+        run: |
+          timeout --signal=TERM --kill-after=30s 1800s python3 -u research/native_training_v03/train.py --scope ${{ matrix.scope }} --out out
+      - name: Preserve source and environment evidence
+        if: always()
+        run: |
+          mkdir -p out/source
+          cp research/native_training_v03/*.py out/source/ || true
+          python3 -m pip freeze > out/environment.txt
+          uname -a > out/hardware.txt
+          cat /proc/cpuinfo >> out/hardware.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: native-training-v03-${{ matrix.scope }}
+          path: out/
+          retention-days: 1
+          if-no-files-found: error
+          compression-level: 6
