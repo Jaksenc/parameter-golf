@@ -1,0 +1,52 @@
+name: Adaptive frozen native completion
+on:
+  push:
+    branches: [research/adaptive-native-v02-20260923]
+    paths: [.github/workflows/adaptive-native-resume-v02.yml]
+permissions:
+  contents: read
+jobs:
+  resume:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 28
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Only missing keys, pinned original readout, no target feedback
+        env:
+          OMP_NUM_THREADS: '4'
+          OPENBLAS_NUM_THREADS: '1'
+        run: python3 -u research/native_decisions/resume_entry.py --shard ${{ matrix.shard }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: native-resumed-${{ matrix.shard }}
+          path: |
+            resumed-native-*.json
+            resumed-native-journal-*.jsonl
+            resume-source.zip
+          retention-days: 1
+          if-no-files-found: warn
+  collect:
+    needs: resume
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: native-resumed-*
+          path: resumed-records
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: native-resumed-complete
+          path: resumed-records
+          retention-days: 1
+          if-no-files-found: error
