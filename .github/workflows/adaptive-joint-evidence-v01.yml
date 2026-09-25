@@ -1,0 +1,58 @@
+name: Adaptive System-1 shared evidence heldout pilot
+on:
+  push:
+    branches: [research/adaptive-joint-evidence-20260925]
+    paths: [.github/workflows/adaptive-joint-evidence-v01.yml]
+permissions:
+  contents: read
+jobs:
+  preflight:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    outputs:
+      ready: ${{ steps.probe.outputs.ready }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - id: probe
+        name: Test JSON schema on an already exposed document
+        run: python3 -u research/native_decisions/run_joint_ci.py --preflight
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: joint-evidence-preflight
+          path: joint-preflight.json
+          retention-days: 5
+          if-no-files-found: warn
+  heldout:
+    needs: preflight
+    if: needs.preflight.outputs.ready == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 65
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        shard: [0, 1, 2, 3]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Validate distinct holdout roster
+        run: python3 research/native_decisions/run_joint_ci.py --dry-run
+      - name: Compare independent decisions and shared evidence
+        env:
+          OMP_NUM_THREADS: '4'
+          OPENBLAS_NUM_THREADS: '1'
+        run: python3 -u research/native_decisions/run_joint_ci.py --shard ${{ matrix.shard }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: joint-evidence-${{ matrix.shard }}
+          path: |
+            joint-shard-*.json
+            joint-journal-*.jsonl
+          retention-days: 5
+          if-no-files-found: warn
