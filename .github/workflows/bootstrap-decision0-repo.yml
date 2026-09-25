@@ -1,0 +1,29 @@
+name: Bootstrap decision-0 repository
+on:
+  push:
+    branches: ['submission/jevbench-probability-v13-20260925']
+    paths: ['.github/workflows/bootstrap-decision0-repo.yml']
+permissions:
+  contents: write
+jobs:
+  create:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Verify gh and attempt requested repository creation
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh --version
+          gh auth status || true
+          echo "Authenticated API identity:"
+          gh api user || true
+          if gh repo view Jaksenc/decision-0 >/dev/null 2>&1; then
+            echo "decision-0 already exists"
+            exit 0
+          fi
+          gh repo create Jaksenc/decision-0 --public --description "Decision-0: research decision model and JevBench submission" --disable-issues=false --disable-wiki=true
