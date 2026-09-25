@@ -1,0 +1,37 @@
+name: Adaptive System-1 independent stress paired pilot
+on:
+  push:
+    branches: [research/adaptive-independent-stress-20260925]
+    paths: [.github/workflows/adaptive-independent-stress-v02.yml]
+permissions:
+  contents: read
+jobs:
+  pilot:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 65
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        shard: [0, 1, 2, 3]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Check frozen pilot roster
+        run: python3 research/native_decisions/run_stress_ci.py --dry-run
+      - name: Compare native option logits and schema-only generation
+        env:
+          OMP_NUM_THREADS: '4'
+          OPENBLAS_NUM_THREADS: '1'
+        run: python3 -u research/native_decisions/run_stress_ci.py --shard ${{ matrix.shard }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: independent-stress-${{ matrix.shard }}
+          path: |
+            independent-stress-shard-*.json
+            independent-stress-journal-*.jsonl
+          retention-days: 5
+          if-no-files-found: warn
