@@ -1,0 +1,28 @@
+{
+  "unit_tests_passed": 24,
+  "historical_probability_vectors_replayed": 441,
+  "different_vectors_or_answers": 0,
+  "explicit_label_orders_preserved": 441,
+  "public_historical_correct": 201,
+  "public_historical_total": 231,
+  "new_neural_inference_in_this_offline_audit": false,
+  "sealed_measurement_complete": false,
+  "live_integration": "Separate CI receipt; never included in the historical accuracy denominator.",
+  "historical_model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "temperature": 1.0218971486541166,
+  "pipeline": "Unchanged inference functions; new label-order-preserving transport and official Runner adapter.",
+  "source_hashes": {
+    "contrast_v7.py": "52771fdb5d8c7e5315c6f49ac87b725ba1244c0fe5ba4f5a0674ec4de3778d0b",
+    "handoff_v5.py": "2fe06521028bed0ecae5fe1584aba3eae0f6852d5c2699d51d6703c3ade8dfb4",
+    "evidence_v4.py": "a0184e91a1aec54ec1ca200313e1c9ed51c6e456056f3b9ab0441a370077ae31",
+    "reconstruct_v1.py": "62a30f102e16067632303065cd997fd0691fe0f5630f82c68333916a9d9ad0ec",
+    "decision0_probability_submission.py": "571900e7676e1d45cc9c563e53369b6310e48248fe5beab24d5f424fa0ce1156",
+    "run_decision0_jevbench.py": "49673f58bef2f547c29018fc56b0501662dd6171a02e56e7b57fb7c2cca84e77",
+    "test_decision0_submission.py": "52e4070d66ba8a414e04575275e1f08fbe74e6b7da26cf58f4f88c54a20f3e0a"
+  },
+  "limitations": [
+    "Historical public benchmark repeatedly used for research and method selection.",
+    "No complete v1.4.2 score, ranking, speed class, or production tariff is asserted.",
+    "A distribution from restricted answer-code logits is not a per-request calibration guarantee."
+  ]
+}
