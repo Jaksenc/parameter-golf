@@ -1,0 +1,80 @@
+name: Decision-0 submission - live integration smoke
+on:
+  push:
+    branches: ['submission/jevbench-probability-v13-20260925']
+    paths: ['.github/workflows/decision0-submission-smoke.yml']
+permissions:
+  contents: read
+jobs:
+  smoke:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 18
+    env:
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      MKL_NUM_THREADS: '4'
+      HF_HUB_DOWNLOAD_TIMEOUT: '120'
+      HF_HUB_DISABLE_TELEMETRY: '1'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          path: candidate
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          repository: fstandhartinger/jevbench
+          ref: 1bcc55eb6c8cffde2306b3db03ede39b61c6152a
+          persist-credentials: false
+          path: official
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Validate frozen sources and request boundaries
+        working-directory: candidate
+        run: python -m unittest -v test_decision0_submission
+      - name: Install original pinned CPU runtime
+        working-directory: candidate
+        run: |
+          grep -qw bf16 /proc/cpuinfo
+          python -m pip install --no-cache-dir 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir -r requirements-submission.txt
+      - name: Run three fixed integration fixtures, not a benchmark estimate
+        working-directory: candidate
+        run: |
+          export PYTHONPATH="$GITHUB_WORKSPACE/official"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          rows=[
+            {'id':'submission-choice','state':'The selected color is cobalt.', 'question':{'type':'choice','instructions':'Which color is explicitly selected?','criteria':{'cobalt':'Cobalt','amber':'Amber'}},'labels':['cobalt','amber'],'expected':'cobalt'},
+            {'id':'submission-noul','state':'The shipment has been delivered.', 'question':{'type':'noul','instructions':'Has the shipment been delivered?','criteria':{'false':'No','true':'Yes'}},'labels':['no','yes'],'expected':'yes'},
+            {'id':'submission-score','state':'Severity is explicitly level 2.', 'question':{'type':'score','instructions':'Report the explicitly stated severity level.','criteria':['Level 0','Level 1','Level 2']},'labels':['0','1','2'],'expected':'2'}]
+          for row in rows:
+            row.update(family='submission-integration',split='smoke',group=row['id'])
+          Path(os.environ['RUNNER_TEMP'],'submission-fixtures.jsonl').write_text(''.join(json.dumps(r)+'\n' for r in rows))
+          PY
+          python run_decision0_jevbench.py --tasks "$RUNNER_TEMP/submission-fixtures.jsonl" --out "$RUNNER_TEMP/decision0-smoke-results"
+          python - <<'PY'
+          import hashlib,json,os
+          from pathlib import Path
+          folder=Path(os.environ['RUNNER_TEMP'],'decision0-smoke-results')
+          rows=[json.loads(s) for s in (folder/'results.jsonl').read_text().splitlines()]
+          assert len(rows)==3 and all(r['status']=='ok' and r['strict_valid'] for r in rows)
+          assert all(r['cost_usd'] is None for r in rows)
+          assert all(r['usage']['output_tokens']>0 for r in rows)
+          receipt={'integration_complete':True,'new_live_requests':3,'correct':sum(r['correct'] for r in rows),
+            'selection':'Three fixed smoke fixtures; not a benchmark accuracy estimate or outcome-selected settings.',
+            'official_harness_revision':'1bcc55eb6c8cffde2306b3db03ede39b61c6152a','candidate_commit':os.environ['GITHUB_SHA'],
+            'rows':rows,'manifest':json.loads((folder/'manifest.json').read_text()),
+            'source_hashes':{n:hashlib.sha256(Path(n).read_bytes()).hexdigest() for n in ['decision0_probability_submission.py','run_decision0_jevbench.py','test_decision0_submission.py']}}
+          Path('submission-live-smoke.json').write_text(json.dumps(receipt,indent=2,allow_nan=False))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: decision0-submission-live-smoke
+          path: |
+            candidate/submission-live-smoke.json
+          retention-days: 30
+          if-no-files-found: warn
