@@ -1,0 +1,69 @@
+name: Adaptive quality curriculum v04
+on:
+  push:
+    branches: [research/adaptive-quality-v04-20260925]
+    paths: [.github/workflows/adaptive-quality-v04.yml]
+permissions:
+  contents: read
+jobs:
+  train:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 140
+    strategy:
+      max-parallel: 2
+      fail-fast: false
+      matrix:
+        mode: [grouped, shuffled]
+    env:
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '4'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Check exact tested source and counterfactual semantics
+        run: |
+          mkdir quality
+          touch quality/__init__.py
+          cp research/quality_v04/*.py quality/
+          cp research/native_decisions/readout.py quality/readout.py
+          python3 - <<'PY'
+          import pathlib,hashlib
+          expected={'data.py':'57c7e5167f9cac3a60dfee2611dd33444cf4df2555e56ba04d3c238a1780342b','train.py':'d49d5681cfaf4ddc2c9cb03448735b0a725a847eb1028907a2d73e43695e8ea9','readout.py':'0e12ec6914bb29c14222bb432e7bd9e901f35ee7c62325ca12b938dcfaf5b186'}
+          for name,h in expected.items():
+              assert hashlib.sha256(pathlib.Path('quality',name).read_bytes()).hexdigest()==h,name
+          from quality import data
+          from quality.train import schedule
+          c=data.build(6)
+          for rows in c.values():data.verify(rows)
+          for mode in ('grouped','shuffled'):
+              assert len(schedule(c['train'],mode))==48
+          print('Verified source and authored label oracles before pretrained execution.')
+          PY
+      - name: Install matching CPU training dependencies
+        run: |
+          python3 -m pip install --no-cache-dir torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
+          python3 -m pip install --no-cache-dir transformers==5.3.0 accelerate==1.12.0 safetensors==0.7.0
+      - name: Full fixed learning pass then separate evaluation; no promotion
+        run: python3 -u -m quality.train --mode ${{ matrix.mode }} --out out
+      - name: Retain source and hardware evidence even on failure
+        if: always()
+        run: |
+          mkdir -p out/source
+          cp quality/*.py out/source/ || true
+          cp .github/workflows/adaptive-quality-v04.yml out/source/workflow.yml
+          python3 -m pip freeze > out/environment.txt
+          uname -a > out/hardware.txt
+          cat /proc/cpuinfo >> out/hardware.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: adaptive-quality-v04-${{ matrix.mode }}
+          path: out/
+          retention-days: 7
+          if-no-files-found: error
+          compression-level: 6
