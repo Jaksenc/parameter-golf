@@ -6,7 +6,40 @@ on:
 permissions:
   contents: read
 jobs:
+  stop_batched:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    permissions:
+      actions: write
+      contents: read
+    steps:
+      - name: Cancel only the invalid-batch experiment from this branch
+        env:
+          TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import urllib.request,json,os
+          url='https://api.github.com/repos/Jaksenc/parameter-golf/actions/runs/36148887164'
+          headers={'Authorization':'Bearer '+os.environ['TOKEN'],'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','User-Agent':'adaptive-quality-control'}
+          obj=json.loads(urllib.request.urlopen(urllib.request.Request(url,headers=headers),timeout=30).read())
+          assert obj['head_branch']=='research/adaptive-quality-v04-20260925'
+          assert obj['head_sha']=='001f86bd3af76858927960d60d150a0ed8595b95'
+          result={'run_id':obj['id'],'old_status':obj['status'],'reason':'Padded-batch probability-equivalence preflight failed in shuffled arm; no accuracy selection.'}
+          if obj['status']!='completed':
+              response=urllib.request.urlopen(urllib.request.Request(url+'/cancel',data=b'',headers=headers,method='POST'),timeout=30)
+              result['cancel_status']=response.status
+          print(json.dumps(result))
+          open('stop-batched.json','w').write(json.dumps(result,indent=2))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: quality-v04-stop-batched
+          path: stop-batched.json
+          retention-days: 7
   train:
+    needs: stop_batched
     if: github.event.repository.private == false
     runs-on: ubuntu-24.04-arm
     timeout-minutes: 140
@@ -25,7 +58,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           persist-credentials: false
-      - name: Check exact tested source and counterfactual semantics
+      - name: Check exact tested source and apply declared singleton repair
         run: |
           mkdir quality
           touch quality/__init__.py
@@ -33,23 +66,25 @@ jobs:
           cp research/native_decisions/readout.py quality/readout.py
           python3 - <<'PY'
           import pathlib,hashlib
-          expected={'data.py':'57c7e5167f9cac3a60dfee2611dd33444cf4df2555e56ba04d3c238a1780342b','train.py':'d49d5681cfaf4ddc2c9cb03448735b0a725a847eb1028907a2d73e43695e8ea9','readout.py':'0e12ec6914bb29c14222bb432e7bd9e901f35ee7c62325ca12b938dcfaf5b186','acquire.py':'21807178ac09dd1379c45dea41d0d1cafe9b2b94456ef804e13c353481d57551'}
+          expected={'data.py':'57c7e5167f9cac3a60dfee2611dd33444cf4df2555e56ba04d3c238a1780342b','train.py':'d49d5681cfaf4ddc2c9cb03448735b0a725a847eb1028907a2d73e43695e8ea9','readout.py':'0e12ec6914bb29c14222bb432e7bd9e901f35ee7c62325ca12b938dcfaf5b186','acquire.py':'21807178ac09dd1379c45dea41d0d1cafe9b2b94456ef804e13c353481d57551','singleton.py':'52c30a135a470cd995735feefbee6f6090078c0e832fdf2ff8069330be707094'}
           for name,h in expected.items():
               assert hashlib.sha256(pathlib.Path('quality',name).read_bytes()).hexdigest()==h,name
+          from quality.singleton import repair
+          repair()
           from quality import data
           from quality.train import schedule
           c=data.build(6)
           for rows in c.values():data.verify(rows)
           for mode in ('grouped','shuffled'):
               assert len(schedule(c['train'],mode))==48
-          print('Verified source and authored label oracles before pretrained execution.')
+          print('Verified singleton execution repair and label oracles before pretrained execution.')
           PY
       - name: Install matching CPU training dependencies and parquet reader
         run: |
           python3 -m pip install --no-cache-dir torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
           python3 -m pip install --no-cache-dir transformers==5.3.0 accelerate==1.12.0 safetensors==0.7.0 pyarrow==20.0.0
-      - name: Full fixed learning pass then separate evaluation; no promotion
-        run: python3 -u -m quality.acquire --mode ${{ matrix.mode }} --out out
+      - name: Full fixed singleton-accumulation pass and separate evaluation
+        run: python3 -u -m quality.singleton --mode ${{ matrix.mode }} --out out
       - name: Retain source and hardware evidence even on failure
         if: always()
         run: |
