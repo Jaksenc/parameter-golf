@@ -33,7 +33,7 @@ jobs:
           cp research/native_decisions/readout.py quality/readout.py
           python3 - <<'PY'
           import pathlib,hashlib
-          expected={'data.py':'57c7e5167f9cac3a60dfee2611dd33444cf4df2555e56ba04d3c238a1780342b','train.py':'d49d5681cfaf4ddc2c9cb03448735b0a725a847eb1028907a2d73e43695e8ea9','readout.py':'0e12ec6914bb29c14222bb432e7bd9e901f35ee7c62325ca12b938dcfaf5b186'}
+          expected={'data.py':'57c7e5167f9cac3a60dfee2611dd33444cf4df2555e56ba04d3c238a1780342b','train.py':'d49d5681cfaf4ddc2c9cb03448735b0a725a847eb1028907a2d73e43695e8ea9','readout.py':'0e12ec6914bb29c14222bb432e7bd9e901f35ee7c62325ca12b938dcfaf5b186','acquire.py':'21807178ac09dd1379c45dea41d0d1cafe9b2b94456ef804e13c353481d57551'}
           for name,h in expected.items():
               assert hashlib.sha256(pathlib.Path('quality',name).read_bytes()).hexdigest()==h,name
           from quality import data
@@ -44,12 +44,12 @@ jobs:
               assert len(schedule(c['train'],mode))==48
           print('Verified source and authored label oracles before pretrained execution.')
           PY
-      - name: Install matching CPU training dependencies
+      - name: Install matching CPU training dependencies and parquet reader
         run: |
           python3 -m pip install --no-cache-dir torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
-          python3 -m pip install --no-cache-dir transformers==5.3.0 accelerate==1.12.0 safetensors==0.7.0
+          python3 -m pip install --no-cache-dir transformers==5.3.0 accelerate==1.12.0 safetensors==0.7.0 pyarrow==20.0.0
       - name: Full fixed learning pass then separate evaluation; no promotion
-        run: python3 -u -m quality.train --mode ${{ matrix.mode }} --out out
+        run: python3 -u -m quality.acquire --mode ${{ matrix.mode }} --out out
       - name: Retain source and hardware evidence even on failure
         if: always()
         run: |
