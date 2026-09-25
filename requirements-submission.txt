@@ -1,0 +1,5 @@
+# Install torch==2.10.0 separately from https://download.pytorch.org/whl/cpu
+transformers==5.17.0
+huggingface-hub==1.32.0
+sentencepiece==0.2.2
+protobuf==6.33.6
