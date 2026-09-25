@@ -1,0 +1,56 @@
+name: Adaptive System-1 compact joint and fact prompt
+on:
+  push:
+    branches: [research/adaptive-compact-joint-20260925]
+    paths: [.github/workflows/adaptive-compact-joint-v01.yml]
+permissions:
+  contents: read
+jobs:
+  preflight:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    outputs:
+      ready: ${{ steps.probe.outputs.ready }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - id: probe
+        run: python3 -u research/native_decisions/run_compact_ci.py --preflight
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: compact-preflight
+          path: compact-preflight.json
+          retention-days: 5
+          if-no-files-found: warn
+  heldout:
+    needs: preflight
+    if: needs.preflight.outputs.ready == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 65
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        shard: [0, 1, 2, 3]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - run: python3 research/native_decisions/run_compact_ci.py --dry-run
+      - name: Compare compact joint decisions and two independent controls
+        env:
+          OMP_NUM_THREADS: '4'
+          OPENBLAS_NUM_THREADS: '1'
+        run: python3 -u research/native_decisions/run_compact_ci.py --shard ${{ matrix.shard }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: compact-joint-${{ matrix.shard }}
+          path: |
+            compact-shard-*.json
+            compact-journal-*.jsonl
+          retention-days: 5
+          if-no-files-found: warn
